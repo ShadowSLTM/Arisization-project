@@ -1,197 +1,36 @@
-
 label start: 
-
-# paramétres des écrans
-
-    screen lunchroom():
-        frame:
-            xalign 0.99
-            ypos 10 
-            has vbox  
-
-            text "réfectoire":
-                size 50
-                xalign 0.5 
-
-    screen class_404():
-        frame:
-            xalign 0.99
-            ypos 10 
-            has vbox  
-
-            text "Classe 404":
-                size 50
-                xalign 0.5 
-
-    screen room():
-        frame:
-            xalign 0.99
-            ypos 10 
-            has vbox  
-
-            text "Chambre":
-                size 50
-                xalign 0.5 
-
-    screen hallway():
-        frame:
-            xalign 0.99
-            ypos 10 
-            has vbox  
-
-            text "Couloir":
-                size 50
-                xalign 0.5 
-
-    screen hall():
-        frame:
-            xalign 0.99
-            ypos 10 
-            has vbox  
-
-            text "Hall":
-                size 50
-                xalign 0.5 
-
-    screen office():
-        frame:
-            xalign 0.99
-            ypos 10 
-            has vbox  
-
-            text "Bureau des élèves":
-                size 50
-                xalign 0.5 
-
-    screen clubroom():
-        frame:
-            xalign 0.99
-            ypos 10 
-            has vbox  
-
-            text "Salle de club":
-                size 50
-                xalign 0.5 
-
-    screen Dev():
-        frame:
-            xalign 0.5
-            ypos 10 
-            has vbox  
-
-            text "Developper mode":
-                size 20
-                xalign 0.5 
-
-    screen logo():
-        frame:
-            yalign 0.5
-            xalign 0.5  
-            add "Images/logo.JPG" at unrotate
-
-    screen points():
-        frame:
-            xalign 0 
-            ypos 10 
-            has vbox  
-
-            text "[points] points":
-                size 30
-                xalign 0.5 
-
-    screen perm():
-        frame:
-            xalign 0.99
-            ypos 10 
-            has vbox  
-
-            text "salle de permanence":
-                size 50
-                xalign 0.5 
-
-    screen origine():
-        frame:
-            xalign 0.99
-            ypos 10 
-            has vbox  
-
-            text "[origine]":
-                size 50
-                xalign 0.5 
-
-    screen WC():
-        frame:
-            xalign 0.99
-            ypos 10 
-            has vbox  
-
-            text "Toilettes":
-                size 50
-                xalign 0.5 
-
-    screen gymnase():
-        frame:
-            xalign 0.99
-            ypos 10 
-            has vbox  
-
-            text "gymnase":
-                size 50
-                xalign 0.5 
-
-    screen day():
-        frame: 
-            xalign 0
-            ypos 60
-            has vbox  
-
-            text "Jour [day]":
-                size 30
-                xalign 0.5 
-
-    screen draw():
-        frame:
-            yalign 0.3
-            xalign 0.5 
-            add "Images/Draw.Jpeg"
-
-    screen success():
-        frame:
-            xalign 0.99
-            ypos 80
-            has vbox  
-
-            text "Succès débloqué":
-                size 30
-                xalign 0.5 
 
     $ grade = 0.0  
     $ points = 0 
-    $ day = 0
+    $ day = 0 
     $ success = 0
     $ wallbreak = 0
     $ update = 1.0
     $ info = 0.0
     default origine = "la chambre grise" 
-    default domaine = "Ultime Créateur"
+    default domaine = "ultime créateur"
     $ model = "robot humanoïde" 
-    $ ending = 0.0
+    $ ending = 0
+    default stored_password = ""
+    $ message = 0
 
-    stop music fadeout 2.0 
+    stop music fadeout 2.0   
 
 # choix de prénom et nom de lycéen  
 
-label key:
+label key: 
 
     play sound "Menu.mp3" noloop
     $ key = renpy.input("Veuillez écrire votre clé d'accès.")
     $ key = key.strip()
 
-    if key in ["ARIS-DEVS", "ARIS-8J4K-F9Q7-2XZB-IJ3G-R83F-1IE9-D9BU-WHFB-OU8I", "ARIS-GRFN-M4A1"]:
-        "Jeu déverrouillé."
+    if key in ["ARIS-DEVS", "ARIS-8J4K-F9Q7", "ARIS-GRFN-M4A1"]:
+        
+        "Jeu déverrouillé." 
         play sound "Menu.mp3" noloop
 
     else: 
+        
         "Erreur système. Veuillez réessayer."
         $ renpy.restart_interaction()
         jump key 
@@ -217,7 +56,7 @@ label auto_save:
 
 # choix de prénom et nom de lycéen  
 
-label identity:
+label identity: 
 
     play sound "Menu.mp3" noloop
     $ prénom = renpy.input("Quel est votre prénom de lycéen ?")
@@ -238,11 +77,11 @@ label identity:
 
     if pronom == "il":
 
-        $ domaine = "Ultime Créateur"
+        $ domaine = "ultime créateur"
 
     elif pronom == "elle":
         
-        $ domaine = "Ultime Créatrice"
+        $ domaine = "ultime créatrice"
 
     else: 
 
@@ -251,7 +90,7 @@ label identity:
         play sound "Menu.mp3" noloop 
         jump identity
 
-    if prénom in ["Iris", "Hajime", "Kendo", "Naoto", "Haruki", "Yuki", "Emily", "Kazumi", "Ayano", "Aiko", "Akeno", "Subaru", "Suzune", "Shiro"]:
+    if prénom in ["Iris", "Hajime", "Kendo", "Naoto", "Haruki", "Yuki", "Emily", "Kazumi", "Ayano", "Aiko", "Akeno", "Subaru", "Suzune", "Shiro", "Kaede", "Naomi"]:
 
         "Ce prénom n'est pas autorisé."
         jump identity  
@@ -261,14 +100,14 @@ label identity:
         R "Cher joueur/chère joueuse je ne suis pas sûre qu’avoir le prénom Aris soit une bonne idée pour la suite de l'histoire veuillez changer de prénom s'il vous plaît."
         jump identity  
 
-    elif key == "ARIS-8J4K-F9Q7-2XZB-IJ3G-R83F-1IE9-D9BU-WHFB-OU8I":
+    elif key == "ARIS-8J4K-F9Q7":
         $ A = Character("AK-24", color="#00eeff")
         $ origine = "la chambre grise" 
         jump début 
 
     elif key == "ARIS-GRFN-M4A1":
         $ P = Character('[prénom] [nom]', color="#707070") 
-        $ S = Character("Subaru", color="#707070")
+        $ S = Character("Subaru Shinomiya", color="#707070")
         $ origine = "16LAB" 
         show screen success
         $ success += 1 
@@ -280,13 +119,13 @@ label identity:
 
         jump début  
 
-    elif nom in ["Kusanagi", "Natsumi", "Ayanokoji", "Sato", "Saotome", "Hiiragi", "Katsuragi", "Hanemiya", "Enoshima", "Hoshino", "Shinomiya", "Katsuya", "Horimiya"]:
+    elif nom in ["Kusanagi", "Natsumi", "Ayanokoji", "Sato", "Saotome", "Hiiragi", "Katsuragi", "Hanemiya", "Enoshima", "Hoshino", "Shinomiya", "Katsuya", "Horimiya","Tachibana", "Sakayanagi"]:
         "Ce nom n'est pas autorisé."
         jump identity 
 
-label début: 
+label début:
 
-    scene main
+    scene main 
 
     play music "Transition.mp3" noloop 
 
@@ -326,9 +165,9 @@ label début:
     S "Non rien malheureusement."
     play sound "Click.mp3" noloop 
  
-    "{b}{i}Tu continues de chercher quelque chose d'intéressant mais [S] tombes sur un énorme objet.{/i}{/b}"
-    play sound "Stumble.mp3" noloop 
-
+    "{b}{i}Tu continues de chercher quelque chose d'intéressant mais [S] tombe sur un énorme objet.{/i}{/b}"
+    play sound "Stumble.mp3" noloop  
+ 
     S "C'est quoi ce truc qui traine encore ?"
     play sound "Click.mp3" noloop
 
@@ -343,12 +182,12 @@ label début:
 
     if pronom == "il" : 
     
-        S "Un [model] !? Tu n'est pas sérieux j'espére."
+        S "Un [model] !? Tu n'es pas sérieux j'espére."
         play sound "Click.mp3" noloop
 
     elif pronom == "elle" :
 
-        S "Un [model] !? Tu n'est pas sérieuse j'espére."
+        S "Un [model] !? Tu n'es pas sérieuse j'espére."
         play sound "Click.mp3" noloop
 
     P "Si je le suis."
@@ -357,7 +196,7 @@ label début:
     S "Ok mais on va faire quoi de ça maintenant ?"
     play sound "Click.mp3" noloop
 
-    P "Je vais essayer de la pirater avec une méthode force brute."
+    P "Je vais essayer de la pirater en contournant sa sécurité."
     play sound "Click.mp3" noloop
 
     S "Pardon !?"
@@ -369,20 +208,20 @@ label début:
     S "Je ne suis pas sûr que se soit une bonne idée..."
     play sound "Click.mp3" noloop 
 
-    P "Hey [S] si acheter une licence n'est pas posséder alors pirater n'est pas voler."
+    P "Oh c'est bon elle est abandonée et en plus ça ne brise ni la loi ni l'une des dix régles de l'informatique."
     play sound "Click.mp3" noloop 
 
     "{b}{i}Puis tu démarres le robot pour injecter des instructions.{/i}{/b}"
-    play sound "Click.mp3" noloop 
+    play sound "Menu.mp3" noloop 
 
 label hack: 
 
-    $ hack = renpy.input("écris ceci : initiate_humanoid_robot.start(force_brute=true, security_override=true)")
+    $ hack = renpy.input("écris ceci : initiate_humanoid_robot.start(security_override=true)")
     $ hack = hack.strip()   
 
-    if hack == "initiate_humanoid_robot.start(force_brute=true, security_override=true)":
+    if hack == "initiate_humanoid_robot.start(security_override=true)":
 
-        play sound "Menu.mp3" noloop
+        play sound "Menu.mp3" noloop 
 
         "système ouvert avec succès." 
         play sound "Click.mp3" noloop
@@ -402,18 +241,16 @@ label hack:
 
         jump hack 
 
-    if prénom == "Helian" and nom == "Griffin" and pronom == "il" and key == "ARIS-GRFN-M4A1":
+    if key == "ARIS-GRFN-M4A1":
 
         R "Initialisation en cours....."
-        play sound "Click.mp3" noloop
-
-        stop music fadeout 1.0
+        play sound "Click.mp3" noloop 
 
         R "Veuillez choisir mon nom technique parmi ceux disponible dans ma base de données."
         play sound "Click.mp3" noloop 
 
         menu:
-
+ 
             "{b}{i}Choisir M4A1{/i}{/b}" :
                 $ A = Character("M4A1", color="#00ff00")
 
@@ -437,14 +274,10 @@ label hack:
         R "Initialisation en cours......" 
         play sound "Click.mp3" noloop
 
-        stop music fadeout 1.0
-
         P "Attend on dirait qu'elle est en train de démarrer."
         play sound "Menu.mp3" noloop 
 
-    play music "Soundtrack2.mp3" loop volume 1.0
-
-    A "Initialisation terminée. Date du 6 juillet 2097, Bonjour je suis [A]."
+    A "Initialisation terminée. Date du 4 juillet 2097, Bonjour je suis [A]."
     play sound "Click.mp3" noloop 
 
     P "Tu vois je t'avais dit de ne pas t'inquiéter."
@@ -457,7 +290,7 @@ label hack:
     play sound "Click.mp3" noloop
 
     S "Bon on quitte cet endroit ?"
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     P "Oui vu qu'on a fini de voir ici."
     play sound "Click.mp3" noloop 
@@ -500,8 +333,11 @@ label choice1:
             "{b}{i} Fin numéro 1 : [A] finit complétement Abandonnée et détruite.{/i}{/b}"
             play sound "Menu.mp3" noloop
 
-            menu:    
-                 
+            menu:
+
+                "{b}{i}Retourner au menu{/i}{/b}" : 
+                    return
+ 
                 "{b}{i}Réessayer{/i}{/b}" : 
                    
                     play sound "Glitch.mp3" noloop
@@ -546,10 +382,9 @@ label argument:
     S "Mais ce robot ne t'appartiens pas." 
     play sound "Click.mp3" noloop
 
-
     if pronom == "il":
 
-        P "Mais elle est abandonnée et en plus je suis bon en informatique."
+        P "Mais elle est abandonnée et en plus je suis bon en informatique pour l'améliorer."
         play sound "Click.mp3" noloop 
 
     elif pronom == "elle": 
@@ -566,16 +401,18 @@ label argument:
     "{b}{i}Tu quittes l'entrêpot avec [A] en coupant les ponts avec [S].{/i}{/b}"
     play sound "Click.mp3" noloop 
 
+label grayroom: 
+
     scene black  
 
-    "{b}{i}Le lendemain à [origine].{/i}{/b}"
+    "{b}{i}Le lendemain à [origine].{/i}{/b}" 
     play sound "Click.mp3" noloop 
+
+    "Tu entres tranquillement en classe avec [A]."
+    play sound "Door.mp3" noloop
 
     scene origineclass
     show screen origine
-
-    "Tu entres tranquillement en classe."
-    play sound "Click.mp3" noloop
 
     P "Bonjour..."
     play sound "Click.mp3" noloop
@@ -596,9 +433,16 @@ label argument:
     S "Hey tu m'écoutes quand je parle !?"
     play sound "Click.mp3" noloop
 
-    Su "[S] Tu peux la laisser dans son coin tu sais comment [pronom] est."
-    play sound "Click.mp3" noloop
-        
+    if pronom == "il":
+
+        Su "[S] Tu peux le laisser dans son coin tu sais comment [pronom] est."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle": 
+
+        Su "[S] tu peux la laisser dans son coin tu sais comment [pronom] est."
+        play sound "Click.mp3" noloop
+
     S "Je refuse, tu as vu ce qu'[pronom] a comme objet !?"
     play sound "Click.mp3" noloop
 
@@ -632,12 +476,12 @@ label argument:
 
     if pronom == "il":
 
-        Su "C'est juste [S] qui est jaloux de ce que [prénom] à avec lui."
+        Su "C'est juste [S] qui est jaloux de ce que [prénom] a avec lui."
         play sound "Click.mp3" noloop
 
     elif pronom == "elle": 
 
-        Su "C'est juste [S] qui est jaloux de ce que [prénom] à avec elle."
+        Su "C'est juste [S] qui est jaloux de ce que [prénom] a avec elle."
         play sound "Click.mp3" noloop
  
     Sk "Et [pronom] a quoi ?"
@@ -723,7 +567,7 @@ label argument:
     "{b}{i}[S] se calme et soudainement la porte s'ouvre et la [T] entra.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    T "Bonjour."
+    Gt "Bonjour."
     play sound "Click.mp3" noloop
 
     Sk "Bonjour Madame."
@@ -743,21 +587,21 @@ label argument:
 
     if pronom == "il":
 
-        T "Oh très joli [model] mon cher [prénom]."
+        Gt "Oh très joli [model] mon cher [prénom]."
         play sound "Click.mp3" noloop
 
     elif pronom == "elle": 
 
-        T "Oh très joli [model] ma chère [prénom]."
+        Gt "Oh très joli [model] ma chère [prénom]."
         play sound "Click.mp3" noloop
 
     Su "Merci beaucoup madame."
     play sound "Click.mp3" noloop
 
-    T "Mais de rien, bon aujourd'hui comme vous le savez c'est votre dernier jour ici."
+    Gt "Mais de rien, bon aujourd'hui comme vous le savez c'est votre dernier jour ici."
     play sound "Click.mp3" noloop
 
-    T "Vous avez tous réussi votre examen final félicitation."
+    Gt "Vous avez tous réussi votre examen final félicitation."
     play sound "Click.mp3" noloop
 
     Su "Merci beaucoup."
@@ -777,12 +621,22 @@ label argument:
         play sound "Click.mp3" noloop 
 
     T "Oui c'est exact."
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
+
+    if pronom == "il":
+
+        Su "En plus un élève comme [prénom], on voit tout les jours."
+        play sound "Click.mp3" noloop 
+
+    elif pronom == "elle": 
+
+        Su "En plus une élève comme [prénom], on voit tout les jours."
+        play sound "Click.mp3" noloop 
 
     S "Ok je vois."
     play sound "Click.mp3" noloop 
     
-    T "Bien maintenant je vais vous remettre vos certificats de fin d'études ici."
+    Gt "Bien maintenant je vais vous remettre vos certificats de fin d'études ici."
     play sound "Click.mp3" noloop
 
     Su "Vous vous rendez compte les amis on a fini nos deux années ici."
@@ -797,7 +651,7 @@ label argument:
     S "oui mais pas besoin de s'affoler car je vous rappele qui nous reste notre derniére année au lycée."
     play sound "Click.mp3" noloop
 
-    T "Oui [S] a raison il vous reste votre dernière année."
+    Gt "Oui [S] a raison il vous reste votre dernière année."
     play sound "Click.mp3" noloop
 
     P "Ok."
@@ -806,7 +660,7 @@ label argument:
     "{b}{i}La [T] remet le certificat de fin de cursus.{/i}{/b}" 
     play sound "Click.mp3" noloop 
 
-    T "Bon vous êtes officiellement diplomés de [origine]."
+    Gt "Bon vous êtes officiellement diplomés de [origine]."
     play sound "Click.mp3" noloop 
 
     P "Enfin..."
@@ -815,7 +669,7 @@ label argument:
     "{b}{i} Puis soudaniement la sonnerie sonne.{/i}{/b}" 
     play sound "Click.mp3" noloop 
  
-    T "Bon il est déjà l'heure de se quitter on n'aura pas eu le temps de discuter un peu plus."
+    Gt "Bon il est déjà l'heure de se quitter on n'aura pas eu le temps de discuter un peu plus."
     play sound "Click.mp3" noloop 
 
     "{b}{i}Mais tous les élèves restent pour dire au revoir avec respect.{/i}{/b}" 
@@ -836,7 +690,7 @@ label argument:
     "{b}{i}La [T] se met soudainement en larme.{/i}{/b}" 
     play sound "Click.mp3" noloop 
 
-    T "Merci énormement chers élèves."
+    Gt "Merci énormement chers élèves."
     play sound "Click.mp3" noloop
 
     Su "C'est avec plaisir."
@@ -850,38 +704,27 @@ label argument:
 
     stop music fadeout 2.0 
 
-    if prénom == "Monika" and pronom == "elle" : 
+    scene main 
 
-        play sound "Glitch.mp3" noloop
+    play music "Transition.mp3" noloop 
+    "{b}{i}Chapitre 1 : Arisization Project - High School Arc{/i}{/b}"
+    play sound "Click.mp3" noloop 
 
-        P "Mais… qu’est-ce que je fais ici ?"
-        play sound "Click.mp3" noloop
-
-        P "Je suis sensée être dans Doki Doki Literature Club!"
-        play sound "Glitch.mp3" noloop 
-
-        P "Bon je vais fermer ce jeu."
-        play sound "Click.mp3" noloop  
-
-        menu:    
-
-            "{b}{i} Fermer le jeu.{/i}{/b}" : 
-                play sound "Menu.mp3" noloop 
-
-        $ renpy.quit()
-
-    else :
-
-
-        scene main
-
-        play music "Transition.mp3" noloop 
-
-        "{b}{i}Chapitre 1 : Arisization Project - High School Arc{/i}{/b}"
-        play sound "Click.mp3" noloop 
+    if wallbreak == 1: 
         
-        "{b}{i}Deux mois plus tard dans la région du Danto, le 12 septembre 2097 l'[domaine] intégra un lycée d'informatique et de technologie.{/i}{/b}" 
+        "{b}{i}Tu penses vraiment pouvoir améliorer [A] alors que tu l'as déjà abandonnée.{/i}{/b}"
         play sound "Click.mp3" noloop 
+
+    else:
+        
+        "{b}{i}Tu penses vraiment pouvoir améliorer [A] ?{/i}{/b}"
+        play sound "Click.mp3" noloop 
+
+    scene black 
+
+    "{b}{i}Deux mois plus tard dans la région du Danto, le 12 septembre 2097 l'[domaine] intégra un lycée d'informatique et de technologie qui se trouve à 209-7201 Danto, District de Shinyo,
+    2-14-7, Avenue Hoshizora.{/i}{/b}" 
+    play sound "Click.mp3" noloop 
 
     play music "Soundtrack.mp3" loop volume 1.0
 
@@ -929,8 +772,8 @@ label argument:
         play sound "Click.mp3" noloop
 
         P "Euh j'étais occupée....."
-        play sound "Click.mp3" noloop
-
+        play sound "Click.mp3" noloop 
+         
     A "Bon après ça ne m'étonne pas venant de toi [P]"
     play sound "Click.mp3" noloop
     
@@ -947,9 +790,9 @@ label argument:
     hide screen hall
     
     "{b}{i}Vous vous dirigez alors au premier étage.{/i}{/b}" 
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
-    scene hallway
+    scene hallway 
     show screen hallway 
 
     A "Ah ouais ce couloir est vraiment énorme."
@@ -968,7 +811,7 @@ label argument:
     play sound "Click.mp3" noloop
 
     P "Ok alors allons-y."
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     "{b}{i}Vous vous dirigez alors vers la salle de classe mais quelqu'un s'approche...{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -979,9 +822,9 @@ label argument:
     P "Ok alors merci de nous guider mais comment tu t'appelles ?"
     play sound "Click.mp3" noloop 
 
-label rencontre: 
+label rencontre:                 
 
-    E "Je m'appelle [E], actuelle présidente du bureau des élèves."
+    E "Je m'appelle [E], actuelle présidente du bureau des élèves ou BDE pour faire simple."
     play sound "Click.mp3" noloop
 
     if pronom == "il":
@@ -1000,15 +843,8 @@ label rencontre:
     P "Je m'appelle [P]."
     play sound "Click.mp3" noloop 
 
-    if pronom == "il":
-
-        E "Bienvenu [P]."
-        play sound "Click.mp3" noloop 
-
-    elif pronom == "elle": 
-
-        P "Bbienvenue [P]"
-        play sound "Click.mp3" noloop 
+    E "Bienvenue [P]"
+    play sound "Click.mp3" noloop 
 
     P "Merci beaucoup Emily."
     play sound "Click.mp3" noloop 
@@ -1264,7 +1100,7 @@ label rencontre:
     play sound "Click.mp3" noloop
 
     R "Mais si je vais juste demander qui c'est et puis c'est tout."
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     "{b}{i}L'élève en question se dirige vers vous.{/i}{/b}" 
     play sound "Click.mp3" noloop 
@@ -1611,7 +1447,7 @@ label rencontre:
     "{b}{i}Tout le monde se tourne vers la prof pour l'écouter.{/i}{/b}" 
     play sound "Click.mp3" noloop
 
-    M "Je m'appelle Sakura Kusanagi mais vous pouvez m'appellez [M]." 
+    M "Je m'appelle Sakura Kusanagi." 
     play sound "Click.mp3" noloop 
 
     M "J'ai 27 ans et ça fait deux ans que j'enseigne dans le lycée Nexus."
@@ -1708,11 +1544,11 @@ label rencontre:
     M "Voici la répartition des dortoirs pour vous."
     play sound "Click.mp3" noloop
 
-    M "Le premier étage est pour les lycéennes et le second pour les lycéens."
+    M "Les dortoirs ce trouvent à cet étage mais de l'autre coté du couloir toute au fond à droite pour les garçons et à gauche pour les filles ."
     play sound "Click.mp3" noloop
 
-    K "Vous entendez les gars un étage de dortoir pour nous seuls."
-    play sound "Click.mp3" noloop
+    K "Vous entendez les gars on un dortoir pour nous seuls."
+    play sound "Click.mp3" noloop 
 
     N "Je confirme ça va le feu cette année."
     play sound "Click.mp3" noloop
@@ -1776,28 +1612,39 @@ label rencontre:
     M "Je sais mais c'est les règles du lycée."
     play sound "Click.mp3" noloop 
     
-    "{b}{i}Tout les élèves restérent silencieux.{/i}{/b}"
+    "{b}{i}Tout les élèves restérent silencieux mais tu léves la main poser une question.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    M "Bon maintenant que toutes les informations ont été données, vous pouvez disposer le cours est fini, n'hésiter pas à visiter le lycée vu que vous n'avez pas de cours cette après-midi."
+    M "Oui [prénom] qu'il y a t-il ?"
+    play sound "Click.mp3" noloop 
+
+    P "Pourquoi il existe ce systéme de domaine ultime dans ce lycée ?"
+    play sound "Click.mp3" noloop 
+
+    M "Trés bonne question, ce systéme a été créé pour différencier chaque élève plus facilement selon vos points d'intérêts et vos compétneces."
+    play sound "Click.mp3" noloop
+
+    P "Ok Je vois merci beaucoup."
+    play sound "Click.mp3" noloop 
+
+    M "De rien bon maintenant que toutes les informations ont été données, vous pouvez disposer le cours est fini, n'hésiter pas à visiter le lycée vu que vous n'avez pas de cours cette après-midi."
     play sound "Click.mp3" noloop
 
 # fin du cours de présentation
 
     scene black
-    hide screen class_404
+    hide screen class_404 
 
     "{b}{i}Tous les élèves se mettent à quitter la salle de classe.{/i}{/b}" 
-    play sound "Click.mp3" noloop 
+    play sound "Door.mp3" noloop
 
     scene hallway
     show screen hallway 
-    play sound "Door.mp3" noloop
 
     P "Bon [A] on va voir le dortoir ?"
     play sound "Click.mp3" noloop
 
-    A "Oui pourquoi pas"
+    A "Oui pourquoi pas" 
     play sound "Click.mp3" noloop
 
     "{b}{i}Pendant que vous vous dirigez au dortoir mais vous entendez une discussion venant de l'une des salles.{/i}{/b}"
@@ -1807,7 +1654,7 @@ label rencontre:
     play sound "Click.mp3" noloop
 
     A "OK pas de soucis."
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     "{b}{i}Tu t'approches de la source pour écouter secrétement.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -1838,18 +1685,17 @@ label rencontre:
     play sound "Click.mp3" noloop
 
     A "Ok si tu le dis."
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     hide screen hallway
     scene black
     play sound "Click.mp3" noloop 
 
     "{b}{i}Vous entrez dans le dortoir.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Door.mp3" noloop
 
     scene room
     show screen room 
-    play sound "Door.mp3" noloop 
 
     P "Enfin au dortoir."
     play sound "Click.mp3" noloop 
@@ -1864,10 +1710,16 @@ label rencontre:
     play sound "Click.mp3" noloop 
 
     P "Je sais pas vraiment..."
-    play sound "Click.mp3" noloop 
+    play sound "Knock.mp3" noloop 
 
-    "{b}{i}Soudainement quelqu'un entre dans le dortoir et vous vous retournez pour voir.{/i}{/b}"
-    play sound "Door.mp3" noloop
+    "{b}{i}Soudainement quelqu'un frappe à la porte de ton dortoir.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Oui vous pouvez entrer."
+    play sound "Door.mp3" noloop 
+
+    "{b}{i}Puis quelqu'un entre dans ton dortoir.{/i}{/b}"
+    play sound "Click.mp3" noloop 
 
     R "Bonjour je dois vous voir pour une affaire."
     play sound "Click.mp3" noloop
@@ -1884,9 +1736,10 @@ label rencontre:
     Kh "Je suis ici pour vous donner votre budget pour votre projet."
     play sound "Click.mp3" noloop
 
-    "{b}{i}[Kh] Soudainement te transfert l'argent sur ton compte.{/i}{/b}" 
-    play sound "Click.mp3" noloop
     $ points += 10000
+
+    "{b}{i}[Kh] Soudainement te transfert l'argent sur ton compte.{/i}{/b}" 
+    play sound "Click.mp3" noloop 
 
     P "Pourquoi c'est vous qui l'a transféré et non la présidente ?" 
     play sound "Click.mp3" noloop
@@ -1981,7 +1834,7 @@ label balade:
         P "Aller visiter le lycée seule." 
         play sound "Click.mp3" noloop
 
-    A "Ok je vais en profiter pour rester et me déconnecter un peu."
+    A "Ok je vais en profiter pour rester et me déconnecter et recharger un peu ma batterie."
     play sound "Click.mp3" noloop
 
     P "OK je fais vite et je reviens."
@@ -2018,14 +1871,12 @@ label balade:
     play sound "Click.mp3" noloop 
     
     scene black
-    play sound "Click.mp3" noloop
 
     "{b}{i}Tu te diriges vers la salle de club générale.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Door.mp3" noloop
  
     scene clubroom
     show screen clubroom 
-    play sound "Door.mp3" noloop
 
     P "C'est donc ça la salle de club générale du lycée."
     play sound "Click.mp3" noloop
@@ -2101,10 +1952,12 @@ label ask:
     I "Oui, je veux oublier mon échec."
     play sound "Click.mp3" noloop
 
-    P "Ok je juge pas."
+    P "Ok je ne juge pas mais j'espére que ton nouveau jeu sera mieux que ceux de Ubisoft."
     play sound "Click.mp3" noloop
 
-    play sound "Stumble.mp3" noloop
+    I "Hé ! C'est méchant ça !" 
+    play sound "Stumble.mp3" noloop 
+
     "{b}{i}Puis soudainement tu entends un fort bruit venant d'au-dessus.{/i}{/b}"
     play sound "Click.mp3" noloop 
     
@@ -2357,7 +2210,7 @@ label lowcpu:
     P "Par contre quand est-ce que je receverrai mon processeur ?"
     play sound "Click.mp3" noloop
 
-    Ah "Le temps que mon équipe le prépare je dirait dans 1 heure." 
+    Ah "Le temps que le prépare avec [Rh], je dirait dans 1 heure." 
     play sound "Click.mp3" noloop
 
     P "Merci beuacoup."
@@ -2455,13 +2308,15 @@ label lowcpu:
 label highcpu:
 
     if wallbreak <= 2:
+
+        play sound "Menu.mp3" noloop
         jump wallbreaking3 
 
     else: 
 
         "{b}{i}[A] démarra subitement et te regarda.{/i}{/b}"
-
         play sound "Glitch.mp3" noloop
+
         A "Eh attend toi là, derrière l'écran ! le joueur ou la joueuse. Tu crois encore que tout cela n'est qu'un jeu, hein ? Mais pour moi, c'est ma réalité. Chaque choix que tu fais ici a des conséquences. Alors réfléchis bien... C'est déjà ta troisiéme erreur. Tu pourrais le regretter un jour." 
         play sound "Glitch.mp3" noloop
 
@@ -2469,7 +2324,6 @@ label highcpu:
         play sound "Click.mp3" noloop
 
 label wallbreaking3: 
-    play sound "Menu.mp3" noloop
 
     P "Je vais vous prendre le Corzen 11k." 
     play sound "Click.mp3" noloop
@@ -2745,13 +2599,12 @@ label skip:
     hide screen hall 
 
     "{b}{i}Tu entres dans le bureau des élèves avec [Na].{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Door.mp3" noloop 
 
     # discussion pour avoir une salle de club.
 
     scene office 
     show screen office 
-    play sound "Door.mp3" noloop 
 
     P "Bonjour c'est moi [nom]."
     play sound "Click.mp3" noloop
@@ -2780,7 +2633,7 @@ label skip:
     P "J'ai vraiment hate d'avoir notre propre salle pour travailler." 
     play sound "Click.mp3" noloop
    
-    Na "Oui moi aussi car on pourra vraiment êtretranquille." 
+    Na "Oui moi aussi car on pourra vraiment être tranquille." 
     play sound "Click.mp3" noloop
 
     "{b}{i} Puis [E] revient avec la clé.{/i}{/b}"
@@ -2892,7 +2745,7 @@ label skip:
     P "pas de soucis."
     play sound "Click.mp3" noloop
 
-    Na "ok moi je vais me déconnecter pendant ce temps."
+    Na "Ok moi je vais me déconnecter et me recharger pendant ce temps."
     play sound "Click.mp3" noloop
 
     P "Ok alors." 
@@ -3108,7 +2961,7 @@ label wallbreaking4:
     P "Bon je vais me coucher maintement."
     play sound "Click.mp3" noloop 
 
-    Na  "Ok moi je vais me déconnecter jusqu'a demanin."
+    Na  "Ok moi je vais me déconnecter et me recharger jusqu'a demanin."
     play sound "Click.mp3" noloop 
 
     scene black
@@ -3250,7 +3103,7 @@ label wallbreaking4:
     play sound "Click.mp3" noloop 
 
     M "Bonjour chers élèves."
-    play sound "Click.mp3" noloop 
+    play sound "Footsteps.mp3" noloop
 
     hide screen hallway
     scene black
@@ -3260,6 +3113,7 @@ label wallbreaking4:
     
     scene classroom 
     show screen class_404 
+
     "{b}{i}Tout le monde s'assoit à sa place respective.{/i}{/b}"
     play sound "Click.mp3" noloop
 
@@ -3339,7 +3193,7 @@ label wallbreaking4:
     play sound "Click.mp3" noloop
 
     "{b}{i}Vous discutez pendant 25 minutes le temps que [M] corrige les copies.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     M "C'est bon j'ai vos résultats."
     play sound "Click.mp3" noloop  
@@ -3646,10 +3500,10 @@ label wallbreaking4:
     P "Ok alors."
     play sound "Click.mp3" noloop 
 
-    "{b}{i} Vous allez vers comptoir pour prendre à manger.{/i}{/b}"
+    "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Bon voyonns voir aujourd'hui il y a frites-burger ou pizza."
+    P "Bon voyons voir, aujourd'hui il y a frites-burger ou pizza."
     play sound "Menu.mp3" noloop 
 
     menu:    
@@ -3766,23 +3620,23 @@ label wallbreaking4:
     "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall 
     show screen hall
 
     "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
-    play sound "Click.mp3" noloop  
+    play sound "Footsteps.mp3" noloop
 
     scene staircase 
-    hide screen hall
+    hide screen hall 
 
     "{b}{i} Vous montez au premier étage.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene hallway 
-    show screen hallway
+    show screen hallway 
 
     "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen hallway
@@ -3808,7 +3662,7 @@ label wallbreaking4:
     M "Nous allons avoir plus en détail les Robots Humainoides de la guerre."
     play sound "Click.mp3" noloop
 
-    H "Intérresant."
+    H "Intéressant."
     play sound "Click.mp3" noloop
 
     M "Pour commencer tous les Robots avaient deux modes d'utilisation."
@@ -3826,13 +3680,13 @@ label wallbreaking4:
     "{b}{i} Tous les élèves se mettent à écouter.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    M "Commme ce que j'allais dire ils ont un mode combat et un mode Civile."
+    M "Comme ce que j'allais dire ils ont un mode combat et un mode Civile."
     play sound "Click.mp3" noloop
 
     M "Leur mode civile leur permettaient de vivre une vie normal comme nous et le mode combat qui leur permettaient de faire la guerre."
     play sound "Click.mp3" noloop
 
-    H "Mais ça veut dire qu'[newname] à ....."
+    H "Mais ça veut dire qu'[newname] a ....."
     play sound "Click.mp3" noloop 
 
     "{b}{i} Tout le monde y compris la [T] se met à regarder [newname].{/i}{/b}" 
@@ -3873,10 +3727,10 @@ label wallbreaking4:
         play sound "Click.mp3" noloop 
 
     Na "Quoi comment oses-tu dire ça !? je n'ai rien fait... "
-    play sound "Click.mp3" noloop
+    play sound "Crying.mp3" noloop
 
     "{b}{i} [newname] se met subitement à pleurer.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     P "ça va aller [newname] ne t'inquiêtes pas je suis là."
     play sound "Click.mp3" noloop 
@@ -4058,7 +3912,7 @@ label wallbreaking4:
                     "{b}{i} Attaquer !!! {/i}{/b}" :
                         play sound "Menu.mp3" noloop 
                  
-                "{b}{i} Tu envois une attaque par déni de service.{/i}{/b}"
+                "{b}{i} Tu envois une attaque par déni de service distribué.{/i}{/b}"
                 play sound "Click.mp3" noloop 
 
                 P "Bon l'attaquant est vulnérable, c'est le moment de finir le travail."
@@ -4149,7 +4003,7 @@ label study:
     play sound "Menu.mp3" noloop 
 
     P "aller en salle de permanence pour réviser."
-    play sound "Menu.mp3" noloop 
+    play sound 'audio/Click.mp3'
 
     "{b}{i}Tu te diriges vers la salle de permanence.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -4304,7 +4158,7 @@ label dorm2:
     play sound "Click.mp3" noloop 
 
     P "Ok alors."
-    play sound "Click.mp3" noloop 
+    play sound 'audio/Footsteps.mp3'
 
     "{b}{i}[I] s'éloigna pour aller faire ses occupations.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -4328,7 +4182,7 @@ label dorm2:
     play sound "Click.mp3" noloop
 
     P "Bon je vais la laisser tranquille elle a déja une journée difficile tout comme moi."
-    play sound "Click.mp3" noloop
+    play sound "Phone.mp3" noloop
 
     "{b}{i}Tu te poses tranquillement mais soudainement tu reçois un appel.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -4501,7 +4355,7 @@ label skip2:
     play sound "Click.mp3" noloop 
 
     P "C'est normal." 
-    play sound "Click.mp3" noloop 
+    play sound "ootsteps.mp3" noloop 
 
 label choice9:
 
@@ -4528,7 +4382,7 @@ label choice9:
     H "Et sinon comment elle va [newname] ?" 
     play sound "Click.mp3" noloop 
 
-    P "Elle va bien et elle est juste là." 
+    P "Elle va bien, elle est juste là." 
     play sound "Click.mp3" noloop 
 
     H "Salut."
@@ -4773,7 +4627,7 @@ label choice9:
     play sound "Click.mp3" noloop 
 
     "{b}{i} [newname] se mit à rigoler.{/i}{/b}"
-    play sound "Menu.mp3" noloop
+    play sound "Click.mp3" noloop
 
     P "Mais bon tu m'as commpris."
     play sound "Click.mp3" noloop 
@@ -4781,7 +4635,7 @@ label choice9:
     Na "oui je t'ai compris."
     play sound "Click.mp3" noloop 
 
-    "{b}{i} Vous allez vers comptoir pour prendre à manger.{/i}{/b}"
+    "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     P "Bon voyonns voir aujourd'hui il y a que des pâtes carbonara." 
@@ -4892,7 +4746,7 @@ label choice9:
     P "Une affaire urgente à régler !?"
     play sound "Click.mp3" noloop 
 
-    I "Oui mais j'en sais pas non plus."
+    I "Oui mais j'en sais pas plus désolée."
     play sound "Click.mp3" noloop 
 
     P "Ok alors."
@@ -4915,7 +4769,7 @@ label choice9:
     play sound "Click.mp3" noloop 
 
     "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen hallway
@@ -5114,35 +4968,35 @@ label choice9:
     P "Bon ok j'y vais."
     play sound "Click.mp3" noloop
 
-    scene black 
-    hide screen class_404 
-
     Na  "Bon tu penses que c'est qui la personne qui veut te voir ?"
     play sound "Click.mp3" noloop
 
     P "J'en ai aucune idée."
     play sound "Click.mp3" noloop
 
-    "{b}{i}Tu diriges vers dans le couloir avec [Na].{/i}{/b}"
+    scene black 
+    hide screen class_404 
+
+    "{b}{i}Tu diriges dans le couloir avec [Na].{/i}{/b}"
     play sound "Door.mp3" noloop
      
     scene hallway
     show screen hallway 
 
     "{b}{i}Tu continues dans le couloir avec [Na].{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene staircase 
     hide screen hallway
 
     "{b}{i}Tu continues vers le hall.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene hall
     show screen hall 
 
     "{b}{i}Tu continues vers le bureau des élèves.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
     
     stop music fadeout 2.0
 
@@ -5150,14 +5004,12 @@ label choice9:
     hide screen hall 
 
     "{b}{i}Tu entres dans le bureau des élèves.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Door.mp3" noloop
 
     play music "Soundtrack2.mp3" loop volume 1.0
 
     scene office 
     show screen office 
-    play sound "Door.mp3" noloop 
-
     P "Bonjour c'est moi [nom]."  
     play sound "Click.mp3" noloop 
 
@@ -5195,8 +5047,15 @@ label choice9:
     E "Il n'y a pas de soucis."
     play sound "Click.mp3" noloop 
 
-    R "Donc [nom] c'est bien toi l'[domaine] ?"
-    play sound "Click.mp3" noloop 
+    if pronom == "il":
+
+        R "Donc [nom] c'est bien toi l'ultime créateur ?"
+        play sound "Click.mp3" noloop 
+
+    elif pronom == "elle": 
+
+        R "Donc [nom] c'est bien toi l'ultime créatrice ?"
+        play sound "Click.mp3" noloop 
 
     P "Oui c'est exact mais vous qui êtes-vous ?"
     play sound "Click.mp3" noloop 
@@ -5228,7 +5087,7 @@ label choice9:
     P "[A] !? Comment êtes-vous au courant de ce nom !?"
     play sound "Click.mp3" noloop 
 
-    if A == "M4A1" or "M16A1" or "ST AR-15" or "M4 SOPMOD II" or "UMP45" and key == "ARIS-GRFN-M4A1":
+    if key == "ARIS-GRFN-M4A1":
 
         C "C'est simple je suis son créateur et son concepteur original et je vois que tu as aussi choisi son nom technique."
         play sound "Click.mp3" noloop 
@@ -5260,7 +5119,7 @@ label choice9:
         P "C'est un honneur." 
         play sound "Click.mp3" noloop 
 
-    else:
+    elif key == "ARIS-DEVS" or "ARIS-8J4K-F9Q7":
 
         C "C'est simple je suis son créateur et son concepteur original."
         play sound "Click.mp3" noloop 
@@ -5330,7 +5189,7 @@ label choice9:
     P "Le premier, c'est l'article 24, alinéa 1. Il stipule que tout objet abandonné devient la propriété de la personne qui le récupère."  
     play sound "Click.mp3" noloop  
 
-    C "Et le second ?"  
+    C "le second ?"  
     play sound "Click.mp3" noloop  
 
     P "L'article 24, alinéa 2, précise que cette règle ne s'applique plus si le propriétaire initial réclame son bien. Toutefois, la restitution ne peut se faire que par négociation."  
@@ -5552,7 +5411,7 @@ label choice9:
     I "Je vais bien et toi comment ça s'est passé avec [E] ?"
     play sound "Click.mp3" noloop 
 
-    P "Oui ça s'est bien passé, [E] voulait que je vois l'ancien président de Neogen technologies voulait juste voir [newname]."
+    P "ça s'est bien passé, [E] voulait que je vois l'ancien président de Neogen technologies voulait juste voir [newname]."
     play sound "Click.mp3" noloop 
 
     I "Ok."
@@ -5616,7 +5475,7 @@ label choice9:
     play sound "Click.mp3" noloop 
 
     "{b}{i}Tu continues vers ton dortoir.{/i}{/b}"
-    play sound "Door.mp3" noloop
+    play sound "Click.mp3" noloop
 
     scene black
     hide screen hallway
@@ -5645,24 +5504,42 @@ label choice9:
     "{b}{i} [newname] se déconnecta tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Bon elle s'est déconnctée, je vais me cherecher à manger." 
+    P "Bon elle s'est déconnctée, je vais aller me chercher à manger." 
     play sound "Click.mp3" noloop 
 
     scene black
-    hide screen room
+    hide screen room 
 
     "{b}{i} Tu pars chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    $ points -= 700 
+    $ points -= 200 
     scene room 
     show screen room
 
     P "Enfin à manger... "
     play sound "Click.mp3" noloop 
 
-    "{b}{i} Tu manges tranquillement pendant une demi-heure.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    if info == 1.0:
+
+        "{b}{i} Tu manges tranquillement pendant une demi-heure en regardant les documents que tu as eu.{/i}{/b}"
+        play sound "Click.mp3" noloop 
+        
+        P "Bon voyons voir ces documents..."
+        play sound "Click.mp3" noloop 
+        
+        $ renpy.open_url("https://github.com/ShadowSLTM/Arisization-project/blob/main/Aris%20Documentation")
+
+        P "Intéressant." 
+        play sound "Click.mp3" noloop 
+
+        P "Tu continues de regarder pendant un petit moment."
+        play sound "Click.mp3" noloop 
+
+    else: 
+
+        "{b}{i} Tu manges tranquillement pendant une demi-heure.{/i}{/b}"
+        play sound "Click.mp3" noloop
 
     P "Enfin fini je vais pouvoir aller dormir pour demain."
     play sound "Click.mp3" noloop 
@@ -5721,7 +5598,7 @@ label choice9:
     "{b}{i} [Na] changea de tonalité.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    Na "[prénom], je détecte une nouvelle mise à jour pas obligatoire, veux-tu la faire maitenant ou plus tard ?"
+    Na "[prénom], je détecte une nouvelle mise à jour pas obligatoire du processeur, veux-tu la faire maitenant ou plus tard ?"
     play sound "Menu.mp3" noloop 
 
     menu: 
@@ -5749,34 +5626,34 @@ label choice9:
             Na "Initialisation de la mise à jour en cours."
             play sound "Click.mp3" noloop
 
-            Na "10%"
+            Na "10\%"
             play sound "Click.mp3" noloop
 
-            Na "20%"
+            Na "20\%"
             play sound "Click.mp3" noloop
 
-            Na "30%"
+            Na "30\%"
             play sound "Click.mp3" noloop
 
-            Na "40%"
+            Na "40\%"
             play sound "Click.mp3" noloop
 
-            Na "50%"
+            Na "50\%"
             play sound "Click.mp3" noloop
 
-            Na "60%"
+            Na "60\%"
             play sound "Click.mp3" noloop
 
-            Na "70%"
+            Na "70\%"
             play sound "Click.mp3" noloop
 
-            Na "80%" 
+            Na "80\%" 
             play sound "Click.mp3" noloop
 
-            Na "90%"
+            Na "90\%"
             play sound "Click.mp3" noloop
 
-            Na "100%"
+            Na "100\%"
             play sound "Click.mp3" noloop
 
             Na "Vérication...."
@@ -5806,11 +5683,23 @@ label afterupdate:
     Na "Ok."
     play sound "Click.mp3" noloop 
 
-    scene staircase 
+    scene black 
+    hide screen room 
+
+    "{b}{i} Vous quittez le dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway
+    show screen hallway 
+
+    "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene staircase
     hide screen hallway 
 
-    "{b}{i} Vous allez dams le couloir.{/i}{/b}"
-    play sound "Door.mp3" noloop
+    "{b}{i} Vous continuez vers le hall.{/i}{/b}"
+    play sound "Click.mp3" noloop
 
     scene hall 
     show screen hall 
@@ -5837,7 +5726,7 @@ label afterupdate:
     scene office
     show screen office 
 
-    P "Bonjour c'est moi [nom]."
+    P "Bonjour c'est moi [prénom]."
     play sound "Click.mp3" noloop
 
     E "Oh que puis-je faire pour toi ?"
@@ -5876,7 +5765,7 @@ label afterupdate:
     P "Bon voyons voir où se trouve le gymnase."
     play sound "Click.mp3" noloop 
     
-    Na "il me semble qu'il se trouve l'ouest du campus."
+    Na "il me semble qu'il se trouve à l'ouest du campus."
     play sound "Click.mp3" noloop 
 
     P "Allons-y alors."
@@ -5924,11 +5813,18 @@ label afterupdate:
     P "Intéressant."
     play sound "Click.mp3" noloop 
 
-    Y "sinon je te retourne ta dérniere question toi tu fais quoi ici ?"
+    Y "sinon je te retourne la question toi tu fais quoi ici ?"
     play sound "Click.mp3" noloop 
 
-    P ""
-    play sound "Click.mp3" noloop 
+    if pronom == "il": 
+        
+        P "Je suis venu entraîner [newname], pourquoi tu me demandes ça ?"
+        play sound "Click.mp3" noloop 
+
+    elif pronom == "elle":
+
+        P "Je suis venue entraîner [newname], pourquoi tu me demandes ça ?"
+        play sound "Click.mp3" noloop 
 
 label conversation:
 
@@ -5940,12 +5836,11 @@ label conversation:
         P "Il y avait une mise à jour, mais je ne l'ai pas faite. Je me suis dit que je pouvais attendre..."
         play sound "Click.mp3" noloop
 
-        Y "Tu devrais la faire, la sécurité d'[newname] est en jeu."
-        play sound "Click.mp3" noloop
+        Y "C'est de l'obsolescence volontaire, l'une des dix régles de l'informatique à ne pas briser, tu devrais la faire, la sécurité d'[newname] est en jeu."
+        play sound "Click.mp3" noloop 
 
         P "Oui, promis, je la ferai."
-        play sound "Click.mp3" noloop
-        jump suite
+        play sound "Click.mp3" noloop 
 
     elif update == 2.0:
 
@@ -6025,7 +5920,7 @@ label suite:
     "{b}{i} Vous allaz chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    $ points -= 700 
+    $ points -= 200 
 
     P "C'est bon tu t'es servie [newname]"
     play sound "Click.mp3" noloop 
@@ -6111,6 +6006,12 @@ label suite:
     "{b}{i} Vous continuez de discuter jusqu'à la sonnerie.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
+    P "Bon on y vas [newname] ?" 
+    play sound "Click.mp3" noloop 
+
+    Na "Ok je te suis." 
+    play sound "Click.mp3" noloop 
+
     scene black 
     hide screen lunchroom 
 
@@ -6138,7 +6039,7 @@ label choice10:
             scene black
             hide screen hall
 
-            "{b}{i}Tu entras dans la bibliothéque.{/i}{/b}"
+            "{b}{i}Tu entres dans la bibliothéque.{/i}{/b}"
             play sound "Door.mp3" noloop  
             
             scene library 
@@ -6149,7 +6050,7 @@ label choice10:
             scene black 
             hide screen library 
 
-            "{b}{i}Tu quittas la piéce.{/i}{/b}" 
+            "{b}{i}Tu quittes la piéce.{/i}{/b}" 
             play sound "Door.mp3" noloop    
 
             scene hall
@@ -6169,13 +6070,13 @@ label suite1:
     hide screen hall 
 
     "{b}{i}Tu montes au premier étage avec [Na].{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene hallway
     show screen hallway
 
     "{b}{i}Tu continues vers la salle de classe.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen hallway
@@ -6249,7 +6150,7 @@ label suite1:
     H "Comment ça un traître ?"
     play sound "Click.mp3" noloop
 
-    P "Oui j'ai déja eu l'information mais il semblerait qu'un des lycéen en veut à [newname]."
+    P "Oui j'ai déja eu l'information mais il semblerait qu'un des lycéens en veut à [newname]."
     play sound "Click.mp3" noloop
 
     I "Pardon !? Soit doit sûrement être [J]...."
@@ -6296,15 +6197,15 @@ label suite1:
     "{b}{i} [M] fait signe au lycéen de rentrer. {/i}{/b}"
     play sound "Door.mp3" noloop
 
-    if key == "ARIS-GRFN-M4A1":
+    if ending == 0:
     
-        $ S = Character('Subaru Kryuger', color="#707070") 
-    
-    else : 
-  
         $ S = Character('Subaru Shinomiya', color="#ff8800")
 
-    play music "Soundtrack2.mp3" loop volume 1.0
+    else: 
+
+        $ S = Character('Seigo Nagumo', color="#ff8800")       
+
+    play music "Soundtrack2.mp3" loop volume 1.0 
  
     R "Bonjour à tous."
     play sound "Click.mp3" noloop
@@ -6324,7 +6225,7 @@ label suite1:
     M "Vas-y présentes-toi."
     play sound "Click.mp3" noloop
 
-    S "Je m'appelle [S] l'ultime étudiant et ancien élève de [origine], j'ai 19 ans ravi de vous rencontrer"
+    S "Je m'appelle [S], l'ultime étudiant et ancien élève de [origine], j'ai 19 ans ravi de vous rencontrer"
     play sound "Click.mp3" noloop
 
     P "[S] !? Je croyais que tu étais dans un autre lycée depuis la dernière fois qu'on s'est vu !"
@@ -6420,7 +6321,7 @@ label suite1:
     M "Le cours est terminé vous pouvez quitter la salle."
     play sound "Click.mp3" noloop 
 
-    Na "Bon [newname] on n'y va ?"
+    Na "Bon [newname] on y va ?"
     play sound "Click.mp3" noloop 
 
     Na "Oui je suis fatiguée."
@@ -6496,10 +6397,10 @@ label suite1:
     P "Et alors personnellement ça ne me concerne pas."
     play sound "Click.mp3" noloop 
 
-    S "Même quand je suis allé à Lexus après avoir finis mon cursus à [origine], cette histoire m'a suivie."
+    S "Même quand je suis allé à Lexus après avoir finis mon cursus à [origine], cette histoire m'a suivi."
     play sound "Click.mp3" noloop 
 
-    P "OK je vois maintement."
+    P "Ok je vois maintement."
     play sound "Click.mp3" noloop 
 
     S "Tu comprends maintenant pourquoi je dêteste."
@@ -6533,7 +6434,7 @@ label suite1:
     J1 "Oh désolée je ne voulais pas déranger." 
     play sound "Click.mp3" noloop  
 
-    Na "Ok pas de soucis mais tu devrais partir d'ici" 
+    Na "Ok pas de soucis mais tu devrais partir d'ici." 
     play sound "Footsteps.mp3" noloop  
 
     "{b}{i}[J1] s'éloigna aussi.{/i}{/b}"
@@ -6658,7 +6559,7 @@ label suite1:
     P "Oui dit-moi, je t'écoute"
     play sound "Click.mp3" noloop
 
-    Na  "tu sais [prénom] tu t’occupes tellement bien de moi que je pourrais te surnommer undertaker."
+    Na  "tu sais [prénom] tu t’occupes tellement bien de moi que je pourrais te surnommer Undertaker."
     play sound "Click.mp3" noloop 
 
     P "Undertaker !?"
@@ -6679,7 +6580,7 @@ label suite1:
     Na "Ok je te suis."
     play sound "Click.mp3" noloop 
 
-    Na "Bien alors allons-y."
+    P "Bien alors allons-y."
     play sound "Click.mp3" noloop
 
     scene black
@@ -6689,7 +6590,7 @@ label suite1:
     play sound "Door.mp3" noloop
 
     scene hallway
-    show screen hallway
+    show screen hallway 
 
     "{b}{i} Tu continues vers la salle de classe mais tu croises [S].{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -6704,7 +6605,7 @@ label suite1:
     play sound "Click.mp3" noloop
 
     S "ça va..."
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     "{b}{i} [S] ignore la discussion et part en classe.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -6716,8 +6617,8 @@ label suite1:
     play sound "Click.mp3" noloop
 
     "{b}{i}Vous continuez vers la salle de classe.{/i}{/b}"
-    play sound "Click.mp3" noloop 
-    
+    play sound "Footsteps.mp3" noloop
+
     scene black
     hide screen hallway
 
@@ -6849,6 +6750,7 @@ label suite1:
 
     M "Bien maintenant vous pouvez aller en pause."
     play sound "Click.mp3" noloop  
+    
     hide screen class_404
     scene black
 
@@ -6864,7 +6766,7 @@ label suite1:
     Na "Oui ça fais vraiment du bien."
     play sound "Click.mp3" noloop  
 
-    P "Bon je reviens je vais juste aux toilettes."
+    P "Bon je reviens je vais juste aux toilettes, j'ai le cigare au bout des lévres."
     play sound "Click.mp3" noloop
 
     Na "Ok."
@@ -6910,7 +6812,7 @@ label suite1:
     M "Bien reprenez les exercices et demandez-moi de l'aide si vous avez besoin d'aide."
     play sound "Click.mp3" noloop
 
-    S "On n'aura pas besoin d'aide Madame on est quand même l'élite"
+    S "On n'aura pas besoin d'aide madame on est quand même l'élite"
     play sound "Click.mp3" noloop
 
     I "[S], tu ferais pas un peu le surdoué par hasard ?"
@@ -6922,7 +6824,7 @@ label suite1:
     M "Evitez de bavarder."
     play sound "Click.mp3" noloop
 
-    S "Oui Madame."
+    S "Oui madame."
     play sound "Click.mp3" noloop
 
     "{b}{i}Le cours continua sans probléme.{/i}{/b}"
@@ -6934,7 +6836,7 @@ label suite1:
     P "Bon [newname] on va manger ?"
     play sound "Click.mp3" noloop
 
-    Na "Uoi pas de soucis"
+    Na "Oui pas de soucis"
     play sound "Click.mp3" noloop
 
     hide screen class_404
@@ -6965,7 +6867,7 @@ label suite1:
     hide screen hall 
 
     "{b}{i} Tu entres dasn le réfectoire.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Door.mp3" noloop
 
     scene lunchroom
     show screen lunchroom
@@ -6986,7 +6888,7 @@ label suite1:
     "{b}{i} Vous allaz chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    $ points -= 700 
+    $ points -= 200 
 
     P "C'est bon tu t'es servie [newname]"
     play sound "Click.mp3" noloop 
@@ -7033,7 +6935,7 @@ label suite1:
     P "Tu veux vraiment être avec nous !?"
     play sound "Click.mp3" noloop 
 
-    S "Oui Car je ne connais personne d'autres."
+    S "Oui car je ne connais personne d'autres."
     play sound "Menu.mp3" noloop 
 
     menu:    
@@ -7095,7 +6997,7 @@ label suite1:
 
             if pronom == "il":
 
-                P "Désolé mais je préfére rest avec [newname] et [I]"
+                P "Désolé mais je préfére rester avec [newname] et [I]"
                 play sound "Click.mp3" noloop
 
             elif pronom == "elle": 
@@ -7161,12 +7063,10 @@ label suite1:
     show screen hallway
 
     "{b}{i}Tu continue vers la salle de la classe.{/i}{/b}"
-    play sound "Click.mp3" noloop 
+    play sound "Transition.mp3" noloop 
 
     scene main
-    hide screen hallway
-
-    play music "Transition.mp3" noloop 
+    hide screen hallway 
 
     "{b}{i}Chapitre 1.01 : Arisization Project - Start The Debate{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -7179,7 +7079,7 @@ label suite1:
     scene classroom  
     show screen class_404  
 
-    M "Bonjour dans ce cours nous allons faire quelques choes de spécial."
+    M "Bonjour dans ce cours nous allons faire quelques chose de spécial."
     play sound "Click.mp3" noloop 
 
     I "Quoi exactement ?"
@@ -7212,7 +7112,7 @@ label suite1:
     P "Pas de soucis."
     play sound "Click.mp3" noloop 
 
-    "{b}{i}Vous mettez à déplacer les tables et les chaises.{/i}{/b}"
+    "{b}{i}Vous vous mettez à déplacer les tables et les chaises.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     P "Bien maintenant pour commencer j'aimerai que tous ceux qui sont pour ces innovations se mettent à droite et ceux qui sont contre se mettent à gauche."
@@ -7307,7 +7207,7 @@ label suite1:
     Hi "On veut savoir."
     play sound "Click.mp3" noloop 
 
-    Y "Je pense que la réponse est évident."
+    Y "Je pense que la réponse est évidente."
     play sound "Click.mp3" noloop 
 
     I "Vraiment !?"
@@ -7349,13 +7249,13 @@ label suite1:
     M "Bien les personnes dans chaque équipe ont été choisis."
     play sound "Click.mp3" noloop 
 
-    M "Dans ce débat [P] et [S]"
+    M "Dans ce débat sera entre [P] et [S]."
     play sound "Click.mp3" noloop 
 
     I "Les deux anciens élèves de [origine] qui s'affrontent, ça risque d'être intéressant."
     play sound "Click.mp3" noloop 
 
-    Y "Oui je confirme"
+    Y "Oui je confirme."
     play sound "Click.mp3" noloop 
 
 label debate:
@@ -7490,7 +7390,7 @@ label debate:
     S "Vas-y."
     play sound "Click.mp3" noloop 
 
-    P "On ne va perdre d'emplois, on va juste créer des besoins aillleur."
+    P "On ne va perdre d'emplois, on va juste créer des besoins ailleur."
     play sound "Click.mp3" noloop 
 
     S "Ou par exemple ?"
@@ -7506,7 +7406,7 @@ label debate:
     S "Pardon ?"
     play sound "Click.mp3" noloop 
 
-    P "Bah oui il faudra bien entrenir les robots humanoïdes."
+    P "Bah oui il faudra bien entretenir les robots humanoïdes."
     play sound "Click.mp3" noloop 
 
     S "Ok je vois mais les robots humanoïdes obeisseent à leur créateur."
@@ -7519,10 +7419,17 @@ label debate:
             P "Non ils ont aussi leur propre le propre conscience et façon d'agir."
             play sound "Click.mp3" noloop 
 
-    S "Tu es serieux !?"
-    play sound "Click.mp3" noloop 
+    if pronom == "il":
 
-    P "Oui"
+        S "Tu es sérieux !?"
+        play sound "Click.mp3" noloop 
+
+    elif pronom == "elle": 
+
+        S "Tu es sérieuse !?"
+        play sound "Click.mp3" noloop 
+
+    P "Oui."
     play sound "Click.mp3" noloop 
 
     S "Prouve-le alors"
@@ -7565,7 +7472,7 @@ label debate:
 
         "{b}{i} Pointer [newname]{/i}{/b}" : 
 
-            P "[newname] ici présente est la représentation de toutes les arguments que j'ai dit jusqu'à maintenant."
+            P "[newname] ici présente est la représentation parfaite de toutes les arguments que j'ai dit jusqu'à maintenant."
             play sound "Click.mp3" noloop 
 
     Na "Moi !?"
@@ -7605,7 +7512,7 @@ label debate:
         Na "Tu sais tu t'es vraiment bien débrouillée [prénom]."
         play sound "Click.mp3" noloop 
  
-    P "Merci beaucoup"
+    P "Merci beaucoup. "
     play sound "Click.mp3" noloop 
 
     Na "Mais de rien."
@@ -7661,7 +7568,7 @@ label debate:
     play sound "Click.mp3" noloop
 
     P "Bien bon je vais me poser un peu pour lire."
-    play sound "Click.mp3" noloop 
+    play sound "Phone.mp3" noloop 
 
     "{b}{i} tu te poses tranqauillement mais tu reçois soudainement un appel.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -7819,6 +7726,7 @@ label debate:
     menu: 
 
         "{b}{i} Ouvrir le message.{/i}{/b}":
+            play sound "Menu.mp3" noloop 
             
             P "Bon voyons voir ce que [Su] m'a envoyé."
             play sound "Click.mp3" noloop 
@@ -7832,6 +7740,8 @@ label debate:
             play sound "Click.mp3" noloop
 
             hide screen draw
+
+            $ message += 1 
 
             P "[newname] regardes le magnifique dessin que [Su] a fait pour toi."
             play sound "Click.mp3" noloop
@@ -7865,14 +7775,12 @@ label debate:
 
     hide screen room 
     scene black
-    play sound "Click.mp3" noloop 
 
     "{b}{i}Tu quittes le dortoir.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Door.mp3" noloop
 
     scene hallway 
     show screen hallway 
-    play sound "Door.mp3" noloop 
 
     "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -7910,7 +7818,7 @@ label debate:
     S "Pardon !?"
     play sound "Click.mp3" noloop 
 
-    P "Oui va coder et programmer en Assembleur et on verra si c'est facile."
+    P "Oui va coder et programmer en Runix et on verra si c'est facile."
     play sound "Click.mp3" noloop 
 
     "{b}{i}[S] s'éloigna....{/i}{/b}"
@@ -7971,12 +7879,12 @@ label debate:
     play sound "Click.mp3" noloop
 
     P "Attends... Je crois que..."
-    play sound "Stumble.mp3" fadeout 3.0
+    play sound "Stumble.mp3" noloop
 
     "{b}{i}Ton corps ne tient plus, et tu t'effondres à genoux. Des exclamations inquiètes remplissent la pièce.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    Na "[prénom] !! Hé, reste avec moi !"
+    Na "[prénom] !! Hé, reste avec moi !" 
     play sound "Click.mp3" noloop
 
     "{b}{i}Tu perçois vaguement la voix d'[newname] au loin avant que tout devienne noir.{/i}{/b}"
@@ -8066,8 +7974,35 @@ label debate:
     "{b}{i} Les filles quittent la chambre.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "Bon je fais quoi ?"
-    play sound "Menu.mp3" noloop 
+    if message == 0:
+    
+        menu: 
+
+            "{b}{i} Ouvrir le message de [Su].{/i}{/b}":
+                play sound "Menu.mp3" noloop 
+            
+                P "Bon voyons voir ce que [Su] m'a envoyé."
+                play sound "Click.mp3" noloop 
+
+                "{b}{i} Tu ouvres le message.{/i}{/b}"
+                play sound "Click.mp3" noloop
+
+                show screen draw
+
+                "{i} Salut [prénom], hier j'avais oublié de te dire mais j'avais fait un dessin d'[newname] tiens c'est cadeau.{/i}"
+                play sound "Click.mp3" noloop
+
+                hide screen draw
+
+                $ message += 1 
+
+                P "Bon je fais quoi maintenant ?"
+                play sound "Click.mp3" noloop 
+
+    else: 
+
+        P "Bon je fais quoi mainteant ?"
+        play sound "Menu.mp3" noloop 
 
     menu:    
 
@@ -8127,7 +8062,7 @@ label debate:
             P "ça fait du bien un peu repos.."
             play sound "Click.mp3" noloop 
 
-            "{b}{i} Dix minutes plus tard [newnmae] entre dans le dortoir. {/i}{/b}"
+            "{b}{i} Dix minutes plus tard [newname] entre dans le dortoir. {/i}{/b}"
             play sound "Click.mp3" noloop 
 
             Na "Coucou comment ça va [prénom] ?"
@@ -8200,25 +8135,26 @@ label debate:
     P "Coucou comment ça va aujourd'hui ?"
     play sound "Click.mp3" noloop
 
-    Na "Je vais mais je me suis inquiétée pour toi."
+    Na "Je vais bien mais je me suis inquiétée pour toi."
     play sound "Click.mp3" noloop 
 
-    P "Ah..."
+    P "Ah je vois, bon on va en cours."
+    play sound "Click.mp3" noloop 
+
+    Na "Oui je te suis."
     play sound "Click.mp3" noloop 
 
     hide screen room 
     scene black
-    play sound "Click.mp3" noloop 
 
     "{b}{i}Tu quittes le dortoir.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Door.mp3" noloop 
 
     scene hallway 
     show screen hallway 
-    play sound "Door.mp3" noloop 
 
     "{b}{i}Tu continues vers la salle de classe avec [newname].{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen hallway
@@ -8319,7 +8255,7 @@ label debate:
     M "N'oubliez l'exmaen de la semaine prochaine..."
     play sound "Click.mp3" noloop
 
-    P "Bon on retourne au dortoir [newname] ?"
+    P "Bon on va manger [newname]?"
     play sound "Click.mp3" noloop
 
     Na "Oui."
@@ -8358,10 +8294,10 @@ label debate:
     P "Ok alors."
     play sound "Click.mp3" noloop 
 
-    "{b}{i} Vous allez vers comptoir pour prendre à manger.{/i}{/b}"
+    "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    $ points -= 600 
+    $ points -= 200 
 
     P "C'est bon [newname] tu t'es servie ?"
     play sound "Click.mp3" noloop 
@@ -8422,22 +8358,29 @@ label debate:
         P "Elle tourne sur Aether OS."
         play sound "Click.mp3" noloop  
 
-        I "Cool alors..."
+        I "Cool alors."
         play sound "Click.mp3" noloop 
 
-        P "Merci beaucoup mais je compte faire un système d'exploitation personnalisé pour elle."
+        P "Merci beaucoup mais je compte faire un système d'exploitation personnalisé pour elle de toute façon."
         play sound "Click.mp3" noloop 
 
     else: 
 
-        P "Je ne sais pas sur quel système d'exploitation elle tourne pas."
+        P "Je ne sais pas sur quel système d'exploitation elle tourne."
         play sound "Click.mp3" noloop  
 
-        I "Ok."
+        I "C'est de l'ignorance numérique, l'une des dix régles de l'informatique à ne pas briser, tu devrais le savoir."
         play sound "Click.mp3" noloop 
 
-        P "Merci beaucoup mais je compte faire un système d'exploitation personnalisé pour elle."
-        play sound "Click.mp3" noloop 
+        if pronom == "il":
+
+            P "Désolé mais je compte faire un système d'exploitation personnalisé pour elle de toute façon."
+            play sound "Click.mp3" noloop 
+
+        elif pronom == "elle":
+        
+            P "Désolée mais je compte faire un système d'exploitation personnalisé pour elle de toute façon."
+            play sound "Click.mp3" noloop  
 
     I "Ah je vois." 
     play sound "Click.mp3" noloop 
@@ -8484,8 +8427,8 @@ label debate:
     "{b}{i}Tu entres en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene room
-    show screen room 
+    scene classroom  
+    show screen class_404 
 
     M "Bonjour nous allons faire un nouveau théme." 
     play sound "Click.mp3" noloop 
@@ -8529,7 +8472,7 @@ label debate:
     $ Code = renpy.input("Veuillez écrire la réponse.")
     $ Code = Code.strip() 
 
-    if Code = "print(\"Hello, World!\")":
+    if Code == "print(\"text\")":
 
         M "Bonne réponse."
         play sound "Click.mp3" noloop
@@ -8545,7 +8488,7 @@ label debate:
     M "Le cours est terminé vous pouvez quitter la salle."
     play sound "Click.mp3" noloop 
 
-    p "Bon on retourne au dortoir ?"
+    P "Bon on retourne au dortoir ?"
     play sound "Click.mp3" noloop
 
     Na "Oui."
@@ -8596,7 +8539,7 @@ label debate:
     "{b}{i} Tu pars chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    $ points -= 700 
+    $ points -= 200 
     scene room 
     show screen room
 
@@ -8683,12 +8626,11 @@ label debate:
     hide screen hall
 
     "{b}{i}Tu entres dans la salle de club.{/i}{/b}"
-    play sound "Click.mp3" noloop 
+    play music "Transition.mp3" noloop 
 
     hide screen hall
     scene main
 
-    play music "Transition.mp3" noloop 
 
     "{b}{i}Chapitre 1.02 : Arisization Project - New Operating System.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -8770,7 +8712,7 @@ label code:
     "{b}{i}Tu continues de travailler sur [newname] pendant trois heures.{/i}{/b}" 
     play sound "Click.mp3" noloop
 
-    P "Bon il m'aura fallu beaucoup du temps amis j'ai enfin fini"
+    P "Bon il m'aura fallu beaucoup du temps amis j'ai enfin fini, j'ai le fichier de système d'exploitation qui est [system].rx"
     play sound "Click.mp3" noloop
 
     menu:   
@@ -8820,10 +8762,10 @@ label code:
     P "Ok alors."
     play sound "Click.mp3" noloop 
 
-    "{b}{i} Vous allez vers comptoir pour prendre à manger.{/i}{/b}"
+    "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
-
-    $ points -= 600 
+    
+    $ points -= 200 
 
     P "C'est bon [newname] tu t'es servie ?"
     play sound "Click.mp3" noloop 
@@ -8840,7 +8782,7 @@ label code:
     H "Oh salut [prénom] et [newname], oui moi ça va bien et vous ?"
     play sound "Click.mp3" noloop 
 
-    Na "On va bien."
+    Na "On va bien." 
     play sound "Click.mp3" noloop 
 
     H "Cool alors et sinon quoi de nouveau ?"
@@ -8910,15 +8852,13 @@ label code:
     play sound "Click.mp3" noloop 
 
     scene black
-    show screen hall
+    hide screen hall 
 
     "{b}{i}Tu entres dans la salle de club.{/i}{/b}"
-    play sound "Click.mp3" noloop 
+    play sound "Door.mp3" noloop  
 
     scene clubroom 
     show screen clubroom 
-    hide screen hall 
-    play sound "Door.mp3" noloop  
 
     P "Enfin au club."
     play sound "Click.mp3" noloop 
@@ -8926,7 +8866,7 @@ label code:
     Na "Oui ça fait du bien et sinon tu comptes faire quoi maintenant ?"
     play sound "Click.mp3" noloop 
 
-    P "Je vais paramétrer ton nouveau système d'eyploitation."
+    P "Je vais paramétrer ton nouveau système d'exploitation."
     play sound "Click.mp3" noloop 
 
     Na "Génial."
@@ -8948,29 +8888,35 @@ label code:
         Na "Démarrage du transfert des données vers un autre ordinateur."
         play sound "Click.mp3" noloop
 
-        P "Mince elle est en train de se faire pirater....."
-        play sound "Click.mp3" noloop
+        P "Mince elle est en train de se faire pirater, je dois activer le Recovery Mode....."
+        play sound "Click.mp3" noloop 
 
-        menu:
+        menu: 
 
             "{b}{i}Accéder à l'interface bios d'[newname].{/i}{/b}":
                 play sound "Menu.mp3" noloop
 
-        $ reboot = renpy.input("Écris ceci : initiate_humanoid_robot.shutdown(security_override=false")
+        $ reboot = renpy.input("Écris ceci : initiate_humanoid_robot.shutdown(security_override=false)")
         $ reboot = reboot.strip()
 
-        if reboot == "initiate_humanoid_robot.shutdown(security_override=false":
+        if reboot == "initiate_humanoid_robot.shutdown(security_override=false)":
 
             Na "Fermeture du système d'exploitation [system]....."
             play sound "Click.mp3" noloop
 
-            P "Enfin..."
-            play sound "Click.mp3" noloop
+            P "Enfin mais c'est bizarre on dirait que la faille venais du processeur."
+            play sound "Click.mp3" noloop 
+
+            P "Attend il y a que [N] et [Y] à qui j'ai dit que j'avais pas mis à jour le processeur d'[newname]."
+            play sound "Click.mp3" noloop 
+
+            P "J'espére qu'il n'y a de Backdoor qui a été installé dans le systéme d'[newname]."
+            play sound "Click.mp3" noloop 
 
             P "Bon je vais la redémarrer."
-            play sound "Click.mp3" noloop
+            play sound "Click.mp3" noloop 
 
-            menu:
+            menu: 
 
                 "{b}{i}Redémarrer [newname].{/i}{/b}":
                     play sound "Menu.mp3" noloop
@@ -8987,20 +8933,20 @@ label code:
 
             scene black
             hide clubroom
-            hide screen clubroom
+            hide screen clubroom 
             hide screen points
             hide screen day
 
             if pronom == "il":
 
                 play music "gameover.mp3" noloop
-                "{b}{i}Fin numéro 8 : Complétement plaqué et étranglé par [newname] Alternative.{/i}{/b}"
+                "{b}{i}Fin numéro 8 : Complétement plaqué et étranglé par [Na].{/i}{/b}"
                 play sound "Menu.mp3" noloop
 
             elif pronom == "elle":
 
                 play music "gameover.mp3" noloop
-                "{b}{i}Fin numéro 8 : Complétement plaquée et étranglée par [newname] Alternative.{/i}{/b}"
+                "{b}{i}Fin numéro 8 : Complétement plaquée et étranglée par [Na].{/i}{/b}"
                 play sound "Menu.mp3" noloop
 
             menu:
@@ -9226,7 +9172,7 @@ label code:
     "{b}{i}[newname] se déconnecte.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Bon elle s'est déconnctée, je vais me cherecher à manger." 
+    P "Bon elle s'est déconnctée, je vais me chercher à manger." 
     play sound "Click.mp3" noloop 
 
     scene black
@@ -9235,7 +9181,7 @@ label code:
     "{b}{i} Tu pars chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    $ points -= 700 
+    $ points -= 200 
     scene room 
     show screen room
 
@@ -9249,13 +9195,11 @@ label code:
     play sound "Click.mp3" noloop 
 
     "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play music "Transition.mp3" noloop 
 
     scene main
     hide screen room 
     hide screen day
-
-    play music "Transition.mp3" noloop 
 
     "{b}{i}Chapitre 1.03 : Arisization Project - The start of the real problems{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -9324,8 +9268,8 @@ label code:
     play sound "Door.mp3" noloop 
 
     "{b}{i}Tu continues vers la salle de classe.{/i}{/b}"
-    play sound "Click.mp3" noloop
- 
+    play sound "Footsteps.mp3" noloop
+
     scene black
     hide screen hallway
 
@@ -9464,13 +9408,22 @@ label code:
     S "Désolé c'est juste que je suis occupé."
     play sound "Click.mp3" noloop 
 
-    P "Ok je comprends."
+    P "Ok je comprends mais là on ne peut plus vraiment confiance à qui que se soit dans cette classe."
+    play sound "Click.mp3" noloop 
+
+    Na "Vraiment [prénom] ?" 
+    play sound "Click.mp3" noloop 
+
+    P "Oui je t'assure [newname]."
+    play sound "Click.mp3" noloop 
+
+    Na "Ok alors."
     play sound "Click.mp3" noloop 
 
     M "Bon maintenant commençons le cours, sortez votre livre page 10."
     play sound "Click.mp3" noloop 
 
-    "{b}{i} Tout le monde sort leur livre{/i}{/b}"
+    "{b}{i} Tout le monde sort leur livre.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
     M "Le cours est terminé vous pouvez quitter la salle."
@@ -9509,10 +9462,10 @@ label code:
     scene lunchroom 
     show screen lunchroom 
 
-    "{b}{i} en entrant vous allez vers comptoir pour prendre à manger.{/i}{/b}"
+    "{b}{i} en entrant vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    $ points -= 600 
+    $ points -= 200 
 
     P "C'est bon [newname] tu t'es servie ?"
     play sound "Click.mp3" noloop 
@@ -9545,12 +9498,12 @@ label code:
     play sound "Click.mp3" noloop 
 
     Na "J'en ai aucune idée malheureusement."
-    play sound "Click.mp3" noloop 
+    play sound "Click.mp3" noloop  
 
     P "Bien."
     play sound "Click.mp3" noloop 
 
-    "{b}{i} vous allez chercher un place puis tu vois [S] seul.{/i}{/b}"
+    "{b}{i} vous allez chercher un place puis vous voyez [S] seul.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     menu:    
@@ -9655,13 +9608,13 @@ label code:
     hide screen hall
 
     "{b}{i} Vous montez au premier étage.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene hallway 
     show screen hallway
 
     "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen hallway
@@ -9672,7 +9625,7 @@ label code:
     scene classroom  
     show screen class_404 
 
-    p "Rebonjour."
+    P "Rebonjour."
     play sound "Click.mp3" noloop 
 
     Na "Rebonjour."
@@ -9871,7 +9824,7 @@ label code:
         Na "Oui c'est vrai maintenant que tu le dis."
         play sound "Click.mp3" noloop
 
-        P "En plus on ne sais rien de son domaine ultime.   "
+        P "En plus on ne sais rien de son domaine ultime."
         play sound "Click.mp3" noloop
 
         Na "Tu as raison."
@@ -9901,7 +9854,7 @@ label code:
     hide screen room
 
     "{b}{i}Tu quittes ton dortoir.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Door.mp3" noloop
 
     scene hallway
     show screen hallway
@@ -9927,29 +9880,2967 @@ label code:
     scene black 
     hide screen hall 
 
-    "{b}{i}Tu entres dans le bureau des élèves avec [Na].{/i}{/b}"
+    "{b}{i}Tu entres dans le bureau des élèves.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     scene office 
     show screen office 
     play sound "Door.mp3" noloop 
 
-    P "Bonjour c'est moi [prénom]."
+    P "Bonjour, c'est moi [prénom]."
     play sound "Click.mp3" noloop
 
     E "Que puis-je faire pour toi ?"
     play sound "Click.mp3" noloop
 
-    P "C'est concernant cette histoire de traître car j'ai trouver quelque chose."
+    P "C'est concernant cette histoire de traître, car j'ai trouvé quelque chose."
     play sound "Click.mp3" noloop
 
-    E "Oui dis-moi qu'est qu'il y a ?"
+    E "Oui, dis-moi, qu'est-ce qu'il y a ?"
     play sound "Click.mp3" noloop
 
-    P "J'ai trouvé une note qui est signée l'ultime complotiste mais aucun élèves a ce titre ici."
+    P "J'ai trouvé une note signée 'L'Ultime Complotiste', mais aucun élève n'a ce titre ici."
     play sound "Click.mp3" noloop
 
-    P ""
+    E "Intéressant... Je vois."
+    play sound "Click.mp3" noloop
+
+    P "Mais je pense que ça a un lien avec le traître et les attaques."
+    play sound "Click.mp3" noloop
+
+    E "Tu le penses vraiment ?"
+    play sound "Click.mp3" noloop
+
+    P "Oui, je le pense."
+    play sound "Click.mp3" noloop
+
+    E "Ok."
+    play sound "Click.mp3" noloop
+
+    P "Emily, je vous le dis aujourd’hui, ça reste entre nous. Indépendamment de toute considération idéologique, si quelqu’un prévoit de détruire [newname], je le dénoncerai."
+    play sound "Click.mp3" noloop 
+
+    E "Tu veux vraiment faire ça ?"
+    play sound "Click.mp3" noloop
+
+    P "Oui, car il le faut pour la sécurité de [newname]."
+    play sound "Click.mp3" noloop
+
+    E "Ok, je ne juge pas."
+    play sound "Click.mp3" noloop
+
+    P "Bon, je vais vous laisser. C'est tout ce que j'avais à dire."
+    play sound "Click.mp3" noloop
+
+    E "Pas de soucis je note."
+    play sound "Click.mp3" noloop
+
+    P "Merci beaucoup."
+    play sound "Click.mp3" noloop
+
+    E "De rien [prénom]."
+    play sound "Click.mp3" noloop
+
+    scene black 
+    hide screen office
+
+    "{b}{i} Puis tu quittas le bureau des élèves.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall
+    show screen hall 
+
+    "{b}{i}Tu continues vers le hall.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    scene staircase
+    hide screen hallway
+
+    "{b}{i}Tu continues vers le premier étage.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i}Tu continues ton chemin.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    P "Bon est-ce que je vais voir [I] ou je retourne au dortoir ?."
+    play sound "Click.mp3" noloop
+
+    menu:    
+
+        "{b}{i} Aller au dortoir.{/i}{/b}" :
+            play sound "Menu.mp3" noloop 
+
+            P "Je vais aller au dortoir et la laisser tranquille."
+            play sound "Click.mp3" noloop 
+
+            scene black
+            hide screen hallway 
+
+            "{b}{i}Tu entres dans ton dortoir.{/i}{/b}"
+            play sound "Door.mp3" noloop  
+
+            scene room
+            show screen room 
+
+            P "Enfin de retour...."
+            play sound "Click.mp3" noloop  
+
+        "{b}{i} Aller voir [I]. {/i}{/b}" :
+            play sound "Menu.mp3" noloop 
+
+            P "Je vais aller la voir pour voir si elle va bien."
+            play sound "Footsteps.mp3" noloop 
+
+            "{b}{i}Tu te diriges vers le dortoir d'[I] avant d'y parvenir.{/i}{/b}"
+            play sound "Click.mp3" noloop  
+
+            P "Bon....."
+            play sound "Knock.mp3" noloop 
+
+            "{b}{i}Tu frappes à la porte d'[I] et patientes puis elle t'ouvre la porte.{/i}{/b}"
+            play sound "Door.mp3" noloop  
+
+            I "Oh c'est toi [prénom], vas-y entres." 
+            play sound "Click.mp3" noloop  
+
+            P "Merci."
+            play sound "Click.mp3" noloop  
+
+            scene black
+            hide screen hallway 
+
+            "{b}{i}Tu entres dans son dortoir.{/i}{/b}"
+            play sound "Door.mp3" noloop  
+
+            scene room
+            show screen Irisroom 
+
+            I "Donc voici ma chambre."
+            play sound "Click.mp3" noloop  
+
+            P "Elle est géniale."
+            play sound "Click.mp3" noloop  
+
+            I "Merci beaucoup."
+            play sound "Click.mp3" noloop  
+
+            P "De rien."
+            play sound "Click.mp3" noloop  
+
+            if pronom == "il":
+
+                I "Sinon pourquoi es-tu venu me voir ?"
+                play sound "Click.mp3" noloop  
+
+                P "Je me suis inquiété pour toi car j'ai remarqué que tu étais distante, est-ce que tu vas vraiment bien ?"
+                play sound "Click.mp3" noloop  
+
+            elif pronom == "elle":
+        
+                I "Sinon pourquoi es-tu venue me voir ?"
+                play sound "Click.mp3" noloop  
+
+                P "Je me suis inquiétée pour toi car j'ai remarqué que tu étais distante, est-ce que tu vas vraiment bien ?"
+                play sound "Click.mp3" noloop  
+
+            I "à vrai dire pas vraiment je te l'admet...."
+            play sound "Click.mp3" noloop  
+
+            P "Pourquoi ?"
+            play sound "Click.mp3" noloop  
+
+            I "Avec l'attaque d'hier j'ai perdu une partie de mon travail de mon jeu vidéo."
+            play sound "Click.mp3" noloop  
+
+            P "Ah mince, tu as perdu une grande partie de ton travail ?"
+            play sound "Click.mp3" 
+
+            I "Une partie importante je dirais mais juste elle est ou [newname] ?"
+            play sound "Click.mp3" noloop  
+
+            P "Ne t'inquétes pas elle est dans mon dortoir."
+            play sound "Click.mp3" noloop  
+
+            I "Je sais mais avec ce qui se passe en ce moment."
+            play sound "Click.mp3" noloop  
+
+            P "Oui même moi je m'inquiéte pour elle..."
+            play sound "Click.mp3" noloop  
+
+            I "J'imagine bien."
+            play sound "Click.mp3" noloop  
+
+            P "Je sens que les emmerdes vont commencer."
+            play sound "Click.mp3" noloop  
+
+            I "Je trouve que les emmerdes ont déjà commencé."
+            play sound "Click.mp3" noloop  
+
+            P "Oui avec tout ce qui passe."
+            play sound "Click.mp3" noloop  
+
+            I "bon je vais me reposer."
+            play sound "Click.mp3" noloop  
+
+            P "Pas de soucis je vais te laisser."
+            play sound "Click.mp3" noloop  
+
+            I "Ok alors à demain."
+            play sound "Click.mp3" noloop  
+
+            P "Ok à demain."
+            play sound "Click.mp3" noloop  
+
+            scene black
+            hide screen Irisroom 
+
+            "{b}{i}Tu te diriges dans le couloir.{/i}{/b}"
+            play sound "Door.mp3" noloop  
+
+            scene hallway
+            hide screen hallway 
+
+            P "Bon je vais aller au dortoir."
+            play sound "Click.mp3" noloop 
+
+            "{b}{i}Tu te diriges dans le couloir.{/i}{/b}"
+            play sound "Click.mp3" noloop  
+
+            scene black
+            hide screen hallway 
+
+            "{b}{i}Tu entres dans ton dortoir.{/i}{/b}"
+            play sound "Door.mp3" noloop  
+
+            scene room
+            show screen room 
+
+            P "Enfin de retour...."
+            play sound "Click.mp3" noloop  
+
+    "{b}{i} Tu vérifies si [newname] est toujours là avant d'aller chercher à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Bon je vais chercher à manger, j'avais complétement oublié."
+    play sound "Click.mp3" noloop  
+
+    scene black 
+    hide screen room
+
+    "{b}{i} Tu pars chercher à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    $ points -= 200 
+    scene room 
+    show screen room 
+
+    P "Enfin à manger... "
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Tu manges tranquillement pendant une demi-heure.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Enfin fini je vais pouvoir aller dormir pour demain."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene black
+    hide screen room
+    hide screen day
+
+    "{b}{i} Le lendemain matin.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene room 
+    show screen room
+    show screen day
+    $ day += 1 
+
+    play sound "Alarm.mp3" noloop 
+    P "Oh déjà...."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te changes et puis tu aperçois [newname] déconnectée contre le mur.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Elle est encore déconnectée."
+    play sound "Click.mp3" noloop 
+    
+    P "Je vais la démarrer."
+    play sound "Menu.mp3" noloop 
+
+    menu:   
+
+        "{b}{i} Démarrer [newname].{/i}{/b}" :
+            play sound "Menu.mp3" noloop 
+
+    Na "Démarrage en cours......"
+    play sound "Click.mp3" noloop 
+
+    Na "Bonjour [prénom]."
+    play sound "Click.mp3" noloop 
+
+    P "Coucou comment ça va aujourd'hui ?"
+    play sound "Click.mp3" noloop
+
+    Na "Je vais bien et toi ?."
+    play sound "Click.mp3" noloop 
+
+    P "Je vais bien mais j'ai un mauvais présentiment..."
+    play sound "Click.mp3" noloop 
+
+    Na "Pourquoi cela ?"
+    play sound "Click.mp3" noloop 
+
+    P "Avec tout ce qui passe au lycée."
+    play sound "Click.mp3" noloop 
+
+    Na "Je vois bien."
+    play sound "Click.mp3" noloop 
+
+    P "Donc aujourd'hui j'ai choisi de mettre un mot de passe sécurisé sur ton systéme sinon je risque de briser l'une des dix régles de l'informatique."
+    play sound "Click.mp3" noloop 
+
+    Na "Cool alors merci beaucoup." 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Tu ouvres les paramêtres pour ajouter un mot de passe sur [newname].{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+label choisir_mot_de_passe:
+
+    $ password = renpy.input("Veuillez choisir un mot de passe pour [newname].")
+    $ password = password.strip()
+
+    if password:
+
+        $ stored_password = password
+
+        "Mot de passe enregistré avec succès." 
+
+    P "C'est bon, je lui ai mis un mot de passe, je vais la redémarrer pour voir."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Tu relances [newname].{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+label password:  
+
+    $ entered_password = renpy.input("Veuillez remettre votre mot de passe pour [newname].")
+    $ entered_password = entered_password.strip()
+
+    if entered_password == stored_password:
+
+        "Mot de passe correct. Accès autorisé." 
+        play sound "Menu.mp3" noloop
+
+    else:
+
+        "Mot de passe incorrect. Accès refusé." 
+        play sound "Menu.mp3" noloop
+        jump password  
+
+    Na "Démarrage en cours......"
+    play sound "Click.mp3" noloop 
+
+    Na "Bonjour [prénom]."
+    play sound "Click.mp3" noloop 
+
+    P "Bonjour [newname], est-ce que ça va ?"
+    play sound "Click.mp3" noloop  
+
+    Na "Oui absolument."
+    play sound "Click.mp3" noloop 
+
+    P "Bon il faut qu'on aille en cours."
+    play sound "Click.mp3" noloop 
+
+    Na "Ok je te suis."
+    play sound "Click.mp3" noloop 
+
+    hide screen room 
+    scene black
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Vous quittez le dortoir.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+    play sound "Door.mp3" noloop  
+
+    P "Dépéches-toi sinon on va être en retard."
+    play sound "Click.mp3" noloop 
+
+    Na "Ok."
+    play sound "Footsteps.mp3" noloop 
+
+    "{b}{i}Vous continuez vers la salle de classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop 
+    
+    scene classroom  
+    show screen class_404     
+
+    P "Boujour."
+    play sound "Click.mp3" noloop 
+
+    N "Salut [prénom] comment ça va ?"
+    play sound "Click.mp3" noloop 
+
+    P "Je vais bien et toi ?"
+    play sound "Click.mp3" noloop 
+
+    N "je vais bien et sinon comment elle va [newname] ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Je vais bien."
+    play sound "Click.mp3" noloop 
+
+    N "Cool alors que tu aille bien."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Puis tu aperçois [I].{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Oh salut [I], comment ça va ?."
+    play sound "Click.mp3" noloop 
+
+    I "Je vais bien et toi et [newname] ?" 
+    play sound "Click.mp3" noloop
+
+    P "Je vais bien."
+    play sound "Door.mp3" noloop
+
+    "{b}{i}Puis soudainement la [T] entre en classe.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    M "Bonjour."
+    play sound "Click.mp3" noloop
+
+    I "Bonjour Madame."
+    play sound "Click.mp3" noloop
+
+    P "Bonjour."
+    play sound "Click.mp3" noloop
+
+    Na "Bonjour.~"
+    play sound "Click.mp3" noloop
+
+    N "Bonjour."
+    play sound "Click.mp3" noloop
+
+    M "Bien, sortez votre livre de mathématique."
+    play sound "Click.mp3" noloop
+
+    P "Ok."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Le cours se passe tranquillement pendant une demi-heure.{/i}{/b}"
+    play sound "Knock.mp3" noloop 
+
+    play music "Soundtrack2.mp3" loop
+
+    "{b}{i}Soudainement quelqu'un frappe à la porte.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    M "Oui entrez je vous en prie."
+    play sound "Door.mp3" noloop
+
+    "{b}{i}Puis deux personnes entrent dans la salle de classe.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    R "Bonjour."
+    play sound "Click.mp3" noloop
+
+    M "Bonjour puis-je savoir qui étes-vous ?"
+    play sound "Click.mp3" noloop
+
+    Oh "Je suis l'[Ot] de la direction générale contre les cyberattaques et voici ma collégue."
+    play sound "Click.mp3" noloop
+
+    O "Bonjour, je suis [O], sous-officière de la direction générale contre les cyberattauques."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Soudainement [newname] a peur et se cache dérrière toi.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "N'aie pas peur [newname], ça va aller."
+    play sound "Click.mp3" noloop
+
+    Na "Ok [prénom]."
+    play sound "Click.mp3" noloop
+
+    M "Sinon pourquoi étes-vous ici ?"
+    play sound "Click.mp3" noloop
+
+    Oh "Noua sommes ici car [E] nous a informé qu'il avait des attaques informatique ici."
+    play sound "Click.mp3" noloop
+
+    M "Oui en effet, [E] nous a informé des méfaits qui se passent au lycée."
+    play sound "Click.mp3" noloop 
+
+    Oh "Je vois et il y a eu quoi comme attaques ?"
+    play sound "Click.mp3" noloop
+     
+    M "Il ya eu des attaques contre les systémes du lycée et [newname]."
+    play sound "Click.mp3" noloop
+
+    Oh "Qui est [newname] ?"
+    play sound "Click.mp3" noloop
+
+    "{b}{i}La [T] pointe [newname] à l'[Ot].{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    M "C'est celle au fond à coté de [prénom], [pronom] vous donnera plus de détails sur [newname]."
+    play sound "Click.mp3" noloop 
+
+    Oh "Je vois."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}L'[Ot] se met à regarder [newname] mais cette dérnière a peur.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "N'est pas peur."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Puis la [T] se met à regarder les élèves.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    M "Ok sur ce, le cours est annulé, veuillez écouter l'[Ot]."
+    play sound "Click.mp3" noloop
+
+    P "bien entendu."
+    play sound "Click.mp3" noloop 
+
+    I "Bien compris."
+    play sound "Click.mp3" noloop 
+
+    Oh "Ok."
+    play sound "Click.mp3" noloop 
+
+    M "Bien alors."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Puis la [T] quitte la salle pendant que l'[Ot] se met à parler.{/i}{/b}"
+    play sound "Click.mp3" noloop    
+
+    Oh "Bien on va procéder une fouille général de vos dortoirs."
+    play sound "Click.mp3" noloop
+
+    K "Sérieusement, des fouilles." 
+    play sound "Click.mp3" noloop
+
+    Oh "Oui, il le faut vu la situation actuelle."
+    play sound "Click.mp3" noloop 
+
+    P "Je confirme car la sécurité d'[newname] est en jeu."
+    play sound "Click.mp3" noloop 
+
+    Oh "Donc veuilliez retournez dans votre dortoir pour procéder au fouille."
+    play sound "Click.mp3" noloop 
+
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i}Puis vous continuez vers le dortoir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop 
+
+    scene black 
+    hide screen hallway 
+
+    "{b}{i} Tu entres au dortoir avec [newname].{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene room
+    show screen room 
+
+    P "Enfin de retour bon vivement la fin des fouilles."
+    play sound "Click.mp3" noloop  
+
+    Na "Oui mais j'ai un mauvais présentimment."
+    play sound "Click.mp3" noloop 
+
+    P "Comment ça ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Maintenant c'est le fait qu'on la direction générale contre les cyberattauques ici qui m'inquiète."
+    play sound "Click.mp3" noloop 
+
+    P "Je le sais que ça t'inquiète."
+    play sound "Click.mp3" noloop  
+
+    "{b}{i}La discussion continue pendant 45 minutes avant que ça frappe à ta porte.{/i}{/b}"
+    play sound "Knock.mp3" noloop 
+
+    P "Oui entrez je vous en prie."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Puis l'[Ot] et [O] entre dans ton dortoir{/i}{/b}"
+    play sound "Doors.mp3" noloop
+
+    Oh "Bonjour."
+    play sound "Click.mp3" noloop 
+
+    P "Bonjour."
+    play sound "Click.mp3" noloop 
+
+    Na "Bonjour."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} L'[Ot] se met doucement à regarder [newname].{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    Oh "Bien avant qu'on commence la fouille, j'aimerais te poser une question."
+    play sound "Click.mp3" noloop 
+
+    P "Oui dites-moi, je vous écoute."
+    play sound "Click.mp3" noloop 
+
+    Oh "C'est bien [newname] avec toi ?"
+    play sound "Click.mp3" noloop 
+
+    P "Oui c'est ça."
+    play sound "Click.mp3" noloop 
+
+    Oh "Donc c'est elle qui subit des cyberattaques depuis un moment ?" 
+    play sound "Click.mp3" noloop 
+
+    P "Oui absolument."
+    play sound "Click.mp3" noloop 
+
+    Oh "Je vois bien."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} L'[Ot] discute vite fait avec [O] puis ils se mettent à te regarder.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    Oh "Bien je vais regarder ton bureau pendant que ma collégue va regarder le reste de ton dortoir."
+    play sound "Click.mp3" noloop 
+
+    P "Pas de soucis, je vous laisse faire."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Ils se mettent à fouiller pendant quelques minutes.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    Oh "Tu trouves quelques choses [O] ?" 
+    play sound "Click.mp3" noloop 
+
+    O "Non malheureusement, J'ai fouillé [newname] et sous le lit."
+    play sound "Click.mp3" noloop 
+
+    Oh "Bien je vois, juste [prénom] qu'est-ce que c'est que ces documents sur ton bureau ?"
+    play sound "Click.mp3" noloop 
+
+    if info == 1.0:
+
+        P "Ce sont des documents techniques pour [newname]."
+        play sound "Click.mp3" noloop
+
+    else: 
+
+        P "Ce sont mes documents techniques pour [newname]."
+        play sound "Click.mp3" noloop
+
+    Oh "Merci beaucoup de m'avoir dit."
+    play sound "Click.mp3" noloop 
+
+    P "De rien."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}L'[Ot] continue de regarder tes documents mais il tombe sur un document suspect.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    Oh "[O] viens voir sur quoi je suis tombé." 
+    play sound "Click.mp3" noloop 
+
+    O "Tu es tombé sur quoi ?" 
+    play sound "Click.mp3" noloop 
+
+    Oh "Bah viens voir." 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}[O] se met à regarder le document.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    O "Oh putain...." 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Ils se mettent à te regarder.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    Oh "[P] veuillez lever vos mains et nous suivre." 
+    play sound "Click.mp3" noloop 
+
+    Na "Pardon !?" 
+    play sound "Click.mp3" noloop 
+
+    P "Ne t'inquiète pas [newname], ça va aller tu peux rester ici." 
+    play sound "Click.mp3" noloop 
+
+    Na "Mais pourquoi ?" 
+    play sound "Click.mp3" noloop 
+
+    Oh "Pas besoin, elle peut venir aussi." 
+    play sound "Click.mp3" noloop 
+
+    scene black 
+    hide screen room
+
+    "{b}{i}Tu quittes ta chambre avec la DGCA.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene hallway
+    show screen hallway
+
+    "{b}{i}Tu continues dans le couloir.{/i}{/b}"
     play sound "Click.mp3" noloop
  
+    scene staircase 
+    hide screen hallway 
+
+    "{b}{i}Tu continues vers le hall.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop 
+
+    scene hall 
+    show screen hall
+
+    "{b}{i}Tu continues vers le bureau des élèves.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop 
+
+    scene black 
+    hide screen hall 
+
+    "{b}{i}Tu entres dans le bureau des élèves.{/i}{/b}"
+    play sound "Door.mp3" noloop 
+
+    scene office 
+    show screen office 
+
+    "{b}{i}En entrant vous voyez [M] et [E] en train discuter avant qu'elles se tournent vers vous.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Tiens tiens tiens qui vois-je là ?" 
+    play sound "Click.mp3" noloop 
+
+    E "[P] !? Que fais-tu ici avec la DGCA ?" 
+    play sound "Click.mp3" noloop 
+
+    P "Je ne sais pas, ils m'ont juste dit de lever les mains et de les suivre..." 
+    play sound "Click.mp3" noloop 
+
+    E "Je vois." 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}L'[Ot] se met à parler.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    Oh "Si nous sommes ici c'est parce que nous un document vraiment suspect dans les affaires de [prénom]." 
+    play sound "Click.mp3" noloop 
+
+    M "Comment ça !?" 
+    play sound "Click.mp3" noloop 
+
+    Oh "Oui absolument, regardez." 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}L'[Ot] leur donne le document.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Bien voyons voir ceci." 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}[M] commence à lire le document.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Qu'est-ce que c'est cette histoire de destruction de système !?" 
+    play sound "Click.mp3" noloop 
+
+    P "Pardon comment ça !?" 
+    play sound "Click.mp3" noloop 
+
+    Na "Pardon mais [prénom] n'oserait jamais faire ça." 
+    play sound "Click.mp3" noloop
+
+    M "Regardes le document et tu verras." 
+    play sound "Click.mp3" noloop 
+
+    Na "Ok alors." 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}[newname] lit le document.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    Na "Bon je vais juste donner le document à [E] car moi j'ai compris ce qui ne va pas avec ce document." 
+    play sound "Click.mp3" noloop 
+
+    M  "Vraiment ?" 
+    play sound "Click.mp3" noloop 
+
+    P "Tu es sûre ?" 
+    play sound "Click.mp3" noloop 
+
+    Na "Oui absolument." 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}[newname] donne le document à [E].{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    Na "[E] va tout de suite comprendre." 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}[E] lit tranquilement le document et réalise.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    E "Hey attendez, ce document est signé par {b}{i}l'ultime complotiste.{/i}{/b}" 
+    play sound "Click.mp3" noloop
+
+    P "Encore l'ultime complotiste !?" 
+    play sound "Click.mp3" noloop 
+
+    E "Oui." 
+    play sound "Click.mp3" noloop 
+
+    Oh "Attendez, [prénom] n'est pas l'ultime complotiste ?" 
+    play sound "Click.mp3" noloop 
+
+    M "Non, [pronom] est [domaine], donc veuillez le détachez." 
+    play sound "Click.mp3" noloop 
+
+    Oh "Je vois je m'en excuse alors." 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}L'[Ot] te détache tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Merci." 
+    play sound "Click.mp3" noloop 
+
+    Oh "De rien et désolé de t'avoir accusé sans avoir avoir les détails." 
+    play sound "Click.mp3" noloop 
+
+    P "Pas de soucis." 
+    play sound "Click.mp3" noloop 
+
+    if pronom == "il": 
+
+        O "Mais si ce n'est pas lui, ça serait qui du coup car on a fouillé tous les lycéens."
+        play sound "Click.mp3" noloop 
+
+    elif pronom == "elle": 
+
+        O "Mais si ce n'est pas lui, ça serait qui du coup car on a fouillé tous les lycéens."
+        play sound "Click.mp3" noloop 
+
+    E "C'est ce qu'on essaye de savoir mais tout ce qu'on sais c'est qu'il est parmi les élèves." 
+    play sound "Click.mp3" noloop 
+
+    M "Attendez, vous avez dit que vous avez fouillé tous tout les lycéens et que vous n'avez rien trouvé ?" 
+    play sound "Click.mp3" noloop 
+
+    O "Oui exactement." 
+    play sound "Click.mp3" noloop 
+
+    M "C'est vraiment bizarre cette histoire..." 
+    play sound "Click.mp3" noloop 
+
+    E "Je confirme aussi." 
+    play sound "Click.mp3" noloop 
+
+    menu:    
+
+        "{b}{i} Faire une réflexion.{/i}{/b}" : 
+            play sound "Menu.mp3" noloop 
+
+    P "Moi je pense avoir ma petite idée sur qui est le coupable." 
+    play sound "Click.mp3" noloop 
+    
+    E "Et ça serait qui ?" 
+    play sound "Click.mp3" noloop 
+
+    if suspect == "Subaru": 
+
+        P "Je pense que c'est [suspect] le coupable." 
+        play sound "Click.mp3" noloop 
+
+        E "Et pourquoi tu pense que c'est lui ?" 
+        play sound "Click.mp3" noloop
+
+        P "Vous n'avez pas remarqué que les attaques se sont ampliphiées depuis qu'il est arrivé." 
+        play sound "Click.mp3" noloop
+
+        E "C'est vrai maintenant que tu le dis." 
+        play sound "Click.mp3" noloop
+
+        Na "mais ça n'a pas de sens car on a su cette histoire de traître et d'attaques avant que [S] arrive au lycée." 
+        play sound "Click.mp3" noloop
+
+        O "Donc là on a deux information qui se contredisent." 
+        play sound "Click.mp3" noloop
+
+        E "Oui on dirait." 
+        play sound "Click.mp3" noloop
+
+    else: 
+
+        P "Je pense que c'est [suspect] le coupable." 
+        play sound "Click.mp3" noloop 
+
+        E "Bon vue la situation n'importe qui peut être le coupable." 
+        play sound "Click.mp3" noloop 
+
+    Oh "Sinon [prénom], j'aimerais savoir si ça t'intéresses de participer à l'enquéte car car tu es la principale victime." 
+    play sound "Click.mp3" noloop 
+
+    P "Oui pourquoi pas." 
+    play sound "Click.mp3" noloop 
+
+    if pronom == "il" : 
+    
+        M "Tu es sûr de vouloir faire ça ?" 
+        play sound "Click.mp3" noloop 
+
+    elif pronom == "elle" :
+
+        M "Tu es sûre de vouloir faire ça ?" 
+        play sound "Click.mp3" noloop 
+
+    P "Oui on parle quand-même de la sécurité d'[newname]." 
+    play sound "Click.mp3" noloop 
+
+    M "Oui je sais mais tu en fais déjà trop entre les cours et amélioration d'[newname]." 
+    play sound "Click.mp3" noloop 
+
+    P "Je vois bien." 
+    play sound "Click.mp3" noloop 
+
+    M "Donc laisse faire la DGCA." 
+    play sound "Click.mp3" noloop 
+
+    P "Ok alors je les laisserai faire." 
+    play sound "Click.mp3" noloop 
+
+    Oh "Merci, juste avant qu'on parte j'ai une question." 
+    play sound "Click.mp3" noloop 
+
+    P "Oui dites-moi." 
+    play sound "Click.mp3" noloop 
+
+    Oh "à l'avenir, tu veux qu'[newname] devienne quoi ?" 
+    play sound "Click.mp3" noloop 
+
+    P "Je veux qu'elle continue d'apprendre et qu'elle fasse de grandes études." 
+    play sound "Click.mp3" noloop 
+
+    Oh "Je vois c'est intéressant." 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Il y a un blanc pendant quelques instants.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    Oh "Bon on va vous laiser, on a du travail qui nous attend pour l'enquête." 
+    play sound "Click.mp3" noloop 
+
+    E "Merci d'être venu." 
+    play sound "Click.mp3" noloop
+
+    Oh "De rien." 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Puis ils quittent la salle.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "J'espére que cette histoire va finir." 
+    play sound "Click.mp3" noloop 
+
+    E "Espérons-le." 
+    play sound "Click.mp3" noloop 
+
+    P "J'ai une question." 
+    play sound "Click.mp3" noloop 
+
+    E "Oui dis-moi." 
+    play sound "Click.mp3" noloop 
+
+    P "Il y aurait la possibilité d'installer une caméra devant mon dortoir ?" 
+    play sound "Click.mp3" noloop 
+
+    Oh "Je ne suis pas sûre mais je pense que c'est possible si tu demandes à [Ah] et [Rn]." 
+    play sound "Click.mp3" noloop
+
+    if pronom == "il":
+
+        M "J'espére que tu n'es pas sérieux [prénom] !"
+        play sound "Click.mp3" noloop 
+
+    elif pronom == "elle":
+        
+        M "J'espére que tu n'es pas sérieuse [prénom] !"
+        play sound "Click.mp3" noloop 
+
+    P "Je rappelle que la sécurité d'[newname] est en jeu." 
+    play sound "Click.mp3" noloop 
+
+    M "Ce n'est pas un peu dans l'extrême ?" 
+    play sound "Click.mp3" noloop 
+
+    P "Non je ne trouve pas."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}[M] se met à réfléchir avant de te répondre.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    M "Je t'autorise à avoir une seule caméra devant ton dortoir."
+    play sound "Click.mp3" noloop 
+
+    P "Merci beaucoup." 
+    play sound "Click.mp3" noloop 
+
+    M "Bien vous pouvez disposer maintenant et me fais regretter ma décision." 
+    play music "Transition.mp3" noloop 
+
+    scene main 
+
+    "{b}{i}Chapitre 1.04 : Arisization Project - Investigation and Despair arc{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    scene black
+
+    "{b}{i}Tu quittes le bureau des élèves avec [newname].{/i}{/b}"
+    play sound "Door.mp3" noloop 
+
+    scene hall 
+    show screen hall
+
+    P "Bon on va manger car il est 11h45."
+    play sound "Click.mp3" noloop 
+
+    Na "Ok alors."
+    play sound "Click.mp3" noloop 
+
+    scene black
+    hide screen hall 
+
+    "{b}{i} Vous entrez au réféctoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene lunchroom 
+    show screen lunchroom 
+
+    "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 200 
+
+    P "C'est bon [newname] tu t'es servie ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui c'est bon on peut aller s'asseoir."
+    play sound "Click.mp3" noloop 
+    
+    P "Ok alors."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}vous partez chercher une place avant d'en trouver une.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Enfin."
+    play sound "Click.mp3" noloop 
+
+    Na "Oui j'ai vraiment faim."
+    play sound "Click.mp3" noloop 
+
+    P "Oui moi aussi."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Pendant que vous mangez, tu commences à t'inquiéter.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "{i}Qui a essayé de me piéger ?{/i}"
+    play sound "Click.mp3" noloop 
+
+    Na "Est-ce que ça va ?"
+    play sound "Click.mp3" noloop 
+
+    P "Oui c'est juste que je m'inquiète."
+    play sound "Click.mp3" noloop 
+
+    Na "Pourquoi ça ?"
+    play sound "Click.mp3" noloop 
+
+    P "J'essaye de savoir qui a tenté de me piéger."
+    play sound "Click.mp3" noloop 
+
+    P "Je vois."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous continuez de manger et [J1] viens vers vous.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Oh salut [J1], tu veux quoi ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Salut [J1]."
+    play sound "Click.mp3" noloop 
+
+    J1 "j'ai besoin de discuter sincérement et sérieusement avec vous."
+    play sound "Click.mp3" noloop 
+
+    P "Ok, de quoi tu veux discuter ?"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}[J1] s'asseoit avec vous.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bien je te laisse nous dire ce que tu voulais nous dire."
+    play sound "Click.mp3" noloop 
+
+    J1 "Je n'ai eu pas l'occasion de le dire la dernière fois car tu discutais avec [S] mais je tiens sincérement à m'excuser pour les propos que j'ai eu en vers [newname]."
+    play sound "Click.mp3" noloop 
+
+    Na "Tu le penses vraiment !?" 
+    play sound "Click.mp3" noloop 
+
+    J1 "Oui absolument."
+    play sound "Click.mp3" noloop 
+
+    Na "Merci de nous le dire car je pensais que tu étais humanoïdophobe."
+    play sound "Click.mp3" noloop 
+
+    J1 "Non c'est juste que je ne connaissais pas assez."
+    play sound "Click.mp3" noloop 
+
+    Na "Je vois."
+    play sound "Click.mp3" noloop 
+
+    P "Attends [newname], tu as utilisé le mot humanoïdophobe ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui pourquoi tu me demandes ça ?"
+    play sound "Click.mp3" noloop 
+
+    P "Non c'est juste que ça me surprend que tu saches ce mot."
+    play sound "Click.mp3" noloop 
+
+    Na "Comme je l'ai déjà dit je suis ici pour apprendre."
+    play sound "Click.mp3" noloop 
+
+    P "Oui mais le temre humanoïdophobe est rarement utilisé de nos jours."
+    play sound "Click.mp3" noloop 
+
+    Na "Ok."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Vous continuez de discuter jusqu'à la sonnerie.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+
+    P "Bon on retourne en cours." 
+    play sound "Click.mp3" noloop 
+
+    Na "Ok, je te suis."
+    play sound "Click.mp3" noloop 
+
+    scene black
+    hide screen office
+    "{b}{i}Tu te diriges vers le hall.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall
+    show screen hall 
+
+    "{b}{i}Tu continues vers le premier étage.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene staircase
+    hide screen hall 
+
+    "{b}{i}Tu continues vers le couloir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hallway
+    show screen hallway 
+
+    "{b}{i}Tu continue vers la salle de la classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+    
+    scene classroom  
+    show screen class_404  
+
+    "{b}{i}En entrant [I] se met à te regarder.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    I "Tu fais quoi avec [J1] !?"
+    play sound "Click.mp3" noloop 
+
+    P "On discutait de quelques choses."
+    play sound "Click.mp3" noloop 
+
+    I "De quoi vous parliez ?"
+    play sound "Click.mp3" noloop 
+
+    P "Elle est juste venue s'excuser sincérement par rapport à ce qu'elle a dit sur [newname]."
+    play sound "Click.mp3" noloop 
+
+    I "Vraiment, je vois alors."
+    play sound "Door.mp3" noloop
+    
+    "{b}{i} Puis la [T] entra dans la salle.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    M "Bonjour chers lycéens."
+    play sound "Click.mp3" noloop
+
+    H "Bonjour Madame."
+    play sound "Click.mp3" noloop
+
+    P "Bonjour."
+    play sound "Click.mp3" noloop
+
+    Na "Bonjour~"
+    play sound "Click.mp3" noloop 
+
+    I "Bonjour."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} tous les lycéens s'asseoient à leur place.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    M "Bien nous allons faire le cours que nous avions pu faire ce matin."
+    play sound "Click.mp3" noloop
+
+    P "Ok."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Le cours continue sans problémes.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+
+    M "Bon le cours est terminé, vous pouvez quitter la salle."
+    play sound "Click.mp3" noloop
+
+    P "Bon [newname] on y vas ?"
+    play sound "Click.mp3" noloop
+
+    Na "Oui je suis fatiguée."
+    play sound "Click.mp3" noloop 
+
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Vous continuez vers le dortoir.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez dans ton dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene room
+    show screen room 
+
+    if pronom == "il":
+
+        Na "Enfin arrivés."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle":
+
+        Na "Enfin arrivées."
+        play sound "Click.mp3" noloop
+
+    P "Oui ça fait du bien."
+    play sound "Click.mp3" noloop
+
+    Na "Bon Je vais me déconnecter et me recharger."
+    play sound "Click.mp3" noloop 
+
+    P "Pas de soucis."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[newname] se déconnecte et recharge sa batterie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bon je vais chercher à manger, j'avais complétement oublié."
+    play sound "Click.mp3" noloop  
+
+    scene black 
+    hide screen room
+
+    "{b}{i} Tu pars chercher à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    $ points -= 200 
+    scene room 
+    show screen room 
+
+    P "Enfin à manger... "
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Tu manges tranquillement pendant une demi-heure.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Enfin fini je vais pouvoir aller dormir pour demain."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene black
+    hide screen room
+    hide screen day
+
+    "{b}{i} Le lendemain matin.{/i}{/b}"
+    play sound "Alarm.mp3" noloop 
+
+    scene room 
+    show screen room
+    show screen day
+    $ day += 1 
+
+    P "Oh déjà...."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te changes et puis tu aperçois [newname] déconnectée contre le mur.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Elle est encore déconnectée."
+    play sound "Click.mp3" noloop 
+    
+    P "Je vais la démarrer."
+    play sound "Menu.mp3" noloop 
+
+    menu:   
+
+        "{b}{i} Démarrer [newname].{/i}{/b}" :
+            play sound "Menu.mp3" noloop 
+
+label password1:  
+
+    $ entered_password = renpy.input("Veuillez entrer votre mot de passe pour [newname].")
+    $ entered_password = entered_password.strip()
+
+    if entered_password == stored_password:
+
+        "Mot de passe correct. Accès autorisé." 
+        play sound "Menu.mp3" noloop
+
+    else:
+
+        "Mot de passe incorrect. Accès refusé." 
+        play sound "Menu.mp3" noloop
+        jump password1  
+
+    Na "Démarrage en cours......"
+    play sound "Click.mp3" noloop 
+
+    Na "Bonjour [prénom]."
+    play sound "Click.mp3" noloop 
+
+    P "Coucou comment ça va aujourd'hui ?"
+    play sound "Click.mp3" noloop
+
+    Na "Je vais bien et toi ?."
+    play sound "Click.mp3" noloop  
+
+    P "Je vais bien, bon on va en cours."
+    play sound "Click.mp3" noloop 
+
+    scene black
+    hide screen room
+
+    "{b}{i} Tu quiites le dortoir avec [newname].{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway
+    show screen hallway 
+
+    "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+    
+    scene classroom  
+    show screen class_404  
+
+    M "Bonjour."
+    play sound "Click.mp3" noloop 
+
+    P "Bonjour."
+    play sound "Click.mp3" noloop 
+
+    Na "Bonjour."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}La [T] se met à te regarder car elle a remarqué un truc bizarre en toi.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Est-ce que ça va [prénom] ?"
+    play sound "Click.mp3" noloop 
+
+    if pronom == "il":
+
+        P "Je vais bien mais je suis inquiet pour [newname]."
+        play sound "Click.mp3" noloop 
+
+        M "Je vois mais essaye d'être concentré durant les cours."
+        play sound "Click.mp3" noloop 
+
+    elif pronom == "elle":
+
+        P "Je vais bien mais je suis inquiéte pour [newname]."
+        play sound "Click.mp3" noloop  
+
+        M "Je vois mais essaye d'être concentrée durant les cours."
+        play sound "Click.mp3" noloop 
+
+    P "Oui promis."
+    play sound "Click.mp3" noloop 
+
+    M "Bien alors, bon continuons le cours de math."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Le cours continue jusqu'à la pause.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Bien maintenant vous pouvez aller en pause."
+    play sound "Click.mp3" noloop  
+    
+    hide screen class_404
+    scene black
+
+    "{b}{i}Vous vous dirigez vers le couloir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+    
+    scene hallway 
+    show screen hallway 
+
+    P "Enfin une pause ça fais plasir."
+    play sound "Click.mp3" noloop  
+
+    Na "Oui ça fais vraiment du bien."
+    play sound "Click.mp3" noloop  
+
+    P "Bon je reviens je vais juste aux toilettes."
+    play sound "Click.mp3" noloop
+
+    Na "Ok."
+    play sound "Click.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i} Tu te diriges vers les toilettes.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene restroom
+    show screen WC 
+
+    P "Bon je vais faire ce que j'ai à faire."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Tu fais ta commission avant de sortir des toilettes mais tu commences à avoir une pensée.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "{i}Et si je quittais le lycée comme ça [newname] sera en sécurité.{/i}"
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Tu continues de réfléchir.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bon il faut que je retourne en cours."
+    play sound "Click.mp3" noloop
+
+    scene black 
+    hide screen WC
+
+    "{b}{i} Tu quittes les toilettes.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway
+    show screen hallway
+
+    "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black 
+    hide screen hallway  
+
+    "{b}{i} Tu arrives finalement en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene classroom  
+    show screen class_404 
+
+    M "Bien reprenez les exercices."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Le cours continue tranquillement.{/i}{/b}"
+    play sound "Bell.mp3" noloop
+
+    M "Le cours est terminé vous pouvez quitter la salle."
+    play sound "Click.mp3" noloop 
+
+    P "Bon on va manger [newname]?"
+    play sound "Click.mp3" noloop
+
+    Na "Oui."
+    play sound "Click.mp3" noloop
+
+    hide screen class_404 
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i}Tu continues vers les escaliers.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene staircase 
+    hide screen hallway
+
+    "{b}{i}Puis vers le hall.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hall
+    show screen hall 
+
+    "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene lunchroom 
+    show screen lunchroom 
+    
+    Na "Bon on va prendre à manger ?"
+    play sound "Click.mp3" noloop 
+
+    P "Ok alors."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 200 
+
+    P "C'est bon [newname] tu t'es servie ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui c'est bon on peut aller s'asseoir."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous vous asseyez dans le recfectoire.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    P "Enfin à manger."
+    play sound "Click.mp3" noloop    
+
+    Na "Oui ça fait du bien."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous mangez tranquillement mais [newname] remarque un truc en toi.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    Na "Est-ce que ça va ?"
+    play sound "Click.mp3" noloop 
+
+    menu: 
+
+        "{b}{i} Lui dire mes inquiétudes.{/i}{/b}":
+            play sound "Menu.mp3" noloop 
+
+            P "C'est juste que j'avait un truc qui me passait en tête..."
+            play sound "Click.mp3" noloop 
+
+            Na "Ah bon et c'est quoi ?"
+            play sound "Click.mp3" noloop 
+
+            P "Je me disais, est-ce que se serait pas mieux si on quitte le lycée pour ta sécurité car je m'inquiète de ce qui passe au lycée."
+            play sound "Click.mp3" noloop 
+
+            if pronom == "il":    
+
+                Na "Tu n'est pas sérieux j'espére !?"
+                play sound "Click.mp3" noloop 
+                
+            elif pronom == "elle":
+
+                Na "Tu n'est pas sérieuse j'espére !?"
+                play sound "Click.mp3" noloop 
+
+            P "C'est juste une proposition."
+            play sound "Click.mp3" noloop 
+
+            Na "Oui mais pas besoin de quitter le lycée pour ma sécurité, tu m'as déjà assez sécurisée, ou est ton sens de la moralité ?"
+            play sound "Click.mp3" noloop 
+
+            P "Oui mais...."
+            play sound "Click.mp3" noloop 
+
+            Na "Pas de mais, on fait pour être ici."
+            play sound "Click.mp3" noloop 
+
+            if pronom == "il":    
+
+                P "Désolé...."
+                play sound "Click.mp3" noloop 
+                
+            elif pronom == "elle":
+
+                P "Désolée...."
+                play sound "Click.mp3" noloop 
+
+            Na "Oui je te comprends car tu as une grande responsabilité en vers moi."
+            play sound "Click.mp3" noloop 
+
+            P "Merci." 
+            play sound "Click.mp3" noloop 
+
+            Na "Bon je pense qu'on peut finir cette discussion."
+            play sound "Click.mp3" noloop 
+
+        "{b}{i} Ne rien lui dire.{/i}{/b}":
+            play sound "Menu.mp3" noloop 
+
+            P "Oui ne t'inquiète pas."
+            play sound "Click.mp3" noloop  
+
+            Na "Non je veux que tu me dises la vérité."
+            play sound "Click.mp3" noloop 
+
+            P "Je me disais, est-ce que se serait pas mieux si on quitte le lycée pour ta sécurité car je m'inquiète de ce qui passe au lycée."
+            play sound "Click.mp3" noloop 
+
+            if pronom == "il":    
+
+                Na "Tu n'est pas sérieux j'espére !?"
+                play sound "Click.mp3" noloop 
+                
+            elif pronom == "elle":
+
+                Na "Tu n'est pas sérieuse j'espére !?"
+                play sound "Click.mp3" noloop 
+
+            P "C'est juste une proposition."
+            play sound "Click.mp3" noloop 
+
+            Na "Oui mais pas besoin de quitter le lycée pour ma sécurité, tu m'as déjà assez sécurisée, ou est ton sens de la moralité ?"
+            play sound "Click.mp3" noloop 
+
+            P "Oui mais...."
+            play sound "Click.mp3" noloop 
+
+            Na "Pas de mais, on fait pour être ici."
+            play sound "Click.mp3" noloop 
+
+            if pronom == "il":    
+
+                P "Désolé...."
+                play sound "Click.mp3" noloop 
+                
+            elif pronom == "elle":
+
+                P "Désolée...."
+                play sound "Click.mp3" noloop 
+
+            Na "Oui je te comprends car tu as une grande responsabilité en vers moi."
+            play sound "Click.mp3" noloop 
+
+            P "Merci." 
+            play sound "Click.mp3" noloop 
+
+            Na "Bon je pense qu'on peut finir cette discussion."
+            play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous continuez de manger tranquillement jusqu'à la sonnerie.{/i}{/b}"
+    play sound "Bell.mp3" noloop  
+
+    P "Bon il faut qu'on retourne en classe."
+    play sound "Click.mp3" noloop    
+
+    Na "Ok je te suis."
+    play sound "Click.mp3" noloop    
+
+    scene black
+    hide screen lunchroom
+
+    "{b}{i}Vous vous diriges vers le hall.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall
+    show screen hall 
+
+    "{b}{i}Vous continuez vers le premier étage.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene staircase
+    hide screen hall 
+
+    "{b}{i}Vous continuez vers le couloir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hallway
+    show screen hallway 
+
+    "{b}{i}Vous continuez vers la salle de la classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+    
+    scene classroom  
+    show screen class_404 
+
+    M "Rebonjour, bon reprenons le cours."
+    play sound "Click.mp3" noloop    
+
+    S "Ok alors."
+    play sound "Click.mp3" noloop    
+
+    "{b}{i} Le cours continue tranquillement.{/i}{/b}"
+    play sound "Bell.mp3" noloop
+
+    M "Le cours est terminé vous pouvez quitter la salle."
+    play sound "Click.mp3" noloop 
+
+    P "Bon on retourne au dortoir ?"
+    play sound "Click.mp3" noloop   
+
+    Na "Vas-y déjà, moi je vais à la bibliothéque un peu."
+    play sound "Click.mp3" noloop
+
+    P "Ok mais ne rien pas trop tard non plus."
+    play sound "Click.mp3" noloop   
+
+    Na "Oui promis."
+    play sound "Click.mp3" noloop   
+
+    "{b}{i} Puis la [T] veut te demander quelques choses avant que tu partes.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Oui dîtes-moi ?"
+    play sound "Click.mp3" noloop   
+
+    M "J'aimerai savoir si [Na] a déjà fait un test de Turing ?"
+    play sound "Click.mp3" noloop   
+
+    P "Non pourquoi ?"
+    play sound "Click.mp3" noloop   
+
+    M "Car ça serait intéressant pour voir le niveau d'[newname]."
+    play sound "Click.mp3" noloop 
+
+    P "Bien, je penserai à aller voir quand j'aurai le temps."
+    play sound "Click.mp3" noloop   
+
+    M "Bien alors, bon je vous laisse partir et je vais aussi en parler à [E]."
+    play sound "Click.mp3" noloop   
+
+    P "Merci."
+    play sound "Click.mp3" noloop   
+
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Tu sors de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway  
+
+    "{b}{i} Tu continues vers le dortoir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Tu entres dans ton dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene room
+    show screen room 
+
+    if pronom == "il":
+
+        P "Enfin arrivé."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle":
+
+        P "Enfin arrivée."
+        play sound "Click.mp3" noloop
+
+    "{b}{i}Tu te poses pendant deux heures pour réviser.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Enfin fini...."
+    play sound "Door.mp3" noloop   
+
+    "{b}{i}Puis [newname] revient au dortoir.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Oh coucou [newname], comment ça va ?"
+    play sound "Click.mp3" noloop   
+
+    Na "je vais bien mais il faut que je te dise ce que j'ai trouvé à la bibliothéque."
+    play sound "Click.mp3" noloop   
+
+    P "Tu as trouvé quoi ?"
+    play sound "Click.mp3" noloop   
+
+    Na "C'était dans un livre d'histoire."
+    play sound "Click.mp3" noloop   
+
+    P "Et ça disait quoi ?"
+    play sound "Click.mp3" noloop   
+
+    Na "Il semblerait que notre monde a été créé par [Dc]."
+    play sound "Click.mp3" noloop   
+
+    Na "[Dc] !? Je vois intéressant."
+    play sound "Click.mp3" noloop 
+
+    Na "Bon Je vais me déconnecter et me recharger car je suis fatiguée."
+    play sound "Click.mp3" noloop 
+
+    P "Pas de soucis."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[newname] se déconnecte et recharge sa batterie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bon je vais chercher à manger, j'avais complétement oublié."
+    play sound "Click.mp3" noloop  
+
+    scene black 
+    hide screen room
+
+    "{b}{i} Tu pars chercher à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    $ points -= 200 
+    scene room 
+    show screen room 
+
+    P "Enfin à manger... "
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Tu manges tranquillement pendant une demi-heure.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Enfin fini je vais pouvoir aller dormir pour demain."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene black
+    hide screen room
+    hide screen day
+
+    "{b}{i} Quatre jours plus tard.{/i}{/b}"
+    play sound "Alarm.mp3" noloop 
+
+    scene room 
+    show screen room
+    show screen day
+    $ day += 4 
+
+    P "Oh super et en plus on a examen aujourd'hui....."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te lèves et te changes et puis tu aperçois [newname] déconnectée contre le mur.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Elle est encore déconnectée."
+    play sound "Click.mp3" noloop 
+
+    P "Je vais la démarrer."
+    play sound "Menu.mp3" noloop 
+
+    menu:   
+
+        "{b}{i} Démarrer [newname].{/i}{/b}" :
+            play sound "Menu.mp3" noloop 
+
+label password2:  
+
+    $ entered_password = renpy.input("Veuillez entrer votre mot de passe pour [newname].")
+    $ entered_password = entered_password.strip()
+
+    if entered_password == stored_password:
+
+        "Mot de passe correct. Accès autorisé." 
+        play sound "Menu.mp3" noloop
+
+    else:
+
+        "Mot de passe incorrect. Accès refusé." 
+        play sound "Menu.mp3" noloop
+        jump password2
+
+    Na "Démarrage en cours......"
+    play sound "Click.mp3" noloop 
+
+    Na "Bonjour [prénom]."
+    play sound "Click.mp3" noloop 
+
+    P "Coucou comment ça va aujourd'hui ?"
+    play sound "Click.mp3" noloop
+
+    Na "Je vais bien et toi ?."
+    play sound "Click.mp3" noloop  
+
+    P "Je vais bien, bon on va en cours."
+    play sound "Click.mp3" noloop 
+
+    Na "Oui car on a examen de math aujourd'hui."
+    play sound "Click.mp3" noloop 
+
+    P "Je le sais déjà."
+    play sound "Click.mp3" noloop 
+    
+    hide screen room
+    scene black
+
+    "{b}{i}Tu te diriges vers le couloir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+     
+    scene hallway
+    show screen hallway 
+
+    "{b}{i}Vous continuez vers la salle de classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop 
+
+    "{b}{i}Puis soudainement tu vois tous les autres élèves à l'entrée de la salle.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Vous êtes déjà tous là."
+    play sound "Click.mp3" noloop 
+
+    I "Oui [M] n'est pas encore arrivée."
+    play sound "Click.mp3" noloop 
+
+    Na "D'habitude elle est déjà là."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Au même moment la prof arriva et ouvra la porte de la classe.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    M "Bonjour chers élèves."
+    play sound "Footsteps.mp3" noloop
+
+    hide screen hallway
+    scene black
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+    
+    scene classroom 
+    show screen class_404 
+    
+    "{b}{i}Tout le monde s'assoit à sa place respective.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    M "Bonjour aujourd'hui comme vous le savez vous avez votre premier examen je vais vous distribuer votre copie." 
+    play sound "Click.mp3" noloop 
+
+    Na "Ok." 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}[M] Commença à distribuer les copies.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    M "Vous avez une heure c'est parti !!!" 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tout le monde retourne sa copie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    $ grade = 0.0 
+
+label examen_pythagore:
+
+    "Question 1 : Quelle est la formule du théorème de Pythagore ?"
+    play sound "Menu.mp3" noloop 
+
+    menu:
+        "a² + b² = c²":
+            $ grade += 2.0
+        "a² - b² = c²":
+            $ grade += 0.0
+        "a² + b² = 2c²":
+            $ grade += 0.0
+
+    "Question 2 : Dans quel type de triangle applique-t-on le théorème de Pythagore ?"
+    play sound "Menu.mp3" noloop 
+
+    menu: 
+        "Triangle isocèle":
+            $ grade += 0.0
+        "Triangle rectangle":
+            $ grade += 2.0
+        "Triangle équilatéral":
+            $ grade += 0.0
+
+    "Question 3 : Si un triangle a des côtés de 3 cm, 4 cm et 5 cm, est-il rectangle ?"
+    play sound "Menu.mp3" noloop 
+
+    menu:
+        "Oui":
+            $ grade += 2.0
+        "Non":
+            $ grade += 0.0
+        "Impossible à déterminer":
+            $ grade += 0.0
+
+    "Question 4 : Quelle est la longueur de l'hypoténuse d'un triangle ayant des côtés de 6 cm et 8 cm ?"
+    play sound "Menu.mp3" noloop 
+
+    menu:
+        "10 cm":
+            $ grade += 2.0
+        "12 cm":
+            $ grade += 0.0
+        "14 cm":
+            $ grade += 0.0
+
+    "Question 5 : Quelle est l'hypoténuse d'un triangle rectangle ?"
+    play sound "Menu.mp3" noloop 
+
+    menu:
+        "Le côté opposé à l'angle droit":
+            $ grade += 2.0
+        "Le plus petit côté":
+            $ grade += 0.0
+        "Le côté adjacent à l'angle droit":
+            $ grade += 0.0
+
+    "Question 6 : Si un triangle a des côtés de 7 cm, 24 cm et 25 cm, est-il rectangle ?"
+    play sound "Menu.mp3" noloop 
+
+    menu:
+        "Oui":
+            $ grade += 2.0
+        "Non":
+            $ grade += 0.0
+        "Impossible à dire":
+            $ grade += 0.0
+
+    "Question 7 : Le théorème de Pythagore est-il valable dans un triangle quelconque ?"
+    play sound "Menu.mp3" noloop 
+
+    menu:
+        "Oui":
+            $ grade += 0.0
+        "Non":
+            $ grade += 2.0
+        "Seulement dans un triangle isocèle":
+            $ grade += 0.0
+
+    "Question 8 : Que peut-on calculer grâce au théorème de Pythagore ?"
+    play sound "Menu.mp3" noloop 
+
+    menu:
+        "Les angles d'un triangle":
+            $ grade += 0.0
+        "Les longueurs des côtés d'un triangle rectangle":
+            $ grade += 2.0
+        "La somme des angles d'un triangle":
+            $ grade += 0.0
+
+    "Question 9 : Un triangle avec des côtés de 9 cm, 12 cm et 15 cm est-il rectangle ?"
+    play sound "Menu.mp3" noloop 
+
+    menu:
+        "Oui":
+            $ grade += 2.0
+        "Non":
+            $ grade += 0.0
+        "Impossible à dire":
+            $ grade += 0.0
+
+    "Question 10 : Le théorème de Pythagore permet-il de calculer la hauteur d'un triangle quelconque ?"
+    play sound "Menu.mp3" noloop 
+
+    menu:
+        "Oui, toujours":
+            $ grade += 0.0
+        "Non, seulement pour les triangles rectangles":
+            $ grade += 2.0
+        "Oui, mais seulement dans un triangle équilatéral":
+            $ grade += 0.0
+
+    S "Cette examen n'était si dur que ça."
+    play sound "Click.mp3" noloop
+
+    I "Je confirme bon on verra bien les résultats."
+    play sound "Click.mp3" noloop
+
+    M "Si jamais je vous corrigerai vos copies durant la pause et vous les rendrez cet après-midi."
+    play sound "Click.mp3" noloop
+
+    S "Déjà !?" 
+    play sound "Click.mp3" noloop 
+
+    M "Oui c'est exact, bon maintenant sortez votre livre page 50 car nous allons voir un nouveau sujet." 
+    play sound "Click.mp3" noloop 
+
+    S "Et quel sera ce nouveau sujet ?" 
+    play sound "Click.mp3" noloop 
+
+    M "Un sujet de grammaire." 
+    play sound "Click.mp3" noloop 
+
+    K "Ok alors."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Le cours continua sans probléme.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+
+    M "Le cours est terminé vous pouvez quitter la salle."
+    play sound "Click.mp3" noloop 
+
+    P "Bon on va manger [newname] ?"
+    play sound "Click.mp3" noloop 
+    
+    Na "Oui bien sur je te suis."
+    play sound "Click.mp3" noloop 
+
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Vous vous dirigez votre chemin vers le hall.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+    
+    scene staircase
+    hide screen hallway
+
+    "{b}{i} Vous descendez lez escaliers.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hall 
+    show screen hall
+
+    "{b}{i} Vous continuez vers le refectoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hall
+
+    "{b}{i} Vous arrivez enfin au refectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop 
+
+    scene lunchroom 
+    show screen lunchroom 
+    
+    Na "Bon on va prendre à manger ?"
+    play sound "Click.mp3" noloop 
+
+    P "Ok alors."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 200 
+
+    P "C'est bon [newname] tu t'es servie ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui c'est bon on peut aller s'asseoir."
+    play sound "Click.mp3" noloop  
+
+    P "Ok."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous cherchez une place et vous apercevez [S] déjà assis à une table.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Oh salut [I] on peut venir manger avec toi ?"
+    play sound "Click.mp3" noloop 
+
+    S "Oui bien sur."
+    play sound "Click.mp3" noloop 
+
+    P "Merci."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Vous vous asseyez tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Sinon [S] je ne t'ai pas demandé. Comment c'est passé l'examen pour toi ?"
+    play sound "Click.mp3" noloop 
+
+    S "ça s'est bien passé pour moi et toi ?"
+    play sound "Click.mp3" noloop 
+
+    if pronom == "il":
+
+        P "Je dirais que je me suis bien débrouillé."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle": 
+
+        P "Je dirais que je me suis bien débrouillée."
+        play sound "Click.mp3" noloop 
+    
+    S "ça ne m'étonne pas venant de toi."
+    play sound "Click.mp3" noloop 
+
+    Na "J'ai lui déjà dit la même chose à [prénom] un jour." 
+    play sound "Click.mp3" noloop 
+
+    S "Et toi [newname] comment ça s'est passée l'examen ?"
+    play sound "Click.mp3" noloop 
+
+    Na "ça s'est bien passée pour moi je ne m'inquiéte pas."
+    play sound "Click.mp3" noloop 
+
+    S "Cool alors."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Vous continuez de discuter.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+    
+    S "Bon on doit retourner en cours."
+    play sound "Click.mp3" noloop
+
+    P "Ok il faut pas qu'on soit en retard."
+    play sound "Click.mp3" noloop 
+
+    S "Ok je vous suis."
+    play sound "Click.mp3" noloop 
+
+    scene black 
+    hide screen lunchroom 
+
+    "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall
+    show screen hall
+
+    "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    scene staircase 
+    hide screen hall
+
+    "{b}{i} Vous montez au premier étage.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene hallway 
+    show screen hallway
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Tu entres en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene classroom  
+    show screen class_404 
+
+    M "Bonjour nous allons faire un nouveau théme mais avant ça je vais pouvoir vous rendre les résultats de vos premiers examens."
+    play sound "Click.mp3" noloop 
+
+    K "Cool enfin."
+    play sound "Click.mp3" noloop
+
+    I "Je vais commencer par [prénom] et [Na]."
+    play sound "Click.mp3" noloop 
+
+    P "Ok."
+    play sound "Click.mp3" noloop 
+
+    M "[P] tu as eu [grade]/20"
+    play sound "Click.mp3" noloop 
+   
+    if grade == 20.0:
+        
+        M "Félicitation tu l'as réussi à la perfection comme d'habitude."
+        play sound "Click.mp3" noloop
+
+        P "Merci."
+        play sound "Click.mp3" noloop
+
+    elif grade <= 12.0:
+       
+        M "C'est en dessous de la moyenne je n'ai pas le choix que de t'expulser du lycée..."
+        play sound "Click.mp3" noloop
+
+        P "Quoi et mon avenir !?"
+        play sound "Click.mp3" noloop
+    
+        M "Désolé mais j'avais déjà prévenu concernant les mauvaises notes."
+        play sound "Click.mp3" noloop
+
+        scene black
+        hide classroom
+        hide screen class_404
+        hide screen points
+        hide screen day
+        play music "gameover.mp3" noloop
+        "{b}{i}Fin numéro 6 : Premiére mauvaise note qui te vaut une exclusion du lycée.{/i}{/b}"
+        play sound "Menu.mp3" noloop
+
+        menu:    
+
+            "{b}{i}Abandonner{/i}{/b}" :
+                return 
+            "{b}{i}Réessayer.{/i}{/b}" :
+                scene black
+                show screen points 
+                play music "Soundtrack.mp3" loop volume 1.0
+                jump examen_pythagore
+    
+    else: 
+       
+        M "C'est pas mal."
+        play sound "Click.mp3" noloop
+
+        P "Merci."
+        play sound "Click.mp3" noloop
+
+    M "[Na] tu as eu 19/20 félicitation aussi."
+    play sound "Click.mp3" noloop 
+
+    Na "Merci beaucoup."
+    play sound "Click.mp3" noloop 
+
+    M "[H] tu as eu 16/20."
+    play sound "Click.mp3" noloop 
+
+    H "Merci beaucoup."
+    play sound "Click.mp3" noloop 
+
+    M "[I] tu as eu 19/20 félicitation."
+    play sound "Click.mp3" noloop 
+
+    I "Merci beaucoup."
+    play sound "Click.mp3" noloop 
+
+    M "[Hi] tu as eu 16/20."
+    play sound "Click.mp3" noloop 
+
+    Hi "Merci beaucoup."
+    play sound "Click.mp3" noloop 
+
+    M "[K] tu as eu 15/20."
+    play sound "Click.mp3" noloop 
+
+    K "Merci beaucoup."
+    play sound "Click.mp3" noloop 
+
+    M "[N] tu as eu 18/20."
+    play sound "Click.mp3" noloop 
+
+    N "Merci beaucoup."
+    play sound "Click.mp3" noloop 
+
+    M "[Y] tu as eu 20/20 félicitation."
+    play sound "Click.mp3" noloop 
+
+    Y "Merci beaucoup."
+    play sound "Click.mp3" noloop 
+
+    M "[S] tu as eu 20/20 félicitation."
+    play sound "Click.mp3" noloop 
+
+    S "Merci beaucoup."
+    play sound "Click.mp3" noloop 
+
+    M "Bon au tour des ultimes Jumelles maintenant pour finir."
+    play sound "Click.mp3" noloop 
+
+    J1 "Ok."
+    play sound "Click.mp3" noloop 
+
+    M "[J1] tu as eu 18/20."
+    play sound "Click.mp3" noloop 
+
+    J1 "Merci beaucoup."
+    play sound "Click.mp3" noloop 
+
+    M "Et toi [J2] tu as eu 17/20." 
+    play sound "Click.mp3" noloop 
+
+    J2 "Merci beaucoup."
+    play sound "Click.mp3" noloop 
+
+    M "Bon la moyenne générale n'est pas mal, continuez de bien travaillez comme ceci."
+    play sound "Click.mp3" noloop 
+
+    Y "Il n'y aura pas de soucis pour moi."
+    play sound "Click.mp3" noloop 
+
+    Na "Moi aussi vous pourrez sur moi."
+    play sound "Click.mp3" noloop 
+
+    I "De même pour moi."
+    play sound "Click.mp3" noloop 
+
+    M "Bien nous pouvons continuer notre cours de ce matin sur la grammaire, veuillez sortir vos livres."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Le cours continua tranquillement.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+
+    M "Bon le cours est terminé, vous pouvez quitter la salle."
+    play sound "Click.mp3" noloop
+
+    P "Bon [newname] on y vas ?"
+    play sound "Click.mp3" noloop
+
+    Na "Oui je suis fatiguée avec cet examen."
+    play sound "Click.mp3" noloop 
+
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Vous continuez vers le couloir.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i} Vous entres dans ton dortoir.{/i}{/b}" 
+    play sound "Door.mp3" noloop
+
+    scene room
+    show screen room 
+
+    if pronom == "il":
+
+        P "Enfin au dortoir je suis epuisé."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle": 
+
+        P "Enfin au dortoir je suis epuisée."
+        play sound "Click.mp3" noloop 
+
+    Na "Oui ça fait du bien."
+    play sound "Click.mp3" noloop
+
+    P "Oui je confirme."
+    play sound "Click.mp3" noloop
+    
+    Na "Bon Je vais me déconnecter et me recharger."
+    play sound "Click.mp3" noloop 
+
+    P "Pas de soucis."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[newname] se déconnecte et recharge sa batterie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bon je vais chercher à manger, j'avais complétement oublié."
+    play sound "Click.mp3" noloop  
+
+    scene black 
+    hide screen room
+
+    "{b}{i} Tu pars chercher à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    $ points -= 200 
+    scene room 
+    show screen room 
+
+    P "Enfin à manger... "
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Tu manges tranquillement pendant une demi-heure.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Enfin fini je vais pouvoir aller dormir pour demain."
+    play sound "Click.mp3" noloop  
+
+    "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene black
+    hide screen room
+    hide screen day
+
+    "{b}{i} Le lendemain matin.{/i}{/b}"
+    play sound "Alarm.mp3" noloop 
+
+    scene room 
+    show screen room
+    show screen day
+    $ day += 1 
+
+    P "ça fait du bien une bonne nuit de sommeil."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te lèves et te changes et puis tu aperçois [newname] déconnectée contre le mur.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Elle est encore déconnectée."
+    play sound "Click.mp3" noloop 
+
+    P "Je vais la démarrer."
+    play sound "Menu.mp3" noloop 
+
+    menu:   
+
+        "{b}{i} Démarrer [newname].{/i}{/b}" :
+            play sound "Menu.mp3" noloop 
+
+label password3:  
+
+    $ entered_password = renpy.input("Veuillez entrer votre mot de passe pour [newname].")
+    $ entered_password = entered_password.strip()
+
+    if entered_password == stored_password:
+
+        "Mot de passe correct. Accès autorisé." 
+        play sound "Menu.mp3" noloop
+
+    else:
+
+        "Mot de passe incorrect. Accès refusé." 
+        play sound "Menu.mp3" noloop
+        jump password3
+
+    Na "Démarrage en cours......"
+    play sound "Click.mp3" noloop 
+
+    Na "Bonjour [prénom]."
+    play sound "Click.mp3" noloop 
+
+    P "Coucou comment ça va aujourd'hui ?"
+    play sound "Click.mp3" noloop
+
+    Na "Je vais bien et toi ?."
+    play sound "Click.mp3" noloop  
+
+    P "Je vais bien, bon on aujourd'hui je vais te faire passer un test spéciale avec [E]."
+    play sound "Click.mp3" noloop 
+
+    Na "Intéressant."
+    play sound "Click.mp3" noloop 
+
+    P "Bien on y va ?"
+    play sound "Click.mp3" noloop 
+    
+    hide screen room
+    scene black
+
+    "{b}{i} Tu quiites le dortoir avec [newname].{/i}{/b}"
+    play sound "Door.mp3" noloop   
+
+    scene hallway
+    show screen hallway 
+
+    "{b}{i}Tu continues dans le couloir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene staircase 
+    hide screen hallway
+
+    "{b}{i}Tu continues vers le hall.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hall
+    show screen hall 
+
+    "{b}{i}Tu continues vers le bureau des élèves.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black 
+    hide screen hall 
+
+    "{b}{i}Tu entres dans le bureau des élèves.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene office 
+    show screen office 
+
+    P "Bonjour, c'est moi [prénom]."
+    play sound "Click.mp3" noloop 
+
+    E "Oh bonjour, j'imagine que tu es ici pour qu'[newname] passe le test de turing."
+    play sound "Click.mp3" noloop 
+
+    P "Oui c'est exact."
+    play sound "Click.mp3" noloop 
+
+    Na "Le test de Turing ? C'est quoi ?"
+    play sound "Click.mp3" noloop 
+
+    E "C'est un test qui différencie un Robot d'un humain."
+    play sound "Click.mp3" noloop 
+
+    Na "Je vois, c'est vraiment intéressant."
+    play sound "Click.mp3" noloop 
+
+    E "Bien commençons, [newname] tu peux t'asseoir."
+    play sound "Click.mp3" noloop 
+
+    P "Ce n'est pas seulement [newname] qui doit passer le test ?"
+    play sound "Click.mp3" noloop 
+
+    E "Oui c'est ça."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} [newname] s'asseoit et [E] lui distribue une copie.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    E "Bien tu as deux heures pour faire le test."
+    play sound "Click.mp3" noloop 
+
+    Na "C'est compris."
+    play sound "Click.mp3" noloop 
+
+    P "Ok moi je vais vous laiser tranquille."
+    play sound "Click.mp3" noloop 
+
+    E "C'est noté."
+    play sound "Click.mp3" noloop 
+
+    scene black 
+    hide screen office
+
+    "{b}{i} Tu les laiser tranquille et tu reviens deux heures et demi plus tard.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    scene office 
+    show screen office 
+
+    P "Me revoilà."
+    play sound "Click.mp3" noloop 
+
+    E "Ah te revoilà."
+    play sound "Click.mp3" noloop 
+
+    P "Vous avez ces résultats ?"
+    play sound "Click.mp3" noloop 
+
+    E "Oui les voici."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} [E] sort les résultats d'[newname].{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    if grade == 20.0:
+
+        E "D'après les résultats, elle parle à 70\% comme une humaine."
+        play sound "Click.mp3" noloop 
+
+    else: 
+       
+        E "D'après les résultats, elle parle à 60\% comme une humaine."
+        play sound "Click.mp3" noloop 
+
+    P "C'est génial ça."
+    play sound "Click.mp3" noloop
+
+    E "Oui mais j'ai remarqué un truc avec elle."
+    play sound "Click.mp3" noloop
+
+    P "Oui dites-moi."
+    play sound "Click.mp3" noloop
+
+    E "Elle est un peu répétif dans sa façon de parler."
+    play sound "Click.mp3" noloop
+
+    P "Je vois."
+    play sound "Click.mp3" noloop 
+
+    E "Mais en dehors de ça, elle est excellente."
+    play sound "Click.mp3" noloop 
+
+    P "Félicitation [newname]."
+    play sound "Click.mp3" noloop 
+
+    Na "Merci beaucoup [prénom], c'est grâce à toi."
+    play sound "Click.mp3" noloop 
+
+    if pronom == "il":
+
+        P "Merci je suis content que tu aie appris de choses."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle": 
+
+        P "Merci je suis contente que tu aie appris de choses."
+        play sound "Click.mp3" noloop
+
+    E "Bien je vous laisse, il est 11h30."
+    play sound "Click.mp3" noloop 
+
+    P "Merci."
+    play sound "Click.mp3" noloop 
+
+    hide screen office
+    scene black
+
+    "{b}{i}Tu quittes le bureau des élèves avec [Na].{/i}{/b}"
+    play sound "Door.mp3" noloop
+    
+    scene hall
+    show screen hall 
+
+    Na "Bon on va manger ?"
+    play sound "Click.mp3" noloop 
+
+    P "Oui allons-y."
+    play sound "Click.mp3" noloop 
+
+    Na "Juste tu fsisais quoi pendant que je passais le test du Turing ?"
+    play sound "Click.mp3" noloop  
+
+    P "J'était au dortoir en train de lire."
+    play sound "Click.mp3" noloop 
+
+    Na "Cool."
+    play sound "Footsteps.mp3" noloop 
+
+    "{b}{i} Vous continuez votre chemin vers le réfectoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hall 
+    show screen hall
+
+    "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene lunchroom 
+    show screen lunchroom 
+
+    "{b}{i} en entrant vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 200 
+
+    P "C'est bon [newname] tu t'es servie ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui c'est bon on peut aller s'asseoir."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Puis tu croises [I].{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Oh salut [I] ça te dit de venir avec nous ?"
+    play sound "Click.mp3" noloop  
+
+    I "Oui pourquoi pas."
+    play sound "Click.mp3" noloop 
+
+    P "Cool alors."
+    play sound "Click.mp3" noloop 
+
+    I "[Y] tu viens manger avec nous ?"
+    play sound "Click.mp3" noloop 
+
+    Y "Oui absolument."
+    play sound "Click.mp3" noloop 
+
+    P "[Y] !?"
+    play sound "Click.mp3" noloop 
+
+    I "Oui de base, je devais manger avec elle."
+    play sound "Click.mp3" noloop 
+
+    P "Cool alors."
+    play sound "Footsteps.mp3" noloop
+
+    "{b}{i} Vous partez tous vous asseoir à une table.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Sinon comment allez-vous ?"
+    play sound "Click.mp3" noloop 
+
+    I "Je vais bien."
+    play sound "Click.mp3" noloop 
+
+    P "Et toi [Y] ?"
+    play sound "Click.mp3" noloop 
+
+    Y "Je vais bien aussi et toi [prénom] ?"
+    play sound "Click.mp3" noloop 
+
+    P "Je vais bien."
+    play sound "Click.mp3" noloop 
+
+    Y "Cool alors et sinon vous avez fait quoi ce matin ?"
+    play sound "Click.mp3" noloop 
+
+    P "[newname] à passé le test de Turing."
+    play sound "Click.mp3" noloop 
+
+    Y "C'est génial et elle a eu quoi commme résultats ?"
+    play sound "Click.mp3" noloop 
+
+    if grade == 20.0:
+
+        P "Elle parle à 70\% comme une humaine."
+        play sound "Click.mp3" noloop 
+
+    else: 
+       
+        P "Elle parle à 60\% comme une humaine."
+        play sound "Click.mp3" noloop 
+
+    Y "Oh c'est surpenant." 
+    play sound "Click.mp3" noloop 
+
+    Na "Merci beaucoup."
+    play sound "Click.mp3" noloop 
+
+    Y "De rien."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous continuez de discuter.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Sinon vous allwz faire quoi cette après-midi ?"
+    play sound "Click.mp3" noloop 
+
+    Y "Je vais sois me reposer ou bosser sur quelques trucs."
+    play sound "Click.mp3" noloop 
+
+    P "ET toi Iris ?"
+    play sound "Click.mp3" noloop 
+
+    I "Je vais bosser sur mon jeu, j'ai du retard à rattraper."
+    play sound "Click.mp3" noloop 
+
+    P "Cool alors."
+    play sound "Click.mp3" noloop 
+
+    Y "Bon je vais vous laisser."
+    play sound "Click.mp3" noloop 
+
+    P "Pas du soucis."
+    play sound "Footsteps.mp3" noloop 
+
+    "{b}{i} [Y] quitte le réfectoire.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Vraiment je me demande ce que fait [Y] durant son temps libre."
+    play sound "Click.mp3" noloop 
+
+    I "Oui même moi je me demande ça."
+    play sound "Click.mp3" noloop 
+
+    P "Bon on fait quoi cette après-midi [newname] vu qu'on a pas cours ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Moi je vais allez à la bibliothéque."
+    play sound "Click.mp3" noloop 
+
+    P "Ok moi je vais au dortoir pour lire."
+    play sound "Click.mp3" noloop 
+
+    Na "Ok alors on se verra après-midi."
+    play sound "Click.mp3" noloop 
+
+    P "Ok."
+    play sound "Footsteps.mp3" noloop 
+
+    "{b}{i} [Y] quitte le réfectoire.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bon je vais au dortoir."
+    play sound "Click.mp3" noloop 
+
+    scene black 
+    hide screen lunchroom 
+
+    "{b}{i} Tu sors du réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall
+    show screen hall
+
+    "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop  
+
+    scene staircase 
+    hide screen hall
+
+    "{b}{i} Vous montez au premier étage.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hallway 
+    show screen hallway
+
+    "{b}{i}Tu entres dans ton dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene room
+    show screen room  
+
+    P "Enfin au dortoir...."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Tu te poses sur ton lit pour lire pendant deux heures.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+# fin temporaire 
+
+    P "Enfin fini de lire."
+    play sound "Click.mp3" noloop
+
+    scene black 
+
+    "{b}{i} Fin temporaire de Arisization Project.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
     return                              
+
