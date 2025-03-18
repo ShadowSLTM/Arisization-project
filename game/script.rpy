@@ -154,7 +154,10 @@ label début:
     P "Bon ok alors."
     play sound "Click.mp3" noloop
 
-    "{b}{i}Tu commences à regarder un peu dans l'entrêpot.{/i}{/b}"
+#Tododosdsjdfjshdfjkksjdfhs
+$ entrepot = get_random_entrepot()
+    "{b}{i}[entrepot]{/i}{/b}"
+
     play sound "Click.mp3" noloop 
 
     P "Tu trouves quelques choses ?"

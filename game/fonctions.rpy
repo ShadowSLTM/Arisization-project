@@ -15,6 +15,23 @@ init python:
     def get_random_morning_line():
         return random.choice(morning_lines)
 
+# entrepôt_rdm est une liste de phrases qui seront affichées aléatoirement au moment de la fouille de l'entrepôt.
+init python:
+    import random
+    
+    entrepot_rdm = [
+        "Tu jettes un coup d'œil à l'intérieur de l'entrepôt.",
+        "Tu explores rapidement les alentours de l'entrepôt.",
+        "Tu fouilles un peu dans l'entrepôt.",
+        "Tu t'aventures prudemment dans l'entrepôt.",
+        "Tu examines l'intérieur de l'entrepôt.",
+        "Tu observes les environs de l'entrepôt.",
+        "Tu commences à inspecter l'entrepôt.", 
+    ]
+    
+    def get_random_entrepot():
+        return random.choice(entrepot_rdm)
+
 
 # predefined_notes est une liste de notes prédéfinies qui seront affichées aléatoirement lors de la correction des exercices.
 init python:
