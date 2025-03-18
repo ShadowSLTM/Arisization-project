@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 70: invalid syntax
+    renpy.quick_save()         $ renpy.save("quick_save_custom", slot=99)
+                                ^
+
+Ren'Py Version: Ren'Py 8.3.3.24111502
+Mon Mar 17 22:42:43 2025
