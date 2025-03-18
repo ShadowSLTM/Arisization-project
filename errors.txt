@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 70: invalid syntax
-    renpy.quick_save()         $ renpy.save("quick_save_custom", slot=99)
-                                ^
+File "game/script.rpy", line 159: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    "{b}{i}[entrepot]{/i}{/b}"
+    ^
 
-Ren'Py Version: Ren'Py 8.3.3.24111502
-Mon Mar 17 22:42:43 2025
+Ren'Py Version: Ren'Py 8.3.7.25031702
+Tue Mar 18 23:18:51 2025

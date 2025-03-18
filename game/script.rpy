@@ -155,7 +155,7 @@ label début:
     play sound "Click.mp3" noloop
 
 #Tododosdsjdfjshdfjkksjdfhs
-$ entrepot = get_random_entrepot()
+    $ entrepot = get_random_entrepot()
     "{b}{i}[entrepot]{/i}{/b}"
 
     play sound "Click.mp3" noloop 
