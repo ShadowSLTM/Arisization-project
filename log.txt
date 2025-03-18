@@ -1,46 +1,45 @@
-2025-03-18 10:53:05 UTC
+2025-03-18 20:11:53 UTC
 Windows-10-10.0.26100
-Ren'Py 8.3.3.24111502
+Ren'Py 8.3.7.25031702
 
-Early init took 0.36s
-Loading error handling took 0.22s
-Loading script took 4.06s
-Loading save slot metadata took 0.59s
+Early init took 0.06s
+Loading error handling took 0.08s
+Loading script took 1.78s
+Loading save slot metadata took 0.20s
 Loading persistent took 0.00s
- - Init at game/gui.rpy:11 took 0.28547 s.
-Running init code took 0.40s
-Loading analysis data took 0.06s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.38s
+Running init code took 0.07s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
 Index archives took 0.00s
-Backing up script files to 'C:\\Users\\sndoy\\AppData\\Roaming/RenPy/backups\\Arisization Project':
-Dump and make backups took 0.15s
+Backing up script files to 'C:\\Users\\pc\\AppData\\Roaming/RenPy/backups\\Arisization-project':
+Dump and make backups took 0.05s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.11s
-DPI scale factor: 1.500000
+Initial gc took 0.06s
+DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.00s
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.24s
 Cleaning stores took 0.00s
-Init translation took 0.09s
+Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.02s
-Analyze screens took 0.02s
-Save screen analysis took 0.05s
-Prepare screens took 0.19s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.10s
-Running _start took 0.01s
-Interface start took 0.54s
+Load screen analysis took 0.01s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.04s
+Running _start took 0.00s
+Interface start took 0.67s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Fullscreen mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) Iris(R) Xe Graphics'
-Version: b'4.6.0 - Build 32.0.101.6314'
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080 Laptop GPU/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 566.07'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
