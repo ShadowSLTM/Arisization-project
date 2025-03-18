@@ -1,0 +1,11 @@
+changment important : 
+
+git add . 
+
+git commit -m "descriptioon des changement" 
+
+git push 
+
+quand nath fait des changement : 
+
+git pull 
