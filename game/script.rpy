@@ -16,8 +16,6 @@ label start:
 
     stop music fadeout 2.0   
 
-    init python:
-        import fonctions as fonc
 
     
 label key: 
@@ -2989,7 +2987,7 @@ label wallbreaking4:
     "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    $ line = fonc.get_random_morning_line()
+    $ line = get_random_morning_line()
     P "[line]" 
     play sound "Click.mp3" noloop 
 
@@ -4274,7 +4272,7 @@ label dorm2:
     $ day += 7 
 
     play sound "Alarm.mp3" noloop 
-    $ line = fonc.get_random_morning_line()
+    $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
 
@@ -4872,7 +4870,7 @@ label choice9:
     Na "Merci beaucoup."
     play sound "Click.mp3" noloop 
 
-    $ note = fonc.get_random_note()
+    $ note = get_random_note()
     M "[H] tu as eu [note]/20."
     play sound "Click.mp3" noloop 
 
@@ -4889,7 +4887,7 @@ label choice9:
     H "Merci beaucoup."
     play sound "Click.mp3" noloop 
 
-    $ note = fonc.get_random_note()
+    $ note = get_random_note()
     M "[I] tu as eu [note]/20."
     play sound "Click.mp3" noloop 
 
@@ -4906,7 +4904,7 @@ label choice9:
     I "Merci beaucoup."
     play sound "Click.mp3" noloop 
 
-    $ note = fonc.get_random_note()
+    $ note = get_random_note()
     M "[Hi] tu as eu [note]/20."
     play sound "Click.mp3" noloop 
 
@@ -4922,7 +4920,7 @@ label choice9:
     Hi "Merci beaucoup."
     play sound "Click.mp3" noloop 
 
-    $ note = fonc.get_random_note()
+    $ note = get_random_note()
     M "[K] tu as eu [note]/20."
     play sound "Click.mp3" noloop 
 
@@ -4949,7 +4947,7 @@ label choice9:
         M "Ce n'est pas mal."
         play sound "Click.mp3" noloop
 
-    $ note = fonc.get_random_note()
+    $ note = get_random_note()
     M "[N] tu as eu [note]/20."
     play sound "Click.mp3" noloop 
 
@@ -4966,7 +4964,7 @@ label choice9:
     N "Merci beaucoup."
     play sound "Click.mp3" noloop 
 
-    $ note = fonc.get_random_note()
+    $ note = get_random_note()
     M "[Y] tu as eu [note]/20."
     play sound "Click.mp3" noloop     
     
@@ -4989,7 +4987,7 @@ label choice9:
     J1 "Ok."
     play sound "Click.mp3" noloop 
 
-    $ note = fonc.get_random_note()
+    $ note = get_random_note()
     M "[J1] tu as eu [note]/20."
     play sound "Click.mp3" noloop 
 
@@ -5006,7 +5004,7 @@ label choice9:
     J1 "Merci beaucoup."
     play sound "Click.mp3" noloop 
 
-    $ note = fonc.get_random_note()
+    $ note = get_random_note()
     M "Et toi [J2] tu as eu [note]/20."
     play sound "Click.mp3" noloop 
 
@@ -5669,7 +5667,7 @@ label choice9:
     show screen day
     $ day += 7
 
-    $ line = fonc.get_random_morning_line()
+    $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
 
@@ -6630,7 +6628,7 @@ label suite1:
     show screen day
     $ day += 1
 
-    $ line = fonc.get_random_morning_line()
+    $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
 
@@ -7797,7 +7795,7 @@ label debate:
     show screen day
     $ day += 1
 
-    $ line = fonc.get_random_morning_line()
+    $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
  
@@ -8215,7 +8213,7 @@ label debate:
     $ day += 1
 
     play sound "Alarm.mp3" noloop 
-    $ line = fonc.get_random_morning_line()
+    $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
 
@@ -8679,7 +8677,7 @@ label debate:
 
     play sound "Alarm.mp3" noloop 
     
-    $ line = fonc.get_random_morning_line()
+    $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
 
@@ -9328,7 +9326,7 @@ label code:
 
     play sound "Alarm.mp3" noloop 
 
-    $ line = fonc.get_random_morning_line()
+    $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
 
@@ -10277,7 +10275,7 @@ label code:
 
     play sound "Alarm.mp3" noloop 
  
-    $ line = fonc.get_random_morning_line()
+    $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
 
@@ -11342,7 +11340,7 @@ label password:
     show screen day
     $ day += 1 
 
-    $ line = fonc.get_random_morning_line()
+    $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
 
@@ -11900,7 +11898,7 @@ label password1:
     show screen day
     $ day += 4 
 
-    $ line = fonc.get_random_morning_line()
+    $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
 
@@ -12540,7 +12538,7 @@ label examen_pythagore:
     show screen day
     $ day += 1 
 
-    $ line = fonc.get_random_morning_line()
+    $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
 
@@ -13020,7 +13018,7 @@ label password3:
     show screen day 
     $ day += 1 
 
-    $ line = fonc.get_random_morning_line()
+    $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
 

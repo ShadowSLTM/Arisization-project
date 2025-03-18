@@ -1,26 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 56, in script
-    $ renpy.save("quick_save_slot1", slot=1)
-  File "game/script.rpy", line 56, in <module>
-    $ renpy.save("quick_save_slot1", slot=1)
-TypeError: save() got an unexpected keyword argument 'slot'
+  File "game/script.rpy", line 19, in script
+    init python:
+  File "game/script.rpy", line 20, in <module>
+    import fonctions as fonc
+ModuleNotFoundError: No module named 'fonctions'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 56, in script
-    $ renpy.save("quick_save_slot1", slot=1)
-  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\ast.py", line 821, in execute
+  File "game/script.rpy", line 19, in script
+    init python:
+  File "C:\Program Files\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\python.py", line 1178, in py_exec_bytecode
+  File "C:\Program Files\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/script.rpy", line 56, in <module>
-    $ renpy.save("quick_save_slot1", slot=1)
-TypeError: save() got an unexpected keyword argument 'slot'
+  File "game/script.rpy", line 20, in <module>
+    import fonctions as fonc
+ModuleNotFoundError: No module named 'fonctions'
 
 Windows-10-10.0.26100 AMD64
-Ren'Py 8.3.3.24111502
+Ren'Py 8.3.7.25031702
 Arisization Project Version_test
-Mon Mar 17 23:32:13 2025
+Tue Mar 18 22:27:00 2025
