@@ -13231,7 +13231,7 @@ label password4:
     Oh "Est-ce qu'[newname] est déclarée à l'état civile."
     play sound "Click.mp3" noloop  
     
-    P "Oui je l'ai le fait cet été." 
+    P "Oui je l'ai fait cet été." 
     play sound "Click.mp3" noloop 
 
     Oh "Bien je vois, bon on va vous laisser c'est tous ce qu'on a à vous dire."
@@ -13304,26 +13304,12 @@ label password4:
     play sound "Click.mp3" noloop
 
     $ points -= 200  
-    
+
     P "C'est bon [newname] tu t'es servie ?"
     play sound "Click.mp3" noloop 
 
     Na "Oui c'est bon on peut aller s'asseoir."
     play sound "Click.mp3" noloop  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     return                            
