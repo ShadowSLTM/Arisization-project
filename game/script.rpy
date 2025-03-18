@@ -27,10 +27,10 @@ init python:
         "Hmm... juste cinq minutes de plus...",
         "Oh déjà...",
         "Oh super....", 
-    ]
+    ] 
     
     def get_random_morning_line():
-        return random.choice(morning_lines)
+        return random.choice(morning_lines) 
 
 init python:
     import random
@@ -6608,7 +6608,7 @@ label suite1:
     play sound "Click.mp3" noloop
 
     Na "Oh désolée j'avais oublié que c'est un jeu dématérialisé."
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     P "Bon on est aussi sensé recevoir notre budjet du mois aujourd'hui." 
     play sound "Click.mp3" noloop  
@@ -13076,7 +13076,7 @@ label password4:
 
         "Mot de passe incorrect. Accès refusé." 
         play sound "Menu.mp3" noloop
-        jump password
+        jump password4
 
     Na "Démarrage en cours......"
     play sound "Click.mp3" noloop 
@@ -13222,6 +13222,23 @@ label password4:
     "{b}{i}Il y a un blanc pendant un instant.{/i}{/b}"
     play sound "Click.mp3" noloop    
 
+    Oh "J'aurais encore une question [prénom]."
+    play sound "Click.mp3" noloop  
+
+    P "Oui dites-moi."
+    play sound "Click.mp3" noloop  
+
+    Oh "Est-ce qu'[newname] est déclarée à l'état civile."
+    play sound "Click.mp3" noloop  
+    
+    P "Oui je l'ai le fait cet été." 
+    play sound "Click.mp3" noloop 
+
+    Oh "Bien je vois,"
+    play sound "Click.mp3" noloop 
+
+    P "."
+    play sound "Click.mp3" noloop 
 
 
 

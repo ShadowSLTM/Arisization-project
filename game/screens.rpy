@@ -1862,7 +1862,7 @@ screen credit():
 
             text _("Illustration du menu : Seydou N'Doye (Shadow_SLTM)\n")
 
-            text _("Programmation : Seydou N'Doye (Shadow_SLTM)\n")
+            text _("Programmation : Seydou N'Doye (Shadow_SLTM) et Nathanaël (Loki)\n")
 
             text _("Correction du jeu : Seydou N'Doye (Shadow_SLTM) et Nathanaël (Loki)\n")
 
@@ -1882,7 +1882,7 @@ screen credit():
 
             text _("Idée des textes de narration : Louks\n") 
 
-            text _("Idée des phrases de réveil aléatoires : Nathanaël (Loki)\n") 
+            text _("Idée des phrases aléatoires : Nathanaël (Loki)\n") 
 
             label "— Remerciements —\n" 
             
