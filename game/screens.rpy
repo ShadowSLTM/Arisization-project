@@ -1888,7 +1888,7 @@ screen credit():
             
             text _("Musiques utilisées sous licence libre.\n")
 
-            label "— Propriiété —\n" 
+            label "— Propriiété —\n"  
 
             text _("Arisization Project appartient à Seydou N'Doye (Shadow_SLTM)\n")  
       

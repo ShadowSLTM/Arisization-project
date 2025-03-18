@@ -12697,7 +12697,7 @@ label password3:
     scene black 
     hide screen office
 
-    "{b}{i} Tu les laiser tranquille et tu reviens deux heures et demi plus tard.{/i}{/b}"
+    "{b}{i} Tu les laisses tranquille et tu reviens deux heures et demi plus tard.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     scene office 
@@ -13234,11 +13234,95 @@ label password4:
     P "Oui je l'ai le fait cet été." 
     play sound "Click.mp3" noloop 
 
-    Oh "Bien je vois,"
+    Oh "Bien je vois, bon on va vous laisser c'est tous ce qu'on a à vous dire."
     play sound "Click.mp3" noloop 
 
-    P "."
+    M "Merci beaucoup, je vous remercie pour ces informations."
+    play sound "Click.mp3" noloop  
+
+    Oh "De rien."
+    play sound "Footsteps.mp3" noloop  
+
+    "{b}{i}Puis ils quiitent la salle.{/i}{/b}"
+    play sound "Click.mp3" noloop    
+
+    M "Bon, reprenon le cours."
     play sound "Click.mp3" noloop 
+
+    "{b}{i}Le cours continue sans problème.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+
+    M "Le cours est terminé vous pouvez quitter la salle."
+    play sound "Click.mp3" noloop 
+
+    P "Bon on va manger [newname] ?"
+    play sound "Click.mp3" noloop 
+    
+    Na "Oui bien sûr je te suis."
+    play sound "Click.mp3" noloop 
+
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Vous vous dirigez votre chemin vers le hall.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+    
+    scene staircase
+    hide screen hallway
+
+    "{b}{i} Vous descendez lez escaliers.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hall 
+    show screen hall
+
+    "{b}{i} Vous continuez vers le refectoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hall
+
+    "{b}{i} Vous arrivez enfin au refectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop 
+
+    scene lunchroom 
+    show screen lunchroom 
+    
+    Na "Bon on va prendre à manger ?"
+    play sound "Click.mp3" noloop 
+
+    P "Ok alors."
+    play sound "Footsteps.mp3" noloop 
+
+    "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 200  
+    
+    P "C'est bon [newname] tu t'es servie ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui c'est bon on peut aller s'asseoir."
+    play sound "Click.mp3" noloop  
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
