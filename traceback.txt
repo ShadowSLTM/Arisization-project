@@ -1,26 +1,115 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 56, in script
-    $ renpy.save("quick_save_slot1", slot=1)
-  File "game/script.rpy", line 56, in <module>
-    $ renpy.save("quick_save_slot1", slot=1)
-TypeError: save() got an unexpected keyword argument 'slot'
+  File "game/screens.rpy", line 1904, in execute
+    screen success():
+  File "game/screens.rpy", line 1904, in execute
+    screen success():
+  File "game/screens.rpy", line 1910, in execute
+    use game_menu(_("Succès"), scroll="viewport"):
+  File "game/screens.rpy", line 421, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
+  File "game/screens.rpy", line 421, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
+  File "game/screens.rpy", line 430, in execute
+    frame:
+  File "game/screens.rpy", line 433, in execute
+    hbox:
+  File "game/screens.rpy", line 439, in execute
+    frame:
+  File "game/screens.rpy", line 442, in execute
+    if scroll == "viewport":
+  File "game/screens.rpy", line 444, in execute
+    viewport:
+  File "game/screens.rpy", line 453, in execute
+    vbox:
+  File "game/screens.rpy", line 456, in execute
+    transclude
+  File "game/screens.rpy", line 1910, in execute
+    use game_menu(_("Succès"), scroll="viewport"):
+  File "game/screens.rpy", line 1914, in execute
+    vbox:
+NameError: name 'success' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 56, in script
-    $ renpy.save("quick_save_slot1", slot=1)
-  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\ast.py", line 821, in execute
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
+  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\ast.py", line 834, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\python.py", line 1178, in py_exec_bytecode
+  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\python.py", line 1187, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/script.rpy", line 56, in <module>
-    $ renpy.save("quick_save_slot1", slot=1)
-TypeError: save() got an unexpected keyword argument 'slot'
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
+  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 1904, in execute
+    screen success():
+  File "game/screens.rpy", line 1904, in execute
+    screen success():
+  File "game/screens.rpy", line 1910, in execute
+    use game_menu(_("Succès"), scroll="viewport"):
+  File "game/screens.rpy", line 421, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
+  File "game/screens.rpy", line 421, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
+  File "game/screens.rpy", line 430, in execute
+    frame:
+  File "game/screens.rpy", line 433, in execute
+    hbox:
+  File "game/screens.rpy", line 439, in execute
+    frame:
+  File "game/screens.rpy", line 442, in execute
+    if scroll == "viewport":
+  File "game/screens.rpy", line 444, in execute
+    viewport:
+  File "game/screens.rpy", line 453, in execute
+    vbox:
+  File "game/screens.rpy", line 456, in execute
+    transclude
+  File "game/screens.rpy", line 1910, in execute
+    use game_menu(_("Succès"), scroll="viewport"):
+  File "game/screens.rpy", line 1914, in execute
+    vbox:
+  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\text\text.py", line 2177, in _scope
+    return self.set_text(self.text_parameter, scope, self.substitute, update)
+  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\text\text.py", line 2216, in set_text
+    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
+  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\substitutions.py", line 373, in substitute
+    s = interpolate(s, variables) # type: ignore
+  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\substitutions.py", line 86, in interpolate
+    raise e
+  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\substitutions.py", line 78, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\python.py", line 1218, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "<none>", line 1, in <module>
+NameError: name 'success' is not defined
 
 Windows-10-10.0.26100 AMD64
-Ren'Py 8.3.3.24111502
+Ren'Py 8.3.7.25031702
 Arisization Project Version_test
-Mon Mar 17 23:32:13 2025
+Wed Mar 19 14:52:02 2025

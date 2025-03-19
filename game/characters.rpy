@@ -56,6 +56,11 @@ define Mo = Character('Mary [nom]', color="#ff00ea")
 
 define C = Character('Takeshi Kurosawa', color="#aa009c")
 
+# les créateurs de Runix (Neogen Technologies)
+
+define Sa = Character('Saori Kaminari', color="#ffffff")
+define My = Character('Mizuki Yamori', color="#ffffff")
+
 # police de la direction générale contre les cyberattauqes (DGCA)
 
 define Oh = Character('Officier Hiroyuki', color="#0000ff")

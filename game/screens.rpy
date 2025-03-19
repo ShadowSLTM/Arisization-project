@@ -1898,4 +1898,3 @@ style about_text is gui_text
 
 style about_label_text: 
     size gui.label_text_size
-

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 70: invalid syntax
-    renpy.quick_save()         $ renpy.save("quick_save_custom", slot=99)
-                                ^
+File "game/script.rpy", line 155: invalid syntax
+    = get_random_entrepot()
+     ^
 
-Ren'Py Version: Ren'Py 8.3.3.24111502
-Mon Mar 17 22:42:43 2025
+Ren'Py Version: Ren'Py 8.3.7.25031702
+Wed Mar 19 01:33:19 2025

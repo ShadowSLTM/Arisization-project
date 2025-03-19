@@ -16,34 +16,6 @@ label start:
 
     stop music fadeout 2.0   
 
-init python:
-    import random
-    
-    morning_lines = [
-        "Ugh... encore un matin difficile...",
-        "Bon, une nouvelle journée commence !",
-        "J'aurais dû me coucher plus tôt hier soir...",
-        "C'est l'heure de se lever et d'affronter la journée !",
-        "Hmm... juste cinq minutes de plus...",
-        "Oh déjà...",
-        "Oh super....", 
-    ] 
-    
-    def get_random_morning_line():
-        return random.choice(morning_lines) 
-
-init python:
-    import random
-    
-    predefined_notes = [14, 14.5, 15, 15.5, 16, 16.5, 17, 17.5, 18, 18.5, 19, 19.5, 20]
-    
-    def get_random_note():
-     
-        if random.choice([True, False]):
-            return random.choice(predefined_notes) 
-        else:
-            return round(random.uniform(14, 20), 1)  
-    
 label key: 
 
     play sound "Menu.mp3" noloop
@@ -180,7 +152,8 @@ label début:
     P "Bon ok alors."
     play sound "Click.mp3" noloop
 
-    "{b}{i}Tu commences à regarder un peu dans l'entrêpot.{/i}{/b}"
+    $ entrepot_rdm = get_random_entrepot()
+    "{b}{i}[entrepot_rdm].{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     P "Tu trouves quelques choses ?"
@@ -1436,7 +1409,7 @@ label rencontre:
     T "Intéressant j'espère qu'[pronom] te trouvera un vrai jolie prénom." 
     play sound "Click.mp3" noloop
 
-    A "Merci et je suis sa fille en quelque sorte"
+    A "Merci et je suis sa fille en quelque sorte."
     play sound "Click.mp3" noloop
 
     if pronom == "il":
@@ -1447,10 +1420,10 @@ label rencontre:
     elif pronom == "elle": 
 
         I "Elle te considére vraiment comme ça propre fille !?"
-        play sound "Click.mp3" noloop
+        play sound "Click.mp3" noloop 
 
     A "Oui pourquoi cette question ?" 
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     I "Rien c'est juste que je trouve ça mignon qu'[pronom] te considére comme sa fille alors que tu es un [model].~"
     play sound "Click.mp3" noloop
@@ -9033,7 +9006,7 @@ label code:
                 play sound "Menu.mp3" noloop
 
         $ reboot = renpy.input("Écris ceci : initiate_humanoid_robot.shutdown(security_override=false)")
-        $ reboot = reboot.strip()
+        $ reboot = reboot.strip() 
 
         if reboot == "initiate_humanoid_robot.shutdown(security_override=false)":
 
@@ -12318,6 +12291,8 @@ label examen_pythagore:
     scene hallway 
     show screen hallway
 
+    "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
+
     scene black
     hide screen hallway
 
@@ -13310,6 +13285,120 @@ label password4:
 
     Na "Oui c'est bon on peut aller s'asseoir."
     play sound "Click.mp3" noloop  
+
+    "{b}{i} Vous asseyez à une table.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    Na "Bon appétit [prénom]."
+    play sound "Click.mp3" noloop 
+
+    P "Merci beaucoup."
+    play sound "Footsteps.mp3" noloop 
+
+    "{b}{i} Vous manger tranquillement puis [S] viens vers vous.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Oh salut comment ça va ?"
+    play sound "Click.mp3" noloop 
+
+    S "Je vais bien et vous ?" 
+    play sound "Click.mp3" noloop 
+
+    P "On va bien."
+    play sound "Click.mp3" noloop 
+
+    S "J'ai entendu dire qu'[newname] a réussi le test de Turing, c'est vrai ?"
+    play sound "Click.mp3" noloop 
+
+    P "Oui affirmatif."
+    play sound "Click.mp3" noloop 
+
+    S "Putain, tu maitrises vraiment ton sujet."
+    play sound "Click.mp3" noloop 
+
+    P "C'est gentil de ta part."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Vous continuez de discuter.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+    
+    S "Bon on doit retourner en cours."
+    play sound "Click.mp3" noloop
+
+    P "Ok il faut pas qu'on soit en retard."
+    play sound "Click.mp3" noloop 
+
+    S "Ok je vous suis."
+    play sound "Click.mp3" noloop 
+
+    scene black 
+    hide screen lunchroom 
+
+    "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall
+    show screen hall
+
+    "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop  
+
+    scene staircase 
+    hide screen hall
+
+    "{b}{i} Vous montez au premier étage.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop 
+
+    scene hallway 
+    show screen hallway
+
+    "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Tu entres en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene classroom  
+    show screen class_404 
+
+    M "Rebonjour, cet après-midi nous allons faire un cours de programmation."
+    play sound "Click.mp3" noloop 
+
+    S "Un cours de programmation !? et sur quel langage ?"
+    play sound "Click.mp3" noloop 
+
+    M "C'est un langage que [prénom] et [newname] connaisssent très bien."
+    play sound "Click.mp3" noloop 
+
+    S "Non, ne me dites pas que c'est....."
+    play sound "Click.mp3" noloop 
+
+    M "Oui se sera un cours de programmation sur le langage Runix"
+    play sound "Click.mp3" noloop 
+
+    S "Super fait chier."
+    play sound "Click.mp3" noloop 
+
+    M "Ton langage s'il te plait !"
+    play sound "Click.mp3" noloop 
+
+    S "Désolé."
+    play sound "Click.mp3" noloop 
+    
+    M "Bien veuillez sortir vos livre d'informatique."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Tout le monde sort son livre et écoute la [T].{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    M "Bon nous allons commencer par l'introduction au langage Runix."
+    play sound "Click.mp3" noloop 
+
+    M "Le langage Runix a été inventé en 2092 par deux personnes de Neo Technologies nommmées [Sa] et [My]."
+    play sound "Click.mp3" noloop 
 
 
     return                            
