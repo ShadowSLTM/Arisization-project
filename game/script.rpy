@@ -16,11 +16,6 @@ label start:
 
     stop music fadeout 2.0   
 
-<<<<<<< HEAD
-=======
-
-    
->>>>>>> 9902371b6fd1a713875ee474627a89602293e339
 label key: 
 
     play sound "Menu.mp3" noloop
