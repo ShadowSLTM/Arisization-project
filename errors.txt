@@ -2,9 +2,18 @@
 errors listed below, and try again.
 
 
+<<<<<<< HEAD
 File "game/script.rpy", line 155: invalid syntax
     = get_random_entrepot()
      ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
 Wed Mar 19 01:33:19 2025
+=======
+File "game/script.rpy", line 159: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    "{b}{i}[entrepot]{/i}{/b}"
+    ^
+
+Ren'Py Version: Ren'Py 8.3.7.25031702
+Tue Mar 18 23:18:51 2025
+>>>>>>> 9902371b6fd1a713875ee474627a89602293e339

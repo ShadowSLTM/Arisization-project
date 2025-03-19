@@ -16,6 +16,11 @@ label start:
 
     stop music fadeout 2.0   
 
+<<<<<<< HEAD
+=======
+
+    
+>>>>>>> 9902371b6fd1a713875ee474627a89602293e339
 label key: 
 
     play sound "Menu.mp3" noloop
@@ -152,8 +157,15 @@ label début:
     P "Bon ok alors."
     play sound "Click.mp3" noloop
 
+<<<<<<< HEAD
     $ entrepot_rdm = get_random_entrepot()
     "{b}{i}[entrepot_rdm].{/i}{/b}"
+=======
+#Tododosdsjdfjshdfjkksjdfhs
+    $ entrepot = get_random_entrepot()
+    "{b}{i}[entrepot]{/i}{/b}"
+
+>>>>>>> 9902371b6fd1a713875ee474627a89602293e339
     play sound "Click.mp3" noloop 
 
     P "Tu trouves quelques choses ?"
@@ -6581,7 +6593,7 @@ label suite1:
     play sound "Click.mp3" noloop
 
     Na "Oh désolée j'avais oublié que c'est un jeu dématérialisé."
-    play sound "Click.mp3" noloop 
+    play sound "Click.mp3" noloop
 
     P "Bon on est aussi sensé recevoir notre budjet du mois aujourd'hui." 
     play sound "Click.mp3" noloop  
@@ -13051,7 +13063,7 @@ label password4:
 
         "Mot de passe incorrect. Accès refusé." 
         play sound "Menu.mp3" noloop
-        jump password4
+        jump password
 
     Na "Démarrage en cours......"
     play sound "Click.mp3" noloop 

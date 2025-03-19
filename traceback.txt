@@ -1,6 +1,7 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
+<<<<<<< HEAD
   File "game/screens.rpy", line 1904, in execute
     screen success():
   File "game/screens.rpy", line 1904, in execute
@@ -30,10 +31,18 @@ While running game code:
   File "game/screens.rpy", line 1914, in execute
     vbox:
 NameError: name 'success' is not defined
+=======
+  File "game/script.rpy", line 19, in script
+    init python:
+  File "game/script.rpy", line 20, in <module>
+    import fonctions as fonc
+ModuleNotFoundError: No module named 'fonctions'
+>>>>>>> 9902371b6fd1a713875ee474627a89602293e339
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
+<<<<<<< HEAD
   File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
     python hide:
   File "C:\Users\sndoy\OneDrive\Bureau\Ren'py.1-sdk\renpy-8.2.1-sdk\renpy\ast.py", line 834, in execute
@@ -108,8 +117,23 @@ Full traceback:
     return eval(bytecode, globals, locals)
   File "<none>", line 1, in <module>
 NameError: name 'success' is not defined
+=======
+  File "game/script.rpy", line 19, in script
+    init python:
+  File "C:\Program Files\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Program Files\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 20, in <module>
+    import fonctions as fonc
+ModuleNotFoundError: No module named 'fonctions'
+>>>>>>> 9902371b6fd1a713875ee474627a89602293e339
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 Arisization Project Version_test
+<<<<<<< HEAD
 Wed Mar 19 14:52:02 2025
+=======
+Tue Mar 18 22:27:00 2025
+>>>>>>> 9902371b6fd1a713875ee474627a89602293e339
