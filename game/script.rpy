@@ -8801,14 +8801,14 @@ label code:
     $ system = renpy.input("Choisis un nom pour ton système d'exploitation.") 
 
     play sound "Menu.mp3" noloop
-    $ Line1 = renpy.input("initiate_system(name=Aris,mode:secure,boot:true,fightmode:false);")
+    $ Line1 = renpy.input("initiate_system(name=Aris,mode:secure,boot:true,fightmode:false)")
 
     menu:
 
         "{b}{i} Compiler le code.{/i}{/b}" :
             play sound "Menu.mp3" noloop 
 
-            if Line1 == "initiate_system(name=Aris,mode:secure,boot:true,fightmode:false);":
+            if Line1 == "initiate_system(name=Aris,mode:secure,boot:true,fightmode:false)":
             
                 "Code correctement compilé."
                 play sound "Click.mp3" noloop 
@@ -13399,11 +13399,30 @@ label password4:
     M "Bon nous allons commencer par l'introduction au langage Runix."
     play sound "Click.mp3" noloop 
 
-    M "Le langage Runix a été inventé en 2092 par deux personnes de Neo Technologies nommmées [Sa] et [My]."
+    M "Le langage Runix a été inventé en 2092 par deux personnes de Neo Technologies nommmées [Sa] et [My], il a été développé pour leurs robots humanoïdes à la base."
     play sound "Click.mp3" noloop 
 
-    M ""
+    S "Les robots humanoïdes !? maintenant je comprends pourquoi il le connais par coeur."
     play sound "Click.mp3" noloop 
+
+    M "Oui mais mainteant il a été généralisé pour d'autres domaine de l'informatique."
+    play sound "Click.mp3" noloop 
+
+    S "Intérresant."
+    play sound "Click.mp3" noloop 
+
+    M "Les fichiers écrit en Runix sont des fichiers avec l'extension .rnx."
+    play sound "Click.mp3" noloop 
+
+    S "Je vois." 
+    play sound "Click.mp3" noloop
+
+    M "Tous les fichiers en .rnx commencent par la commande << initiate_ >> puis suivi du nom de l'objet."
+    play sound "Click.mp3" noloop
+
+
+
+
 
     return                            
 
