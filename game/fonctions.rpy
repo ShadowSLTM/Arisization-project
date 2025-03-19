@@ -32,6 +32,24 @@ init python:
     def get_random_entrepot():
         return random.choice(entrepot_rdm)
 
+# salutation_rdm est une liste de phrases qui seront affichées aléatoirement au moment des salutations envers la professeure.
+init python:
+    import random
+    
+    salutation_rdm = [
+        "Bonjour.",
+        "Bonjour, Madame.",
+        "Bien le bonjour.",
+        "Bonjour à vous.",
+        "Bonjour, bonjour.",
+        "Bonjour Madame.",
+        "Bonjour à tous.",
+    ]
+
+    
+    def get_random_entrepot():
+        return random.choice(entrepot_rdm)
+
 # predefined_notes est une liste de notes prédéfinies qui seront affichées aléatoirement lors de la correction des exercices.
 init python:
     import random

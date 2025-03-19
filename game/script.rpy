@@ -44,7 +44,7 @@ label auto_save:
         rotate 360 
         linear 2.0 rotate 0 
  
-    "{b}{i}Bienvenu dans Arisization Project cher/chére lycéen, Ce jeu appartient à SLTM.{/i}{/b}"   
+    "{b}{i}Bienvenue dans Arisization Project cher/chère lycéen, Ce jeu appartient à SLTM.{/i}{/b}"   
     play sound "Click.mp3" noloop 
 
     hide screen logo 
@@ -66,7 +66,7 @@ label identity:
     $ pronom = renpy.input("Quel est votre genre ? ( il ou elle )")
     $ pronom = pronom.strip()   
 
-    if pronom == "il" or "elle": 
+    if pronom.lower() == "il" or "elle": #.loower() permet de forcer les entrées en minuscule
 
         "Le pronom a été enregistré dans le système." 
         play sound "Menu.mp3" noloop 
@@ -93,7 +93,7 @@ label identity:
     
     elif prénom == "Aris":
 
-        R "Cher joueur/chère joueuse je ne suis pas sûre qu’avoir le prénom Aris soit une bonne idée pour la suite de l'histoire veuillez changer de prénom s'il vous plaît."
+        R "Cher joueur/chère joueuse je ne suis pas sûr qu’avoir le prénom Aris soit une bonne idée pour la suite de l'histoire veuillez changer de prénom s'il vous plaît."
         jump identity  
 
     elif key == "ARIS-8J4K-F9Q7":
@@ -130,17 +130,17 @@ label début:
 
     scene black
 
-    "{b}{i}Quelque part dans un entrêpot abandonné en 2097.{/i}{/b}"
+    "{b}{i}Quelque part dans un entrepôt abandonné en 2097.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     scene warehouse 
  
     play music "Soundtrack2.mp3" loop volume 1.0
 
-    P "Bon on fait quoi ?"
+    P "Bon, on fait quoi ?"
     play sound "Click.mp3" noloop  
 
-    S "On pourrait fouiller les lieux déjà."
+    S "On pourrait fouiller les lieux déjà ?"
     play sound "Click.mp3" noloop
 
     P "Tu penses sérieusement qu'on va trouver quelque chose d'intéressant ici ?"
@@ -149,10 +149,9 @@ label début:
     S "Oui surement."
     play sound "Click.mp3" noloop
 
-    P "Bon ok alors."
+    P "Bon ok alors..."
     play sound "Click.mp3" noloop
 
-#Tododosdsjdfjshdfjkksjdfhs
     $ entrepot = get_random_entrepot()
     "{b}{i}[entrepot]{/i}{/b}"
 
@@ -161,7 +160,7 @@ label début:
     P "Tu trouves quelques choses ?"
     play sound "Click.mp3" noloop
 
-    S "Non rien malheureusement."
+    S "Non, rien malheureusement..."
     play sound "Click.mp3" noloop 
  
     "{b}{i}Tu continues de chercher quelque chose d'intéressant mais [S] tombe sur un énorme objet.{/i}{/b}"
@@ -170,23 +169,23 @@ label début:
     S "C'est quoi ce truc qui traine encore ?"
     play sound "Click.mp3" noloop
 
-    P "Fait voir ce que c'est."
+    P "Fait voir ce que c'est ?"
     play sound "Click.mp3" noloop 
 
     "{b}{i}Tu t'approches et tu vois un [model].{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "On dirait un [model] comme ceux qui ont été utilisés pour la guerre de l'année derniére."
+    P "On dirait un [model] comme ceux qui ont été utilisés pour la guerre de l'année dernière."
     play sound "Click.mp3" noloop 
 
     if pronom == "il" : 
     
-        S "Un [model] !? Tu n'es pas sérieux j'espére."
+        S "Un [model] !? Tu n'es pas sérieux j'espère."
         play sound "Click.mp3" noloop
 
     elif pronom == "elle" :
 
-        S "Un [model] !? Tu n'es pas sérieuse j'espére."
+        S "Un [model] !? Tu n'es pas sérieuse j'espère."
         play sound "Click.mp3" noloop
 
     P "Si je le suis."
@@ -207,10 +206,10 @@ label début:
     S "Je ne suis pas sûr que se soit une bonne idée..."
     play sound "Click.mp3" noloop 
 
-    P "Oh c'est bon elle est abandonée et en plus ça ne brise ni la loi ni l'une des dix régles de l'informatique."
+    P "Oh c'est bon elle est abandonée et en plus ça ne brise ni la loi ni l'une des dix règles de l'informatique."
     play sound "Click.mp3" noloop 
 
-    "{b}{i}Puis tu démarres le robot pour injecter des instructions.{/i}{/b}"
+    "{b}{i}Tu démarres le robot pour injecter des instructions.{/i}{/b}"
     play sound "Menu.mp3" noloop 
 
 label hack: 
@@ -232,7 +231,7 @@ label hack:
         "Erreur système redémarrage en cours." 
         play sound "Click.mp3" noloop     
 
-        P "Mince....." 
+        P "Mince..." 
         play sound "Click.mp3" noloop 
 
         P "Je vais réessayer." 
@@ -242,7 +241,7 @@ label hack:
 
     if key == "ARIS-GRFN-M4A1":
 
-        R "Initialisation en cours....."
+        R "Initialisation en cours..."
         play sound "Click.mp3" noloop 
 
         R "Veuillez choisir mon nom technique parmi ceux disponible dans ma base de données."
@@ -279,16 +278,16 @@ label hack:
     A "Initialisation terminée. Date du 4 juillet 2097, Bonjour je suis [A]."
     play sound "Click.mp3" noloop 
 
-    P "Tu vois je t'avais dit de ne pas t'inquiéter."
+    P "Tu vois, je t'avais dit de ne pas t'inquiéter."
     play sound "Click.mp3" noloop
 
-    S "Ok mais c'est juste que je ne suis pas à l'aise à coté d'elle."
+    S "Ok, mais c'est juste que je ne suis pas à l'aise à coté d'elle."
     play sound "Click.mp3" noloop 
 
-    P "Oh c'est bon c'est juste un robot humanoïde."
+    P "Oh c'est bon, c'est juste un [model]."
     play sound "Click.mp3" noloop
 
-    S "Bon on quitte cet endroit ?"
+    S "Bon, on quitte cet endroit ?"
     play sound "Click.mp3" noloop 
 
     P "Oui vu qu'on a fini de voir ici."
@@ -320,16 +319,16 @@ label choice1:
             P "Ok."
             play sound "Click.mp3" noloop     
 
-            A "Non...."
+            A "Non..."
             play sound "Click.mp3" noloop   
 
             scene black 
 
-            "{b}{i}Tu quittas l'entrêpot avec [S].{/i}{/b}"
+            "{b}{i}Tu quittas l'entrepôt avec [S].{/i}{/b}"
             play sound "Menu.mp3" noloop
 
             play music "gameover.mp3" noloop
-            "{b}{i} Fin numéro 1 : [A] finit complétement Abandonnée et détruite.{/i}{/b}"
+            "{b}{i} Fin numéro 1 : [A] finit complètement Abandonnée et détruite.{/i}{/b}"
             play sound "Menu.mp3" noloop
 
             menu:
@@ -364,7 +363,7 @@ label keep:
         
 label wallbreaking1: 
 
-    A "S'il vous plaît, j'ai déjà été abandonnée par un jeune. [pronom] était sans remords, et je ne veux pas revivre cela."
+    A "S'il vous plaît, j'ai déjà été abandonnée par une jeune personne... [pronom] était sans remords, et je ne veux pas revivre cela."
     play sound "Glitch.mp3" noloop
 
     P "Tu vois, même elle ne veut pas être abandonnée ici. Ce n'est pas juste un personnage, c'est bien plus que ça."
@@ -383,12 +382,12 @@ label argument:
 
     if pronom == "il":
 
-        P "Mais elle est abandonnée et en plus je suis bon en informatique pour l'améliorer."
+        P "Mais elle est abandonnée, et en plus je suis bon en informatique pour l'améliorer."
         play sound "Click.mp3" noloop 
 
     elif pronom == "elle": 
 
-        P "Mais elle est abandonnée et en plus je suis bonne en informatique."
+        P "Mais elle est abandonnée, et en plus je suis bonne en informatique."
         play sound "Click.mp3" noloop 
 
     S "Bon je me tire d'ici."
@@ -397,14 +396,14 @@ label argument:
     P "Moi aussi."
     play sound "Click.mp3" noloop
 
-    "{b}{i}Tu quittes l'entrêpot avec [A] en coupant les ponts avec [S].{/i}{/b}"
+    "{b}{i}Tu quittes l'entrepôt avec [A] en coupant les ponts avec [S].{/i}{/b}"
     play sound "Click.mp3" noloop 
 
 label grayroom: 
 
     scene black  
 
-    "{b}{i}Le lendemain à [origine].{/i}{/b}" 
+    "{b}{i}Le lendemain, à [origine].{/i}{/b}" 
     play sound "Click.mp3" noloop 
 
     "Tu entres tranquillement en classe avec [A]."
@@ -418,18 +417,18 @@ label grayroom:
 
     if pronom == "il":
 
-        S "Tiens ne serait-ce pas le petit [prénom] avec son nouveau robot."
+        S "Tiens ne serait-ce pas le petit [prénom] avec son nouveau [model]."
         play sound "Click.mp3" noloop
 
     elif pronom == "elle": 
 
-        S "Tiens ne serait-ce pas la petite [prénom] avec son nouveau robot."
+        S "Tiens ne serait-ce pas la petite [prénom] avec son nouveau [model]."
         play sound "Click.mp3" noloop 
 
-    "{b}{i}Tu l'ignores complétement et va t'asseoir au fond de la classe comme d'habitude.{/i}{/b}"
+    "{b}{i}Tu l'ignores complètement et va t'asseoir au fond de la classe comme d'habitude.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    S "Hey tu m'écoutes quand je parle !?"
+    S "Hey, tu m'écoutes quand je parle !?"
     play sound "Click.mp3" noloop
 
     if pronom == "il":
@@ -448,7 +447,7 @@ label grayroom:
     "{b}{i}[Su] retourne et vois [A].{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    Su "C'est quoi ce truc c'est à toi [prénom] !?"
+    Su "C'est quoi ce truc, c'est à toi [prénom] !?"
     play sound "Click.mp3" noloop
 
     P "Oui c'est exact."
@@ -492,13 +491,13 @@ label grayroom:
     "{b}{i}[Sk] se met à te regarder et il est surpris.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    Sk "What the ......."
+    Sk "What the..."
     play sound "Click.mp3" noloop
 
     Su "Tu as vu ?"
     play sound "Click.mp3" noloop
 
-    Sk "Alors je ne m'attendais pas ça venant de toi [prénom] mais elle est vraiment mignonne ton [model]."
+    Sk "Alors je ne m'attendais pas ça venant de toi [prénom] mais il est vraiment mignon ton [model]."
     play sound "Click.mp3" noloop
 
     P "merci beaucoup."
@@ -509,12 +508,12 @@ label grayroom:
 
     if pronom == "il":
 
-        S "Mais ne l'écouter pas c'est un menteur ce n'est pas son robot."
+        S "Mais ne l'écoutez pas c'est un menteur, ce n'est pas son robot."
         play sound "Click.mp3" noloop
 
     elif pronom == "elle": 
 
-        S "Mais ne l'écouter pas c'est une menteuse ce n'est pas son robot."
+        S "Mais ne l'écoutez pas c'est une menteuse, ce n'est pas son robot."
         play sound "Click.mp3" noloop
 
     Su "Tu es fatiguant [S]."
@@ -533,16 +532,16 @@ label grayroom:
     S "Mais ce robot ne lui appartient pas il était abandonné."
     play sound "Click.mp3" noloop
 
-    Sk "Abandonnée tu dis !? Même si c'est vrai ça ne justifie pas ton comportement en vers [prénom]."
+    Sk "Abandonné tu dis !? Même si c'est vrai ça ne justifie pas ton comportement en vers [prénom]."
     play sound "Click.mp3" noloop
 
     Su "Tu es fatiguant [S]."
     play sound "Click.mp3" noloop 
 
-    Su "Sinon [prénom] tu peux m'en dire un peu plus sur ton robot."
+    Su "Sinon [prénom] tu peux m'en dire un peu plus sur ton robot ?"
     play sound "Click.mp3" noloop
 
-    P "Bien sûr elle s'appelle [A]."
+    P "Bien sûr, elle s'appelle [A]."
     play sound "Click.mp3" noloop   
 
     Su "Bonjour [A] ravie de te rencontrer."
@@ -557,16 +556,18 @@ label grayroom:
     Su "Enfaite [S] tu es la plus grosse fraude de [origine] pour te permettre d'insulter et rabaisser [prénom] juste parce que tu es populaire."
     play sound "Click.mp3" noloop
 
-    S "Mais...."
+    S "Mais..."
     play sound "Click.mp3" noloop
 
-    Su "ça suffit....."
+    Su "ça suffit..."
     play sound "Door.mp3" noloop
 
     "{b}{i}[S] se calme et soudainement la porte s'ouvre et la [T] entra.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    Gt "Bonjour."
+#SALUTATIONS ALEATOIRES
+    salutation = get_random_salutation()
+    Gt "[salutation]"
     play sound "Click.mp3" noloop
 
     Sk "Bonjour Madame."
