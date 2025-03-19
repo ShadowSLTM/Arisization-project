@@ -32,10 +32,6 @@ init python:
     def get_random_entrepot():
         return random.choice(entrepot_rdm)
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 9902371b6fd1a713875ee474627a89602293e339
 # predefined_notes est une liste de notes prédéfinies qui seront affichées aléatoirement lors de la correction des exercices.
 init python:
     import random

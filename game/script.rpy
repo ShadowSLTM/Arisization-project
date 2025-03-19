@@ -152,15 +152,10 @@ label début:
     P "Bon ok alors."
     play sound "Click.mp3" noloop
 
-<<<<<<< HEAD
-    $ entrepot_rdm = get_random_entrepot()
-    "{b}{i}[entrepot_rdm].{/i}{/b}"
-=======
 #Tododosdsjdfjshdfjkksjdfhs
     $ entrepot = get_random_entrepot()
     "{b}{i}[entrepot]{/i}{/b}"
 
->>>>>>> 9902371b6fd1a713875ee474627a89602293e339
     play sound "Click.mp3" noloop 
 
     P "Tu trouves quelques choses ?"
