@@ -1866,6 +1866,8 @@ screen credit():
 
             text _("Correction du jeu : Seydou N'Doye (Shadow_SLTM) et Nathanaël (Loki)\n")
 
+            text _("Gestion des fichiers du jeu : Seydou N'Doye (Shadow_SLTM) et Nathanaël (Loki)\n")
+            
             label "— Contributions supplémentaires —\n" 
 
             text _("Phrase « Bon après ça ne m'étonne pas venant de toi » : Sararnbb\n")

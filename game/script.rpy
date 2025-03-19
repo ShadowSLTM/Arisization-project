@@ -13402,8 +13402,10 @@ label password4:
     M "Le langage Runix a été inventé en 2092 par deux personnes de Neo Technologies nommmées [Sa] et [My]."
     play sound "Click.mp3" noloop 
 
+    M ""
+    play sound "Click.mp3" noloop 
 
     return                            
 
 
-# Aris la plus belle sjhdgkjahgsdfkjhgaksjdhgfkjhgasdf
+# Aris la plus belle
