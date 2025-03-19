@@ -566,7 +566,7 @@ label grayroom:
     play sound "Click.mp3" noloop 
 
 #SALUTATIONS ALEATOIRES
-    salutation = get_random_salutation()
+    $ salutation = get_random_salutation()
     Gt "[salutation]"
     play sound "Click.mp3" noloop
 
