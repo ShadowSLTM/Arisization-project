@@ -65,9 +65,10 @@ label identity:
 
     play sound "Menu.mp3" noloop
     $ pronom = renpy.input("Quel est votre genre ? ( il ou elle )")
+    $ pronom = pronom.lower()
     $ pronom = pronom.strip()   
 
-    if pronom.lower() == "il" or "elle": #.loower() permet de forcer les entrées en minuscule
+    if pronom == "il" or "elle": #.loower() permet de forcer les entrées en minuscule
 
         "Le pronom a été enregistré dans le système." 
         play sound "Menu.mp3" noloop 
