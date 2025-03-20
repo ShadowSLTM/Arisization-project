@@ -40,10 +40,11 @@ init python:
         "Bonjour.",
         "Bien le bonjour.",
         "Bonjour à vous.",
-        "Bonjour, bonjour.", 
-        "Salutation.",
+        "Bonjour, bonjour.",
+        "Bonjour à tous.", 
     ]
 
+    
     def get_random_salutation():
         return random.choice(salutation_rdm)
 
@@ -58,7 +59,7 @@ init python:
         if random.choice([True, False]):
             return random.choice(predefined_notes) 
         else:
-            return round(random.uniform(14, 20))  
+            return round(random.uniform(14, 20), 1)  
 
 # remerciement_rdm est une liste de phrases qui seront affichées aléatoirement au moment des remerciements envers la professeure.
 init python:
@@ -106,3 +107,38 @@ init python:
 
     def get_random_validation():
         return random.choice(validation_rdm)
+
+
+# easter egg
+init python:
+    import random
+
+    def get_random_enchente_m():
+        return "enchanté" if random.random() < 0.99 else "enchantier"
+
+# easter egg
+init python:
+    import random
+
+    def get_random_enchente_f():
+        return "enchantée" if random.random() < 0.99 else "enchantier"
+
+    # suivi_rdm est une liste de phrases qui seront affichées aléatoirement au moment où le joueur demande à Aris de le suivre.
+init python:
+    import random
+
+    suivi_rdm = [  
+        "D'accord, je te suis. [P]",  
+        "Je te suis.",  
+        "Je te suis, allons-y.",  
+        "Oui, je te suis.",
+        "Je te suis, pas de problème.",
+        "Je te suis, allons-y ensemble.",
+        "Je te suis [P], on y va.",
+        "Oui, je te suis [P].",
+        "Oui [P], je te suis.",
+        "Je te suis [P].",
+
+    ]
+    def get_random_suivi():
+        return random.choice(suivi_rdm)
