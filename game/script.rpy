@@ -566,8 +566,9 @@ label grayroom:
     play sound "Click.mp3" noloop 
 
 #SALUTATIONS ALEATOIRES
-    $ salutation = get_random_salutation()
-    Gt "[salutation]"
+
+    $  salutation_rdm = get_random_salutation()
+    Gt "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
     Sk "Bonjour Madame."
@@ -1429,7 +1430,7 @@ label rencontre:
     play sound "Click.mp3" noloop 
 
     I "Rien c'est juste que je trouve ça mignon qu'[pronom] te considére comme sa fille alors que tu es un [model].~"
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     A "Merci beaucoup [I].~"
     play sound "Click.mp3" noloop
@@ -1651,11 +1652,20 @@ label rencontre:
     scene hallway
     show screen hallway 
 
-    P "Bon [A] on va voir le dortoir ?"
-    play sound "Click.mp3" noloop
+    P "Bon [A], on va voir le dortoir ?"  
+    play sound "Click.mp3"  
 
-    A "Oui pourquoi pas" 
-    play sound "Click.mp3" noloop
+    A "Oui, pourquoi pas..."  
+    play sound "Click.mp3"  
+
+    P "OK, allons-y."  
+    play sound "Footsteps.mp3"  
+
+    A "Donc... je ne suis pas juste une poupée que tu manipules ?"  
+    play sound "Click.mp3"  
+
+    P "Non, tu es bien plus que ça. Tu es ma création... et ma fille."  
+    play sound "Footsteps.mp3"  
 
     "{b}{i}Pendant que vous vous dirigez au dortoir mais vous entendez une discussion venant de l'une des salles.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -1962,7 +1972,7 @@ label ask:
     I "Oui, je veux oublier mon échec."
     play sound "Click.mp3" noloop
 
-    P "Ok je ne juge pas mais j'espére que ton nouveau jeu sera mieux que ceux de Ubisoft."
+    P "Ok je ne juge pas mais j'espére que ton nouveau jeu sera mieux que ceux de NeoSoft dont le piétre Project Neon"
     play sound "Click.mp3" noloop
 
     I "Hé ! C'est méchant ça !" 
@@ -12305,7 +12315,8 @@ label examen_pythagore:
     scene classroom  
     show screen class_404 
 
-    M "Bonjour nous allons faire un nouveau théme mais avant ça je vais pouvoir vous rendre les résultats de vos premiers examens."
+
+    M "Bon je vais pouvoir vous rendre les résultats de vos seonds examens."
     play sound "Click.mp3" noloop 
 
     K "Cool enfin."
@@ -12356,9 +12367,9 @@ label examen_pythagore:
                 scene black
                 show screen points 
                 play music "Soundtrack.mp3" loop volume 1.0
-                jump examen_pythagore
+                jump choice9
     
-    else: 
+    else:
        
         M "C'est pas mal."
         play sound "Click.mp3" noloop
@@ -12372,46 +12383,115 @@ label examen_pythagore:
     Na "Merci beaucoup."
     play sound "Click.mp3" noloop 
 
-    M "[H] tu as eu 16/20."
+    $ note = get_random_note()
+    M "[H] tu as eu [note]/20."
     play sound "Click.mp3" noloop 
+
+    if note == 20: 
+
+        M "Félicitation tu l'as réussi à la perfection."
+        play sound "Click.mp3" noloop
+
+    else: 
+
+        M "Ce n'est pas mal."
+        play sound "Click.mp3" noloop
 
     H "Merci beaucoup."
     play sound "Click.mp3" noloop 
 
-    M "[I] tu as eu 19/20 félicitation."
+    $ note = get_random_note()
+    M "[I] tu as eu [note]/20."
     play sound "Click.mp3" noloop 
+
+    if note == 20: 
+
+        M "Félicitation tu l'as réussi à la perfection."
+        play sound "Click.mp3" noloop
+
+    else: 
+
+        M "Ce n'est pas mal."
+        play sound "Click.mp3" noloop
 
     I "Merci beaucoup."
     play sound "Click.mp3" noloop 
 
-    M "[Hi] tu as eu 16/20."
+    $ note = get_random_note()
+    M "[Hi] tu as eu [note]/20."
     play sound "Click.mp3" noloop 
 
+    if note == 20: 
+
+        M "Félicitation tu l'as réussi à la perfection."
+        play sound "Click.mp3" noloop
+
+    else: 
+
+        M "Ce n'est pas mal."
+        play sound "Click.mp3" noloop
     Hi "Merci beaucoup."
     play sound "Click.mp3" noloop 
 
-    M "[K] tu as eu 15/20."
+    $ note = get_random_note()
+    M "[K] tu as eu [note]/20."
     play sound "Click.mp3" noloop 
+
+    if note == 20: 
+
+        M "Félicitation tu l'as réussi à la perfection."
+        play sound "Click.mp3" noloop
+
+    else: 
+
+        M "Ce n'est pas mal."
+        play sound "Click.mp3" noloop
 
     K "Merci beaucoup."
     play sound "Click.mp3" noloop 
 
-    M "[N] tu as eu 18/20."
+    if note == 20: 
+
+        M "Félicitation tu l'as réussi à la perfection."
+        play sound "Click.mp3" noloop
+
+    else: 
+
+        M "Ce n'est pas mal."
+        play sound "Click.mp3" noloop
+
+    $ note = get_random_note()
+    M "[N] tu as eu [note]/20."
     play sound "Click.mp3" noloop 
+
+    if note == 20: 
+
+        M "Félicitation tu l'as réussi à la perfection."
+        play sound "Click.mp3" noloop
+
+    else: 
+
+        M "Ce n'est pas mal."
+        play sound "Click.mp3" noloop
 
     N "Merci beaucoup."
     play sound "Click.mp3" noloop 
 
-    M "[Y] tu as eu 20/20 félicitation."
-    play sound "Click.mp3" noloop 
+    $ note = get_random_note()
+    M "[Y] tu as eu [note]/20."
+    play sound "Click.mp3" noloop     
+    
+    if note == 20: 
+
+        M "Félicitation tu l'as réussi à la perfection."
+        play sound "Click.mp3" noloop
+
+    else: 
+
+        M "Ce n'est pas mal."
+        play sound "Click.mp3" noloop
 
     Y "Merci beaucoup."
-    play sound "Click.mp3" noloop 
-
-    M "[S] tu as eu 20/20 félicitation."
-    play sound "Click.mp3" noloop 
-
-    S "Merci beaucoup."
     play sound "Click.mp3" noloop 
 
     M "Bon au tour des ultimes Jumelles maintenant pour finir."
@@ -12420,16 +12500,55 @@ label examen_pythagore:
     J1 "Ok."
     play sound "Click.mp3" noloop 
 
-    M "[J1] tu as eu 18/20."
+    $ note = get_random_note()
+    M "[J1] tu as eu [note]/20."
     play sound "Click.mp3" noloop 
+
+    if note == 20: 
+
+        M "Félicitation tu l'as réussi à la perfection."
+        play sound "Click.mp3" noloop
+
+    else: 
+
+        M "Ce n'est pas mal."
+        play sound "Click.mp3" noloop
 
     J1 "Merci beaucoup."
     play sound "Click.mp3" noloop 
 
-    M "Et toi [J2] tu as eu 17/20." 
+    $ note = get_random_note()
+    M "Et toi [J2] tu as eu [note]/20."
     play sound "Click.mp3" noloop 
 
+    if note == 20: 
+
+        M "Félicitation tu l'as réussi à la perfection."
+        play sound "Click.mp3" noloop
+
+    else: 
+
+        M "Ce n'est pas mal."
+        play sound "Click.mp3" noloop 
+
     J2 "Merci beaucoup."
+    play sound "Click.mp3" noloop 
+
+    $ note = get_random_note()
+    M "Et toi [S] tu as eu [note]/20."
+    play sound "Click.mp3" noloop 
+
+    if note == 20: 
+
+        M "Félicitation tu l'as réussi à la perfection."
+        play sound "Click.mp3" noloop
+
+    else: 
+
+        M "Ce n'est pas mal."
+        play sound "Click.mp3" noloop
+
+    S "Merci beaucoup."
     play sound "Click.mp3" noloop 
 
     M "Bon la moyenne générale n'est pas mal, continuez de bien travaillez comme ceci."
@@ -13406,7 +13525,7 @@ label password4:
     S "Les robots humanoïdes !? maintenant je comprends pourquoi il le connais par coeur."
     play sound "Click.mp3" noloop 
 
-    M "Oui mais mainteant il a été généralisé pour d'autres domaine de l'informatique."
+    M "Oui mais maintenant il a été généralisé pour d'autres domaine de l'informatique."
     play sound "Click.mp3" noloop 
 
     S "Intérresant."
@@ -13418,11 +13537,14 @@ label password4:
     S "Je vois." 
     play sound "Click.mp3" noloop
 
-    M "Tous les fichiers en .rnx commencent par la commande << initiate_ >> puis suivi du nom de l'objet."
+    M "Tous les fichiers en .rnx commencent par la commande << initiate_ >> puis suivi du nom de l'objet, exmeple : initiate_humanoid_robot."
     play sound "Click.mp3" noloop
 
+    S "Et pour les paramétres plus avancées ?" 
+    play sound "Click.mp3" noloop
 
-
+    M "Il faut " 
+    play sound "Click.mp3" noloop
 
 
     return                            
