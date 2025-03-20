@@ -13605,8 +13605,4 @@ label password4:
         M "Ce n'est pas ça, la réponse était initiate_humanoid_robot(setting=true)."
         play sound "Click.mp3" noloop 
 
-
     return                            
-
-
-# Aris la plus belle 
