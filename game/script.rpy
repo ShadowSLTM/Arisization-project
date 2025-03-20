@@ -155,7 +155,6 @@ label début:
 
     $ entrepot = get_random_entrepot()
     "{b}{i}[entrepot]{/i}{/b}"
-
     play sound "Click.mp3" noloop 
 
     P "Tu trouves quelques choses ?"
@@ -171,7 +170,7 @@ label début:
     play sound "Click.mp3" noloop
 
     P "Fait voir ce que c'est ?"
-    play sound "Click.mp3" noloop 
+    play sound "Footsteps.mp3" noloop 
 
     "{b}{i}Tu t'approches et tu vois un [model].{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -413,7 +412,8 @@ label grayroom:
     scene origineclass
     show screen origine
 
-    P "Bonjour..."
+    $  salutation_rdm_P = get_random_salutation()
+    P "[salutation_rdm_P]"
     play sound "Click.mp3" noloop
 
     if pronom == "il":
@@ -568,24 +568,24 @@ label grayroom:
 
 #SALUTATIONS ALEATOIRES
 
-    $  salutation_rdm = get_random_salutation()
-    Gt "[salutation_rdm]"
+    $  salutation_rdm_Gt = get_random_salutation()
+    Gt "[salutation_rdm_Gt]"
+    play sound "Click.mp3" noloop 
+
+    $  salutation_rdm_Sk = get_random_salutation()
+    Sk "[salutation_rdm_Sk]"
     play sound "Click.mp3" noloop
 
-    $  salutation_rdm = get_random_salutation()
-    Sk "[salutation_rdm]"
+    $  salutation_rdm_Su = get_random_salutation()
+    Su "[salutation_rdm_Su]"
     play sound "Click.mp3" noloop
 
-    $  salutation_rdm = get_random_salutation()
-    Su "[salutation_rdm]"
+    $  salutation_rdm_S = get_random_salutation()
+    S "[salutation_rdm_S]"
     play sound "Click.mp3" noloop
 
-    $  salutation_rdm = get_random_salutation()
-    S "[salutation_rdm]"
-    play sound "Click.mp3" noloop
-
-    $  salutation_rdm = get_random_salutation()
-    A "[salutation_rdm]"
+    $  salutation_rdm_A = get_random_salutation()
+    A "[salutation_rdm_A]"
     play sound "Click.mp3" noloop
 
     "{b}{i}La [T] regarda rapidement [A].{/i}{/b}" 
@@ -831,7 +831,8 @@ label grayroom:
     A "oui, mais on doit aller en classe."
     play sound "Click.mp3" noloop
 
-    P "Ok alors allons-y."
+    $ suivi_rdm = get_random_suivi()
+    P "[suivi_rdm]"
     play sound "Footsteps.mp3" noloop
 
     "{b}{i}Vous vous dirigez vers la salle de classe mais quelqu'un s'approche...{/i}{/b}"
@@ -1079,9 +1080,9 @@ label rencontre:
     P "Ok, j'y vais toute de suite, allez [A] tu viens."
     play sound "Click.mp3" noloop
 
-    $ suivi = get_random_suivi()
-    A "[suivi]"
-    play sound "Click.mp3" noloop 
+    $ suivi_rdm = get_random_suivi()
+    A "[suivi_rdm]"
+    play sound "Footsteps.mp3" noloop
 
     "{b}{i}Vous vous dirigez vers la salle de classe 404.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -1159,7 +1160,7 @@ label rencontre:
     "{b}{i}L'élève s'éloigne de vous par culpabilité.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    A "Merci beaucoup [P]."
+    A "Merci beaucoup [prénom]."
     play sound "Click.mp3" noloop 
 
     P "Mais de rien ma chère [A]."
@@ -1168,7 +1169,7 @@ label rencontre:
     "{b}{i}Tout le monde discute tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    A "[P] on dirait qu'on est que 10 ici."
+    A "[prénom] on dirait qu'on est que 10 ici."
     play sound "Click.mp3" noloop
 
     P "Je confirme et je me demande pourquoi."
@@ -1212,7 +1213,7 @@ label rencontre:
     T "Bien vas-y présentes-toi."
     play sound "Click.mp3" noloop 
 
-    I "Je m'appelle Iris Natsumi, j'ai 19 ans et je suis aussi l'ultime Développeuse."
+    I "Je m'appelle [I], j'ai 19 ans et je suis aussi l'ultime Développeuse."
     play sound "Click.mp3" noloop 
     
     T "L'ultime développeuse !? oh intéressant."
@@ -1221,7 +1222,7 @@ label rencontre:
     I "Merci beaucoup."
     play sound "Click.mp3" noloop  
 
-    T "Donc enchanté Iris, quel est ton projet dans ce lycée ?"
+    T "Donc enchantée Iris, quel est ton projet dans ce lycée ?"
     play sound "Click.mp3" noloop 
 
     I "Finir mon projet est de finir mon jeu vidéo mais je veux surtout sociabiliser avec les autres."
@@ -1251,7 +1252,7 @@ label rencontre:
     H "Bonjour je m'appelle [H], j'ai 19 ans et je suis l'Ultime constructeur."
     play sound "Click.mp3" noloop
 
-    T "Enchanté [H] bienvenu dans notre classe, j'aimerais savoir quel ton projet dans ce lycée."
+    T "Enchanté Hajime bienvenue dans notre classe, j'aimerais savoir quel ton projet dans ce lycée."
     play sound "Click.mp3" noloop
 
     H "Mon projet est de construire un robot." 
@@ -1281,10 +1282,10 @@ label rencontre:
     J "et nous sommes les ultimes jumelles."
     play sound "Click.mp3" noloop
 
-    T "Bien enchanté de vous rencontrer."
+    T "Bien enchantée de vous rencontrer."
     play sound "Click.mp3" noloop
 
-    J2 "Merci beaucoup madame."
+    J2 "Merci beaucoup madame." 
     play sound "Click.mp3" noloop
     
     T "De rien maintenant à toi là-bas."
@@ -1356,7 +1357,7 @@ label rencontre:
         P "Je me présente je m'appelle [P], j'ai 19 ans et ancienne élève de [origine]."
         play sound "Click.mp3" noloop 
 
-    T "[origine] !?" 
+    T "Tu viens de [origine] !?" 
     play sound "Click.mp3" noloop 
 
     P "Oui, c'est exact."
@@ -1377,7 +1378,7 @@ label rencontre:
     "{b}{i}Soudainement [I] lève la main surprise.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    T "Oui tu as quelque chose à dire à [P] ?"
+    T "Oui tu as quelque chose à dire à [prénom] ?"
     play sound "Click.mp3" noloop
 
     I "Oui tu as bien dit améliorer ton [model] ?"
@@ -1399,13 +1400,13 @@ label rencontre:
     P "Merci beaucoup."
     play sound "Click.mp3" noloop
 
-    T "Bon pour revenir aux présentations [P] qui est cette fille avec toi ?"
+    T "Bon pour revenir aux présentations [prénom] qui est cette fille avec toi ?"
     play sound "Click.mp3" noloop 
     
     P "Ah elle justement c'est ma création elle s'appelle [A]."
     play sound "Click.mp3" noloop
 
-    T "C'est donc elle ta fameuse création de [model]"
+    T "C'est donc elle ta fameuse création de [model]."
     play sound "Click.mp3" noloop
 
     P "Oui c'est elle, vas-y présentes-toi."
@@ -1414,7 +1415,7 @@ label rencontre:
     A "Je m'appelle [A], j'ai 18 ans."
     play sound "Click.mp3" noloop
 
-    T "bien et qui es-tu exactement ?" 
+    T "Bien et qui es-tu exactement ?" 
     play sound "Click.mp3" noloop
 
     A "Je suis la création de [prénom] comme [pronom] a déja dit."
@@ -1529,7 +1530,7 @@ label rencontre:
     A "Un internat !?"
     play sound "Click.mp3" noloop
 
-    M "Oui, il a été construit récemmment vu que vous venez tous de région éloignées."
+    M "Oui, il a été construit récemmment vu que vous venez tous de régions éloignées."
     play sound "Click.mp3" noloop
 
     P "Intéressant."
@@ -1547,7 +1548,7 @@ label rencontre:
     K "Notre propre dortoir ? Cool mais comment ça une dérogation, elle est pour qui ?"
     play sound "Click.mp3" noloop
 
-    Y "Oui comment ça une dérogation ? Expliquez-nous Madame..."
+    Y "Oui comment ça une dérogation ? Expliquez-nous madame..."
     play sound "Click.mp3" noloop
 
     M "Cette dérogation est pour [prénom] et [A]." 
@@ -1556,7 +1557,7 @@ label rencontre:
     Y "Quoi !?" 
     play sound "Click.mp3" noloop
 
-    M "Oui ils ont demandé à être dans le méme dortoir." 
+    M "Oui ils ont demandé à être dans le même dortoir." 
     play sound "Click.mp3" noloop
 
     Y "Mais pourquoi vous avez accepté cette demande ?"
@@ -1571,7 +1572,7 @@ label rencontre:
     M "Voici la répartition des dortoirs pour vous."
     play sound "Click.mp3" noloop
 
-    M "Les dortoirs ce trouvent à cet étage mais de l'autre coté du couloir toute au fond à droite pour les garçons et à gauche pour les filles ."
+    M "Les dortoirs ce trouvent à cet étage mais de l'autre coté du couloir toute au fond à droite pour les garçons et à gauche pour les filles."
     play sound "Click.mp3" noloop
 
     K "Vous entendez les gars on un dortoir pour nous seuls."
@@ -1580,11 +1581,21 @@ label rencontre:
     N "Je confirme ça va le feu cette année."
     play sound "Click.mp3" noloop
 
-    P "Je confirme ça va être génial mais dois-je rappeler qu'on doit rester sérieux en toute circonstance."
-    play sound "Click.mp3" noloop
+    if pronom == "il":
 
-    K "Oh c'est bon fais pas le sérieux, détends-toi un peu."
-    play sound "Click.mp3" noloop
+        P "Je confirme ça va être génial mais dois-je rappeler qu'on doit rester sérieux en toute circonstance."
+        play sound "Click.mp3" noloop
+
+        K "Oh c'est bon fais pas le sérieux, détends-toi un peu."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle":
+        
+        P "Calmez-vous, vous étes dans un lycée je vous rappelle, un peu de tenu."
+        play sound "Click.mp3" noloop
+
+        K "Oh c'est bon fais pas la sérieuse, détends-toi un peu."
+        play sound "Click.mp3" noloop 
 
     N "il a raison détends-toi peu..."
     play sound "Click.mp3" noloop 
@@ -1604,12 +1615,12 @@ label rencontre:
 
     if pronom == "il":
 
-        P "Désolé madame"
+        P "Désolé madame."
         play sound "Click.mp3" noloop
 
     elif pronom == "elle": 
 
-        P "Désolée madame"
+        P "Désolée madame."
         play sound "Click.mp3" noloop
 
     M "Il n'y a pas de soucis juste évitez de bavarder durant le cours."
@@ -1624,7 +1635,7 @@ label rencontre:
     P "Oui."
     play sound "Click.mp3" noloop 
 
-    M "Toute mauvaise note en dessous 14/20 vous vaudra une expulsion du lycée."
+    M "Toute mauvaise note en dessous 14/20 vous vaudra une expulsion définitive du lycée."
     play sound "Click.mp3" noloop 
 
     "{b}{i}Tous les élèves sont de nouveau choqués.{/i}{/b}"
@@ -1655,7 +1666,7 @@ label rencontre:
     play sound "Click.mp3" noloop 
 
     M "De rien bon maintenant que toutes les informations ont été données, vous pouvez disposer le cours est fini, n'hésiter pas à visiter le lycée vu que vous n'avez pas de cours cette après-midi."
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
 # fin du cours de présentation
 
@@ -1714,7 +1725,7 @@ label rencontre:
     P "On dirait qu'ils sont {b}2{/b}." 
     play sound "Click.mp3" noloop
 
-    A "Il se passe quoi [P] ?."
+    A "Il se passe quoi [prénom] ?"
     play sound "Click.mp3" noloop
 
     P "Pas grand chose ne t'inquiètes pas."
@@ -1763,7 +1774,7 @@ label rencontre:
     P "Bonjour mais qui êtes vous ?"
     play sound "Click.mp3" noloop
 
-    Kh "Je m'appelle [Kh], je suis en terminal et la vice-présidente du bureau des élèves." 
+    Kh "Je m'appelle [Kh], je suis la vice-présidente du bureau des élèves." 
     play sound "Click.mp3" noloop
 
     P "Enchanté [Kh], juste pourquoi es-tu venue nous voir ?" 
@@ -1774,7 +1785,7 @@ label rencontre:
 
     $ points += 10000
 
-    "{b}{i}[Kh] Soudainement te transfert l'argent sur ton compte.{/i}{/b}" 
+    "{b}{i}[Kh] te transfert Soudainement l'argent sur ton compte.{/i}{/b}" 
     play sound "Click.mp3" noloop 
 
     P "Pourquoi c'est vous qui l'a transféré et non la présidente ?" 
@@ -1801,7 +1812,7 @@ label rencontre:
     Kh "Pourrai-je voir la fameuse petite [A] qu'[E] m'a parlé."
     play sound "Click.mp3" noloop
 
-    P "Oui biensur, [A] tu peux venir s'il te plait."
+    P "Oui bien sûr, [A] tu peux venir s'il te plait."
     play sound "Click.mp3" noloop
 
     A "Oui qu'il y a t'il ?"
@@ -1816,7 +1827,7 @@ label rencontre:
     Kh "C'est donc toi la fameuse petite [A] dont tout le monde parle."
     play sound "Click.mp3" noloop
 
-    A "oui c'est bien moi.~"
+    A "Oui c'est bien moi.~"
     play sound "Click.mp3" noloop
 
     Kh "Ravie de te rencontrer."
@@ -1988,7 +1999,7 @@ label ask:
     I "Oui, je veux oublier mon échec."
     play sound "Click.mp3" noloop
 
-    P "Ok je ne juge pas mais j'espére que ton nouveau jeu sera mieux que ceux de NeoSoft dont le piétre Project Neon"
+    P "Ok je ne juge pas mais j'espére que ton nouveau jeu sera mieux que ceux de NeoSoft dont le piétre jeu Project Neon."
     play sound "Click.mp3" noloop
 
     I "Hé ! C'est méchant ça !" 
@@ -3649,8 +3660,9 @@ label wallbreaking4:
     P "Ok il faut pas qu'on soit en retard."
     play sound "Click.mp3" noloop 
 
-    I "Ok je vous suis."
-    play sound "Click.mp3" noloop 
+    $ suivi_rdm = get_random_suivi()
+    I "[suivi_rdm]"
+    play sound "Footsteps.mp3" noloop
 
     scene black 
     hide screen lunchroom 
@@ -4367,8 +4379,10 @@ label skip2:
     P "Bon on va cours ?" 
     play sound "Click.mp3" noloop 
 
-    Na "Ok je te suis."
-    play sound "Click.mp3" noloop  
+    $ suivi_rdm = get_random_suivi()
+    Na "[suivi_rdm]"
+    play sound "Footsteps.mp3" noloop
+
     hide screen room
     scene black
 
@@ -4749,8 +4763,9 @@ label choice9:
     P "Ok il faut pas qu'on soit en retard."
     play sound "Click.mp3" noloop 
 
-    I "Ok je vous suis."
-    play sound "Click.mp3" noloop 
+    $ suivi_rdm = get_random_suivi()
+    I "[suivi_rdm]"
+    play sound "Footsteps.mp3" noloop
 
     scene black 
     hide screen lunchroom 
@@ -6145,8 +6160,9 @@ label suite:
     P "Bon on y vas [newname] ?" 
     play sound "Click.mp3" noloop 
 
-    Na "Ok je te suis." 
-    play sound "Click.mp3" noloop 
+    $ suivi_rdm = get_random_suivi()
+    Na "[suivi_rdm]"
+    play sound "Footsteps.mp3" noloop
 
     scene black 
     hide screen lunchroom 
@@ -6199,8 +6215,9 @@ label suite1:
     P "Ok allons-y alors."
     play sound "Click.mp3" noloop 
      
-    Na "Ok je te suis alors."
-    play sound "Click.mp3" noloop 
+    $ suivi_rdm = get_random_suivi()
+    Na "[suivi_rdm]"
+    play sound "Footsteps.mp3" noloop
 
     scene staircase 
     hide screen hall 
@@ -6713,8 +6730,9 @@ label suite1:
     P "Bon on doit aller en cours avant d'étre en retard."
     play sound "Click.mp3" noloop
 
-    Na "Ok je te suis."
-    play sound "Click.mp3" noloop 
+    $ suivi_rdm = get_random_suivi()
+    Na "[suivi_rdm]"
+    play sound "Footsteps.mp3" noloop 
 
     P "Bien alors allons-y."
     play sound "Click.mp3" noloop
@@ -7903,8 +7921,9 @@ label debate:
     P "Oui."
     play sound "Click.mp3" noloop 
 
-    Na "Ok je te suis alors."
-    play sound "Click.mp3" noloop 
+    $ suivi_rdm = get_random_suivi()
+    Na "[suivi_rdm]"
+    play sound "Click.mp3" noloop
 
     P "Bien."
     play sound "Click.mp3" noloop 
@@ -8974,8 +8993,9 @@ label code:
     P "Ok alors."
     play sound "Click.mp3" noloop 
 
-    Na "Ok je te suis."
-    play sound "Click.mp3" noloop
+    $ suivi_rdm = get_random_suivi()
+    Na "[suivi_rdm]"
+    play sound "Footsteps.mp3" noloop
 
     scene black 
     hide screen lunchroom 
@@ -9687,8 +9707,9 @@ label code:
             P "Ok....."
             play sound "Click.mp3" noloop
 
-            Na "Ok je te suis [prénom]."
-            play sound "Click.mp3" noloop 
+            $ suivi_rdm = get_random_suivi()
+            Na "[suivi_rdm]"
+            play sound "Click.mp3" noloop
 
         "{b}{i} Aller manger avec [Na]{/i}{/b}" : 
             play sound "Menu.mp3" noloop 
@@ -9729,8 +9750,9 @@ label code:
             P "Bon il faut qu'on retourne en cours."
             play sound "Click.mp3" noloop 
              
-            Na "Ok je te suis [prénom]." 
-            play sound "Click.mp3" noloop 
+            $ suivi_rdm = get_random_suivi()
+            Na "[suivi_rdm]"
+            play sound "Footsteps.mp3" noloop
 
     scene black 
     hide screen lunchroom 
@@ -10402,8 +10424,9 @@ label password:
     P "Bon il faut qu'on aille en cours."
     play sound "Click.mp3" noloop 
 
-    Na "Ok je te suis."
-    play sound "Click.mp3" noloop 
+    $ suivi_rdm = get_random_suivi()
+    Na "[suivi_rdm]"
+    play sound "Footsteps.mp3" noloop
 
     hide screen room 
     scene black
@@ -11735,8 +11758,9 @@ label password1:
     P "Bon il faut qu'on retourne en classe."
     play sound "Click.mp3" noloop    
 
-    Na "Ok je te suis."
-    play sound "Click.mp3" noloop    
+    $ suivi_rdm = get_random_suivi()
+    Na "[suivi_rdm]"
+    play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen lunchroom
@@ -13614,9 +13638,4 @@ label password4:
     return                            
 
 
-# Aris la plus belle <333333333333333
-# Aris la plus belle <333333333333333
-# Aris la plus belle <333333333333333
-# Aris la plus belle <333333333333333
-# Aris la plus belle <333333333333333
 # Aris la plus belle <333333333333333

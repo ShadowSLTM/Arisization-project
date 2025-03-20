@@ -41,7 +41,7 @@ init python:
         "Bien le bonjour.",
         "Bonjour à vous.",
         "Bonjour, bonjour.",
-        "Bonjour à tous.", 
+        "Salutation.", 
     ]
 
     
@@ -128,17 +128,13 @@ init python:
     import random
 
     suivi_rdm = [  
-        "D'accord, je te suis. [P]",  
+        "D'accord, je te suis.",  
         "Je te suis.",  
         "Je te suis, allons-y.",  
         "Oui, je te suis.",
         "Je te suis, pas de problème.",
-        "Je te suis, allons-y ensemble.",
-        "Je te suis [P], on y va.",
-        "Oui, je te suis [P].",
-        "Oui [P], je te suis.",
-        "Je te suis [P].",
+        "Je te suis, allons-y ensemble."
+        ]
 
-    ]
     def get_random_suivi():
         return random.choice(suivi_rdm)

@@ -2,17 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 155: expected statement.
-    <<<<<<< HEAD
-                ^
-
-File "game/script.rpy", line 158: expected statement.
-    =======
-          ^
-
-File "game/script.rpy", line 163: expected statement.
-    >>>>>>> 9902371b6fd1a713875ee474627a89602293e339
-                                                    ^
+File "game/fonctions.rpy", line 131: is not terminated with a newline. (Check strings and parenthesis.)
+        suivi_rdm = [  
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Mar 19 19:46:36 2025
+Thu Mar 20 23:55:47 2025

@@ -1,31 +1,41 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 592, in script
-    $ salutation_rdm = get_random_salutation()
-  File "game/script.rpy", line 592, in <module>
-    $ salutation_rdm = get_random_salutation()
-  File "game/fonctions.rpy", line 43, in get_random_salutation
-    return random.choice(salutation_rdm)
-IndexError: string index out of range
+  File "game/script.rpy", line 1084, in script
+    Na "[suivi_rdm]"
+NameError: name 'newname' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 592, in script
-    $ salutation_rdm = get_random_salutation()
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/script.rpy", line 592, in <module>
-    $ salutation_rdm = get_random_salutation()
-  File "game/fonctions.rpy", line 43, in get_random_salutation
-    return random.choice(salutation_rdm)
-  File "lib/python3.9/random.py", line 346, in choice
-IndexError: string index out of range
+  File "game/script.rpy", line 1084, in script
+    Na "[suivi_rdm]"
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
+    Say.execute(self)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 623, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\character.py", line 1454, in __call__
+    who = self.prefix_suffix("who", self.who_prefix, who, self.who_suffix)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\character.py", line 1369, in prefix_suffix
+    return (sub(prefix) + sub(body) + sub(suffix))
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\character.py", line 1349, in sub
+    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
+    s = interpolate(s, variables) # type: ignore
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
+    raise e
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "<none>", line 1, in <module>
+NameError: name 'newname' is not defined
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 Arisization Project Version_test
-Thu Mar 20 21:21:41 2025
+Fri Mar 21 00:01:39 2025
