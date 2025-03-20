@@ -1880,7 +1880,7 @@ screen credit():
 
             text _("Idée du personnage de Seigo : Kama\n")    
 
-            text _("Correction partielle de l’orthographe du chapitre 0 : Kama\n")
+            text _("Correction partielle de l’orthographe du chapitre 0 : Kama\n") 
 
             text _("Idée des textes de narration : Louks\n") 
 
@@ -1888,7 +1888,7 @@ screen credit():
 
             label "— Remerciements —\n" 
             
-            text _("Musiques utilisées sous licence libre.\n")
+            text _("Musiques utilisées sous licence libre.\n") 
 
             label "— Propriiété —\n"  
 

@@ -8867,7 +8867,7 @@ label code:
     show screen hall 
 
     "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen hall 
@@ -13543,9 +13543,28 @@ label password4:
     S "Et pour les paramétres plus avancées ?" 
     play sound "Click.mp3" noloop
 
-    M "Il faut " 
+    M "Il faut mettre ses paramétres entre les parenthéses, exemple : initiate_humanoid_robot(setting=true)." 
     play sound "Click.mp3" noloop
 
+    S "Il faut pas finir ces commande par un point-virgule."
+    play sound "Click.mp3" noloop 
+
+    M "Non il y n'a pas besoin." 
+    play sound "Click.mp3" noloop
+
+    S "Donc c'est vraiment très simple."
+    play sound "Click.mp3" noloop       
+
+    P "Oui mais ce n'est que le début, après les choses vont étre plus complexe." 
+    play sound "Click.mp3" noloop
+
+    M "Bien, nous allons faire un exercice pour voir si vous avez bien compris."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Vous faites l'exercice.{/i}{/b}"
+    play sound "Click.mp3" noloop
+ 
+     
 
     return                            
 
