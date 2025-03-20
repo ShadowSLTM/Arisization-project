@@ -1,3 +1,4 @@
+# CODE CORRIGÉ JUSQU'A LIGNE 699
 label start: 
 
     $ grade = 0.0  
@@ -571,16 +572,20 @@ label grayroom:
     Gt "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
-    Sk "Bonjour Madame."
+    $  salutation_rdm = get_random_salutation()
+    Sk "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
-    Su "Bonjour."
+    $  salutation_rdm = get_random_salutation()
+    Su "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
-    S "Bonjour."
+    $  salutation_rdm = get_random_salutation()
+    S "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
-    A "Bonjour.~"
+    $  salutation_rdm = get_random_salutation()
+    A "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
     "{b}{i}La [T] regarda rapidement [A].{/i}{/b}" 
@@ -588,18 +593,18 @@ label grayroom:
 
     if pronom == "il":
 
-        Gt "Oh très joli [model] mon cher [prénom]."
+        Gt "Oh, très joli [model] mon cher [prénom]."
         play sound "Click.mp3" noloop
 
     elif pronom == "elle": 
 
-        Gt "Oh très joli [model] ma chère [prénom]."
+        Gt "Oh, très joli [model] ma chère [prénom]."
         play sound "Click.mp3" noloop
 
     Su "Merci beaucoup madame."
     play sound "Click.mp3" noloop
 
-    Gt "Mais de rien, bon aujourd'hui comme vous le savez c'est votre dernier jour ici."
+    Gt "Mais de rien, malheureusement aujourd'hui comme vous le savez c'est votre dernier jour ici."
     play sound "Click.mp3" noloop
 
     Gt "Vous avez tous réussi votre examen final félicitation."
@@ -608,84 +613,88 @@ label grayroom:
     Su "Merci beaucoup."
     play sound "Click.mp3" noloop
     
-    S "Pardon même [prénom] a réussi !?"
+    S "Pardon, même [prénom] a réussi !?"
     play sound "Click.mp3" noloop
 
     if pronom == "il":
 
-        Su "Malgré qu'il soit discret, il a les meilleures notes de la 5éme géneration d'élèves de [origine]."
+        Su "Malgré qu'il soit discret, il a les meilleures notes de la 5ème génération d'élèves de [origine]."
         play sound "Click.mp3" noloop
 
     elif pronom == "elle": 
 
-        Su "Malgré qu'elle soit discréte, elle a les meilleures notes de la 5éme géneration d'élèves de [origine]."
+        Su "Malgré qu'elle soit discrète, elle a les meilleures notes de la 5ème génération d'élèves de [origine]."
         play sound "Click.mp3" noloop 
 
-    T "Oui c'est exact."
+    T "Oui, c'est exact."
     play sound "Click.mp3" noloop 
 
     if pronom == "il":
 
-        Su "En plus un élève comme [prénom], on voit tout les jours."
+        Su "En plus, un élève comme [prénom], on en voit pas tout les jours."
         play sound "Click.mp3" noloop 
 
     elif pronom == "elle": 
 
-        Su "En plus une élève comme [prénom], on voit tout les jours."
+        Su "En plus, une élève comme [prénom], on en voit pas tout les jours."
         play sound "Click.mp3" noloop 
 
-    S "Ok je vois."
+    S "Ok, je vois."
     play sound "Click.mp3" noloop 
     
-    Gt "Bien maintenant je vais vous remettre vos certificats de fin d'études ici."
+    Gt "Bien. Maintenant je vais vous remettre vos certificats de fin d'études ici."
     play sound "Click.mp3" noloop
 
-    Su "Vous vous rendez compte les amis on a fini nos deux années ici."
+    Su "Vous vous rendez compte les amis, on a fini nos deux années ici !"
     play sound "Click.mp3" noloop
 
-    P "Oui c'est génial."
+    P "Oui, c'est génial."
     play sound "Click.mp3" noloop
 
     Sk "oui je confirme." 
     play sound "Click.mp3" noloop
 
-    S "oui mais pas besoin de s'affoler car je vous rappele qui nous reste notre derniére année au lycée."
+    S "oui mais pas besoin de s'affoler car je vous rappelle qui nous reste notre dernière année au lycée."
     play sound "Click.mp3" noloop
 
-    Gt "Oui [S] a raison il vous reste votre dernière année."
+    Gt "Oui, [S] a raison il vous reste votre dernière année."
     play sound "Click.mp3" noloop
 
     P "Ok."
     play sound "Click.mp3" noloop
 
-    "{b}{i}La [T] remet le certificat de fin de cursus.{/i}{/b}" 
+    "{b}{i}La [T] vous remet le certificat de fin de cursus.{/i}{/b}" 
     play sound "Click.mp3" noloop 
 
-    Gt "Bon vous êtes officiellement diplomés de [origine]."
+    Gt "Bon, vous êtes officiellement diplomés de [origine]."
     play sound "Click.mp3" noloop 
 
     P "Enfin..."
     play sound "Bell.mp3" noloop
 
-    "{b}{i} Puis soudaniement la sonnerie sonne.{/i}{/b}" 
+    "{b}{i} Puis soudainement la sonnerie sonne.{/i}{/b}" 
     play sound "Click.mp3" noloop 
  
-    Gt "Bon il est déjà l'heure de se quitter on n'aura pas eu le temps de discuter un peu plus."
+    Gt "Bon, il est déjà l'heure de se quitter... on n'aura pas eu le temps de discuter un peu plus."
     play sound "Click.mp3" noloop 
 
-    "{b}{i}Mais tous les élèves restent pour dire au revoir avec respect.{/i}{/b}" 
+    "{b}{i}Tous les élèves restent pour se dire au revoir avec respect.{/i}{/b}" 
     play sound "Click.mp3" noloop 
 
-    P "Merci pour ces deux années ici."
+    $ remerciement = get_random_remerciement()
+    P "[remerciement]"
     play sound "Click.mp3" noloop
 
-    S "C'était un honneur d'étre ici."
+    $ remerciement = get_random_remerciement()
+    S "[remerciement]"
     play sound "Click.mp3" noloop
 
-    Su "On a appris pleins de chose grâce à vous"
+    $ remerciement = get_random_remerciement()
+    Su "[remerciement]"
     play sound "Click.mp3" noloop
 
-    Sk "Merci encore infiniment pour tout."
+    $ remerciement = get_random_remerciement()
+    Sk "[remerciement]"
     play sound "Click.mp3" noloop 
    
     "{b}{i}La [T] se met soudainement en larme.{/i}{/b}" 

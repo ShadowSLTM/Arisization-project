@@ -60,3 +60,20 @@ init python:
             return random.choice(predefined_notes) 
         else:
             return round(random.uniform(14, 20), 1)  
+
+# remerciement_rdm est une liste de phrases qui seront affichées aléatoirement au moment des remerciements envers la professeure.
+init python:
+    import random
+
+    remerciement_rdm = [ 
+        "Merci pour ces deux années ici.",
+        "C'était un honneur d'être ici.",
+        "On a appris plein de choses grâce à vous.",
+        "Merci encore infiniment pour tout.",
+        "Votre enseignement nous a beaucoup apporté, merci.",
+        "Nous garderons un excellent souvenir de ces années, merci.",
+        "Un grand merci pour votre patience et votre engagement.",
+    ]
+
+    def get_random_remerciement():
+        return random.choice(remerciement_rdm)
