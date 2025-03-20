@@ -77,3 +77,33 @@ init python:
 
     def get_random_remerciement():
         return random.choice(remerciement_rdm)
+
+# validation_rdm est une liste de phrases qui seront affichées aléatoirement au moment des validations de choix.
+init python:
+    import random
+
+    validation_rdm = [  
+        "D'accord, allons-y.",  
+        "Ok alors.",  
+        "Ok.",  
+        "D'accord.",  
+        "Très bien.",  
+        "Ça me va.",  
+        "Entendu.",  
+        "C'est parti.",  
+        "Allons-y.",  
+        "Parfait.",  
+        "Ça marche.",  
+        "On y va.",  
+        "Pourquoi pas.",  
+        "Ça convient.",  
+        "On fait comme ça.",  
+        "C'est bon.",  
+        "Ça fonctionne.",  
+        "Tout est bon.",  
+        "Ça passe.",  
+        "Go."  
+    ]
+
+    def get_random_validation():
+        return random.choice(validation_rdm)

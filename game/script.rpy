@@ -1,4 +1,4 @@
-# CODE CORRIGÉ JUSQU'A LIGNE 699
+# CODE CORRIGÉ JUSQU'A LIGNE 845
 label start: 
 
     $ grade = 0.0  
@@ -697,7 +697,7 @@ label grayroom:
     Sk "[remerciement]"
     play sound "Click.mp3" noloop 
    
-    "{b}{i}La [T] se met soudainement en larme.{/i}{/b}" 
+    "{b}{i}La [T] fondit soudainement en larme.{/i}{/b}" 
     play sound "Click.mp3" noloop 
 
     Gt "Merci énormement chers élèves."
@@ -709,7 +709,7 @@ label grayroom:
     scene black 
     hide screen origine
 
-    "{b}{i}Après cela tout le monde quitta [origine] pour la derniére fois.{/i}{/b}"   
+    "{b}{i}Après cela, tout le monde quitta [origine] pour la dernière fois.{/i}{/b}"   
     play sound "Click.mp3" noloop 
 
     stop music fadeout 2.0 
@@ -722,7 +722,7 @@ label grayroom:
 
     if wallbreak == 1: 
         
-        "{i}Tu penses vraiment pouvoir améliorer [A] alors que tu l'as déjà abandonnée.{/i}"
+        "{i}Tu penses vraiment pouvoir améliorer [A] alors que tu l'as déjà abandonnée ?{/i}"
         play sound "Click.mp3" noloop 
 
     else:
@@ -744,21 +744,21 @@ label grayroom:
 
     if pronom == "il":
 
-        P "Enfin arrivés au lycée....."
+        P "Enfin arrivés au lycée..."
         play sound "Click.mp3" noloop 
 
-        A "Oui je suis contente pour toi que tu sois arrivé ici."
+        A "Oui, je suis contente pour toi que tu sois arrivé ici."
         play sound "Click.mp3" noloop 
 
     elif pronom == "elle": 
 
-        P "Enfin arrivées au lycée....."
+        P "Enfin arrivées au lycée..."
         play sound "Click.mp3" noloop 
 
-        A "Oui je suis contente pour toi que tu sois arrivée ici."
+        A "Oui, je suis contente pour toi que tu sois arrivée ici."
         play sound "Click.mp3" noloop 
 
-    P "Bon on entre à l'intérieur."
+    P "Entrons à l'intérieur."
     play sound "Click.mp3" noloop 
 
     scene black 
@@ -769,77 +769,78 @@ label grayroom:
     scene hall
     show screen hall  
 
-    P "Bon enfin à l'intérieur."
+    P "Enfin à l'intérieur..."
     play sound "Click.mp3" noloop 
 
-    A "Oui ça fait du bien."
+    A "Oui, ça fait du bien."
     play sound "Click.mp3" noloop 
 
-    P "Bon où pourrait-on aller pour commencer ? Car je ne connais pas du tout le lycée." 
+    P "Où pourrait-on aller pour commencer ? Car je ne connais pas du tout le lycée." 
     play sound "Click.mp3" noloop 
 
     if pronom == "il":
 
-        A "Attend tu t'es inscrit dans un lycée et tu t'es pas renseigné un peu plus ?"
+        A "Attend... Tu t'es inscrit dans un lycée et tu ne t'es pas renseigné un peu plus ?"
         play sound "Click.mp3" noloop
 
-        P "Euh j'étais occupé....."
+        P "Euh j'étais occupé..."
         play sound "Click.mp3" noloop
 
     elif pronom == "elle": 
 
-        A "Attend tu t'es inscrite dans un lycée et tu t'es pas renseignée un peu plus ?"
+        A "Attend... Tu t'es inscrite dans un lycée et tu ne t'es pas renseignée un peu plus ?"
         play sound "Click.mp3" noloop
 
-        P "Euh j'étais occupée....."
+        P "Euh j'étais occupée..."
         play sound "Click.mp3" noloop 
          
-    A "Bon après ça ne m'étonne pas venant de toi [P]"
+    A "Après, ça ne m'étonne pas venant de toi [P]..."
     play sound "Click.mp3" noloop
     
-    P "Hein !? Pardon !? Comment oses-tu je suis à l'origine de ton amélioration, je te rappelle !" 
+    P "Hein !? Pardon !? Comment oses-tu dire ça !? Je suis à l'origine de ton amélioration, je te rappelle !" 
     play sound "Click.mp3" noloop
 
-    A "Mais pour revenir à ta question, on pourrait monter au premier étage car il semblerait qu'il aie rien d'intéressant ici."
+    A "Mais pour revenir à ta question, on pourrait monter au premier étage car il semblerait qu'il n'y ait rien d'intéressant ici."
     play sound "Click.mp3" noloop
 
-    P "Ok alors."
+    $ valid = get_random_validation()
+    P "[valid]"
     play sound "Click.mp3" noloop
 
     scene staircase 
     hide screen hall
     
-    "{b}{i}Vous vous dirigez alors au premier étage.{/i}{/b}" 
+    "{b}{i}Vous vous dirigez donc au premier étage.{/i}{/b}" 
     play sound "Footsteps.mp3" noloop
 
     scene hallway 
     show screen hallway 
 
-    A "Ah ouais ce couloir est vraiment énorme."
+    A "Ah ouais, ce couloir est vraiment énorme !"
     play sound "Click.mp3" noloop
 
     P "Je confirme." 
     play sound "Click.mp3" noloop
      
-    A "On dirait qu'il y a des dortoirs et plusieurs salles de classe"
+    A "On dirait qu'il y a des dortoirs et plusieurs salles de classe ici."
     play sound "Click.mp3" noloop
 
-    P "ouais on pourrait aller voir."
+    P "ouais, on pourrait aller voir."
     play sound "Click.mp3" noloop
 
-    A "oui mais on doit aller en classe."
+    A "oui, mais on doit aller en classe."
     play sound "Click.mp3" noloop
 
     P "Ok alors allons-y."
     play sound "Footsteps.mp3" noloop
 
-    "{b}{i}Vous vous dirigez alors vers la salle de classe mais quelqu'un s'approche...{/i}{/b}"
+    "{b}{i}Vous vous dirigez vers la salle de classe mais quelqu'un s'approche...{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    R "Bonjour je suis venue vous voir car je suis la lycéenne qui doit se charger des nouveaux lycéens dont vous."
+    R "Bonjour, je suis venue vous. Je suis la lycéenne qui doit se charger des nouveaux lycéens ici, dont vous."
     play sound "Click.mp3" noloop
 
-    P "Ok alors merci de nous guider mais comment tu t'appelles ?"
+    P "Ok, merci de nous guider. Mais comment tu t'appelles ?"
     play sound "Click.mp3" noloop 
 
 label rencontre:                 
