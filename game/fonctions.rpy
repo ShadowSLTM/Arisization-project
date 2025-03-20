@@ -40,11 +40,10 @@ init python:
         "Bonjour.",
         "Bien le bonjour.",
         "Bonjour à vous.",
-        "Bonjour, bonjour.",
-        "Bonjour à tous.", 
+        "Bonjour, bonjour.", 
+        "Salutation.",
     ]
 
-    
     def get_random_salutation():
         return random.choice(salutation_rdm)
 
@@ -59,7 +58,7 @@ init python:
         if random.choice([True, False]):
             return random.choice(predefined_notes) 
         else:
-            return round(random.uniform(14, 20), 1)  
+            return round(random.uniform(14, 20))  
 
 # remerciement_rdm est une liste de phrases qui seront affichées aléatoirement au moment des remerciements envers la professeure.
 init python:

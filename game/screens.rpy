@@ -1884,7 +1884,7 @@ screen credit():
 
             text _("Idée des textes de narration : Louks\n") 
 
-            text _("Idée des phrases aléatoires : Nathanaël (Loki)\n") 
+            text _("Fonctions aléatoires : Nathanaël (Loki)\n") 
 
             label "— Remerciements —\n" 
             

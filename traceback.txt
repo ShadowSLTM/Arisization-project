@@ -1,26 +1,31 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 569, in script
-    $  salutation_rdm = get_random_salutation()
-  File "game/script.rpy", line 569, in <module>
-    $  salutation_rdm = get_random_salutation()
-NameError: name 'get_random_salutation' is not defined
+  File "game/script.rpy", line 592, in script
+    $ salutation_rdm = get_random_salutation()
+  File "game/script.rpy", line 592, in <module>
+    $ salutation_rdm = get_random_salutation()
+  File "game/fonctions.rpy", line 43, in get_random_salutation
+    return random.choice(salutation_rdm)
+IndexError: string index out of range
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 569, in script
-    $  salutation_rdm = get_random_salutation()
+  File "game/script.rpy", line 592, in script
+    $ salutation_rdm = get_random_salutation()
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/script.rpy", line 569, in <module>
-    $  salutation_rdm = get_random_salutation()
-NameError: name 'get_random_salutation' is not defined
+  File "game/script.rpy", line 592, in <module>
+    $ salutation_rdm = get_random_salutation()
+  File "game/fonctions.rpy", line 43, in get_random_salutation
+    return random.choice(salutation_rdm)
+  File "lib/python3.9/random.py", line 346, in choice
+IndexError: string index out of range
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 Arisization Project Version_test
-Thu Mar 20 16:55:49 2025
+Thu Mar 20 21:21:41 2025

@@ -398,12 +398,12 @@ label argument:
     P "Moi aussi."
     play sound "Click.mp3" noloop
 
+    scene black  
+
     "{b}{i}Tu quittes l'entrepôt avec [A] en coupant les ponts avec [S].{/i}{/b}"
     play sound "Click.mp3" noloop 
 
 label grayroom: 
-
-    scene black  
 
     "{b}{i}Le lendemain, à [origine].{/i}{/b}" 
     play sound "Click.mp3" noloop 
@@ -468,7 +468,7 @@ label grayroom:
     Su "Boucle-la un peu [S] tu es juste jaloux."
     play sound "Click.mp3" noloop
 
-    "{b}{i} tout le monde se retourne vers nous.{/i}{/b}"
+    "{b}{i} tout le monde se retourne vers vous.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     Sk "Il se passe quoi ?"
@@ -569,24 +569,24 @@ label grayroom:
 
 #SALUTATIONS ALEATOIRES
 
-    $  salutation_rdm = get_random_salutation()
-    Gt "[salutation_rdm]"
+    $ salutation_rdm_gt = get_random_salutation()
+    Gt "[salutation_rdm_gt]"
     play sound "Click.mp3" noloop
 
-    $  salutation_rdm = get_random_salutation()
-    Sk "[salutation_rdm]"
+    $ salutation_rdm_sk = get_random_salutation()
+    Sk "[salutation_rdm_sk]"
     play sound "Click.mp3" noloop
 
-    $  salutation_rdm = get_random_salutation()
-    Su "[salutation_rdm]"
+    $ salutation_rdm_su = get_random_salutation()
+    Su "[salutation_rdm_su]"
     play sound "Click.mp3" noloop
 
-    $  salutation_rdm = get_random_salutation()
-    S "[salutation_rdm]"
+    $ salutation_rdm_s = get_random_salutation()
+    S "[salutation_rdm_s]"
     play sound "Click.mp3" noloop
-
-    $  salutation_rdm = get_random_salutation()
-    A "[salutation_rdm]"
+ 
+    $ salutation_rdm_a = get_random_salutation()
+    A "[salutation_rdm_a]"
     play sound "Click.mp3" noloop
 
     "{b}{i}La [T] regarda rapidement [A].{/i}{/b}" 
@@ -804,8 +804,8 @@ label grayroom:
     A "Mais pour revenir à ta question, on pourrait monter au premier étage car il semblerait qu'il n'y ait rien d'intéressant ici."
     play sound "Click.mp3" noloop
 
-    $ valid = get_random_validation()
-    P "[valid]"
+    $ validation_rdm  = get_random_validation()
+    P "[validation_rdm]" 
     play sound "Click.mp3" noloop
 
     scene staircase 
@@ -5656,7 +5656,7 @@ label choice9:
         "{b}{i} Tu manges tranquillement pendant une demi-heure en regardant les documents que tu as eu.{/i}{/b}"
         play sound "Click.mp3" noloop 
         
-        $ renpy.open_url("https://github.com/ShadowSLTM/Arisization-project/blob/main/Aris%20Documentation")
+        $ renpy.open_url("https://github.com/ShadowSLTM/Aris-document/blob/main/Aris%20document")
 
         P "Bon voyons voir ces documents..." 
         play sound "Click.mp3" noloop 
@@ -12377,8 +12377,10 @@ label examen_pythagore:
             "{b}{i}Réessayer.{/i}{/b}" :
                 scene black
                 show screen points 
+                scene classroom 
+                show screen class_404 
                 play music "Soundtrack.mp3" loop volume 1.0
-                jump choice9
+                jump examen_pythagore 
     
     else:
        
@@ -13575,7 +13577,34 @@ label password4:
     "{b}{i} Vous faites l'exercice.{/i}{/b}"
     play sound "Click.mp3" noloop
  
-     
+    M " Bien quel est la commande pour initialiser et activer les paramétres d'un robot ?"
+    play sound "Click.mp3" noloop 
+
+    S "C'est initiate_humanoid_robot(setting) ?" 
+    play sound "Click.mp3" noloop
+
+    M "Presque ça, il manque quelque chose." 
+    play sound "Click.mp3" noloop
+
+    $ answer = renpy.input("écris ta réponse.") 
+    $ answer = answer.strip() 
+
+    M "[prénom] as-tu une idée ?" 
+    play sound "Click.mp3" noloop
+
+    P "[answer] ?"
+    play sound "Click.mp3" noloop
+
+    if answer == "initiate_humanoid_robot(setting=true)": 
+
+        M "C'est exact, bien joué."
+        play sound "Click.mp3" noloop
+
+    else:
+
+        M "Ce n'est pas ça, la réponse était initiate_humanoid_robot(setting=true)."
+        play sound "Click.mp3" noloop 
+
 
     return                            
 
