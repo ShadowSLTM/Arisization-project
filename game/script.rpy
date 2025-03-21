@@ -117,7 +117,7 @@ label identity:
         jump début  
 
     elif nom in ["Kusanagi", "Natsumi", "Ayanokoji", "Sato", "Saotome", "Hiiragi", "Katsuragi", "Hanemiya", "Enoshima", "Hoshino", "Shinomiya", "Katsuya", "Horimiya","Tachibana", "Sakayanagi"]:
-        "Ce nom n'est pas autorisé."
+        "Ce nom n'est pas autorisé." 
         jump identity 
 
 label début:
@@ -7798,7 +7798,7 @@ label debate:
     play sound "Click.mp3" noloop 
 
     Su "Il était à Lexus avec nous mais il a disparu sans laisser de nouvelles au bout de trois semaines après la rentrée..."
-    play sound "Click.mp3" noloop 
+    play sound "Click.mp3" noloop  
 
     P "Pardon quoi !?"
     play sound "Click.mp3" noloop 
@@ -13630,10 +13630,33 @@ label password4:
         M "C'est exact, bien joué."
         play sound "Click.mp3" noloop
 
+        P "Merci." 
+        play sound "Click.mp3" noloop
+
     else:
 
         M "Ce n'est pas ça, la réponse était initiate_humanoid_robot(setting=true)."
         play sound "Click.mp3" noloop 
+
+        P "Ah......" 
+        play sound "Click.mp3" noloop
+
+    M "Bien, nous allons continuer le cours."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Le cours continue sans problème.{/i}{/b}"       
+    play sound "Bell.mp3" noloop
+
+    M "Le cours est terminé vous pouvez quitter la salle, n'oubliez pas l'examen dans trois semaines."
+    play sound "Click.mp3" noloop
+
+    S "Bon, [newname] on retourne au dortoir ?" 
+    play sound "Click.mp3" noloop
+
+    $ suivi_rdm = get_random_suivi()
+    Na "[suivi_rdm]"
+    play sound "Footsteps.mp3" noloop
+
 
 
     return                            
