@@ -803,8 +803,8 @@ label grayroom:
     A "Mais pour revenir à ta question, on pourrait monter au premier étage car il semblerait qu'il n'y ait rien d'intéressant ici."
     play sound "Click.mp3" noloop
 
-    $ valid = get_random_validation()
-    P "[valid]"
+    $ validation_rdm = get_random_validation()
+    P "[validation_rdm]"
     play sound "Click.mp3" noloop
 
     scene staircase 
@@ -2294,7 +2294,7 @@ label lowcpu:
     P "C'est bon je suis de retour et j'ai pu récupéré le processeur." 
     play sound "Click.mp3" noloop
 
-    A "Cool je suis prete alors."
+    A "Cool je suis prête alors."
     play sound "Click.mp3" noloop
 
     "{b}{i}Tu déconnectes complétement [A] avant d'accéder à l'emplacement pour le processeur.{/i}{/b}"
@@ -2322,7 +2322,7 @@ label lowcpu:
     play sound "Click.mp3" noloop
 
     A "Initialisation...."
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     "{b}{i}Mais soudainement le processeur brûle complétement et endommage les autres composants d'[A].{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -2613,31 +2613,31 @@ label skip:
     play sound "Click.mp3" noloop
 
     Na "Oui allons-y."
-    play sound "Click.mp3" noloop  
+    play sound "Footsteps.mp3" noloop  
     
     scene black 
     hide screen room
 
     "{b}{i}Tu quittes ta chambre avec [Na].{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Door.mp3" noloop
 
     scene hallway
     show screen hallway
 
     "{b}{i}Tu conntinues dans le couloir avec [Na].{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop  
  
     scene staircase 
     hide screen hallway
 
     "{b}{i}Tu conntinues vers le hall avec [Na].{/i}{/b}"
-    play sound "Click.mp3" noloop 
+    play sound "Footsteps.mp3" noloop  
 
     scene hall 
     show screen hall
 
     "{b}{i}Tu continues vers le bureau des élèves avec [Na].{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop  
     
     P  "Bon on est presque arriver."
     play sound "Click.mp3" noloop
@@ -2674,7 +2674,7 @@ label skip:
     P "Ok." 
     play sound "Click.mp3" noloop
 
-    "{b}{i}[E] s'absenta le temps de trouver la clé.{/i}{/b}"
+    "{b}{i}[E] s'absente le temps de trouver la clé.{/i}{/b}"
     play sound "Click.mp3" noloop 
    
     P "J'ai vraiment hate d'avoir notre propre salle pour travailler." 
@@ -2698,7 +2698,7 @@ label skip:
     P "Ok merci."
     play sound "Click.mp3" noloop
 
-    E "De rien ça fait toujours plaisir." 
+    E "De rien ça fait toujours plaisir."  
     play sound "Click.mp3" noloop
 
     P "bon on y vas [newname] vu qu'on a la clé."
@@ -2770,8 +2770,9 @@ label skip:
     P "Bon [newname] on y vas."
     play sound "Click.mp3" noloop 
 
-    Na "Ok."
-    play sound "Click.mp3" noloop
+    $ suivi_rdm = get_random_suivi()
+    Na "[suivi_rdm]"
+    play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen hall
