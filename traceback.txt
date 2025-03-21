@@ -3,39 +3,39 @@
 While running game code:
   File "game/script.rpy", line 160, in script
     P "Bon, on fait quoi ?"
-NameError: name 'prénom' is not defined
+NameError: name 'prenom' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "game/script.rpy", line 160, in script
     P "Bon, on fait quoi ?"
-  File "C:\Program Files\renpy-8.3.7-sdk\renpy\ast.py", line 2986, in execute
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
     Say.execute(self)
-  File "C:\Program Files\renpy-8.3.7-sdk\renpy\ast.py", line 1010, in execute
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 623, in execute
     renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Program Files\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 132, in say
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 132, in say
     who(what, *args, **kwargs)
-  File "C:\Program Files\renpy-8.3.7-sdk\renpy\character.py", line 1451, in __call__
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\character.py", line 1454, in __call__
     who = self.prefix_suffix("who", self.who_prefix, who, self.who_suffix)
-  File "C:\Program Files\renpy-8.3.7-sdk\renpy\character.py", line 1366, in prefix_suffix
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\character.py", line 1369, in prefix_suffix
     return (sub(prefix) + sub(body) + sub(suffix))
-  File "C:\Program Files\renpy-8.3.7-sdk\renpy\character.py", line 1346, in sub
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\character.py", line 1349, in sub
     return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "C:\Program Files\renpy-8.3.7-sdk\renpy\substitutions.py", line 355, in substitute
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
     s = interpolate(s, variables) # type: ignore
-  File "C:\Program Files\renpy-8.3.7-sdk\renpy\substitutions.py", line 88, in interpolate
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
     raise e
-  File "C:\Program Files\renpy-8.3.7-sdk\renpy\substitutions.py", line 80, in interpolate
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
     value = renpy.python.py_eval(code, {}, scope)
-  File "C:\Program Files\renpy-8.3.7-sdk\renpy\python.py", line 1275, in py_eval
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
     return py_eval_bytecode(code, globals, locals)
-  File "C:\Program Files\renpy-8.3.7-sdk\renpy\python.py", line 1268, in py_eval_bytecode
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
     return eval(bytecode, globals, locals)
   File "<none>", line 1, in <module>
-NameError: name 'prénom' is not defined
+NameError: name 'prenom' is not defined
 
-Windows-11-10.0.26100-SP0 AMD64
-Ren'Py 8.4.0.25032105+nightly
+Windows-10-10.0.26100 AMD64
+Ren'Py 8.3.7.25031702
 Arisization Project Version_test
-Fri Mar 21 23:09:36 2025
+Sat Mar 22 00:49:42 2025
