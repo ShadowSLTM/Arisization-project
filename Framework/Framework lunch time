@@ -39,7 +39,7 @@
     "{b}{i} Vous continuez de manger puis [I] s'approche de vous calmêment.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    I "Mhmmm [prénom] je voulais savoir si je pouvais manger avec vous."
+    I "Mhmmm [prenom] je voulais savoir si je pouvais manger avec vous."
     play sound "Menu.mp3" noloop 
 
     menu :    
@@ -95,7 +95,7 @@
     Na "En plus je leurs ai rien fait."
     play sound "Click.mp3" noloop 
 
-    I "Je sais que n'as rien fait [newname] mais je ne comprends pas pourquoi elles se permettent de dire qu'[newname] ne t'appartient pas [prénom]."
+    I "Je sais que n'as rien fait [newname] mais je ne comprends pas pourquoi elles se permettent de dire qu'[newname] ne t'appartient pas [prenom]."
     play sound "Click.mp3" noloop 
 
     P "De toute façon [newname] est à ma création donc je n'ai rien à me reprocher."

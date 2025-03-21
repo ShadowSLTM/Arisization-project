@@ -2,7 +2,7 @@
 Partie 1 : 
 
     elif key == "ARIS-GRFN-M4A1":
-        $ P = Character('[prénom] [nom]', color="#707070") 
+        $ P = Character('[prenom] [nom]', color="#707070") 
         $ S = Character("Subaru", color="#707070")
         $ origine = "16LAB" 
         show screen success

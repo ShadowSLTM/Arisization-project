@@ -99,13 +99,20 @@ label identity:
 
     # prénom et nom par défaut
 
+    elif prénom != "" and nom != "":
+        "{b}{i}Bienvenue [prénom] [nom].{/i}{/b}"
+
     elif prénom == "" and nom == "" and pronom == "il":
         $ prénom = "Mitsuya"
         $ nom = "Shimura"
+        "{b}{i}Bienvenue [prénom] [nom]. Puis-ce qu'aucun nom n'a été choisi, celui-ci vous a été attribué.{/i}{/b}"
 
     elif prénom == "" and nom == "" and pronom == "elle":
         $ prénom = "Kyoka"
         $ nom = "Nakano" 
+        "{b}{i}Bienvenue [prénom] [nom]. Puis-ce qu'aucun nom n'a été choisi, celui-ci vous a été attribué.{/i}{/b}"
+
+
 
 ############################################
 

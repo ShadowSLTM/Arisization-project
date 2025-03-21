@@ -80,7 +80,7 @@ label identity:
         jump début 
 
     elif prénom == "Helian" and nom == "Griffin" and pronom == "il" and key == "ARIS-GRFN-M4A1":
-        $ P = Character('[prénom] [nom]', color="#707070") 
+        $ P = Character('[prenom] [nom]', color="#707070") 
         $ S = Character("Subaru", color="#707070")
         $ origine = "16LAB" 
         $ success += 1 

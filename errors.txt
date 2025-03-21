@@ -2,8 +2,29 @@
 errors listed below, and try again.
 
 
-File "game/fonctions.rpy", line 131: is not terminated with a newline. (Check strings and parenthesis.)
-        suivi_rdm = [  
+File "game/script.rpy", line 102: elif clause expects a non-empty block.
+    elif prénom != "" and nom != "":
+                                    ^
 
-Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu Mar 20 23:55:47 2025
+File "game/script.rpy", line 105: expected statement.
+    elif prénom == "" and nom == "" and pronom == "il":
+                ^
+
+File "game/script.rpy", line 110: expected statement.
+    elif prénom == "" and nom == "" and pronom == "elle":
+                ^
+
+File "game/script.rpy", line 119: expected statement.
+    elif key == "ARIS-8J4K-F9Q7":
+             ^
+
+File "game/script.rpy", line 124: expected statement.
+    elif key == "ARIS-GRFN-M4A1":
+             ^
+
+File "game/script.rpy", line 138: expected statement.
+    elif nom in ["Kusanagi", "Natsumi", "Ayanokoji", "Sato", "Saotome", "Hiiragi", "Katsuragi", "Hanemiya", "Enoshima", "Hoshino", "Shinomiya", "Katsuya", "Horimiya","Tachibana", "Sakayanagi"]:
+             ^
+
+Ren'Py Version: Ren'Py 8.4.0.25032105+nightly
+Fri Mar 21 22:54:58 2025

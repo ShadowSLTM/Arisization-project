@@ -1,4 +1,4 @@
-    Na "[prénom], je détecte une nouvelle mise à jour, veux-tu la faire ?"
+    Na "[prenom], je détecte une nouvelle mise à jour, veux-tu la faire ?"
     play sound "Menu.mp3" noloop 
 
     menu : 
