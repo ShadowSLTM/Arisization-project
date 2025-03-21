@@ -112,8 +112,6 @@ label identity:
         $ nom = "Nakano" 
         "{b}{i}Bienvenue [prénom] [nom]. Puis-ce qu'aucun nom n'a été choisi, celui-ci vous a été attribué.{/i}{/b}"
 
-
-
 ############################################
 
     elif key == "ARIS-8J4K-F9Q7":
