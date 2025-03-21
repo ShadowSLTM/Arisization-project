@@ -17,7 +17,7 @@ init python:
 
 # entrepôt_rdm est une liste de phrases qui seront affichées aléatoirement au moment de la fouille de l'entrepôt.
 init python:
-    import random
+    import random 
     
     entrepot_rdm = [
         "Tu jettes un coup d'œil à l'intérieur de l'entrepôt.",
@@ -138,3 +138,17 @@ init python:
 
     def get_random_suivi():
         return random.choice(suivi_rdm)
+
+# récupération de la session Windows pour le nom du joueur
+
+init python:
+    import os
+
+    def get_username():
+        try:
+            return os.getlogin()  # Récupère le nom de l'utilisateur de la session Windows
+        except Exception:
+            return "Joueur"  # Valeur par défaut en cas d'erreur
+
+    if not persistent.player_name: 
+        persistent.player_name = get_username()

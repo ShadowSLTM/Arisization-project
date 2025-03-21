@@ -1,23 +1,23 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 1084, in script
-    Na "[suivi_rdm]"
-NameError: name 'newname' is not defined
+  File "game/script.rpy", line 127, in script
+    "{b}{i}Tiens il semblerait que [P] soit controlé par une session windows nommé [player_name].{/i}{/b}"
+NameError: name 'player_name' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 1084, in script
-    Na "[suivi_rdm]"
+  File "game/script.rpy", line 127, in script
+    "{b}{i}Tiens il semblerait que [P] soit controlé par une session windows nommé [player_name].{/i}{/b}"
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
     Say.execute(self)
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 623, in execute
     renpy.exports.say(who, what, *args, **kwargs)
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 132, in say
     who(what, *args, **kwargs)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\character.py", line 1454, in __call__
-    who = self.prefix_suffix("who", self.who_prefix, who, self.who_suffix)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\character.py", line 1456, in __call__
+    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\character.py", line 1369, in prefix_suffix
     return (sub(prefix) + sub(body) + sub(suffix))
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\character.py", line 1349, in sub
@@ -33,9 +33,9 @@ Full traceback:
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
     return eval(bytecode, globals, locals)
   File "<none>", line 1, in <module>
-NameError: name 'newname' is not defined
+NameError: name 'player_name' is not defined
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 Arisization Project Version_test
-Fri Mar 21 00:01:39 2025
+Fri Mar 21 20:29:01 2025

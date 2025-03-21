@@ -47,7 +47,7 @@ label auto_save:
  
     "{b}{i}Bienvenue dans Arisization Project cher/chère lycéen, Ce jeu appartient à SLTM.{/i}{/b}"   
     play sound "Click.mp3" noloop 
-
+ 
     hide screen logo 
 
     "{b}{i}Attention : Ce jeu contient des scènes susceptibles de heurter la sensibilité de certains joueurs. Il s'inspire également de faits réels et aborde des thématiques complexes liées à la moralité et aux choix éthiques.{/i}{/b}"
@@ -76,7 +76,7 @@ label identity:
 
         $ domaine = "ultime créateur"
 
-    elif pronom == "elle":
+    elif pronom == "elle": 
         
         $ domaine = "ultime créatrice"
 
@@ -96,6 +96,18 @@ label identity:
 
         R "Cher joueur/chère joueuse je ne suis pas sûr qu’avoir le prénom Aris soit une bonne idée pour la suite de l'histoire veuillez changer de prénom s'il vous plaît."
         jump identity  
+
+    # prénom et nom par défaut
+
+    elif prénom == "" and nom == "" and pronom == "il":
+        $ prénom = "Mitsuya"
+        $ nom = "Shimura"
+
+    elif prénom == "" and nom == "" and pronom == "elle":
+        $ prénom = "Kyoka"
+        $ nom = "Nakano" 
+
+############################################
 
     elif key == "ARIS-8J4K-F9Q7":
         $ A = Character("AK-24", color="#00eeff")
@@ -13592,7 +13604,7 @@ label password4:
     S "Il faut pas finir ces commande par un point-virgule."
     play sound "Click.mp3" noloop 
 
-    M "Non il y n'a pas besoin." 
+    M "Non il y n'en a pas besoin." 
     play sound "Click.mp3" noloop
 
     S "Donc c'est vraiment très simple."
@@ -13657,8 +13669,121 @@ label password4:
     Na "[suivi_rdm]"
     play sound "Footsteps.mp3" noloop
 
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Vous continuez vers le dortoir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez dans ton dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene room
+    show screen room 
+
+    if pronom == "il":
+
+        Na "Enfin arrivés."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle":
+
+        Na "Enfin arrivées."
+        play sound "Click.mp3" noloop
+
+    P "Oui ça fait du bien."
+    play sound "Click.mp3" noloop
+
+    Na "Oui, je suis vraiment fatiguée à couse du cours sur Runix."
+    play sound "Click.mp3" noloop
+
+    P "Viens je vais te recharger et on révise un peu."
+    play sound "Click.mp3" noloop
+
+    Na "Merci."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Tu recharges [newname] pendant une heure avant de l'allumer.{/i}{/b}"
+    play sound "Click.mp3" noloop
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Na "Bon Je vais me déconnecter et me recharger."
+    play sound "Click.mp3" noloop 
+
+    P "Pas de soucis."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[newname] se déconnecte et recharge sa batterie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bon je vais chercher à manger, j'avais complétement oublié."
+    play sound "Click.mp3" noloop  
+
+    scene black 
+    hide screen room
+
+    "{b}{i} Tu pars chercher à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    $ points -= 200 
+    scene room 
+    show screen room 
+
+    P "Enfin à manger... "
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Tu manges tranquillement pendant une demi-heure.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Enfin fini je vais pouvoir aller dormir pour demain."
+    play sound "Click.mp3" noloop  
+
+    "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene black
+    hide screen room
+    hide screen day
+
+    "{b}{i} Le lendemain matin.{/i}{/b}"
+    play sound "Alarm.mp3" noloop 
+
+    scene room 
+    show screen room
+    show screen day
+    $ day += 1 
+
+    $ line = get_random_morning_line()
+    P "[line]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te lèves et te changes et puis tu aperçois [newname] déconnectée contre le mur.{/i}{/b}"
+    play sound "Click.mp3" noloop
     return                            
 
 
