@@ -13233,7 +13233,7 @@ label password4:
 
         "Mot de passe incorrect. Accès refusé." 
         play sound "Menu.mp3" noloop
-        jump password
+        jump password4
 
     Na "Démarrage en cours......"
     play sound "Click.mp3" noloop 
@@ -13720,14 +13720,43 @@ label password4:
     "{b}{i} Tu recharges [newname] pendant une heure avant de l'allumer.{/i}{/b}"
     play sound "Click.mp3" noloop
 
+label password15:  
 
+    $ entered_password = renpy.input("Veuillez entrer votre mot de passe pour [newname].")
+    $ entered_password = entered_password.strip()
 
+    if entered_password == stored_password:
 
+        "Mot de passe correct. Accès autorisé." 
+        play sound "Menu.mp3" noloop
 
+    else:
 
+        "Mot de passe incorrect. Accès refusé." 
+        play sound "Menu.mp3" noloop
+        jump password5  
 
+    Na "Démarrage en cours......"
+    play sound "Click.mp3" noloop 
 
+    Na "Bonjour [prénom]."
+    play sound "Click.mp3" noloop 
 
+    P "On révise maintenant ?"
+    play sound "Click.mp3" noloop 
+
+    $ suivi_rdm = get_random_suivi()
+    Na "[suivi_rdm]"
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Vous vous posez au bureau du dortoir pour réviser.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Prête pour réviser ?"
+    play sound "Click.mp3" noloop   
+
+    Na "Oui je suis prête."
+    play sound "Click.mp3" noloop     
 
 
 
@@ -13789,7 +13818,7 @@ label password4:
 
     "{b}{i}Tu te lèves et te changes et puis tu aperçois [newname] déconnectée contre le mur.{/i}{/b}"
     play sound "Click.mp3" noloop
-    return                            
 
+    return                            
 
 # Aris la plus belle <333333333333333

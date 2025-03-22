@@ -1892,7 +1892,7 @@ screen credit():
 
             label "— Propriiété —\n"  
 
-            text _("Arisization Project appartient à Seydou N'Doye (Shadow_SLTM)\n")  
+            text _("Arisization Project (The Project of the Realization of Aris) appartient à Seydou N'Doye (Shadow_SLTM)\n")  
       
 style about_label is gui_label 
 style about_label_text is gui_label_text
