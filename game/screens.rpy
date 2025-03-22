@@ -317,6 +317,8 @@ screen navigation():
 
             textbutton _("Menu principal") action MainMenu()
 
+            textbutton _("Succès") action ShowMenu("success") 
+
         textbutton _("À propos") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
@@ -1814,7 +1816,6 @@ screen success():
             size 30
             xalign 0.5 
 
-
 screen Shop():
 
     tag menu
@@ -1894,6 +1895,29 @@ screen credit():
 
             text _("Arisization Project (The Project of the Realization of Aris) appartient à Seydou N'Doye (Shadow_SLTM)\n")  
       
+style about_label is gui_label 
+style about_label_text is gui_label_text
+style about_text is gui_text
+
+style about_label_text: 
+    size gui.label_text_size
+
+screen success():
+
+    tag menu
+
+    ## Cette déclaration concerne l’écran game_menu. L’élément vbox est ensuite
+    ## inclus dans la fenêtre de l'écran game_menu.
+    use game_menu(_("Succès"), scroll="viewport"):
+
+        style_prefix "about"
+
+        vbox:
+
+            label "{b}{i}Progression\n{/i}{/b}" 
+
+            text _("Succès : [success]/??????\n") 
+
 style about_label is gui_label 
 style about_label_text is gui_label_text
 style about_text is gui_text
