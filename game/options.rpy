@@ -64,7 +64,7 @@ define config.skip_delay = 10
 ## diffusé quand le joueur sera sur le menu principal. Ce son se poursuivra dans
 ## le jeu, jusqu’à ce qu'il soit stoppé ou qu’un autre fichier soit joué.
 
-define config.main_menu_music = "Opening.mp3"
+define config.main_menu_music = "Lastencounter.mp3"
 
 
 ## Transitions #################################################################
