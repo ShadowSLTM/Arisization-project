@@ -1404,7 +1404,7 @@ label rencontre:
     P "Oui c'est exacte."
     play sound "Click.mp3" noloop
 
-    if pronom == "il":
+    if pronom == "il": 
 
         I "Putain tu dois vraiment être un génie pour avoir créer un [model], je comprend mieux pourquoi tu étais à [origine]."
         play sound "Click.mp3" noloop
@@ -13623,7 +13623,7 @@ label password4:
     M "Il faut mettre ses paramétres entre les parenthéses, exemple : initiate_humanoid_robot(setting=true)." 
     play sound "Click.mp3" noloop
 
-    S "Il faut pas finir ces commande par un point-virgule."
+    S "Il faut pas aussi finir ces commandesd par un point-virgule ?"
     play sound "Click.mp3" noloop 
 
     M "Non il y n'en a pas besoin." 
