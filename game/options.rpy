@@ -58,7 +58,7 @@ define config.has_voice = False
 # define config.sample_sound = "sample-sound.ogg"
 # define config.sample_voice = "sample-voice.ogg"
 
-define config.skip_delay = 10 
+define config.skip_delay = 2
 
 ## Décommentez la ligne suivante pour configurer un fichier audio qui sera
 ## diffusé quand le joueur sera sur le menu principal. Ce son se poursuivra dans

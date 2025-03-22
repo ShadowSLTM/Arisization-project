@@ -413,17 +413,17 @@ label argument:
     P "Moi aussi."
     play sound "Click.mp3" noloop
 
+    scene black  
+
     "{b}{i}Tu quittes l'entrepôt avec [A] en coupant les ponts avec [S].{/i}{/b}"
     play sound "Click.mp3" noloop 
 
 label grayroom: 
 
-    scene black  
-
     "{b}{i}Le lendemain, à [origine].{/i}{/b}" 
     play sound "Click.mp3" noloop 
 
-    "Tu entres tranquillement en classe avec [A]."
+    "{b}{i}Tu entres tranquillement en classe avec [A].{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene origineclass
@@ -446,17 +446,17 @@ label grayroom:
     "{b}{i}Tu l'ignores complètement et va t'asseoir au fond de la classe comme d'habitude.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    S "Hey, tu m'écoutes quand je parle !?"
+    S "Hey, tu m'écoutes quand je te parle !?"
     play sound "Click.mp3" noloop
 
     if pronom == "il":
 
-        Su "[S] Tu peux le laisser dans son coin tu sais comment [pronom] est."
+        Su "[S], tu peux le laisser dans son coin tu sais comment [pronom] est."
         play sound "Click.mp3" noloop
 
     elif pronom == "elle": 
 
-        Su "[S] tu peux la laisser dans son coin tu sais comment [pronom] est."
+        Su "[S], tu peux la laisser dans son coin tu sais comment [pronom] est."
         play sound "Click.mp3" noloop
 
     S "Je refuse, tu as vu ce qu'[pronom] a comme objet !?"
@@ -601,6 +601,10 @@ label grayroom:
     S "[salutation_rdm_S]"
     play sound "Click.mp3" noloop
 
+    $  salutation_rdm_P = get_random_salutation()
+    P "[salutation_rdm_P]"
+    play sound "Click.mp3" noloop
+
     $  salutation_rdm_A = get_random_salutation()
     A "[salutation_rdm_A]"
     play sound "Click.mp3" noloop
@@ -648,12 +652,12 @@ label grayroom:
 
     if pronom == "il":
 
-        Su "En plus, un élève comme [prénom], on en voit pas tout les jours."
+        Su "En plus, un élève comme [prénom], on en voit pas tous les jours."
         play sound "Click.mp3" noloop 
 
     elif pronom == "elle": 
 
-        Su "En plus, une élève comme [prénom], on en voit pas tout les jours."
+        Su "En plus, une élève comme [prénom], on en voit pas tous les jours."
         play sound "Click.mp3" noloop 
 
     S "Ok, je vois."
@@ -714,7 +718,7 @@ label grayroom:
     Sk "[remerciement]"
     play sound "Click.mp3" noloop 
    
-    "{b}{i}La [T] fondit soudainement en larme.{/i}{/b}" 
+    "{b}{i}La [T] fond soudainement en larme.{/i}{/b}" 
     play sound "Click.mp3" noloop 
 
     Gt "Merci énormement chers élèves."
@@ -792,7 +796,7 @@ label grayroom:
     A "Oui, ça fait du bien."
     play sound "Click.mp3" noloop 
 
-    P "Où pourrait-on aller pour commencer ? Car je ne connais pas du tout le lycée." 
+    P "Où peut-on aller pour commencer ? Car je ne connais pas du tout le lycée." 
     play sound "Click.mp3" noloop 
 
     if pronom == "il":
@@ -817,7 +821,7 @@ label grayroom:
     P "Hein !? Pardon !? Comment oses-tu dire ça !? Je suis à l'origine de ton amélioration, je te rappelle !" 
     play sound "Click.mp3" noloop
 
-    A "Mais pour revenir à ta question, on pourrait monter au premier étage car il semblerait qu'il n'y ait rien d'intéressant ici."
+    A "Mais pour revenir à ta question, on peut monter au premier étage car il semblerait qu'il n'y ait rien d'intéressant ici."
     play sound "Click.mp3" noloop
 
     $ validation_rdm = get_random_validation()
@@ -842,10 +846,10 @@ label grayroom:
     A "On dirait qu'il y a des dortoirs et plusieurs salles de classe ici."
     play sound "Click.mp3" noloop
 
-    P "ouais, on pourrait aller voir."
+    P "Ouais, on pourrait aller voir."
     play sound "Click.mp3" noloop
 
-    A "oui, mais on doit aller en classe."
+    A "Oui, mais on doit aller en classe."
     play sound "Click.mp3" noloop
 
     $ suivi_rdm = get_random_suivi()
@@ -1467,7 +1471,7 @@ label rencontre:
     play sound "Click.mp3" noloop 
 
     A "Merci beaucoup [I].~"
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     I "Mais de rien c'est normal de complimenter."
     play sound "Click.mp3" noloop
@@ -13681,7 +13685,7 @@ label password4:
     "{b}{i} Le cours continue sans problème.{/i}{/b}"       
     play sound "Bell.mp3" noloop
 
-    M "Le cours est terminé vous pouvez quitter la salle, n'oubliez pas l'examen dans trois semaines."
+    M "Le cours est terminé vous pouvez quitter la salle."
     play sound "Click.mp3" noloop
 
     S "Bon, [newname] on retourne au dortoir ?" 
@@ -13737,7 +13741,7 @@ label password4:
     "{b}{i} Tu recharges [newname] pendant une heure avant de l'allumer.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-label password15:  
+label password5:  
 
     $ entered_password = renpy.input("Veuillez entrer votre mot de passe pour [newname].")
     $ entered_password = entered_password.strip()
@@ -13751,7 +13755,7 @@ label password15:
 
         "Mot de passe incorrect. Accès refusé." 
         play sound "Menu.mp3" noloop
-        jump password5  
+        jump password5   
 
     $ start = get_random_start()
     Na "[start]"
@@ -13852,7 +13856,7 @@ label password15:
         "{b}{i} Démarrer [newname].{/i}{/b}" :
             play sound "Menu.mp3" noloop 
 
-label password5:  
+label password6:  
 
     $ entered_password = renpy.input("Veuillez entrer votre mot de passe pour [newname].")
     $ entered_password = entered_password.strip()
@@ -13862,11 +13866,11 @@ label password5:
         "Mot de passe correct. Accès autorisé." 
         play sound "Menu.mp3" noloop
 
-    else:
+    else: 
 
         "Mot de passe incorrect. Accès refusé." 
         play sound "Menu.mp3" noloop
-        jump password5
+        jump password6
 
     $ start = get_random_start()
     Na "[start]"
@@ -13875,7 +13879,41 @@ label password5:
     Na "Bonjour [prénom]."
     play sound "Click.mp3" noloop 
 
+    P "Coucou comment ça va aujourd'hui ?"
+    play sound "Click.mp3" noloop
 
+    Na "Je vais bien et toi ?"
+    play sound "Click.mp3" noloop  
+
+    P "Je vais bien."
+    play sound "Click.mp3" noloop 
+
+    Na "Bon on va en cours ?"
+    play sound "Click.mp3" noloop  
+
+    P "Oui, suis-moi."
+    play sound "Click.mp3" noloop  
+
+    Na "Compris."
+    play sound "Click.mp3" noloop  
+
+    hide screen room 
+    scene black
+
+    "{b}{i}Tu quittes le dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
 
 
 
