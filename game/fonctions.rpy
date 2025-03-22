@@ -124,6 +124,7 @@ init python:
         return "enchantée" if random.random() < 0.99 else "enchantier"
 
     # suivi_rdm est une liste de phrases qui seront affichées aléatoirement au moment où le joueur demande à Aris de le suivre.
+
 init python:
     import random
 
@@ -152,3 +153,19 @@ init python:
 
     if not persistent.player_name: 
         persistent.player_name = get_username()
+
+
+init python:
+    import random
+
+    start = [  
+        "Démarrage en cours...",  
+        "Initialisation en cours...",  
+        "Activation en cours...",  
+        "Lancement du système...",
+        "Mise en route...",
+        "Système en cours de préparation..."
+        ]
+
+    def get_random_start():
+        return random.choice(start) 

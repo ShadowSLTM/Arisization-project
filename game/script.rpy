@@ -6709,7 +6709,8 @@ label suite1:
         "{b}{i} Démarrer [newname].{/i}{/b}" :
             play sound "Menu.mp3" noloop 
 
-    Na "Démarrage en cours......"
+    $ start = get_random_start()
+    Na "[start]"
     play sound "Click.mp3" noloop 
 
     Na "Bonjour [prénom]."
@@ -7874,7 +7875,8 @@ label debate:
         "{b}{i} Démarrer [newname].{/i}{/b}" :
             play sound "Menu.mp3" noloop 
 
-    Na "Démarrage en cours......"
+    $ start = get_random_start()
+    Na "[start]"
     play sound "Click.mp3" noloop 
 
     Na "Bonjour [prénom]."
@@ -8299,7 +8301,8 @@ label debate:
         "{b}{i} Démarrer [newname].{/i}{/b}" :
             play sound "Menu.mp3" noloop 
 
-    Na "Démarrage en cours......"
+    $ start = get_random_start()
+    Na "[start]"
     play sound "Click.mp3" noloop 
 
     Na "Bonjour [prénom]."
@@ -8760,7 +8763,8 @@ label debate:
         "{b}{i} Démarrer [newname].{/i}{/b}" :
             play sound "Menu.mp3" noloop 
 
-    Na "Démarrage en cours......"
+    $ start = get_random_start()
+    Na "[start]"
     play sound "Click.mp3" noloop 
 
     Na "Bonjour [prénom]."
@@ -8898,7 +8902,8 @@ label code:
     Na "Initialisation du système d'exploitaiton en cours...."
     play sound "Click.mp3" noloop
 
-    Na "Démarrage en cours......"
+    $ start = get_random_start()
+    Na "[start]"
     play sound "Click.mp3" noloop 
 
     Na "Bonjour [prénom], je tourne maintenant sur le système d'exploitation [system] avec la version [update] du processeur Corzen 11KS."
@@ -9410,7 +9415,8 @@ label code:
         "{b}{i} Démarrer [newname].{/i}{/b}" :
             play sound "Menu.mp3" noloop 
 
-    Na "Démarrage en cours......"
+    $ start = get_random_start()
+    Na "[start]"
     play sound "Click.mp3" noloop 
 
     Na "Bonjour [prénom]."
@@ -10361,7 +10367,8 @@ label code:
         "{b}{i} Démarrer [newname].{/i}{/b}" :
             play sound "Menu.mp3" noloop 
 
-    Na "Démarrage en cours......"
+    $ start = get_random_start()
+    Na "[start]"
     play sound "Click.mp3" noloop 
 
     Na "Bonjour [prénom]."
@@ -10427,7 +10434,8 @@ label password:
         play sound "Menu.mp3" noloop
         jump password  
 
-    Na "Démarrage en cours......"
+    $ start = get_random_start()
+    Na "[start]"
     play sound "Click.mp3" noloop 
 
     Na "Bonjour [prénom]."
@@ -11443,7 +11451,8 @@ label password1:
         play sound "Menu.mp3" noloop
         jump password1  
 
-    Na "Démarrage en cours......"
+    $ start = get_random_start()
+    Na "[start]"
     play sound "Click.mp3" noloop 
 
     Na "Bonjour [prénom]."
@@ -12002,7 +12011,8 @@ label password2:
         play sound "Menu.mp3" noloop
         jump password2
 
-    Na "Démarrage en cours......"
+    $ start = get_random_start()
+    Na "[start]"
     play sound "Click.mp3" noloop 
 
     Na "Bonjour [prénom]."
@@ -12755,7 +12765,8 @@ label password3:
         play sound "Menu.mp3" noloop
         jump password3
 
-    Na "Démarrage en cours......"
+    $ start = get_random_start()
+    Na "[start]"
     play sound "Click.mp3" noloop 
 
     Na "Bonjour [prénom]."
@@ -13235,7 +13246,8 @@ label password4:
         play sound "Menu.mp3" noloop
         jump password4
 
-    Na "Démarrage en cours......"
+    $ start = get_random_start()
+    Na "[start]"
     play sound "Click.mp3" noloop 
 
     Na "Bonjour [prénom]."
@@ -13546,6 +13558,8 @@ label password4:
     scene classroom  
     show screen class_404 
 
+    # le cours de runix 
+
     M "Rebonjour, cet après-midi nous allons faire un cours de programmation."
     play sound "Click.mp3" noloop 
 
@@ -13736,7 +13750,8 @@ label password15:
         play sound "Menu.mp3" noloop
         jump password5  
 
-    Na "Démarrage en cours......"
+    $ start = get_random_start()
+    Na "[start]"
     play sound "Click.mp3" noloop 
 
     Na "Bonjour [prénom]."
@@ -13822,6 +13837,51 @@ label password15:
 
     "{b}{i}Tu te lèves et te changes et puis tu aperçois [newname] déconnectée contre le mur.{/i}{/b}"
     play sound "Click.mp3" noloop
+
+    P "Elle est encore déconnectée."
+    play sound "Click.mp3" noloop 
+
+    P "Je vais la démarrer."
+    play sound "Menu.mp3" noloop 
+
+    menu:   
+
+        "{b}{i} Démarrer [newname].{/i}{/b}" :
+            play sound "Menu.mp3" noloop 
+
+label password5:  
+
+    $ entered_password = renpy.input("Veuillez entrer votre mot de passe pour [newname].")
+    $ entered_password = entered_password.strip()
+
+    if entered_password == stored_password: 
+
+        "Mot de passe correct. Accès autorisé." 
+        play sound "Menu.mp3" noloop
+
+    else:
+
+        "Mot de passe incorrect. Accès refusé." 
+        play sound "Menu.mp3" noloop
+        jump password5
+
+    $ start = get_random_start()
+    Na "[start]"
+    play sound "Click.mp3" noloop 
+
+    Na "Bonjour [prénom]."
+    play sound "Click.mp3" noloop 
+
+
+
+
+
+
+
+
+
+
+
 
     return                            
 
