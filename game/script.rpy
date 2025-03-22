@@ -13751,20 +13751,24 @@ label password15:
 
     "{b}{i}Vous vous posez au bureau du dortoir pour réviser.{/i}{/b}"
     play sound "Click.mp3" noloop 
-
+ 
     P "Prête pour réviser ?"
     play sound "Click.mp3" noloop   
 
     Na "Oui je suis prête."
     play sound "Click.mp3" noloop     
 
+    "{b}{i} Vous révisez pendant deux heures.{/i}{/b}"
+    play sound "Click.mp3" noloop
 
+    P "Enfin fini de réviser."
+    play sound "Click.mp3" noloop
 
+    Na "Oui vraiment."
+    play sound "Click.mp3" noloop
 
-
-
-
-
+    P "Je trouves que tu fait beaucoup de progrès."
+    play sound "Click.mp3" noloop
 
     Na "Bon Je vais me déconnecter et me recharger."
     play sound "Click.mp3" noloop 
@@ -13821,4 +13825,4 @@ label password15:
 
     return                            
 
-# Aris la plus belle <333333333333333
+# Aris la plus belle <333333333333333 

@@ -1890,7 +1890,7 @@ screen credit():
             
             text _("Musiques utilisées sous licence libre.\n") 
 
-            label "— Propriiété —\n"  
+            label "— Propriété —\n"  
 
             text _("Arisization Project (The Project of the Realization of Aris) appartient à Seydou N'Doye (Shadow_SLTM)\n")  
       
