@@ -3074,7 +3074,8 @@ label wallbreaking4:
         "{b}{i} Démarrer [newname].{/i}{/b}" : 
             play sound "Menu.mp3" noloop 
 
-    Na "Démarrage en cours...."
+    $ start = get_random_start()
+    Na "[start]"
     play sound "Click.mp3" noloop 
 
     Na  "Démarrage terminé, Bonjour [P]."
@@ -4379,9 +4380,10 @@ label skip2:
         "{b}{i} Démarrer [newname].{/i}{/b}" :
             play sound "Menu.mp3" noloop 
 
-    Na "Démarrage en cours...."
-    play sound "Click.mp3" noloop
-
+    $ start = get_random_start()
+    Na "[start]"
+    play sound "Click.mp3" noloop 
+    
     "{b}{i}Tu patientes tranquillement jusqu'à que son démarrage sois complet.{/i}{/b}"
     play sound "Click.mp3" noloop
 
@@ -5749,7 +5751,8 @@ label choice9:
         "{b}{i} Démarrer [newname].{/i}{/b}" :
             play sound "Menu.mp3" noloop 
 
-    Na "Démarrage en cours...."
+    $ start = get_random_start()
+    Na "[start]"
     play sound "Click.mp3" noloop 
 
     Na "Démarrage términé, Bonjour [P]."
@@ -6722,7 +6725,7 @@ label suite1:
     Na "Je vais bien et ça va ?"
     play sound "Click.mp3" noloop 
 
-    P "Je vais bien, j'ai bien dormi."
+    P "Je vais bien, j'ai bien dormi." 
     play sound "Click.mp3" noloop  
 
     Na "Cool mais juste hier j'avais oublié de te dire un truc."
