@@ -279,7 +279,7 @@ label hack:
                 $ A = Character("M4 SOPMOD II", color="#ff4a4a")
 
             "{b}{i}Choisir UMP45{/i}{/b}" :
-                $ A = Character("UMP45", color="#8a8aff")
+                $ A = Character("UMP45", color="#8a8aff") 
 
         P "Attend on dirait qu'elle est en train de démarrer."
         play sound "Menu.mp3" noloop 

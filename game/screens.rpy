@@ -1878,7 +1878,7 @@ screen credit():
             text _("Dessin de [Su] : Sararnbb\n") 
 
             text _("Idée du personnage de [Sk] : Kama\n") 
-
+             
             text _("Idée du personnage de Seigo : Kama\n")    
 
             text _("Correction partielle de l’orthographe du chapitre 0 : Kama\n") 
@@ -1893,7 +1893,7 @@ screen credit():
 
             label "— Propriété —\n"  
 
-            text _("Arisization Project (The Project of the Realization of Aris) appartient à Seydou N'Doye (Shadow_SLTM)\n")  
+            text _("Arisization Project (The Project of the Realization of Aris) appartient à Seydou N'Doye (Shadow_SLTM)\n")   
       
 style about_label is gui_label 
 style about_label_text is gui_label_text
