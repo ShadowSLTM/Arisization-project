@@ -56,8 +56,8 @@ label auto_save:
 label identity: 
 
     play sound "Menu.mp3" noloop
-    $ prénom = renpy.input("Quel est votre prénom de lycéen ?")
-    $ prénom = prénom.strip()   
+    $ prenom = renpy.input("Quel est votre prénom de lycéen ?")
+    $ prenom = prenom.strip()   
 
     play sound "Menu.mp3" noloop
     $ nom = renpy.input("Quel est votre nom de lycéen ?")
@@ -99,18 +99,18 @@ label identity:
 
     # prénom et nom par défaut
 
-    elif prénom != "" and nom != "":
-        "{b}{i}Bienvenue [prénom] [nom].{/i}{/b}"
+    elif prenom != "" and nom != "":
+        "{b}{i}Bienvenue [prenom] [nom].{/i}{/b}"
 
-    elif prénom == "" and nom == "" and pronom == "il":
-        $ prénom = "Mitsuya"
+    elif prenom == "" and nom == "" and pronom == "il":
+        $ prenom = "Mitsuya"
         $ nom = "Shimura"
-        "{b}{i}Bienvenue [prénom] [nom]. Puis-ce qu'aucun nom n'a été choisi, celui-ci vous a été attribué.{/i}{/b}"
+        "{b}{i}Bienvenue [prenom] [nom]. Puis-ce qu'aucun nom n'a été choisi, celui-ci vous a été attribué.{/i}{/b}"
 
-    elif prénom == "" and nom == "" and pronom == "elle":
-        $ prénom = "Kyoka"
+    elif prenom == "" and nom == "" and pronom == "elle":
+        $ prenom = "Kyoka"
         $ nom = "Nakano" 
-        "{b}{i}Bienvenue [prénom] [nom]. Puis-ce qu'aucun nom n'a été choisi, celui-ci vous a été attribué.{/i}{/b}"
+        "{b}{i}Bienvenue [prenom] [nom]. Puis-ce qu'aucun nom n'a été choisi, celui-ci vous a été attribué.{/i}{/b}"
 
 ############################################
 
@@ -120,7 +120,7 @@ label identity:
         jump début 
 
     elif key == "ARIS-GRFN-M4A1":
-        $ P = Character('[prénom] [nom]', color="#707070") 
+        $ P = Character('[prenom] [nom]', color="#707070") 
         $ S = Character("Subaru Shinomiya", color="#707070")
         $ origine = "16LAB" 
         show screen success
@@ -284,7 +284,7 @@ label hack:
         P "Attend on dirait qu'elle est en train de démarrer."
         play sound "Menu.mp3" noloop 
 
-    else: 
+    else:  
 
         R "Initialisation en cours......" 
         play sound "Click.mp3" noloop
@@ -435,12 +435,12 @@ label grayroom:
 
     if pronom == "il":
 
-        S "Tiens ne serait-ce pas le petit [prénom] avec son nouveau [model]."
+        S "Tiens ne serait-ce pas le petit [prenom] avec son nouveau [model]."
         play sound "Click.mp3" noloop
 
     elif pronom == "elle": 
 
-        S "Tiens ne serait-ce pas la petite [prénom] avec son nouveau [model]."
+        S "Tiens ne serait-ce pas la petite [prenom] avec son nouveau [model]."
         play sound "Click.mp3" noloop 
 
     "{b}{i}Tu l'ignores complètement et va t'asseoir au fond de la classe comme d'habitude.{/i}{/b}"
@@ -465,7 +465,7 @@ label grayroom:
     "{b}{i}[Su] retourne et vois [A].{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    Su "C'est quoi ce truc, c'est à toi [prénom] !?"
+    Su "C'est quoi ce truc, c'est à toi [prenom] !?"
     play sound "Click.mp3" noloop
 
     P "Oui c'est exact."
@@ -492,12 +492,12 @@ label grayroom:
 
     if pronom == "il":
 
-        Su "C'est juste [S] qui est jaloux de ce que [prénom] a avec lui."
+        Su "C'est juste [S] qui est jaloux de ce que [prenom] a avec lui."
         play sound "Click.mp3" noloop
 
     elif pronom == "elle": 
 
-        Su "C'est juste [S] qui est jaloux de ce que [prénom] a avec elle."
+        Su "C'est juste [S] qui est jaloux de ce que [prenom] a avec elle."
         play sound "Click.mp3" noloop
  
     Sk "Et [pronom] a quoi ?"
@@ -515,7 +515,7 @@ label grayroom:
     Su "Tu as vu ?"
     play sound "Click.mp3" noloop
 
-    Sk "Alors je ne m'attendais pas ça venant de toi [prénom] mais il est vraiment mignon ton [model]."
+    Sk "Alors je ne m'attendais pas ça venant de toi [prenom] mais il est vraiment mignon ton [model]."
     play sound "Click.mp3" noloop
 
     P "merci beaucoup."
@@ -539,24 +539,24 @@ label grayroom:
 
     if pronom == "il":
 
-        Sk "tu oses dire que [prénom] est un menteur alors qu'il a réussi à faire un robot et pas toi."
+        Sk "tu oses dire que [prenom] est un menteur alors qu'il a réussi à faire un robot et pas toi."
         play sound "Click.mp3" noloop
 
     elif pronom == "elle": 
 
-        Sk "tu oses dire que [prénom] est une menteuse alors qu'elle a réussi à faire un robot et pas toi."
+        Sk "tu oses dire que [prenom] est une menteuse alors qu'elle a réussi à faire un robot et pas toi."
         play sound "Click.mp3" noloop
 
     S "Mais ce robot ne lui appartient pas il était abandonné."
     play sound "Click.mp3" noloop
 
-    Sk "Abandonné tu dis !? Même si c'est vrai ça ne justifie pas ton comportement en vers [prénom]."
+    Sk "Abandonné tu dis !? Même si c'est vrai ça ne justifie pas ton comportement en vers [prenom]."
     play sound "Click.mp3" noloop
 
     Su "Tu es fatiguant [S]."
     play sound "Click.mp3" noloop 
 
-    Su "Sinon [prénom] tu peux m'en dire un peu plus sur ton robot ?"
+    Su "Sinon [prenom] tu peux m'en dire un peu plus sur ton robot ?"
     play sound "Click.mp3" noloop
 
     P "Bien sûr, elle s'appelle [A]."
@@ -571,7 +571,7 @@ label grayroom:
     Su "Mais de rien ça fait plaisir."
     play sound "Click.mp3" noloop
 
-    Su "Enfaite [S] tu es la plus grosse fraude de [origine] pour te permettre d'insulter et rabaisser [prénom] juste parce que tu es populaire."
+    Su "Enfaite [S] tu es la plus grosse fraude de [origine] pour te permettre d'insulter et rabaisser [prenom] juste parce que tu es populaire."
     play sound "Click.mp3" noloop
 
     S "Mais..."
@@ -610,12 +610,12 @@ label grayroom:
 
     if pronom == "il":
 
-        Gt "Oh, très joli [model] mon cher [prénom]."
+        Gt "Oh, très joli [model] mon cher [prenom]."
         play sound "Click.mp3" noloop
 
     elif pronom == "elle": 
 
-        Gt "Oh, très joli [model] ma chère [prénom]."
+        Gt "Oh, très joli [model] ma chère [prenom]."
         play sound "Click.mp3" noloop
 
     Su "Merci beaucoup madame."
@@ -630,7 +630,7 @@ label grayroom:
     Su "Merci beaucoup."
     play sound "Click.mp3" noloop
     
-    S "Pardon, même [prénom] a réussi !?"
+    S "Pardon, même [prenom] a réussi !?"
     play sound "Click.mp3" noloop
 
     if pronom == "il":
@@ -648,12 +648,12 @@ label grayroom:
 
     if pronom == "il":
 
-        Su "En plus, un élève comme [prénom], on en voit pas tout les jours."
+        Su "En plus, un élève comme [prenom], on en voit pas tout les jours."
         play sound "Click.mp3" noloop 
 
     elif pronom == "elle": 
 
-        Su "En plus, une élève comme [prénom], on en voit pas tout les jours."
+        Su "En plus, une élève comme [prenom], on en voit pas tout les jours."
         play sound "Click.mp3" noloop 
 
     S "Ok, je vois."
@@ -902,7 +902,7 @@ label rencontre:
     A "Magnifique !? je suis vraiment flattée merci beaucoup."
     play sound "Click.mp3" noloop 
 
-    E "De rien mais pour revenir à ma question [prénom], qui est cette fille ?"
+    E "De rien mais pour revenir à ma question [prenom], qui est cette fille ?"
     play sound "Click.mp3" noloop
 
     P "Ah elle, c'est [A] mon projet de [model]."
@@ -1056,7 +1056,7 @@ label rencontre:
     P "Quoi !? Commment ça !?"
     play sound "Click.mp3" noloop
 
-    A "Quoi !? Comment ça, une dérogation pour que [prénom] puisse bosser sur mon amélioration !?"
+    A "Quoi !? Comment ça, une dérogation pour que [prenom] puisse bosser sur mon amélioration !?"
     play sound "Click.mp3" noloop
 
     E "Oui, et il faudra l'accepter pour continuer ton projet."
@@ -1177,7 +1177,7 @@ label rencontre:
     "{b}{i}L'élève s'éloigne de vous par culpabilité.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    A "Merci beaucoup [prénom]."
+    A "Merci beaucoup [prenom]."
     play sound "Click.mp3" noloop 
 
     P "Mais de rien ma chère [A]."
@@ -1186,7 +1186,7 @@ label rencontre:
     "{b}{i}Tout le monde discute tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    A "[prénom] on dirait qu'on est que 10 ici."
+    A "[prenom] on dirait qu'on est que 10 ici."
     play sound "Click.mp3" noloop
 
     P "Je confirme et je me demande pourquoi."
@@ -1395,7 +1395,7 @@ label rencontre:
     "{b}{i}Soudainement, [I] lève la main, surprise.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    T "Oui, tu as quelque chose à dire à [prénom] ?"
+    T "Oui, tu as quelque chose à dire à [prenom] ?"
     play sound "Click.mp3" noloop
 
     I "Oui, tu as bien dit améliorer ton [model] ?"
@@ -1417,7 +1417,7 @@ label rencontre:
     P "Merci beaucoup."
     play sound "Click.mp3" noloop
 
-    T "Pour revenir aux présentations, [prénom] qui est cette fille avec toi ?"
+    T "Pour revenir aux présentations, [prenom] qui est cette fille avec toi ?"
     play sound "Click.mp3" noloop 
     
     P "Ah elle justement c'est ma création, elle s'appelle [A]."
@@ -1435,7 +1435,7 @@ label rencontre:
     T "Bien et qui es-tu exactement ?" 
     play sound "Click.mp3" noloop
 
-    A "Je suis la création de [prénom], comme [pronom] l'a déjà dit."
+    A "Je suis la création de [prenom], comme [pronom] l'a déjà dit."
     play sound "Click.mp3" noloop
 
     T "Ok, juste c'est ton vrai prénom ?" 
@@ -1568,7 +1568,7 @@ label rencontre:
     Y "Oui comment ça une dérogation ? Expliquez-nous madame..."
     play sound "Click.mp3" noloop
 
-    M "Cette dérogation est pour [prénom] et [A]." 
+    M "Cette dérogation est pour [prenom] et [A]." 
     play sound "Click.mp3" noloop
 
     Y "Quoi !?" 
@@ -1670,7 +1670,7 @@ label rencontre:
     "{b}{i}Tout les élèves restèrent silencieux mais tu lèves la main poser une question.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    M "Oui [prénom] qu'il y a t-il ?"
+    M "Oui [prenom] qu'il y a t-il ?"
     play sound "Click.mp3" noloop 
 
     P "Pourquoi il existe ce système de domaine ultime dans ce lycée ?"
@@ -1742,7 +1742,7 @@ label rencontre:
     P "On dirait qu'ils sont {b}2{/b}." 
     play sound "Click.mp3" noloop
 
-    A "Il se passe quoi [prénom] ?"
+    A "Il se passe quoi [prenom] ?"
     play sound "Click.mp3" noloop
 
     P "Pas grand chose ne t'inquiètes pas."
@@ -2113,6 +2113,7 @@ label ask:
             jump choice2 
 
 #################################################################################
+
 label dorm1: 
 
     P "Bon [I], je vais retourner au dortoir."
@@ -2776,7 +2777,7 @@ label skip:
     P  "Bon, on y va [newname] ?"
     play sound "Click.mp3" noloop
 
-    I "Juste [prénom], j'ai un cadeau pour [newname]."
+    I "Juste [prenom], j'ai un cadeau pour [newname]."
     play sound "Click.mp3" noloop 
 
     P "C'est quoi ?"
@@ -2860,7 +2861,7 @@ label skip:
     "{b}{i}Soudainement [J1] entre dans la salle.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    J1 "Salut [prénom], je voulais savoir si je pouvais rejoindre ton club."
+    J1 "Salut [prenom], je voulais savoir si je pouvais rejoindre ton club."
     play sound "Click.mp3" noloop 
 
     P "Euh..."
@@ -3112,7 +3113,7 @@ label wallbreaking4:
         P "Hey je me suis reposée aussi je ne pense pas qu'à la programmation et ton amélioration, tu devrais surtout dire ça à [I]."
         play sound "Click.mp3" noloop 
 
-    Na "C'est bon [prénom] je te taquine.~"
+    Na "C'est bon [prenom] je te taquine.~"
     play sound "Click.mp3" noloop  
 
     P "Bon on va en cours avant d'être en retard."
@@ -3169,7 +3170,7 @@ label wallbreaking4:
     "{b}{i}[newname] te pointe secrétement.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    Y "[prénom] tu n'as pas honte de lui apprendre des insultes."
+    Y "[prenom] tu n'as pas honte de lui apprendre des insultes."
     play sound "Click.mp3" noloop 
 
     P "Hey je lui ai juste apprise à parler avec les autres, les insultes j'y suis pour rien."
@@ -3280,7 +3281,7 @@ label wallbreaking4:
     P "Enfin..."
     play sound "Click.mp3" noloop
 
-    M "Bon je vais commemcer par [prénom] et [Na]."
+    M "Bon je vais commemcer par [prenom] et [Na]."
     play sound "Click.mp3" noloop
 
     P "Ok."
@@ -3464,7 +3465,7 @@ label wallbreaking4:
     P "Ok je vois."
     play sound "Click.mp3" noloop
 
-    M "J'aurai une question pour toi [prénom]."
+    M "J'aurai une question pour toi [prenom]."
     play sound "Click.mp3" noloop
 
     P "Oui dites-moi."
@@ -3486,7 +3487,7 @@ label wallbreaking4:
     M "Je vois ça doit surement être l'un des robots abandonnés de NeoGen Technologies."
     play sound "Click.mp3" noloop
 
-    J2 "Mais si c'est le cas, [prénom] n'a pas les autorisations pour utiliser [newname]." 
+    J2 "Mais si c'est le cas, [prenom] n'a pas les autorisations pour utiliser [newname]." 
     play sound "Click.mp3" noloop
 
     if A == "M4A1" or "M16A1" or "ST AR-15" or "M4 SOPMOD II" or "UMP45" and key == "ARIS-GRFN-M4A1":
@@ -3502,7 +3503,7 @@ label wallbreaking4:
         J1 "Oui [pronom] n'a pas les autorisations pour [newname]."
         play sound "Click.mp3" noloop 
 
-    I "Oui mais d'un coté le gouvernement et NeoGen Technologies ont abandonné le projet donc logiquement [newname] appartient à [prénom] maintenant ?."
+    I "Oui mais d'un coté le gouvernement et NeoGen Technologies ont abandonné le projet donc logiquement [newname] appartient à [prenom] maintenant ?."
     play sound "Click.mp3" noloop 
 
     M "Oui logiquement en plus [pronom] a un contrat d'utilisation dans le lycée."
@@ -3608,7 +3609,7 @@ label wallbreaking4:
     "{b}{i} Vous continuez de manger puis [I] s'approche de vous calmêment.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    I "Mhmmm [prénom] je voulais savoir si je pouvais manger avec vous."
+    I "Mhmmm [prenom] je voulais savoir si je pouvais manger avec vous."
     play sound "Menu.mp3" noloop 
 
     menu:    
@@ -3664,7 +3665,7 @@ label wallbreaking4:
     Na "En plus je leurs ai rien fait."
     play sound "Click.mp3" noloop 
 
-    I "Je sais que n'as rien fait [newname] mais je ne comprends pas pourquoi elles se permettent de dire qu'[newname] ne t'appartient pas [prénom]."
+    I "Je sais que n'as rien fait [newname] mais je ne comprends pas pourquoi elles se permettent de dire qu'[newname] ne t'appartient pas [prenom]."
     play sound "Click.mp3" noloop 
 
     P "De toute façon [newname] est à ma création donc je n'ai rien à me reprocher."
@@ -3785,7 +3786,7 @@ label wallbreaking4:
     M "Pas de soucis."
     play sound "Click.mp3" noloop
 
-    J1 "Mais [newname] a la capacité de le devenir si [prénom] le veut ?"
+    J1 "Mais [newname] a la capacité de le devenir si [prenom] le veut ?"
     play sound "Click.mp3" noloop 
 
     M "Oui me semble-t'il."
@@ -3855,7 +3856,7 @@ label wallbreaking4:
     "{b}{i}Mais tu remarques qu'[newname] est encore triste.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    I "[prénom] je pense que je vais la déconnecter et la ramener à ton dortoir."
+    I "[prenom] je pense que je vais la déconnecter et la ramener à ton dortoir."
     play sound "Click.mp3" noloop
 
     P "Tu es sûre [I] ?" 
@@ -4127,7 +4128,7 @@ label study:
 
     if pronom == "il":
 
-        P "Tiens j'avais vu qu'il y avait [prénom], il fait quoi ?"
+        P "Tiens j'avais vu qu'il y avait [prenom], il fait quoi ?"
         play sound "Click.mp3" noloop
 
         J1 "Laisse tomber il est en train de reviser." 
@@ -4135,7 +4136,7 @@ label study:
 
     elif pronom == "elle": 
 
-        P "Tiens j'avais vu qu'il y avait [prénom], elle fait quoi ?"
+        P "Tiens j'avais vu qu'il y avait [prenom], elle fait quoi ?"
         play sound "Click.mp3" noloop 
 
         J1 "Laisse tomber elle est en train de reviser." 
@@ -4195,7 +4196,7 @@ label dorm2:
     P "Oh salut [I]."
     play sound "Click.mp3" noloop 
 
-    I "Re [prénom] ça va ?"
+    I "Re [prenom] ça va ?"
     play sound "Click.mp3" noloop 
 
     P "ça va mais un peu en détresse pour [newname]."
@@ -4771,7 +4772,7 @@ label choice9:
     I "ça ne m'étonne pas venant de toi."
     play sound "Click.mp3" noloop 
 
-    Na "J'ai lui déjà dit la même chose à [prénom] un jour." 
+    Na "J'ai lui déjà dit la même chose à [prenom] un jour." 
     play sound "Click.mp3" noloop 
 
     I "Et toi [newname] comment ça s'est passée l'examen ?"
@@ -4881,7 +4882,7 @@ label choice9:
     K "Cool enfin."
     play sound "Click.mp3" noloop
 
-    I "Je vais commencer par [prénom] et [Na]."
+    I "Je vais commencer par [prenom] et [Na]."
     play sound "Click.mp3" noloop 
 
     P "Ok."
@@ -5123,7 +5124,7 @@ label choice9:
     Na "Ok"
     play sound "Click.mp3" noloop 
 
-    M "Attends deux secondes [prénom]."
+    M "Attends deux secondes [prenom]."
     play sound "Click.mp3" noloop
 
     P "Oui qu'il y a t'il ?"
@@ -5381,7 +5382,7 @@ label choice9:
     P "Enfin, l'article 24, alinéa 3, impose au nouveau propriétaire la responsabilité complète de l'objet récupéré, y compris son entretien ou sa gestion."  
     play sound "Click.mp3" noloop  
 
-    E "Toi [prénom], tu respectes bien l'article 24, alinéa 3."  
+    E "Toi [prenom], tu respectes bien l'article 24, alinéa 3."  
     play sound "Click.mp3" noloop  
 
     P "Merci beaucoup."
@@ -5485,7 +5486,7 @@ label choice9:
     P "Il n'y a pas de soucis, [newname] approche s'il te plaît."
     play sound "Click.mp3" noloop 
 
-    Na "Oui qu'il y a t'il [prénom] ?"
+    Na "Oui qu'il y a t'il [prenom] ?"
     play sound "Click.mp3" noloop 
 
     P "Je veux que tu te présntes à [C]."
@@ -5539,7 +5540,7 @@ label choice9:
     P "Ok."
     play sound "Click.mp3" noloop 
 
-    E "Bien maintenant vous pouvez quitter mon bureau [prénom] et [newname]."
+    E "Bien maintenant vous pouvez quitter mon bureau [prenom] et [newname]."
     play sound "Click.mp3" noloop 
 
     P "Merci au revoir."
@@ -5627,7 +5628,7 @@ label choice9:
     "{b}{i}Les filles se mettent à rigoler.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    I "Merci de m'avoir fait rire [prénom]."
+    I "Merci de m'avoir fait rire [prenom]."
     play sound "Click.mp3" noloop
 
     P "De rien."
@@ -5779,7 +5780,7 @@ label choice9:
     "{b}{i} [Na] changea de tonalité.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    Na "[prénom], je détecte une nouvelle mise à jour pas obligatoire du processeur, veux-tu la faire maitenant ou plus tard ?"
+    Na "[prenom], je détecte une nouvelle mise à jour pas obligatoire du processeur, veux-tu la faire maitenant ou plus tard ?"
     play sound "Menu.mp3" noloop 
 
     menu: 
@@ -5907,7 +5908,7 @@ label afterupdate:
     scene office
     show screen office 
 
-    P "Bonjour c'est moi [prénom]."
+    P "Bonjour c'est moi [prenom]."
     play sound "Click.mp3" noloop
 
     E "Oh que puis-je faire pour toi ?"
@@ -5973,7 +5974,7 @@ label afterupdate:
     "{b}{i} Pendant que tu continues de réfléchir, [N] et [Y] entrérent dans le gymnase.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    Y "Salut [prénom] comment ça va ?"
+    Y "Salut [prenom] comment ça va ?"
     play sound "Click.mp3" noloop 
 
     P "Oh salut [Y], oui ça va bien et toi ?"
@@ -6118,7 +6119,7 @@ label suite:
     P "Oh salut [N] et [Y]."
     play sound "Click.mp3" noloop 
 
-    N "Oh salut [prénom]."
+    N "Oh salut [prenom]."
     play sound "Click.mp3" noloop
 
     P "On peut venir manger avec vous ?"
@@ -6270,7 +6271,7 @@ label suite1:
     scene classroom  
     show screen class_404 
 
-    H "Oh salut [prénom]"
+    H "Oh salut [prenom]"
     play sound "Click.mp3" noloop 
 
     P "Oh salut comment ça va ?"
@@ -6348,7 +6349,7 @@ label suite1:
     P "Oui [I], actuellement on ne peut les accuser vue le peu d'information qu'on a."
     play sound "Click.mp3" noloop 
 
-    M "Je suis d'accord avec toi [prénom]."
+    M "Je suis d'accord avec toi [prenom]."
     play sound "Click.mp3" noloop
 
     P "Merci."
@@ -6423,7 +6424,7 @@ label suite1:
     "{b}{i}[S] regarde autour de la salle et tombe sur toi.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    S "Oh c'est toi [prénom] et pour répondre à ta question, oui c'était le cas."
+    S "Oh c'est toi [prenom] et pour répondre à ta question, oui c'était le cas."
     play sound "Click.mp3" noloop 
 
     P "Mais tu fais quoi ici alors ?"
@@ -6462,7 +6463,7 @@ label suite1:
     S "Mais de rien."
     play sound "Click.mp3" noloop
 
-    I "Donc c'est toi l'ami de [prénom]."
+    I "Donc c'est toi l'ami de [prenom]."
     play sound "Click.mp3" noloop 
 
     S "Oui exactement."
@@ -6608,10 +6609,10 @@ label suite1:
     "{b}{i}[S] s'éloigna pour aller à son dortoir et en même [J1] vient vers toi.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    J1 "Hey salut [prénom] je veux juste m'excuser pour tous ce que j'ai dit à [newname]..."
+    J1 "Hey salut [prenom] je veux juste m'excuser pour tous ce que j'ai dit à [newname]..."
     play sound "Click.mp3" noloop  
 
-    Na "[J1] désolée mais ce n'est vraiment pas le moment de discuter, [prénom] vient d'avoir une discussion douloureuse avec [S]."
+    Na "[J1] désolée mais ce n'est vraiment pas le moment de discuter, [prenom] vient d'avoir une discussion douloureuse avec [S]."
     play sound "Click.mp3" noloop 
 
     J1 "Oh désolée je ne voulais pas déranger." 
@@ -6623,7 +6624,7 @@ label suite1:
     "{b}{i}[J1] s'éloigna aussi.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    Na "Bon [prénom] on part au dortoir." 
+    Na "Bon [prenom] on part au dortoir." 
     play sound "Click.mp3" noloop  
 
     P "Ok...." 
@@ -6725,7 +6726,7 @@ label suite1:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prénom]."
+    Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
     P "Coucou comment ça va aujourd'hui ?"
@@ -6743,7 +6744,7 @@ label suite1:
     P "Oui dit-moi, je t'écoute"
     play sound "Click.mp3" noloop
 
-    Na  "tu sais [prénom] tu t’occupes tellement bien de moi que je pourrais te surnommer Undertaker."
+    Na  "tu sais [prenom] tu t’occupes tellement bien de moi que je pourrais te surnommer Undertaker."
     play sound "Click.mp3" noloop 
 
     P "Undertaker !?"
@@ -6783,7 +6784,7 @@ label suite1:
     Na "Oh salut [S]."
     play sound "Click.mp3" noloop
 
-    S "Oh salut [prénom]......"
+    S "Oh salut [prenom]......"
     play sound "Click.mp3" noloop
 
     P "Comment ça va ?"
@@ -7398,7 +7399,7 @@ label suite1:
     I "Vraiment !?"
     play sound "Click.mp3" noloop 
 
-    Y "Oui il faudrait choisir [prénom]."
+    Y "Oui il faudrait choisir [prenom]."
     play sound "Click.mp3" noloop 
 
     N "Oui c'est vrai [pronom] a déjà de l'experience avec ces sujets."
@@ -7407,7 +7408,7 @@ label suite1:
     I "Oui je confirme."
     play sound "Click.mp3" noloop 
 
-    Y "Donc c'est décidé, [prénom] tu seras choisi."
+    Y "Donc c'est décidé, [prenom] tu seras choisi."
     play sound "Click.mp3" noloop 
 
     P  "OK vous pouvez compter sur moi pour gagner ce débat."
@@ -7663,7 +7664,7 @@ label debate:
     Na "Moi !?"
     play sound "Click.mp3" noloop 
 
-    I "Tu te défends bien [prénom]."
+    I "Tu te défends bien [prenom]."
     play sound "Click.mp3" noloop 
 
     "{b}{i}Le débat continua jusqu'à la fin du cours.{/i}{/b}"
@@ -7689,12 +7690,12 @@ label debate:
 
     if pronom == "il":
 
-        Na "Tu sais tu t'es vraiment bien débrouillé [prénom]."
+        Na "Tu sais tu t'es vraiment bien débrouillé [prenom]."
         play sound "Click.mp3" noloop 
 
     elif pronom == "elle": 
 
-        Na "Tu sais tu t'es vraiment bien débrouillée [prénom]."
+        Na "Tu sais tu t'es vraiment bien débrouillée [prenom]."
         play sound "Click.mp3" noloop 
  
     P "Merci beaucoup. "
@@ -7891,7 +7892,7 @@ label debate:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prénom]."
+    Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
     P "Coucou comment ça va aujourd'hui ?"
@@ -7922,7 +7923,7 @@ label debate:
 
             show screen draw
 
-            "{i} Salut [prénom], hier j'avais oublié de te dire mais j'avais fait un dessin d'[newname] tiens c'est cadeau.{/i}"
+            "{i} Salut [prenom], hier j'avais oublié de te dire mais j'avais fait un dessin d'[newname] tiens c'est cadeau.{/i}"
             play sound "Click.mp3" noloop
 
             hide screen draw
@@ -7984,7 +7985,7 @@ label debate:
     "{b}{i} Quand tu rentres en classe [S] vient vers toi.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    S "Hey [prénom] je peux te parler deux minutes s'il te plait ?"
+    S "Hey [prenom] je peux te parler deux minutes s'il te plait ?"
     play sound "Click.mp3" noloop 
 
     P "Pourquoi faire !?"
@@ -8053,7 +8054,7 @@ label debate:
     P "Purée...."
     play sound "Click.mp3" noloop
 
-    Na "[prénom] tu vas bien ?"
+    Na "[prenom] tu vas bien ?"
     play sound "Click.mp3" noloop
 
     P "Oui ça va."
@@ -8071,7 +8072,7 @@ label debate:
     "{b}{i}Ton corps ne tient plus, et tu t'effondres à genoux. Des exclamations inquiètes remplissent la pièce.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    Na "[prénom] !! Hé, reste avec moi !" 
+    Na "[prenom] !! Hé, reste avec moi !" 
     play sound "Click.mp3" noloop
 
     "{b}{i}Tu perçois vaguement la voix d'[newname] au loin avant que tout devienne noir.{/i}{/b}"
@@ -8176,7 +8177,7 @@ label debate:
 
                 show screen draw
 
-                "{i} Salut [prénom], hier j'avais oublié de te dire mais j'avais fait un dessin d'[newname] tiens c'est cadeau.{/i}"
+                "{i} Salut [prenom], hier j'avais oublié de te dire mais j'avais fait un dessin d'[newname] tiens c'est cadeau.{/i}"
                 play sound "Click.mp3" noloop
 
                 hide screen draw
@@ -8213,7 +8214,7 @@ label debate:
             "{b}{i} Dix minutes plus tard [newname] entre dans le dortoir. {/i}{/b}"
             play sound "Click.mp3" noloop 
 
-            Na "Coucou comment ça va [prénom] ?"
+            Na "Coucou comment ça va [prenom] ?"
             play sound "Click.mp3" noloop 
 
             P "Euh je vais bien....."
@@ -8225,7 +8226,7 @@ label debate:
             P "Ok je l'admet......"
             play sound "Click.mp3" noloop 
 
-            Na "Tu me déçois [prénom], après ça ne m'étonne pas venant de toi tu te donnes toujours à fond."
+            Na "Tu me déçois [prenom], après ça ne m'étonne pas venant de toi tu te donnes toujours à fond."
             play sound "Click.mp3" noloop 
 
             if pronom == "il":
@@ -8252,7 +8253,7 @@ label debate:
             "{b}{i} Dix minutes plus tard [newname] entre dans le dortoir. {/i}{/b}"
             play sound "Click.mp3" noloop 
 
-            Na "Coucou comment ça va [prénom] ?"
+            Na "Coucou comment ça va [prenom] ?"
             play sound "Click.mp3" noloop 
 
             P "Je vais bien."
@@ -8317,7 +8318,7 @@ label debate:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prénom]."
+    Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
     P "Coucou comment ça va aujourd'hui ?"
@@ -8395,7 +8396,7 @@ label debate:
     "{b}{i}La [T] pose son regard sur toi.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    M "Oh [prénom] je vois que tu vas mieux."
+    M "Oh [prenom] je vois que tu vas mieux."
     play sound "Click.mp3" noloop
 
     P "Oui c'est exact."
@@ -8526,7 +8527,7 @@ label debate:
     P "Ne t'inquiétes pas ça va bien passer."
     play sound "Click.mp3" noloop
 
-    Na "Oui on a l'habitude avec [prénom]."
+    Na "Oui on a l'habitude avec [prenom]."
     play sound "Click.mp3" noloop
 
     P "Surtout qu'[newname] à acquis beaucoup de connaissances mais Le plus gros défaut du cadre scolaire c'est qu'il limite la protée globale de ces connaissances."
@@ -8779,7 +8780,7 @@ label debate:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prénom]."
+    Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
     P "Bonjour [newname] aujourd'hui on va faire du boulot dans la salle de club."
@@ -8918,7 +8919,7 @@ label code:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prénom], je tourne maintenant sur le système d'exploitation [system] avec la version [update] du processeur Corzen 11KS."
+    Na "Bonjour [prenom], je tourne maintenant sur le système d'exploitation [system] avec la version [update] du processeur Corzen 11KS."
     play sound "Click.mp3" noloop 
 
     P "Coucou [newname] comment ça va ?" 
@@ -8971,7 +8972,7 @@ label code:
     P "Oh salut [H], comment ça va ?"
     play sound "Click.mp3" noloop 
 
-    H "Oh salut [prénom] et [newname], oui moi ça va bien et vous ?"
+    H "Oh salut [prenom] et [newname], oui moi ça va bien et vous ?"
     play sound "Click.mp3" noloop 
 
     Na "On va bien." 
@@ -9231,7 +9232,7 @@ label code:
             I "Mhmmm C'est qui ?"
             play sound "Click.mp3" noloop 
 
-            P "C'est moi [prénom]."
+            P "C'est moi [prenom]."
             play sound "Click.mp3" noloop
 
             I "Oh c'est toi..."
@@ -9431,7 +9432,7 @@ label code:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prénom]."
+    Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
     P "Coucou comment ça va aujourd'hui ?"
@@ -9496,7 +9497,7 @@ label code:
     N "On veut savoir où elle est."
     play sound "Click.mp3" noloop 
 
-    M "Doucement, [prénom] tu peux nous dire où est [I] ?"
+    M "Doucement, [prenom] tu peux nous dire où est [I] ?"
     play sound "Click.mp3" noloop 
 
     P "Tout ce que je sais c'est qu'hier [I] était complétemnt fatiguée au club hier."
@@ -9514,7 +9515,7 @@ label code:
     I "Bonjour désolée de mon retard j'était pas bien."
     play sound "Click.mp3" noloop 
 
-    M "Bonjour [I] si jamais [prénom] nous a déjà dii ce que tu avais."
+    M "Bonjour [I] si jamais [prenom] nous a déjà dii ce que tu avais."
     play sound "Click.mp3" noloop 
 
     I "Ok merci."
@@ -9552,7 +9553,7 @@ label code:
         P "Pardon ?"
         play sound "Click.mp3" noloop 
 
-        Y "Attend [prénom] tu as dit qu'[newname] avais agit bizarrement ?"
+        Y "Attend [prenom] tu as dit qu'[newname] avais agit bizarrement ?"
         play sound "Click.mp3" noloop 
 
         P "Oui pourquoi ?"
@@ -9607,7 +9608,7 @@ label code:
     P "Ok je comprends mais là on ne peut plus vraiment confiance à qui que se soit dans cette classe."
     play sound "Click.mp3" noloop 
 
-    Na "Vraiment [prénom] ?" 
+    Na "Vraiment [prenom] ?" 
     play sound "Click.mp3" noloop 
 
     P "Oui je t'assure [newname]."
@@ -9681,7 +9682,7 @@ label code:
     P "Je vois mais sache que si tu as besoin de moi je serai là pour toi."
     play sound "Click.mp3" noloop 
 
-    I "Merci beaucoup [prénom]."
+    I "Merci beaucoup [prenom]."
     play sound "Click.mp3" noloop 
 
     P "Avec plaisir."
@@ -9865,7 +9866,7 @@ label code:
     P "L'ultime complotiste !? c'est impossible il n'y a aucun lycéen qui a ce titre ici..."
     play sound "Click.mp3" noloop
 
-    Na "[prénom] ça va ?"
+    Na "[prenom] ça va ?"
     play sound "Click.mp3" noloop
 
     P "Oui ça va."
@@ -10085,7 +10086,7 @@ label code:
     show screen office 
     play sound "Door.mp3" noloop 
 
-    P "Bonjour, c'est moi [prénom]."
+    P "Bonjour, c'est moi [prenom]."
     play sound "Click.mp3" noloop
 
     E "Que puis-je faire pour toi ?"
@@ -10136,7 +10137,7 @@ label code:
     P "Merci beaucoup."
     play sound "Click.mp3" noloop
 
-    E "De rien [prénom]."
+    E "De rien [prenom]."
     play sound "Click.mp3" noloop
 
     scene black 
@@ -10201,7 +10202,7 @@ label code:
             "{b}{i}Tu frappes à la porte d'[I] et patientes puis elle t'ouvre la porte.{/i}{/b}"
             play sound "Door.mp3" noloop  
 
-            I "Oh c'est toi [prénom], vas-y entres." 
+            I "Oh c'est toi [prenom], vas-y entres." 
             play sound "Click.mp3" noloop  
 
             P "Merci."
@@ -10383,7 +10384,7 @@ label code:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prénom]."
+    Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
     P "Coucou comment ça va aujourd'hui ?"
@@ -10450,7 +10451,7 @@ label password:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prénom]."
+    Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
     P "Bonjour [newname], est-ce que ça va ?"
@@ -10498,7 +10499,7 @@ label password:
     P "Boujour."
     play sound "Click.mp3" noloop 
 
-    N "Salut [prénom] comment ça va ?"
+    N "Salut [prenom] comment ça va ?"
     play sound "Click.mp3" noloop 
 
     P "Je vais bien et toi ?"
@@ -10581,7 +10582,7 @@ label password:
     P "N'aie pas peur [newname], ça va aller."
     play sound "Click.mp3" noloop
 
-    Na "Ok [prénom]."
+    Na "Ok [prenom]."
     play sound "Click.mp3" noloop
 
     M "Sinon pourquoi étes-vous ici ?"
@@ -10605,7 +10606,7 @@ label password:
     "{b}{i}La [T] pointe [newname] à l'[Ot].{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    M "C'est celle au fond à coté de [prénom], [pronom] vous donnera plus de détails sur [newname]."
+    M "C'est celle au fond à coté de [prenom], [pronom] vous donnera plus de détails sur [newname]."
     play sound "Click.mp3" noloop 
 
     Oh "Je vois."
@@ -10749,7 +10750,7 @@ label password:
     O "Non malheureusement, J'ai fouillé [newname] et sous le lit."
     play sound "Click.mp3" noloop 
 
-    Oh "Bien je vois, juste [prénom] qu'est-ce que c'est que ces documents sur ton bureau ?"
+    Oh "Bien je vois, juste [prenom] qu'est-ce que c'est que ces documents sur ton bureau ?"
     play sound "Click.mp3" noloop 
 
     if info == 1.0:
@@ -10855,7 +10856,7 @@ label password:
     "{b}{i}L'[Ot] se met à parler.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    Oh "Si nous sommes ici c'est parce que nous un document vraiment suspect dans les affaires de [prénom]." 
+    Oh "Si nous sommes ici c'est parce que nous un document vraiment suspect dans les affaires de [prenom]." 
     play sound "Click.mp3" noloop 
 
     M "Comment ça !?" 
@@ -10879,7 +10880,7 @@ label password:
     P "Pardon comment ça !?" 
     play sound "Click.mp3" noloop 
 
-    Na "Pardon mais [prénom] n'oserait jamais faire ça." 
+    Na "Pardon mais [prenom] n'oserait jamais faire ça." 
     play sound "Click.mp3" noloop
 
     M "Regardes le document et tu verras." 
@@ -10921,7 +10922,7 @@ label password:
     E "Oui." 
     play sound "Click.mp3" noloop 
 
-    Oh "Attendez, [prénom] n'est pas l'ultime complotiste ?" 
+    Oh "Attendez, [prenom] n'est pas l'ultime complotiste ?" 
     play sound "Click.mp3" noloop 
 
     M "Non, [pronom] est [domaine], donc veuillez le détachez." 
@@ -11009,7 +11010,7 @@ label password:
         E "Bon vue la situation n'importe qui peut être le coupable." 
         play sound "Click.mp3" noloop 
 
-    Oh "Sinon [prénom], j'aimerais savoir si ça t'intéresses de participer à l'enquéte car car tu es la principale victime." 
+    Oh "Sinon [prenom], j'aimerais savoir si ça t'intéresses de participer à l'enquéte car car tu es la principale victime." 
     play sound "Click.mp3" noloop 
 
     P "Oui pourquoi pas." 
@@ -11090,12 +11091,12 @@ label password:
 
     if pronom == "il":
 
-        M "J'espére que tu n'es pas sérieux [prénom] !"
+        M "J'espére que tu n'es pas sérieux [prenom] !"
         play sound "Click.mp3" noloop 
 
     elif pronom == "elle":
         
-        M "J'espére que tu n'es pas sérieuse [prénom] !"
+        M "J'espére que tu n'es pas sérieuse [prenom] !"
         play sound "Click.mp3" noloop 
 
     P "Je rappelle que la sécurité d'[newname] est en jeu." 
@@ -11467,7 +11468,7 @@ label password1:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prénom]."
+    Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
     P "Coucou comment ça va aujourd'hui ?"
@@ -11512,7 +11513,7 @@ label password1:
     "{b}{i}La [T] se met à te regarder car elle a remarqué un truc bizarre en toi.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    M "Est-ce que ça va [prénom] ?"
+    M "Est-ce que ça va [prenom] ?"
     play sound "Click.mp3" noloop 
 
     if pronom == "il":
@@ -12027,7 +12028,7 @@ label password2:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prénom]."
+    Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
     P "Coucou comment ça va aujourd'hui ?"
@@ -12339,7 +12340,7 @@ label examen_pythagore:
     S "ça ne m'étonne pas venant de toi."
     play sound "Click.mp3" noloop 
 
-    Na "J'ai lui déjà dit la même chose à [prénom] un jour." 
+    Na "J'ai lui déjà dit la même chose à [prenom] un jour." 
     play sound "Click.mp3" noloop 
 
     S "Et toi [newname] comment ça s'est passée l'examen ?"
@@ -12402,7 +12403,7 @@ label examen_pythagore:
     K "Cool enfin."
     play sound "Click.mp3" noloop
 
-    I "Je vais commencer par [prénom] et [Na]."
+    I "Je vais commencer par [prenom] et [Na]."
     play sound "Click.mp3" noloop 
 
     P "Ok."
@@ -12781,7 +12782,7 @@ label password3:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prénom]."
+    Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
     P "Coucou comment ça va aujourd'hui ?"
@@ -12832,7 +12833,7 @@ label password3:
     scene office 
     show screen office 
 
-    P "Bonjour, c'est moi [prénom]."
+    P "Bonjour, c'est moi [prenom]."
     play sound "Click.mp3" noloop 
 
     E "Oh bonjour, j'imagine que tu es ici pour qu'[newname] passe le test de turing."
@@ -12929,7 +12930,7 @@ label password3:
     P "Félicitation [newname]."
     play sound "Click.mp3" noloop 
 
-    Na "Merci beaucoup [prénom], c'est grâce à toi."
+    Na "Merci beaucoup [prenom], c'est grâce à toi."
     play sound "Click.mp3" noloop 
 
     if pronom == "il":
@@ -13034,7 +13035,7 @@ label password3:
     P "Et toi [Y] ?"
     play sound "Click.mp3" noloop 
 
-    Y "Je vais bien aussi et toi [prénom] ?"
+    Y "Je vais bien aussi et toi [prenom] ?"
     play sound "Click.mp3" noloop 
 
     P "Je vais bien."
@@ -13262,7 +13263,7 @@ label password4:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prénom]."
+    Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
     P "Coucou comment ça va aujourd'hui ?"
@@ -13403,7 +13404,7 @@ label password4:
     "{b}{i}Il y a un blanc pendant un instant.{/i}{/b}"
     play sound "Click.mp3" noloop    
 
-    Oh "J'aurais encore une question [prénom]."
+    Oh "J'aurais encore une question [prenom]."
     play sound "Click.mp3" noloop  
 
     P "Oui dites-moi."
@@ -13495,7 +13496,7 @@ label password4:
     "{b}{i} Vous asseyez à une table.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    Na "Bon appétit [prénom]."
+    Na "Bon appétit [prenom]."
     play sound "Click.mp3" noloop 
 
     P "Merci beaucoup."
@@ -13578,7 +13579,7 @@ label password4:
     S "Un cours de programmation !? et sur quel langage ?"
     play sound "Click.mp3" noloop 
 
-    M "C'est un langage que [prénom] et [newname] connaisssent très bien."
+    M "C'est un langage que [prenom] et [newname] connaisssent très bien."
     play sound "Click.mp3" noloop 
 
     S "Non, ne me dites pas que c'est....."
@@ -13662,7 +13663,7 @@ label password4:
     $ answer = renpy.input("écris ta réponse.") 
     $ answer = answer.strip() 
 
-    M "[prénom] as-tu une idée ?" 
+    M "[prenom] as-tu une idée ?" 
     play sound "Click.mp3" noloop
 
     P "[answer] ?"
@@ -13766,7 +13767,7 @@ label password5:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prénom]."
+    Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
     P "On révise maintenant ?"
@@ -13881,7 +13882,7 @@ label password6:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prénom]."
+    Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
     P "Coucou comment ça va aujourd'hui ?"
