@@ -14046,7 +14046,7 @@ label password6:
     Y "Merci beaucoup. "
     play sound "Click.mp3" noloop  
 
-    M ""
+    M "Pour faire les fonctions Runix il faut des parenthèses juste derrière le nom de l'objet."
     play sound "Click.mp3" noloop  
 
     return                            
