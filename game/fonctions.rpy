@@ -201,3 +201,35 @@ init python:
 
     def get_random_fais_du_bien():
         return random.choice(fais_du_bien) 
+
+init python:
+    import random 
+
+    comment_ca_va_rdm = [
+        "Comment tu vas ?",
+        "Ça roule ?",
+        "Tu vas bien ?",
+        "Comment ça va aujourd'hui ?",
+        "Tout va bien ?",
+        "Ça va comment ?",
+        "Comment te sens-tu ?",
+    ]
+
+    def get_random_comment_ca_va():
+        return random.choice(comment_ca_va_rdm)
+
+init python:
+    import random 
+
+    je_vais_bien_rdm = [
+        "Je vais bien.",
+        "Tout va bien.",
+        "Ça roule.",
+        "Je me sens bien.",
+        "Nickel.",
+        "Ça va super.",
+        "Je vais bien, merci.",
+    ]
+
+    def get_random_je_vais_bien():
+        return random.choice(je_vais_bien_rdm)
