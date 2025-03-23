@@ -102,7 +102,7 @@ init python:
         "Ça fonctionne.",  
         "Tout est bon.",  
         "Ça passe.",  
-        "Go."  
+        "Go.", 
     ]
 
     def get_random_validation():
@@ -134,7 +134,7 @@ init python:
         "Je te suis, allons-y.",  
         "Oui, je te suis.",
         "Je te suis, pas de problème.",
-        "Je te suis, allons-y ensemble."
+        "Je te suis, allons-y ensemble.",
         ]
 
     def get_random_suivi():
@@ -164,7 +164,7 @@ init python:
         "Activation en cours...",  
         "Lancement du système...",
         "Mise en route...",
-        "Système en cours de préparation..."
+        "Système en cours de préparation...",
         ]
 
     def get_random_start():
@@ -180,7 +180,7 @@ init python:
         "Nous voilà au dortoir.",
         "Enfin dans le dortoir.",
         "Le dortoir, enfin !",
-        "Arrivés au dortoir, enfin !"
+        "Arrivés au dortoir, enfin !",
         ]
 
     def get_random_dortoir():
@@ -196,7 +196,7 @@ init python:
         "C'est clair, ça fait du bien.",
         "Oui, c'est agréable, ça fait du bien.",
         "Totalement d'accord, ça fait du bien.",
-        "Je suis bien d'accord, ça fait du bien."
+        "Je suis bien d'accord, ça fait du bien.",
     ]
 
     def get_random_fais_du_bien():
@@ -221,7 +221,7 @@ init python:
 init python:
     import random 
 
-    je_vais_bien_rdm = [
+    je_vais_bien_rdm_list = [
         "Je vais bien",
         "Tout va bien",
         "Ça roule",
@@ -232,4 +232,4 @@ init python:
     ]
 
     def get_random_je_vais_bien():
-        return random.choice(je_vais_bien_rdm)
+        return random.choice(je_vais_bien_rdm_list)

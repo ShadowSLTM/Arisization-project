@@ -317,8 +317,6 @@ screen navigation():
 
             textbutton _("Menu principal") action MainMenu()
 
-            textbutton _("Succès") action ShowMenu("success") 
-
         textbutton _("À propos") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
@@ -328,6 +326,10 @@ screen navigation():
             textbutton _("Aide") action ShowMenu("help")
 
             textbutton _("Boutique") action ShowMenu("Shop")
+
+            textbutton _("Succès") action ShowMenu("success") 
+
+            textbutton _("Ton robot") action ShowMenu("robot") 
 
             textbutton _("Crédits") action ShowMenu("credit")
 
@@ -1917,6 +1919,33 @@ screen success():
             label "{b}{i}Progression\n{/i}{/b}" 
 
             text _("Succès : [success]/??????\n") 
+
+style about_label is gui_label 
+style about_label_text is gui_label_text
+style about_text is gui_text
+
+style about_label_text: 
+    size gui.label_text_size
+
+screen robot():
+
+    tag menu
+
+    ## Cette déclaration concerne l’écran game_menu. L’élément vbox est ensuite
+    ## inclus dans la fenêtre de l'écran game_menu.
+    use game_menu(_("Ton robot"), scroll="viewport"):
+
+        style_prefix "about"
+
+        vbox:
+
+            label "{b}{i}Ton robot\n{/i}{/b}" 
+
+            text _("nom de code : [A]\n") 
+
+            text _("Mot de passe : [stored_password]\n") 
+
+            text _("Système d'exploitation : [system]\n")
 
 style about_label is gui_label 
 style about_label_text is gui_label_text

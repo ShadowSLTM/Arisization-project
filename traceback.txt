@@ -1,49 +1,51 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/screens.rpy", line 1909, in execute
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
+  File "game/screens.rpy", line 1907, in execute
     screen success():
-  File "game/screens.rpy", line 1909, in execute
+  File "game/screens.rpy", line 1907, in execute
     screen success():
-  File "game/screens.rpy", line 1915, in execute
+  File "game/screens.rpy", line 1913, in execute
     use game_menu(_("Succès"), scroll="viewport"):
-  File "game/screens.rpy", line 421, in execute
+  File "game/screens.rpy", line 423, in execute
     screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
-  File "game/screens.rpy", line 421, in execute
+  File "game/screens.rpy", line 423, in execute
     screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
-  File "game/screens.rpy", line 430, in execute
+  File "game/screens.rpy", line 432, in execute
     frame:
-  File "game/screens.rpy", line 433, in execute
+  File "game/screens.rpy", line 435, in execute
     hbox:
-  File "game/screens.rpy", line 439, in execute
+  File "game/screens.rpy", line 441, in execute
     frame:
-  File "game/screens.rpy", line 442, in execute
-    if scroll == "viewport":
   File "game/screens.rpy", line 444, in execute
+    if scroll == "viewport":
+  File "game/screens.rpy", line 446, in execute
     viewport:
-  File "game/screens.rpy", line 453, in execute
+  File "game/screens.rpy", line 455, in execute
     vbox:
-  File "game/screens.rpy", line 456, in execute
+  File "game/screens.rpy", line 458, in execute
     transclude
-  File "game/screens.rpy", line 1915, in execute
+  File "game/screens.rpy", line 1913, in execute
     use game_menu(_("Succès"), scroll="viewport"):
-  File "game/screens.rpy", line 1919, in execute
+  File "game/screens.rpy", line 1917, in execute
     vbox:
 NameError: name 'success' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
-    python hide:
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
-    python hide:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
-    ui.interact()
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
@@ -64,33 +66,33 @@ Full traceback:
     self.update()
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
     self.screen.function(**self.scope)
-  File "game/screens.rpy", line 1909, in execute
+  File "game/screens.rpy", line 1907, in execute
     screen success():
-  File "game/screens.rpy", line 1909, in execute
+  File "game/screens.rpy", line 1907, in execute
     screen success():
-  File "game/screens.rpy", line 1915, in execute
+  File "game/screens.rpy", line 1913, in execute
     use game_menu(_("Succès"), scroll="viewport"):
-  File "game/screens.rpy", line 421, in execute
+  File "game/screens.rpy", line 423, in execute
     screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
-  File "game/screens.rpy", line 421, in execute
+  File "game/screens.rpy", line 423, in execute
     screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
-  File "game/screens.rpy", line 430, in execute
+  File "game/screens.rpy", line 432, in execute
     frame:
-  File "game/screens.rpy", line 433, in execute
+  File "game/screens.rpy", line 435, in execute
     hbox:
-  File "game/screens.rpy", line 439, in execute
+  File "game/screens.rpy", line 441, in execute
     frame:
-  File "game/screens.rpy", line 442, in execute
-    if scroll == "viewport":
   File "game/screens.rpy", line 444, in execute
+    if scroll == "viewport":
+  File "game/screens.rpy", line 446, in execute
     viewport:
-  File "game/screens.rpy", line 453, in execute
+  File "game/screens.rpy", line 455, in execute
     vbox:
-  File "game/screens.rpy", line 456, in execute
+  File "game/screens.rpy", line 458, in execute
     transclude
-  File "game/screens.rpy", line 1915, in execute
+  File "game/screens.rpy", line 1913, in execute
     use game_menu(_("Succès"), scroll="viewport"):
-  File "game/screens.rpy", line 1919, in execute
+  File "game/screens.rpy", line 1917, in execute
     vbox:
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\text\text.py", line 2177, in _scope
     return self.set_text(self.text_parameter, scope, self.substitute, update)
@@ -112,4 +114,4 @@ NameError: name 'success' is not defined
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 Arisization Project Version_test
-Sat Mar 22 20:00:50 2025
+Sun Mar 23 18:16:30 2025

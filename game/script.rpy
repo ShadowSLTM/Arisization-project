@@ -4,7 +4,7 @@ label start:
     $ grade = 0.0  
     $ points = 0 
     $ day = 0 
-    $ success = 0
+    default success = 0
     $ wallbreak = 0
     $ update = 1.0
     $ info = 0.0
@@ -13,7 +13,9 @@ label start:
     $ model = "robot humanoïde" 
     $ ending = 0
     default stored_password = ""
+    default system = "AetherOS"
     $ message = 0
+    $ newname = "Aris"  
 
     stop music fadeout 2.0   
 
@@ -87,12 +89,12 @@ label identity:
         play sound "Menu.mp3" noloop 
         jump identity
 
-    if prénom in ["Iris", "Hajime", "Kendo", "Naoto", "Haruki", "Yuki", "Emily", "Kazumi", "Ayano", "Aiko", "Akeno", "Subaru", "Suzune", "Shiro", "Kaede", "Naomi"]:
+    if prenom in ["Iris", "Hajime", "Kendo", "Naoto", "Haruki", "Yuki", "Emily", "Kazumi", "Ayano", "Aiko", "Akeno", "Subaru", "Suzune", "Shiro", "Kaede", "Naomi"]:
 
         "Ce prénom n'est pas autorisé."
         jump identity  
     
-    elif prénom == "Aris":
+    elif prenom == "Aris":
 
         R "Cher joueur/chère joueuse je ne suis pas sûr qu’avoir le prénom Aris soit une bonne idée pour la suite de l'histoire veuillez changer de prénom s'il vous plaît."
         jump identity  
@@ -137,7 +139,7 @@ label identity:
         "Ce nom n'est pas autorisé." 
         jump identity 
 
-label début:
+label début: 
 
     scene main 
 
@@ -239,7 +241,7 @@ label hack:
         play sound "Menu.mp3" noloop 
 
         "système ouvert avec succès." 
-        play sound "Click.mp3" noloop
+        play sound "Click.mp3" noloop 
 
     else: 
 
@@ -423,7 +425,7 @@ label grayroom:
     "{b}{i}Le lendemain, à [origine].{/i}{/b}" 
     play sound "Click.mp3" noloop 
 
-    "Tu entres tranquillement en classe avec [A]."
+    "{b}{i}Tu entres tranquillement en classe avec [A].{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene origineclass
@@ -2495,12 +2497,12 @@ label wallbreaking3:
     A "Initialisation terminée, la version actuelle du processeur est la [update]."
     play sound "Menu.mp3" noloop
 
-    $ question = get_random_comment_ca_va()
-    P "[question]"
+    $ comment_ca_va_rdm = get_random_comment_ca_va()
+    P "[comment_ca_va_rdm]"
     play sound "Click.mp3" noloop  
 
-    $ reponse = get_random_bien_et_toi()
-    A "[reponse]"
+    $ je_vais_bien_rdm = get_random_je_vais_bien()
+    A "[je_vais_bien_rdm]."
     play sound "Click.mp3" noloop 
 
     P "Je vais ragarder si tu as des nouveau paramètres."
@@ -3097,7 +3099,7 @@ label wallbreaking4:
 
     $ je_vais_bien_rdm = get_random_je_vais_bien()
     Na "[je_vais_bien_rdm] comme d'habitude et toi ?"
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     P "Moi ça va super juste un peu fatigué."
     play sound "Click.mp3" noloop 
@@ -13977,6 +13979,10 @@ label password6:
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
+    $  salutation_rdm_M = get_random_salutation()
+    M "[salutation_rdm_M]"
+    play sound "Click.mp3" noloop
+
     $  salutation_rdm_Na = get_random_salutation()
     Na "[salutation_rdm_Na]"
     play sound "Click.mp3" noloop 
@@ -13985,9 +13991,26 @@ label password6:
     P "[salutation_rdm_P]"
     play sound "Click.mp3" noloop
 
-    $  salutation_rdm_M = get_random_salutation()
-    M "[salutation_rdm_M]"
-    play sound "Click.mp3" noloop
+    M "Bon aujourd'hui nous allons continuer le cours sur Runix."
+    play sound "Click.mp3" noloop   
+
+    S "Nous allons voir quoi exactement ?"
+    play sound "Click.mp3" noloop  
+
+    M "Les fonctionnalités avancées du langage Runix."
+    play sound "Click.mp3" noloop  
+
+    S "Intérresant."
+    play sound "Click.mp3" noloop  
+
+    M "Bien, veuillez sortir votre d'informatique."
+    play sound "Click.mp3" noloop  
+
+
+
+
+
+
 
 
     return                            
