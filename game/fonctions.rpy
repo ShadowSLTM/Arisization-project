@@ -221,7 +221,7 @@ init python:
 init python:
     import random 
 
-    je_vais_bien_rdm_list = [
+    je_vais_bien_rdm = [
         "Je vais bien",
         "Tout va bien",
         "Ça roule",
@@ -232,4 +232,4 @@ init python:
     ]
 
     def get_random_je_vais_bien():
-        return random.choice(je_vais_bien_rdm_list)
+        return random.choice(je_vais_bien_rdm)

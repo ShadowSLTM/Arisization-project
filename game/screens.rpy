@@ -1855,23 +1855,23 @@ screen credit():
 
         vbox:
 
-            label "— Crédits —\n"
+            label "{b}{i}— Crédits —\n{/i}{/b}"
 
             text _("Développement et narration : [Dc] (Shadow_SLTM)\n")
 
             text _("Concepts : [Dc] (Shadow_SLTM) et divers collaborateurs\n")
 
-            text _("Création du personnage AK-24 : [Dc] (Shadow_SLTM)\n") 
+            text _("Création du personnage AK-24 et M82A1 : [Dc] (Shadow_SLTM)\n") 
 
             text _("Illustration du menu : [Dc] (Shadow_SLTM)\n")
 
-            text _("Programmation : [Dc] (Shadow_SLTM) et Nathanaël (Loki)\n")
+            text _("Programmation : [Dc] (Shadow_SLTM) et Nathanaël (Loki)\n") 
 
             text _("Correction du jeu : [Dc] (Shadow_SLTM) et Nathanaël (Loki)\n")
 
             text _("Gestion des fichiers du jeu : [Dc] (Shadow_SLTM) et Nathanaël (Loki)\n")
             
-            label "— Contributions supplémentaires —\n" 
+            label "{b}{i}— Contributions supplémentaires —\n{/i}{/b}" 
 
             text _("Phrase « Bon après ça ne m'étonne pas venant de toi » : Sararnbb\n")
 
@@ -1887,13 +1887,15 @@ screen credit():
 
             text _("Idée des textes de narration : Louks\n") 
 
+            text _("Changement de la musique du menu : Nathanaël (Loki)\n") 
+
             text _("Fonctions aléatoires : Nathanaël (Loki)\n") 
 
-            label "— Remerciements —\n" 
+            label "{b}{i}— Remerciements —\n{/i}{/b}" 
             
             text _("Musiques utilisées sous licence libre.\n") 
 
-            label "— Propriété —\n"  
+            label "{b}{i}— Propriété —\n{/i}{/b}"   
 
             text _("Arisization Project (The Project of the Realization of Aris) appartient à Seydou N'Doye (Shadow_SLTM)\n")   
       
@@ -1946,6 +1948,8 @@ screen robot():
             text _("Mot de passe : [stored_password]\n") 
 
             text _("Système d'exploitation : [system]\n")
+
+            text _("Mise à jour : [update]\n") 
 
 style about_label is gui_label 
 style about_label_text is gui_label_text

@@ -1,16 +1,12 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00gamemenu.rpy", line 174, in script
-    $ ui.interact()
-  File "renpy/common/00gamemenu.rpy", line 174, in <module>
-    $ ui.interact()
-  File "game/screens.rpy", line 1907, in execute
-    screen success():
-  File "game/screens.rpy", line 1907, in execute
-    screen success():
-  File "game/screens.rpy", line 1913, in execute
-    use game_menu(_("Succès"), scroll="viewport"):
+  File "game/screens.rpy", line 1930, in execute
+    screen robot():
+  File "game/screens.rpy", line 1930, in execute
+    screen robot():
+  File "game/screens.rpy", line 1936, in execute
+    use game_menu(_("Ton robot"), scroll="viewport"):
   File "game/screens.rpy", line 423, in execute
     screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
   File "game/screens.rpy", line 423, in execute
@@ -29,23 +25,27 @@ While running game code:
     vbox:
   File "game/screens.rpy", line 458, in execute
     transclude
-  File "game/screens.rpy", line 1913, in execute
-    use game_menu(_("Succès"), scroll="viewport"):
-  File "game/screens.rpy", line 1917, in execute
+  File "game/screens.rpy", line 1936, in execute
+    use game_menu(_("Ton robot"), scroll="viewport"):
+  File "game/screens.rpy", line 1940, in execute
     vbox:
-NameError: name 'success' is not defined
+  File "game/screens.rpy", line 1950, in execute
+    text _("Mise à jour : [update]\n")
+NameError: name 'update' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00gamemenu.rpy", line 174, in script
-    $ ui.interact()
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "renpy/common/00gamemenu.rpy", line 174, in <module>
-    $ ui.interact()
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
@@ -66,12 +66,12 @@ Full traceback:
     self.update()
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
     self.screen.function(**self.scope)
-  File "game/screens.rpy", line 1907, in execute
-    screen success():
-  File "game/screens.rpy", line 1907, in execute
-    screen success():
-  File "game/screens.rpy", line 1913, in execute
-    use game_menu(_("Succès"), scroll="viewport"):
+  File "game/screens.rpy", line 1930, in execute
+    screen robot():
+  File "game/screens.rpy", line 1930, in execute
+    screen robot():
+  File "game/screens.rpy", line 1936, in execute
+    use game_menu(_("Ton robot"), scroll="viewport"):
   File "game/screens.rpy", line 423, in execute
     screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
   File "game/screens.rpy", line 423, in execute
@@ -90,12 +90,14 @@ Full traceback:
     vbox:
   File "game/screens.rpy", line 458, in execute
     transclude
-  File "game/screens.rpy", line 1913, in execute
-    use game_menu(_("Succès"), scroll="viewport"):
-  File "game/screens.rpy", line 1917, in execute
+  File "game/screens.rpy", line 1936, in execute
+    use game_menu(_("Ton robot"), scroll="viewport"):
+  File "game/screens.rpy", line 1940, in execute
     vbox:
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\text\text.py", line 2177, in _scope
-    return self.set_text(self.text_parameter, scope, self.substitute, update)
+  File "game/screens.rpy", line 1950, in execute
+    text _("Mise à jour : [update]\n")
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\text\text.py", line 2079, in __init__
+    self.set_text(text, scope, substitute) # type: ignore
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\text\text.py", line 2216, in set_text
     i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
@@ -109,9 +111,9 @@ Full traceback:
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
     return eval(bytecode, globals, locals)
   File "<none>", line 1, in <module>
-NameError: name 'success' is not defined
+NameError: name 'update' is not defined
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 Arisization Project Version_test
-Sun Mar 23 18:16:30 2025
+Sun Mar 23 18:30:42 2025

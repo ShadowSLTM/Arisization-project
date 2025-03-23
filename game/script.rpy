@@ -6,7 +6,7 @@ label start:
     $ day = 0 
     default success = 0
     $ wallbreak = 0
-    $ update = 1.0
+    default update = 1.0
     $ info = 0.0
     default origine = "la chambre grise" 
     default domaine = "ultime créateur"
@@ -282,6 +282,9 @@ label hack:
 
             "{b}{i}Choisir UMP45{/i}{/b}" :
                 $ A = Character("UMP45", color="#8a8aff") 
+
+            "{b}{i}Choisir M82A1{/i}{/b}" :
+                $ A = Character("M82A1", color="#0000ff") 
 
         P "Attend on dirait qu'elle est en train de démarrer."
         play sound "Menu.mp3" noloop 
@@ -13689,7 +13692,7 @@ label password4:
     M "Il faut mettre ses paramétres entre les parenthéses, exemple : initiate_humanoid_robot(setting=true)." 
     play sound "Click.mp3" noloop
 
-    S "Il faut pas aussi finir ces commandesd par un point-virgule ?"
+    S "Il faut pas aussi finir ces commandes par un point-virgule ?"
     play sound "Click.mp3" noloop 
 
     M "Non il y n'en a pas besoin." 
@@ -14006,12 +14009,45 @@ label password6:
     M "Bien, veuillez sortir votre d'informatique."
     play sound "Click.mp3" noloop  
 
+    "{b}{i} tout le monde sort leur livre.{/i}{/b}"
+    play sound "Click.mp3" noloop
 
+    S "Pour commencer qui peut me dire à quoi sert les fonctions Runix ?"
+    play sound "Click.mp3" noloop  
 
+    P "Moi s'il vous plait."
+    play sound "Click.mp3" noloop  
 
+    if pronom == "il":
 
+        M "[prenom], je sais que tu es investi pour les cours mais laisse les autres répondre aussi."
+        play sound "Click.mp3" noloop  
 
+        P "Désolé."
+        play sound "Click.mp3" noloop 
 
+    elif pronom == "elle": 
+
+        M "[prenom], je sais que tu es investie pour les cours mais laisse les autres répondre aussi."
+        play sound "Click.mp3" noloop  
+
+        P "Désolée."
+        play sound "Click.mp3" noloop 
+
+    M "Pas de soucis, bien qui d'autrre peut me dire à quoi sert les fonctions."
+    play sound "Click.mp3" noloop  
+
+    Y "Les fonctions Runix sont des commandes qui permettent de donner des détails sur la commande initiate."
+    play sound "Click.mp3" noloop  
+
+    M "C'est exact, bien joué."
+    play sound "Click.mp3" noloop   
+
+    Y "Merci beaucoup. "
+    play sound "Click.mp3" noloop  
+
+    M ""
+    play sound "Click.mp3" noloop  
 
     return                            
 
