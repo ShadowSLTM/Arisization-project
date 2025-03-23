@@ -169,3 +169,35 @@ init python:
 
     def get_random_start():
         return random.choice(start) 
+
+init python:
+    import random
+
+    dortoir = [  
+        "Enfin arrivé au dortoir.",
+        "De retour au dortoir.",
+        "On est enfin au dortoir.",
+        "Nous voilà au dortoir.",
+        "Enfin dans le dortoir.",
+        "Le dortoir, enfin !",
+        "Arrivés au dortoir, enfin !"
+        ]
+
+    def get_random_dortoir():
+        return random.choice(dortoir) 
+
+init python:
+    import random
+
+    fais_du_bien = [  
+        "Oui je confirme ça fait du bien.",
+        "Ah oui, ça fait du bien !",
+        "Je confirme, ça fait du bien.",
+        "C'est clair, ça fait du bien.",
+        "Oui, c'est agréable, ça fait du bien.",
+        "Totalement d'accord, ça fait du bien.",
+        "Je suis bien d'accord, ça fait du bien."
+    ]
+
+    def get_random_fais_du_bien():
+        return random.choice(fais_du_bien) 
