@@ -1855,19 +1855,19 @@ screen credit():
 
             label "— Crédits —\n"
 
-            text _("Développement et narration : Seydou N'Doye (Shadow_SLTM)\n")
+            text _("Développement et narration : [Dc] (Shadow_SLTM)\n")
 
-            text _("Concepts : Seydou N'Doye (Shadow_SLTM) et divers collaborateurs\n")
+            text _("Concepts : [Dc] (Shadow_SLTM) et divers collaborateurs\n")
 
-            text _("Création du personnage AK-24 : Seydou N'Doye (Shadow_SLTM)\n") 
+            text _("Création du personnage AK-24 : [Dc] (Shadow_SLTM)\n") 
 
-            text _("Illustration du menu : Seydou N'Doye (Shadow_SLTM)\n")
+            text _("Illustration du menu : [Dc] (Shadow_SLTM)\n")
 
-            text _("Programmation : Seydou N'Doye (Shadow_SLTM) et Nathanaël (Loki)\n")
+            text _("Programmation : [Dc] (Shadow_SLTM) et Nathanaël (Loki)\n")
 
-            text _("Correction du jeu : Seydou N'Doye (Shadow_SLTM) et Nathanaël (Loki)\n")
+            text _("Correction du jeu : [Dc] (Shadow_SLTM) et Nathanaël (Loki)\n")
 
-            text _("Gestion des fichiers du jeu : Seydou N'Doye (Shadow_SLTM) et Nathanaël (Loki)\n")
+            text _("Gestion des fichiers du jeu : [Dc] (Shadow_SLTM) et Nathanaël (Loki)\n")
             
             label "— Contributions supplémentaires —\n" 
 

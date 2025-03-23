@@ -222,13 +222,13 @@ init python:
     import random 
 
     je_vais_bien_rdm = [
-        "Je vais bien.",
-        "Tout va bien.",
-        "Ça roule.",
-        "Je me sens bien.",
-        "Nickel.",
-        "Ça va super.",
-        "Je vais bien, merci.",
+        "Je vais bien",
+        "Tout va bien",
+        "Ça roule",
+        "Je me sens bien",
+        "Nickel",
+        "Ça va super",
+        "Je vais bien, merci",
     ]
 
     def get_random_je_vais_bien():
