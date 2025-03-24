@@ -1961,9 +1961,9 @@ label balade:
     I "Oh salut [P] comment ça va ?"
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    P "[je_vais_bien_rdm] mais sinon que tu fais-tu ici ?"
-    play sound "Click.mp3" noloop
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt] Sinon que fais-tu ici ?" 
+    play sound "Click.mp3" noloop 
 
     I "Je travaille sur mon jeu vidéo et toi ?"
     play sound "Click.mp3" noloop
@@ -2504,9 +2504,9 @@ label wallbreaking3:
     P "[comment_ca_va_rdm]"
     play sound "Click.mp3" noloop  
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    A "[je_vais_bien_rdm]."
-    play sound "Click.mp3" noloop 
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    A "[je_vais_bien_txt]" 
+    play sound "Click.mp3" noloop
 
     P "Je vais ragarder si tu as des nouveau paramètres."
     play sound "Click.mp3" noloop
@@ -3100,9 +3100,9 @@ label wallbreaking4:
     P "Bonjour. Comment ça va ?"
     play sound "Click.mp3" noloop 
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    Na "[je_vais_bien_rdm] comme d'habitude et toi ?"
-    play sound "Click.mp3" noloop 
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Comme d'habitude et toi ?" 
+    play sound "Click.mp3" noloop
 
     P "Moi ça va super juste un peu fatigué."
     play sound "Click.mp3" noloop 
@@ -5596,8 +5596,8 @@ label choice9:
     P "Oh salut Comment ça va ?"
     play sound "Click.mp3" noloop 
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    I "[je_vais_bien_rdm] et toi comment ça s'est passé avec [E] ?"
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    I "[je_vais_bien_txt] Toi comment ça s'est passé avec [E] ?" 
     play sound "Click.mp3" noloop
 
     P "ça s'est bien passé, [E] voulait que je vois l'ancien président de Neogen technologies voulait juste voir [newname]."
@@ -5778,13 +5778,12 @@ label choice9:
 
     P "Bonjour [Na] comment ça va ?"
     play sound "Click.mp3" noloop 
-
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    Na "[je_vais_bien_rdm] et toi ?"
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Et toi ?" 
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    P "[je_vais_bien_rdm], j'ai bien dormi."
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt] J'ai bien dormi." 
     play sound "Click.mp3" noloop
 
     "{b}{i} [Na] changea de tonalité.{/i}{/b}"
@@ -6287,16 +6286,16 @@ label suite1:
     P "Oh salut comment ça va ?"
     play sound "Click.mp3" noloop 
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    H "[je_vais_bien_rdm] sinon toi et [newname] ?"
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    H "[je_vais_bien_txt] Sion toi et [newname] ?" 
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    P "[je_vais_bien_rdm]"
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    Na "[je_vais_bien_rdm], merci beaucoup."
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Merci beaucoup." 
     play sound "Click.mp3" noloop
 
     H "De rien."
@@ -6745,12 +6744,12 @@ label suite1:
     P "Coucou comment ça va aujourd'hui ?"
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    Na "[je_vais_bien_rdm] et toi ça va ?"
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Et toi sinon ça va ?" 
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    P "[je_vais_bien_rdm], j'ai bien dormi."
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
 
     Na "Cool mais juste hier j'avais oublié de te dire un truc."
@@ -6759,7 +6758,7 @@ label suite1:
     P "Oui dit-moi, je t'écoute"
     play sound "Click.mp3" noloop
 
-    Na  "tu sais [prenom] tu t’occupes tellement bien de moi que je pourrais te surnommer Undertaker."
+    Na  "Tu sais [prenom] tu t’occupes tellement bien de moi que je pourrais te surnommer Undertaker."
     play sound "Click.mp3" noloop 
 
     P "Undertaker !?"
@@ -6832,15 +6831,11 @@ label suite1:
     P "Salut..."
     play sound "Click.mp3" noloop
 
-    Hi "Salut comment ça va toi et [newname]?"
+    Hi "Salut comment ça va ?"
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    P "[je_vais_bien_rdm]."
-    play sound "Click.mp3" noloop
-
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    P "[je_vais_bien_rdm] et toi [Hi]."
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
 
     Hi "Cool alors..."
@@ -7111,18 +7106,18 @@ label suite1:
     I "Oh salut comment vous allez ?"
     play sound "Click.mp3" noloop 
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    Na "[je_vais_bien_rdm]."
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    P "[je_vais_bien_rdm] et toi ?"
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt] Et toi sinon ça va ?" 
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    I "[je_vais_bien_rdm]"
-    play sound "Click.mp3" noloop
-
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    I "[je_vais_bien_txt]" 
+    play sound "Click.mp3" noloop 
+    
     P "Cool alors." 
     play sound "Click.mp3" noloop 
 
@@ -7788,13 +7783,13 @@ label debate:
     P "Oh salut comment ça va ?"
     play sound "Click.mp3" noloop 
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    Su "[je_vais_bien_rdm] et toi ?"
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Su "[je_vais_bien_txt] Et toi ?" 
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    Na "[je_vais_bien_rdm] sinon pourquoi tu m'appelles ?"
-    play sound "Click.mp3" noloop 
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt] Sion pourquoi tu m'appelles ?" 
+    play sound "Click.mp3" noloop
 
     Su "Je voulais avoir de tes nouvelles car on n'a jamais discuter après [origine]."
     play sound "Click.mp3" noloop 
@@ -7920,15 +7915,15 @@ label debate:
     P "Coucou comment ça va aujourd'hui ?"
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    Na "[je_vais_bien_rdm] et toi ça va ?"
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] et toi ça va ?" 
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    P "[je_vais_bien_rdm], j'ai bien dormi."
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    p "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
 
-    Na "Cool alors."
+    Na "Cool alors." 
     play sound "Click.mp3" noloop 
 
     "{b}{i} Tu reçois soudainement un message de [Su].{/i}{/b}"
@@ -8241,12 +8236,12 @@ label debate:
             Na "Coucou comment ça va [prenom] ?"
             play sound "Click.mp3" noloop 
 
-            $ je_vais_bien_rdm = get_random_je_vais_bien()
-            P "[je_vais_bien_rdm]....."
+            $ je_vais_bien_txt = get_random_je_vais_bien() 
+            P "[je_vais_bien_txt]......" 
             play sound "Click.mp3" noloop
 
             Na "Tu mens ça se voit tu as encore étudié alors que tu ne devrais pas."
-            play sound "Click.mp3" noloop 
+            play sound "Click.mp3" noloop  
 
             P "Ok je l'admet......"
             play sound "Click.mp3" noloop 
@@ -8281,8 +8276,8 @@ label debate:
             Na "Coucou comment ça va [prenom] ?"
             play sound "Click.mp3" noloop 
 
-            $ je_vais_bien_rdm = get_random_je_vais_bien()
-            P "[je_vais_bien_rdm]."
+            $ je_vais_bien_txt = get_random_je_vais_bien() 
+            P "[je_vais_bien_txt]" 
             play sound "Click.mp3" noloop
 
             Na "Cool alors."
@@ -8350,8 +8345,8 @@ label debate:
     P "Coucou comment ça va aujourd'hui ?"
     play sound "Click.mp3" noloop 
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    Na "[je_vais_bien_rdm] mais je me suis inquiétée pour toi."
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Mais je me suis inquiétée pour toi." 
     play sound "Click.mp3" noloop
 
     P "Ah je vois, bon on va en cours."
@@ -8387,8 +8382,8 @@ label debate:
     Y "Oh salut comment ça va [newname]."
     play sound "Click.mp3" noloop 
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    P "[je_vais_bien_rdm]."
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
 
     Y "Cool alors car on s'est tous inquiété pour toi."
@@ -8953,8 +8948,8 @@ label code:
     P "Coucou [newname] comment ça va ?" 
     play sound "Click.mp3" noloop 
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    Na "[je_vais_bien_rdm]."
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
 
     hide screen clubroom
@@ -9467,12 +9462,12 @@ label code:
     P "Coucou comment ça va aujourd'hui ?"
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    Na "[je_vais_bien_rdm] et toi ?"
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Et toi" 
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    P "[je_vais_bien_rdm], j'ai bien dormi."
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
 
     Na "Cool alors."
@@ -9745,12 +9740,12 @@ label code:
             S "Oh c'est vous comment ça va toi et [newname] ?"
             play sound "Click.mp3" noloop 
 
-            $ je_vais_bien_rdm = get_random_je_vais_bien()
-            P "[je_vais_bien_rdm]."
+            $ je_vais_bien_txt = get_random_je_vais_bien() 
+            P "[je_vais_bien_txt]" 
             play sound "Click.mp3" noloop
 
-            $ je_vais_bien_rdm = get_random_je_vais_bien()
-            Na "[je_vais_bien_rdm] aussi."
+            $ je_vais_bien_txt = get_random_je_vais_bien() 
+            Na "[je_vais_bien_txt]" 
             play sound "Click.mp3" noloop
 
             S "Cool alors."
@@ -10423,12 +10418,12 @@ label code:
     P "Coucou comment ça va aujourd'hui ?"
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    Na "[je_vais_bien_rdm] et toi ?"
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Et toi ?" 
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    P "[je_vais_bien_rdm] mais j'ai un mauvais présentiment.."
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt] J'ai just un mauvais pressentiment." 
     play sound "Click.mp3" noloop
 
     Na "Pourquoi cela ?"
@@ -10437,7 +10432,7 @@ label code:
     P "Avec tout ce qui passe au lycée."
     play sound "Click.mp3" noloop 
 
-    Na "Je vois bien."
+    Na "Je vois bien." 
     play sound "Click.mp3" noloop 
 
     P "Donc aujourd'hui j'ai choisi de mettre un mot de passe sécurisé sur ton systéme sinon je risque de briser l'une des dix régles de l'informatique."
@@ -10537,34 +10532,38 @@ label password:
     N "Salut [prenom] comment ça va ?"
     play sound "Click.mp3" noloop 
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    Na "[je_vais_bien_rdm] et toi ?"
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt] Et toi ?" 
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    N "[je_vais_bien_rdm] et sinon comment elle va [newname]?"
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    N "[je_vais_bien_txt] Sinon comment tu va [newname] ?" 
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    Na "[je_vais_bien_rdm]."
-    play sound "Click.mp3" noloop
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt]" 
+    play sound "Click.mp3" noloop 
 
     N "Cool alors que tu aille bien."
     play sound "Click.mp3" noloop 
 
     "{b}{i} Puis tu aperçois [I].{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     P "Oh salut [I], comment ça va ?."
     play sound "Click.mp3" noloop 
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    I "[je_vais_bien_rdm] et toi et [newname] ?"
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    I "[je_vais_bien_txt] Comment vous allez ?" 
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    P "[je_vais_bien_rdm]."
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop 
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt]" 
+    play sound "Click.mp3" noloop
 
     "{b}{i}Puis soudainement la [T] entre en classe.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -11514,12 +11513,12 @@ label password1:
     P "Coucou comment ça va aujourd'hui ?"
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    Na "[je_vais_bien_rdm] et toi ?"
-    play sound "Click.mp3" noloop
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Et toi ?" 
+    play sound "Click.mp3" noloop 
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    P "[je_vais_bien_rdm], bon on va en ?"
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt] Bon on y va ?" 
     play sound "Click.mp3" noloop
 
     $ suivi_rdm = get_random_suivi()
@@ -11564,8 +11563,8 @@ label password1:
 
     if pronom == "il":
 
-        $ je_vais_bien_rdm = get_random_je_vais_bien()
-        P "[je_vais_bien_rdm], mais je suis inquiet pour [newname]."
+        $ je_vais_bien_txt = get_random_je_vais_bien() 
+        P "[je_vais_bien_txt] Je suis inquiet pour [newname]." 
         play sound "Click.mp3" noloop
 
         M "Je vois mais essaye d'être concentré durant les cours."
@@ -11573,8 +11572,8 @@ label password1:
 
     elif pronom == "elle":
 
-        $ je_vais_bien_rdm = get_random_je_vais_bien()
-        P "[je_vais_bien_rdm], bon on va en ?"
+        $ je_vais_bien_txt = get_random_je_vais_bien() 
+        P "[je_vais_bien_txt] Je suis inquiet pour [newname]." 
         play sound "Click.mp3" noloop 
 
         M "Je vois mais essaye d'être concentrée durant les cours."
@@ -11974,11 +11973,11 @@ label password1:
     P "Oh coucou [newname], comment ça va ?"
     play sound "Click.mp3" noloop   
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    Na "[je_vais_bien_rdm] mais il faut que je te dise ce que j'ai trouvé à la bibliothéque."
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
 
-    P "Tu as trouvé quoi ?" 
+    P "Tu as lu quelque chose d'intéressant ?" 
     play sound "Click.mp3" noloop   
 
     Na "C'était dans un livre d'histoire."
@@ -12083,12 +12082,12 @@ label password2:
     P "Coucou comment ça va aujourd'hui ?"
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    Na "[je_vais_bien_rdm] et toi ?"
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Et toi ?" 
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    P "[je_vais_bien_rdm], bon on va en cours ?"
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt] Bon on va en cours ?" 
     play sound "Click.mp3" noloop
 
     Na "Oui car on a examen de math aujourd'hui."
@@ -12839,12 +12838,18 @@ label password3:
     P "Coucou comment ça va aujourd'hui ?"
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    Na "[je_vais_bien_rdm] et toi ?"
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Et toi ?" 
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    P "[je_vais_bien_rdm], bon aujourd'hui je vais te faire passer un test spéciale avec [E]."
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]" 
+    play sound "Click.mp3" noloop
+
+    Na "Cool alors."
+    play sound "Click.mp3" noloop 
+
+    P "Bon aujourd'hui je vais te faire passer un test spéciale avec [E]."
     play sound "Click.mp3" noloop
 
     Na "Intéressant."
@@ -13082,19 +13087,19 @@ label password3:
     P "Sinon comment allez-vous ?"
     play sound "Click.mp3" noloop 
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    I "[je_vais_bien_rdm]."
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    I "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
 
     P "Et toi [Y] ?"
     play sound "Click.mp3" noloop 
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    Y "[je_vais_bien_rdm] aussi et toi [prenom] ?"
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Y "[je_vais_bien_txt] [prenom] vas-tu bien ?" 
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    P "[je_vais_bien_rdm]."
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
 
     Y "Cool alors et sinon vous avez fait quoi ce matin ?"
@@ -13325,12 +13330,12 @@ label password4:
     P "Coucou comment ça va aujourd'hui ?"
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    Na "[je_vais_bien_rdm] et toi ?"
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Et toi ?" 
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    P "[je_vais_bien_rdm]."
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
 
     Na "Bon on va en cours ?"
@@ -13566,8 +13571,8 @@ label password4:
     P "Oh salut comment ça va ?"
     play sound "Click.mp3" noloop 
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    P "[je_vais_bien_rdm] et vous ?"
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    S "[je_vais_bien_txt] Et vous ?" 
     play sound "Click.mp3" noloop
 
     P "On va bien."
@@ -13947,13 +13952,13 @@ label password6:
     P "Coucou comment ça va aujourd'hui ?"
     play sound "Click.mp3" noloop
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    Na "[je_vais_bien_rdm] et toi ?"
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Et toi ?" 
     play sound "Click.mp3" noloop 
 
-    $ je_vais_bien_rdm = get_random_je_vais_bien()
-    P "[je_vais_bien_rdm]."
-    play sound "Click.mp3" noloop 
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]" 
+    play sound "Click.mp3" noloop
 
     Na "Bon on va en cours ?"
     play sound "Click.mp3" noloop  
@@ -13981,6 +13986,9 @@ label password6:
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
+
+    scene classroom  
+    show screen class_404     
 
     $  salutation_rdm_M = get_random_salutation()
     M "[salutation_rdm_M]"
@@ -14046,8 +14054,98 @@ label password6:
     Y "Merci beaucoup. "
     play sound "Click.mp3" noloop  
 
-    M "Pour faire les fonctions Runix il faut des parenthèses juste derrière le nom de l'objet."
+    M "Pour faire les fonctions Runix il faut des parenthèses juste derrière le nom de l'objet avec le nom de ce que on veut changer."
     play sound "Click.mp3" noloop  
+
+    M "Exemple avec : (Shutdown=true)."
+    play sound "Click.mp3" noloop  
+
+    Y "Je vois."
+    play sound "Click.mp3" noloop  
+
+    M "Bien je vous laisse faire les exercices."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Vous continuez de faire les exercices jusqu'à la fin du cours.{/i}{/b}"
+    play sound "Bell.mp3" noloop
+
+    M "Le cours est terminé vous pouvez quitter la salle."
+    play sound "Click.mp3" noloop 
+
+    P "Bon on va manger [newname] ?"
+    play sound "Click.mp3" noloop 
+    
+    Na "Oui bien sur je te suis."
+    play sound "Click.mp3" noloop 
+
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Vous vous dirigez votre chemin vers le hall.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+    
+    scene staircase
+    hide screen hallway
+
+    "{b}{i} Vous descendez lez escaliers.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hall 
+    show screen hall
+
+    "{b}{i} Vous continuez vers le refectoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hall
+
+    "{b}{i} Vous arrivez enfin au refectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop 
+
+    scene lunchroom 
+    show screen lunchroom 
+    
+    Na "Bon on va prendre à manger ?"
+    play sound "Click.mp3" noloop 
+
+    P "Ok alors."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 200 
+
+    P "C'est bon [newname] tu t'es servie ?"
+    play sound "Click.mp3" noloop 
+    
+    Na "Oui c'est bon on peut aller s'asseoir."
+    play sound "Footsteps.mp3" noloop  
+
+    "{b}{i} Vous allez chercher une avant de vous asseoir.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bon appétit [prenom]."
+    play sound "Click.mp3" noloop 
+
+    Na "Merci beaucoup."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous mangez tranquillement pui [I] viens s'asseoir avec vous.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Oh salut comment ça va ?"
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    I "[je_vais_bien_txt]" 
+    play sound "Click.mp3" noloop
 
     return                            
 

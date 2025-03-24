@@ -219,17 +219,18 @@ init python:
         return random.choice(comment_ca_va_rdm)
 
 init python:
-    import random 
+    import random
 
-    je_vais_bien_rdm = [
-        "Je vais bien",
-        "Tout va bien",
-        "Ça roule",
-        "Je me sens bien",
-        "Nickel",
-        "Ça va super",
-        "Je vais bien, merci",
+    je_vais_bien_rdm_list = [
+        "Je vais bien.",
+        "Tout va bien.",
+        "Ça roule.",
+        "Je me sens bien.",
+        "Nickel.",
+        "Ça va super.",
+        "Je vais bien, merci.",
     ]
 
     def get_random_je_vais_bien():
-        return random.choice(je_vais_bien_rdm)
+        """Retourne une phrase aléatoire de la liste."""
+        return random.choice(je_vais_bien_rdm_list)

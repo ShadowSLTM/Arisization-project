@@ -34,7 +34,7 @@ define Kh = Character('Kazumi Hanemiya', color="#ffffff")
 
 # Les antagonistes secondaires. 
 
-define J1 = Character('Ayano Enoshima', color="#ff2323")
+define J1 = Character('Ayano Enoshima', color="#ff2323") 
 define J2 = Character('Aiko Enoshima', color="#ff2323") 
 define J = Character('Les ultimes jumelles', color="#ff2323")
 
