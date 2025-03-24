@@ -1951,6 +1951,8 @@ screen robot():
 
             text _("Mise à jour : [update]\n") 
 
+            text _("Addresse IP : [ip]\n")   
+
 style about_label is gui_label 
 style about_label_text is gui_label_text
 style about_text is gui_text

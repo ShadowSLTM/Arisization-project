@@ -14,6 +14,7 @@ label start:
     $ ending = 0
     default stored_password = ""
     default system = "AetherOS"
+    default ip = "000.000.000.000"
     $ message = 0
     $ newname = "Aris"  
 
@@ -853,8 +854,8 @@ label grayroom:
     A "oui, mais on doit aller en classe."
     play sound "Click.mp3" noloop
 
-    $ suivi_rdm = get_random_suivi()
-    P "[suivi_rdm]"
+    $ suivi = get_random_suivi()
+    P "[suivi]"
     play sound "Footsteps.mp3" noloop
 
     "{b}{i}Vous vous dirigez vers la salle de classe mais quelqu'un s'approche...{/i}{/b}"
@@ -1102,8 +1103,8 @@ label rencontre:
     P "Ok, j'y vais toute de suite, allez [A] tu viens."
     play sound "Click.mp3" noloop
 
-    $ suivi_rdm = get_random_suivi()
-    A "[suivi_rdm]"
+    $ suivi = get_random_suivi()
+    A "[suivi]"
     play sound "Footsteps.mp3" noloop
 
     "{b}{i}Vous vous dirigez vers la salle de classe 404.{/i}{/b}"
@@ -2801,8 +2802,8 @@ label skip:
     P "Bon [newname] on y va."
     play sound "Click.mp3" noloop 
 
-    $ suivi_rdm = get_random_suivi()
-    Na "[suivi_rdm]"
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
     scene black
@@ -3696,8 +3697,8 @@ label wallbreaking4:
     P "Ok il faut pas qu'on soit en retard."
     play sound "Click.mp3" noloop 
 
-    $ suivi_rdm = get_random_suivi()
-    I "[suivi_rdm]"
+    $ suivi = get_random_suivi()
+    I "[suivi]"
     play sound "Footsteps.mp3" noloop
 
     scene black 
@@ -4416,8 +4417,8 @@ label skip2:
     P "Bon on va cours ?" 
     play sound "Click.mp3" noloop 
 
-    $ suivi_rdm = get_random_suivi()
-    Na "[suivi_rdm]"
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
     hide screen room
@@ -4800,8 +4801,8 @@ label choice9:
     P "Ok il faut pas qu'on soit en retard."
     play sound "Click.mp3" noloop 
 
-    $ suivi_rdm = get_random_suivi()
-    I "[suivi_rdm]"
+    $ suivi = get_random_suivi()
+    I "[suivi]"
     play sound "Footsteps.mp3" noloop
 
     scene black 
@@ -6200,8 +6201,8 @@ label suite:
     P "Bon on y vas [newname] ?" 
     play sound "Click.mp3" noloop 
 
-    $ suivi_rdm = get_random_suivi()
-    Na "[suivi_rdm]"
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
     scene black 
@@ -6255,8 +6256,8 @@ label suite1:
     P "Ok allons-y alors."
     play sound "Click.mp3" noloop 
      
-    $ suivi_rdm = get_random_suivi()
-    Na "[suivi_rdm]"
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
     scene staircase 
@@ -6776,8 +6777,8 @@ label suite1:
     P "Bon on doit aller en cours avant d'étre en retard."
     play sound "Click.mp3" noloop
 
-    $ suivi_rdm = get_random_suivi()
-    Na "[suivi_rdm]"
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
     play sound "Footsteps.mp3" noloop 
 
     P "Bien alors allons-y."
@@ -7973,8 +7974,8 @@ label debate:
     P "Oui."
     play sound "Click.mp3" noloop 
 
-    $ suivi_rdm = get_random_suivi()
-    Na "[suivi_rdm]"
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
     play sound "Click.mp3" noloop
 
     P "Bien."
@@ -9053,8 +9054,8 @@ label code:
     P "Ok alors."
     play sound "Click.mp3" noloop 
 
-    $ suivi_rdm = get_random_suivi()
-    Na "[suivi_rdm]"
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
     scene black 
@@ -9772,8 +9773,8 @@ label code:
             P "Ok....."
             play sound "Click.mp3" noloop
 
-            $ suivi_rdm = get_random_suivi()
-            Na "[suivi_rdm]"
+            $ suivi = get_random_suivi()
+            Na "[suivi]"
             play sound "Click.mp3" noloop
 
         "{b}{i} Aller manger avec [Na]{/i}{/b}" : 
@@ -9815,8 +9816,8 @@ label code:
             P "Bon il faut qu'on retourne en cours."
             play sound "Click.mp3" noloop 
              
-            $ suivi_rdm = get_random_suivi()
-            Na "[suivi_rdm]"
+            $ suivi = get_random_suivi()
+            Na "[suivi]"
             play sound "Footsteps.mp3" noloop
 
     scene black 
@@ -10493,8 +10494,8 @@ label password:
     P "Bon il faut qu'on aille en cours."
     play sound "Click.mp3" noloop 
 
-    $ suivi_rdm = get_random_suivi()
-    Na "[suivi_rdm]"
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
     hide screen room 
@@ -11521,8 +11522,8 @@ label password1:
     P "[je_vais_bien_txt] Bon on y va ?" 
     play sound "Click.mp3" noloop
 
-    $ suivi_rdm = get_random_suivi()
-    Na "[suivi_rdm]"
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
     scene black 
@@ -11845,8 +11846,8 @@ label password1:
     P "Bon il faut qu'on retourne en classe."
     play sound "Click.mp3" noloop    
 
-    $ suivi_rdm = get_random_suivi()
-    Na "[suivi_rdm]"
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
     scene black
@@ -13761,8 +13762,8 @@ label password4:
     S "Bon, [newname] on retourne au dortoir ?" 
     play sound "Click.mp3" noloop
 
-    $ suivi_rdm = get_random_suivi()
-    Na "[suivi_rdm]"
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
     hide screen class_404
@@ -13837,8 +13838,8 @@ label password5:
     P "On révise maintenant ?"
     play sound "Click.mp3" noloop 
 
-    $ suivi_rdm = get_random_suivi()
-    Na "[suivi_rdm]"
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
     play sound "Click.mp3" noloop
 
     "{b}{i}Vous vous posez au bureau du dortoir pour réviser.{/i}{/b}"

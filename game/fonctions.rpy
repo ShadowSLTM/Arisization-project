@@ -128,7 +128,7 @@ init python:
 init python:
     import random
 
-    suivi_rdm = [  
+    suivi_list = [  
         "D'accord, je te suis.",  
         "Je te suis.",  
         "Je te suis, allons-y.",  
@@ -138,7 +138,7 @@ init python:
         ]
 
     def get_random_suivi():
-        return random.choice(suivi_rdm)
+        return random.choice(suivi_list)
 
 # récupération de la session Windows pour le nom du joueur
 
@@ -158,7 +158,7 @@ init python:
 init python:
     import random
 
-    start = [  
+    start_list = [  
         "Démarrage en cours...",  
         "Initialisation en cours...",  
         "Activation en cours...",  
@@ -168,7 +168,7 @@ init python:
         ]
 
     def get_random_start():
-        return random.choice(start) 
+        return random.choice(start_list) 
 
 init python:
     import random
