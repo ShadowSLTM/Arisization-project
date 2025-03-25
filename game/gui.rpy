@@ -38,7 +38,7 @@ define gui.idle_color = '#00eeff'
 define gui.idle_small_color = '#939393'
 
 ## Cette couleur est utilisée pour les boutons et les barres qui sont survolées.
-define gui.hover_color = '#0022ff'
+define gui.hover_color = '#225b75'
 
 ## Cette couleur est utilisé pour le texte d’un bouton sélectionné, mais qui n’a
 ## pas le focus. Un bouton est sélectionné s’il est sur l’écran actuel ou si

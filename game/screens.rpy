@@ -1898,15 +1898,17 @@ screen credit():
             label "{b}{i}— Propriété —\n{/i}{/b}"   
 
             text _("Arisization Project (The Project of the Realization of Aris) appartient à Seydou N'Doye (Shadow_SLTM)\n")   
-      
+
+            text _("éditeur : Seydou N'Doye (Shadow_SLTM)\n") 
+
 style about_label is gui_label 
 style about_label_text is gui_label_text
 style about_text is gui_text
 
 style about_label_text: 
-    size gui.label_text_size
+    size gui.label_text_size 
 
-screen success():
+screen success(): 
 
     tag menu
 
@@ -1922,6 +1924,7 @@ screen success():
 
             text _("Succès : [success]/??????\n") 
 
+            text _("Act du jeu : \n") 
 style about_label is gui_label 
 style about_label_text is gui_label_text
 style about_text is gui_text
