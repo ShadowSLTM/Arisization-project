@@ -1023,7 +1023,7 @@ label rencontre:
     P "Heureusement, ce sera moins stressant pour moi et [A]."
     play sound "Click.mp3" noloop 
 
-    E "Et il n'y a que trois jours de cours par semaine."
+    E "Et il y a que quatre jours de cours par semaine."
     play sound "Click.mp3" noloop 
 
     P "Merci pour ces informations."
@@ -1808,7 +1808,7 @@ label rencontre:
     Kh "Je suis ici pour vous donner votre budget pour votre projet."
     play sound "Click.mp3" noloop
 
-    $ points += 10000
+    $ points += 10000 
 
     "{b}{i}[Kh] te transfert l'argent sur ton compte.{/i}{/b}" 
     play sound "Click.mp3" noloop 
@@ -3048,15 +3048,15 @@ label wallbreaking4:
 
     scene black
     hide screen day
-    "{b}{i}Tu te couches jusqu'au lendemain.{/i}{/b}"
+    "{b}{i}Tu te couches jusqu'au lendemain, le 13 septembre 2097.{/i}{/b}"
     play sound "Click.mp3" noloop   
     
     scene room 
     show screen day
-    $ day +=1
+    $ day += 1
     play sound "Alarm.mp3" noloop 
 
-# second jour de cours.
+# second jour de cours. 
 
     "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -3353,6 +3353,7 @@ label wallbreaking4:
 
     M "Parfait maintenant vous pouvez aller en pause."
     play sound "Click.mp3" noloop  
+
     hide screen class_404
     scene black
 
@@ -4334,19 +4335,19 @@ label dorm2:
     "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-# la semaine suivante
+# la semaine suivante 
 
     scene black
     hide screen room
     hide screen day
 
-    "{b}{i} une semaine plus tard.{/i}{/b}"
+    "{b}{i} Cinq jours plus tard, le 19 septembre 2097.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     scene room 
     show screen room
     show screen day
-    $ day += 7 
+    $ day += 5 
 
     play sound "Alarm.mp3" noloop 
     $ line = get_random_morning_line()
@@ -4356,7 +4357,7 @@ label dorm2:
     "{b}{i} Tu te léves tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Bon aujourd'hui c'est mon prémier examen de cette année."
+    P "Bon aujourd'hui c'est mon premier examen de cette année."
     play sound "Click.mp3" noloop 
 
     "{b}{i} Tu te changes et t'approches de [newname].{/i}{/b}"
@@ -4998,6 +4999,7 @@ label choice9:
 
         M "Ce n'est pas mal."
         play sound "Click.mp3" noloop
+
     Hi "Merci beaucoup."
     play sound "Click.mp3" noloop 
 
@@ -5097,7 +5099,7 @@ label choice9:
     else: 
 
         M "Ce n'est pas mal."
-        play sound "Click.mp3" noloop
+        play sound "Click.mp3" noloop 
 
     J2 "Merci beaucoup."
     play sound "Click.mp3" noloop 
@@ -5741,13 +5743,13 @@ label choice9:
     hide screen room
     hide screen day
 
-    "{b}{i} Une semaine plus tard.{/i}{/b}"
+    "{b}{i} deux semaines plus tard, le 3 octobre 2097.{/i}{/b}"
     play sound "Alarm.mp3" noloop 
 
     scene room 
     show screen room
     show screen day
-    $ day += 7
+    $ day += 14
 
     $ line = get_random_morning_line()
     P "[line]"
@@ -5779,6 +5781,7 @@ label choice9:
 
     P "Bonjour [Na] comment ça va ?"
     play sound "Click.mp3" noloop 
+
     $ je_vais_bien_txt = get_random_je_vais_bien() 
     Na "[je_vais_bien_txt] Et toi ?" 
     play sound "Click.mp3" noloop
@@ -6666,35 +6669,12 @@ label suite1:
 
     P "Oui mais le problème c'est qu'on n'a aucune information." 
     play sound "Click.mp3" noloop  
-    
-    Na "C'est vrai tu as raison mais tu peux peut-être regarder dans la boite du jeu pour trouver des indices."
-    play sound "Click.mp3" noloop
 
-    Na "Oh désolée j'avais oublié que c'est un jeu dématérialisé."
-    play sound "Click.mp3" noloop
-
-    P "Bon on est aussi sensé recevoir notre budjet du mois aujourd'hui." 
-    play sound "Click.mp3" noloop  
-
-    Na "Oui c'es vrai c'est aujourd'hui." 
-    play sound "Click.mp3" noloop  
-
-    P "ça va sûrement venir dans la soirée." 
-    play sound "Click.mp3" noloop  
-
-    Na "je pense aussi mais Bon moi je vais me déconnecter, à demain." 
+    Na "Bon moi je vais me déconnecter, à demain." 
     play sound "Click.mp3" noloop  
 
     P "Ok à demain [newname]." 
     play sound "Click.mp3" noloop  
-
-    if grade == 20.0:
-
-        $ points += 10000
-
-    else:
-
-        $ points += 7500
 
     "{b}{i}Pui [newname] se déconnecta tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -6709,7 +6689,7 @@ label suite1:
     hide screen room
     hide screen day
 
-    "{b}{i} Le lendemain matin.{/i}{/b}"
+    "{b}{i} Le lendemain matin, le 4 octobre 2097 {/i}{/b}"
     play sound "Alarm.mp3" noloop 
 
     scene room 
@@ -7789,7 +7769,7 @@ label debate:
     play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
-    P "[je_vais_bien_txt] Sion pourquoi tu m'appelles ?" 
+    P "[je_vais_bien_txt] Sinon pourquoi tu m'appelles ?" 
     play sound "Click.mp3" noloop
 
     Su "Je voulais avoir de tes nouvelles car on n'a jamais discuter après [origine]."
@@ -7883,13 +7863,13 @@ label debate:
     hide screen room
     hide screen day
 
-    "{b}{i} Le lendemain matin.{/i}{/b}"
+    "{b}{i} trois jours plus tard, le 7 octobre 2097 {/i}{/b}"
     play sound "Alarm.mp3" noloop 
 
     scene room 
     show screen room
     show screen day
-    $ day += 1
+    $ day += 3
 
     $ line = get_random_morning_line()
     P "[line]"
@@ -7921,7 +7901,7 @@ label debate:
     play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
-    p "[je_vais_bien_txt]" 
+    P "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
 
     Na "Cool alors." 
@@ -8306,7 +8286,7 @@ label debate:
     hide screen room 
     hide screen day
 
-    "{b}{i} Le lendemain.{/i}{/b}"
+    "{b}{i} Le lendemain, le 8 octobre 2097.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     scene room 
@@ -8772,7 +8752,7 @@ label debate:
     hide screen room
     hide screen day
 
-    "{b}{i} Le lendemain matin.{/i}{/b}"
+    "{b}{i} Le lendemain matin, le 9 octobre 2097{/i}{/b}"
     play sound "Click.mp3" noloop
 
     scene room 
@@ -9425,7 +9405,7 @@ label code:
 
     scene black 
 
-    "{b}{i} Le lendemain matin.{/i}{/b}"
+    "{b}{i} Le lendemain matin, le 10 octobre 2097{/i}{/b}"
     play sound "Click.mp3" noloop
 
     scene room 
@@ -10381,7 +10361,7 @@ label code:
     hide screen room
     hide screen day
 
-    "{b}{i} Le lendemain matin.{/i}{/b}"
+    "{b}{i} Le lendemain matin, le 11 octobre 2097{/i}{/b}"
     play sound "Click.mp3" noloop
 
     scene room 
@@ -11452,7 +11432,7 @@ label password:
     "{b}{i} Tu manges tranquillement pendant une demi-heure.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Enfin fini je vais pouvoir aller dormir pour demain."
+    P "Enfin fini je vais pouvoir aller dormir."
     play sound "Click.mp3" noloop 
 
     "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
@@ -11462,13 +11442,13 @@ label password:
     hide screen room
     hide screen day
 
-    "{b}{i} Le lendemain matin.{/i}{/b}"
+    "{b}{i} Le lundi suivant, le 14 octobre 2097{/i}{/b}"
     play sound "Alarm.mp3" noloop 
 
     scene room 
     show screen room
     show screen day
-    $ day += 1 
+    $ day += 3 
 
     $ line = get_random_morning_line()
     P "[line]"
@@ -12015,13 +11995,21 @@ label password1:
     scene room 
     show screen room 
 
-    P "Enfin à manger... "
+    P "Enfin à manger...bon normalement je devrais avoir mes points aujourd'hui."
     play sound "Click.mp3" noloop 
+
+    if grade == 20.0:
+
+        $ points += 10000
+
+    else:
+
+        $ points += 7500 
 
     "{b}{i} Tu manges tranquillement pendant une demi-heure.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Enfin fini je vais pouvoir aller dormir pour demain."
+    P "Enfin fini je vais pouvoir aller dormir."
     play sound "Click.mp3" noloop 
 
     "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
@@ -12031,7 +12019,7 @@ label password1:
     hide screen room
     hide screen day
 
-    "{b}{i} Quatre jours plus tard.{/i}{/b}"
+    "{b}{i} Quatre jours plus tard, le 18 octobre 2097{/i}{/b}"
     play sound "Alarm.mp3" noloop 
 
     scene room 
@@ -12403,11 +12391,11 @@ label examen_pythagore:
     S "Cool alors."
     play sound "Click.mp3" noloop 
 
-    "{b}{i}Vous continuez de discuter.{/i}{/b}"
+    "{b}{i}Vous continuez de discuter jusqu'à la sonnerie.{/i}{/b}"
     play sound "Bell.mp3" noloop 
     
     S "Bon on doit retourner en cours."
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     P "Ok il faut pas qu'on soit en retard."
     play sound "Click.mp3" noloop 
@@ -12425,18 +12413,19 @@ label examen_pythagore:
     show screen hall
 
     "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
-    play sound "Click.mp3" noloop  
+    play sound "Footsteps.mp3" noloop 
 
     scene staircase 
     hide screen hall
 
     "{b}{i} Vous montez au premier étage.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene hallway 
     show screen hallway
 
     "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen hallway
@@ -12446,7 +12435,6 @@ label examen_pythagore:
 
     scene classroom  
     show screen class_404 
-
 
     M "Bon je vais pouvoir vous rendre les résultats de vos seonds examens."
     play sound "Click.mp3" noloop 
@@ -12768,6 +12756,7 @@ label examen_pythagore:
     play sound "Click.mp3" noloop 
 
     $ points -= 200 
+
     scene room 
     show screen room 
 
@@ -12777,7 +12766,7 @@ label examen_pythagore:
     "{b}{i} Tu manges tranquillement pendant une demi-heure.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Enfin fini je vais pouvoir aller dormir pour demain."
+    P "Enfin fini je vais pouvoir aller dormir."
     play sound "Click.mp3" noloop  
 
     "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
@@ -12787,13 +12776,13 @@ label examen_pythagore:
     hide screen room
     hide screen day
 
-    "{b}{i} Le lendemain matin.{/i}{/b}"
+    "{b}{i} Le lundi suivant, le 21 octobre{/i}{/b}"
     play sound "Alarm.mp3" noloop 
 
     scene room 
     show screen room
     show screen day
-    $ day += 1 
+    $ day += 3 
 
     $ line = get_random_morning_line()
     P "[line]"
@@ -13279,13 +13268,13 @@ label password3:
 
     scene black 
 
-    "{b}{i} Six jours plus tard.{/i}{/b}"
+    "{b}{i} une semaine plus tard, le 28 octobre 2097{/i}{/b}"
     play sound "Alarm.mp3" noloop
 
     scene room 
     show screen room
     show screen day 
-    $ day += 1 
+    $ day += 7
 
     $ line = get_random_morning_line()
     P "[line]"
@@ -13901,7 +13890,7 @@ label password5:
     hide screen room
     hide screen day
 
-    "{b}{i} Le lendemain matin.{/i}{/b}"
+    "{b}{i} Le lendemain matin, le 29 octobre 2097{/i}{/b}"
     play sound "Alarm.mp3" noloop 
 
     scene room 
@@ -14147,6 +14136,182 @@ label password6:
     $ je_vais_bien_txt = get_random_je_vais_bien() 
     I "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
+
+    P "Cool alors." 
+    play sound "Click.mp3" noloop
+
+    I "Merci beaucoup."
+    play sound "Click.mp3" noloop
+
+    P "De rien sinon tu t'ensort comment avec Runix ?"
+    play sound "Click.mp3" noloop
+
+    I "J'ai un peu du mal."
+    play sound "Click.mp3" noloop
+
+    P "Je vois mais je pourrai t'aider avec ça."
+    play sound "Click.mp3" noloop
+
+    I "Vraiment tu veut m'aider ?"
+    play sound "Click.mp3" noloop
+
+    P "Oui absolument."
+    play sound "Click.mp3" noloop
+
+    I "Merci beaucoup."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[newname] se met secrètement à rougir en regardant [I].{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "ça va [newname] ?"
+    play sound "Click.mp3" noloop
+
+    I "Oui ça va ne t'inquiéte pas."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous continuez de discuter jusqu'à la sonnerie.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+
+    I "Bon on doit retourner en cours."
+    play sound "Click.mp3" noloop 
+
+    P "Ok il faut pas qu'on soit en retard."
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    scene black 
+    hide screen lunchroom 
+
+    "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall
+    show screen hall
+
+    "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop 
+
+    scene staircase 
+    hide screen hall
+
+    "{b}{i} Vous montez au premier étage.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hallway 
+    show screen hallway
+
+    "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Tu entres en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene classroom  
+    show screen class_404
+
+    M "Bien nous allons reprendre le cours sur Runix."
+    play sound "Click.mp3" noloop 
+
+    I "Compris."
+    play sound "Click.mp3" noloop 
+
+    M "Bon je vous laisse continuer les exercices."
+    play sound "Click.mp3" noloop
+
+    I "Oui c'est noté."
+    play sound "Click.mp3" noloop
+
+    M "Bien."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Vous continuez et finissez les exercices durant tout le cours.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    M "Bien il semblerait que vous vous débrouillez pas si mal que ça."
+    play sound "Click.mp3" noloop
+
+    I "Merci beaucoup."
+    play sound "Bell.mp3" noloop
+
+    M "Le cours est terminé vous pouvez quitter la salle, je fixerai un examen dans deux semaines."
+    play sound "Click.mp3" noloop
+
+    S "Bon, [newname] on retourne au dortoir ?" 
+    play sound "Click.mp3" noloop
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop 
+
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Vous continuez vers le dortoir mais [I] t'appelles.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Oui [I] ?"
+    play sound "Click.mp3" noloop
+
+    I "Je voulais savoir si tu pouvais m'aider avec Runix." 
+    play sound "Click.mp3" noloop
+
+    P "Bien sûr je vais t'aider."
+    play sound "Click.mp3" noloop
+
+    I "Merci beaucoup."
+    play sound "Footsteps.mp3" noloop
+
+    "{b}{i} Vous allez vers au dortoir pour aider [I].{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez dans ton dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene room
+    show screen room 
+
+    if pronom == "il":
+
+        Na "Enfin arrivés."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle":
+
+        Na "Enfin arrivées."
+        play sound "Click.mp3" noloop
+
+    P "Oui ça fait du bien."
+    play sound "Click.mp3" noloop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     return                            

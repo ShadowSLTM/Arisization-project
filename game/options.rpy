@@ -131,7 +131,7 @@ default preferences.text_cps = 15
 ## attente. Des valeurs réputées correctes sont comprises dans une plage allant
 ## de 0 à 30.
 
-default preferences.afm_time = 15
+default preferences.afm_time = 10
 
 
 ## Répertoire de sauvegarde ####################################################

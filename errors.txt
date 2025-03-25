@@ -2,11 +2,7 @@
 errors listed below, and try again.
 
 
-The label password5 is defined twice, at File "game/script.rpy", line 13740:
-label password5:  
-and File "game/script.rpy", line 13855:
-label password5:  
-
+File "game/script.rpy", line 12024: Indentation mismatch.
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat Mar 22 21:53:46 2025
+Tue Mar 25 21:24:14 2025
