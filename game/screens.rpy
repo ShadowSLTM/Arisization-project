@@ -1889,7 +1889,7 @@ screen credit():
 
             text _("Changement de la musique du menu : Nathanaël (Loki)\n") 
 
-            text _("Fonctions aléatoires : Nathanaël (Loki)\n") 
+            text _("Fonctions aléatoires : [Dc] (Shadow_SLTM) et Nathanaël (Loki)\n") 
 
             label "{b}{i}— Remerciements —\n{/i}{/b}" 
             

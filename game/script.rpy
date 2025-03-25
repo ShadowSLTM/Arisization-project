@@ -4925,7 +4925,7 @@ label choice9:
         hide screen points
         hide screen day
         play music "gameover.mp3" noloop
-        "{b}{i}Fin numéro 6 : Premiére mauvaise note qui te vaut une exclusion du lycée.{/i}{/b}"
+        "{b}{i}Fin numéro 6 : Mauvaise note en histoire qui te vaut une exclusion du lycée.{/i}{/b}"
         play sound "Menu.mp3" noloop
 
         menu:    
@@ -12256,6 +12256,9 @@ label examen_pythagore:
         "Oui, mais seulement dans un triangle équilatéral":
             $ grade += 0.0
 
+    "{b}{i}Aprés l'examen tout le monde remit leur copie à [M].{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
     S "Cette examen n'était si dur que ça."
     play sound "Click.mp3" noloop
 
@@ -12476,7 +12479,7 @@ label examen_pythagore:
         hide screen points
         hide screen day
         play music "gameover.mp3" noloop
-        "{b}{i}Fin numéro 6 : Premiére mauvaise note qui te vaut une exclusion du lycée.{/i}{/b}"
+        "{b}{i}Fin numéro 9 : Mauvaise note en mathématique qui te vaut une exclusion du lycée.{/i}{/b}"
         play sound "Menu.mp3" noloop
 
         menu:    
