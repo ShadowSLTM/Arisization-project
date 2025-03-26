@@ -1934,7 +1934,7 @@ label balade:
     I "Je travaille sur mon jeu vidéo et toi ?"
     play sound "Click.mp3" noloop
 
-    if pronom == "il":
+    if pronom == "il":  
 
         P "je suis juste venu voir la salle de club."
         play sound "Click.mp3" noloop
@@ -2705,7 +2705,7 @@ label skip:
     play sound "Click.mp3" noloop
 
     hide screen office
-    scene black
+    scene black 
 
     "{b}{i}Tu quittes le bureau des élèves avec [Na].{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -2764,7 +2764,7 @@ label skip:
     I "De rien"
     play sound "Click.mp3" noloop 
 
-    P "Bon [newname] on y va."
+    P "Bon [newname] on y va ?"
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
@@ -3824,7 +3824,7 @@ label wallbreaking4:
     M "Bon le cours est terminé, vous pouvez quitter la salle et n'oubliez pas l'examen dans une semaine."
     play sound "Click.mp3" noloop
 
-    P "Bon [newname] on y vas ?"
+    P "Bon [newname] on y va ?"
     play sound "Click.mp3" noloop
 
     "{b}{i}Mais tu remarques qu'[newname] est encore triste.{/i}{/b}"
@@ -3848,7 +3848,7 @@ label wallbreaking4:
     P "Oui c'est exact." 
     play sound "Click.mp3" noloop 
 
-    I "Bon [newname] on y vas ?"
+    I "Bon [newname] on y va ?"
     play sound "Click.mp3" noloop 
 
     Na "Oui merci de m'accompagner."
@@ -5093,11 +5093,12 @@ label choice9:
     M "Bon bah Le cours est terminé vous pouvez quitter la salle."
     play sound "Click.mp3" noloop
 
-    P "Bon [newname] on y vas ?"
+    P "Bon [newname] on y va ?"
     play sound "Click.mp3" noloop 
 
-    Na "Ok"
-    play sound "Click.mp3" noloop 
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Click.mp3" noloop
 
     M "Attends deux secondes [prenom]."
     play sound "Click.mp3" noloop
@@ -5837,11 +5838,12 @@ label afterupdate:
     Na "Génial."
     play sound "Click.mp3" noloop 
 
-    P "On y vas ?"
+    P "On y va ?"
     play sound "Click.mp3" noloop 
 
-    Na "Ok."
-    play sound "Click.mp3" noloop 
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Click.mp3" noloop
 
     scene black 
     hide screen room 
@@ -9278,11 +9280,12 @@ label code:
             scene hall 
             show screen hall 
 
-    P "Bon on y vas [newname]"
+    P "Bon on y va [newname] ?"
     play sound "Click.mp3" noloop    
 
-    Na "Ok."
-    play sound "Click.mp3" noloop 
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Click.mp3" noloop
 
     "{b}{i} Vous continuez vers les escaliers.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -11329,7 +11332,7 @@ label password:
     M "Bon le cours est terminé, vous pouvez quitter la salle."
     play sound "Click.mp3" noloop
 
-    P "Bon [newname] on y vas ?"
+    P "Bon [newname] on y va ?"
     play sound "Click.mp3" noloop
 
     Na "Oui je suis fatiguée."
@@ -12816,6 +12819,10 @@ label password3:
     P "Bien on y va ?"
     play sound "Click.mp3" noloop 
     
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Click.mp3" noloop
+
     hide screen room
     scene black
 
