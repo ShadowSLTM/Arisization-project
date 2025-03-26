@@ -82,7 +82,7 @@ init python:
 init python:
     import random
 
-    validation_rdm = [  
+    validation_list = [  
         "D'accord, allons-y.",  
         "Ok alors.",  
         "Ok.",  
@@ -92,24 +92,15 @@ init python:
         "Entendu.",  
         "C'est parti.",  
         "Allons-y.",  
-        "Parfait.",  
         "Ça marche.",  
         "On y va.",  
-        "Pourquoi pas.",  
-        "Ça convient.",  
-        "On fait comme ça.",  
-        "C'est bon.",  
-        "Ça fonctionne.",  
-        "Tout est bon.",  
-        "Ça passe.",  
-        "Go.", 
+        "Pourquoi pas.",    
     ]
 
     def get_random_validation():
-        return random.choice(validation_rdm)
+        return random.choice(validation_list)
 
-
-# easter egg
+# easter egg 
 init python:
     import random
 
@@ -123,7 +114,7 @@ init python:
     def get_random_enchente_f():
         return "enchantée" if random.random() < 0.99 else "enchantier"
 
-    # suivi_rdm est une liste de phrases qui seront affichées aléatoirement au moment où le joueur demande à Aris de le suivre.
+    # suivi_list est une liste de phrases qui seront affichées aléatoirement au moment où le joueur demande à Aris de le suivre.
 
 init python:
     import random

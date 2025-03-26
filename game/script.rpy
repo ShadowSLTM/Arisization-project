@@ -60,13 +60,13 @@ label identity:
         $ renpy.restart_interaction()
         jump identity
 
-    "Le pronom a été enregistré dans le système."
+    "Vos informations ont été enregistrées."
     play sound "Menu.mp3" noloop
 
     $ domaine = "ultime créateur" if pronom == "il" else "ultime créatrice"
     
-    $ noms_interdits = {"Kusanagi", "Natsumi", "Ayanokoji", "Sato", "Saotome", "Hiiragi", "Katsuragi", "Hanemiya", "Enoshima", "Hoshino", "Shinomiya", "Katsuya", "Horimiya", "Tachibana", "Sakayanagi"}
-    $ prenoms_interdits = {"Iris", "Hajime", "Kendo", "Naoto", "Haruki", "Yuki", "Emily", "Kazumi", "Ayano", "Aiko", "Akeno", "Subaru", "Suzune", "Shiro", "Kaede", "Naomi"}
+    $ noms_interdits = {"Kusanagi", "Natsumi", "Ayanokoji", "Sato", "Saotome", "Hiiragi", "Katsuragi", "Hanemiya", "Enoshima", "Hoshino", "Shinomiya", "Katsuya", "Horimiya", "Tachibana", "Sakayanagi", "Nagumo"}
+    $ prenoms_interdits = {"Iris", "Hajime", "Kendo", "Naoto", "Haruki", "Yuki", "Emily", "Kazumi", "Ayano", "Aiko", "Akeno", "Subaru", "Suzune", "Shiro", "Kaede", "Naomi", "Seigo"}
     
     if prenom in prenoms_interdits:
         "Ce prénom n'est pas autorisé."
@@ -791,8 +791,8 @@ label grayroom:
     A "Mais pour revenir à ta question, on pourrait monter au premier étage car il semblerait qu'il n'y ait rien d'intéressant ici."
     play sound "Click.mp3" noloop
 
-    $ validation_rdm = get_random_validation()
-    P "[validation_rdm]"
+    $ validation = get_random_validation()
+    P "[validation]"
     play sound "Click.mp3" noloop
 
     scene staircase 
@@ -2700,8 +2700,8 @@ label skip:
     P "bon on y va [newname] ? On a la clé."
     play sound "Click.mp3" noloop
 
-    $ ok = get_random_suivi()
-    Na "[ok]"
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
     play sound "Click.mp3" noloop
 
     hide screen office
@@ -14265,6 +14265,13 @@ label password6:
         play sound "Click.mp3" noloop
 
     P "Oui ça fait du bien."
+    play sound "Click.mp3" noloop
+
+    I "Bon on commence à réviser ?"
+    play sound "Click.mp3" noloop
+
+    $ validation = get_random_validation()
+    Na "[validation]"
     play sound "Click.mp3" noloop
 
     return                            
