@@ -20,26 +20,76 @@ label start:
 
     stop music fadeout 2.0   
 
-label key: 
+label key:
 
     play sound "Menu.mp3" noloop
-    $ key = renpy.input("Veuillez écrire votre clé d'accès.")
-    $ key = key.strip()
+    $ key = renpy.input("Veuillez écrire votre clé d'accès.").strip()
 
-    if key in ["ARIS-DEVS", "ARIS-8J4K-F9Q7", "ARIS-GRFN-M4A1"]:
-        
-        "Jeu déverrouillé." 
+    $ valid_keys = {"ARIS-DEVS", "ARIS-8J4K-F9Q7", "ARIS-GRFN-M4A1"}
+    
+    if key in valid_keys:
+        "Jeu déverrouillé."
         play sound "Menu.mp3" noloop
-
-    else: 
-        
+    else:
         "Erreur système. Veuillez réessayer."
         $ renpy.restart_interaction()
-        jump key 
+        jump key
+
+    $ success = 0
+    if key == "ARIS-8J4K-F9Q7" or key == "ARIS-DEVS":
+
+        $ A = Character("AK-24", color="#00eeff")
+        $ origine = "la chambre grise" 
+
+    elif key == "ARIS-GRFN-M4A1":
+
+        $ P = Character('[prenom] [nom]', color="#707070") 
+        $ S = Character("Subaru Shinomiya", color="#707070")
+        $ origine = "16LAB" 
+        $ success += 1
+
+label identity: 
+
+    play sound "Menu.mp3" noloop
+    $ prenom = renpy.input("Quel est votre prénom de lycéen ?").strip()
+    $ nom = renpy.input("Quel est votre nom de lycéen ?").strip()
+    $ pronom = renpy.input("Quel est votre genre ? (il ou elle)").strip()
+
+    if pronom not in {"il", "elle"}:
+        "Erreur système. Veuillez réessayer."
+        $ renpy.restart_interaction()
+        jump identity
+
+    "Le pronom a été enregistré dans le système."
+    play sound "Menu.mp3" noloop
+
+    $ domaine = "ultime créateur" if pronom == "il" else "ultime créatrice"
+    
+    $ noms_interdits = {"Kusanagi", "Natsumi", "Ayanokoji", "Sato", "Saotome", "Hiiragi", "Katsuragi", "Hanemiya", "Enoshima", "Hoshino", "Shinomiya", "Katsuya", "Horimiya", "Tachibana", "Sakayanagi"}
+    $ prenoms_interdits = {"Iris", "Hajime", "Kendo", "Naoto", "Haruki", "Yuki", "Emily", "Kazumi", "Ayano", "Aiko", "Akeno", "Subaru", "Suzune", "Shiro", "Kaede", "Naomi"}
+    
+    if prenom in prenoms_interdits:
+        "Ce prénom n'est pas autorisé."
+        jump identity  
+    
+    if prenom == "Aris":
+        R "Cher joueur/chère joueuse, je ne suis pas sûr qu’avoir le prénom Aris soit une bonne idée pour la suite de l'histoire. Veuillez en choisir un autre."
+        jump identity  
+    
+    if nom in noms_interdits:
+        "Ce nom n'est pas autorisé."
+        jump identity 
+    
+    if not prenom and not nom:
+        if pronom == "il":
+            $ prenom, nom = "Mitsuya", "Shimura"
+        else:
+            $ prenom, nom = "Kyoka", "Nakano"
+        "Bienvenue [prenom] [nom]. Puisque aucun nom n'a été choisi, celui-ci vous a été attribué."
+    else:
+        "Bienvenue [prenom] [nom]."
 
 label auto_save: 
-
-    # sytéme de sauvegarde auto 
 
     show screen logo() 
     
@@ -54,92 +104,7 @@ label auto_save:
     hide screen logo 
 
     "{b}{i}Attention : Ce jeu contient des scènes susceptibles de heurter la sensibilité de certains joueurs. Il s'inspire également de faits réels et aborde des thématiques complexes liées à la moralité et aux choix éthiques.{/i}{/b}"
-    play sound "Click.mp3" noloop
-
-label identity: 
-
-    play sound "Menu.mp3" noloop
-    $ prenom = renpy.input("Quel est votre prénom de lycéen ?")
-    $ prenom = prenom.strip()   
-
-    play sound "Menu.mp3" noloop
-    $ nom = renpy.input("Quel est votre nom de lycéen ?")
-    $ nom = nom.strip()   
-
-    play sound "Menu.mp3" noloop
-    $ pronom = renpy.input("Quel est votre genre ? ( il ou elle )")
-    $ pronom = pronom.strip()   
-
-    if pronom == "il" or "elle": 
-
-        "Le pronom a été enregistré dans le système." 
-        play sound "Menu.mp3" noloop 
-
-    if pronom == "il":
-
-        $ domaine = "ultime créateur"
-
-    elif pronom == "elle": 
         
-        $ domaine = "ultime créatrice"
-
-    else: 
-
-        "Erreur système. Veuillez réessayer." 
-        $ renpy.restart_interaction() 
-        play sound "Menu.mp3" noloop 
-        jump identity
-
-    if prenom in ["Iris", "Hajime", "Kendo", "Naoto", "Haruki", "Yuki", "Emily", "Kazumi", "Ayano", "Aiko", "Akeno", "Subaru", "Suzune", "Shiro", "Kaede", "Naomi"]:
-
-        "Ce prénom n'est pas autorisé."
-        jump identity  
-    
-    elif prenom == "Aris":
-
-        R "Cher joueur/chère joueuse je ne suis pas sûr qu’avoir le prénom Aris soit une bonne idée pour la suite de l'histoire veuillez changer de prénom s'il vous plaît."
-        jump identity  
-
-    # prénom et nom par défaut
-
-    elif prenom != "" and nom != "":
-        "{b}{i}Bienvenue [prenom] [nom].{/i}{/b}"
-
-    elif prenom == "" and nom == "" and pronom == "il":
-        $ prenom = "Mitsuya"
-        $ nom = "Shimura"
-        "{b}{i}Bienvenue [prenom] [nom]. Puis-ce qu'aucun nom n'a été choisi, celui-ci vous a été attribué.{/i}{/b}"
-
-    elif prenom == "" and nom == "" and pronom == "elle":
-        $ prenom = "Kyoka"
-        $ nom = "Nakano" 
-        "{b}{i}Bienvenue [prenom] [nom]. Puis-ce qu'aucun nom n'a été choisi, celui-ci vous a été attribué.{/i}{/b}"
-
-############################################
-
-    elif key == "ARIS-8J4K-F9Q7":
-        $ A = Character("AK-24", color="#00eeff")
-        $ origine = "la chambre grise" 
-        jump début 
-
-    elif key == "ARIS-GRFN-M4A1":
-        $ P = Character('[prenom] [nom]', color="#707070") 
-        $ S = Character("Subaru Shinomiya", color="#707070")
-        $ origine = "16LAB" 
-        show screen success
-        $ success += 1 
-
-        "{b}{i} DLC secret intégré déverouillé.{/i}{/b}"
-        play sound "Click.mp3" noloop 
-
-        hide screen success 
-
-        jump début  
-
-    elif nom in ["Kusanagi", "Natsumi", "Ayanokoji", "Sato", "Saotome", "Hiiragi", "Katsuragi", "Hanemiya", "Enoshima", "Hoshino", "Shinomiya", "Katsuya", "Horimiya","Tachibana", "Sakayanagi"]:
-        "Ce nom n'est pas autorisé." 
-        jump identity 
-
 label début: 
 
     scene main 
@@ -9078,13 +9043,13 @@ label code:
 
         define Na = Character('[newname] Alternative', color="#6f00ff8c")
 
-        Na "système opérationnel."
+        A "système opérationnel."
         play sound "Click.mp3" noloop
 
         P "Comment ça ? Qu'est-ce que tu racontes !?"
         play sound "Click.mp3" noloop
 
-        Na "Démarrage du transfert des données vers un autre ordinateur."
+        A "Démarrage du transfert des données vers un autre ordinateur."
         play sound "Click.mp3" noloop
 
         P "Mince elle est en train de se faire pirater, je dois activer le Recovery Mode....."
@@ -9100,7 +9065,7 @@ label code:
 
         if reboot == "initiate_humanoid_robot.shutdown(security_override=false)":
 
-            Na "Fermeture du système d'exploitation [system]....."
+            A "Fermeture du système d'exploitation [system]....."
             play sound "Click.mp3" noloop
 
             P "Enfin mais c'est bizarre on dirait que la faille venais du processeur."
@@ -14302,21 +14267,6 @@ label password6:
     P "Oui ça fait du bien."
     play sound "Click.mp3" noloop
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     return                            
 
-# Aris la plus belle <333333333333333 
+# Aris la plus belle <333333333333333  
