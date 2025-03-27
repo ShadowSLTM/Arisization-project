@@ -225,3 +225,15 @@ init python:
     def get_random_je_vais_bien():
         """Retourne une phrase aléatoire de la liste."""
         return random.choice(je_vais_bien_rdm_list)
+
+init python:
+    import random 
+
+    thanks_list = [
+        "Merci.",
+        "Merci beaucoup.",
+        "Merci infiniment.",
+    ]
+
+    def get_random_thanks():
+        return random.choice(thanks_list)  

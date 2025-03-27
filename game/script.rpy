@@ -489,7 +489,8 @@ label grayroom:
     Sk "Alors je ne m'attendais pas ça venant de toi [prenom] mais il est vraiment mignon ton [model]."
     play sound "Click.mp3" noloop
 
-    P "merci beaucoup."
+    $ thanks = get_random_thanks()
+    P "[thanks]"
     play sound "Click.mp3" noloop
 
     Sk "Mais de rien."
@@ -536,7 +537,8 @@ label grayroom:
     Su "Bonjour [A] ravie de te rencontrer."
     play sound "Click.mp3" noloop
 
-    A "Merci beaucoup."
+    $ thanks = get_random_thanks()
+    A "[thanks]"
     play sound "Click.mp3" noloop
 
     Su "Mais de rien ça fait plaisir."
@@ -589,7 +591,7 @@ label grayroom:
         Gt "Oh, très joli [model] ma chère [prenom]."
         play sound "Click.mp3" noloop
 
-    Su "Merci beaucoup madame."
+    P "Merci beaucoup madame."
     play sound "Click.mp3" noloop
 
     Gt "Mais de rien, malheureusement aujourd'hui comme vous le savez c'est votre dernier jour ici."
@@ -598,13 +600,14 @@ label grayroom:
     Gt "Vous avez tous réussi votre examen final félicitation."
     play sound "Click.mp3" noloop
 
-    Su "Merci beaucoup."
+    $ thanks = get_random_thanks()
+    Su "[thanks]"
     play sound "Click.mp3" noloop
-    
+
     S "Pardon, même [prenom] a réussi !?"
     play sound "Click.mp3" noloop
 
-    if pronom == "il":
+    if pronom == "il": 
 
         Su "Malgré qu'il soit discret, il a les meilleures notes de la 5ème génération d'élèves de [origine]."
         play sound "Click.mp3" noloop
@@ -1207,8 +1210,9 @@ label rencontre:
     T "L'ultime développeuse !? oh intéressant."
     play sound "Click.mp3" noloop
 
-    I "Merci beaucoup."
-    play sound "Click.mp3" noloop  
+    $ thanks = get_random_thanks()
+    I "[thanks]"
+    play sound "Click.mp3" noloop
 
     T "Donc enchantée Iris, quel est ton projet dans ce lycée ?"
     play sound "Click.mp3" noloop 
@@ -1225,8 +1229,9 @@ label rencontre:
     T "Intéressant, c'est bien que tu veuilles changer."
     play sound "Click.mp3" noloop
 
-    I "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    I "[thanks]"
+    play sound "Click.mp3" noloop
     
     T "De rien, maintenant, toi, juste derrière Iris."
     play sound "Click.mp3" noloop 
@@ -1249,7 +1254,8 @@ label rencontre:
     T "Intéressant comme projet."
     play sound "Click.mp3" noloop
 
-    H "Merci beaucoup."
+    $ thanks = get_random_thanks()
+    H "[thanks]"
     play sound "Click.mp3" noloop
 
     T "De rien, maintenant suivant s'il vous plait."
@@ -1360,7 +1366,8 @@ label rencontre:
     T "L'[domaine] ? Intéressant."
     play sound "Click.mp3" noloop
 
-    P "Merci beaucoup."
+    $ thanks = get_random_thanks()
+    P "[thanks]"
     play sound "Click.mp3" noloop
 
     "{b}{i}Soudainement, [I] lève la main, surprise.{/i}{/b}"
@@ -1385,7 +1392,8 @@ label rencontre:
         I "Putain... tu dois vraiment être une génie pour avoir créer un [model], je comprend mieux pourquoi tu étais à [origine]."
         play sound "Click.mp3" noloop
 
-    P "Merci beaucoup."
+    $ thanks = get_random_thanks()
+    P "[thanks]"
     play sound "Click.mp3" noloop
 
     T "Pour revenir aux présentations, [prenom] qui est cette fille avec toi ?"
@@ -2379,7 +2387,8 @@ label wallbreaking3:
     play sound "Click.mp3" noloop 
     $ points -= 1500
 
-    Ah "Merci beaucoup."
+    $ thanks = get_random_thanks()
+    Ah "[thanks]"
     play sound "Click.mp3" noloop
 
     P "Quand est-ce que je receverrai mon processeur ?"
@@ -2388,7 +2397,8 @@ label wallbreaking3:
     Ah "Le temps que je le prépare avec [Rn], je dirais dans 1 heure." 
     play sound "Click.mp3" noloop
 
-    P "Merci beaucoup."
+    $ thanks = get_random_thanks()
+    P "[thanks]"
     play sound "Click.mp3" noloop
 
     Ah "Mais de rien [P]."
@@ -2685,7 +2695,8 @@ label skip:
     E "Voilà la clé de la salle de club." 
     play sound "Click.mp3" noloop 
 
-    P "Merci beaucoup." 
+    $ thanks = get_random_thanks()
+    P "[thanks]"
     play sound "Click.mp3" noloop
 
     E "Si jamais, votre salle de club se trouve au fond du couloir." 
@@ -2740,7 +2751,8 @@ label skip:
     I "Je suis contente pour toi [newname], en plus ça ressemble à mon prénom."
     play sound "Click.mp3" noloop
 
-    Na  "Merci beaucoup."
+    $ thanks = get_random_thanks()
+    Na "[thanks]"
     play sound "Click.mp3" noloop
 
     I "De rien c'est normal et c'est surtout [M] qui va être contente que tu aies finalement un vrai prénom."
@@ -3594,8 +3606,9 @@ label wallbreaking4:
     P "Oui il y a pas de soucis tu peux venir."
     play sound "Click.mp3" noloop 
 
-    I "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    I "[thanks]"
+    play sound "Click.mp3" noloop
 
     Na "Oui ça fait toujours plaisir d'être avec toi."
     play sound "Click.mp3" noloop 
@@ -4659,8 +4672,9 @@ label choice9:
     E "Merci je m'occuperai d'organiser le rendez-vous pour vous après les cours."
     play sound "Click.mp3" noloop 
 
-    R "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    R "[thanks]"
+    play sound "Click.mp3" noloop
 
     E "Mais de rien c'est normal."
     play sound "Click.mp3" noloop 
@@ -4914,8 +4928,9 @@ label choice9:
     M "[Na] tu as eu 19/20 félicitation aussi."
     play sound "Click.mp3" noloop 
 
-    Na "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    Na "[thanks]"
+    play sound "Click.mp3" noloop
 
     $ note = get_random_note()
     M "[H] tu as eu [note]/20."
@@ -4931,8 +4946,9 @@ label choice9:
         M "Ce n'est pas mal."
         play sound "Click.mp3" noloop
 
-    H "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    H "[thanks]"
+    play sound "Click.mp3" noloop
 
     $ note = get_random_note()
     M "[I] tu as eu [note]/20."
@@ -4948,8 +4964,9 @@ label choice9:
         M "Ce n'est pas mal."
         play sound "Click.mp3" noloop
 
-    I "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    I "[thanks]"
+    play sound "Click.mp3" noloop
 
     $ note = get_random_note()
     M "[Hi] tu as eu [note]/20."
@@ -4965,8 +4982,9 @@ label choice9:
         M "Ce n'est pas mal."
         play sound "Click.mp3" noloop
 
-    Hi "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    Hi "[thanks]"
+    play sound "Click.mp3" noloop
 
     $ note = get_random_note()
     M "[K] tu as eu [note]/20."
@@ -4982,8 +5000,9 @@ label choice9:
         M "Ce n'est pas mal."
         play sound "Click.mp3" noloop
 
-    K "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    K "[thanks]"
+    play sound "Click.mp3" noloop
 
     if note == 20: 
 
@@ -5009,8 +5028,9 @@ label choice9:
         M "Ce n'est pas mal."
         play sound "Click.mp3" noloop
 
-    N "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    Na "[thanks]"
+    play sound "Click.mp3" noloop
 
     $ note = get_random_note()
     M "[Y] tu as eu [note]/20."
@@ -5026,8 +5046,9 @@ label choice9:
         M "Ce n'est pas mal."
         play sound "Click.mp3" noloop
 
-    Y "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    Y "[thanks]"
+    play sound "Click.mp3" noloop
 
     M "Bon au tour des ultimes Jumelles maintenant pour finir."
     play sound "Click.mp3" noloop 
@@ -5049,8 +5070,9 @@ label choice9:
         M "Ce n'est pas mal."
         play sound "Click.mp3" noloop
 
-    J1 "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    J1 "[thanks]"
+    play sound "Click.mp3" noloop
 
     $ note = get_random_note()
     M "Et toi [J2] tu as eu [note]/20."
@@ -5066,8 +5088,9 @@ label choice9:
         M "Ce n'est pas mal."
         play sound "Click.mp3" noloop 
 
-    J2 "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    J2 "[thanks]"
+    play sound "Click.mp3" noloop
 
     M "Bon la moyenne générale n'est pas mal, continuez de bien travaillez comme ceci."
     play sound "Click.mp3" noloop 
@@ -5361,8 +5384,9 @@ label choice9:
     E "Toi [prenom], tu respectes bien l'article 24, alinéa 3."  
     play sound "Click.mp3" noloop  
 
-    P "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    P "[thanks]"
+    play sound "Click.mp3" noloop
 
     C "Bien et sinon ton ami est devenu quoi maintenant ?"
     play sound "Click.mp3" noloop 
@@ -5486,8 +5510,9 @@ label choice9:
     C "Bien merci pour ta présentation."
     play sound "Click.mp3" noloop 
 
-    Na "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    Na "[thanks]"
+    play sound "Click.mp3" noloop
 
     C "Bien [P] je vois qu'[newname] se débrouille bien avec toi."
     play sound "Click.mp3" noloop
@@ -6138,8 +6163,9 @@ label suite:
     Y "Cool je suis content pour toi et je vois aussi qu'[newname] s'est vraiment améliorée."
     play sound "Click.mp3" noloop 
 
-    P "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    P "[thanks]"
+    play sound "Click.mp3" noloop
 
     Y "De rien mais je peux demander quelques choses à [newname] pour tester ces connaissances ?"
     play sound "Click.mp3" noloop 
@@ -6156,8 +6182,9 @@ label suite:
     Y "Woah je suis vraiment surprise que tu connaisses autant de décimals de pi."
     play sound "Click.mp3" noloop 
 
-    Na "Merci beaucoup." 
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    Na "[thanks]"
+    play sound "Click.mp3" noloop
 
     "{b}{i} [Y] se mit à te regarder.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -6386,7 +6413,8 @@ label suite1:
     Na "Bonjour~"
     play sound "Click.mp3" noloop
 
-    R "Merci beaucoup."
+    $ thanks = get_random_thanks()
+    R "[thanks]"
     play sound "Click.mp3" noloop
 
     M "Vas-y présentes-toi."
@@ -6440,7 +6468,8 @@ label suite1:
     S "Enchanté [newname]"
     play sound "Click.mp3" noloop
 
-    Na "Merci beaucoup."
+    $ thanks = get_random_thanks()
+    Na "[thanks]"
     play sound "Click.mp3" noloop
     
     S "Mais de rien."
@@ -6852,9 +6881,10 @@ label suite1:
     M "Bien merci pour cette explication."
     play sound "Click.mp3" noloop
 
-    Na "Merci beaucoup."
+    $ thanks = get_random_thanks()
+    Na "[thanks]"
     play sound "Click.mp3" noloop
-
+ 
     "{b}{i}Puis la [T] commence à écrire sur le tableau.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
@@ -7772,8 +7802,9 @@ label debate:
     Su "C'est trop mignon."
     play sound "Click.mp3" noloop 
 
-    P "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    P "[thanks]"
+    play sound "Click.mp3" noloop
 
     Su "De rien et je voulais te demander quelques choses."
     play sound "Click.mp3" noloop 
@@ -9251,10 +9282,11 @@ label code:
             P "Bien alors et reposes toi tu en as besoin."
             play sound "Click.mp3" noloop
 
-            I "Merci beacoup."
+            $ thanks = get_random_thanks()
+            I "[thanks]"
             play sound "Click.mp3" noloop
 
-            I "De rien."
+            P "De rien."
             play sound "Click.mp3" noloop
 
             hide screen clubroom
@@ -9755,7 +9787,8 @@ label code:
             P "Si j'ai vu je te rassure."
             play sound "Click.mp3" noloop
 
-            Na "Merci beaucoup."
+            $ thanks = get_random_thanks()
+            Na "[thanks]"
             play sound "Click.mp3" noloop
 
             "{b}{i} Vous continuez de discuter et de manger jusqu'à la sonnerie.{/i}{/b}" 
@@ -9765,7 +9798,7 @@ label code:
             play sound "Click.mp3" noloop 
              
             $ suivi = get_random_suivi()
-            Na "[suivi]"
+            Na "[suivi]" 
             play sound "Footsteps.mp3" noloop
 
     scene black 
@@ -10111,7 +10144,8 @@ label code:
     E "Pas de soucis je note."
     play sound "Click.mp3" noloop
 
-    P "Merci beaucoup."
+    $ thanks = get_random_thanks()
+    P "[thanks]"
     play sound "Click.mp3" noloop
 
     E "De rien [prenom]."
@@ -10200,8 +10234,9 @@ label code:
             P "Elle est géniale."
             play sound "Click.mp3" noloop  
 
-            I "Merci beaucoup."
-            play sound "Click.mp3" noloop  
+            $ thanks = get_random_thanks()
+            I "[thanks]"
+            play sound "Click.mp3" noloop
 
             P "De rien."
             play sound "Click.mp3" noloop  
@@ -10803,7 +10838,7 @@ label password:
     show screen hallway
 
     "{b}{i}Tu continues dans le couloir.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
  
     scene staircase 
     hide screen hallway 
@@ -10844,7 +10879,7 @@ label password:
     "{b}{i}L'[Ot] se met à parler.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    Oh "Si nous sommes ici c'est parce que nous un document vraiment suspect dans les affaires de [prenom]." 
+    Oh "Si nous sommes ici c'est parce que nous avons trouvé un document vraiment suspect dans les affaires de [prenom]." 
     play sound "Click.mp3" noloop 
 
     M "Comment ça !?" 
@@ -10917,7 +10952,7 @@ label password:
     play sound "Click.mp3" noloop 
 
     Oh "Je vois je m'en excuse alors." 
-    play sound "Click.mp3" noloop 
+    play sound "Handcuffs.mp3" noloop 
 
     "{b}{i}L'[Ot] te détache tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -11102,8 +11137,9 @@ label password:
     M "Je t'autorise à avoir une seule caméra devant ton dortoir."
     play sound "Click.mp3" noloop 
 
-    P "Merci beaucoup." 
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    P "[thanks]"
+    play sound "Click.mp3" noloop
 
     M "Bien vous pouvez disposer maintenant et me fais regretter ma décision." 
     play music "Transition.mp3" noloop 
@@ -12473,8 +12509,9 @@ label examen_pythagore:
     M "[Na] tu as eu 19/20 félicitation aussi."
     play sound "Click.mp3" noloop 
 
-    Na "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    Na "[thanks]"
+    play sound "Click.mp3" noloop
 
     $ note = get_random_note()
     M "[H] tu as eu [note]/20."
@@ -12490,8 +12527,9 @@ label examen_pythagore:
         M "Ce n'est pas mal."
         play sound "Click.mp3" noloop
 
-    H "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    H "[thanks]"
+    play sound "Click.mp3" noloop
 
     $ note = get_random_note()
     M "[I] tu as eu [note]/20."
@@ -12507,8 +12545,9 @@ label examen_pythagore:
         M "Ce n'est pas mal."
         play sound "Click.mp3" noloop
 
-    I "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    I "[thanks]"
+    play sound "Click.mp3" noloop
 
     $ note = get_random_note()
     M "[Hi] tu as eu [note]/20."
@@ -12523,8 +12562,10 @@ label examen_pythagore:
 
         M "Ce n'est pas mal."
         play sound "Click.mp3" noloop
-    Hi "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+
+    $ thanks = get_random_thanks()
+    Hi "[thanks]"
+    play sound "Click.mp3" noloop
 
     $ note = get_random_note()
     M "[K] tu as eu [note]/20."
@@ -12540,8 +12581,9 @@ label examen_pythagore:
         M "Ce n'est pas mal."
         play sound "Click.mp3" noloop
 
-    K "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    K "[thanks]"
+    play sound "Click.mp3" noloop
 
     if note == 20: 
 
@@ -12567,8 +12609,9 @@ label examen_pythagore:
         M "Ce n'est pas mal."
         play sound "Click.mp3" noloop
 
-    N "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    N "[thanks]"
+    play sound "Click.mp3" noloop
 
     $ note = get_random_note()
     M "[Y] tu as eu [note]/20."
@@ -12584,8 +12627,9 @@ label examen_pythagore:
         M "Ce n'est pas mal."
         play sound "Click.mp3" noloop
 
-    Y "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    Y "[thanks]"
+    play sound "Click.mp3" noloop
 
     M "Bon au tour des ultimes Jumelles maintenant pour finir."
     play sound "Click.mp3" noloop 
@@ -12607,8 +12651,9 @@ label examen_pythagore:
         M "Ce n'est pas mal."
         play sound "Click.mp3" noloop
 
-    J1 "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    J1 "[thanks]"
+    play sound "Click.mp3" noloop
 
     $ note = get_random_note()
     M "Et toi [J2] tu as eu [note]/20."
@@ -12624,8 +12669,9 @@ label examen_pythagore:
         M "Ce n'est pas mal."
         play sound "Click.mp3" noloop 
 
-    J2 "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    J2 "[thanks]"
+    play sound "Click.mp3" noloop
 
     $ note = get_random_note()
     M "Et toi [S] tu as eu [note]/20."
@@ -12641,8 +12687,9 @@ label examen_pythagore:
         M "Ce n'est pas mal."
         play sound "Click.mp3" noloop
 
-    S "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    S "[thanks]"
+    play sound "Click.mp3" noloop
 
     M "Bon la moyenne générale n'est pas mal, continuez de bien travaillez comme ceci."
     play sound "Click.mp3" noloop 
@@ -13089,8 +13136,9 @@ label password3:
     Y "Oh c'est surpenant." 
     play sound "Click.mp3" noloop 
 
-    Na "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    Na "[thanks]"
+    play sound "Click.mp3" noloop
 
     Y "De rien."
     play sound "Click.mp3" noloop 
@@ -13527,8 +13575,9 @@ label password4:
     Na "Bon appétit [prenom]."
     play sound "Click.mp3" noloop 
 
-    P "Merci beaucoup."
-    play sound "Footsteps.mp3" noloop 
+    $ thanks = get_random_thanks()
+    P "[thanks]"
+    play sound "Click.mp3" noloop
 
     "{b}{i} Vous manger tranquillement puis [S] viens vers vous.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -14099,8 +14148,9 @@ label password6:
     P "Bon appétit [prenom]."
     play sound "Click.mp3" noloop 
 
-    Na "Merci beaucoup."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    Na "[thanks]"
+    play sound "Click.mp3" noloop
 
     "{b}{i} Vous mangez tranquillement pui [I] viens s'asseoir avec vous.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -14115,7 +14165,8 @@ label password6:
     P "Cool alors." 
     play sound "Click.mp3" noloop
 
-    I "Merci beaucoup."
+    $ thanks = get_random_thanks()
+    I "[thanks]"
     play sound "Click.mp3" noloop
 
     P "De rien sinon tu t'ensort comment avec Runix ?"
@@ -14133,7 +14184,8 @@ label password6:
     P "Oui absolument."
     play sound "Click.mp3" noloop
 
-    I "Merci beaucoup."
+    $ thanks = get_random_thanks()
+    I "[thanks]"
     play sound "Click.mp3" noloop
 
     "{b}{i}[newname] se met secrètement à rougir en regardant [I].{/i}{/b}"
@@ -14212,7 +14264,8 @@ label password6:
     M "Bien il semblerait que vous vous débrouillez pas si mal que ça."
     play sound "Click.mp3" noloop
 
-    I "Merci beaucoup."
+    $ thanks = get_random_thanks()
+    I "[thanks]"
     play sound "Bell.mp3" noloop
 
     M "Le cours est terminé vous pouvez quitter la salle, je fixerai un examen dans deux semaines."
@@ -14246,7 +14299,8 @@ label password6:
     P "Bien sûr je vais t'aider."
     play sound "Click.mp3" noloop
 
-    I "Merci beaucoup."
+    $ thanks = get_random_thanks()
+    I "[thanks]"
     play sound "Footsteps.mp3" noloop
 
     "{b}{i} Vous allez vers au dortoir pour aider [I].{/i}{/b}"
@@ -14268,7 +14322,7 @@ label password6:
 
     elif pronom == "elle":
 
-        Na "Enfin arrivées."
+        Na "Enfin arrivées." 
         play sound "Click.mp3" noloop
 
     P "Oui ça fait du bien."
@@ -14280,7 +14334,7 @@ label password6:
     $ validation = get_random_validation()
     Na "[validation]"
     play sound "Click.mp3" noloop
-
+   
     return                            
 
 # Aris la plus belle <333333333333333  
