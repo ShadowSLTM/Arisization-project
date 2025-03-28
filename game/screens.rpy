@@ -257,7 +257,7 @@ screen quick_menu():
             textbutton _("Sauvegarde R.") action QuickSave()
             textbutton _("Chargement R.") action QuickLoad()
             textbutton _("Préf.") action ShowMenu('preferences')
-
+            textbutton _("Succès") action ShowMenu('success')
 
 ## Ce code garantit que le menu d’accès rapide sera affiché dans le jeu, tant
 ## que le joueur n’aura pas explicitement demandé à cacher l’interface.

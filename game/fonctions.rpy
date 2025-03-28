@@ -196,7 +196,7 @@ init python:
 init python:
     import random 
 
-    comment_ca_va_rdm = [
+    comment_ca_va_list = [
         "Comment tu vas ?",
         "Ça roule ?",
         "Tu vas bien ?",
@@ -207,7 +207,7 @@ init python:
     ]
 
     def get_random_comment_ca_va():
-        return random.choice(comment_ca_va_rdm)
+        return random.choice(comment_ca_va_list)
 
 init python:
     import random

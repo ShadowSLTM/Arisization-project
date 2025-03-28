@@ -19,6 +19,7 @@ audio\Door.mp3
 audio\Ending.mp3
 audio\Footsteps.mp3
 audio\Glitch.mp3
+audio\Handcuffs.mp3
 audio\Knock.mp3
 audio\Lastencounter.mp3
 audio\Menu.mp3
@@ -147,6 +148,7 @@ saves\auto-8-LT1.save
 saves\auto-9-LT1.save
 saves\navigation.json
 saves\persistent
+saves\quick-1-LT1.save
 saves\quick_save_slot1-LT1.save
 saves\slot-1-LT1.save
 saves\slot-13-LT1.save
