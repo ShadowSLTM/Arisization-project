@@ -15,7 +15,7 @@ define Gt = Character('Naomi Sakayanagi', color="#c06c6c")
 
 define Su = Character('Suzune Horimiya', color="#ffffff")
 define Sk = Character('Shiro Katsuya', color="#ffffff") 
-default S = Character('Subaru Shinomiya', color="#ffffff") 
+define S = Character('Subaru Shinomiya', color="#ffffff") 
 
 # Les élèves de Seconde-E. 
 

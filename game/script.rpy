@@ -29,7 +29,8 @@ label key:
     
     if key in valid_keys:
         "Jeu déverrouillé."
-        play sound "Menu.mp3" noloop
+        play sound "Ciick.mp3" noloop
+
     else:
         "Erreur système. Veuillez réessayer."
         $ renpy.restart_interaction()
@@ -44,9 +45,11 @@ label key:
     elif key == "ARIS-GRFN-M4A1":
 
         $ P = Character('[prenom] [nom]', color="#707070") 
-        $ S = Character("Subaru Shinomiya", color="#707070")
         $ origine = "16LAB" 
         $ success += 1
+
+        "DLC secret déverouillé."
+        play sound "Click.mp3" noloop
 
 label identity: 
 
@@ -494,7 +497,8 @@ label grayroom:
     P "[thanks]"
     play sound "Click.mp3" noloop
 
-    Sk "Mais de rien."
+    $ nothing = get_random_nothing()
+    Sk "[nothing]"
     play sound "Click.mp3" noloop
 
     if pronom == "il":
@@ -542,7 +546,8 @@ label grayroom:
     A "[thanks]"
     play sound "Click.mp3" noloop
 
-    Su "Mais de rien ça fait plaisir."
+    $ nothing = get_random_nothing()
+    Su "[nothing]"
     play sound "Click.mp3" noloop
 
     Su "Enfaite [S] tu es la plus grosse fraude de [origine] pour te permettre d'insulter et rabaisser [prenom] juste parce que tu es populaire."
@@ -865,7 +870,11 @@ label rencontre:
     P "Merci beaucoup, Emily."
     play sound "Click.mp3" noloop 
 
-    E "Mais de rien ça fait plaisir. Mais j'ai une question."
+    $ nothing = get_random_nothing()
+    E "[nothing]"
+    play sound "Click.mp3" noloop
+
+    E "Mais j'ai une question."
     play sound "Click.mp3" noloop 
 
     P "Oui dis-moi, je t'écoute."
@@ -877,7 +886,11 @@ label rencontre:
     A "Magnifique !? je suis vraiment flattée merci beaucoup."
     play sound "Click.mp3" noloop 
 
-    E "De rien mais pour revenir à ma question [prenom], qui est cette fille ?"
+    $ nothing = get_random_nothing()
+    E "[nothing]"
+    play sound "Click.mp3" noloop
+
+    E "Pour revenir à ma question [prenom], qui est cette fille ?"
     play sound "Click.mp3" noloop
 
     P "Ah elle, c'est [A] mon projet de [model]."
@@ -904,7 +917,8 @@ label rencontre:
     A "Merci beaucoup, Emily."
     play sound "Click.mp3" noloop
 
-    E "De rien. Mais maintenant je vais vous expliquer comment fonctionne ce lycée."
+    $ nothing = get_random_nothing()
+    E "[nothing] Maintenant je vais vous expliquer comment fonctionne ce lycée."
     play sound "Click.mp3" noloop 
 
     P "Ok, merci de nous expliquer."
@@ -980,7 +994,11 @@ label rencontre:
     A "Merci beaucoup, ça me rassure."
     play sound "Click.mp3" noloop 
 
-    E "De rien. Maintenant, je vais vous expliquer comment fonctionnent les cours."
+    $ nothing = get_random_nothing()
+    E "[nothing]"
+    play sound "Click.mp3" noloop
+
+    E "Je vais vous expliquer comment fonctionnent les cours."
     play sound "Click.mp3" noloop 
 
     P "Comment ça, il y a une particularité avec les cours ?" 
@@ -1004,8 +1022,9 @@ label rencontre:
     P "Merci beaucoup, Emily."
     play sound "Click.mp3" noloop 
 
-    E "De rien. C'est normal."
-    play sound "Click.mp3" noloop 
+    $ nothing = get_random_nothing()
+    E "[nothing] C'est normal"
+    play sound "Click.mp3" noloop
 
     "{b}{i}Tu regardes tes documents et tu remarques que tu es en Seconde-E.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -1155,7 +1174,8 @@ label rencontre:
     A "Merci beaucoup [prenom]."
     play sound "Click.mp3" noloop 
 
-    P "Mais de rien ma chère [A]."
+    $ nothing = get_random_nothing()
+    P "[nothing]"
     play sound "Click.mp3" noloop 
 
     "{b}{i}Tout le monde discute tranquillement.{/i}{/b}"
@@ -1259,6 +1279,8 @@ label rencontre:
     H "[thanks]"
     play sound "Click.mp3" noloop
 
+
+
     T "De rien, maintenant suivant s'il vous plait."
     play sound "Click.mp3" noloop 
 
@@ -1307,8 +1329,9 @@ label rencontre:
     N "Merci beaucoup Madame."
     play sound "Click.mp3" noloop 
 
-    T "De rien, ensuite ?"
-    play sound "Click.mp3" noloop 
+    $ nothing = get_random_nothing()
+    T "[nothing]"
+    play sound "Click.mp3" noloop
 
     Hi "Bonjour, je m'appelle [Hi]."
     play sound "Click.mp3" noloop
@@ -1319,7 +1342,8 @@ label rencontre:
     Hi "Merci beaucoup Madame."
     play sound "Click.mp3" noloop
 
-    T "Mais de rien [Hi], bon suivante."
+    $ nothing = get_random_nothing()
+    I "[nothing] Bon suivante."
     play sound "Click.mp3" noloop
 
     Y "Je m'appelle [Y], j'ai 19 ans ravie de vous rencontrer."
@@ -1449,7 +1473,8 @@ label rencontre:
     A "Merci beaucoup [I].~"
     play sound "Click.mp3" noloop
 
-    I "Mais de rien, c'est normal de complimenter."
+    $ nothing = get_random_nothing()
+    I "[nothing] C'est normal de complimenter."
     play sound "Click.mp3" noloop
 
     T "Mais pourquoi tu t'es inscrite ici en tant que lycéenne ?" 
@@ -1461,8 +1486,9 @@ label rencontre:
     T "Bon merci [A] pour ta présentation."
     play sound "Click.mp3" noloop
 
-    A "De rien."
-    play sound "Click.mp3" noloop
+    $ nothing = get_random_nothing()
+    A "[nothing]"
+    play sound "Click.mp3" noloop 
 
 #fin des présentations des élèves
 
@@ -1662,7 +1688,11 @@ label rencontre:
     P "Ok, Je vois merci beaucoup."
     play sound "Click.mp3" noloop 
 
-    M "De rien bon maintenant que toutes les informations ont été données, vous pouvez disposer le cours est fini, n'hésitez pas à visiter le lycée vu que vous n'avez pas de cours cette après-midi."
+    $ nothing = get_random_nothing()
+    M "[nothing]"
+    play sound "Click.mp3" noloop
+    
+    M "Bon maintenant que toutes les informations ont été données, vous pouvez disposer le cours est fini, n'hésitez pas à visiter le lycée vu que vous n'avez pas de cours cette après-midi."
     play sound "Footsteps.mp3" noloop
 
 # fin du cours de présentation
@@ -1861,7 +1891,8 @@ label rencontre:
     P "[thanks]"
     play sound "Footsteps.mp3" noloop
 
-    Kh "Mais de rien."
+    $ nothing = get_random_nothing()
+    Kh "[nothing]"
     play sound "Click.mp3" noloop
 
     "{b}{i}[Kh] quitte ta chambre.{/i}{/b}"
@@ -1947,7 +1978,8 @@ label balade:
     P "Oh salut [I]."
     play sound "Click.mp3" noloop
 
-    I "Oh salut [P] comment ça va ?"
+    $ comment_ca_va = get_random_comment_ca_va()
+    I "[comment_ca_va]"
     play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
@@ -2416,8 +2448,9 @@ label wallbreaking3:
     P "[thanks]"
     play sound "Click.mp3" noloop
 
-    Ah "Mais de rien [P]."
-    play sound "Click.mp3" noloop 
+    $ nothing = get_random_nothing()
+    Ah "[nothing]"
+    play sound "Click.mp3" noloop
 
     "{b}{i}Tu finis par raccrocher.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -2491,8 +2524,8 @@ label wallbreaking3:
     A "Initialisation terminée, la version actuelle du processeur est la [update]."
     play sound "Menu.mp3" noloop
 
-    $ comment_ca_va_rdm = get_random_comment_ca_va()
-    P "[comment_ca_va_rdm]"
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
     play sound "Click.mp3" noloop  
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
@@ -2555,9 +2588,6 @@ label choice4:
         $ renpy.restart_interaction() 
         play sound "Menu.mp3" noloop
         jump choice4
-
-    if newname == "Aris" and key == "ARIS-GRFN-M4A1":
-        jump skip 
     
     "{b}{i}Soudainement, le processeur te demande de paramétrer l'adresse IP de [newname].{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -2770,7 +2800,11 @@ label skip:
     Na "[thanks]"
     play sound "Click.mp3" noloop
 
-    I "De rien c'est normal et c'est surtout [M] qui va être contente que tu aies finalement un vrai prénom."
+    $ nothing = get_random_nothing()
+    I "[nothing]"
+    play sound "Click.mp3" noloop
+
+    I "C'est normal et c'est surtout [M] qui va être contente que tu aies finalement un vrai prénom."
     play sound "Click.mp3" noloop
 
     P  "Bon, on y va [newname] ?"
@@ -2788,8 +2822,9 @@ label skip:
     P "Oh c'est gentil, merci beaucoup."
     play sound "Click.mp3" noloop 
 
-    I "De rien."
-    play sound "Click.mp3" noloop 
+    $ nothing = get_random_nothing()
+    I "[nothing]"
+    play sound "Click.mp3" noloop
 
     P "Bon [newname] on y va ?"
     play sound "Click.mp3" noloop 
@@ -2967,9 +3002,9 @@ label wallbreaking4:
     Na "Configuration terminée, bonjour [P]."
     play sound "Click.mp3" noloop 
 
-    $ question = get_random_comment_ca_va() 
-    P "[question]"
-    play sound "Click.mp3" noloop
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop  
 
     $ reponse = get_random_je_vais_bien()
     Na "[reponse]"
@@ -3017,7 +3052,8 @@ label wallbreaking4:
     scene room 
     show screen room 
 
-    P "Enfin au dortoir..."
+    $ dortoir = get_random_dortoir()
+    P "[dortoir]"
     play sound "Click.mp3" noloop
 
     Na "Je confirme ça fait vraiment du bien."
@@ -3090,7 +3126,8 @@ label wallbreaking4:
     Na  "Démarrage terminé, Bonjour [P]."
     play sound "Click.mp3" noloop 
 
-    P "Bonjour. Comment ça va ?"
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
     play sound "Click.mp3" noloop 
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
@@ -3963,9 +4000,6 @@ label wallbreaking4:
             "{b}{i}Tu ranges tes livres avant de sortir ton ordinateur pour voir le système emotionelle d'[newname].{/i}{/b}"
             play sound "Click.mp3" noloop 
 
-            if newname == "Aris" and key == "ARIS-GRFN-M4A1":
-                jump connexion
-
             label choice7:
 
             play sound "Menu.mp3" noloop
@@ -4236,11 +4270,15 @@ label dorm2:
     P "Merci."
     play sound "Click.mp3" noloop 
 
-    I "De rien il y a pas de soucis, bon je vais te laisser."
+    $ nothing = get_random_nothing()
+    I "[nothing]"
+    play sound "Click.mp3" noloop
+
+    I "Bon je vais te laisser."
     play sound "Click.mp3" noloop 
 
     P "Ok alors."
-    play sound 'audio/Footsteps.mp3'
+    play sound "Footsteps.mp3" noloop
 
     "{b}{i}[I] s'éloigna pour aller faire ses occupations.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -4257,8 +4295,9 @@ label dorm2:
     scene room
     show screen room 
 
-    P "Enfin au dortoir...."
-    play sound "Click.mp3" noloop 
+    $ dortoir = get_random_dortoir()
+    P "[dortoir]"
+    play sound "Click.mp3" noloop
 
     "{b}{i}Tu aperçois [newname] déconnectée contre le mur.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -4272,7 +4311,8 @@ label dorm2:
     P "Oui bonjour."
     play sound "Click.mp3" noloop
 
-    R "Coucou comment ça va ?"
+    $ comment_ca_va = get_random_comment_ca_va()
+    R "[comment_ca_va]"
     play sound "Click.mp3" noloop
 
     P "Oh coucou maman oui ça va bien et toi ?"
@@ -4308,7 +4348,14 @@ label dorm2:
     P "Merci maman."
     play sound "Click.mp3" noloop
 
-    Mo "De rien mais je vais devoir te laisser je dois m'occuper de ta soeur tu sais comment elle est..."
+    $ nothing = get_random_nothing()
+    Mo "[nothing]"
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Vous continuez de discuter.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    Mo " Bon je vais devoir te laisser je dois m'occuper de ta soeur tu sais comment elle est..."
     play sound "Click.mp3" noloop
 
     P "Ah oui celle-là je vois..."
@@ -4320,7 +4367,7 @@ label dorm2:
     P "Oui promis."
     play sound "Click.mp3" noloop 
 
-    "{b}{i}Puis l'appel se coupa.{/i}{/b}"
+    "{b}{i}Puis l'appel se coupe.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     P "Bon enfin fini je vais pouvoir aller dormir."
@@ -4363,10 +4410,7 @@ label dorm2:
     "{b}{i} Tu sors rapidement ton ordi pour voir son état.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    if newname == "Aris" and key == "ARIS-GRFN-M4A1":
-        jump skip2
-        
-label choice8:
+label choice8:  
 
     play sound "Menu.mp3" noloop
     $ ip = renpy.input("Entres l'adresse IP pour pouvoir te connecter à [newname].")
@@ -4403,11 +4447,12 @@ label skip2:
     Na "Démarrage terminé bonjour [P]."
     play sound "Click.mp3" noloop
 
-    P "Bonjour ma petite [newname] comment ça va ?"
-    play sound "Click.mp3" noloop 
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop
 
     Na "ça va."
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     P "Bon on va cours ?" 
     play sound "Click.mp3" noloop 
@@ -4428,8 +4473,9 @@ label skip2:
     "{b}{i}Dans le couloir tu croises [I].{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Oh salut [I] comment ça va ?" 
-    play sound "Click.mp3" noloop 
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop
 
     I "ça va mais je suis un peu stressée pour l'examen."
     play sound "Click.mp3" noloop 
@@ -4456,8 +4502,9 @@ label choice9:
     scene classroom
     show screen class_404
 
-    K "Oh salut [P] comment ça va ?" 
-    play sound "Click.mp3" noloop 
+    $ comment_ca_va = get_random_comment_ca_va()
+    K "[comment_ca_va]"
+    play sound "Click.mp3" noloop
 
     P "ça va bien comme d'habitude." 
     play sound "Click.mp3" noloop 
@@ -4692,8 +4739,9 @@ label choice9:
     R "[thanks]"
     play sound "Click.mp3" noloop
 
-    E "Mais de rien c'est normal."
-    play sound "Click.mp3" noloop 
+    $ nothing = get_random_nothing()
+    E "[nothing]"
+    play sound "Click.mp3" noloop
 
     "{b}{i} Tu choisis de partir vers la réfectoire avec [newname] pour éviter de te faire attraper par [E].{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -5603,8 +5651,9 @@ label choice9:
     "{b}{i}Puis tu aperçois [I] juste devant.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Oh salut Comment ça va ?"
-    play sound "Click.mp3" noloop 
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
     I "[je_vais_bien_txt] Toi comment ça s'est passé avec [E] ?" 
@@ -5649,8 +5698,9 @@ label choice9:
     I "Merci de m'avoir fait rire [prenom]."
     play sound "Click.mp3" noloop
 
-    P "De rien."
-    play sound "Click.mp3" noloop 
+    $ nothing = get_random_nothing()
+    E "[nothing]"
+    play sound "Click.mp3" noloop
 
     I "Bon je dois vous laisser."
     play sound "Click.mp3" noloop 
@@ -5685,7 +5735,8 @@ label choice9:
     scene room
     show screen room 
 
-    P "Enfin au dortoir...."
+    $ dortoir = get_random_dortoir()
+    P "[dortoir]"
     play sound "Click.mp3" noloop
 
     Na "Oui ça fait du bien d'être de retour au dortoir après un examen, les cours et le rendez-vous." 
@@ -5786,8 +5837,9 @@ label choice9:
     Na "Démarrage términé, Bonjour [P]."
     play sound "Click.mp3" noloop  
 
-    P "Bonjour [Na] comment ça va ?"
-    play sound "Click.mp3" noloop 
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
     Na "[je_vais_bien_txt] Et toi ?" 
@@ -5950,14 +6002,16 @@ label afterupdate:
     "{b}{i}[E] te remit la clé du gymnase.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "Merci."
-    play sound "Click.mp3" noloop 
+    $ thanks = get_random_thanks()
+    P "[thanks]"
+    play sound "Click.mp3" noloop
 
-    E "De rien."
-    play sound "Click.mp3" noloop 
+    $ nothing = get_random_nothing()
+    E "[nothing]"
+    play sound "Click.mp3" noloop
 
     scene black 
-    hide screen office
+    hide screen office 
 
     "{b}{i} Puis tu quittas le bureau des élèves.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -5995,8 +6049,9 @@ label afterupdate:
     "{b}{i} Pendant que tu continues de réfléchir, [N] et [Y] entrérent dans le gymnase.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    Y "Salut [prenom] comment ça va ?"
-    play sound "Click.mp3" noloop 
+    $ comment_ca_va = get_random_comment_ca_va()
+    Y "[comment_ca_va]"
+    play sound "Click.mp3" noloop
 
     P "Oh salut [Y], oui ça va bien et toi ?"
     play sound "Click.mp3" noloop 
@@ -6183,7 +6238,14 @@ label suite:
     P "[thanks]"
     play sound "Click.mp3" noloop
 
-    Y "De rien mais je peux demander quelques choses à [newname] pour tester ces connaissances ?"
+    $ nothing = get_random_nothing()
+    Y "[nothing]" 
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Vous continuez mais elle veut te demander quelques choses.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    Y "Je peux demander quelques choses à [newname] pour tester ces connaissances ?"
     play sound "Click.mp3" noloop 
     
     P "Bien sûr vas-y"
@@ -6297,8 +6359,9 @@ label suite1:
     H "Oh salut [prenom]"
     play sound "Click.mp3" noloop 
 
-    P "Oh salut comment ça va ?"
-    play sound "Click.mp3" noloop 
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
     H "[je_vais_bien_txt] Sion toi et [newname] ?" 
@@ -6312,8 +6375,9 @@ label suite1:
     Na "[je_vais_bien_txt] Merci beaucoup." 
     play sound "Click.mp3" noloop
 
-    H "De rien."
-    play sound "Click.mp3" noloop 
+    $ nothing = get_random_nothing()
+    H "[nothing]"
+    play sound "Click.mp3" noloop
 
     P "Sinon tu sais où est la [T] ?"
     play sound "Click.mp3" noloop 
@@ -6488,7 +6552,8 @@ label suite1:
     Na "[thanks]"
     play sound "Click.mp3" noloop
     
-    S "Mais de rien."
+    $ nothing = get_random_nothing()
+    S "[nothing]" 
     play sound "Click.mp3" noloop
 
     I "Donc c'est toi l'ami de [prenom]."
@@ -6667,10 +6732,12 @@ label suite1:
     scene room
     show screen room 
 
-    P "Enfin au dortoir." 
-    play sound "Click.mp3" noloop  
+    $ dortoir = get_random_dortoir()
+    P "[dortoir]"
+    play sound "Click.mp3" noloop
 
-    Na "Oui ça fait du bien." 
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]" 
     play sound "Click.mp3" noloop  
 
     P "Bon je ne sais pas quoi faire maintenant." 
@@ -6734,7 +6801,8 @@ label suite1:
     Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
-    P "Coucou comment ça va aujourd'hui ?"
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
     play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
@@ -6763,7 +6831,8 @@ label suite1:
     P "Merci beaucoup ça fait plaisir de l'entendre."
     play sound "Click.mp3" noloop
 
-    Na "De rien."
+    $ nothing = get_random_nothing()
+    Na "[nothing]"
     play sound "Click.mp3" noloop
 
     P "Bon on doit aller en cours avant d'étre en retard."
@@ -6788,13 +6857,14 @@ label suite1:
     "{b}{i} Tu continues vers la salle de classe mais tu croises [S].{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    Na "Oh salut [S]."
+    P "Oh salut [S]."
     play sound "Click.mp3" noloop
 
     S "Oh salut [prenom]......"
     play sound "Click.mp3" noloop
 
-    P "Comment ça va ?"
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
     play sound "Click.mp3" noloop
 
     S "ça va..."
@@ -6824,7 +6894,8 @@ label suite1:
     P "Salut..."
     play sound "Click.mp3" noloop
 
-    Hi "Salut comment ça va ?"
+    $ comment_ca_va = get_random_comment_ca_va()
+    Hi "[comment_ca_va]"
     play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
@@ -7152,8 +7223,9 @@ label suite1:
             S "Merci beuucoup."
             play sound "Click.mp3" noloop 
 
-            I  "De rien."
-            play sound "Click.mp3" noloop 
+            $ nothing = get_random_nothing()
+            P "[nothing]"
+            play sound "Click.mp3" noloop
 
             "{b}{i} Vous vous mettez à discuter des cours.{/i}{/b}"
             play sound "Click.mp3" noloop
@@ -7707,11 +7779,12 @@ label debate:
         Na "Tu sais tu t'es vraiment bien débrouillée [prenom]."
         play sound "Click.mp3" noloop 
  
-    P "Merci beaucoup. "
+    P "Merci beaucoup."
     play sound "Click.mp3" noloop 
 
-    Na "Mais de rien."
-    play sound "Click.mp3" noloop 
+    $ nothing = get_random_nothing()
+    Na"[nothing]"
+    play sound "Click.mp3" noloop
 
     "{b}{i} Vous continuez vers le dortoir.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -7774,7 +7847,8 @@ label debate:
     Su "C'est [Su]."
     play sound "Click.mp3" noloop 
 
-    P "Oh salut comment ça va ?"
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
     play sound "Click.mp3" noloop 
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
@@ -7907,7 +7981,8 @@ label debate:
     Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
-    P "Coucou comment ça va aujourd'hui ?"
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
     play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
@@ -8228,8 +8303,9 @@ label debate:
             "{b}{i} Dix minutes plus tard [newname] entre dans le dortoir. {/i}{/b}"
             play sound "Click.mp3" noloop 
 
-            Na "Coucou comment ça va [prenom] ?"
-            play sound "Click.mp3" noloop 
+            $ comment_ca_va = get_random_comment_ca_va()
+            Na "[comment_ca_va]"
+            play sound "Click.mp3" noloop
 
             $ je_vais_bien_txt = get_random_je_vais_bien() 
             P "[je_vais_bien_txt]......" 
@@ -8268,14 +8344,15 @@ label debate:
             "{b}{i} Dix minutes plus tard [newname] entre dans le dortoir. {/i}{/b}"
             play sound "Click.mp3" noloop 
 
-            Na "Coucou comment ça va [prenom] ?"
-            play sound "Click.mp3" noloop 
+            $ comment_ca_va = get_random_comment_ca_va()
+            Na "[comment_ca_va]"
+            play sound "Click.mp3" noloop
 
             $ je_vais_bien_txt = get_random_je_vais_bien() 
             P "[je_vais_bien_txt]" 
             play sound "Click.mp3" noloop
 
-            Na "Cool alors."
+            Na "Cool alors." 
             play sound "Click.mp3" noloop 
 
     P "Sinon tu vas faire quoi maintenant ?"
@@ -8337,8 +8414,9 @@ label debate:
     Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
-    P "Coucou comment ça va aujourd'hui ?"
-    play sound "Click.mp3" noloop 
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop  
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
     Na "[je_vais_bien_txt] Mais je me suis inquiétée pour toi." 
@@ -8374,8 +8452,9 @@ label debate:
     P "Bonjour tout le monde."
     play sound "Click.mp3" noloop 
 
-    Y "Oh salut comment ça va [newname]."
-    play sound "Click.mp3" noloop 
+    $ comment_ca_va = get_random_comment_ca_va()
+    Y "[comment_ca_va]"
+    play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
     P "[je_vais_bien_txt]" 
@@ -8390,9 +8469,10 @@ label debate:
     P "Merci beaucoup les amis."
     play sound "Click.mp3" noloop 
 
-    Y "De rien."
+    $ nothing = get_random_nothing()
+    Y "[nothing]"
     play sound "Door.mp3" noloop
-    
+
     "{b}{i} Soudainement la [T] entres dans la classe.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
@@ -8664,7 +8744,14 @@ label debate:
     Na "Merci."
     play sound "Click.mp3" noloop
 
-    M "De rien bon qui peut me dire en écrit un texte en python ?"
+    $ nothing = get_random_nothing()
+    M  "[nothing]"
+    play sound "Click.mp3" noloop
+
+    "{b}{i}La [T] change de ton.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Bon qui peut me dire en écrit un texte en python ?"
     play sound "Click.mp3" noloop
 
     "{b}{i}Tout le monde hésite à lever la main.{/i}{/b}"
@@ -8722,11 +8809,13 @@ label debate:
     scene room
     show screen room 
 
-    Na "Enfin au dortoir."
+    $ dortoir = get_random_dortoir()
+    Na "[dortoir]"
     play sound "Click.mp3" noloop
 
-    P "Oui ça fait du bien."
-    play sound "Click.mp3" noloop
+    $ bien = get_random_fais_du_bien()
+    P "[bien]" 
+    play sound "Click.mp3" noloop  
 
     Na "Bon moi je vais me déconncter."
     play sound "Click.mp3" noloop 
@@ -8940,8 +9029,9 @@ label code:
     Na "Bonjour [prenom], je tourne maintenant sur le système d'exploitation [system] avec la version [update] du processeur Corzen 11KS."
     play sound "Click.mp3" noloop 
 
-    P "Coucou [newname] comment ça va ?" 
-    play sound "Click.mp3" noloop 
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
     Na "[je_vais_bien_txt]" 
@@ -8988,8 +9078,9 @@ label code:
     "{b}{i} On allons manger tu croises [H].{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Oh salut [H], comment ça va ?"
-    play sound "Click.mp3" noloop 
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop
 
     H "Oh salut [prenom] et [newname], oui moi ça va bien et vous ?"
     play sound "Click.mp3" noloop 
@@ -9302,7 +9393,8 @@ label code:
             I "[thanks]"
             play sound "Click.mp3" noloop
 
-            P "De rien."
+            $ nothing = get_random_nothing()
+            P "[nothing]"
             play sound "Click.mp3" noloop
 
             hide screen clubroom
@@ -9456,7 +9548,8 @@ label code:
     Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
-    P "Coucou comment ça va aujourd'hui ?"
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
     play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
@@ -9734,8 +9827,9 @@ label code:
             P "Salut [S] ça va ?"
             play sound "Click.mp3" noloop 
 
-            S "Oh c'est vous comment ça va toi et [newname] ?"
-            play sound "Click.mp3" noloop 
+            $ je_vais_bien_txt = get_random_je_vais_bien() 
+            P "[je_vais_bien_txt] " 
+            play sound "Click.mp3" noloop
 
             $ je_vais_bien_txt = get_random_je_vais_bien() 
             P "[je_vais_bien_txt]" 
@@ -9942,8 +10036,9 @@ label code:
         Na "Enfin arrivées"
         play sound "Click.mp3" noloop
 
-    P "Oui ça fait du bien."
-    play sound "Click.mp3" noloop
+    $ bien = get_random_fais_du_bien()
+    P "[bien]" 
+    play sound "Click.mp3" noloop  
 
     Na "Bon Je vais me déconnecter."
     play sound "Click.mp3" noloop
@@ -10164,7 +10259,8 @@ label code:
     P "[thanks]"
     play sound "Click.mp3" noloop
 
-    E "De rien [prenom]."
+    $ nothing = get_random_nothing()
+    E "[nothing]"
     play sound "Click.mp3" noloop
 
     scene black 
@@ -10254,8 +10350,9 @@ label code:
             I "[thanks]"
             play sound "Click.mp3" noloop
 
-            P "De rien."
-            play sound "Click.mp3" noloop  
+            $ nothing = get_random_nothing()
+            P "[nothing]"
+            play sound "Click.mp3" noloop
 
             if pronom == "il":
 
@@ -10415,7 +10512,8 @@ label code:
     Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
-    P "Coucou comment ça va aujourd'hui ?"
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
     play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
@@ -10529,8 +10627,9 @@ label password:
     P "Boujour."
     play sound "Click.mp3" noloop 
 
-    N "Salut [prenom] comment ça va ?"
-    play sound "Click.mp3" noloop 
+    $ comment_ca_va = get_random_comment_ca_va()
+    N "[comment_ca_va]"
+    play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
     P "[je_vais_bien_txt] Et toi ?" 
@@ -10550,8 +10649,9 @@ label password:
     "{b}{i} Puis tu aperçois [I].{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "Oh salut [I], comment ça va ?."
-    play sound "Click.mp3" noloop 
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
     I "[je_vais_bien_txt] Comment vous allez ?" 
@@ -10805,8 +10905,9 @@ label password:
     Oh "Merci beaucoup de m'avoir dit."
     play sound "Click.mp3" noloop 
 
-    P "De rien."
-    play sound "Click.mp3" noloop 
+    $ nothing = get_random_nothing()
+    P "[nothing]"
+    play sound "Click.mp3" noloop
 
     "{b}{i}L'[Ot] continue de regarder tes documents mais il tombe sur un document suspect.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -10976,7 +11077,8 @@ label password:
     P "Merci." 
     play sound "Click.mp3" noloop 
 
-    Oh "De rien et désolé de t'avoir accusé sans avoir avoir les détails." 
+    $ nothing = get_random_nothing()
+    E "[nothing] Désolé de t'avoir accusé sans avoir avoir les détails." 
     play sound "Click.mp3" noloop 
 
     P "Pas de soucis." 
@@ -11104,8 +11206,9 @@ label password:
     E "Merci d'être venu." 
     play sound "Click.mp3" noloop
 
-    Oh "De rien." 
-    play sound "Click.mp3" noloop 
+    $ nothing = get_random_nothing()
+    Oh "[nothing]"
+    play sound "Click.mp3" noloop
 
     "{b}{i}Puis ils quittent la salle.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -11421,8 +11524,9 @@ label password:
         Na "Enfin arrivées."
         play sound "Click.mp3" noloop
 
-    P "Oui ça fait du bien."
-    play sound "Click.mp3" noloop
+    $ bien = get_random_fais_du_bien()
+    P "[bien]" 
+    play sound "Click.mp3" noloop  
 
     Na "Bon Je vais me déconnecter et me recharger."
     play sound "Click.mp3" noloop 
@@ -11511,7 +11615,8 @@ label password1:
     Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
-    P "Coucou comment ça va aujourd'hui ?"
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
     play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
@@ -11723,8 +11828,9 @@ label password1:
     P "Enfin à manger."
     play sound "Click.mp3" noloop    
 
-    Na "Oui ça fait du bien."
-    play sound "Click.mp3" noloop 
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]" 
+    play sound "Click.mp3" noloop  
 
     "{b}{i} Vous mangez tranquillement mais [newname] remarque un truc en toi.{/i}{/b}"
     play sound "Click.mp3" noloop  
@@ -11971,8 +12077,9 @@ label password1:
     "{b}{i}Puis [newname] revient au dortoir.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Oh coucou [newname], comment ça va ?"
-    play sound "Click.mp3" noloop   
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
     Na "[je_vais_bien_txt]" 
@@ -12088,7 +12195,8 @@ label password2:
     Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
-    P "Coucou comment ça va aujourd'hui ?"
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
     play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
@@ -12765,8 +12873,9 @@ label examen_pythagore:
         P "Enfin au dortoir je suis epuisée."
         play sound "Click.mp3" noloop 
 
-    Na "Oui ça fait du bien."
-    play sound "Click.mp3" noloop
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]" 
+    play sound "Click.mp3" noloop  
 
     P "Oui je confirme."
     play sound "Click.mp3" noloop
@@ -12859,7 +12968,8 @@ label password3:
     Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
-    P "Coucou comment ça va aujourd'hui ?"
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
     play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
@@ -13156,8 +13266,9 @@ label password3:
     Na "[thanks]"
     play sound "Click.mp3" noloop
 
-    Y "De rien."
-    play sound "Click.mp3" noloop 
+    $ nothing = get_random_nothing()
+    Y "[nothing]"
+    play sound "Click.mp3" noloop
 
     "{b}{i} Vous continuez de discuter.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -13240,7 +13351,8 @@ label password3:
     scene room
     show screen room  
 
-    P "Enfin au dortoir...."
+    $ dortoir = get_random_dortoir()
+    P "[dortoir]"
     play sound "Click.mp3" noloop
 
     "{b}{i} Tu te poses sur ton lit pour lire pendant trois heures.{/i}{/b}"
@@ -13356,7 +13468,8 @@ label password4:
     Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
-    P "Coucou comment ça va aujourd'hui ?"
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
     play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
@@ -13514,8 +13627,9 @@ label password4:
     M "Merci beaucoup, je vous remercie pour ces informations."
     play sound "Click.mp3" noloop  
 
-    Oh "De rien."
-    play sound "Footsteps.mp3" noloop  
+    $ nothing = get_random_nothing()
+    Oh "[nothing]"
+    play sound "Click.mp3" noloop
 
     "{b}{i}Puis ils quiitent la salle.{/i}{/b}"
     play sound "Click.mp3" noloop    
@@ -13598,8 +13712,9 @@ label password4:
     "{b}{i} Vous manger tranquillement puis [S] viens vers vous.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "Oh salut comment ça va ?"
-    play sound "Click.mp3" noloop 
+    $ comment_ca_va = get_random_comment_ca_va()
+    Pü "[comment_ca_va]"
+    play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
     S "[je_vais_bien_txt] Et vous ?" 
@@ -13826,8 +13941,9 @@ label password4:
         Na "Enfin arrivées."
         play sound "Click.mp3" noloop
 
-    P "Oui ça fait du bien."
-    play sound "Click.mp3" noloop
+    $ bien = get_random_fais_du_bien()
+    P "[bien]" 
+    play sound "Click.mp3" noloop  
 
     Na "Oui, je suis vraiment fatiguée à couse du cours sur Runix."
     play sound "Click.mp3" noloop
@@ -13979,8 +14095,9 @@ label password6:
     Na "Bonjour [prenom]."
     play sound "Click.mp3" noloop 
 
-    P "Coucou comment ça va aujourd'hui ?"
-    play sound "Click.mp3" noloop
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop 
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
     Na "[je_vais_bien_txt] Et toi ?" 
@@ -14171,7 +14288,8 @@ label password6:
     "{b}{i} Vous mangez tranquillement pui [I] viens s'asseoir avec vous.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "Oh salut comment ça va ?"
+    $ comment_ca_va = get_random_comment_ca_va()
+    Pü "[comment_ca_va]"
     play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
@@ -14185,7 +14303,8 @@ label password6:
     I "[thanks]"
     play sound "Click.mp3" noloop
 
-    P "De rien sinon tu t'ensort comment avec Runix ?"
+    $ nothing = get_random_nothing()
+    P "[nothing] Sinon, tu t'ensort comment avec Runix ?"
     play sound "Click.mp3" noloop
 
     I "J'ai un peu du mal."
@@ -14341,8 +14460,9 @@ label password6:
         Na "Enfin arrivées." 
         play sound "Click.mp3" noloop
 
-    P "Oui ça fait du bien."
-    play sound "Click.mp3" noloop
+    $ bien = get_random_fais_du_bien()
+    P "[bien]" 
+    play sound "Click.mp3" noloop  
 
     I "Bon on commence à réviser ?"
     play sound "Click.mp3" noloop
@@ -14350,7 +14470,17 @@ label password6:
     $ validation = get_random_validation()
     Na "[validation]"
     play sound "Click.mp3" noloop
-   
+
+    "{b}{i} Vous révisez pendant deux heures avant de finirff.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Enfin fini de réviser." 
+    play sound "Click.mp3" noloop
+
+    $ thanks = get_random_thanks()
+    I "[thanks]"
+    play sound "Click.mp3" noloop
+
     return                            
 
 # Aris la plus belle <333333333333333  

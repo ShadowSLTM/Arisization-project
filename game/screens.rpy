@@ -1834,8 +1834,6 @@ screen Shop():
 
             text _("Clé officiel : ARIS-8J4K-F9Q7\n") 
 
-            text _("Clé du DLC : ARIS-GRFN-M4A1\n")  
-
 style about_label is gui_label 
 style about_label_text is gui_label_text
 style about_text is gui_text
@@ -1895,7 +1893,7 @@ screen credit():
             
             text _("Musiques utilisées sous licence libre.\n") 
 
-            label "{b}{i}— Propriété —\n{/i}{/b}"   
+            label "{b}{i}— Propriété —\n{/i}{/b}"    
 
             text _("Arisization Project (The Project of the Realization of Aris) appartient à Seydou N'Doye (Shadow_SLTM)\n")   
  

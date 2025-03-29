@@ -198,12 +198,15 @@ init python:
 
     comment_ca_va_list = [
         "Comment tu vas ?",
-        "Ça roule ?",
         "Tu vas bien ?",
-        "Comment ça va aujourd'hui ?",
-        "Tout va bien ?",
+        "Comment ça va ?",
         "Ça va comment ?",
-        "Comment te sens-tu ?",
+        "Coucou, comment ça va ?",
+        "Bonjour, comment ça va ?",
+        "Salut, comment ça va ?",
+        "Bonjour, ça va ?",
+        "Salut, ça va ?", 
+        "Oh salut, ça va ?", 
     ]
 
     def get_random_comment_ca_va():
@@ -237,3 +240,15 @@ init python:
 
     def get_random_thanks():
         return random.choice(thanks_list)  
+
+init python:
+    import random 
+
+    Nothing_list = [
+        "De rien.",
+        "Mais de rien.",
+        "Pas de souci.",
+    ]
+
+    def get_random_nothing():
+        return random.choice(Nothing_list)  
