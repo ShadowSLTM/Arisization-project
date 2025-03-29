@@ -43,7 +43,6 @@ init python:
         "Bonjour, bonjour.",
         "Salutation.", 
     ]
-
     
     def get_random_salutation():
         return random.choice(salutation_rdm)
@@ -83,18 +82,13 @@ init python:
     import random
 
     validation_list = [  
-        "D'accord, allons-y.",  
+        "D'accord.",  
         "Ok alors.",  
         "Ok.",  
-        "D'accord.",  
-        "Très bien.",  
-        "Ça me va.",  
+        "Très bien.",    
         "Entendu.",  
         "C'est parti.",  
-        "Allons-y.",  
         "Ça marche.",  
-        "On y va.",  
-        "Pourquoi pas.",    
     ]
 
     def get_random_validation():
@@ -126,7 +120,7 @@ init python:
         "Oui, je te suis.",
         "Je te suis, pas de problème.",
         "Je te suis, allons-y ensemble.",
-        ]
+        ] 
 
     def get_random_suivi():
         return random.choice(suivi_list)
@@ -252,3 +246,4 @@ init python:
 
     def get_random_nothing():
         return random.choice(Nothing_list)  
+ 

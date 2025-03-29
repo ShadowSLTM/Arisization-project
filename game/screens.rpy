@@ -322,7 +322,7 @@ screen navigation():
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## L'aide n’est ni nécessaire ni pertinente sur les appareils
-            ## mobiles.
+ 
             textbutton _("Aide") action ShowMenu("help")
 
             textbutton _("Boutique") action ShowMenu("Shop")
