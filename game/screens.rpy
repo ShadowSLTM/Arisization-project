@@ -1910,8 +1910,6 @@ screen success():
 
     tag menu
 
-    ## Cette déclaration concerne l’écran game_menu. L’élément vbox est ensuite
-    ## inclus dans la fenêtre de l'écran game_menu.
     use game_menu(_("Succès"), scroll="viewport"):
 
         style_prefix "about"
@@ -1921,8 +1919,6 @@ screen success():
             label "{b}{i}Progression\n{/i}{/b}" 
 
             text _("Succès : [success]/??????\n") 
-
-            text _("Act du jeu : \n") 
             
 style about_label is gui_label 
 style about_label_text is gui_label_text
@@ -1935,8 +1931,6 @@ screen robot():
 
     tag menu
 
-    ## Cette déclaration concerne l’écran game_menu. L’élément vbox est ensuite
-    ## inclus dans la fenêtre de l'écran game_menu.
     use game_menu(_("Ton robot"), scroll="viewport"):
 
         style_prefix "about"
