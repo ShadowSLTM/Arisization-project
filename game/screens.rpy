@@ -1083,7 +1083,7 @@ screen keyboard_help():
         text _("Ouvre le menu d'accessibilité.")
 
 
-screen mouse_help():
+screen mouse_help(): 
 
     hbox:
         label _("Bouton gauche")

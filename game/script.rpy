@@ -209,7 +209,7 @@ label hack:
 
         play sound "Menu.mp3" noloop 
 
-        $ success += 1
+        $ success += 1 
         "système ouvert avec succès." 
         play sound "Click.mp3" noloop 
 
@@ -3565,7 +3565,8 @@ label wallbreaking4:
     "{b}{i}Le cours continue sans probléme.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
-    M "Le cours est terminé vous pouvez quitter la salle."
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
     play sound "Click.mp3" noloop 
 
     P "Bon on va manger [newname] ?"
@@ -4682,8 +4683,9 @@ label choice9:
     "{b}{i}Le cours continua sans probléme.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
-    M "Le cours est terminé vous pouvez quitter la salle."
-    play sound "Click.mp3" noloop 
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
 
     P "Bon on va manger [newname] ?"
     play sound "Click.mp3" noloop 
@@ -5179,7 +5181,7 @@ label choice9:
     M "Bon le cours est bientôt terminé."
     play sound "Bell.mp3" noloop 
 
-    M "Bon bah Le cours est terminé vous pouvez quitter la salle."
+    M "Bon Le cours est terminé vous pouvez quitter la salle."
     play sound "Click.mp3" noloop
 
     P "Bon [newname] on y va ?"
@@ -6597,8 +6599,9 @@ label suite1:
     "{b}{i}Le cours continua sans probléme.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
-    M "Le cours est terminé vous pouvez quitter la salle."
-    play sound "Click.mp3" noloop 
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
 
     Na "Bon [newname] on y va ?"
     play sound "Click.mp3" noloop 
@@ -7095,8 +7098,9 @@ label suite1:
     "{b}{i}Le cours continua sans probléme.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
-    M "Le cours est terminé vous pouvez quitter la salle."
-    play sound "Click.mp3" noloop 
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
 
     P "Bon [newname] on va manger ?"
     play sound "Click.mp3" noloop
@@ -7753,8 +7757,9 @@ label debate:
     "{b}{i}Le débat continua jusqu'à la fin du cours.{/i}{/b}"
     play sound "Bell.mp3" noloop   
 
-    M "Le cours est terminé vous pouvez quitter la salle."
-    play sound "Click.mp3" noloop 
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
 
     P "Bon on retourne au dortoir [newname] ?"
     play sound "Click.mp3" noloop 
@@ -8539,8 +8544,9 @@ label debate:
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop
 
-    M "Le cours est terminé vous pouvez quitter la salle."
-    play sound "Click.mp3" noloop 
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
 
     M "N'oubliez l'exmaen de la semaine prochaine..."
     play sound "Click.mp3" noloop
@@ -8782,8 +8788,9 @@ label debate:
     "{b}{i}Le cours continua sans probléme.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
-    M "Le cours est terminé vous pouvez quitter la salle."
-    play sound "Click.mp3" noloop 
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
 
     P "Bon on retourne au dortoir ?"
     play sound "Click.mp3" noloop
@@ -9740,11 +9747,12 @@ label code:
     M "Bon maintenant commençons le cours, sortez votre livre page 10."
     play sound "Click.mp3" noloop 
 
-    "{b}{i} Tout le monde sort leur livre.{/i}{/b}"
+    "{b}{i} Tout le monde sort leur livre ent continuons le cours.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
-    M "Le cours est terminé vous pouvez quitter la salle."
-    play sound "Click.mp3" noloop 
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
 
     P "Bon on va manger [newname] ?"
     play sound "Click.mp3" noloop 
@@ -9961,8 +9969,9 @@ label code:
     "{b}{i} le cours continue dans le calme.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
-    M "Le cours est terminé vous pouvez quitter la salle."
-    play sound "Click.mp3" noloop 
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
 
     Na "Bon [newname] on n'y va ?"
     play sound "Click.mp3" noloop 
@@ -11775,8 +11784,9 @@ label password1:
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop
 
-    M "Le cours est terminé vous pouvez quitter la salle."
-    play sound "Click.mp3" noloop 
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
 
     P "Bon on va manger [newname]?"
     play sound "Click.mp3" noloop
@@ -12004,8 +12014,9 @@ label password1:
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop
 
-    M "Le cours est terminé vous pouvez quitter la salle."
-    play sound "Click.mp3" noloop 
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
 
     P "Bon on retourne au dortoir ?"
     play sound "Click.mp3" noloop   
@@ -12420,8 +12431,9 @@ label examen_pythagore:
     "{b}{i}Le cours continua sans probléme.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
-    M "Le cours est terminé vous pouvez quitter la salle."
-    play sound "Click.mp3" noloop 
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
 
     P "Bon on va manger [newname] ?"
     play sound "Click.mp3" noloop 
@@ -13647,8 +13659,9 @@ label password4:
     "{b}{i}Le cours continue sans problème.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
-    M "Le cours est terminé vous pouvez quitter la salle."
-    play sound "Click.mp3" noloop 
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
 
     P "Bon on va manger [newname] ?"
     play sound "Click.mp3" noloop 
@@ -13908,7 +13921,8 @@ label password4:
     "{b}{i} Le cours continue sans problème.{/i}{/b}"       
     play sound "Bell.mp3" noloop
 
-    M "Le cours est terminé vous pouvez quitter la salle."
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
     play sound "Click.mp3" noloop
 
     S "Bon, [newname] on retourne au dortoir ?" 
@@ -14222,8 +14236,9 @@ label password6:
     "{b}{i}Vous continuez de faire les exercices jusqu'à la fin du cours.{/i}{/b}"
     play sound "Bell.mp3" noloop
 
-    M "Le cours est terminé vous pouvez quitter la salle."
-    play sound "Click.mp3" noloop 
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
 
     P "Bon on va manger [newname] ?"
     play sound "Click.mp3" noloop 
@@ -14687,7 +14702,8 @@ label password7:
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop
 
-    M "Le cours est terminé vous pouvez quitter la salle."
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
     play sound "Click.mp3" noloop 
 
     P "Bon on va manger [newname]?"
@@ -14796,9 +14812,47 @@ label password7:
     M "Rebonjour, bon reprenons le cours."
     play sound "Click.mp3" noloop    
 
-    S "Ok alors."
+    Na "Ok alors."
     play sound "Click.mp3" noloop    
 
+    P "Compris."
+    play sound "Click.mp3" noloop    
+
+    "{b}{i} Vous reprenez le cours tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
+
+    S "Bon, [newname] on retourne au dortoir ?" 
+    play sound "Click.mp3" noloop
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Vous continuez vers le dortoir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez dans ton dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene room
+    show screen room 
+     
     return                            
 
 # Aris la plus belle <333333333333333    

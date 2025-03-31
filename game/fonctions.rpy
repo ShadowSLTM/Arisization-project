@@ -220,7 +220,6 @@ init python:
     ]
 
     def get_random_je_vais_bien():
-        """Retourne une phrase aléatoire de la liste."""
         return random.choice(je_vais_bien_rdm_list)
 
 init python:
@@ -246,4 +245,21 @@ init python:
 
     def get_random_nothing():
         return random.choice(Nothing_list)  
- 
+
+init python:
+    import random 
+
+    endlesson_list = [
+        "Le cours est fini, vous êtes libres de partir.",
+        "C'est tout pour aujourd’hui, vous pouvez sortir.",
+        "On s'arrête ici, vous pouvez y aller.",
+        "Le cours touche à sa fin, vous pouvez partir.",
+        "Voilà, c'est la fin du cours, vous pouvez sortir.",
+        "Nous avons terminé pour aujourd’hui, vous êtes libres.",
+        "Fin de la leçon, vous pouvez quitter la salle.",
+        "C'est bon pour aujourd’hui, vous pouvez partir.",
+        "La séance est terminée, vous pouvez quitter la classe.", 
+    ]
+
+    def get_random_endlesson():
+        return random.choice(endlesson_list)  
