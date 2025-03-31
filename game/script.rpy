@@ -3562,7 +3562,7 @@ label wallbreaking4:
     M "Merci beaucoup bon continuons le cours."
     play sound "Click.mp3" noloop 
 
-    "{b}{i}Le cours continue son probléme.{/i}{/b}"
+    "{b}{i}Le cours continue sans probléme.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
     M "Le cours est terminé vous pouvez quitter la salle."
@@ -14675,6 +14675,129 @@ label password7:
     N "Moi je vais me mettre à fond dans les révisions."
     play sound "Click.mp3" noloop  
 
+    M "Bien nous allons commencer le cours."
+    play sound "Click.mp3" noloop 
+
+    P  "Ce sera un cours sur quoi ?"
+    play sound "Click.mp3" noloop 
+
+    M "vous allez voir."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Le cours continue tranquillement.{/i}{/b}"
+    play sound "Bell.mp3" noloop
+
+    M "Le cours est terminé vous pouvez quitter la salle."
+    play sound "Click.mp3" noloop 
+
+    P "Bon on va manger [newname]?"
+    play sound "Click.mp3" noloop
+
+    Na "Oui."
+    play sound "Click.mp3" noloop
+
+    hide screen class_404 
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i}Tu continues vers les escaliers.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene staircase 
+    hide screen hallway
+
+    "{b}{i}Puis vers le hall.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hall
+    hide screen hall 
+
+    "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene lunchroom 
+    show screen lunchroom 
+    
+    Na "Bon on va prendre à manger ?"
+    play sound "Click.mp3" noloop 
+
+    P "Ok alors."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 200 
+
+    P "C'est bon [newname] tu t'es servie ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui c'est bon on peut aller s'asseoir."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous vous asseyez dans le réfectoire.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    P "Enfin à manger."
+    play sound "Click.mp3" noloop    
+
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]" 
+    play sound "Click.mp3" noloop  
+ 
+    "{b}{i} Vous commencez à manger jusqu'à la sonnerie.{/i}{/b}"
+    play sound "Bell.mp3" noloop  
+
+    P "Bon il faut qu'on retourne en classe."
+    play sound "Click.mp3" noloop    
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen lunchroom
+
+    "{b}{i}Vous vous diriges vers le hall.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall
+    show screen hall 
+
+    "{b}{i}Vous continuez vers le premier étage.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene staircase
+    hide screen hall 
+
+    "{b}{i}Vous continuez vers le couloir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hallway
+    show screen hallway 
+
+    "{b}{i}Vous continuez vers la salle de la classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+    
+    scene classroom  
+    show screen class_404 
+
+    M "Rebonjour, bon reprenons le cours."
+    play sound "Click.mp3" noloop    
+
+    S "Ok alors."
+    play sound "Click.mp3" noloop    
 
     return                            
 
