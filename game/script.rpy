@@ -14853,6 +14853,177 @@ label password7:
     scene room
     show screen room 
      
+    if pronom == "il":
+
+        Na "Enfin arrivés."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle":
+
+        Na "Enfin arrivées." 
+        play sound "Click.mp3" noloop
+
+    $ bien = get_random_fais_du_bien()
+    P "[bien]" 
+    play sound "Click.mp3" noloop  
+
+    Na "Bon Je vais me déconnecter et me recharger."
+    play sound "Click.mp3" noloop 
+
+    P "Pas de soucis."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[newname] se déconnecte et recharge sa batterie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bon je vais chercher à manger, j'avais complétement oublié."
+    play sound "Click.mp3" noloop  
+
+    scene black 
+    hide screen room
+
+    "{b}{i} Tu pars chercher à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    $ points -= 200 
+    scene room 
+    show screen room 
+
+    P "Enfin à manger... "
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Tu manges tranquillement pendant une demi-heure.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Enfin fini je vais pouvoir aller dormir."
+    play sound "Click.mp3" noloop  
+
+    "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene black
+    hide screen room
+    hide screen day
+
+    "{b}{i} Deux semaines plus tard, le 13 novembre.{/i}{/b}"
+    play sound "Alarm.mp3" noloop 
+
+    scene room 
+    show screen room
+    show screen day
+    $ day += 14
+
+    $ line = get_random_morning_line()
+    P "[line]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te lèves et te changes et puis tu aperçois [newname] déconnectée contre le mur.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Elle est encore déconnectée."
+    play sound "Click.mp3" noloop 
+
+    P "Je vais la démarrer."
+    play sound "Menu.mp3" noloop 
+
+    menu:   
+
+        "{b}{i} Démarrer [newname].{/i}{/b}" :
+            play sound "Menu.mp3" noloop 
+
+label password8:  
+
+    $ entered_password = renpy.input("Veuillez entrer votre mot de passe pour [newname].")
+    $ entered_password = entered_password.strip()
+
+    if entered_password == stored_password: 
+
+        "Mot de passe correct. Accès autorisé." 
+        play sound "Menu.mp3" noloop
+
+    else: 
+
+        "Mot de passe incorrect. Accès refusé." 
+        play sound "Menu.mp3" noloop
+        jump password8
+
+    $ start = get_random_start()
+    Na "[start]"
+    play sound "Click.mp3" noloop 
+
+    Na "Bonjour [prenom]."
+    play sound "Click.mp3" noloop 
+
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop 
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Et toi ?" 
+    play sound "Click.mp3" noloop 
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]" 
+    play sound "Click.mp3" noloop
+
+    Na "Bon on va en cours ?"
+    play sound "Click.mp3" noloop  
+
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop 
+
+    hide screen room 
+    scene black
+
+    "{b}{i}Tu quittes le dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Tu te diriges vers la salle de classe mais tu croises [Y].{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop  
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Y "[je_vais_bien_txt]" 
+    play sound "Click.mp3" noloop  
+
+    P "Sion tu es prête pour l'examen ?"
+    play sound "Click.mp3" noloop  
+
+    Y "Oui et vous ?"
+    play sound "Click.mp3" noloop  
+
+    P "Oui absolument."
+    play sound "Click.mp3" noloop  
+
+    Na "Moi aussi."
+    play sound "Click.mp3" noloop  
+
+    Y "Cool alors."
+    play sound "Click.mp3" noloop  
+
+    Na "Bon on dois aller en cours."
+    play sound "Click.mp3" noloop  
+
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
+    
+    "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
     return                            
 
 # Aris la plus belle <333333333333333    
