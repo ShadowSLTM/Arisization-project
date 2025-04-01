@@ -1918,7 +1918,7 @@ screen success():
 
             label "{b}{i}Progression\n{/i}{/b}" 
 
-            text _("Succès : [success]/??????\n") 
+            text _("Succès : [success]/16\n") 
             
 style about_label is gui_label 
 style about_label_text is gui_label_text

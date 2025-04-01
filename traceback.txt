@@ -1,28 +1,24 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 4, in script
-    define S = initialize_character()
-  File "game/script.rpy", line 4, in <module>
-    define S = initialize_character()
-NameError: name 'initialize_character' is not defined
+  File "game/script.rpy", line 14349, in script
+    P "[comment_ca_va]"
+Exception: Sayer 'P' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 4, in script
-    define S = initialize_character()
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 2248, in execute
-    self.set()
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 2262, in set
-    value = renpy.python.py_eval_bytecode(self.code.bytecode)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 4, in <module>
-    define S = initialize_character()
-NameError: name 'initialize_character' is not defined
+  File "game/script.rpy", line 14349, in script
+    P "[comment_ca_va]"
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
+    Say.execute(self)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 583, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 472, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'P' is not defined.
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 Arisization Project Version_test
-Sat Mar 29 00:24:49 2025
+Tue Apr  1 18:39:35 2025

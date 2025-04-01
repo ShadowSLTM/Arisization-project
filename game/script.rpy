@@ -54,9 +54,14 @@ label key:
 label identity: 
 
     play sound "Menu.mp3" noloop
-    $ prenom = renpy.input("Quel est votre prénom de lycéen ?").strip()
-    $ nom = renpy.input("Quel est votre nom de lycéen ?").strip()
-    $ pronom = renpy.input("Quel est votre genre ? (il ou elle)").strip()
+    $ prenom = renpy.input("Quel est votre prénom de lycéen ?")
+    $ prenom = prenom.strip()
+
+    $ nom = renpy.input("Quel est votre nom de lycéen ?")
+    $ nom = nom.strip()
+
+    $ pronom = renpy.input("Quel est votre genre ? (il ou elle)")
+    $ pronom = pronom.strip()
 
     if pronom not in {"il", "elle"}:
         "Erreur système. Veuillez réessayer."
@@ -1279,8 +1284,6 @@ label rencontre:
     H "[thanks]"
     play sound "Click.mp3" noloop
 
-
-
     T "De rien, maintenant suivant s'il vous plait."
     play sound "Click.mp3" noloop 
 
@@ -2335,7 +2338,7 @@ label lowcpu:
 
     "{b}{i}Tu pars manger avant de revenir au dortoir vers 13h45.{/i}{/b}" 
     play sound "Click.mp3" noloop
-    $ points -= 100
+    $ points -= 200
 
     scene room 
     show screen room 
@@ -2579,6 +2582,7 @@ label choice4:
 
     if newname == "Aris":
 
+        $ success += 1
         "Le prénom a été enregistré dans le système." 
         play sound "Menu.mp3" noloop
 
@@ -4950,6 +4954,8 @@ label choice9:
    
     if grade == 20.0:
         
+        $ success += 1
+
         M "Félicitation tu l'as réussi à la perfection comme d'habitude."
         play sound "Click.mp3" noloop
 
@@ -5530,6 +5536,8 @@ label choice9:
 
         "{b}{i} Accepter les documents.{/i}{/b}" :
 
+            $ success += 1
+
             P "Merci beaucoup ça fait plaisir."
             play sound "Click.mp3" noloop 
 
@@ -5918,7 +5926,7 @@ label choice9:
 
             Na "Vérification...."
             play sound "Menu.mp3" noloop 
-            $ update += 1.0
+            $ success += 1 
 
             Na "Mise à jour terminée, la version actuelle est maintenant la [update]."
             play sound "Click.mp3" noloop 
@@ -5929,7 +5937,7 @@ label choice9:
             Na "Oui je confirme."
             play sound "Click.mp3" noloop
 
-label afterupdate:
+label afterupdate: 
 
     P  "Bon aujourd'hui je vais t'entraîner."
     play sound "Click.mp3" noloop 
@@ -7216,6 +7224,8 @@ label suite1:
 
         "{b}{i} Accepter [S]{/i}{/b}" :
     
+            $ success += 1
+
             P "Bien sûr viens t'asseoir avec nous."
             play sound "Click.mp3" noloop 
 
@@ -8013,6 +8023,8 @@ label debate:
 
         "{b}{i} Ouvrir le message.{/i}{/b}":
             play sound "Menu.mp3" noloop 
+
+            $ success += 1 
             
             P "Bon voyons voir ce que [Su] m'a envoyé."
             play sound "Click.mp3" noloop 
@@ -8345,6 +8357,8 @@ label debate:
 
         "{b}{i} Se reposer {/i}{/b}" : 
             
+            $ success += 1 
+
             "{b}{i} Tu te reposes pendant trois heures avant de te réveiller {/i}{/b}"
             play sound "Click.mp3" noloop 
 
@@ -8780,6 +8794,8 @@ label debate:
 
     if Code == "print(\"text\")":
 
+        $ success += 1
+        
         M "Bonne réponse."
         play sound "Click.mp3" noloop
 
@@ -9346,6 +9362,8 @@ label code:
     menu:    
 
         "{b}{i} Réveiller [I] {/i}{/b}" : 
+
+            $ success += 1
 
             "{b}{i} Tu approches calmement pour la réveiller.{/i}{/b}"
             play sound "Click.mp3" noloop
@@ -10105,6 +10123,8 @@ label code:
 
     elif suspect == "Subaru": 
 
+        $ success += 1
+
         P "Je pense que c'est [S]."
         play sound "Click.mp3" noloop
 
@@ -10329,6 +10349,8 @@ label code:
 
         "{b}{i} Aller voir [I]. {/i}{/b}" :
             play sound "Menu.mp3" noloop 
+
+            $ success += 1
 
             P "Je vais aller la voir pour voir si elle va bien."
             play sound "Footsteps.mp3" noloop 
@@ -11863,6 +11885,8 @@ label password1:
         "{b}{i} Lui dire mes inquiétudes.{/i}{/b}":
             play sound "Menu.mp3" noloop 
 
+            $ success += 1
+
             P "C'est juste que j'avait un truc qui me passait en tête..."
             play sound "Click.mp3" noloop 
 
@@ -12607,6 +12631,8 @@ label examen_pythagore:
     play sound "Click.mp3" noloop 
    
     if grade == 20.0:
+
+        $ success += 1
         
         M "Félicitation tu l'as réussi à la perfection comme d'habitude."
         play sound "Click.mp3" noloop
@@ -13741,7 +13767,7 @@ label password4:
     play sound "Click.mp3" noloop 
 
     $ comment_ca_va = get_random_comment_ca_va()
-    Pü "[comment_ca_va]"
+    P "[comment_ca_va]"
     play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
@@ -13907,6 +13933,8 @@ label password4:
     play sound "Click.mp3" noloop
 
     if answer == "initiate_humanoid_robot(setting=true)": 
+
+        $ success += 1 
 
         M "C'est exact, bien joué."
         play sound "Click.mp3" noloop
@@ -14318,7 +14346,7 @@ label password6:
     play sound "Click.mp3" noloop 
 
     $ comment_ca_va = get_random_comment_ca_va()
-    Pü "[comment_ca_va]"
+    P "[comment_ca_va]"
     play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
@@ -15031,6 +15059,9 @@ label password8:
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
+
+    scene classroom  
+    show screen class_404     
 
     $  salutation_rdm_M = get_random_salutation()
     M "[salutation_rdm_M]"
