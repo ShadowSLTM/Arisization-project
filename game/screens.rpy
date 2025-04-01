@@ -1859,6 +1859,8 @@ screen credit():
 
             text _("Concepts : [Dc] (Shadow_SLTM) et divers collaborateurs\n")
 
+            text _("Système des succès : [Dc] (Shadow_SLTM)\n")
+
             text _("Création du personnage AK-24 et M82A1 : [Dc] (Shadow_SLTM)\n") 
 
             text _("Illustration du menu : [Dc] (Shadow_SLTM)\n")
@@ -1918,7 +1920,7 @@ screen success():
 
             label "{b}{i}Progression\n{/i}{/b}" 
 
-            text _("Succès : [success]/16\n") 
+            text _("Succès : [success]/17\n") 
             
 style about_label is gui_label 
 style about_label_text is gui_label_text

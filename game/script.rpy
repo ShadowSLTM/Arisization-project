@@ -2615,6 +2615,8 @@ label choice5:
 
     if ip == "001.018.009.019":
 
+        $ success += 1
+  
         "{b}{i}Initialisation de l'adresse IP en cours...{/i}{/b}"
         play sound "Menu.mp3" noloop
 
@@ -10350,7 +10352,7 @@ label code:
         "{b}{i} Aller voir [I]. {/i}{/b}" :
             play sound "Menu.mp3" noloop 
 
-            $ success += 1
+            $ success += 1 
 
             P "Je vais aller la voir pour voir si elle va bien."
             play sound "Footsteps.mp3" noloop 
