@@ -4391,6 +4391,7 @@ label dorm2:
     show screen room
     show screen day
     $ day += 5 
+    $ points -= 1000
 
     play sound "Alarm.mp3" noloop 
     $ line = get_random_morning_line()
@@ -5812,6 +5813,7 @@ label choice9:
     show screen room
     show screen day
     $ day += 14
+    $ points -= 2800
 
     $ line = get_random_morning_line()
     P "[line]"
@@ -7965,6 +7967,7 @@ label debate:
     show screen room
     show screen day
     $ day += 3
+    $ points -= 600
 
     $ line = get_random_morning_line()
     P "[line]"
@@ -11588,6 +11591,7 @@ label password:
     show screen room
     show screen day
     $ day += 3 
+    $ points -= 600
 
     $ line = get_random_morning_line()
     P "[line]"
@@ -12170,6 +12174,7 @@ label password1:
     show screen room
     show screen day
     $ day += 4 
+    $ points -= 800
 
     $ line = get_random_morning_line()
     P "[line]"
@@ -12945,6 +12950,7 @@ label examen_pythagore:
     show screen room
     show screen day
     $ day += 3 
+    $ points -= 600
 
     $ line = get_random_morning_line()
     P "[line]"
@@ -13445,6 +13451,7 @@ label password3:
     show screen room
     show screen day 
     $ day += 7
+    $ points -= 1400
 
     $ line = get_random_morning_line()
     P "[line]"
@@ -14911,7 +14918,8 @@ label password7:
     scene room 
     show screen room
     show screen day
-    $ day += 14
+    $ day += 14 
+    $ points -= 2800
 
     $ line = get_random_morning_line()
     P "[line]"
@@ -15015,14 +15023,137 @@ label password8:
     P "[suivi]"
     play sound "Footsteps.mp3" noloop
     
-    "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen hallway
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
+
+    $  salutation_rdm_M = get_random_salutation()
+    M "[salutation_rdm_M]"
+    play sound "Click.mp3" noloop
+
+    $  salutation_rdm_Na = get_random_salutation()
+    Na "[salutation_rdm_Na]"
+    play sound "Click.mp3" noloop 
+
+    $  salutation_rdm_P = get_random_salutation()
+    P "[salutation_rdm_P]"
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tout le monde s'asseoit à sa place respective.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    Na "Bien comme vous le savez aujourd'hui vous avez votre troisiéme examen qui se portera sur le langage Runix."
+    play sound "Click.mp3" noloop  
+
+    N "Je sens que ça va être dur cet examen."
+    play sound "Click.mp3" noloop  
+
+    Y "Ne t'inquiétes pas, ça va bien se passer."
+    play sound "Click.mp3" noloop 
+
+    N "Merci."
+    play sound "Click.mp3" noloop 
+
+    $ thanks = get_random_thanks()
+    Y "[thanks]"
+    play sound "Click.mp3" noloop
+
+    M "Bon je vais vous distribuer votre copie." 
+    play sound "Click.mp3" noloop 
+
+    Na "Ok." 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}[M] Commence à distribuer les copies.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    M "Bon vous avez une heure pour l'examen." 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tout le monde retourne sa copie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    $ grade = 0.0 
+
+    P "Bon voyons voir....." 
+    play sound "Click.mp3" noloop 
+
+    $ grade = 0.0
+
+    $ answer1 = renpy.input("En quelle année a été créé Runix ?").strip()
+
+    if answer1 == "2092":
+        $ grade += 2.0
+    else:
+        $ grade += 0.0
+
+    $ answer2 = renpy.input("Citez une des deux personnes qui a créé Runix.").strip().lower()
+
+    if answer2 in ["saori kaminari", "mizuki suzumiya"]:
+        $ grade += 2.0
+    else:
+        $ grade += 0.0
+
+    $ answer3 = renpy.input("Comment commence-t-on une ligne de code en Runix ?").strip()
+
+    if answer3 in ["initiate", "initiate_"]:
+        $ grade += 2.0
+    else:
+        $ grade += 0.0
+
+    $ answer4 = renpy.input("Quelle est l'extension des fichiers codés en Runix ?").strip().lower()
+
+    if answer4 in ["rnx", ".rnx"]:
+        $ grade += 2.0
+    else:
+        $ grade += 0.0
+
+    $ answer5 = renpy.input("Quelle est la fonction pour activer les paramètres ?").strip()
+
+    if answer5 == "(settings=true)":
+        $ grade += 2.0
+    else:
+        $ grade += 0.0
+
+    $ answer6 = renpy.input("Quelle est la fonction pour désactiver les paramètres ?").strip()
+
+    if answer6 == "(settings=false)":
+        $ grade += 2.0
+    else:
+        $ grade += 0.0
+
+    $ answer7 = renpy.input("Quelle est la commande pour initier un système ?").strip()
+
+    if answer7 == "initiate_system":
+        $ grade += 2.0
+    else:
+        $ grade += 0.0
+
+    $ answer8 = renpy.input("Pour quelle technologie le langage Runix a-t-il été créé à la base ?").strip().lower()
+
+    if answer8 == "les robots":
+        $ grade += 2.0
+    else:
+        $ grade += 0.0
+
+    $ answer9 = renpy.input("Quel est le nom de la société ayant développé Runix ?").strip().lower()
+
+    if answer9 == "neogen technologies":
+        $ grade += 2.0
+    else:
+        $ grade += 0.0
+
+    $ answer10 = renpy.input("Quel est le bout de code pour éteindre en désactivant les paramètres ?").strip()
+
+    if answer10 == "shutdown(settings=false)":
+        $ grade += 2.0
+    else:
+        $ grade += 0.0
 
     return                            
 
