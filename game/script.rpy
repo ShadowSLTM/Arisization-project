@@ -3971,6 +3971,8 @@ label wallbreaking4:
 
         "{b}{i}aller au club{/i}{/b}" :
             
+            $ success += 1
+            
             P "aller en salle de club."
             play sound "Menu.mp3" noloop 
 
