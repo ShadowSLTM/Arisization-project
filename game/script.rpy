@@ -36,7 +36,8 @@ label key:
         $ renpy.restart_interaction()
         jump key
 
-    $ success = 0
+    $ success = 0 
+
     if key == "ARIS-8J4K-F9Q7" or key == "ARIS-DEVS":
 
         $ A = Character("AK-24", color="#00eeff")
@@ -48,7 +49,7 @@ label key:
         $ origine = "16LAB" 
         $ success += 1
 
-        "DLC secret déverouillé."
+        "DLC secret déverouillé."  
         play sound "Click.mp3" noloop
 
 label identity: 
@@ -10588,7 +10589,7 @@ label choisir_mot_de_passe:
     $ password = renpy.input("Veuillez choisir un mot de passe pour [newname].")
     $ password = password.strip()
 
-    if password:
+    if password:  
 
         $ stored_password = password
 
@@ -10606,12 +10607,15 @@ label password:
     $ entered_password = entered_password.strip()
 
     if entered_password == stored_password:
+        "Mot de passe correct. Accès autorisé." 
+        play sound "Menu.mp3" noloop
 
+    elif len(entered_password) > 10:
+        $ success += 1
         "Mot de passe correct. Accès autorisé." 
         play sound "Menu.mp3" noloop
 
     else:
-
         "Mot de passe incorrect. Accès refusé." 
         play sound "Menu.mp3" noloop
         jump password  
@@ -15116,8 +15120,6 @@ label password8:
     P "Bon voyons voir....." 
     play sound "Click.mp3" noloop 
 
-    $ grade = 0.0
-
     $ answer1 = renpy.input("En quelle année a été créé Runix ?").strip()
 
     if answer1 == "2092":
@@ -15187,6 +15189,12 @@ label password8:
         $ grade += 2.0
     else:
         $ grade += 0.0
+
+    P "Enfin fini..." 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Après cela tout le monde remet sa copie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
 
     return                            
 

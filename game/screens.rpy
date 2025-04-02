@@ -1476,7 +1476,7 @@ style bubble_namebox is empty
 style bubble_who is default
 style bubble_what is default
 
-style bubble_window:
+style bubble_window: 
     xpadding 30
     top_padding 5
     bottom_padding 5
@@ -1809,7 +1809,7 @@ screen draw():
         add "Images/Draw.Jpeg"
 
 screen success():
-    frame:
+    frame: 
         xalign 0.99
         ypos 80
         has vbox  
@@ -1920,8 +1920,8 @@ screen success():
 
             label "{b}{i}Progression\n{/i}{/b}" 
 
-            text _("Succès : [success]/17\n") 
-            
+            text _("Succès : [success]/18\n") 
+
 style about_label is gui_label 
 style about_label_text is gui_label_text
 style about_text is gui_text
@@ -1956,4 +1956,4 @@ style about_label_text is gui_label_text
 style about_text is gui_text
 
 style about_label_text: 
-    size gui.label_text_size
+    size gui.label_text_size 
