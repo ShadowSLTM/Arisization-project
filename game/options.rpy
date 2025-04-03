@@ -118,7 +118,6 @@ define config.window = "auto"
 define config.window_show_transition = Dissolve(.2)
 define config.window_hide_transition = Dissolve(.2)
 
-
 ## Préférences par défaut ######################################################
 
 ## Contrôle la vitesse du texte. La valeur par défaut, 0, est infinie. Toute
@@ -131,7 +130,7 @@ default preferences.text_cps = 15
 ## attente. Des valeurs réputées correctes sont comprises dans une plage allant
 ## de 0 à 30.
 
-default preferences.afm_time = 10
+default preferences.afm_time = 7
 
 
 ## Répertoire de sauvegarde ####################################################

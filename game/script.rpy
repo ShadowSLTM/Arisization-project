@@ -654,10 +654,10 @@ label grayroom:
     P "Oui, c'est génial."
     play sound "Click.mp3" noloop
 
-    Sk "oui je confirme." 
+    Sk "Oui je confirme." 
     play sound "Click.mp3" noloop
 
-    S "oui mais pas besoin de s'affoler car je vous rappelle qui nous reste notre dernière année au lycée."
+    S "Oui mais pas besoin de s'affoler car je vous rappelle qui nous reste notre dernière année au lycée."
     play sound "Click.mp3" noloop
 
     Gt "Oui, [S] a raison il vous reste votre dernière année."
@@ -844,7 +844,7 @@ label grayroom:
     R "Bonjour, je suis venue vous. Je suis la lycéenne qui doit se charger des nouveaux lycéens ici, dont vous."
     play sound "Click.mp3" noloop
 
-    P "Ok, merci de nous guider. Mais comment tu t'appelles ?"
+    P "Ok, merci de nous guider. Mais comment vous vous appelez ?"
     play sound "Click.mp3" noloop 
 
 label rencontre:                 
@@ -860,7 +860,7 @@ label rencontre:
 
     elif pronom == "elle": 
 
-        $ easter_egg = get_random_enchente_f()
+        $ easter_egg = get_random_enchente_f() 
         P "[easter_egg]"
         play sound "Click.mp3" noloop 
 
@@ -3069,7 +3069,7 @@ label wallbreaking4:
     P "Bon je vais poser mes affaires."
     play sound "Click.mp3" noloop 
 
-    Na "Ok"
+    Na "Ok."
     play sound "Click.mp3" noloop 
 
     "{b}{i}Tu poses tes affaires dans ton placard.{/i}{/b}"
@@ -3292,7 +3292,7 @@ label wallbreaking4:
         "{b}{i}Russie.{/i}{/b}" : 
             $ grade += 0.0
 
-    M "Dernière question : les Robots humanoide ont-ils des émotions ?"
+    M "Dernière question : les Robots humanoides ont-ils des émotions ?"
     play sound "Click.mp3" noloop 
 
     menu:    
@@ -15182,7 +15182,7 @@ label password8:
 
     if answer9 == "neogen technologies":
         $ grade += 2.0
-    else:
+    else: 
         $ grade += 0.0
 
     $ answer10 = renpy.input("Quel est le bout de code pour éteindre en désactivant les paramètres ?").strip()
@@ -15197,6 +15197,89 @@ label password8:
 
     "{b}{i}Après cela tout le monde remet sa copie.{/i}{/b}"
     play sound "Click.mp3" noloop 
+
+    M "Parfait maintenant vous pouvez aller en pause, je vous renderez vos copies demain matin."
+    play sound "Click.mp3" noloop  
+
+    N "Demain !? c'est surpreant, d'habitude c'est l'après-midi."
+    play sound "Click.mp3" noloop  
+
+    M "Oui mais c'était un test écrit cette fois-ci contrairement à avant."
+    play sound "Click.mp3" noloop  
+
+    hide screen class_404
+    scene black
+
+    "{b}{i}Vous vous dirigez vers le couloir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+    
+    scene hallway 
+    show screen hallway 
+
+    P "Enfin une pause ça fais plasir."
+    play sound "Click.mp3" noloop  
+
+    Na "Oui ça fais vraiment du bien."
+    play sound "Click.mp3" noloop  
+
+    P "Bon je reviens je vais juste aux toilettes."
+    play sound "Click.mp3" noloop
+
+    Na "Ok, moi je vais discuter un peu avec Yuki."
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i} Tu te diriges vers les toilettes.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene restroom
+    show screen WC 
+
+    P "Bon je vais faire ce que j'ai à faire."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Tu fais ta commission avant de sortir des toilettes.{/i}{/b}"
+    play sound "Toilet.mp3" noloop 
+
+    P "Bon il faut que je retourne en cours."
+    play sound "Footsteps.mp3" noloop
+
+    scene black 
+    hide screen WC
+
+    "{b}{i} Tu quittes les toilettes.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway
+    show screen hallway
+
+    "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene black 
+
+    "{b}{i} Tu arrives finalement en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene classroom  
+    show screen class_404 
+
+    P "Rebonjour."
+    play sound "Click.mp3" noloop
+
+    Y "Rebonjour."
+    play sound "Click.mp3" noloop
+
+    M "Rebonjour, Bon nous allons faire un nouveau sujet."
+    play sound "Click.mp3" noloop  
+
+    P "Ce sera quoi ?"
+    play sound "Click.mp3" noloop  
+
+    P ""
+    play sound "Click.mp3" noloop  
 
     return                            
 
