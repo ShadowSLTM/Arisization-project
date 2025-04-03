@@ -1,7 +1,7 @@
 # Déclarez les personnages principaux utilisés dans le jeu.
 
 default P = Character('[prenom] [nom]', color="#afafaf")   
-default A = Character('AK-24', color="#00eeff")
+default A = Character('???????', color="#00eeff")
 
 # versions de AK-24 
 

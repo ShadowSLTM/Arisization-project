@@ -13,10 +13,10 @@ label start:
     $ model = "robot humanoïde" 
     $ ending = 0
     default stored_password = ""
-    default system = "AetherOS"
-    default ip = "000.000.000.000"
+    default system = "???????"
+    default ip = ""
     $ message = 0
-    $ newname = "Aris"  
+    default newname = ""  
 
     stop music fadeout 2.0   
 
@@ -40,7 +40,6 @@ label key:
 
     if key == "ARIS-8J4K-F9Q7" or key == "ARIS-DEVS":
 
-        $ A = Character("AK-24", color="#00eeff")
         $ origine = "la chambre grise" 
 
     elif key == "ARIS-GRFN-M4A1":
@@ -267,6 +266,8 @@ label hack:
 
     else:  
 
+        $ A = Character("AK-24", color="#00eeff")
+        
         R "Initialisation en cours......" 
         play sound "Click.mp3" noloop
 
@@ -5797,6 +5798,8 @@ label choice9:
 
         P "Bon voyons voir ces documents..." 
         play sound "Click.mp3" noloop 
+
+        $ system = "AetherOS"
 
         P "Intéressant." 
         play sound "Click.mp3" noloop 

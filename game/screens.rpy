@@ -258,6 +258,7 @@ screen quick_menu():
             textbutton _("Chargement R.") action QuickLoad()
             textbutton _("Préf.") action ShowMenu('preferences')
             textbutton _("Succès") action ShowMenu('success')
+            textbutton _("[A]") action ShowMenu("robot") 
 
 ## Ce code garantit que le menu d’accès rapide sera affiché dans le jeu, tant
 ## que le joueur n’aura pas explicitement demandé à cacher l’interface.
@@ -1942,6 +1943,8 @@ screen robot():
             label "{b}{i}Ton robot\n{/i}{/b}" 
 
             text _("nom de code : [A]\n") 
+
+            text _("Prénom : [newname]\n")
 
             text _("Mot de passe : [stored_password]\n") 
 

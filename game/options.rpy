@@ -212,7 +212,6 @@ init python:
 
 define build.google_play_key = "..."
 
-
 ## Le nom d’utilisateur et du projet associé au projet itch.io, séparé par un
 ## slash.
 
