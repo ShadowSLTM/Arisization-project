@@ -1954,6 +1954,8 @@ screen robot():
 
             text _("Addresse IP : [ip]\n")   
 
+            text _("Origine : [robotorigine]\n")  
+
 style about_label is gui_label 
 style about_label_text is gui_label_text
 style about_text is gui_text

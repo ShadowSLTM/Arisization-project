@@ -15,8 +15,9 @@ label start:
     default stored_password = ""
     default system = "???????"
     default ip = ""
-    $ message = 0
+    $ message = 0 
     default newname = ""  
+    default robotorigine = "???????" 
 
     stop music fadeout 2.0   
 
@@ -351,7 +352,7 @@ label keep:
 
     play sound "Menu.mp3" noloop 
 
-    P "Je refuse de la laisser ici alors qu'elle est en bonne état de fonctionner et en plus j'ai pris du temps pour la démarrer."
+    P "Je refuse de la laisser ici alors qu'elle est en bonne état de fonctionner malgré son oublie numérique et en plus j'ai pris du temps pour la démarrer."
     play sound "Click.mp3" noloop 
 
     if wallbreak == 0: 
@@ -5800,6 +5801,8 @@ label choice9:
         play sound "Click.mp3" noloop 
 
         $ system = "AetherOS"
+        $ robotorigine = "NeoGen technologie" 
+        $ renpy.ShowMenu("robot")
 
         P "Intéressant." 
         play sound "Click.mp3" noloop 
@@ -15259,9 +15262,10 @@ label password8:
     show screen hallway
 
     "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene black 
+    hide screen hallway
 
     "{b}{i} Tu arrives finalement en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -15281,8 +15285,98 @@ label password8:
     P "Ce sera quoi ?"
     play sound "Click.mp3" noloop  
 
-    P ""
+    M "Ce sera un cours de français."
     play sound "Click.mp3" noloop  
+
+    P "Je vois merci."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Le cours continue tranquillement.{/i}{/b}"
+    play sound "Bell.mp3" noloop
+
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop 
+
+    P "Bon on va manger [newname]?"
+    play sound "Click.mp3" noloop
+
+    Na "Oui."
+    play sound "Click.mp3" noloop
+
+    hide screen class_404 
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i}Tu continues vers les escaliers.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene staircase 
+    hide screen hallway
+
+    "{b}{i}Puis vers le hall.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hall
+    hide screen hall 
+
+    "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene lunchroom 
+    show screen lunchroom 
+    
+    Na "Bon on va prendre à manger ?"
+    play sound "Click.mp3" noloop 
+
+    P "Ok alors."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 200 
+
+    P "C'est bon [newname] tu t'es servie ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui c'est bon on peut aller s'asseoir."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous allez chercher une place mais [newname] tribuche en chemin avant de se faire rattraper par [S].{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    $ thanks = get_random_thanks()
+    Na "[thanks]"
+    play sound "Click.mp3" noloop 
+
+    $ nothing = get_random_nothing()
+    S "[nothing] Sinon comment elle va ta machine, [prenom] ?"
+    play sound "Click.mp3" noloop
+
+    P "Déjà, on ne dit pas machine c'est super péjoraif, mais [model] doté d'une conscience humaine."
+    play sound "Click.mp3" noloop
+
+    S "Ah ok, moi j'ai un terme moins péjoratif pour elle, pourquoi pas engrenage aur pattes."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Puis il y a un blanc pendant un instant avant qu'[newname] s'adresse à [S].{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    Na "Je suis [nemname], fils de pute."
+    play sound "Click.mp3" noloop 
+
+    
+
+
+
+
+
 
     return                            
 
