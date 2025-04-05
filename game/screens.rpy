@@ -1921,11 +1921,11 @@ screen success():
 
             label "{b}{i}Progression\n{/i}{/b}" 
 
-            text _("Succès : [success]/19\n") 
+            text _("Succès : [success]/21\n") 
 
 style about_label is gui_label 
 style about_label_text is gui_label_text
-style about_text is gui_text
+style about_text is gui_text 
 
 style about_label_text: 
     size gui.label_text_size
@@ -1942,7 +1942,7 @@ screen robot():
 
             label "{b}{i}Ton robot\n{/i}{/b}" 
 
-            text _("nom de code : [A]\n") 
+            text _("Nom de code : [A]\n") 
 
             text _("Prénom : [newname]\n")
 
@@ -1952,7 +1952,7 @@ screen robot():
 
             text _("Mise à jour : [update]\n") 
 
-            text _("Addresse IP : [ip]\n")   
+            text _("Adresse IP : [ip]\n")   
 
             text _("Origine : [robotorigine]\n")  
 

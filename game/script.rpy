@@ -1818,7 +1818,7 @@ label rencontre:
     Kh "Je suis ici pour vous donner votre budget pour votre projet."
     play sound "Click.mp3" noloop
 
-    $ points += 10000 
+    $ points += 15000 
 
     "{b}{i}[Kh] te transfert l'argent sur ton compte.{/i}{/b}" 
     play sound "Click.mp3" noloop 
@@ -3338,7 +3338,9 @@ label wallbreaking4:
     play sound "Click.mp3" noloop 
 
     if grade == 20.0:
-      
+
+        $ success += 1
+        
         M "Félicitation tu l'as réussi à la perfection."
         play sound "Click.mp3" noloop
    
@@ -5801,13 +5803,12 @@ label choice9:
         play sound "Click.mp3" noloop 
 
         $ system = "AetherOS"
-        $ robotorigine = "NeoGen technologie" 
-        $ renpy.ShowMenu("robot")
+        $ robotorigine = "Neogen Technologies" 
 
         P "Intéressant." 
         play sound "Click.mp3" noloop 
 
-        P "Tu continues de regarder pendant un petit moment."
+        "{b}{i}Tu continues de regarder pendant un petit moment.{/i}{/b}"
         play sound "Click.mp3" noloop 
 
     else: 
@@ -5891,8 +5892,6 @@ label choice9:
 
             Na "Ok alors."
             play sound "Click.mp3" noloop
-
-            jump afterupdate
         
         "{b}{i} faire la mise à jour {/i}{/b}" : 
         
@@ -5947,8 +5946,6 @@ label choice9:
 
             Na "Oui je confirme."
             play sound "Click.mp3" noloop
-
-label afterupdate: 
 
     P  "Bon aujourd'hui je vais t'entraîner."
     play sound "Click.mp3" noloop 
@@ -9269,7 +9266,7 @@ label code:
 
         else:
 
-            Na "Qu'est-ce que tu tentes de faire."
+            A "Qu'est-ce que tu tentes de faire."
             play sound "Stumble.mp3" noloop
 
             "{b}{i}[newname] se met à plaquer au sol.{/i}{/b}"
@@ -12186,11 +12183,11 @@ label password1:
 
     if grade == 20.0:
 
-        $ points += 10000
+        $ points += 15000
 
     else:
 
-        $ points += 7500 
+        $ points += 11000 
 
     "{b}{i} Tu manges tranquillement pendant une demi-heure.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -14867,8 +14864,8 @@ label password7:
     P "Compris."
     play sound "Click.mp3" noloop    
 
-    "{b}{i} Vous reprenez le cours tranquillement.{/i}{/b}"
-    play sound "Click.mp3" noloop  
+    "{b}{i} Vous reprenez le cours tranquillement jusqu'à la fin du cours.{/i}{/b}"
+    play sound "Bell.mp3" noloop  
 
     $ endlesson = get_random_endlesson()
     M "[endlesson]"
@@ -15359,7 +15356,7 @@ label password8:
     S "[nothing] Sinon comment elle va ta machine, [prenom] ?"
     play sound "Click.mp3" noloop
 
-    P "Déjà, on ne dit pas machine c'est super péjoraif, mais [model] doté d'une conscience humaine."
+    P "Déjà, on ne dit pas machine c'est super péjoraif, mais [model] doté d'une conscience humaine avancée."
     play sound "Click.mp3" noloop
 
     S "Ah ok, moi j'ai un terme moins péjoratif pour elle, pourquoi pas engrenage aur pattes."
@@ -15368,15 +15365,351 @@ label password8:
     "{b}{i}Puis il y a un blanc pendant un instant avant qu'[newname] s'adresse à [S].{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    Na "Je suis [nemname], fils de pute."
+    Na "Je suis [newname], fils de pute."
     play sound "Click.mp3" noloop 
 
+    P "Calme toi un peu [newname]."
+    play sound "Click.mp3" noloop 
+
+    Na "Désolée..."
+    play sound "Click.mp3" noloop 
+
+    P "Bien."
+    play sound "Footsteps.mp3" noloop 
+
+    "{b}{i}Puis vous ignorez [S] avant d'allez vous asseoir.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    if pronom == "il" : 
     
+        Na "Enfin assis."
+        play sound "Click.mp3" noloop
 
+    elif pronom == "elle" :
 
+        Na "Enfin assises."
+        play sound "Click.mp3" noloop 
 
+    P "Oui ça fait du bien."
+    play sound "Click.mp3" noloop
 
+    "{b}{i}Vous mangez tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
 
+    P "Sinon ça s'est passé comment l'examen pour toi ?"
+    play sound "Click.mp3" noloop
+
+    Na "Oui ça s'est bien passé pour moi et toi ?"
+    play sound "Click.mp3" noloop
+
+    P "Oui ça s'est bien passer je dirai."
+    play sound "Click.mp3" noloop 
+
+    Na "Cool alors si tu penses que tu as réussi."
+    play sound "Click.mp3" noloop
+
+    $ thanks = get_random_thanks()
+    P "[thanks]"
+    play sound "Click.mp3" noloop
+
+    $ nothing = get_random_nothing()
+    Na "[nothing]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Vous continuez de discuter jusqu'à la sonnerie.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+
+    I "Bon on doit retourner en cours."
+    play sound "Click.mp3" noloop
+
+    P "Ok il faut pas qu'on soit en retard."
+    play sound "Click.mp3" noloop 
+
+    I "Ok je vous suis."
+    play sound "Click.mp3" noloop 
+
+    scene black 
+    hide screen lunchroom 
+
+    "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall
+    show screen hall
+
+    "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    scene staircase 
+    hide screen hall
+
+    "{b}{i} Vous montez au premier étage.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene hallway 
+    show screen hallway
+
+    "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Tu entres en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene classroom  
+    show screen class_404 
+
+    "{b}{i}Tout le monde s'asseoit à sa place respective.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Bonjour nous allons continuez le cours de français." 
+    play sound "Click.mp3" noloop 
+
+    Y "Bien je vois." 
+    play sound "Click.mp3" noloop 
+
+###################################################################################
+
+    "{b}{i} Vous reprenez le cours tranquillement jusqu'à la fin du cours.{/i}{/b}"
+    play sound "Bell.mp3" noloop  
+
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
+
+    S "Bon, [newname] on retourne au dortoir ?" 
+    play sound "Click.mp3" noloop
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Vous continuez vers le dortoir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez dans ton dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene room
+    show screen room 
+     
+    if pronom == "il":
+
+        Na "Enfin arrivés."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle":
+
+        Na "Enfin arrivées." 
+        play sound "Click.mp3" noloop
+
+    $ bien = get_random_fais_du_bien()
+    P "[bien]" 
+    play sound "Click.mp3" noloop  
+
+    Na "Bon Je vais me déconnecter et me recharger je suis fatiguée de cette examen."
+    play sound "Click.mp3" noloop 
+
+    P "Pas de soucis."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[newname] se déconnecte et recharge sa batterie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bon je vais chercher à manger, j'avais complétement oublié."
+    play sound "Click.mp3" noloop  
+
+    scene black 
+    hide screen room
+
+    "{b}{i} Tu pars chercher à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    $ points -= 200 
+    scene room 
+    show screen room 
+
+    P "Enfin à manger... "
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Tu manges tranquillement pendant une demi-heure.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Enfin fini je vais pouvoir aller dormir."
+    play sound "Click.mp3" noloop  
+
+    "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene black
+    hide screen room
+    hide screen day
+
+    "{b}{i} le lendemain matin, le 14 novembre.{/i}{/b}"
+    play sound "Alarm.mp3" noloop 
+
+    scene room 
+    show screen room
+    show screen day 
+    $ day += 1
+
+    $ line = get_random_morning_line()
+    P "[line]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te lèves et te changes et puis tu aperçois [newname] déconnectée contre le mur.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Elle est encore déconnectée."
+    play sound "Click.mp3" noloop 
+
+    P "Je vais la démarrer."
+    play sound "Menu.mp3" noloop 
+
+    menu:   
+
+        "{b}{i} Démarrer [newname].{/i}{/b}" :
+            play sound "Menu.mp3" noloop 
+
+label password9:  
+
+    $ entered_password = renpy.input("Veuillez entrer votre mot de passe pour [newname].")
+    $ entered_password = entered_password.strip()
+
+    if entered_password == stored_password: 
+
+        "Mot de passe correct. Accès autorisé." 
+        play sound "Menu.mp3" noloop
+
+    else: 
+
+        "Mot de passe incorrect. Accès refusé." 
+        play sound "Menu.mp3" noloop
+        jump password9
+
+    $ start = get_random_start()
+    Na "[start]"
+    play sound "Click.mp3" noloop 
+
+    Na "Bonjour [prenom]."
+    play sound "Click.mp3" noloop 
+
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop 
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Et toi ?" 
+    play sound "Click.mp3" noloop 
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]" 
+    play sound "Click.mp3" noloop
+
+    Na "Cool alors."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} [Na] changea de tonalité.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    Na "[prenom], je détecte une nouvelle mise à jour obligatoire du processeur, veux-tu la faire maitenant ou plus tard ?"
+    play sound "Menu.mp3" noloop 
+
+    menu: 
+
+        "{b}{i} Refuser la mise à jour {/i}{/b}" :
+
+            $ Na = Character('[newname] [nom]', color="#0066ff")
+
+            P "Non merci."
+            play sound "Click.mp3" noloop
+
+            Na "Ok alors."
+            play sound "Click.mp3" noloop
+        
+        "{b}{i} faire la mise à jour {/i}{/b}" : 
+        
+            Na "Bien je lance la mise à jour"
+            play sound "Click.mp3" noloop
+
+            P "Merci."
+            play sound "Click.mp3" noloop
+
+            Na "Initialisation de la mise à jour en cours."
+            play sound "Click.mp3" noloop
+
+            Na "10\%"
+            play sound "Click.mp3" noloop
+
+            Na "20\%"
+            play sound "Click.mp3" noloop
+
+            Na "30\%"
+            play sound "Click.mp3" noloop
+
+            Na "40\%"
+            play sound "Click.mp3" noloop
+
+            Na "50\%"
+            play sound "Click.mp3" noloop
+
+            Na "60\%"
+            play sound "Click.mp3" noloop
+
+            Na "70\%"
+            play sound "Click.mp3" noloop
+
+            Na "80\%" 
+            play sound "Click.mp3" noloop
+
+            Na "90\%"
+            play sound "Click.mp3" noloop
+
+            Na "100\%"
+            play sound "Click.mp3" noloop
+
+            Na "Vérification...."
+            play sound "Menu.mp3" noloop 
+            $ success += 1 
+
+            Na "Mise à jour terminée, la version actuelle est maintenant la [update]."
+            play sound "Click.mp3" noloop 
+
+            P "Je pense que ça devait être la mise à jour du processeur."
+            play sound "Click.mp3" noloop
+
+            Na "Oui je confirme."
+            play sound "Click.mp3" noloop
+
+    Na "Bon on va en cours ?"
+    play sound "Click.mp3" noloop  
+
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop 
+
+    hide screen room 
+    scene black
+
+    "{b}{i}Vous quittez le dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
 
     return                            
 
