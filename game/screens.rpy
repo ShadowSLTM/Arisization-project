@@ -1817,7 +1817,7 @@ screen success():
 
         text "Succès débloqué":
             size 30
-            xalign 0.5 
+            xalign 0.5  
 
 screen Shop():
 
@@ -1955,6 +1955,8 @@ screen robot():
             text _("Adresse IP : [ip]\n")   
 
             text _("Origine : [robotorigine]\n")  
+
+            text _("Propriétaire : [propriety]\n") 
 
 style about_label is gui_label 
 style about_label_text is gui_label_text

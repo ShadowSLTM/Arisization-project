@@ -18,6 +18,9 @@ label start:
     $ message = 0 
     default newname = ""  
     default robotorigine = "???????" 
+    default prenom = ""
+    default nom = ""
+    default propriety = ""
 
     stop music fadeout 2.0   
 
@@ -274,6 +277,8 @@ label hack:
 
         P "Attend on dirait qu'elle est en train de démarrer."
         play sound "Menu.mp3" noloop 
+
+    $ propriety = P
 
     A "Initialisation terminée. Date du 4 juillet 2097, Bonjour je suis [A]."
     play sound "Click.mp3" noloop 
@@ -3620,7 +3625,7 @@ label wallbreaking4:
     scene black
     hide screen hall
 
-    "{b}{i} Vous arrivez enfin au refectoire.{/i}{/b}"
+    "{b}{i} Vous arrivez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene lunchroom 
@@ -4767,7 +4772,7 @@ label choice9:
     scene black
     hide screen hall
 
-    "{b}{i} Vous arrivez enfin au refectoire.{/i}{/b}"
+    "{b}{i} Vous arrivez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene lunchroom 
@@ -6202,7 +6207,7 @@ label suite:
 
     $ points -= 200 
 
-    P "C'est bon tu t'es servie [newname]"
+    P "C'est bon tu t'es servie [newname] ?"
     play sound "Click.mp3" noloop 
 
     Na "Oui c'est bon on peut aller s'asseoir."
@@ -7177,7 +7182,7 @@ label suite1:
 
     $ points -= 200 
 
-    P "C'est bon tu t'es servie [newname]"
+    P "C'est bon tu t'es servie [newname] ?"
     play sound "Click.mp3" noloop 
 
     Na "Oui c'est bon on peut aller s'asseoir."
@@ -12503,13 +12508,13 @@ label examen_pythagore:
     scene hall 
     show screen hall
 
-    "{b}{i} Vous continuez vers le refectoire.{/i}{/b}"
+    "{b}{i} Vous continuez vers le réfectoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen hall
 
-    "{b}{i} Vous arrivez enfin au refectoire.{/i}{/b}"
+    "{b}{i} Vous arrivez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop 
 
     scene lunchroom 
@@ -12522,7 +12527,7 @@ label examen_pythagore:
     play sound "Click.mp3" noloop 
 
     "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     $ points -= 200 
 
@@ -12556,21 +12561,38 @@ label examen_pythagore:
     S "ça s'est bien passé pour moi et toi ?"
     play sound "Click.mp3" noloop 
 
-    if pronom == "il":
+    if grade == 20.0:
 
-        P "Je dirais que je me suis bien débrouillé."
-        play sound "Click.mp3" noloop
+        P "Je pense que je l'ai réussi à la perfection."
+        play sound "Click.mp3" noloop 
 
-    elif pronom == "elle": 
+        S "ça ne m'étonne pas venant de toi."
+        play sound "Click.mp3" noloop 
 
-        P "Je dirais que je me suis bien débrouillée."
+        Na "J'ai lui déjà dit la même chose à [prenom] un jour." 
+        play sound "Click.mp3" noloop 
+
+    elif grade <= 14.0:
+       
+        P "Je pense que je l'ai échoué."
+        play sound "Click.mp3" noloop 
+
+        S "Vraiment ?"
+        play sound "Click.mp3" noloop 
+
+        S "je pense."
+        play sound "Click.mp3" noloop 
+
+    else:
+
+        P "Je pense que je l'ai bien réussi."
         play sound "Click.mp3" noloop 
     
-    S "ça ne m'étonne pas venant de toi."
-    play sound "Click.mp3" noloop 
+        S "ça ne m'étonne pas venant de toi."
+        play sound "Click.mp3" noloop 
 
-    Na "J'ai lui déjà dit la même chose à [prenom] un jour." 
-    play sound "Click.mp3" noloop 
+        Na "J'ai lui déjà dit la même chose à [prenom] un jour." 
+        play sound "Click.mp3" noloop 
 
     S "Et toi [newname] comment ça s'est passée l'examen ?"
     play sound "Click.mp3" noloop 
@@ -13735,13 +13757,13 @@ label password4:
     scene hall 
     show screen hall
 
-    "{b}{i} Vous continuez vers le refectoire.{/i}{/b}"
+    "{b}{i} Vous continuez vers le réfectoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen hall
 
-    "{b}{i} Vous arrivez enfin au refectoire.{/i}{/b}"
+    "{b}{i} Vous arrivez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop 
 
     scene lunchroom 
@@ -14314,13 +14336,13 @@ label password6:
     scene hall 
     show screen hall
 
-    "{b}{i} Vous continuez vers le refectoire.{/i}{/b}"
+    "{b}{i} Vous continuez vers le réfectoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen hall
 
-    "{b}{i} Vous arrivez enfin au refectoire.{/i}{/b}"
+    "{b}{i} Vous arrivez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop 
 
     scene lunchroom 
@@ -15971,7 +15993,6 @@ label password9:
     J2 "[thanks]"
     play sound "Click.mp3" noloop
 
-    $ note = get_random_note()
     M "Et toi [S] tu as eu 14/20, il faudrait réviser un peu."
     play sound "Click.mp3" noloop 
 
@@ -15987,7 +16008,177 @@ label password9:
     P "Il n'y aura pas de soucis pour moi."
     play sound "Click.mp3" noloop 
 
+    M "Bien, maintenant reprenons le cours de français."
+    play sound "Click.mp3" noloop
 
+    Y "Compris."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Le cours continue sans probléme.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop 
+
+    M "Si jamais vous étes libre cette après-midi car nous avons fini le sujet de français."
+    play sound "Click.mp3" noloop 
+
+    P "Bon on va manger [newname] ?"
+    play sound "Click.mp3" noloop 
+    
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Click.mp3" noloop
+
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    P "Bon le réfectoire du lycée se trouve au rez-de-chaussée."
+    play sound "Click.mp3" noloop 
+
+    Na "Ok alors."
+    play sound "Footsteps.mp3" noloop 
+    
+    scene staircase 
+    hide screen hallway 
+
+    "{b}{i} Vous continuez votre chemin vers le réfectoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hall 
+    show screen hall 
+
+    P "Bon la réfectoire du lycée se trouve au fond à gauche."
+    play sound "Click.mp3" noloop 
+
+    Na "Ok continuons alors."
+    play sound "Click.mp3" noloop 
+
+    scene black
+    hide screen hall
+
+    "{b}{i} Vous arrivez enfin au réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene lunchroom 
+    show screen lunchroom 
+    
+    Na "Bon on va prendre à manger ?"
+    play sound "Click.mp3" noloop 
+
+    P "Ok alors."
+    play sound "Footsteps.mp3" noloop 
+
+    "{b}{i} Vous allaz chercher à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 200 
+
+    P "C'est bon tu t'es servie [newname] ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui c'est bon on peut aller s'asseoir."
+    play sound "Click.mp3" noloop 
+
+    P "Ok alors."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous allez rejoindre [Y] pour manger cette fois-ci.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop  
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Y "[je_vais_bien_txt]" 
+    play sound "Click.mp3" noloop   
+
+    P "Sinon comment s'est passé l'examen pour toi ?"
+    play sound "Click.mp3" noloop 
+
+    Y "ça s'est bien passé pour ma part et toi ?"
+    play sound "Click.mp3" noloop
+
+    if grade == 20.0:
+
+        P "Je l'ai réussi à la perfection."
+        play sound "Click.mp3" noloop 
+
+    else: 
+       
+        P "Je l'ai bien réussi."
+        play sound "Click.mp3" noloop
+
+    Y "Cool alors."
+    play sound "Click.mp3" noloop
+
+    $ thanks = get_random_thanks()
+    P "[thanks]"
+    play sound "Click.mp3" noloop
+
+    $ nothing = get_random_nothing()
+    Y "[nothing]"
+    play sound "Click.mp3" noloop
+
+    Y "Et sinon [newname] comment tu t'es débrouillée ?"
+    play sound "Click.mp3" noloop
+
+    Na "J'ai eu 18/20 grâce à [prenom]."
+    play sound "Click.mp3" noloop
+
+    Y "Cool alors."
+    play sound "Click.mp3" noloop
+
+    P "Juste tu vas faire quoi cet après-midi ?"
+    play sound "Click.mp3" noloop¨
+
+    Y "Je ferai quelques affaires dans la salle de club générale."
+    play sound "Click.mp3" noloop
+
+    P "Je vois."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Vous continuez de manger et de discuter jusqu'à la sonnerie.{/i}{/b}" 
+    play sound "Bell.mp3" noloop
+
+    P "Bon [newname] on va au club ?"
+    play sound "Click.mp3" noloop
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Click.mp3" noloop
+
+    scene black 
+    hide screen lunchroom 
+
+    "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall
+    show screen hall
+
+    "{b}{i}Tu continues vers la salle de club.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    scene black
+    hide screen hall 
+
+    "{b}{i}Tu entres dans la salle de club.{/i}{/b}"
+    play sound "Door.mp3" noloop  
+
+    scene clubroom 
+    show screen clubroom 
+
+    P "Enfin au club."
+    play sound "Click.mp3" noloop 
 
     return                            
 
