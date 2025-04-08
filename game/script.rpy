@@ -245,7 +245,7 @@ label hack:
         R "Veuillez choisir mon nom technique parmi ceux disponible dans ma base de données."
         play sound "Click.mp3" noloop 
 
-        menu:
+        menu: 
  
             "{b}{i}Choisir M4A1{/i}{/b}" :
                 $ A = Character("M4A1", color="#00ff00")
@@ -264,6 +264,9 @@ label hack:
 
             "{b}{i}Choisir M82A1{/i}{/b}" :
                 $ A = Character("M82A1", color="#0000ff") 
+
+            "{b}{i}Choisir M1919A4{/i}{/b}" :
+                $ A = Character("M1919A4", color="#005c17") 
 
         P "Attend on dirait qu'elle est en train de démarrer."
         play sound "Menu.mp3" noloop 
@@ -9223,9 +9226,7 @@ label code:
         "{b}{i}Tu t'asseois et allumes ton ordinateur mais [newname] agit bizarrement.{/i}{/b}"
         play sound "Click.mp3" noloop
 
-        define Na = Character('[newname] Alternative', color="#6f00ff8c")
-
-        A "système opérationnel."
+        A "Système opérationnel."
         play sound "Click.mp3" noloop
 
         P "Comment ça ? Qu'est-ce que tu racontes !?"
@@ -16154,7 +16155,7 @@ label password9:
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene black 
     hide screen lunchroom 
@@ -16165,7 +16166,39 @@ label password9:
     scene hall
     show screen hall
 
-    "{b}{i}Tu continues vers la salle de club.{/i}{/b}"
+    "{b}{i}Tu continues vers la salle de club mais [S] t'interpéle.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Tu me veux quoi ?"
+    play sound "Click.mp3" noloop
+
+    s "Je voulais juste te demander quelques choses."
+    play sound "Click.mp3" noloop
+
+    P "Quoi !?"
+    play sound "Click.mp3" noloop
+
+    S "Quand tu as trouvé [newname], tu faisais référence à quoi par \"oublie numérique\" ?"
+    play sound "Click.mp3" noloop
+
+    menu:    
+
+        "{b}{i} La perte de la mémoire.{/i}{/b}" :
+
+            $ success += 1
+
+            P "Je faisais référence à la perte de sa mémoire."
+            play sound "Click.mp3" noloop
+
+        "{b}{i} Le manque de connaissance.{/i}{/b}" :
+
+            P "Je faisais référence au manque de connaisance qu'elle a."
+            play sound "Click.mp3" noloop
+
+    S "Je voici merci."
+    play sound "Footsteps.mp3" noloop
+
+    "{b}{i}Puis tu continues vers la salle de club.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     scene black
@@ -16177,8 +16210,107 @@ label password9:
     scene clubroom 
     show screen clubroom 
 
-    P "Enfin au club."
+label code1: 
+
+    Na "Enfin au club."
     play sound "Click.mp3" noloop 
+
+    $ bien = get_random_fais_du_bien()
+    P "[bien]" 
+    play sound "Click.mp3" noloop 
+
+    Na "Bon on fait quoi aujourd'hui ?"
+    play sound "Click.mp3" noloop 
+
+    P "Je vais voir deux-trois trucs sur l'ordinateur."
+    play sound "Click.mp3" noloop 
+
+    Na "Ok je vois."
+    play sound "Click.mp3" noloop 
+
+    if update == 2.0:
+
+        "{b}{i}Tu t'asseois et allumes ton ordinateur mais [newname] agit bizarrement.{/i}{/b}"
+        play sound "Click.mp3" noloop
+
+        A "Système opérationnel."
+        play sound "Click.mp3" noloop
+
+        P "Comment ça ? Qu'est-ce que tu racontes !?"
+        play sound "Click.mp3" noloop
+
+        A "Téléchargement du virus informatique en cours....."
+        play sound "Click.mp3" noloop
+
+        P "Mince elle est en train de se faire pirater, je dois activer le Recovery Mode....."
+        play sound "Click.mp3" noloop 
+
+        menu: 
+
+            "{b}{i}Accéder à l'interface bios d'[newname].{/i}{/b}":
+                play sound "Menu.mp3" noloop
+
+        $ reboot = renpy.input("Écris ceci : initiate_humanoid_robot.shutdown(security_override=false)")
+        $ reboot = reboot.strip() 
+
+        if reboot == "initiate_humanoid_robot.shutdown(security_override=false)":
+
+            A "Fermeture du système d'exploitation [system]....."
+            play sound "Click.mp3" noloop
+
+            P "J'espére qu'il n'y a de Backdoor qui a été installé dans le systéme d'[newname]."
+            play sound "Click.mp3" noloop 
+
+            P "Bon je vais la redémarrer."
+            play sound "Click.mp3" noloop 
+
+            menu: 
+
+                "{b}{i}Redémarrer [newname].{/i}{/b}":
+                    play sound "Menu.mp3" noloop
+
+            define Na = Character('[newname] [nom]', color="#00eeff")
+
+        else:
+
+            A "Qu'est-ce que tu tentes de faire."
+            play sound "Stumble.mp3" noloop
+
+            "{b}{i}[newname] se met à plaquer au sol avant de se faire complétment piratée.{/i}{/b}"
+            play sound "Menu.mp3" noloop
+
+            scene black
+            hide clubroom
+            hide screen clubroom 
+            hide screen points
+            hide screen day
+
+            play music "gameover.mp3" noloop
+            "{b}{i}Fin numéro 11 : [A] s'est faite complétement piratée par le virus informatique.{/i}{/b}"
+            play sound "Menu.mp3" noloop
+
+            menu:
+
+                "{b}{i}Abandonner{/i}{/b}":
+                    return
+                "{b}{i}Réessayer.{/i}{/b}":
+                    show clubroom
+                    show screen clubroom
+                    show screen points
+                    show screen day
+                    play music "Soundtrack2.mp3" loop volume 1.0
+                    jump code
+
+    else:
+
+        "{b}{i}Tu t'asseois et allumes ton ordinateur.{/i}{/b}"
+        play sound "Click.mp3" noloop
+
+    P "Bon voyons voir."
+    play sound "Click.mp3" noloop 
+
+
+
 
     return                            
 
