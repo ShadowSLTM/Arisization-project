@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 15185: end of line expected.
-    else: vv     
-          ^
+File "game/script.rpy", line 16363: elif clause expects a non-empty block.
+    elif pronom == "elle": 
+                           ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu Apr  3 20:36:23 2025
+Wed Apr  9 12:50:35 2025

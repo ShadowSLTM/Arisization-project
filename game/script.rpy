@@ -1,4 +1,3 @@
-# CODE CORRIGÉ JUSQU'A LIGNE 3000
 label start: 
 
     $ grade = 0.0  
@@ -20,7 +19,8 @@ label start:
     default robotorigine = "???????" 
     default prenom = ""
     default nom = ""
-    default propriety = ""
+    default propriety = "" 
+    default serie = "???????"
 
     stop music fadeout 2.0   
 
@@ -132,7 +132,7 @@ label début:
     play sound "Click.mp3" noloop 
 
     scene warehouse 
- 
+
     play music "Soundtrack2.mp3" loop volume 1.0
 
     P "Bon, on fait quoi ?"
@@ -283,7 +283,7 @@ label hack:
 
     $ propriety = P
 
-    A "Initialisation terminée. Date du 4 juillet 2097, Bonjour je suis [A]."
+    A "Initialisation terminée. Date du 4 juillet 2097, Bonjour je suis [A] et j'ai dix-huit ans."
     play sound "Click.mp3" noloop 
 
     P "Tu vois, je t'avais dit de ne pas t'inquiéter."
@@ -294,6 +294,18 @@ label hack:
 
     P "Oh c'est bon, c'est juste un [model]."
     play sound "Click.mp3" noloop
+
+    S "Ok si tu le dit."
+    play sound "Click.mp3" noloop 
+
+    P "Sinon [A], tu peux me dire un peu plus sur toi ?"
+    play sound "Click.mp3" noloop 
+
+    A "Malheureusement je ne connais que mon nom de code et mon âge."
+    play sound "Click.mp3" noloop 
+
+    P "je vois..."
+    play sound "Click.mp3" noloop 
 
     S "Bon, on quitte cet endroit ?"
     play sound "Click.mp3" noloop 
@@ -1241,7 +1253,7 @@ label rencontre:
     T "Bien vas-y présentes-toi."
     play sound "Click.mp3" noloop 
 
-    I "Je m'appelle [I], j'ai 19 ans et je suis aussi l'ultime Développeuse."
+    I "Je m'appelle [I], j'ai dix-neuf ans et je suis aussi l'ultime Développeuse."
     play sound "Click.mp3" noloop 
     
     T "L'ultime développeuse !? oh intéressant."
@@ -1279,7 +1291,7 @@ label rencontre:
     T "Oui, toi, qui d'autre ?"
     play sound "Click.mp3" noloop
 
-    H "Bonjour, je m'appelle [H], j'ai 19 ans et je suis l'Ultime constructeur."
+    H "Bonjour, je m'appelle [H], j'ai dix-neuf ans et je suis l'Ultime constructeur."
     play sound "Click.mp3" noloop
 
     T "Enchanté Hajime bienvenue dans notre classe, j'aimerais savoir quel est ton projet dans ce lycée."
@@ -1304,10 +1316,10 @@ label rencontre:
     T "Bien, présentez vous dans ce cas."
     play sound "Click.mp3" noloop
 
-    J1 "Bonjour, je m'appelle [J1], j'ai 19 ans et voici ma soeur jumelle."
+    J1 "Bonjour, je m'appelle [J1], j'ai dix-neuf ans et voici ma soeur jumelle."
     play sound "Click.mp3" noloop
 
-    J2 "Bonjour je m'appelle [J2], j'ai 19 ans"
+    J2 "Bonjour je m'appelle [J2], j'ai dix-neuf ans"
     play sound "Click.mp3" noloop
 
     J "et nous sommes les ultimes jumelles."
@@ -1328,13 +1340,13 @@ label rencontre:
     T "Oui, vas-y présentes-toi."
     play sound "Click.mp3" noloop
 
-    K "Je m'appelle [K], j'ai 19 ans."
+    K "Je m'appelle [K], j'ai dix-neuf ans."
     play sound "Click.mp3" noloop
 
     T "Bien, enchantée de te rencontrer, suivant ?"
     play sound "Click.mp3" noloop 
 
-    N "Je m'appelle [N], j'ai 19 ans."
+    N "Je m'appelle [N], j'ai dix-neuf ans."
     play sound "Click.mp3" noloop
 
     T "Enchantée aussi de te rencontrer [N]."
@@ -1360,7 +1372,7 @@ label rencontre:
     I "[nothing] Bon suivante."
     play sound "Click.mp3" noloop
 
-    Y "Je m'appelle [Y], j'ai 19 ans ravie de vous rencontrer."
+    Y "Je m'appelle [Y], j'ai dix-neuf ans ravie de vous rencontrer."
     play sound "Click.mp3" noloop 
 
     T "Enchantée de te rencontrer aussi bienvenue dans notre classe." 
@@ -1382,12 +1394,12 @@ label rencontre:
 
     if pronom == "il":
 
-        P "Je me présente, je m'appelle [P], j'ai 19 ans et ancien élève de [origine]."
+        P "Je me présente, je m'appelle [P], j'ai dix-neuf ans et ancien élève de [origine]."
         play sound "Click.mp3" noloop 
 
     elif pronom == "elle": 
     
-        P "Je me présente, je m'appelle [P], j'ai 19 ans et ancienne élève de [origine]."
+        P "Je me présente, je m'appelle [P], j'ai dix-neuf ans et ancienne élève de [origine]."
         play sound "Click.mp3" noloop 
 
     T "Tu viens de [origine] !?" 
@@ -1447,7 +1459,7 @@ label rencontre:
     P "Oui c'est elle, vas-y présentes-toi."
     play sound "Click.mp3" noloop 
 
-    A "Je m'appelle [A], j'ai 18 ans."
+    A "Je m'appelle [A], j'ai dix-huit ans."
     play sound "Click.mp3" noloop
 
     T "Bien et qui es-tu exactement ?" 
@@ -5558,11 +5570,23 @@ label choice9:
             P "Merci beaucoup ça fait plaisir."
             play sound "Click.mp3" noloop 
 
-            C "De rien mais avant qu'on finissent notre entretiens j'aimerai te demander un dernier truc."
+            $ info += 1.0
+
+            C "De rien mais avant qu'on finissent notre entretiens j'aimerai te demander deux truc."
             play sound "Click.mp3" noloop 
 
-            $ info += 1.0
-            
+            P "Oui dites-moi."
+            play sound "Click.mp3" noloop 
+
+            C "Premièrement, je ne veux pas que tu parles des informations dans ce documents à [newname] car je veux qu'elle aie une nouvelle vie."
+            play sound "Click.mp3" noloop 
+
+            P "Je vois et je ne lui dirai rien."
+            play sound "Click.mp3" noloop 
+
+            C "Dernièrement, j'aimerai te demander un dernier truc."
+            play sound "Click.mp3" noloop 
+
         "{b}{i} Refuser les documents. {/i}{/b}" : 
 
             P "Merci beaucoup mais je préfére partir sur de nouvelles bases."
@@ -5574,7 +5598,7 @@ label choice9:
     P "Oui dites-moi."
     play sound "Click.mp3" noloop 
 
-    C "J'aimerai voir comment est [A] et son comportement de mes propres yeux."
+    C "J'aimerai voir comment est [A] et son comportement actuel de mes propres yeux."
     play sound "Click.mp3" noloop 
 
     P "Il n'y a pas de soucis, [newname] approche s'il te plaît."
@@ -5598,7 +5622,7 @@ label choice9:
     C "Donc vas-y présente toi."
     play sound "Click.mp3" noloop 
 
-    Na "Je me nomme [Na], j'ai 18 ans et je suis la création de [P], je suis actuellement lycéenne en Second-E dans ce lycée, mon défaut est que je suis souvent sensible mais j'ai appris beaucoup de choses grâce à [P]."
+    Na "Je me nomme [Na], j'ai dix-huit ans et je suis la création de [P], je suis actuellement lycéenne en Second-E dans ce lycée, mon défaut est que je suis souvent sensible mais j'ai appris beaucoup de choses grâce à [P]."
     play sound "Click.mp3" noloop 
 
     C "Bien merci pour ta présentation."
@@ -5812,6 +5836,7 @@ label choice9:
 
         $ system = "AetherOS"
         $ robotorigine = "Neogen Technologies" 
+        $ serie = "0012095NT" 
 
         P "Intéressant." 
         play sound "Click.mp3" noloop 
@@ -6530,7 +6555,7 @@ label suite1:
     M "Vas-y présentes-toi."
     play sound "Click.mp3" noloop
 
-    S "Je m'appelle [S], l'ultime étudiant et ancien élève de [origine], j'ai 19 ans ravi de vous rencontrer"
+    S "Je m'appelle [S], l'ultime étudiant et ancien élève de [origine], j'ai dix-neuf ans ravi de vous rencontrer"
     play sound "Click.mp3" noloop
 
     P "[S] !? Je croyais que tu étais dans un autre lycée depuis la dernière fois qu'on s'est vu !"
@@ -9269,6 +9294,21 @@ label code:
                     play sound "Menu.mp3" noloop
 
             define Na = Character('[newname] [nom]', color="#00eeff")
+            
+            $ start = get_random_start()
+            Na "[start]"
+            play sound "Click.mp3" noloop 
+
+            Na "Bonjour [prenom]."
+            play sound "Click.mp3" noloop 
+
+            $ comment_ca_va = get_random_comment_ca_va()
+            P "[comment_ca_va]"
+            play sound "Click.mp3" noloop
+
+            $ je_vais_bien_txt = get_random_je_vais_bien() 
+            Na "[je_vais_bien_txt]"
+            play sound "Click.mp3" noloop
 
         else:
 
@@ -15705,6 +15745,7 @@ label password9:
             Na "Vérification...."
             play sound "Menu.mp3" noloop 
             $ success += 1 
+            $ update += 1.0
 
             Na "Mise à jour terminée, la version actuelle est maintenant la [update]."
             play sound "Click.mp3" noloop 
@@ -16139,7 +16180,7 @@ label password9:
     play sound "Click.mp3" noloop
 
     P "Juste tu vas faire quoi cet après-midi ?"
-    play sound "Click.mp3" noloop¨
+    play sound "Click.mp3" noloop
 
     Y "Je ferai quelques affaires dans la salle de club générale."
     play sound "Click.mp3" noloop
@@ -16195,11 +16236,11 @@ label password9:
             P "Je faisais référence au manque de connaisance qu'elle a."
             play sound "Click.mp3" noloop
 
-    S "Je voici merci."
+    S "Je vois merci."
     play sound "Footsteps.mp3" noloop
 
     "{b}{i}Puis tu continues vers la salle de club.{/i}{/b}"
-    play sound "Click.mp3" noloop 
+    play sound "Footsteps.mp3" noloop 
 
     scene black
     hide screen hall 
@@ -16255,13 +16296,15 @@ label code1:
 
         if reboot == "initiate_humanoid_robot.shutdown(security_override=false)":
 
+            $ update += 1.0
+
             A "Fermeture du système d'exploitation [system]....."
             play sound "Click.mp3" noloop
 
             P "J'espére qu'il n'y a de Backdoor qui a été installé dans le systéme d'[newname]."
             play sound "Click.mp3" noloop 
 
-            P "Bon je vais la redémarrer."
+            P "Bon je vais la redémarrer." 
             play sound "Click.mp3" noloop 
 
             menu: 
@@ -16270,6 +16313,21 @@ label code1:
                     play sound "Menu.mp3" noloop
 
             define Na = Character('[newname] [nom]', color="#00eeff")
+            
+            $ start = get_random_start()
+            Na "[start]"
+            play sound "Click.mp3" noloop 
+
+            Na "Bonjour [prenom]."
+            play sound "Click.mp3" noloop 
+
+            $ comment_ca_va = get_random_comment_ca_va()
+            P "[comment_ca_va]"
+            play sound "Click.mp3" noloop
+
+            $ je_vais_bien_txt = get_random_je_vais_bien() 
+            Na "[je_vais_bien_txt]"
+            play sound "Click.mp3" noloop
 
         else:
 
@@ -16309,9 +16367,104 @@ label code1:
     P "Bon voyons voir."
     play sound "Click.mp3" noloop 
 
+    "{b}{i}Tu regardes toutes ses informations techniques et paramétres pendant une heure et demi.{/i}{/b}"
+    play sound "Click.mp3" noloop
 
+    P "Bien il me semble que tout est bon."
+    play sound "Click.mp3" noloop
+
+    Na "Bien si tout est bon."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Vous vous posez un peu sur le canapé de la salle de club.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    if pronom == "il":
+
+        P "Je suis fatigué avec cette journée."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle": 
+
+        P "Je suis fatiguée avec cette journée."
+        play sound "Click.mp3" noloop 
+
+    Na "Moi aussi."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}[newname] pose doucement sa tête sur ton épaule.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "ça va ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui ça va, je veux juste me poser sur toi un peu."
+    play sound "Click.mp3" noloop 
+
+    P "Pas de soucis alors ma petite."
+    play sound "Click.mp3" noloop 
+
+    Na "Tu sais que ça me fait vraiment plaisir d'être avec toi mais il y a truc qui me dérange."
+    play sound "Click.mp3" noloop 
+
+    P "Dis-moi tout."
+    play sound "Click.mp3" noloop 
+
+    Na "tu te souviens quand je t'ai dit que j'avait dix-huit ans ?"
+    play sound "Click.mp3" noloop 
+
+    P "Oui pourquoi ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Le truc qui me dérange ce que je n'ai plus de ma date d'anniversaire en tête....."
+    play sound "Click.mp3" noloop 
+
+    if info == 1.0:
+ 
+        menu:    
+
+            "{b}{i} Ne rien lui dire {/i}{/b}" :
+                play sound "Menu.mp3" noloop
+
+                $ success += 1 
+
+                P "On pourrait dire que ta nouvelle date d'anniveraire est 4 juillet, le jour de ta récupération."
+                play sound "Click.mp3" noloop 
+
+                Na "Merci beaucoup, j'aime trop ton idée."
+                play sound "Click.mp3" noloop  
+
+            "{b}{i} lui dire la vérité {/i}{/b}" :
+                play sound "Menu.mp3" noloop  
+
+                P "Il faut que sache que ta vrai date d'anniversaire est le 31 janvier."
+                play sound "Click.mp3" noloop  
+
+                Na "Quoi tu veux dire que depuis le début tu était au courant !?"
+                play sound "Click.mp3" noloop  
+
+                P "Oui je suis désolé mais je ne voulais pas te le dire."
+                play sound "Click.mp3" noloop  
+
+                Na "Mais pourquoi tu ne me l'a pas dit avant ?"
+                play sound "Click.mp3" noloop  
+
+                P "J'était tu tenu de rien te dire pour que tu sois heureuse."
+                play sound "Click.mp3" noloop  
+
+                Na "Je vois maintenant."
+                play sound "Click.mp3" noloop  
+                
+    else: 
+
+        P "On pourrait dire que ta nouvelle date d'anniveraire est 4 juillet, le jour de ta récupération."
+        play sound "Click.mp3" noloop 
+
+        Na "Merci beaucoup, j'aime trop ton idée."
+        play sound "Click.mp3" noloop 
 
 
     return                            
+
 
 # Aris la plus belle <333333333333333  
