@@ -16456,10 +16456,16 @@ label code1:
                 play sound "Click.mp3" noloop  
 
                 Na "Je vois maintenant."
+                play sound "Crying.mp3" noloop  
+
+                "{b}{i}[newname] se met subitemnt en larmes.{/i}{/b}"
+                play sound "Click.mp3" noloop
+
+                P "Ne pleure pas ça va  aller."
                 play sound "Click.mp3" noloop  
 
-                "{b}{i}Tu t'asseois et allumes ton ordinateur mais [newname] agit bizarrement.{/i}{/b}"
-                play sound "Click.mp3" noloop
+                Na "Merci beaucoup, [prenom]."
+                play sound "Click.mp3" noloop  
 
     else:  
 
@@ -16468,6 +16474,16 @@ label code1:
 
         Na "Merci beaucoup, j'aime trop ton idée."
         play sound "Click.mp3" noloop 
+
+    P "De rien."
+    play sound "Click.mp3" noloop  
+
+    Na "Puis-je trouver une vie qui ressemble à un conte de fées ? Loin de cette tragédie."
+    play sound "Click.mp3" noloop           
+
+    P "Mais tu l'as déjà trouvé ta vie qui ressemble à un conte de fées."
+    play sound "Click.mp3" noloop  
+
 
     return                            
 
