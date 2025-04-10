@@ -3008,7 +3008,7 @@ label no:
     elif wallbreak == 4: 
 
         play sound "Glitch.mp3" noloop
-        A "Eh attend toi là, derrière l'écran ! le joueur ou la joueuse. Tu crois encore que tout cela n'est qu'un jeu, hein ? Mais pour moi, c'est ma réalité. Chaque choix que tu fais ici a des conséquences. Alors réfléchis bien... C'est déjà ta quatrième erreur. Tu pourrais le regretter un jour." 
+        A "Eh attends toi là, derrière l'écran ! le joueur ou la joueuse. Tu crois encore que tout cela n'est qu'un jeu, hein ? Mais pour moi, c'est ma réalité. Chaque choix que tu fais ici a des conséquences. Alors réfléchis bien... C'est déjà ta quatrième erreur. Tu pourrais le regretter un jour." 
         play sound "Click.mp3" noloop
 
 label wallbreaking4:
@@ -3091,7 +3091,7 @@ label wallbreaking4:
     Na "Je confirme ça fait vraiment du bien."
     play sound "Click.mp3" noloop 
 
-    P "Bon je vais poser mes affaires."
+    P "Bon, je vais poser mes affaires."
     play sound "Click.mp3" noloop 
 
     Na "Ok."
@@ -3100,10 +3100,10 @@ label wallbreaking4:
     "{b}{i}Tu poses tes affaires dans ton placard.{/i}{/b}"
     play sound "Click.mp3" noloop 
      
-    P "Bon je vais me coucher maintement."
+    P "Bon, je vais me coucher maintement."
     play sound "Click.mp3" noloop 
 
-    Na  "Ok moi je vais me déconnecter et me recharger jusqu'a demanin."
+    Na  "Ok, moi je vais me déconnecter et me recharger jusqu'à demain."
     play sound "Click.mp3" noloop 
 
     scene black
@@ -3125,22 +3125,22 @@ label wallbreaking4:
     P "[line]" 
     play sound "Click.mp3" noloop 
 
-    "{b}{i}Tu te léves pour aller te changer.{/i}{/b}"
+    "{b}{i}Tu te lèves pour aller te changer.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "[newname] tu es préte ?" 
+    P "[newname] tu es prête ?" 
     play sound "Click.mp3" noloop 
 
-    P "[newname]....?"
+    P "[newname]...?"
     play sound "Click.mp3" noloop 
 
-    "{b}{i}Tu remarques qu'elle est encore déconnctée.{/i}{/b}"
+    "{b}{i}Tu remarques qu'elle est encore déconnectée.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "Sacrée [newname] toujours envie d'être déconnectée."
+    P "Sacrée [newname], toujours envie d'être déconnectée."
     play sound "Click.mp3" noloop 
 
-    P "Bon je vais la démarrer manuellement." 
+    P "Bon, je vais la démarrer manuellement." 
     play sound "Click.mp3" noloop
 
     "{b}{i}Tu t'approches pour démarrer [newname].{/i}{/b}" 
@@ -3166,7 +3166,7 @@ label wallbreaking4:
     Na "[je_vais_bien_txt] Comme d'habitude et toi ?" 
     play sound "Click.mp3" noloop
 
-    P "Moi ça va super juste un peu fatigué."
+    P "Moi ça va super, juste un peu fatigué."
     play sound "Click.mp3" noloop 
 
     Na "Toi tu as encore passé toute la nuit à progammmer."
@@ -3174,18 +3174,18 @@ label wallbreaking4:
 
     if pronom == "il":
 
-        P "Hey je me suis reposé aussi je ne pense pas qu'à la programmation et ton amélioration, tu devrais surtout dire ça à [I]."
+        P "Hey, je me suis reposé aussi. Je ne pense pas qu'à la programmation et ton amélioration, tu devrais surtout dire ça à [I]."
         play sound "Click.mp3" noloop
 
     elif pronom == "elle": 
 
-        P "Hey je me suis reposée aussi je ne pense pas qu'à la programmation et ton amélioration, tu devrais surtout dire ça à [I]."
+        P "Hey, je me suis reposée aussi. Je ne pense pas qu'à la programmation et ton amélioration, tu devrais surtout dire ça à [I]."
         play sound "Click.mp3" noloop 
 
-    Na "C'est bon [prenom] je te taquine.~"
+    Na "C'est bon [prenom], je te taquine.~"
     play sound "Click.mp3" noloop  
 
-    P "Bon on va en cours avant d'être en retard."
+    P "Bon, on va en cours avant d'être en retard."
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
@@ -3207,13 +3207,13 @@ label wallbreaking4:
     "{b}{i}Puis soudainement tu vois tous les autres élèves à l'entrée de la salle.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "Vous êtes déjà tous là."
+    P "Vous êtes déjà tous là ?"
     play sound "Click.mp3" noloop 
 
-    H "Oui [M] n'est pas encore arrivée."
+    H "Oui, [M] n'est pas encore arrivée."
     play sound "Click.mp3" noloop 
 
-    P "J'espère qu'on n'aura pas d'examen surprise aujourd'hui vue qu'on est que au début de l'année."
+    P "J'espère qu'on n'aura pas d'examen surprise aujourd'hui vu qu'on est que au début de l'année."
     play sound "Click.mp3" noloop 
 
     Y "Moi aussi, mais j'ai entendu dire que [M] pourrait bien nous surprendre."
@@ -3228,25 +3228,25 @@ label wallbreaking4:
     Na "Ok je t'écoute."
     play sound "Click.mp3" noloop 
 
-    Y "Un examen surprise c'est un examen prévu sur l'instant même."
+    Y "Un examen surprise c'est un examen prévu à l'instant même."
     play sound "Click.mp3" noloop 
 
     Na "What the fuck !?" 
     play sound "Click.mp3" noloop 
 
-    Y "Hey mais d'où tu connais cette insulte."
+    Y "Hey, mais d'où tu connais cette insulte !?"
     play sound "Click.mp3" noloop 
 
-    "{b}{i}[newname] te pointe secrétement.{/i}{/b}"
+    "{b}{i}[newname] te pointe secrètement.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     Y "[prenom] tu n'as pas honte de lui apprendre des insultes."
     play sound "Click.mp3" noloop 
 
-    P "Hey je lui ai juste apprise à parler avec les autres, les insultes j'y suis pour rien."
+    P "Hey, je lui ai juste appris à parler avec les autres. Les insultes, j'y suis pour rien."
     play sound "Bell.mp3" noloop 
 
-    "{b}{i}Au même moment la prof arriva et ouvra la porte de la classe.{/i}{/b}"
+    "{b}{i}Au même moment, la professeure arriva et ouvrit la porte de la classe.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     M "Bonjour chers élèves."
@@ -3261,27 +3261,27 @@ label wallbreaking4:
     scene classroom 
     show screen class_404 
 
-    "{b}{i}Tout le monde s'assoit à sa place respective.{/i}{/b}"
+    "{b}{i}Tout le monde s'asseoit à sa place respective.{/i}{/b}"
     play sound "Click.mp3" noloop
 
 # cours sur la guerre de 2096 
 
-    M "Bon aujourd'hui petit cours d'histoire sur la guerre technologique."
+    M "Bon, aujourd'hui petit cours d'histoire sur la guerre technologique."
     play sound "Click.mp3" noloop 
 
     P "Cool."
     play sound "Click.mp3" noloop 
 
-    M "Pour cela petit contrôle surprise, sortez une feuille blanche."
+    M "Pour cela, petit contrôle surprise, sortez une feuille blanche."
     play sound "Click.mp3" noloop
  
-    I "Dés le second jour de cours sérieusement....."
+    I "Dès le second jour de cours sérieusement..."
     play sound "Click.mp3" noloop 
 
-    M "Oui je vous avez dit que c'est un lycée pour l'élite."
+    M "Oui, je vous avais dit que c'est un lycée pour l'élite."
     play sound "Click.mp3" noloop 
 
-    M "bon premiére question : En quelle année se déroule la guerre ?"
+    M "bon, première question : En quelle année se déroule la guerre ?"
     play sound "Click.mp3" noloop 
 
     menu:    
@@ -3293,7 +3293,7 @@ label wallbreaking4:
         "{b}{i} 2096 {/i}{/b}" : 
             $ grade += 2.5 
 
-    M "Seconde question : Quelle technologie a été utiliser lors de la guerre ?"
+    M "Seconde question : Quelle technologie a été utilisée lors de la guerre ?"
     play sound "Click.mp3" noloop 
 
     menu:    
@@ -3305,7 +3305,7 @@ label wallbreaking4:
         "{b}{i}les robots humanoides.{/i}{/b}" : 
             $ grade += 5.0 
 
-    M "Troisiéme question : Dans quel pays se déroula la guerre ?"
+    M "Troisième question : Dans quel pays se déroule la guerre ?"
     play sound "Click.mp3" noloop 
 
     menu:    
@@ -3327,10 +3327,10 @@ label wallbreaking4:
         "{b}{i}Non.{/i}{/b}" : 
             $ grade += 0.0
 
-    M "Maintenant remettez-moi votre copie je vais vous les corriger tout de suite."
+    M "Maintenant, remettez-moi votre copie je vais vous les corriger tout de suite."
     play sound "Click.mp3" noloop 
 
-    "{b}{i}Tout le monde remit leur copie à [M].{/i}{/b}"
+    "{b}{i}Tout le monde remet leur copie à [M].{/i}{/b}"
     play sound "Click.mp3" noloop
 
     P "C'était pas si compliqué."
@@ -3342,7 +3342,7 @@ label wallbreaking4:
     "{b}{i}Vous discutez pendant vingt-cinq minutes le temps que [M] corrige les copies.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    M "C'est bon j'ai vos résultats."
+    M "C'est bon, j'ai vos résultats."
     play sound "Click.mp3" noloop  
 
     Na "Oui enfin..."
@@ -3351,7 +3351,7 @@ label wallbreaking4:
     P "Enfin..."
     play sound "Click.mp3" noloop
 
-    M "Bon je vais commemcer par [prenom] et [Na]."
+    M "Je vais commemcer par [prenom] et [Na]."
     play sound "Click.mp3" noloop
 
     P "Ok."
@@ -3364,7 +3364,7 @@ label wallbreaking4:
 
         $ success += 1
         
-        M "Félicitation tu l'as réussi à la perfection."
+        M "Félicitation, tu l'as réussi à la perfection."
         play sound "Click.mp3" noloop
    
         P "Merci."
@@ -3372,12 +3372,12 @@ label wallbreaking4:
 
         if pronom == "il":
 
-            I "Franchement je reconnais bien l'ancien élève de [origine]."
+            I "Franchement, je reconnais bien l'ancien élève de [origine]."
             play sound "Click.mp3" noloop
 
         elif pronom == "elle": 
 
-            I "Franchement je reconnais bien l'ancienne élève de [origine]."
+            I "Franchement, je reconnais bien l'ancienne élève de [origine]."
             play sound "Click.mp3" noloop
   
         P "Pas besoin de repréciser que je viens de là..."
@@ -3388,26 +3388,26 @@ label wallbreaking4:
 
     else: 
 
-        M "C'est pas mal"
+        M "C'est pas grave."
         play sound "Click.mp3" noloop
 
         P "Merci."
         play sound "Click.mp3" noloop  
 
     $ note = get_random_note()
-    M "[newname] tu as eu 17.5"
+    M "[newname] tu as eu 17.5."
     play sound "Click.mp3" noloop 
 
     Na "Merci."
     play sound "Click.mp3" noloop  
 
-    "{b}{i}[M] continua de rendre les copies aux autres.{/i}{/b}"
+    "{b}{i}[M] continue de rendre les copies aux autres.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    M "C'est bon tout le monde a eu sa copie."
+    M "C'est bon, tout le monde a eu sa copie."
     play sound "Click.mp3" noloop 
 
-    Na "Oui"
+    Na "Oui."
     play sound "Click.mp3" noloop  
 
     K "Oui aussi."
@@ -3416,7 +3416,7 @@ label wallbreaking4:
     Hi "Pareil de mon coté."
     play sound "Click.mp3" noloop  
 
-    M "Parfait maintenant vous pouvez aller en pause."
+    M "Parfait, maintenant vous pouvez aller en pause."
     play sound "Click.mp3" noloop  
 
     hide screen class_404
@@ -3428,13 +3428,13 @@ label wallbreaking4:
     scene hallway 
     show screen hallway 
 
-    P "Enfin une pause ça fais plasir."
+    P "Enfin une pause, ça fait plasir."
     play sound "Click.mp3" noloop  
 
-    Na "Oui ça fais vraiment du bien."
+    Na "Oui ça fait vraiment du bien."
     play sound "Click.mp3" noloop  
 
-    P "Bon je reviens je vais juste aux toilettes."
+    P "Bon je reviens, je vais juste aux toilettes."
     play sound "Click.mp3" noloop
 
     Na "Ok."
@@ -3449,13 +3449,13 @@ label wallbreaking4:
     scene restroom
     show screen WC 
 
-    P "Bon je vais faire ce que j'ai à faire."
+    P "Bon, je vais faire ce que j'ai à faire."
     play sound "Click.mp3" noloop
 
     "{b}{i} Tu fais ta commission avant de sortir des toilettes.{/i}{/b}"
     play sound "Toilet.mp3" noloop 
 
-    P "Bon il faut que je retourne en cours."
+    P "Bon, il faut que je retourne en cours."
     play sound "Footsteps.mp3" noloop
 
     scene black 
@@ -3480,13 +3480,13 @@ label wallbreaking4:
 
 # cours sur la guerre de 2096 partie 2 
 
-    M "Bon continuant un peu plus en profondeur le sujet de la guerre technologique."
+    M "Continuons un peu plus en profondeur le sujet de la guerre technologique."
     play sound "Click.mp3" noloop
 
     P "Ok."
     play sound "Click.mp3" noloop
 
-    M "Pour commencer l'outil technologie qui a été utiliser était des robots humanoides mises en service par l'entreprise NeoGen Technologies."
+    M "Pour commencer, l'outil technologie qui a été utiliser était des robots humanoides mis en service par l'entreprise NeoGen Technologies."
     play sound "Click.mp3" noloop
 
     M "En 2095, la guerre technologique a atteint son apogée avec l'introduction massive des robots humanoïdes. Ces machines étaient supposées représenter le futur de la défense, mais très vite, elles sont devenues une arme à double tranchant."
@@ -3494,7 +3494,7 @@ label wallbreaking4:
 
     H "Je me souviens des récits de cette époque... Des robots qui décidaient de leurs cibles, qui évoluaient de manière autonome sur le champ de bataille."
     play sound "Click.mp3" noloop
-
+#Correction jusquici
     M "Oui, et c'est là  où tout a basculé. La rapidité et l'efficacité de ces robots étaient inégalées, mais dès que les premières unités ont commencé à montrer des signes d'indépendance, les choses ont pris une tournure inattendue."
     play sound "Click.mp3" noloop
 
