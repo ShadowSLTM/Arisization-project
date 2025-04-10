@@ -21,6 +21,7 @@ label start:
     default nom = ""
     default propriety = "" 
     default serie = "???????"
+    default stockage = "???????"
 
     stop music fadeout 2.0   
 
@@ -219,6 +220,8 @@ label hack:
         play sound "Menu.mp3" noloop 
 
         $ success += 1 
+        $ stockage = 0.0
+
         "système ouvert avec succès." 
         play sound "Click.mp3" noloop 
 
@@ -16454,15 +16457,17 @@ label code1:
 
                 Na "Je vois maintenant."
                 play sound "Click.mp3" noloop  
-                
-    else: 
+
+                "{b}{i}Tu t'asseois et allumes ton ordinateur mais [newname] agit bizarrement.{/i}{/b}"
+                play sound "Click.mp3" noloop
+
+    else:  
 
         P "On pourrait dire que ta nouvelle date d'anniveraire est 4 juillet, le jour de ta récupération."
         play sound "Click.mp3" noloop 
 
         Na "Merci beaucoup, j'aime trop ton idée."
         play sound "Click.mp3" noloop 
-
 
     return                            
 

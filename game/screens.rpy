@@ -1958,9 +1958,9 @@ screen robot():
 
             text _("Numéro de série : [serie]\n")  
 
-            text _("Propriétaire : [propriety]\n") 
+            text _("stockage utilisé : [stockage] Go\n")
 
-            text _("stockage utilisé :  \n") 
+            text _("Propriétaire : [propriety] \n") 
 
 style about_label is gui_label 
 style about_label_text is gui_label_text
