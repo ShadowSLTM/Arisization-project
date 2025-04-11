@@ -5575,28 +5575,61 @@ label choice9:
 
             $ info += 1.0
 
-            C "De rien mais avant qu'on finissent notre entretiens j'aimerai te demander deux truc."
-            play sound "Click.mp3" noloop 
+            C "De rien... mais avant qu'on termine notre entretien, j’aimerais te demander deux choses."
+            play sound "Click.mp3" noloop
 
-            P "Oui dites-moi."
-            play sound "Click.mp3" noloop 
+            P "Oui, je vous écoute."
+            play sound "Click.mp3" noloop
 
-            C "Premièrement, je ne veux pas que tu parles des informations dans ce documents à [newname] car je veux qu'elle aie une nouvelle vie."
-            play sound "Click.mp3" noloop 
+            C "J’aimerais que [newname] s’éloigne un instant. Ce que j’ai à dire est... sensible."
+            play sound "Click.mp3" noloop
 
-            P "Je vois et je ne lui dirai rien."
-            play sound "Click.mp3" noloop 
+            P "[newname], s’il te plaît... laisse-nous quelques minutes."
+            play sound "Click.mp3" noloop
 
-            C "Dernièrement, j'aimerai te demander un dernier truc."
-            play sound "Click.mp3" noloop 
+            Na "Bien sûr."
+            play sound "Click.mp3" noloop
+
+            "{b}{i}[newname] s’éloigne lentement, accompagnée de [E].{/i}{/b}"
+            play sound "Click.mp3" noloop
+
+            C "D’abord... je ne veux pas que tu partages ce qu’il y a dans ce document avec [newname]. Je veux qu’elle puisse repartir de zéro, sans ce poids."
+            play sound "Click.mp3" noloop
+
+            P "Je comprends... Je ne lui dirai rien."
+            play sound "Click.mp3" noloop
+
+            C "Merci. Vraiment... J’ai commis des actes immoraux pour créer [newname]. Et je ne veux pas qu’elle en porte la culpabilité."
+            play sound "Click.mp3" noloop
+
+            P "Qu’est-ce que vous avez fait exactement ?"
+            play sound "Click.mp3" noloop
+
+            C "Je l’ai conçue pour être... parfaite. La plus puissante. Testée dans des zones de guerre. Privée de liberté. Mais elle a fini par se rebeller. Elle a refusé d’obéir."
+            play sound "Click.mp3" noloop
+
+            P "Je comprends mieux maintenant. Mais... c’est monstrueux ce que vous lui avez fait subir."
+            play sound "Click.mp3" noloop
+
+            C "Je le sais. C’est pour ça que j’ai effacé sa mémoire. Je ne lui ai laissé que quelques souvenirs de base, rien de ce passé."
+            play sound "Click.mp3" noloop
+
+            P "...Alors en réalité, elle vit dans un mensonge... mais peut-être que c’est mieux ainsi. Elle mérite de vivre libre, sans chaînes... même si son passé reste gravé en vous."
+            play sound "Click.mp3" noloop
+
+            C "Oui et enfin... j’aimerais te demander une dernière faveur."
+            play sound "Click.mp3" noloop
 
         "{b}{i} Refuser les documents. {/i}{/b}" : 
 
-            P "Merci beaucoup mais je préfére partir sur de nouvelles bases."
-            play sound "Click.mp3" noloop 
+            P "Merci pour votre confiance… mais je préfère tourner la page et repartir sur de nouvelles bases."
+            play sound "Click.mp3" noloop
 
-            C "Ok je comprends mais avant qu'on finissent notre entretiens j'aimerai te demander un dernier truc."
-            play sound "Click.mp3" noloop 
+            C "Je comprends. Tu as ce droit... Et peut-être que c’est mieux ainsi."
+            play sound "Click.mp3" noloop
+
+            C "Mais avant qu’on termine cet entretien, j’aimerais te demander une dernière chose."
+            play sound "Click.mp3" noloop
 
     P "Oui dites-moi."
     play sound "Click.mp3" noloop 
@@ -13944,7 +13977,7 @@ label password4:
     M "Bon nous allons commencer par l'introduction au langage Runix."
     play sound "Click.mp3" noloop 
 
-    M "Le langage Runix a été inventé en 2092 par deux personnes de Neo Technologies nommmées [Sa] et [My], il a été développé pour leurs robots humanoïdes à la base."
+    M "Le langage Runix a été inventé en 2079 par deux personnes de Neo Technologies nommmées [Sa] et [My], il a été développé pour leurs robots humanoïdes à la base."
     play sound "Click.mp3" noloop 
 
     S "Les robots humanoïdes !? maintenant je comprends pourquoi il le connais par coeur."
@@ -15191,7 +15224,7 @@ label password8:
 
     $ answer1 = renpy.input("En quelle année a été créé Runix ?").strip()
 
-    if answer1 == "2092":
+    if answer1 == "2079":
         $ grade += 2.0
     else:
         $ grade += 0.0
@@ -16438,32 +16471,48 @@ label code1:
             "{b}{i} lui dire la vérité {/i}{/b}" :
                 play sound "Menu.mp3" noloop  
 
-                P "Il faut que sache que ta vrai date d'anniversaire est le 31 janvier."
-                play sound "Click.mp3" noloop  
-
-                Na "Quoi tu veux dire que depuis le début tu était au courant !?"
-                play sound "Click.mp3" noloop  
-
-                P "Oui je suis désolé mais je ne voulais pas te le dire."
-                play sound "Click.mp3" noloop  
-
-                Na "Mais pourquoi tu ne me l'a pas dit avant ?"
-                play sound "Click.mp3" noloop  
-
-                P "J'était tu tenu de rien te dire pour que tu sois heureuse."
-                play sound "Click.mp3" noloop  
-
-                Na "Je vois maintenant."
-                play sound "Crying.mp3" noloop  
-
-                "{b}{i}[newname] se met subitemnt en larmes.{/i}{/b}"
+                P "Aris... Il faut que tu saches la vérité. Ta véritable date d’anniversaire… c’est le 31 janvier."
                 play sound "Click.mp3" noloop
 
-                P "Ne pleure pas ça va  aller."
-                play sound "Click.mp3" noloop  
+                Na "Quoi ?! Tu le savais depuis le début ? Tu savais… et tu ne m’as rien dit ?"
+                play sound "Click.mp3" noloop
 
-                Na "Merci beaucoup, [prenom]."
-                play sound "Click.mp3" noloop  
+                if pronom == "il":
+
+                    P "Oui… Je le savais. Et je suis désolé. Je t’avais promis de ne rien dire, mais je ne peux plus te mentir."
+                    play sound "Click.mp3" noloop 
+
+                elif pronom == "elle": 
+
+                    P "Oui… Je le savais. Et je suis désolée. Je t’avais promis de ne rien dire, mais je ne peux plus te mentir."
+                    play sound "Click.mp3" noloop
+
+                Na "Mais pourquoi ? Pourquoi tu as gardé ça pour toi ?"
+                play sound "Click.mp3" noloop 
+
+                P "Parce que [C]… ton ancien créateur… m’a supplié de ne jamais t’en parler. Il voulait que tu repartes à zéro. Que tu vives une nouvelle vie… libre de ton passé."
+                play sound "Click.mp3" noloop
+
+                Na "...Mon passé ? Qu’est-ce que tu veux dire par là ?"
+                play sound "Click.mp3" noloop
+
+                P "Tu n’étais pas censée le découvrir… mais tu as été conçue pour être une arme. Une création perfectionnée. [C] t’a privée de liberté, t’a testée dans des situations extrêmes… Et un jour, tu as cessé d’obéir."
+                play sound "Click.mp3" noloop
+
+                Na "…Je… Je comprends maintenant..."
+                play sound "Click.mp3" noloop
+                
+                "{b}{i}[newname] baisse la tête, submergée par les larmes.{/i}{/b}"
+                play sound "Crying.mp3" noloop
+
+                P "Je suis vraiment désolé… Je voulais juste te protéger. Te laisser vivre ta vie… sans chaînes."
+                play sound "Click.mp3" noloop
+
+                P "Ne pleure pas, s’il te plaît… Je suis là, et je ne te laisserai jamais seule."
+                play sound "Click.mp3" noloop
+
+                Na "Merci… Merci d’avoir fini par me le dire, [prenom]. Même si ça fait mal… au moins maintenant, je sais qui je suis vraiment."
+                play sound "Click.mp3" noloop 
 
     else:  
 
@@ -16694,7 +16743,7 @@ label password10:
         Na "Oui et ?"
         play sound "Click.mp3" noloop 
 
-        P "Et si au finale ce n'était pas [suspect]"
+        P "Et si au finale ce n'était pas [suspect] ?"
         play sound "Click.mp3" noloop 
 
         Na "Comment ça !?"
@@ -16717,7 +16766,7 @@ label password10:
         Na "Oui et ?"
         play sound "Click.mp3" noloop 
 
-        P "C'est moi il y a un truc qui cloche dans cette histoire ?"
+        P "C'est moi ou il y a un truc qui cloche dans cette histoire ?"
         play sound "Click.mp3" noloop 
 
         Na "Oui effectivement."
