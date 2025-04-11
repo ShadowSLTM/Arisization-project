@@ -3057,7 +3057,7 @@ label wallbreaking4:
     scene hall 
     hide screen hall 
 
-    "{b}{i}Tu prends les escalier.{/i}{/b}"
+    "{b}{i}Tu prends les escaliers.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     scene staircase
@@ -16496,7 +16496,41 @@ label code1:
     P "[nothing]"
     play sound "Click.mp3" noloop 
 
-    P "Bon on va prendre à manger ?"
+    P "Il faut qu'on retourne au dortoir il se fait tard."
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Click.mp3" noloop 
+
+    scene black 
+    hide screen clubroom
+
+    "{b}{i}Tu quittes la salle de club.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall 
+    hide screen hall 
+
+    "{b}{i}Tu prends les escaliers.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene staircase
+    hide screen hallway 
+
+    "{b}{i} Puis tu continues vers le couloir avec [Na].{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hallway
+    show screen hallway 
+
+    P  "Cette première journée était vraiment fatiguante."
+    play sound "Click.mp3" noloop
+
+    Na "je confirme."
+    play sound "Click.mp3" noloop
+
+    P "Bon on va prendre à manger ? J'avais complétement oublié."
     play sound "Click.mp3" noloop 
 
     Na "Ok alors."
@@ -16546,7 +16580,7 @@ label code1:
     "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene black
+    scene black 
     hide screen room
     hide screen day
 
@@ -16644,7 +16678,7 @@ label password10:
     play sound "Click.mp3" noloop
 
     P "Ah oui tu as raison." 
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     return                            
 
