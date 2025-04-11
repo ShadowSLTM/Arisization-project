@@ -16680,6 +16680,49 @@ label password10:
     P "Ah oui tu as raison." 
     play sound "Click.mp3" noloop 
 
+    "{b}{i} Puis il y a un silence pendant un court instant.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    if suspect == "Subaru": 
+
+        Na "Est-ce que ça va [prenom] ?"
+        play sound "Click.mp3" noloop 
+        
+        P "Oui mais je pensais juste à cette histoire de traître ?"
+        play sound "Click.mp3" noloop 
+
+        Na "Oui et ?"
+        play sound "Click.mp3" noloop 
+
+        P "Et si au finale ce n'était pas [suspect]"
+        play sound "Click.mp3" noloop 
+
+        Na "Comment ça !?"
+        play sound "Click.mp3" noloop 
+
+        P "Ce que qui me fait dire ça c'est ça note à l'examen de Runix."
+        play sound "Click.mp3" noloop 
+
+        Na "Oui c'est vrai il a eu la pire note de la classe."
+        play sound "Click.mp3" noloop 
+    
+    else: 
+
+        Na "Est-ce que ça va [prenom] ?"
+        play sound "Click.mp3" noloop 
+
+        P "Oui mais je pensais juste à cette histoire de traître ?"
+        play sound "Click.mp3" noloop  
+
+        Na "Oui et ?"
+        play sound "Click.mp3" noloop 
+
+        P "C'est moi il y a un truc qui cloche dans cette histoire ?"
+        play sound "Click.mp3" noloop 
+
+        Na "Oui effectivement."
+        play sound "Click.mp3" noloop 
+
     return                            
 
-# Aris la plus belle <333333333333333  
+# Aris la plus belle <333333333333333   
