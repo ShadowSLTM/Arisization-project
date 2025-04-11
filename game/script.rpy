@@ -6006,6 +6006,7 @@ label choice9:
             Na "Vérification...."
             play sound "Menu.mp3" noloop 
             $ success += 1 
+            $ update += 1.0
 
             Na "Mise à jour terminée, la version actuelle est maintenant la [update]."
             play sound "Click.mp3" noloop 
@@ -9826,7 +9827,7 @@ label code:
         P "Pardon ?"
         play sound "Click.mp3" noloop 
 
-    $ update += 1.0
+        $ update += 1.0
 
     M "Calmez-vous avant que ça devienne l'anarchie."
     play sound "Click.mp3" noloop 
@@ -9993,6 +9994,8 @@ label code:
 
         "{b}{i} Aller manger avec [Na]{/i}{/b}" : 
             play sound "Menu.mp3" noloop 
+
+            $ success += 1
 
             "{b}{i} Vous allez chercher une pour manger.{/i}{/b}"
             play sound "Click.mp3" noloop 
@@ -10692,15 +10695,20 @@ label password:
     $ entered_password = entered_password.strip()
 
     if entered_password == stored_password:
-        "Mot de passe correct. Accès autorisé." 
-        play sound "Menu.mp3" noloop
 
-    elif len(entered_password) > 10:
-        $ success += 1
-        "Mot de passe correct. Accès autorisé." 
-        play sound "Menu.mp3" noloop
+        if len(entered_password) > 10:
+            $ success += 1 
+            
+            "Mot de passe correct. Accès autorisé." 
+            play sound "Menu.mp3" noloop
 
+        else:
+
+            "Mot de passe correct. Accès autorisé." 
+            play sound "Menu.mp3" noloop
+        
     else:
+
         "Mot de passe incorrect. Accès refusé." 
         play sound "Menu.mp3" noloop
         jump password  
@@ -16247,7 +16255,7 @@ label password9:
     P "Tu me veux quoi ?"
     play sound "Click.mp3" noloop
 
-    s "Je voulais juste te demander quelques choses."
+    S "Je voulais juste te demander quelques choses."
     play sound "Click.mp3" noloop
 
     P "Quoi !?"

@@ -1,119 +1,24 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/screens.rpy", line 1933, in execute
-    screen robot():
-  File "game/screens.rpy", line 1933, in execute
-    screen robot():
-  File "game/screens.rpy", line 1937, in execute
-    use game_menu(_("Ton robot"), scroll="viewport"):
-  File "game/screens.rpy", line 424, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
-  File "game/screens.rpy", line 424, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
-  File "game/screens.rpy", line 433, in execute
-    frame:
-  File "game/screens.rpy", line 436, in execute
-    hbox:
-  File "game/screens.rpy", line 442, in execute
-    frame:
-  File "game/screens.rpy", line 445, in execute
-    if scroll == "viewport":
-  File "game/screens.rpy", line 447, in execute
-    viewport:
-  File "game/screens.rpy", line 456, in execute
-    vbox:
-  File "game/screens.rpy", line 459, in execute
-    transclude
-  File "game/screens.rpy", line 1937, in execute
-    use game_menu(_("Ton robot"), scroll="viewport"):
-  File "game/screens.rpy", line 1941, in execute
-    vbox:
-  File "game/screens.rpy", line 1961, in execute
-    text _("stockage utilisé : [stockage] Go / [fullstockage] \n")
-NameError: name 'fullstockage' is not defined
+  File "game/script.rpy", line 16253, in script
+    s "Je voulais juste te demander quelques choses."
+Exception: Sayer 's' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
-    python hide:
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
-    python hide:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
-    ui.interact()
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 1933, in execute
-    screen robot():
-  File "game/screens.rpy", line 1933, in execute
-    screen robot():
-  File "game/screens.rpy", line 1937, in execute
-    use game_menu(_("Ton robot"), scroll="viewport"):
-  File "game/screens.rpy", line 424, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
-  File "game/screens.rpy", line 424, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
-  File "game/screens.rpy", line 433, in execute
-    frame:
-  File "game/screens.rpy", line 436, in execute
-    hbox:
-  File "game/screens.rpy", line 442, in execute
-    frame:
-  File "game/screens.rpy", line 445, in execute
-    if scroll == "viewport":
-  File "game/screens.rpy", line 447, in execute
-    viewport:
-  File "game/screens.rpy", line 456, in execute
-    vbox:
-  File "game/screens.rpy", line 459, in execute
-    transclude
-  File "game/screens.rpy", line 1937, in execute
-    use game_menu(_("Ton robot"), scroll="viewport"):
-  File "game/screens.rpy", line 1941, in execute
-    vbox:
-  File "game/screens.rpy", line 1961, in execute
-    text _("stockage utilisé : [stockage] Go / [fullstockage] \n")
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\text\text.py", line 2079, in __init__
-    self.set_text(text, scope, substitute) # type: ignore
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\text\text.py", line 2216, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
-    s = interpolate(s, variables) # type: ignore
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
-    raise e
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "<none>", line 1, in <module>
-NameError: name 'fullstockage' is not defined
+  File "game/script.rpy", line 16253, in script
+    s "Je voulais juste te demander quelques choses."
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
+    Say.execute(self)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 583, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 472, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 's' is not defined.
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 Arisization Project Version_test
-Thu Apr 10 13:29:13 2025
+Fri Apr 11 21:58:17 2025
