@@ -285,7 +285,7 @@ label hack:
         play sound "Menu.mp3" noloop 
 
     $ propriety = P
-    $ stockage += 0.5
+    $ stockage += 1.0
 
     A "Initialisation terminée. Date du 4 juillet 2097, Bonjour je suis [A] et j'ai dix-huit ans."
     play sound "Click.mp3" noloop 
@@ -2676,7 +2676,7 @@ label skip:
         "{b}{i} Redémarrer [newname].{/i}{/b}" :
             play sound "Menu.mp3" noloop 
 
-    $ stockage += 1.0
+    $ stockage += 2.0 
 
     "{b}{i}tu redémarres [newname] tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -6038,7 +6038,7 @@ label choice9:
             play sound "Menu.mp3" noloop 
             $ success += 1 
             $ update += 1.0
-            $ stockage += 3.0 
+            $ stockage += 5.0 
 
             Na "Mise à jour terminée, la version actuelle est maintenant la [update]."
             play sound "Click.mp3" noloop 
@@ -9376,7 +9376,7 @@ label code:
                 "{b}{i}Redémarrer [newname].{/i}{/b}":
                     play sound "Menu.mp3" noloop
 
-            $ stockage += 3.0 
+            $ stockage += 5.0 
             define Na = Character('[newname] [nom]', color="#00eeff")
             
             $ start = get_random_start()
@@ -10749,7 +10749,7 @@ label password:
 
         if len(entered_password) > 10:
             $ success += 1 
-            $ stockage += 1.0
+            $ stockage += 2.0
 
             "Mot de passe correct. Accès autorisé." 
             play sound "Menu.mp3" noloop
@@ -10761,7 +10761,7 @@ label password:
         
     else:
 
-        $ stockage += 1.0
+        $ stockage += 2.0
 
         "Mot de passe incorrect. Accès refusé." 
         play sound "Menu.mp3" noloop
@@ -14742,7 +14742,9 @@ label password6:
     "{b}{i}[I] quitte ton dortoir.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    Na "Bon Je vais me déconnecter et me recharger."
+    $ stockage += 15.0 
+
+    Na "Bon Je vais me déconnecter et me recharger, j'ai vraiment bien réviser."
     play sound "Click.mp3" noloop 
 
     P "Pas de soucis."
@@ -16543,15 +16545,13 @@ label code1:
                 P "On pourrait dire que ta nouvelle date d'anniveraire est 4 juillet, le jour de ta récupération."
                 play sound "Click.mp3" noloop 
 
-                $ stockage += 1.0
+                $ stockage += 2.0
 
                 Na "Merci beaucoup, j'aime trop ton idée."
                 play sound "Click.mp3" noloop  
 
             "{b}{i} lui dire la vérité {/i}{/b}" :
                 play sound "Menu.mp3" noloop  
-
-                $ stockage += 10.0
 
                 P "Aris... Il faut que tu saches la vérité. Ta véritable date d’anniversaire… c’est le 31 janvier."
                 play sound "Click.mp3" noloop
@@ -16596,12 +16596,14 @@ label code1:
                 Na "Merci… Merci d’avoir fini par me le dire, [prenom]. Même si ça fait mal… au moins maintenant, je sais qui je suis vraiment."
                 play sound "Click.mp3" noloop 
 
+                $ stockage += 15.0 
+
     else:  
 
         P "On pourrait dire que ta nouvelle date d'anniveraire est 4 juillet, le jour de ta récupération."
         play sound "Click.mp3" noloop 
 
-        $ stockage += 1.0
+        $ stockage += 2.0
 
         Na "Merci beaucoup, j'aime trop ton idée."
         play sound "Click.mp3" noloop 
