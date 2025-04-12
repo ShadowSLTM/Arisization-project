@@ -252,30 +252,38 @@ label hack:
  
             "{b}{i}Choisir M4A1{/i}{/b}" :
                 $ A = Character("M4A1", color="#00ff00")
+                $ stockage += 1.0
 
             "{b}{i}Choisir M16A1{/i}{/b}" :
                 $ A = Character("M16A1", color="#ffa600") 
+                $ stockage += 1.2
 
             "{b}{i}Choisir ST AR-15{/i}{/b}" :
                 $ A = Character("ST AR-15", color="#ff8fc3") 
-                
+                $ stockage += 1.5 
+
             "{b}{i}Choisir M4 SOPMOD II{/i}{/b}" :
                 $ A = Character("M4 SOPMOD II", color="#ff4a4a")
+                $ stockage += 2.0 
 
             "{b}{i}Choisir UMP45{/i}{/b}" :
                 $ A = Character("UMP45", color="#8a8aff") 
+                $ stockage += 1.0
 
             "{b}{i}Choisir M82A1{/i}{/b}" :
                 $ A = Character("M82A1", color="#0000ff") 
+                $ stockage += 1.4
 
-            "{b}{i}Choisir M1919A4{/i}{/b}" :
+            "{b}{i}Choisir M1919A4{/i}{/b}" : 
                 $ A = Character("M1919A4", color="#005c17") 
+                $ stockage += 1.9 
 
         P "Attend on dirait qu'elle est en train de démarrer."
         play sound "Menu.mp3" noloop 
 
     else:  
 
+        $ stockage += 1.0 
         $ A = Character("AK-24", color="#00eeff")
         
         R "Initialisation en cours......" 
@@ -284,8 +292,7 @@ label hack:
         P "Attend on dirait qu'elle est en train de démarrer."
         play sound "Menu.mp3" noloop 
 
-    $ propriety = P
-    $ stockage += 1.0
+    $ propriety = P 
 
     A "Initialisation terminée. Date du 4 juillet 2097, Bonjour je suis [A] et j'ai dix-huit ans."
     play sound "Click.mp3" noloop 
@@ -6037,7 +6044,6 @@ label choice9:
             Na "Vérification...."
             play sound "Menu.mp3" noloop 
             $ success += 1 
-            $ update += 1.0
             $ stockage += 5.0 
 
             Na "Mise à jour terminée, la version actuelle est maintenant la [update]."
@@ -9874,7 +9880,7 @@ label code:
         P "Pardon ?"
         play sound "Click.mp3" noloop 
 
-        $ update += 1.0
+        $ update += 1.0 
 
     M "Calmez-vous avant que ça devienne l'anarchie."
     play sound "Click.mp3" noloop 
@@ -15856,7 +15862,8 @@ label password9:
 
             Na "Vérification...."
             play sound "Menu.mp3" noloop 
-            $ success += 1 
+            $ success += 1
+            $ stockage += 3.0 
             $ update += 1.0
 
             Na "Mise à jour terminée, la version actuelle est maintenant la [update]."

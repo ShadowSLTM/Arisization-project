@@ -1944,7 +1944,7 @@ screen robot():
 
             text _("Nom de code : [A]\n") 
 
-            text _("Prénom : [newname]\n")
+            text _("Prénom : [newname] [nom]\n")
 
             text _("Mot de passe : [stored_password]\n") 
 
