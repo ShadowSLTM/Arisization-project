@@ -86,8 +86,7 @@ init python:
         "Ok alors.",  
         "Ok.",  
         "Très bien.",    
-        "Entendu.",  
-        "C'est parti.",  
+        "Entendu.", 
         "Ça marche.",  
     ]
 
