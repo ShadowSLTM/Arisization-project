@@ -4140,7 +4140,7 @@ label connexion:
             "{b}{i} Tu ranges ton ordi avant de quiiter la salle de club.{/i}{/b}"
             play sound "Click.mp3" noloop 
 
-            if pronom == "il":
+            if pronom == "il": 
 
                 P "Je suis fatigué avec cette journée."
                 play sound "Click.mp3" noloop
@@ -16867,6 +16867,56 @@ label password10:
 
         Na "Oui effectivement."
         play sound "Click.mp3" noloop 
+
+    P "Bon on doit aller en cours avant d'étre en retard."
+    play sound "Click.mp3" noloop
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Click.mp3" noloop 
+
+    P "Bien alors allons-y."
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen room
+
+    "{b}{i} Tu quiites le dortoir avec [newname].{/i}{/b}"
+    play sound "Door.mp3" noloop
+    
+    scene hallway
+    show screen hallway
+
+    "{b}{i}Tu continues vers la salle de classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+    
+    scene classroom  
+    show screen class_404 
+
+    $  salutation_rdm = get_random_salutation()
+    M "[salutation_rdm]"
+    play sound "Click.mp3" noloop 
+
+    $  salutation_rdm = get_random_salutation()
+    P "[salutation_rdm]"
+    play sound "Click.mp3" noloop 
+
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop 
+
+    $  salutation_rdm = get_random_salutation()
+    I "[salutation_rdm]"
+    play sound "Click.mp3" noloop 
+
+    M "Bien nous pouvons commencer le cours." 
+    play sound "Click.mp3" noloop 
 
     return                            
 
