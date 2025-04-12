@@ -22,6 +22,7 @@ label start:
     default propriety = "" 
     default serie = "???????"
     default stockage = "???????"
+    default robotname = ""  
 
     stop music fadeout 2.0   
 
@@ -2624,6 +2625,8 @@ label choice4:
     if newname == "Aris":
 
         $ success += 1
+        $ robotname = nom
+        
         "Le prénom a été enregistré dans le système." 
         play sound "Menu.mp3" noloop
 
