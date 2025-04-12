@@ -2626,6 +2626,7 @@ label choice4:
 
         $ success += 1
         $ robotname = nom
+        $ stockage += 2.0 
         
         "Le prénom a été enregistré dans le système." 
         play sound "Menu.mp3" noloop
@@ -2660,6 +2661,7 @@ label choice5:
     if ip == "001.018.009.019":
 
         $ success += 1
+        $ stockage += 2.0 
   
         "{b}{i}Initialisation de l'adresse IP en cours...{/i}{/b}"
         play sound "Menu.mp3" noloop
@@ -2685,8 +2687,6 @@ label skip:
 
         "{b}{i} Redémarrer [newname].{/i}{/b}" :
             play sound "Menu.mp3" noloop 
-
-    $ stockage += 2.0 
 
     "{b}{i}tu redémarres [newname] tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop 
