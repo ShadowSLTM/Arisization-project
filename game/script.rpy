@@ -9367,6 +9367,8 @@ label code:
 
         if reboot == "initiate_humanoid_robot.shutdown(security_override=false)":
 
+            $ update += 1.0
+            
             A "Fermeture du système d'exploitation [system]....."
             play sound "Click.mp3" noloop
 
