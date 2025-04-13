@@ -17090,7 +17090,7 @@ label password10:
     play sound "Click.mp3" noloop
 
     scene black
-    hide screen office
+    hide screen lunchroom
     
     "{b}{i}Tu te diriges vers le hall.{/i}{/b}"
     play sound "Door.mp3" noloop
