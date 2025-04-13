@@ -1921,7 +1921,7 @@ screen success():
 
             label "{b}{i}Progression\n{/i}{/b}" 
 
-            text _("Succès : [success]/25\n") 
+            text _("Succès : [success]/26\n") 
 
 style about_label is gui_label 
 style about_label_text is gui_label_text
@@ -1952,7 +1952,7 @@ screen robot():
 
             text _("Mise à jour : [update]\n") 
 
-            text _("Adresse IP : [ip]\n")   
+            text _("Adresse IP : [baseip]\n")   
 
             text _("Origine : [robotorigine]\n")  
 

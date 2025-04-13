@@ -71,3 +71,8 @@ define O = Character('Kaede Tachibana', color="#0000ff")
 
 define Dc = Character('Seydou N\'Doye', color="#ffffff")
 
+# journalistes 
+
+define Z = Character('Rika Kobayashi', color="#ffffff")
+define Nk = Character('Natsuo Kaneda', color="#ffffff")
+

@@ -246,4 +246,4 @@ init python:
     ]
 
     def get_random_endlesson():
-        return random.choice(endlesson_list)  
+        return random.choice(endlesson_list)
