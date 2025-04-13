@@ -23,6 +23,7 @@ label start:
     default serie = "???????"
     default stockage = "???????"
     default robotname = ""  
+    $ sad = 0 
 
     stop music fadeout 2.0   
 
@@ -3950,7 +3951,7 @@ label wallbreaking4:
     I "[validation]"
     play sound "Click.mp3" noloop 
 
-    "{b}{i} Le cours continua sans probléme.{/i}{/b}"
+    "{b}{i} Le cours continue sans probléme.{/i}{/b}"
     play sound "Bell.mp3" noloop
 
     M "Bon le cours est terminé, vous pouvez quitter la salle et n'oubliez pas l'examen dans une semaine."
@@ -4747,7 +4748,7 @@ label choice9:
     K "Ok alors."
     play sound "Click.mp3" noloop 
 
-    "{b}{i}Le cours continua sans probléme.{/i}{/b}"
+    "{b}{i}Le cours continue sans probléme.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
     $ endlesson = get_random_endlesson()
@@ -5247,7 +5248,7 @@ label choice9:
     M "Bien nous pouvons continuer notre cours de ce matin sur la grammaire, veuillez sortir vos livres."
     play sound "Click.mp3" noloop 
 
-    "{b}{i} Le cours continua tranquillement.{/i}{/b}"
+    "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop
     
     M "Bon le cours est bientôt terminé."
@@ -6728,7 +6729,7 @@ label suite1:
     M "Bon sortez vos livres à la page 20, nous allons reprendre notre cours de la derniére fois."
     play sound "Click.mp3" noloop 
 
-    "{b}{i}Le cours continua sans probléme.{/i}{/b}"
+    "{b}{i}Le cours continue sans probléme.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
     $ endlesson = get_random_endlesson()
@@ -7231,7 +7232,7 @@ label suite1:
     S "Oui madame."
     play sound "Click.mp3" noloop
 
-    "{b}{i}Le cours continua sans probléme.{/i}{/b}"
+    "{b}{i}Le cours continue sans probléme.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
     $ endlesson = get_random_endlesson()
@@ -7897,7 +7898,7 @@ label debate:
     I "Tu te défends bien [prenom]."
     play sound "Click.mp3" noloop 
 
-    "{b}{i}Le débat continua jusqu'à la fin du cours.{/i}{/b}"
+    "{b}{i}Le débat continue jusqu'à la fin du cours.{/i}{/b}"
     play sound "Bell.mp3" noloop   
 
     $ endlesson = get_random_endlesson()
@@ -8935,7 +8936,7 @@ label debate:
         M "Mauvaise réponse."
         play sound "Click.mp3" noloop
 
-    "{b}{i}Le cours continua sans probléme.{/i}{/b}"
+    "{b}{i}Le cours continue sans probléme.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
     $ endlesson = get_random_endlesson()
@@ -9208,7 +9209,7 @@ label code:
     scene hall
     show screen hall 
 
-    "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
+    "{b}{i} Puis vous continuez encore vers le réféctoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     scene black
@@ -12628,7 +12629,7 @@ label examen_pythagore:
     K "Ok alors."
     play sound "Click.mp3" noloop 
 
-    "{b}{i}Le cours continua sans probléme.{/i}{/b}"
+    "{b}{i}Le cours continue sans probléme.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
     $ endlesson = get_random_endlesson()
@@ -13071,7 +13072,7 @@ label examen_pythagore:
     M "Bien nous pouvons continuer notre cours de ce matin sur la grammaire, veuillez sortir vos livres."
     play sound "Click.mp3" noloop 
 
-    "{b}{i} Le cours continua tranquillement.{/i}{/b}"
+    "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
     M "Bon le cours est terminé, vous pouvez quitter la salle."
@@ -13859,26 +13860,60 @@ label password4:
     P "Oui dites-moi."
     play sound "Click.mp3" noloop  
 
-    Oh "Est-ce qu'[newname] est déclarée à l'état civile."
+    Oh "Est-ce que [newname] est déclarée à l'état civil ?"
     play sound "Click.mp3" noloop  
-    
-    P "Oui je l'ai fait cet été." 
+
+    P "Non... malheureusement."
+    play sound "Click.mp3" noloop  
+
+    Oh "Pourquoi ? C’est obligatoire, non ?"
+    play sound "Click.mp3" noloop  
+
+    P "À l’époque, je n'avais pas les infos nécessaires."
     play sound "Click.mp3" noloop 
 
-    Oh "Bien je vois, bon on va vous laisser c'est tous ce qu'on a à vous dire."
-    play sound "Click.mp3" noloop 
-
-    M "Merci beaucoup, je vous remercie pour ces informations."
+    P "Nom, date de création, origine... tout était flou."
     play sound "Click.mp3" noloop  
+
+    P "Vous croyez que je risque quelque chose à ne pas l’avoir déclarée ?"
+    play sound "Click.mp3" noloop  
+
+    Oh "Ça dépend. Si quelqu’un la découvre et fouille un peu, ça peut devenir sérieux."
+    play sound "Click.mp3" noloop  
+
+    P "Super... comme si j'avais pas assez de problèmes."
+    play sound "Click.mp3" noloop  
+
+    Oh "Je peux peut-être t’aider."
+    play sound "Click.mp3" noloop  
+
+    Oh "Je connais quelqu’un à l’administration. Je peux voir s’il y a un moyen discret."
+    play sound "Click.mp3" noloop  
+
+    P "Vous feriez ça ?"
+    play sound "Click.mp3" noloop  
+
+    Oh "Évidemment. [newname] mérite une existence officielle."
+    play sound "Click.mp3" noloop  
+
+    $ thanks = get_random_thanks()
+    P "[thanks]"
+    play sound "Click.mp3" noloop
 
     $ nothing = get_random_nothing()
     Oh "[nothing]"
     play sound "Click.mp3" noloop
 
+    Oh "Normalement dans les deux semaines qui viennent, tu me reverras pour qu'on finisse ça."
+    play sound "Click.mp3" noloop  
+
+    P "Je vois."
+    play sound "Click.mp3" noloop  
+
     "{b}{i}Puis ils quiitent la salle.{/i}{/b}"
     play sound "Click.mp3" noloop    
 
-    M "Bon, reprenon le cours."
+    M "Bon, reprenons le cours." 
     play sound "Click.mp3" noloop 
 
     "{b}{i}Le cours continue sans problème.{/i}{/b}"
@@ -15388,7 +15423,7 @@ label password8:
     M "Parfait maintenant vous pouvez aller en pause, je vous renderez vos copies demain matin."
     play sound "Click.mp3" noloop  
 
-    N "Demain !? c'est surpreant, d'habitude c'est l'après-midi."
+    N "Demain !? c'est surpreant, d'habitude c'est l'après-midi même."
     play sound "Click.mp3" noloop  
 
     M "Oui mais c'était un test écrit cette fois-ci contrairement à avant."
@@ -16797,21 +16832,13 @@ label password10:
     P "[comment_ca_va]"
     play sound "Click.mp3" noloop 
 
-    $ je_vais_bien_txt = get_random_je_vais_bien() 
-    Na "[je_vais_bien_txt] Comme d'habitude et toi ?" 
-    play sound "Click.mp3" noloop 
-
-    $ je_vais_bien_txt = get_random_je_vais_bien() 
-    P "[je_vais_bien_txt]" 
-    play sound "Click.mp3" noloop
-
-    Na "Normalement on est sensé recevoir notre budget du mois." 
+    Na "Bon aujourd'hui on est sensé recevoir notre budget du mois." 
     play sound "Click.mp3" noloop
 
     P "Oui c'est vrai." 
     play sound "Click.mp3" noloop
 
-    if grade == 20.0:
+    if grade == 20.0: 
 
         $ points += 15000
 
@@ -16916,6 +16943,72 @@ label password10:
     play sound "Click.mp3" noloop 
 
     M "Bien nous pouvons commencer le cours." 
+    play sound "Click.mp3" noloop 
+
+    $ validation = get_random_validation() 
+    P "[validation]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Le cours continue tranquillement.{/i}{/b}"
+    play sound "Bell.mp3" noloop
+
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
+
+    P "Bon on va manger [newname] ?"
+    play sound "Click.mp3" noloop 
+    
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Click.mp3" noloop
+
+    hide screen clubroom
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de club.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall
+    show screen hall 
+
+    "{b}{i} Puis vous continuez encore vers le réféctoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hall 
+
+    "{b}{i} Tu entres dasn le réféctoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene lunchroom 
+    show screen lunchroom 
+
+    Na "Bon on va prendre à manger ?"
+    play sound "Click.mp3" noloop 
+
+    P "Ok alors."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+    
+    $ points -= 200 
+
+    P "C'est bon [newname] tu t'es servie ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui c'est bon on peut aller s'asseoir."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} On allons manger tu croises [I].{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop
+
+    I "Oh salut [prenom] et [newname], oui moi ça va bien et vous ?"
     play sound "Click.mp3" noloop 
 
     return                            
