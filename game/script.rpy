@@ -17233,6 +17233,18 @@ label password10:
 
             Rk "Bien ma première question est : Quel est le nom de votre [model] ?"
             play sound "Click.mp3" noloop 
+
+            P "Elle se nomme [Na]."
+            play sound "Click.mp3" noloop 
+
+            Rk "Bien, mien mas eonde question : Quel âge a [newname] ?"
+            play sound "Click.mp3" noloop
+
+            P "Elle a 18 ans."
+            play sound "Click.mp3" noloop 
+
+            Rk "Je vois."
+            play sound "Click.mp3" noloop 
     
         "{b}{i} refuser l'interview {/i}{/b}" : 
 
