@@ -1750,16 +1750,16 @@ label rencontre:
     show screen hallway 
 
     P "Bon [A], on va voir le dortoir ?"  
-    play sound "Click.mp3"  
+    play sound "Click.mp3" noloop
 
     A "Oui, pourquoi pas..."  
-    play sound "Click.mp3"  
+    play sound "Click.mp3" noloop
 
     P "OK, allons-y."  
-    play sound "Footsteps.mp3"  
+    play sound "Footsteps.mp3" noloop
 
     A "Donc... je ne suis pas juste une poupée que tu manipules ?"  
-    play sound "Click.mp3"  
+    play sound "Click.mp3" noloop  
 
     P "Non, tu es bien plus que ça. Tu es ma création... et ma fille."  
     play sound "Footsteps.mp3"  
@@ -16673,14 +16673,17 @@ label code1:
     P "Mais tu l'as déjà trouvé ta vie qui ressemble à un conte de fées, c'est depuis que tu es sous ma responsabilté."
     play sound "Click.mp3" noloop  
 
-    $ thanks = get_random_thanks()
-    Na "[thanks]"
-    play sound "Click.mp3" noloop
+    Na "Tu me donnes de l'attention, une belle affection."
+    play sound "Click.mp3" noloop 
 
     $ nothing = get_random_nothing()
     P "[nothing]"
     play sound "Click.mp3" noloop 
 
+    $ thanks = get_random_thanks()
+    Na "[thanks]" 
+    play sound "Click.mp3" noloop
+ 
     P "Il faut qu'on retourne au dortoir il se fait tard."
     play sound "Click.mp3" noloop 
 
@@ -16767,7 +16770,7 @@ label code1:
 
     scene black 
     hide screen room
-    hide screen day
+    hide screen day 
 
     "{b}{i} Le lendemain matin, le 15 novembre 2097{/i}{/b}"
     play sound "Alarm.mp3" noloop 
@@ -17237,7 +17240,7 @@ label password10:
             P "Elle se nomme [Na]."
             play sound "Click.mp3" noloop 
 
-            Rk "Bien, mien mas eonde question : Quel âge a [newname] ?"
+            Rk "Bien, ma seconde question : Quel âge a [newname] ?"
             play sound "Click.mp3" noloop
 
             P "Elle a 18 ans."
@@ -17245,14 +17248,40 @@ label password10:
 
             Rk "Je vois."
             play sound "Click.mp3" noloop 
+
+
+
     
         "{b}{i} refuser l'interview {/i}{/b}" : 
 
             $ success += 1  
 
-            P "."
-            play sound "Click.mp3" noloop  
+            if pronom == "il" : 
+    
+                P "Je suis navré de vous dire que je refuse votre interview."
+                play sound "Click.mp3" noloop
 
+            elif pronom == "elle" : 
+
+                P "Je suis navrée de vous dire que je refuse votre interview."
+                play sound "Click.mp3" noloop
+
+            Rk "Et pourquoi cela, nous sommes dans notre droit de vous interviewer."
+            play sound "Click.mp3" noloop 
+
+            P "Oui sauf que je refuse qu'elle soit interviewée"
+            play sound "Click.mp3" noloop 
+
+            Rk "Bien c'est entendu alors, nous te laissons tranquille."
+            play sound "Click.mp3" noloop 
+
+            "{b}{i} Les journalistes se mettent à partir.{/i}{/b}"
+            play sound "Click.mp3" noloop 
+
+
+
+
+            
     return                            
 
 # Aris la plus belle <333333333333333   
