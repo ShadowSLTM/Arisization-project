@@ -17161,7 +17161,7 @@ label password10:
     P "Bonjour, pourrai-je savoir qui étes-vous ?"
     play sound "Click.mp3" noloop 
 
-    Z "Bonjour, je suis [Z]."
+    Rk "Bonjour, je suis [Rk]."
     play sound "Click.mp3" noloop 
 
     P "Et vous ?"
@@ -17173,7 +17173,7 @@ label password10:
     P "Et pourquoi vous étes ici ?"
     play sound "Click.mp3" noloop 
 
-    Z "Nous sommes journalistes et nous venons vous poser quelques questions."
+    Rk "Nous sommes journalistes et nous venons vous poser quelques questions."
     play sound "Click.mp3" noloop 
 
     "{b}{i} Après avoir entendu ça, [newname] se cache dérrière toi.{/i}{/b}"
@@ -17192,7 +17192,7 @@ label password10:
     P "Mais ça ne va pas de débarquer comme ça !!!"
     play sound "Click.mp3" noloop 
 
-    Z "Doucement nous voulons juste te poser des questions."
+    Rk "Doucement nous voulons juste te poser des questions."
     play sound "Click.mp3" noloop 
 
     "{b}{i} En même temps, [M] viens vers vous.{/i}{/b}"
@@ -17220,9 +17220,20 @@ label password10:
 
         "{b}{i} Accepter l'interview {/i}{/b}" : 
 
-            P "."
+            P "J'accepte de répondre à vos questions."
             play sound "Click.mp3" noloop 
 
+            $ thanks = get_random_thanks()
+            Rk "[thanks]"
+            play sound "Click.mp3" noloop
+
+            $ nothing = get_random_nothing()
+            P "[nothing]"
+            play sound "Click.mp3" noloop 
+
+            Rk "Bien ma première question est : Quel est le nom de votre [model] ?"
+            play sound "Click.mp3" noloop 
+    
         "{b}{i} refuser l'interview {/i}{/b}" : 
 
             $ success += 1  

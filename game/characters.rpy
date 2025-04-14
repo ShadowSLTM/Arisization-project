@@ -73,6 +73,6 @@ define Dc = Character('Seydou N\'Doye', color="#ffffff")
 
 # journalistes 
 
-define Z = Character('Rika Kobayashi', color="#ffffff")
+define Rk = Character('Rika Kobayashi', color="#ffffff")
 define Nk = Character('Natsuo Kaneda', color="#ffffff")
 
