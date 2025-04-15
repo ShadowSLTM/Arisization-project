@@ -3049,7 +3049,7 @@ label choice6:
 
             scene black 
             hide screen clubroom
-            hide screen points
+            hide screen points 
             hide screen day
             play music "gameover.mp3" noloop
             "{b}{i} Fin numéro 4 : [A] complètement a été piratée avec l'adresse IP 001.009.011.015.{/i}{/b}"
@@ -12547,9 +12547,9 @@ label password2:
     "{b}{i}Tout le monde retourne sa copie.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    $ grade = 0.0 
-
 label examen_pythagore:
+
+    $ grade = 0.0 
 
     "Question 1 : Quelle est la formule du théorème de Pythagore ?"
     play sound "Menu.mp3" noloop 
@@ -15400,6 +15400,8 @@ label password8:
     "{b}{i}Tout le monde retourne sa copie.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
+label examen_runix: 
+
     $ grade = 0.0 
 
     P "Bon voyons voir....." 
@@ -15961,7 +15963,7 @@ label password9:
 
             Na "Vérification...."
             play sound "Menu.mp3" noloop 
-            $ success += 1
+            $ success += 1 
             $ stockage += 3.0 
             $ update += 1.0
 
@@ -16023,7 +16025,6 @@ label password9:
     M "Bon aujourd'hui je vais vous rendre les résultats sur votre examen de runix."
     play sound "Click.mp3" noloop  
 
-
     K "Cool enfin."
     play sound "Click.mp3" noloop
 
@@ -16076,8 +16077,9 @@ label password9:
                 show screen points 
                 scene classroom 
                 show screen class_404 
+                $ day -= 1
                 play music "Soundtrack.mp3" loop volume 1.0
-                jump examen_pythagore 
+                jump examen_runix
     
     else:
        
@@ -16572,12 +16574,12 @@ label code1:
                 "{b}{i}Abandonner{/i}{/b}":
                     return
                 "{b}{i}Réessayer.{/i}{/b}":
-                    show clubroom
+                    show clubroom 
                     show screen clubroom
                     show screen points
                     show screen day
                     play music "Soundtrack2.mp3" loop volume 1.0
-                    jump code
+                    jump code1
 
     else:
 
