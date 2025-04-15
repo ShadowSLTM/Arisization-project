@@ -25,6 +25,7 @@ label start:
     default robotname = ""  
     $ sad = 0 
     default baseip = ""
+    
     stop music fadeout 2.0   
 
 label key:
@@ -35,13 +36,15 @@ label key:
     $ valid_keys = {"ARIS-DEVS", "ARIS-8J4K-F9Q7", "ARIS-GRFN-M4A1"}
     
     if key in valid_keys:
+
         "Jeu déverrouillé."
         play sound "Ciick.mp3" noloop
 
-    else:
+    else: 
+
         "Erreur système. Veuillez réessayer."
         $ renpy.restart_interaction()
-        jump key
+        jump key 
 
     $ success = 0 
 
@@ -122,19 +125,21 @@ label auto_save:
         
 label début: 
 
-    scene main 
-
+    scene main
     play music "Transition.mp3" noloop 
+    with fade
 
     "{b}{i}Chapitre 0 : Arisization Project - Lost Origins Arc{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     scene black
+    with fade
 
     "{b}{i}Quelque part dans un entrepôt abandonné en 2097.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     scene warehouse 
+    with fade
 
     play music "Soundtrack2.mp3" loop volume 1.0
 
@@ -358,6 +363,7 @@ label choice1:
             play sound "Click.mp3" noloop   
 
             scene black 
+            with fade
 
             "{b}{i}Tu quittas l'entrepôt avec [S].{/i}{/b}"
             play sound "Menu.mp3" noloop
@@ -756,6 +762,7 @@ label grayroom:
     stop music fadeout 2.0 
 
     scene main 
+    with fade
 
     play music "Transition.mp3" noloop 
     "{b}{i}Chapitre 1 : Arisization Project - High School Arc{/i}{/b}"
@@ -772,6 +779,7 @@ label grayroom:
         play sound "Click.mp3" noloop 
 
     scene black 
+    with fade
 
     "{b}{i}Deux mois plus tard dans la région du Danto, le 12 septembre 2097 l'[domaine] intégra un lycée d'informatique et de technologie qui se trouve à 209-7201 Danto, District de Shinyo,
     2-14-7, Avenue Hoshizora.{/i}{/b}" 
@@ -1081,11 +1089,13 @@ label rencontre:
     E "[nothing] C'est normal"
     play sound "Click.mp3" noloop
 
-    "{b}{i}Tu regardes tes documents et tu remarques que tu es en Seconde-E.{/i}{/b}"
+    "{b}{i}Tu regardes tes documents et ceux d'[newname] et vous remarques que vous étes en Seconde-E.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "Seconde-E... C'est donc ça ma classe."
+    P "Seconde-E... C'est donc ça notre classe."
     play sound "Click.mp3" noloop
+
+    $ stockage += 1.0 
 
     E "Oui et aussi, avant que tu partes, j'ai un dernier truc a régler avec toi."
     play sound "Click.mp3" noloop
@@ -1133,6 +1143,8 @@ label rencontre:
 
     A "Moi, devenir dangereuse !?"
     play sound "Click.mp3" noloop 
+
+    $ stockage += 1.5
 
     E "Oui, si tes paramètres sont mal faits par [P]."
     play sound "Click.mp3" noloop
@@ -1309,6 +1321,8 @@ label rencontre:
     I "[thanks]"
     play sound "Click.mp3" noloop
     
+    $ stockage += 4.0
+
     T "De rien, maintenant, toi, juste derrière Iris."
     play sound "Click.mp3" noloop 
 
@@ -1326,6 +1340,8 @@ label rencontre:
 
     H "Mon projet est de construire un robot." 
     play sound "Click.mp3" noloop 
+
+    $ stockage += 3.0
 
     T "Intéressant comme projet."
     play sound "Click.mp3" noloop
@@ -1358,6 +1374,8 @@ label rencontre:
     J2 "Merci beaucoup madame." 
     play sound "Click.mp3" noloop
     
+    $ stockage += 4.0 
+
     T "De rien, maintenant à toi là-bas."
     play sound "Click.mp3" noloop
 
@@ -1382,8 +1400,10 @@ label rencontre:
     N "Merci beaucoup Madame."
     play sound "Click.mp3" noloop 
 
+    $ stockage += 2.0
+
     $ nothing = get_random_nothing()
-    T "[nothing]"
+    T "[nothing] Bon suivant."
     play sound "Click.mp3" noloop
 
     Hi "Bonjour, je m'appelle [Hi]."
@@ -1392,11 +1412,13 @@ label rencontre:
     T "Ravie de te rencontrer [Hi], bienvenue dans notre classe."
     play sound "Click.mp3" noloop
 
-    Hi "Merci beaucoup Madame."
+    Hi "Merci beaucoup Madame." 
     play sound "Click.mp3" noloop
 
+    $ stockage += 2.0
+
     $ nothing = get_random_nothing()
-    I "[nothing] Bon suivante."
+    T "[nothing] Bon suivante."
     play sound "Click.mp3" noloop
 
     Y "Je m'appelle [Y], j'ai dix-neuf ans ravie de vous rencontrer."
@@ -1407,6 +1429,8 @@ label rencontre:
 
     Y "Merci beaucoup Madame."
     play sound "Click.mp3" noloop 
+
+    $ stockage += 2.0
 
 # Présentation du personnage principal et AK-24
 
@@ -1533,10 +1557,10 @@ label rencontre:
     T "Mais pourquoi tu t'es inscrite ici en tant que lycéenne ?" 
     play sound "Click.mp3" noloop
 
-    A "Car je ne connais pas grand chose de ce monde et je voulais apprendre un peu plus."
+    A "Car je ne connais pas grand chose de ce monde et je voulais apprendre un peu plus mais [prenom] m'a déjà appris les bases cet été."
     play sound "Click.mp3" noloop
    
-    T "Bon merci [A] pour ta présentation."
+    T "Bon merci [A] pour ta présentation." 
     play sound "Click.mp3" noloop
 
     $ nothing = get_random_nothing()
@@ -1749,7 +1773,7 @@ label rencontre:
     M "Bon maintenant que toutes les informations ont été données, vous pouvez disposer le cours est fini, n'hésitez pas à visiter le lycée vu que vous n'avez pas de cours cette après-midi."
     play sound "Footsteps.mp3" noloop
 
-# fin du cours de présentation
+# fin du cours de présentation des élèves
 
     scene black
     hide screen class_404 
@@ -1775,6 +1799,16 @@ label rencontre:
     P "Non, tu es bien plus que ça. Tu es ma création... et ma fille."  
     play sound "Footsteps.mp3"  
 
+    $ stockage += 2.0 
+
+    $ thanks = get_random_thanks()
+    A "[thanks]"
+    play sound "Click.mp3" noloop
+
+    $ nothing = get_random_nothing()
+    P "[nothing]"
+    play sound "Click.mp3" noloop
+    
     "{b}{i}Pendant que vous vous dirigez au dortoir vous entendez une discussion venant de l'une des salles.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
@@ -1817,7 +1851,6 @@ label rencontre:
 
     hide screen hallway
     scene black
-    play sound "Click.mp3" noloop 
 
     "{b}{i}Vous entrez dans le dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -3144,6 +3177,7 @@ label wallbreaking4:
 
     scene black
     hide screen day
+
     "{b}{i}Tu te couches jusqu'au lendemain, le 13 septembre 2097.{/i}{/b}"
     play sound "Click.mp3" noloop   
     
@@ -3642,11 +3676,13 @@ label wallbreaking4:
     M "[endlesson]"
     play sound "Click.mp3" noloop 
 
+    $ stockage += 10.0
+
     P "Bon on va manger [newname] ?"
     play sound "Click.mp3" noloop 
     
     $ suivi = get_random_suivi()
-    Na "[suivi]"
+    Na "[suivi]" 
     play sound "Click.mp3" noloop
 
     hide screen class_404
@@ -3965,6 +4001,8 @@ label wallbreaking4:
 
     "{b}{i} Le cours continue sans probléme.{/i}{/b}"
     play sound "Bell.mp3" noloop
+
+    $ stockage += 8.0
 
     M "Bon le cours est terminé, vous pouvez quitter la salle et n'oubliez pas l'examen dans une semaine."
     play sound "Click.mp3" noloop
@@ -7494,11 +7532,13 @@ label suite1:
 
     scene main
     hide screen hallway 
+    with fade
 
     "{b}{i}Chapitre 1.01 : Arisization Project - Start The Debate{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     scene black 
+    with fade
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -9102,14 +9142,14 @@ label debate:
 
     hide screen hall
     scene main
-
+    with fade
 
     "{b}{i}Chapitre 1.02 : Arisization Project - New Operating System.{/i}{/b}"
-    play sound "Click.mp3" noloop 
+    play sound "Door.mp3" noloop 
  
     scene clubroom 
     show screen clubroom 
-    play sound "Door.mp3" noloop  
+    with fade
 
     if pronom == "il":
 
@@ -9701,11 +9741,13 @@ label code:
     scene main
     hide screen room 
     hide screen day
+    with fade
 
     "{b}{i}Chapitre 1.03 : Arisization Project - The start of the real problems{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     scene black 
+    with fade
 
     "{b}{i} Le lendemain matin, le 10 octobre 2097{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -11483,11 +11525,13 @@ label password:
     play music "Transition.mp3" noloop 
 
     scene main 
+    with fade
 
     "{b}{i}Chapitre 1.04 : Arisization Project - Investigation and Despair arc{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     scene black
+    with fade
 
     "{b}{i}Tu quittes le bureau des élèves avec [newname].{/i}{/b}"
     play sound "Door.mp3" noloop 
@@ -13672,11 +13716,13 @@ label password3:
     scene main
     hide screen room 
     hide screen day
+    with fade
 
     "{b}{i}Chapitre 1.05 : Arisization Project - New Hope{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     scene black 
+    with fade
 
     "{b}{i} une semaine plus tard, le 28 octobre 2097{/i}{/b}"
     play sound "Alarm.mp3" noloop
@@ -16916,12 +16962,14 @@ label password10:
         Na "Comment ça !?"
         play sound "Click.mp3" noloop 
 
-        P "Ce que qui me fait dire ça c'est ça note à l'examen de Runix."
+        P "Ce que qui me fait dire ça c'est sa note à l'examen de Runix."
         play sound "Click.mp3" noloop 
 
         Na "Oui c'est vrai il a eu la pire note de la classe."
         play sound "Click.mp3" noloop 
-    
+
+        $ stockage += 1.0
+
     else: 
 
         Na "Est-ce que ça va [prenom] ?"
@@ -17257,9 +17305,62 @@ label password10:
             P "Elle a 18 ans."
             play sound "Click.mp3" noloop 
 
-            Rk "Je vois sion qu'elles sont"
+            Rk "Bien, ma troisiéme question : Quel est son nom technique ?"
+            play sound "Click.mp3" noloop
+
+            P "C'est [A] ?"
+            play sound "Click.mp3" noloop
+
+            Rk "Je vois merci sinon qu'elles sont ses caratéristiques techniques."
             play sound "Click.mp3" noloop 
 
+            P "Je ne préfére pas répondre à la question."
+            play sound "Click.mp3" noloop 
+
+            Rk "Je vois il n'y a pas de soucis et j'ai une derniére question pour vous."
+            play sound "Click.mp3" noloop 
+
+            P "Oui dites-moi."
+            play sound "Click.mp3" noloop 
+
+            RK "Qui es-tu pour [newname] ?"
+            play sound "Click.mp3" noloop 
+
+            if pronom == "il" : 
+  
+                P "Je suis [P], son créateur."
+                play sound "Click.mp3" noloop 
+
+            elif pronom == "elle" :
+
+                P "Je suis [P], sa créatrice."
+                play sound "Click.mp3" noloop 
+
+            RK "Bien merci pour ces informations."
+            play sound "Click.mp3" noloop 
+
+            $ nothing = get_random_nothing()
+            P "[nothing]"
+            play sound "Click.mp3" noloop
+
+            RK "Bon on va vous laisser on va pas vous déranger encore plus."
+            play sound "Click.mp3" noloop 
+
+            P "Au revoir."
+            play sound "Click.mp3" noloop 
+
+            RK "Au revoir."
+            play sound "Footsteps.mp3" noloop 
+
+            "{b}{i} Les journalistes se mettent à partir.{/i}{/b}"
+            play sound "Click.mp3" noloop 
+
+            P "Enfin, bon [newname], on y va ?"
+            play sound "Click.mp3" noloop 
+
+            $ suivi = get_random_suivi() 
+            Na "[suivi]" 
+            play sound "Footsteps.mp3" noloop 
 
         "{b}{i} refuser l'interview {/i}{/b}" : 
 
@@ -17278,18 +17379,43 @@ label password10:
             Rk "Et pourquoi cela, nous sommes dans notre droit de vous interviewer."
             play sound "Click.mp3" noloop 
 
-            P "Oui sauf que je refuse qu'elle soit interviewée"
+            P "Oui sauf que je refuse qu'elle soit interviewée."
             play sound "Click.mp3" noloop 
 
             Rk "Bien c'est entendu alors, nous te laissons tranquille."
-            play sound "Click.mp3" noloop 
+            play sound "Footsteps.mp3" noloop 
 
             "{b}{i} Les journalistes se mettent à partir.{/i}{/b}"
             play sound "Click.mp3" noloop 
 
+            P "Enfin, bon [newname], on y va ?"
+            play sound "Click.mp3" noloop 
 
+            $ suivi = get_random_suivi() 
+            Na "[suivi]" 
+            play sound "Footsteps.mp3" noloop 
 
+    "{b}{i} Vous continuez vers le couloir.{/i}{/b}"
+    play sound "Click.mp3" noloop
 
+    scene black
+    hide screen hallway
+
+    "{b}{i} Vous entres dans ton dortoir.{/i}{/b}" 
+    play sound "Door.mp3" noloop
+
+    scene room
+    show screen room 
+
+    if pronom == "il":
+
+        P "Enfin au dortoir je suis epuisé."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle": 
+
+        P "Enfin au dortoir je suis epuisée."
+        play sound "Click.mp3" noloop 
             
     return                            
 
