@@ -254,7 +254,7 @@ label hack:
  
             "{b}{i}Choisir M4A1{/i}{/b}" :
                 $ A = Character("M4A1", color="#00ff00")
-                $ stockage += 1.0
+                $ stockage += 1.0 
 
             "{b}{i}Choisir M16A1{/i}{/b}" :
                 $ A = Character("M16A1", color="#ffa600") 
@@ -274,7 +274,7 @@ label hack:
 
             "{b}{i}Choisir M82A1{/i}{/b}" :
                 $ A = Character("M82A1", color="#0000ff") 
-                $ stockage += 1.4
+                $ stockage += 1.4 
 
             "{b}{i}Choisir M1919A4{/i}{/b}" : 
                 $ A = Character("M1919A4", color="#005c17") 
@@ -283,11 +283,11 @@ label hack:
         P "Attend on dirait qu'elle est en train de démarrer."
         play sound "Menu.mp3" noloop 
 
-    else:  
+    else:   
 
-        $ stockage += 1.0 
         $ A = Character("AK-24", color="#00eeff")
-        
+        $ stockage += 1.0
+
         R "Initialisation en cours......" 
         play sound "Click.mp3" noloop
 
@@ -782,6 +782,7 @@ label grayroom:
     scene school
     show screen day
     $ day += 1 
+    $ stockage += 35.0
 
     if pronom == "il":
 
@@ -799,8 +800,18 @@ label grayroom:
         A "Oui, je suis contente pour toi que tu sois arrivée ici."
         play sound "Click.mp3" noloop 
 
-    P "Entrons à l'intérieur."
+    P "Juste tu as toutes tes affaires ?"
     play sound "Click.mp3" noloop 
+
+    A "Oui même le téléphone portable que tu m'as offert."
+    play sound "Click.mp3" noloop 
+
+    P "bien on peut rentrez à l'intérieur."
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi() 
+    A "[suivi]" 
+    play sound "Footsteps.mp3" noloop
 
     scene black 
 
@@ -17246,12 +17257,10 @@ label password10:
             P "Elle a 18 ans."
             play sound "Click.mp3" noloop 
 
-            Rk "Je vois."
+            Rk "Je vois sion qu'elles sont"
             play sound "Click.mp3" noloop 
 
 
-
-    
         "{b}{i} refuser l'interview {/i}{/b}" : 
 
             $ success += 1  
