@@ -1129,6 +1129,8 @@ label rencontre:
         "{b}{i} Accepter le contrat.{/i}{/b}" : 
             play sound "Menu.mp3" noloop 
     
+    $ success += 1
+    
     P "Ok, je l'accepte."
     play sound "Click.mp3" noloop 
 
@@ -4608,8 +4610,6 @@ label skip2:
     P "C'est normal." 
     play sound "ootsteps.mp3" noloop 
 
-label choice9:
-
     "{b}{i}Vous continuez votre chemin vers la salle de classe.{/i}{/b}"
     play sound "Click.mp3" noloop  
     hide screen hallway 
@@ -4655,6 +4655,8 @@ label choice9:
 
     M "Vous avez une heure c'est parti !!!" 
     play sound "Click.mp3" noloop 
+
+label choice9: 
 
     "{b}{i}Tout le monde retourna sa copie.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -5104,6 +5106,7 @@ label choice9:
             "{b}{i}Réessayer.{/i}{/b}" :
                 scene black
                 show screen points 
+                $ points += 600
                 play music "Soundtrack.mp3" loop volume 1.0
                 jump choice9
     
@@ -6099,6 +6102,7 @@ label choice9:
             play sound "Menu.mp3" noloop 
             $ success += 1 
             $ stockage += 5.0 
+            $ update += 1.0 
 
             Na "Mise à jour terminée, la version actuelle est maintenant la [update]."
             play sound "Click.mp3" noloop 
@@ -6286,11 +6290,11 @@ label conversation:
         P "Oui, promis, je la ferai."
         play sound "Click.mp3" noloop 
 
-    elif update == 2.0:
+    else: 
 
         P "Oui, j'en avais une ce matin et je l'ai faite."
         play sound "Click.mp3" noloop
-        jump suite
+        jump suite 
 
 label suite:
 
@@ -9389,9 +9393,11 @@ label code:
     play sound "Click.mp3" noloop 
 
     Na "Génial."
-    play sound "Click.mp3" noloop 
+    play sound "Click.mp3" noloop
 
-    if update == 2.0: 
+label update: 
+
+    if update == 1.0: 
 
         "{b}{i}Tu t'asseois et allumes ton ordinateur mais [newname] agit bizarrement.{/i}{/b}"
         play sound "Click.mp3" noloop
@@ -9417,8 +9423,6 @@ label code:
         $ reboot = reboot.strip() 
 
         if reboot == "initiate_humanoid_robot.shutdown(security_override=false)":
-
-            $ update += 1.0
             
             A "Fermeture du système d'exploitation [system]....."
             play sound "Click.mp3" noloop
@@ -9492,9 +9496,9 @@ label code:
                     show clubroom
                     show screen clubroom
                     show screen points
-                    show screen day
+                    show screen day 
                     play music "Soundtrack2.mp3" loop volume 1.0
-                    jump code
+                    jump update
 
     else:
 
@@ -9888,7 +9892,7 @@ label code:
     M "Il s'avére qu'il y a eu un attaque informatique hier dans l'après-midi qui a touché tout le lycée."
     play sound "Click.mp3" noloop 
 
-    if update == 2.0:
+    if update == 2.0: 
 
         P "Ah ça oui je l'avais remarqué quand [newname] agissait bizarrement mais je savais que ça avait touché tout le lycée."
         play sound "Click.mp3" noloop 
@@ -12919,6 +12923,7 @@ label examen_pythagore:
                 show screen points 
                 scene classroom 
                 show screen class_404 
+                $ points += 200
                 play music "Soundtrack.mp3" loop volume 1.0
                 jump examen_pythagore 
     
@@ -15292,6 +15297,87 @@ label password8:
     P "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
 
+    Na "Cool alors."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} [Na] changea de tonalité.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    Na "[prenom], je détecte une nouvelle mise à jour obligatoire du processeur, veux-tu la faire maitenant ou plus tard ?"
+    play sound "Menu.mp3" noloop 
+
+    menu: 
+
+        "{b}{i} Refuser la mise à jour {/i}{/b}" :
+
+            $ Na = Character('[newname] [nom]', color="#0066ff")
+
+            P "Non merci."
+            play sound "Click.mp3" noloop
+        
+        "{b}{i} faire la mise à jour {/i}{/b}" : 
+        
+            Na "Bien je lance la mise à jour"
+            play sound "Click.mp3" noloop
+
+            P "Merci."
+            play sound "Click.mp3" noloop
+
+            Na "Initialisation de la mise à jour en cours."
+            play sound "Click.mp3" noloop
+
+            Na "10\%"
+            play sound "Click.mp3" noloop
+
+            Na "20\%"
+            play sound "Click.mp3" noloop
+
+            Na "30\%"
+            play sound "Click.mp3" noloop
+
+            Na "40\%"
+            play sound "Click.mp3" noloop
+
+            Na "50\%"
+            play sound "Click.mp3" noloop
+
+            Na "60\%"
+            play sound "Click.mp3" noloop
+
+            Na "70\%"
+            play sound "Click.mp3" noloop
+
+            Na "80\%" 
+            play sound "Click.mp3" noloop
+
+            Na "90\%"
+            play sound "Click.mp3" noloop
+
+            Na "100\%"
+            play sound "Click.mp3" noloop
+
+            Na "Vérification...."
+            play sound "Menu.mp3" noloop 
+            $ success += 1 
+            $ stockage += 3.0 
+            $ update += 1.0 
+
+            Na "Mise à jour terminée, la version actuelle est maintenant la [update]."
+            play sound "Click.mp3" noloop 
+
+            P "Je pense que ça devait être la mise à jour du processeur."
+            play sound "Click.mp3" noloop
+
+            Na "Oui je confirme."
+            play sound "Click.mp3" noloop
+
+    Na "Bon on va en cours ?"
+    play sound "Click.mp3" noloop  
+
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop 
+
     Na "Bon on va en cours ?"
     play sound "Click.mp3" noloop  
 
@@ -15319,7 +15405,7 @@ label password8:
     Y "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop  
 
-    P "Sion tu es prête pour l'examen ?"
+    P "Sinon tu es prête pour l'examen ?"
     play sound "Click.mp3" noloop  
 
     Y "Oui et vous ?"
@@ -15902,80 +15988,6 @@ label password9:
     P "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
 
-    Na "Cool alors."
-    play sound "Click.mp3" noloop 
-
-    "{b}{i} [Na] changea de tonalité.{/i}{/b}"
-    play sound "Click.mp3" noloop
-
-    Na "[prenom], je détecte une nouvelle mise à jour obligatoire du processeur, veux-tu la faire maitenant ou plus tard ?"
-    play sound "Menu.mp3" noloop 
-
-    menu: 
-
-        "{b}{i} Refuser la mise à jour {/i}{/b}" :
-
-            $ Na = Character('[newname] [nom]', color="#0066ff")
-
-            P "Non merci."
-            play sound "Click.mp3" noloop
-        
-        "{b}{i} faire la mise à jour {/i}{/b}" : 
-        
-            Na "Bien je lance la mise à jour"
-            play sound "Click.mp3" noloop
-
-            P "Merci."
-            play sound "Click.mp3" noloop
-
-            Na "Initialisation de la mise à jour en cours."
-            play sound "Click.mp3" noloop
-
-            Na "10\%"
-            play sound "Click.mp3" noloop
-
-            Na "20\%"
-            play sound "Click.mp3" noloop
-
-            Na "30\%"
-            play sound "Click.mp3" noloop
-
-            Na "40\%"
-            play sound "Click.mp3" noloop
-
-            Na "50\%"
-            play sound "Click.mp3" noloop
-
-            Na "60\%"
-            play sound "Click.mp3" noloop
-
-            Na "70\%"
-            play sound "Click.mp3" noloop
-
-            Na "80\%" 
-            play sound "Click.mp3" noloop
-
-            Na "90\%"
-            play sound "Click.mp3" noloop
-
-            Na "100\%"
-            play sound "Click.mp3" noloop
-
-            Na "Vérification...."
-            play sound "Menu.mp3" noloop 
-            $ success += 1 
-            $ stockage += 3.0 
-            $ update += 1.0
-
-            Na "Mise à jour terminée, la version actuelle est maintenant la [update]."
-            play sound "Click.mp3" noloop 
-
-            P "Je pense que ça devait être la mise à jour du processeur."
-            play sound "Click.mp3" noloop
-
-            Na "Oui je confirme."
-            play sound "Click.mp3" noloop
-
     Na "Bon on va en cours ?"
     play sound "Click.mp3" noloop  
 
@@ -16073,14 +16085,16 @@ label password9:
             "{b}{i}Abandonner{/i}{/b}" :
                 return 
             "{b}{i}Réessayer.{/i}{/b}" :
+
                 scene black
                 show screen points 
                 scene classroom 
                 show screen class_404 
-                $ day -= 1
+                $ day -= 1 
+                $ points += 400 
                 play music "Soundtrack.mp3" loop volume 1.0
                 jump examen_runix
-    
+                    
     else:
        
         M "C'est pas mal."
@@ -16491,101 +16505,6 @@ label code1:
     Na "Ok je vois."
     play sound "Click.mp3" noloop 
 
-    if update == 3.0:
-
-        "{b}{i}Tu t'asseois et allumes ton ordinateur mais [newname] agit bizarrement.{/i}{/b}"
-        play sound "Click.mp3" noloop
-
-        A "Système opérationnel."
-        play sound "Click.mp3" noloop
-
-        P "Comment ça ? Qu'est-ce que tu racontes !?"
-        play sound "Click.mp3" noloop
-
-        A "Téléchargement du virus informatique en cours....."
-        play sound "Click.mp3" noloop
-
-        P "Mince elle est en train de se faire pirater, je dois activer le Recovery Mode....."
-        play sound "Click.mp3" noloop 
-
-        menu: 
-
-            "{b}{i}Accéder à l'interface bios d'[newname].{/i}{/b}":
-                play sound "Menu.mp3" noloop
-
-        $ reboot = renpy.input("Écris ceci : initiate_humanoid_robot.shutdown(security_override=false)")
-        $ reboot = reboot.strip() 
-
-        if reboot == "initiate_humanoid_robot.shutdown(security_override=false)":
-
-            $ update += 1.0
-
-            A "Fermeture du système d'exploitation [system]....."
-            play sound "Click.mp3" noloop
-
-            P "J'espére qu'il n'y a de Backdoor qui a été installé dans le systéme d'[newname]."
-            play sound "Click.mp3" noloop 
-
-            P "Bon je vais la redémarrer." 
-            play sound "Click.mp3" noloop 
-
-            menu: 
-
-                "{b}{i}Redémarrer [newname].{/i}{/b}":
-                    play sound "Menu.mp3" noloop
-
-            define Na = Character('[newname] [nom]', color="#00eeff")
-            
-            $ start = get_random_start()
-            Na "[start]"
-            play sound "Click.mp3" noloop 
-
-            Na "Bonjour [prenom]."
-            play sound "Click.mp3" noloop 
-
-            $ comment_ca_va = get_random_comment_ca_va()
-            P "[comment_ca_va]"
-            play sound "Click.mp3" noloop
-
-            $ je_vais_bien_txt = get_random_je_vais_bien() 
-            Na "[je_vais_bien_txt]"
-            play sound "Click.mp3" noloop
-
-        else:
-
-            A "Qu'est-ce que tu tentes de faire."
-            play sound "Stumble.mp3" noloop
-
-            "{b}{i}[newname] se met à plaquer au sol avant de se faire complétment piratée.{/i}{/b}"
-            play sound "Menu.mp3" noloop
-
-            scene black
-            hide clubroom
-            hide screen clubroom 
-            hide screen points
-            hide screen day
-
-            play music "gameover.mp3" noloop
-            "{b}{i}Fin numéro 11 : [A] s'est faite complétement piratée par le virus informatique.{/i}{/b}"
-            play sound "Menu.mp3" noloop
-
-            menu:
-
-                "{b}{i}Abandonner{/i}{/b}":
-                    return
-                "{b}{i}Réessayer.{/i}{/b}":
-                    show clubroom 
-                    show screen clubroom
-                    show screen points
-                    show screen day
-                    play music "Soundtrack2.mp3" loop volume 1.0
-                    jump code1
-
-    else:
-
-        "{b}{i}Tu t'asseois et allumes ton ordinateur.{/i}{/b}"
-        play sound "Click.mp3" noloop
-
     P "Bon voyons voir."
     play sound "Click.mp3" noloop 
 
@@ -16771,7 +16690,7 @@ label code1:
     scene hallway
     show screen hallway 
 
-    P  "Cette première journée était vraiment fatiguante."
+    P  "Cette journée était vraiment fatiguante."
     play sound "Click.mp3" noloop
 
     Na "je confirme."
@@ -16797,7 +16716,7 @@ label code1:
     play sound "Click.mp3" noloop 
 
     $ bien = get_random_fais_du_bien()
-    A "[bien]"
+    Na "[bien]"
     play sound "Click.mp3" noloop  
 
     "{b}{i} Vous mangez tranquillement pendant une demi-heure.{/i}{/b}"
@@ -17050,6 +16969,8 @@ label password10:
     M "[endlesson]"
     play sound "Click.mp3" noloop
 
+    $ stockage += 5.0 
+    
     P "Bon on va manger [newname] ?"
     play sound "Click.mp3" noloop 
     
@@ -17203,6 +17124,8 @@ label password10:
     $ endlesson = get_random_endlesson()
     M "[endlesson]"
     play sound "Click.mp3" noloop
+
+    $ stockage += 5.0 
 
     P "Bon [newname] on n'y va ?"
     play sound "Click.mp3" noloop 
@@ -17418,7 +17341,222 @@ label password10:
 
         P "Enfin au dortoir je suis epuisée."
         play sound "Click.mp3" noloop 
+
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]" 
+    play sound "Click.mp3" noloop  
+
+    P "Juste il faut que tu le saches mais en général les journalistes sont vraiment chiants."
+    play sound "Click.mp3" noloop 
+
+    $ stockage += 2.0 
+
+    Na "Vraiment autant que ça ?"
+    play sound "Click.mp3" noloop 
+
+    P "Oui tout ce qu'ils veulent c'est de l'argent et de la gloire avec des informations sur les autres."
+    play sound "Click.mp3" noloop 
+
+    Na "Entre nous, ils sont journalistes donc normal qu'ils aient besoin d'informations."
+    play sound "Click.mp3" noloop
+
+    P "Oui mais des fois ça deviens trop personnel et intrusif leurs questions."
+    play sound "Click.mp3" noloop 
+
+    Na "Ah je vois."
+    play sound "Click.mp3" noloop
+
+    P "Mais de toute façon vu notre situation actuelle avec le traître et la DGCA. Les journalistes sont les derniers de nos soucis."
+    play sound "Click.mp3" noloop 
+
+    Na "Oui tu as raison."
+    play sound "Click.mp3" noloop
+    
+    P "En plus je dois me concentrer sur le lycée et ton amélioration."
+    play sound "Click.mp3" noloop 
+
+    Na "Bon sinon on fait quoi maintenant ?"
+    play sound "Click.mp3" noloop
+
+    P "Je vais voir tes paramétres."
+    play sound "Click.mp3" noloop 
+
+    Na "Génial."
+    play sound "Click.mp3" noloop
+
+label update1: 
+
+    if update == 2.0: 
+
+        "{b}{i}Tu t'asseois et allumes ton ordinateur mais [newname] agit bizarrement.{/i}{/b}"
+        play sound "Click.mp3" noloop
+
+        A "Système opérationnel."
+        play sound "Click.mp3" noloop
+
+        P "Comment ça ? Qu'est-ce que tu racontes !?"
+        play sound "Click.mp3" noloop
+
+        A "Démarrage du transfert des données vers un autre ordinateur."
+        play sound "Click.mp3" noloop
+
+        P "Mince elle est en train de se faire pirater, je dois activer le Recovery Mode....."
+        play sound "Click.mp3" noloop 
+
+        menu: 
+
+            "{b}{i}Accéder à l'interface bios d'[newname].{/i}{/b}":
+                play sound "Menu.mp3" noloop
+
+        $ reboot = renpy.input("Écris ceci : initiate_humanoid_robot.shutdown(security_override=false)")
+        $ reboot = reboot.strip() 
+
+        if reboot == "initiate_humanoid_robot.shutdown(security_override=false)":
             
+            A "Fermeture du système d'exploitation [system]....."
+            play sound "Click.mp3" noloop
+
+            P "Enfin mais c'est bizarre on dirait que la faille venais du processeur."
+            play sound "Click.mp3" noloop 
+
+            P "Attend il y a que [N] et [Y] à qui j'ai dit que j'avais pas mis à jour le processeur d'[newname]."
+            play sound "Click.mp3" noloop 
+
+            P "J'espére qu'il n'y a de Backdoor qui a été installé dans le systéme d'[newname]."
+            play sound "Click.mp3" noloop 
+
+            P "Bon je vais la redémarrer."
+            play sound "Click.mp3" noloop 
+
+            menu: 
+
+                "{b}{i}Redémarrer [newname].{/i}{/b}":
+                    play sound "Menu.mp3" noloop
+
+            $ stockage += 5.0 
+            define Na = Character('[newname] [nom]', color="#00eeff")
+            
+            $ start = get_random_start()
+            Na "[start]"
+            play sound "Click.mp3" noloop 
+
+            Na "Bonjour [prenom]."
+            play sound "Click.mp3" noloop 
+
+            $ comment_ca_va = get_random_comment_ca_va()
+            P "[comment_ca_va]"
+            play sound "Click.mp3" noloop
+
+            $ je_vais_bien_txt = get_random_je_vais_bien() 
+            Na "[je_vais_bien_txt]"
+            play sound "Click.mp3" noloop
+
+        else:
+
+            A "Qu'est-ce que tu tentes de faire."
+            play sound "Stumble.mp3" noloop
+
+            "{b}{i}[newname] se met à plaquer au sol.{/i}{/b}"
+            play sound "Menu.mp3" noloop
+
+            scene black
+            hide clubroom
+            hide screen clubroom 
+            hide screen points
+            hide screen day
+
+            if pronom == "il":
+
+                play music "gameover.mp3" noloop
+                "{b}{i}Fin numéro 8 : Complétement plaqué et étranglé par [Na].{/i}{/b}"
+                play sound "Menu.mp3" noloop
+
+            elif pronom == "elle":
+
+                play music "gameover.mp3" noloop
+                "{b}{i}Fin numéro 8 : Complétement plaquée et étranglée par [Na].{/i}{/b}"
+                play sound "Menu.mp3" noloop
+
+            menu:
+
+                "{b}{i}Abandonner{/i}{/b}":
+                    return
+                "{b}{i}Réessayer.{/i}{/b}":
+                    show clubroom
+                    show screen clubroom
+                    show screen points
+                    show screen day 
+                    play music "Soundtrack2.mp3" loop volume 1.0
+                    jump update1
+
+    else: 
+
+        "{b}{i}Tu t'asseois et allumes ton ordinateur.{/i}{/b}"
+        play sound "Click.mp3" noloop
+
+    P "Bien voyons voir...."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu regardes tous les paramétres pendant deux heures mais tu remarques quelques choses.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "On dirait qu'il y a rien de nouveau dans [system]."
+    play sound "Click.mp3" noloop 
+
+    Na "Bon on fait quoi du coup ?"
+    play sound "Click.mp3" noloop  
+
+    P "On va prendre à manger."
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Click.mp3" noloop
+
+    scene black
+    hide screen room
+
+    "{b}{i} Vous partez chercher à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 200 
+    scene room 
+    show screen room
+
+    P "Enfin à manger... "
+    play sound "Click.mp3" noloop 
+
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]"
+    play sound "Click.mp3" noloop  
+
+    "{b}{i} Vous mangez tranquillement pendant une demi-heure.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Tu as finis de manger ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui, je n'ai plus faim."
+    play sound "Click.mp3" noloop 
+
+    P "Bien."
+    play sound "Click.mp3" noloop 
+
+    Na "Bon Je vais me déconnecter et me recharger."
+    play sound "Click.mp3" noloop 
+
+    P "Pas de soucis."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[newname] se déconnecte et recharge sa batterie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bon je vais me changer et aller dormir."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
     return                            
 
-# Aris la plus belle <333333333333333   
+# Aris la plus belle <333333333333333  
