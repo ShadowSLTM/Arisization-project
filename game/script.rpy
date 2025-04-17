@@ -1121,7 +1121,7 @@ label rencontre:
     E "[nothing] C'est normal"
     play sound "Click.mp3" noloop
 
-    "{b}{i}Tu regardes tes documents et ceux d'[newname] et vous remarques que vous étes en Seconde-E.{/i}{/b}"
+    "{b}{i}Tu regardes tes documents et ceux d'[A] et vous remarques que vous étes en Seconde-E.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     P "Seconde-E... C'est donc ça notre classe."
@@ -1627,7 +1627,7 @@ label rencontre:
     M "Ce qui explique pourquoi vous êtes uniquement dix élèves ici."
     play sound "Click.mp3" noloop
 
-    "{b}{i}Tout les élèves sont choqués par cette informations.{/i}{/b}"
+    "{b}{i}Tout les élèves sont choqués par cette information.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     M "Oui je sais, c'est surprenant."
@@ -1693,6 +1693,8 @@ label rencontre:
 
     M "Cette dérogation est pour [prenom] et [A]." 
     play sound "Click.mp3" noloop
+
+    $ stockage += 2.0
 
     Y "Quoi !?" 
     play sound "Click.mp3" noloop
@@ -1781,6 +1783,8 @@ label rencontre:
 
     "{b}{i}Tous les élèves sont de nouveau choqués.{/i}{/b}"
     play sound "Click.mp3" noloop
+
+    $ stockage += 1.0
 
     M "Oui je suis sérieuse."
     play sound "Click.mp3" noloop 
@@ -2608,6 +2612,8 @@ label wallbreaking3:
     "{b}{i}Tu pars manger avant de revenir au dortoir vers 13h45.{/i}{/b}"
     play sound "Click.mp3" noloop
 
+    $ points -= 200 
+
     scene room 
     show screen room 
 
@@ -3334,7 +3340,7 @@ label wallbreaking4:
     Na "Un examen surprise !? c'est quoi ?"
     play sound "Click.mp3" noloop 
 
-    Y "Ah oui c'est vrai tu ne connais rien de ce monde, je vais t'expliquer."
+    Y "Ah oui c'est vrai tu ne connais pas grand chose de ce monde, je vais t'expliquer."
     play sound "Click.mp3" noloop 
 
     Na "Ok je t'écoute."
@@ -3509,7 +3515,7 @@ label wallbreaking4:
         play sound "Click.mp3" noloop  
 
     $ note = get_random_note()
-    M "[newname] tu as eu 17.5."
+    M "[newname] tu as eu 15."
     play sound "Click.mp3" noloop 
 
     Na "Merci."
@@ -4136,7 +4142,7 @@ label wallbreaking4:
             scene hall 
             show screen hall
 
-            P "aller en salle de club."
+            P "aller j'y suis presque."
             play sound "Footsteps.mp3" noloop 
 
             scene black
@@ -5430,7 +5436,7 @@ label choice9:
     P "Bonjour c'est moi [nom]."  
     play sound "Click.mp3" noloop 
 
-    E "Ah te voilà vas-y assis toi, la personne qui veut venir va pas tarder." 
+    E "Ah te voilà vas-y assis toi, la personne qui veut te voir va pas tarder." 
     play sound "Click.mp3" noloop 
 
     $ validation = get_random_validation() 
@@ -6800,13 +6806,6 @@ label suite1:
     I "Cool alors."
     play sound "Click.mp3" noloop 
 
-    M "Dernière information, aujourd'hui vous receverrai votre budjet du mois."
-    play sound "Click.mp3" noloop 
-
-    $ validation = get_random_validation() 
-    P "[validation]"
-    play sound "Click.mp3" noloop 
-
     M "Bien Maintenant reprenons le cours, [S] je t'invite à prendre place au fond de la salle il reste une place."
     play sound "Click.mp3" noloop
 
@@ -6993,10 +6992,10 @@ label suite1:
     P "Ok à demain [newname]." 
     play sound "Click.mp3" noloop  
 
-    "{b}{i}Pui [newname] se déconnecta tranquillement.{/i}{/b}"
+    "{b}{i}Puis [newname] se déconnecta tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Oh je vois que j'ai reçu mon budget." 
+    P "Bon moi je vais me coucher." 
     play sound "Click.mp3" noloop 
 
     "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
@@ -7286,7 +7285,7 @@ label suite1:
     show screen WC 
 
     P "Bon je vais faire ce que j'ai à faire."
-    play sound "Click.mp3" noloop
+    play sound "Toilet.mp3" noloop
 
     "{b}{i} Tu fais ta commission avant de sortir des toilettes.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -7371,7 +7370,7 @@ label suite1:
     scene black
     hide screen hall 
 
-    "{b}{i} Tu entres dasn le réfectoire.{/i}{/b}"
+    "{b}{i} Tu entres dans le réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene lunchroom
@@ -7478,7 +7477,7 @@ label suite1:
             I  "Sinon vous pensez qu'on aura quoi comme cours cette après-midi ?"
             play sound "Click.mp3" noloop 
 
-            Na "Je ne sais pas mais je pense qu'on aura encore cours de math."
+            Na "Je ne sais pas mais je pense qu'on aura encore un cours de math."
             play sound "Click.mp3" noloop 
 
             S "Math encore !?"
@@ -7554,25 +7553,25 @@ label suite1:
             play sound "Click.mp3" noloop 
 
             Na "Ok allons-y"
-            play sound "Click.mp3" noloop 
+            play sound "Footsteps.mp3" noloop 
 
     scene black
     hide screen lunchroom
 
     "{b}{i}Tu te diriges vers le hall.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene hall
     show screen hall 
 
     "{b}{i}Tu continues vers le premier étage.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene staircase
     hide screen hall 
 
     "{b}{i}Tu continues vers le couloir.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene hallway
     show screen hallway
@@ -7886,13 +7885,13 @@ label debate:
 
         "{b}{i} l'administratif {/i}{/b}" :
 
-            P "L'administratif par exemple."
+            P "Ils peuvent aussi gérer l’administratif."
             play sound "Click.mp3" noloop 
 
     S "Je ne comprend pas."
     play sound "Click.mp3" noloop 
 
-    P "Pour remplir des documents administratifs"
+    P "Oui. Remplir des dossiers, organiser des fichiers, automatiser des démarches longues et pénibles."
     play sound "Click.mp3" noloop 
 
     S "OK mais on risque de perdre des emplois si les robots humanoïdes font le travail à notre place."
@@ -7911,7 +7910,7 @@ label debate:
     P "On ne va perdre d'emplois, on va juste créer des besoins ailleur."
     play sound "Click.mp3" noloop 
 
-    S "Ou par exemple ?"
+    S "Des besoins ? Où ça ?"
     play sound "Click.mp3" noloop 
 
     menu:    
@@ -7921,10 +7920,10 @@ label debate:
             P "Dans la maintenance des robots humanoïdes déjà."
             play sound "Click.mp3" noloop 
 
-    S "Pardon ?"
+    S "Pardon ?" 
     play sound "Click.mp3" noloop 
 
-    P "Bah oui il faudra bien entretenir les robots humanoïdes."
+    P "Bah oui, il faudra bien des gens qualifiés pour les entretenir."
     play sound "Click.mp3" noloop 
 
     S "Ok je vois mais les robots humanoïdes obeisseent à leur créateur."
@@ -9320,7 +9319,7 @@ label code:
     scene black
     hide screen hall 
 
-    "{b}{i} Tu entres dasn le réféctoire.{/i}{/b}"
+    "{b}{i} Tu entres dans le réféctoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene lunchroom 
@@ -17054,7 +17053,7 @@ label password10:
     scene black
     hide screen hall 
 
-    "{b}{i} Tu entres dasn le réféctoire.{/i}{/b}"
+    "{b}{i} Tu entres dans le réféctoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene lunchroom 

@@ -1936,7 +1936,7 @@ screen success():
             text _("Vive la documentation : [quest9]/1\n")
             text _("Première mise à jour : [quest10]/1\n")
             text _("Oublier le passé : [quest11]/1\n")
-            text _("Lis-moi : [quest12]/1\n")
+            text _("Lis-moi : [quest12]/1\n") 
             text _("Le repos avant tout : [quest13]/1\n")
             text _("Petit exercice de python : [quest14]/1\n")
             text _("Affection pour les autres : [quest15]/1\n")
