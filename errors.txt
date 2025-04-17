@@ -2,9 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 16363: elif clause expects a non-empty block.
-    elif pronom == "elle": 
-                           ^
+File "game/screens.rpy", line 1930: Tab characters are not allowed in Ren'Py scripts.
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Apr  9 12:50:35 2025
+Thu Apr 17 14:42:55 2025

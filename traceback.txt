@@ -1,28 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 128, in script
-    scene main with fadeout
-  File "game/script.rpy", line 128, in <module>
-    scene main with fadeout
-NameError: name 'fadeout' is not defined
+  File "renpy/common/00start.rpy", line 195, in script
+    python:
+  File "renpy/common/00start.rpy", line 196, in <module>
+    renpy.execute_default_statement(True)
+  File "renpy/common/00console.rpy", line 1141, in execute_default
+    default _console.traced_expressions = _console.TracedExpressionsList()
+Exception: store._console.traced_expressions is being given a default a second time.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 128, in script
-    scene main with fadeout
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 1370, in execute
-    paired = renpy.python.py_eval(self.paired)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 128, in <module>
-    scene main with fadeout
-NameError: name 'fadeout' is not defined
+  File "renpy/common/00start.rpy", line 195, in script
+    python:
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00start.rpy", line 196, in <module>
+    renpy.execute_default_statement(True)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\exports\statementexports.py", line 372, in execute_default_statement
+    i.execute_default(start)
+  File "renpy/common/00console.rpy", line 1141, in execute_default
+    default _console.traced_expressions = _console.TracedExpressionsList()
+Exception: store._console.traced_expressions is being given a default a second time.
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 Arisization Project Version_test
-Tue Apr 15 19:54:48 2025
+Thu Apr 17 14:33:05 2025

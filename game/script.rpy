@@ -25,7 +25,37 @@ label start:
     default robotname = ""  
     $ sad = 0 
     default baseip = ""
-    
+
+#############################################
+
+    default quest1 = 0
+    default quest2 = 0
+    default quest3 = 0
+    default quest4 = 0
+    default quest5 = 0
+    default quest6 = 0
+    default quest7 = 0
+    default quest8 = 0
+    default quest9 = 0
+    default quest10 = 0
+    default quest11 = 0
+    default quest12 = 0
+    default quest13 = 0 
+    default quest14 = 0
+    default quest15 = 0
+    default quest16 = 0
+    default quest17 = 0
+    default quest18 = 0
+    default quest19 = 0
+    default quest20 = 0
+    default quest21 = 0
+    default quest22 = 0
+    default quest23 = 0
+    default quest24 = 0
+    default quest25 = 0
+    default quest26 = 0
+    default quest27 = 0
+
     stop music fadeout 2.0   
 
 label key:
@@ -56,7 +86,8 @@ label key:
 
         $ P = Character('[prenom] [nom]', color="#707070") 
         $ origine = "16LAB" 
-        $ success += 1
+        $ quest1 += 1
+        $ success += 1 
 
         "DLC secret déverouillé."  
         play sound "Click.mp3" noloop
@@ -227,6 +258,7 @@ label hack:
         play sound "Menu.mp3" noloop 
 
         $ success += 1 
+        $ quest2 += 1
         $ stockage = 0.0
 
         "système ouvert avec succès." 
@@ -1095,7 +1127,10 @@ label rencontre:
     P "Seconde-E... C'est donc ça notre classe."
     play sound "Click.mp3" noloop
 
-    $ stockage += 1.0 
+    A "Oui."
+    play sound "Click.mp3" noloop
+
+    $ stockage += 2.0 
 
     E "Oui et aussi, avant que tu partes, j'ai un dernier truc a régler avec toi."
     play sound "Click.mp3" noloop
@@ -1130,7 +1165,8 @@ label rencontre:
             play sound "Menu.mp3" noloop 
     
     $ success += 1
-    
+    $ quest3 += 1 
+
     P "Ok, je l'accepte."
     play sound "Click.mp3" noloop 
 
@@ -1250,6 +1286,8 @@ label rencontre:
     "{b}{i}Tout le monde discute tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
+    $ stockage += 1.5
+    
     A "[prenom] on dirait qu'on est que dix ici."
     play sound "Click.mp3" noloop
 
@@ -1614,7 +1652,7 @@ label rencontre:
     play sound "Click.mp3" noloop 
 
     show screen points 
-    M "Donc le lycée vous donnera un budget pour vos projets."
+    M "Donc le lycée vous donnera un budget ou appelé Bourse scolaire des lycéens pour vos projets."
     play sound "Click.mp3" noloop 
 
     P "On aura vraiment un budget fourni par le Lycée !?"
@@ -2672,6 +2710,7 @@ label choice4:
     if newname == "Aris":
 
         $ success += 1
+        $ quest4 += 1
         $ robotname = nom
         $ stockage += 2.0 
         
@@ -2708,6 +2747,7 @@ label choice5:
     if ip == "001.018.009.019":
 
         $ success += 1
+        $ quest5 += 1 
         $ stockage += 2.0 
         $ baseip = "001.018.009.019" 
 
@@ -3436,7 +3476,8 @@ label wallbreaking4:
     if grade == 20.0:
 
         $ success += 1
-        
+        $ quest6 += 1
+
         M "Félicitation, tu l'as réussi à la perfection."
         play sound "Click.mp3" noloop
    
@@ -4080,7 +4121,8 @@ label wallbreaking4:
         "{b}{i}aller au club{/i}{/b}" :
             
             $ success += 1
-            
+            $ quest7 += 1
+
             P "aller en salle de club."
             play sound "Menu.mp3" noloop 
 
@@ -5072,6 +5114,7 @@ label choice9:
     if grade == 20.0:
         
         $ success += 1
+        $ quest8 += 1
 
         M "Félicitation tu l'as réussi à la perfection comme d'habitude."
         play sound "Click.mp3" noloop
@@ -5658,6 +5701,7 @@ label choice9:
         "{b}{i} Accepter les documents.{/i}{/b}" :
 
             $ success += 1
+            $ quest9 += 1
 
             P "Merci beaucoup ça fait plaisir."
             play sound "Click.mp3" noloop 
@@ -6101,6 +6145,7 @@ label choice9:
             Na "Vérification...."
             play sound "Menu.mp3" noloop 
             $ success += 1 
+            $ quest10 += 1
             $ stockage += 5.0 
             $ update += 1.0 
 
@@ -7406,6 +7451,7 @@ label suite1:
         "{b}{i} Accepter [S]{/i}{/b}" :
     
             $ success += 1
+            $ quest11 += 1
 
             P "Bien sûr viens t'asseoir avec nous."
             play sound "Click.mp3" noloop 
@@ -8213,7 +8259,8 @@ label debate:
             play sound "Menu.mp3" noloop 
 
             $ success += 1 
-            
+            $ quest12 += 1
+
             P "Bon voyons voir ce que [Su] m'a envoyé."
             play sound "Click.mp3" noloop 
 
@@ -8546,6 +8593,7 @@ label debate:
         "{b}{i} Se reposer {/i}{/b}" : 
             
             $ success += 1 
+            $ quest13 += 1
 
             "{b}{i} Tu te reposes pendant trois heures avant de te réveiller {/i}{/b}"
             play sound "Click.mp3" noloop 
@@ -8983,7 +9031,8 @@ label debate:
     if Code == "print(\"text\")":
 
         $ success += 1
-        
+        $ quest14 += 1
+
         M "Bonne réponse."
         play sound "Click.mp3" noloop
 
@@ -9570,6 +9619,7 @@ label update:
         "{b}{i} Réveiller [I] {/i}{/b}" : 
 
             $ success += 1
+            $ quest15 += 1
 
             "{b}{i} Tu approches calmement pour la réveiller.{/i}{/b}"
             play sound "Click.mp3" noloop
@@ -10114,7 +10164,8 @@ label update:
         "{b}{i} Aller manger avec [Na]{/i}{/b}" : 
             play sound "Menu.mp3" noloop 
 
-            $ success += 1
+            $ success += 1 
+            $ quest16 += 1
 
             "{b}{i} Vous allez chercher une pour manger.{/i}{/b}"
             play sound "Click.mp3" noloop 
@@ -10335,7 +10386,8 @@ label update:
 
     elif suspect == "Subaru": 
 
-        $ success += 1
+        $ success += 1 
+        $ quest17 += 1
 
         P "Je pense que c'est [S]."
         play sound "Click.mp3" noloop
@@ -10565,6 +10617,7 @@ label update:
             play sound "Menu.mp3" noloop 
 
             $ success += 1 
+            $ quest18 += 1 
 
             P "Je vais aller la voir pour voir si elle va bien."
             play sound "Footsteps.mp3" noloop 
@@ -10818,7 +10871,8 @@ label password:
     if entered_password == stored_password:
 
         if len(entered_password) > 10:
-            $ success += 1   
+            $ success += 1
+            $ quest19 += 1   
             $ stockage += 2.0
 
             "Mot de passe correct. Accès autorisé." 
@@ -12118,6 +12172,7 @@ label password1:
             play sound "Menu.mp3" noloop 
 
             $ success += 1
+            $ quest20 += 1
 
             P "C'est juste que j'avait un truc qui me passait en tête..."
             play sound "Click.mp3" noloop 
@@ -12887,7 +12942,8 @@ label examen_pythagore:
     if grade == 20.0:
 
         $ success += 1
-        
+        $ quest21 += 1
+
         M "Félicitation tu l'as réussi à la perfection comme d'habitude."
         play sound "Click.mp3" noloop
 
@@ -14228,6 +14284,7 @@ label password4:
     if answer == "initiate_humanoid_robot(setting=true)": 
 
         $ success += 1 
+        $ quest22 += 1
 
         M "C'est exact, bien joué."
         play sound "Click.mp3" noloop
@@ -15359,6 +15416,7 @@ label password8:
             Na "Vérification...."
             play sound "Menu.mp3" noloop 
             $ success += 1 
+            $ quest23 += 1
             $ stockage += 3.0 
             $ update += 1.0 
 
@@ -16053,7 +16111,8 @@ label password9:
     if grade == 20.0:
 
         $ success += 1 
-        
+        $ quest24 += 1
+
         M "Félicitation tu l'as réussi à la perfection comme d'habitude."
         play sound "Click.mp3" noloop
 
@@ -16463,6 +16522,7 @@ label password9:
         "{b}{i} La perte de la mémoire.{/i}{/b}" :
 
             $ success += 1
+            $ quest25 += 1
 
             P "Je faisais référence à la perte de sa mémoire."
             play sound "Click.mp3" noloop
@@ -16568,6 +16628,7 @@ label code1:
                 play sound "Menu.mp3" noloop
 
                 $ success += 1 
+                $ quest26 += 1
 
                 P "On pourrait dire que ta nouvelle date d'anniveraire est 4 juillet, le jour de ta récupération."
                 play sound "Click.mp3" noloop 
@@ -16970,7 +17031,7 @@ label password10:
     play sound "Click.mp3" noloop
 
     $ stockage += 5.0 
-    
+
     P "Bon on va manger [newname] ?"
     play sound "Click.mp3" noloop 
     
@@ -17290,6 +17351,7 @@ label password10:
         "{b}{i} refuser l'interview {/i}{/b}" : 
 
             $ success += 1  
+            $ quest27 += 1
 
             if pronom == "il" : 
     
@@ -17322,8 +17384,8 @@ label password10:
 
     "{b}{i} Vous continuez vers le couloir.{/i}{/b}"
     play sound "Click.mp3" noloop
-
-    scene black
+ 
+    scene black 
     hide screen hallway
 
     "{b}{i} Vous entres dans ton dortoir.{/i}{/b}" 
@@ -17556,6 +17618,19 @@ label update1:
 
     "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
     play sound "Click.mp3" noloop
+
+    scene black
+    hide screen room
+    hide screen day
+
+    "{b}{i} trois jours plus tard, le 18 novembre 2097 {/i}{/b}"
+    play sound "Alarm.mp3" noloop 
+
+    scene room 
+    show screen room
+    show screen day
+    $ day += 3
+    $ points -= 600 
 
     return                            
 

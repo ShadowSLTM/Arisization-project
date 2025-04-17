@@ -263,9 +263,7 @@ screen quick_menu():
 ## Ce code garantit que le menu d’accès rapide sera affiché dans le jeu, tant
 ## que le joueur n’aura pas explicitement demandé à cacher l’interface.
 init python:
-    config.overlay_screens.append("quick_menu")
-
-default quick_menu = True
+    config.overlay_screens.append("quick_menu") 
 
 style quick_button is default
 style quick_button_text is button_text
@@ -1923,12 +1921,42 @@ screen success():
 
             text _("Succès : [success]/27\n") 
 
+            label "{b}{i}liste des succès\n{/i}{/b}" 
+
+            text _("Une autre clé ? : [quest1]/1\n")
+            text _("Premier piratage : [quest2]/1\n")
+            text _("Acceptation : [quest3]/1\n")
+            text _("Nouvelle identité : [quest4]/1\n")
+            text _("Nouvelle adresse : [quest5]/1\n")
+            text _("Ce n’est que le début : [quest6]/1\n")
+            text _("Au club !!! : [quest7]/1\n")
+            text _("Maître de guerre : [quest8]/1\n")
+            text _("Vive la documentation : [quest9]/1\n")
+            text _("Première mise à jour : [quest10]/1\n")
+            text _("Oublier le passé : [quest11]/1\n")
+            text _("Lis-moi : [quest12]/1\n")
+            text _("Le repos avant tout : [quest13]/1\n")
+            text _("Petit exercice de python : [quest14]/1\n")
+            text _("Affection pour les autres : [quest15]/1\n")
+            text _("Entre connaissance : [quest16]/1\n")
+            text _("Le bon suspect : [quest17]/1\n")
+            text _("Affection pour les autres partie 2 : [quest18]/1\n")
+            text _("Plus c’est gros plus ça passe : [quest19]/1\n")
+            text _("La vérité avant tout : [quest20]/1\n")
+            text _("Génie des maths : [quest21]/1\n")
+            text _("Petit exercice de Runix : [quest22]/1\n") 
+            text _("Seconde mise à jour : [quest23]/1\n")
+            text _("Génie de l’informatique : [quest24]/1\n")
+            text _("Détail du passé : [quest25]/1\n")
+            text _("Mentir n’est pas si mal : [quest26]/1\n")
+            text _("Journalistes de merde : [quest27]/1\n")
+
 style about_label is gui_label 
 style about_label_text is gui_label_text
 style about_text is gui_text 
 
 style about_label_text: 
-    size gui.label_text_size
+    size gui.label_text_size 
 
 screen robot():                   
 
