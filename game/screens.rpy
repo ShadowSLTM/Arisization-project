@@ -236,6 +236,8 @@ style choice_button_text is default:
 ## Les menus rapides sont affichés dans le jeu pour permettre un accès rapide à
 ## certaines fonctions.
 
+define quick_menu = True
+
 screen quick_menu():
 
     ## Assure qu'il apparaît au-dessus des autres screens.
@@ -243,7 +245,7 @@ screen quick_menu():
 
     if quick_menu:
 
-        hbox:
+        hbox: 
             style_prefix "quick"
 
             xalign 0.5
