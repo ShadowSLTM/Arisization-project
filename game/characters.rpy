@@ -76,3 +76,8 @@ define Dc = Character('Seydou N\'Doye', color="#ffffff")
 define Rk = Character('Rika Kobayashi', color="#ffffff")
 define Nk = Character('Natsuo Kaneda', color="#ffffff")
 
+# gouvernement 
+
+define Sn = Character('Seigo Nagumo', color="#ffffff")
+define Ln = Character('Luna Nagumo', color="#ffffff")
+

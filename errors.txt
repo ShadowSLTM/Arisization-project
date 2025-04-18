@@ -2,7 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 1930: Tab characters are not allowed in Ren'Py scripts.
+File "game/script.rpy", line 5002: Line is indented, but the preceding play sound statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    I "Cool alors."
+    ^
+
+File "game/script.rpy", line 5502: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    play sound "Click.mp3" noloop  
+    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu Apr 17 14:42:55 2025
+Fri Apr 18 16:16:56 2025

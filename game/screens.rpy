@@ -1921,7 +1921,7 @@ screen success():
 
             label "{b}{i}Progression\n{/i}{/b}" 
 
-            text _("Succès : [success]/27\n") 
+            text _("Succès : [success]/28\n") 
 
             label "{b}{i}liste des succès\n{/i}{/b}" 
 
@@ -1952,6 +1952,7 @@ screen success():
             text _("Détail du passé : [quest25]/1\n")
             text _("Mentir n’est pas si mal : [quest26]/1\n")
             text _("Journalistes de merde : [quest27]/1\n")
+            text _("Dire les termes : [quest28]/1\n")           
 
 style about_label is gui_label 
 style about_label_text is gui_label_text

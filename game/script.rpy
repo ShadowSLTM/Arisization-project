@@ -1,5 +1,5 @@
 label start: 
-
+    
     $ grade = 0.0  
     $ points = 0 
     $ day = 0 
@@ -55,6 +55,7 @@ label start:
     default quest25 = 0
     default quest26 = 0
     default quest27 = 0
+    default quest28 = 0
 
     stop music fadeout 2.0   
 
@@ -1670,7 +1671,7 @@ label rencontre:
     A "Un internat !?"
     play sound "Click.mp3" noloop
 
-    M "Oui, il a été construit récemmment vu que vous venez tous de régions éloignées."
+    M "Oui, il a été financé par le régime Nagumo et construit récemmment vu que vous venez tous de régions éloignées."
     play sound "Click.mp3" noloop
 
     P "Intéressant."
@@ -2060,21 +2061,18 @@ label balade:
 
     hide screen room 
     scene black
-    play sound "Click.mp3" noloop 
 
     "{b}{i}Tu quittes le dortoir.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Door.mp3" noloop
 
     scene hallway 
     show screen hallway 
-    play sound "Door.mp3" noloop 
 
     P "Bon elle m'a dit que c'est au rez-de-chaussée donc j'y vais."
     play sound "Click.mp3" noloop
 
     hide screen hallway
     scene staircase
-    play sound "Click.mp3" noloop
 
     "{b}{i}Tu te diriges au rez-de-chaussée.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -3497,7 +3495,7 @@ label wallbreaking4:
         P "Pas besoin de repréciser que je viens de là..."
         play sound "Click.mp3" noloop
 
-I "Oups désolée."
+        I "Oups désolée."
         play sound "Click.mp3" noloop
 
     else: 
@@ -3997,12 +3995,12 @@ I "Oups désolée."
         J1 "je savais qu'[newname] était dangereuse surtout qu'elle a le nom techinique d'une arme."
         play sound "Click.mp3" noloop 
 
-else:
+    else:
 
         J1 "je savais qu'[newname] était dangereuse."
         play sound "Click.mp3" noloop 
 
-    Na "Quoi comment oses-tu dire ça !? je n'ai rien fait... "
+    Na "Quoi comment oses-tu dire ça !? je n'ai rien fait..."
     play sound "Crying.mp3" noloop
 
     "{b}{i} [newname] se met subitement à pleurer.{/i}{/b}"
@@ -4997,7 +4995,7 @@ label choice9:
     play sound "Click.mp3" noloop 
 
     Na "Ça s'est bien passé pour moi je ne m'inquiète pas."
-play sound "Click.mp3" noloop 
+    play sound "Click.mp3" noloop 
 
     I "Cool alors."
     play sound "Click.mp3" noloop 
@@ -5426,6 +5424,7 @@ play sound "Click.mp3" noloop
 
     scene office 
     show screen office 
+
     P "Bonjour c'est moi [nom]."  
     play sound "Click.mp3" noloop 
 
@@ -5498,7 +5497,8 @@ play sound "Click.mp3" noloop
 
     P "Si vous voulez récupérer [newname] vous pouvez tout de suite oublier."
     play sound "Click.mp3" noloop
-C "Non je ne veux absolument pas te récupérer [A]."
+
+    C "Non je ne veux absolument pas te récupérer [A]."
     play sound "Click.mp3" noloop  
 
     P "[A] !? Comment êtes-vous au courant de ce nom !?"
@@ -5996,8 +5996,10 @@ C "Non je ne veux absolument pas te récupérer [A]."
 
     P "Enfin à manger... "
     play sound "Click.mp3" noloop
+
     if info == 1.0:
-"{b}{i} Tu manges tranquillement pendant une demi-heure en regardant les documents que tu as eus.{/i}{/b}"
+
+        "{b}{i} Tu manges tranquillement pendant une demi-heure en regardant les documents que tu as eus.{/i}{/b}"
         play sound "Click.mp3" noloop 
         
         $ renpy.open_url("https://github.com/ShadowSLTM/Aris-document/blob/main/Aris%20document")
@@ -6581,7 +6583,7 @@ label suite1:
     scene black
     hide screen hallway
 
-    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    "{b}{i}Vous entrez en .{/i}{/b}"
     play sound "Door.mp3" noloop
     
     scene classroom  
@@ -16700,12 +16702,18 @@ label code1:
     play sound "Click.mp3" noloop 
 
     P "Oui je t'écoute."
-    play sound "Click.mp3" noloop 
+    play sound "Click.mp3" noloop
+
+    "Son regard se perd à travers la fenêtre, comme si elle cherchait une autre réalité..." 
+    play sound "Click.mp3" noloop
 
     Na "Puis-je trouver une vie qui ressemble à un conte de fées ? Loin de cette tragédie."
     play sound "Click.mp3" noloop           
 
     P "Mais tu l'as déjà trouvé ta vie qui ressemble à un conte de fées, c'est depuis que tu es sous ma responsabilté."
+    play sound "Click.mp3" noloop  
+
+    "Elle baisse légèrement les yeux, puis esquisse un sourire discret."
     play sound "Click.mp3" noloop  
 
     Na "Tu me donnes de l'attention, une belle affection."
@@ -17424,7 +17432,7 @@ label password10:
     Na "Ah je vois."
     play sound "Click.mp3" noloop
 
-    P "Mais de toute façon vu notre situation actuelle avec le traître et la DGCA. Les journalistes sont les derniers de nos soucis."
+    P "Mais de toute façon, vu notre situation actuelle avec le traître, la DGCA et le gouvernement qui nous surveille, les journalistes sont les derniers de nos soucis."
     play sound "Click.mp3" noloop 
 
     Na "Oui tu as raison."
@@ -17526,13 +17534,13 @@ label update1:
             if pronom == "il":
 
                 play music "gameover.mp3" noloop
-                "{b}{i}Fin numéro 8 : Complétement plaqué et étranglé par [Na].{/i}{/b}"
+                "{b}{i}Fin numéro 11 : Complétement plaqué et étranglé par [Na].{/i}{/b}"
                 play sound "Menu.mp3" noloop
 
             elif pronom == "elle":
 
                 play music "gameover.mp3" noloop
-                "{b}{i}Fin numéro 8 : Complétement plaquée et étranglée par [Na].{/i}{/b}"
+                "{b}{i}Fin numéro 11 : Complétement plaquée et étranglée par [Na].{/i}{/b}"
                 play sound "Menu.mp3" noloop
 
             menu:
@@ -17627,6 +17635,314 @@ label update1:
     show screen day
     $ day += 3 
     $ points -= 600 
+
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    $ line = get_random_morning_line()
+    P "[line]" 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te lèves pour aller te changer.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "[newname] tu es prête ?" 
+    play sound "Click.mp3" noloop 
+
+    P "[newname]...?"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu remarques qu'elle est encore déconnectée.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Sacrée [newname], encore déconnectée mais je pense que la discussion d'hier la un peu perturbé"
+    play sound "Click.mp3" noloop 
+
+    P "Bon, je vais la démarrer manuellement." 
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu t'approches pour démarrer [newname].{/i}{/b}" 
+    play sound "Menu.mp3" noloop 
+
+    menu:    
+
+        "{b}{i} Démarrer [newname].{/i}{/b}" : 
+            play sound "Menu.mp3" noloop 
+
+label password11:  
+
+    $ entered_password = renpy.input("Veuillez entrer votre mot de passe pour [newname].")
+    $ entered_password = entered_password.strip()
+
+    if entered_password == stored_password: 
+
+        "Mot de passe correct. Accès autorisé." 
+        play sound "Menu.mp3" noloop
+
+    else: 
+
+        "Mot de passe incorrect. Accès refusé." 
+        play sound "Menu.mp3" noloop
+        jump password11
+
+    $ start = get_random_start()
+    Na "[start]"
+    play sound "Click.mp3" noloop 
+
+    Na  "Démarrage terminé, Bonjour [P]."
+    play sound "Click.mp3" noloop 
+
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop 
+
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop 
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Et toi ?" 
+    play sound "Click.mp3" noloop 
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]" 
+    play sound "Click.mp3" noloop
+
+    Na "Bon on va en cours ?"
+    play sound "Click.mp3" noloop  
+
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop 
+
+    hide screen room 
+    scene black
+
+    "{b}{i}Tu quittes le dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway  
+
+    "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
+    play sound "Click.mp3" noloop
+ 
+    Na "Sinon [prnom], as-tu des nouvelles de la DGCA"
+    play sound "Click.mp3" noloop  
+
+    P "Non mal heureusement."
+    play sound "Click.mp3" noloop  
+
+    Na "Je vois."
+    play sound "Click.mp3" noloop  
+
+    "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+    
+    scene classroom  
+    show screen class_404 
+
+    $  salutation_rdm = get_random_salutation()
+    P "[salutation_rdm]"
+    play sound "Click.mp3" noloop 
+
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tout le monde s'asseoit à sa place respective.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Bien nous pouvons commencer le cours mais avant j'ai quelque chose à te dire [prenom]."
+    play sound "Click.mp3" noloop 
+
+    P "Oui dites-moi, je vous écoute."
+    play sound "Click.mp3" noloop  
+
+    M "Toi et [newname], il faut que vous allez voir [E] au bureau des élèves maintenant c'est assez urgent."
+    play sound "Click.mp3" noloop  
+
+    P "Bon on y vas ?"
+    play sound "Click.mp3" noloop 
+    
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Click.mp3" noloop
+
+    scene black 
+    hide screen class_404 
+
+    "{b}{i}Tu quitte la salle de classe avec [Na].{/i}{/b}"
+    play sound "Door.mp3" noloop
+     
+    scene hallway
+    show screen hallway 
+
+    P "Je me demande ce qui ce passe pour que ce soit urgent."
+    play sound "Click.mp3" noloop 
+    
+    Na "Oui mais aussi je me le demande"
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu continues dans le couloir avec [Na].{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene staircase 
+    hide screen hallway
+
+    "{b}{i}Tu continues vers le hall.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hall
+    show screen hall 
+
+    "{b}{i}Tu continues vers le bureau des élèves.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+    
+    stop music fadeout 2.0 
+
+    scene black 
+    hide screen hall 
+
+    "{b}{i}Tu entres dans le bureau des élèves.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    play music "Soundtrack2.mp3" loop volume 1.0
+
+    scene office 
+    show screen office 
+    
+    P "Bonjour c'est moi [nom], que se passe t-il ?"  
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Puis tu aperçois [E], [ot] et une troisiéme personne.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $  salutation_rdm = get_random_salutation()
+    P "[salutation_rdm]"
+    play sound "Click.mp3" noloop 
+
+    E "Bonjour [prenom]."  
+    play sound "Click.mp3" noloop 
+
+    P "Pourquoi i'[Ot] est ici ?"  
+    play sound "Click.mp3" noloop 
+
+    E "il a quelque chose à te dire concernant [newnmae] et cette affaire de traître."  
+    play sound "Click.mp3" noloop 
+
+    P "Je vois, sinon c'est quoi les nouvelles."  
+    play sound "Click.mp3" noloop 
+
+    Ot "Je suis ici pour t'annoncer qu'[newname] pourra étre acceptée à la civilité et avoir une vraie identité."  
+    play sound "Click.mp3" noloop 
+
+    P "Vraiment mais c'est génial ça."
+    play sound "Click.mp3" noloop
+
+    Ot "D'accord, mais pour cela, j'aurai besoin de quelques informations."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu lui transmets les détails concernant [newname].{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "J'aimerais te poser une question."
+    play sound "Click.mp3" noloop 
+
+    Ot "Oui dis-moi."
+    play sound "Click.mp3" noloop
+
+    P "C'est qui cette personne avec vous ?"
+    play sound "Click.mp3" noloop
+
+    E "Attend tu ne reconnais pas cette personne ?"
+    play sound "Click.mp3" noloop
+
+    P "Non pourquoi ?"
+    play sound "Click.mp3" noloop 
+
+    E "Tu devrais la connaitre car elle est importante de notre société."
+    play sound "Click.mp3" noloop
+
+    P "Je vois."  
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Puis la troisiéme personne se met à parler.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    Ln "Je me nomme [Ln], la vice-présidente du gouvernement."
+    play sound "Click.mp3" noloop
+
+    $ stockage += 2.0 
+
+    P "Oh putain que faites-vous ici ?"  
+    play sound "Click.mp3" noloop 
+
+    Ln "Je suis venue après avoir entendu parler d'[newname]."  
+    play sound "Click.mp3" noloop 
+
+    P "Attendez... vous connaissez [newname] ? Comment ?"
+    play sound "Click.mp3" noloop
+
+    Ln "Je suis au courant grâce à la DGCA. Le gouvernement surveille tout ce qui concerne les projets non-répertoriés. Et celui-ci... dépasse largement tout ce que nous avons vu jusque-là."
+    play sound "Click.mp3" noloop
+
+    P "Que voulez-vous de moi et de [newname] ?"
+    play sound "Click.mp3" noloop 
+
+    Ln "Rien. Je suis là pour éviter que la situation ne dégénère. [newname] n'est pas encore considérée comme une menace. Pas encore."
+    play sound "Click.mp3" noloop
+
+    P "Et si je vous disais que [newname] est bien plus qu’un simple programme ?"
+    play sound "Click.mp3" noloop
+
+    Ln "Je le sais déjà. C’est justement pour ça que je suis ici. Dis-moi, es-tu réellement capable de la contrôler ?"
+    play sound "Click.mp3" noloop
+
+    P "Oui, absolument. J’ai un vrai contrôle sur elle... mais elle agit aussi de son propre chef."
+    play sound "Click.mp3" noloop 
+
+    Ln "Je vois… Donc, je n’ai pas à m’inquiéter pour la sécurité publique."
+    play sound "Click.mp3" noloop
+
+    $ thanks = get_random_thanks()
+    P "[thanks]"
+    play sound "Click.mp3" noloop
+
+    Ln "Sinon tu en penses quoi de la société actuelle ?"
+    play sound "Click.mp3" noloop
+
+    P "Eh bien…"
+    play sound "Click.mp3" noloop
+
+    menu:
+
+        "{b}{i}Donner un avis positif{/i}{/b}":
+            play sound "Menu.mp3" noloop
+
+            P "Il y a encore de l'espoir dans cette société."
+            play sound "Click.mp3" noloop
+
+            Ln "C'est bien que notre société te donne de l'espoir."
+            play sound "Click.mp3" noloop 
+
+        "{b}{i}Exprimer un avis négatif{/i}{/b}":
+            play sound "Menu.mp3" noloop
+
+            $ success += 1 
+            $ quest28 += 1 
+
+            P "Sachez que je méprise profondément cette société malade."
+            play sound "Click.mp3" noloop 
+
+            Ln "Oh je vois mais bon de toute façon c'est ton avis pas le mien donc je ne vais juger."
+            play sound "Click.mp3" noloop
 
 
 
