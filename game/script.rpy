@@ -17628,8 +17628,10 @@ label update1:
     scene room 
     show screen room
     show screen day
-    $ day += 3
+    $ day += 3 
     $ points -= 600 
+
+
 
     return                            
 
