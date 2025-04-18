@@ -1121,7 +1121,7 @@ label rencontre:
     E "[nothing] C'est normal"
     play sound "Click.mp3" noloop
 
-    "{b}{i}Tu regardes tes documents et ceux d'[A] et vous remarques que vous étes en Seconde-E.{/i}{/b}"
+    "{b}{i}Tu regardes tes documents et ceux d'[newname] et vous remarques que vous étes en Seconde-E.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     P "Seconde-E... C'est donc ça notre classe."
@@ -1627,7 +1627,7 @@ label rencontre:
     M "Ce qui explique pourquoi vous êtes uniquement dix élèves ici."
     play sound "Click.mp3" noloop
 
-    "{b}{i}Tout les élèves sont choqués par cette information.{/i}{/b}"
+    "{b}{i}Tout les élèves sont choqués par cette informations.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     M "Oui je sais, c'est surprenant."
@@ -1693,8 +1693,6 @@ label rencontre:
 
     M "Cette dérogation est pour [prenom] et [A]." 
     play sound "Click.mp3" noloop
-
-    $ stockage += 2.0
 
     Y "Quoi !?" 
     play sound "Click.mp3" noloop
@@ -1783,8 +1781,6 @@ label rencontre:
 
     "{b}{i}Tous les élèves sont de nouveau choqués.{/i}{/b}"
     play sound "Click.mp3" noloop
-
-    $ stockage += 1.0
 
     M "Oui je suis sérieuse."
     play sound "Click.mp3" noloop 
@@ -2612,8 +2608,6 @@ label wallbreaking3:
     "{b}{i}Tu pars manger avant de revenir au dortoir vers 13h45.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    $ points -= 200 
-
     scene room 
     show screen room 
 
@@ -3340,7 +3334,7 @@ label wallbreaking4:
     Na "Un examen surprise !? c'est quoi ?"
     play sound "Click.mp3" noloop 
 
-    Y "Ah oui c'est vrai tu ne connais pas grand chose de ce monde, je vais t'expliquer."
+    Y "Ah oui c'est vrai tu ne connais rien de ce monde, je vais t'expliquer."
     play sound "Click.mp3" noloop 
 
     Na "Ok je t'écoute."
@@ -3503,19 +3497,19 @@ label wallbreaking4:
         P "Pas besoin de repréciser que je viens de là..."
         play sound "Click.mp3" noloop
 
-        I "Oups désolée."
+I "Oups désolée."
         play sound "Click.mp3" noloop
 
     else: 
 
-        M "C'est pas grave."
+        M "Ce n'est pas grave."
         play sound "Click.mp3" noloop
 
         P "Merci."
         play sound "Click.mp3" noloop  
 
     $ note = get_random_note()
-    M "[newname] tu as eu 15."
+    M "[newname] tu as eu 17.5."
     play sound "Click.mp3" noloop 
 
     Na "Merci."
@@ -3548,7 +3542,7 @@ label wallbreaking4:
     scene hallway 
     show screen hallway 
 
-    P "Enfin une pause, ça fait plasir."
+    P "Enfin une pause, ça fait plaisir."
     play sound "Click.mp3" noloop  
 
     Na "Oui ça fait vraiment du bien."
@@ -3608,7 +3602,7 @@ label wallbreaking4:
     P "[validation]"
     play sound "Click.mp3" noloop 
 
-    M "Pour commencer, l'outil technologie qui a été utiliser était des robots humanoides mis en service par l'entreprise NeoGen Technologies."
+    M "Pour commencer, l'outil technologique qui a été utilisé était des robots humanoïdes mis en service par l'entreprise NeoGen Technologies."
     play sound "Click.mp3" noloop
 
     M "En 2095, la guerre technologique a atteint son apogée avec l'introduction massive des robots humanoïdes. Ces machines étaient supposées représenter le futur de la défense, mais très vite, elles sont devenues une arme à double tranchant."
@@ -3641,16 +3635,16 @@ label wallbreaking4:
     H "D'un côté, on risque de perdre notre supériorité technologique, mais de l'autre, on joue avec quelque chose qu'on ne maîtrise pas complètement."
     play sound "Click.mp3" noloop
 
-    M "C'est exactement cela. Et en fin de compte, ce projet était une bonne idée mais c'était trop tot."
+    M "C'est exactement cela. Et en fin de compte, ce projet était une bonne idée mais c'était trop tôt."
     play sound "Click.mp3" noloop
 
-    M "Mais malgré ça nous avons quand méme gagné la guerre car l'ennemi n'as pas pu récupérer les robots."
+    M "Mais malgré ça nous avons quand même gagné la guerre car l'ennemi n'a pas pu récupérer les robots."
     play sound "Click.mp3" noloop
 
     P "Qu'est-il arrivé aux robots humanoïdes ?"
     play sound "Click.mp3" noloop
 
-    M "Ils ont été démantelés dans un entrêpot abandonné et l'entreprise a fermé suite à cet échec."
+    M "Ils ont été démantelés dans un entrepôt abandonné et l'entreprise a fermé suite à cet échec."
     play sound "Click.mp3" noloop
 
     P "Donc il n'existe plus un seul de ces robots."
@@ -3709,7 +3703,7 @@ label wallbreaking4:
     "{b}{i}Les jumelles soupirent et abandonnent.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    M "Je comprend votre point de vue mais les choses sont comme ça."
+    M "Je comprends votre point de vue mais les choses sont comme ça."
     play sound "Click.mp3" noloop
 
     J1 "Ok alors je respecte la décision."
@@ -3718,7 +3712,7 @@ label wallbreaking4:
     M "Merci beaucoup bon continuons le cours."
     play sound "Click.mp3" noloop 
 
-    "{b}{i}Le cours continue sans probléme.{/i}{/b}"
+    "{b}{i}Le cours continue sans problème.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
     $ endlesson = get_random_endlesson()
@@ -3855,16 +3849,16 @@ label wallbreaking4:
     I "De toute façon on peut parler pratiquement que de ça."
     play sound "Click.mp3" noloop 
 
-    P "Oui vu qu'on vie au lycée littérallement"
+    P "Oui vu qu'on vit au lycée littéralement"
     play sound "Click.mp3" noloop 
 
     I "Mais avant toute chose je n'ai pas vraiment apprécié les propos d'Ayano et [J2] en vers [newname]"
     play sound "Click.mp3" noloop 
 
-    P "C'est vrai que leurs propos n'étaient pas ouff."
+    P "C'est vrai que leurs propos n'étaient pas ouf."
     play sound "Click.mp3" noloop 
 
-    Na "En plus je leurs ai rien fait."
+    Na "En plus je ne leur ai rien fait."
     play sound "Click.mp3" noloop 
 
     I "Je sais que n'as rien fait [newname] mais je ne comprends pas pourquoi elles se permettent de dire qu'[newname] ne t'appartient pas [prenom]."
@@ -3882,7 +3876,7 @@ label wallbreaking4:
     I "Oui bon idée."
     play sound "Click.mp3" noloop 
 
-    "{b}{i} Vous conntinuez de discuter des cours pendant que vous mangez jusqu'a la sonnerie.{/i}{/b}"
+    "{b}{i} Vous continuez de discuter des cours pendant que vous mangez jusqu'à la sonnerie.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
     I "Bon on doit retourner en cours."
@@ -3941,7 +3935,7 @@ label wallbreaking4:
     "{b}{i} Tous les élèves sortent leur livre.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    M "Nous allons avoir plus en détail les Robots Humainoides de la guerre."
+    M "Nous allons voir plus en détail les Robots Humanoïdes de la guerre."
     play sound "Click.mp3" noloop
 
     H "Intéressant."
@@ -3965,7 +3959,7 @@ label wallbreaking4:
     M "Comme ce que j'allais dire ils ont un mode combat et un mode Civile."
     play sound "Click.mp3" noloop
 
-    M "Leur mode civile leur permettaient de vivre une vie normal comme nous et le mode combat qui leur permettaient de faire la guerre."
+    M "Leur mode civil leur permettait de vivre une vie normale comme nous et le mode combat leur permettait de faire la guerre."
     play sound "Click.mp3" noloop
 
     H "Mais ça veut dire qu'[newname] a ....."
@@ -3983,7 +3977,7 @@ label wallbreaking4:
     M "Désolée [H] mais [pronom] a raison, on ne peut pas considérer [newname] comme une arme de guerre."
     play sound "Click.mp3" noloop 
 
-    H "Désolé j'avais juste fais le lien avec votre cours."
+    H "Désolé j'avais juste fait le lien avec votre cours."
     play sound "Click.mp3" noloop
 
     M "Pas de soucis."
@@ -4003,7 +3997,7 @@ label wallbreaking4:
         J1 "je savais qu'[newname] était dangereuse surtout qu'elle a le nom techinique d'une arme."
         play sound "Click.mp3" noloop 
 
-    else: 
+else:
 
         J1 "je savais qu'[newname] était dangereuse."
         play sound "Click.mp3" noloop 
@@ -4014,19 +4008,19 @@ label wallbreaking4:
     "{b}{i} [newname] se met subitement à pleurer.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "ça va aller [newname] ne t'inquiêtes pas je suis là."
+    P "Ça va aller [newname] ne t'inquiète pas je suis là."
     play sound "Click.mp3" noloop 
 
     I "Tu n'as pas honte de dire ce genre de chose [J1] alors qu'elle est sensible !?"
     play sound "Click.mp3" noloop 
 
-    P "Franchement je n'ai jamais vue une personne aussi irrespectueuse que toi !"
+    P "Franchement je n'ai jamais vu une personne aussi irrespectueuse que toi !"
     play sound "Click.mp3" noloop 
 
     J1 "Je donne juste mon avis et alors !"
     play sound "Click.mp3" noloop
 
-    M "ça suffit maintenant, [J1] je pense que tu peux aller en salle de permanence."
+    M "Ça suffit maintenant, [J1] je pense que tu peux aller en salle de permanence."
     play sound "Click.mp3" noloop 
 
     J1 "Peu importe..."
@@ -4048,7 +4042,7 @@ label wallbreaking4:
     I "[validation]"
     play sound "Click.mp3" noloop 
 
-    "{b}{i} Le cours continue sans probléme.{/i}{/b}"
+    "{b}{i} Le cours continue sans problème.{/i}{/b}"
     play sound "Bell.mp3" noloop
 
     $ stockage += 8.0
@@ -4092,10 +4086,10 @@ label wallbreaking4:
     "{b}{i} Tu passes la clé de ton dortoir à [I] avant qu'elles quittent la salle.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    M "[P] je suis complétement désolée pour cet incident."
+    M "[P] je suis complètement désolée pour cet incident."
     play sound "Click.mp3" noloop
 
-    P "Pas de soucis mais c'est vrai qu'[J1] est un petit probléme pour [newname]."
+    P "Pas de soucis mais c'est vrai qu'[J1] est un petit problème pour [newname]."
     play sound "Click.mp3" noloop
 
     M "Oui je confirme."
@@ -4110,7 +4104,7 @@ label wallbreaking4:
     hide screen class_404 
     scene black
 
-    "{b}{i}Tu quittes la salle pour aller faire ton boulot quotidient.{/i}{/b}"
+    "{b}{i}Tu quittes la salle pour aller faire ton boulot quotidien.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene hallway
@@ -4136,13 +4130,13 @@ label wallbreaking4:
             hide screen hallway
             play sound "Click.mp3" noloop
 
-            "{b}{i}Tu te diriges au rez de chaussé.{/i}{/b}"
+            "{b}{i}Tu te diriges au rez-de-chaussé.{/i}{/b}"
             play sound "Footsteps.mp3" noloop
      
             scene hall 
             show screen hall
 
-            P "aller j'y suis presque."
+            P "aller en salle de club."
             play sound "Footsteps.mp3" noloop 
 
             scene black
@@ -4164,13 +4158,13 @@ label wallbreaking4:
             P "Bon finis les révisions pour aujourd'hui."
             play sound "Click.mp3" noloop 
 
-            "{b}{i}Tu ranges tes livres avant de sortir ton ordinateur pour voir le système emotionelle d'[newname].{/i}{/b}"
+            "{b}{i}Tu ranges tes livres avant de sortir ton ordinateur pour voir le système émotionnel d'[newname].{/i}{/b}"
             play sound "Click.mp3" noloop 
 
             label choice7:
 
             play sound "Menu.mp3" noloop
-            $ ip = renpy.input("Entres l'adresse IP pour pouvoir te connecter à [newname].")
+            $ ip = renpy.input("Entre l'adresse IP pour pouvoir te connecter à [newname].")
             $ ip = ip.strip()
 
             if ip == "001.018.009.019":
@@ -4184,7 +4178,7 @@ label wallbreaking4:
                 "{b}{i}La connexion est établie.{/i}{/b}"
                 play sound "Click.mp3" noloop 
 
-                P "Tiens on dirait que je me suis connecté a l'ordinateur de l'attaquant d'avant."
+                P "Tiens on dirait que je me suis connecté à l'ordinateur de l'attaquant d'avant."
                 play sound "Click.mp3" noloop 
 
                 P "Bon il me reste plus qu'......."
@@ -4195,7 +4189,7 @@ label wallbreaking4:
                     "{b}{i} Attaquer !!! {/i}{/b}" :
                         play sound "Menu.mp3" noloop 
                  
-                "{b}{i} Tu envois une attaque par déni de service distribué.{/i}{/b}"
+                "{b}{i} Tu envoies une attaque par déni de service distribué.{/i}{/b}"
                 play sound "Click.mp3" noloop 
 
                 P "Bon l'attaquant est vulnérable, c'est le moment de finir le travail."
@@ -4204,7 +4198,7 @@ label wallbreaking4:
                 "{b}{i} Tu continues l'attaque.{/i}{/b}"
                 play sound "Click.mp3" noloop  
 
-                P "Bon j'ai fini l'attaque, leur système interne est complétement détruit."
+                P "Bon j'ai fini l'attaque, leur système interne est complètement détruit."
                 play sound "Click.mp3" noloop                      
                         
                 scene black 
@@ -4212,7 +4206,7 @@ label wallbreaking4:
                 hide screen points
                 hide screen day
                 play music "gameover.mp3" noloop
-                "{b}{i}Fin numéro 5 : Félicitation tu as bien complétement attaqué et piraté l'adressee IP 001.009.011.015 par deni de service (DDOS).{/i}{/b}"
+                "{b}{i}Fin numéro 5 : Félicitation tu as bien complètement attaqué et piraté l'adresse IP 001.009.011.015 par déni de service (DDOS).{/i}{/b}"
                 play sound "Menu.mp3" noloop 
     
                 menu:    
@@ -4235,10 +4229,10 @@ label wallbreaking4:
 
 label connexion:
 
-            P "Ah ouais elle encore instable emotionellement la pauvre...."
+            P "Ah ouais elle est encore instable émotionnellement la pauvre...."
             play sound "Click.mp3" noloop
 
-            "{b}{i} Tu ranges ton ordi avant de quiiter la salle de club.{/i}{/b}"
+            "{b}{i} Tu ranges ton ordi avant de quitter la salle de club.{/i}{/b}"
             play sound "Click.mp3" noloop 
 
             if pronom == "il": 
@@ -4288,7 +4282,7 @@ label study:
     P "aller en salle de permanence pour réviser."
     play sound "Footsteps.mp3" noloop 
 
-    "{b}{i}Tu te dirige vers la salle de permanence.{/i}{/b}"
+    "{b}{i}Tu te diriges vers la salle de permanence.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     scene black
@@ -4315,13 +4309,13 @@ label study:
     P "Bon par quoi je vais commencer ?"
     play sound "Click.mp3" noloop
 
-    "{b}{i}Tu sors tes livres pour réviser mais Soudainement [J2] entra pour venir voir [J1].{/i}{/b}"
+    "{b}{i}Tu sors tes livres pour réviser mais soudainement [J2] entra pour venir voir [J1].{/i}{/b}"
     play sound "Door.mp3" noloop 
 
     J2 "[J1] tu es là ?"
     play sound "Click.mp3" noloop
 
-    J1 "Oui Pourquoi ?"
+    J1 "Oui pourquoi ?"
     play sound "Click.mp3" noloop
 
     J2 "C'était pour qu'on aille au club pour travailler."
@@ -4346,7 +4340,7 @@ label study:
         J1 "Laisse tomber elle est en train de réviser." 
         play sound "Click.mp3" noloop 
 
-    "{b}{i} [J2] s'appproche toi pour voir.{/i}{/b}"
+    "{b}{i} [J2] s'approche de toi pour voir.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     J2 "Salut."
@@ -4355,13 +4349,13 @@ label study:
     P "Oh salut....."
     play sound "Click.mp3" noloop 
 
-    "{b}{i} [J2] Continue de t'observer avant de quitter la salle avec sa soeur.{/i}{/b}"
+    "{b}{i} [J2] continue de t'observer avant de quitter la salle avec sa sœur.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     P "Enfin tranquille...."
     play sound "Click.mp3" noloop 
 
-    "{b}{i} Tu continues toujours de réviser à fond pendant une heure et demi.{/i}{/b}"
+    "{b}{i} Tu continues toujours de réviser à fond pendant une heure et demie.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     P "Bon finis les révisions pour aujourd'hui."
@@ -4403,7 +4397,7 @@ label dorm2:
     I "Re [prenom] ça va ?"
     play sound "Click.mp3" noloop 
 
-    P "ça va mais un peu en détresse pour [newname]."
+    P "Ça va mais un peu en détresse pour [newname]."
     play sound "Click.mp3" noloop 
     
     if pronom == "il":
@@ -4419,7 +4413,7 @@ label dorm2:
     P "Oui je sais j'ai beaucoup révisé."
     play sound "Click.mp3" noloop 
 
-    I "Ok je comprend maintenant."
+    I "Ok je comprends maintenant."
     play sound "Click.mp3" noloop 
 
     P "Et sinon comment elle va [newname] ?"
@@ -4470,7 +4464,7 @@ label dorm2:
     "{b}{i}Tu aperçois [newname] déconnectée contre le mur.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Bon je vais la laisser tranquille elle a déja une journée difficile tout comme moi."
+    P "Bon je vais la laisser tranquille elle a déjà une journée difficile tout comme moi."
     play sound "Phone.mp3" noloop
 
     "{b}{i}Tu te poses tranquillement mais soudainement tu reçois un appel.{/i}{/b}"
@@ -4495,7 +4489,7 @@ label dorm2:
     Mo "Sinon comment se passent les cours pour toi ?"
     play sound "Click.mp3" noloop
 
-    P "ça se passe bien."
+    P "Ça se passe bien."
     play sound "Click.mp3" noloop
 
     Mo "Génial alors et comment elle va ta petite [A] ?"
@@ -4503,8 +4497,7 @@ label dorm2:
 
     P "Elle va bien et en plus je lui ai même trouvé un prénom qui lui va bien."
     play sound "Click.mp3" noloop
-
-    Mo "Ah bon le quel ?"
+    Mo "Ah bon lequel ?"
     play sound "Click.mp3" noloop
 
     P "Le prénom que je lui ai trouvé est [newname]"
@@ -4523,7 +4516,7 @@ label dorm2:
     "{b}{i}Vous continuez de discuter.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    Mo " Bon je vais devoir te laisser je dois m'occuper de ta soeur tu sais comment elle est..."
+    Mo "Bon je vais devoir te laisser je dois m'occuper de ta sœur tu sais comment elle est..."
     play sound "Click.mp3" noloop
 
     P "Ah oui celle-là je vois..."
@@ -4541,7 +4534,7 @@ label dorm2:
     P "Bon enfin fini je vais pouvoir aller dormir."
     play sound "Click.mp3" noloop 
 
-    "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
+    "{b}{i}Tu te changeas avant d'aller te coucher.{/i}{/b}"
     play sound "Click.mp3" noloop
 
 # la semaine suivante 
@@ -4564,7 +4557,7 @@ label dorm2:
     P "[line]"
     play sound "Click.mp3" noloop 
 
-    "{b}{i} Tu te léves tranquillement.{/i}{/b}"
+    "{b}{i} Tu te lèves tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     P "Bon aujourd'hui c'est mon premier examen de cette année."
@@ -4582,7 +4575,7 @@ label dorm2:
 label choice8:  
 
     play sound "Menu.mp3" noloop
-    $ ip = renpy.input("Entres l'adresse IP pour pouvoir te connecter à [newname].")
+    $ ip = renpy.input("Entre l'adresse IP pour pouvoir te connecter à [newname].")
     $ ip = ip.strip()
 
     if ip == "001.018.009.019":
@@ -4610,7 +4603,7 @@ label skip2:
     Na "[start]"
     play sound "Click.mp3" noloop 
     
-    "{b}{i}Tu patientes tranquillement jusqu'à que son démarrage sois complet.{/i}{/b}"
+    "{b}{i}Tu patientes tranquillement jusqu'à ce que son démarrage soit complet.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     Na "Démarrage terminé bonjour [P]."
@@ -4620,10 +4613,10 @@ label skip2:
     P "[comment_ca_va]"
     play sound "Click.mp3" noloop
 
-    Na "ça va."
+    Na "Ça va."
     play sound "Click.mp3" noloop 
 
-    P "Bon on va cours ?" 
+    P "Bon on va en cours ?" 
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
@@ -4646,24 +4639,24 @@ label skip2:
     P "[comment_ca_va]"
     play sound "Click.mp3" noloop
 
-    I "ça va mais je suis un peu stressée pour l'examen."
+    I "Ça va mais je suis un peu stressée pour l'examen."
     play sound "Click.mp3" noloop 
 
-    P "ça va aller j'ai confiance en toi." 
+    P "Ça va aller j'ai confiance en toi." 
     play sound "Click.mp3" noloop 
 
     I "Merci beaucoup de me soutenir.~" 
     play sound "Click.mp3" noloop 
 
     P "C'est normal." 
-    play sound "ootsteps.mp3" noloop 
+    play sound "Footsteps.mp3" noloop 
 
     "{b}{i}Vous continuez votre chemin vers la salle de classe.{/i}{/b}"
     play sound "Click.mp3" noloop  
     hide screen hallway 
     scene black
 
-    "{b}{i} Quand vous entrez dans la salle tout les autres élèves sont déjà là.{/i}{/b}"
+    "{b}{i} Quand vous entrez dans la salle tous les autres élèves sont déjà là.{/i}{/b}"
     play sound "Door.mp3" noloop
     
     scene classroom
@@ -4673,7 +4666,7 @@ label skip2:
     K "[comment_ca_va]"
     play sound "Click.mp3" noloop
 
-    P "ça va bien comme d'habitude." 
+    P "Ça va bien comme d'habitude." 
     play sound "Click.mp3" noloop 
 
     K "Oh cool c'est génial." 
@@ -4698,7 +4691,7 @@ label skip2:
     Na "[validation]"
     play sound "Click.mp3" noloop 
 
-    "{b}{i}[M] Commença à distribuer les copies.{/i}{/b}"
+    "{b}{i}[M] commença à distribuer les copies.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     M "Vous avez une heure c'est parti !!!" 
@@ -4733,7 +4726,7 @@ label choice9:
         "Robots de combat":
             $ grade += 2.0
 
-    "Question 3 :  où cette guerre a-t-elle éclaté ?"
+    "Question 3 : Où cette guerre a-t-elle éclaté ?"
     play sound "Menu.mp3" noloop 
 
     menu:
@@ -4774,7 +4767,7 @@ label choice9:
             $ grade += 1.0
         "Attaques de drones":
             $ grade += 0.0
-        "Robots humanoides":
+        "Robots humanoïdes":
             $ grade += 2.0
 
     "Question 7 : Combien de temps a duré la guerre ?"
@@ -4821,16 +4814,16 @@ label choice9:
         "Une déclaration de guerre soudaine":  
             $ grade += 0.0  
 
-    "{b}{i}Aprés l'examen tout le monde remit leur copie à [M].{/i}{/b}"
+    "{b}{i}Après l'examen tout le monde remit leur copie à [M].{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    K "Cette examen n'était si dur que ça."
+    K "Cet examen n'était pas si dur que ça."
     play sound "Click.mp3" noloop
 
     I "Je confirme bon on verra bien les résultats."
     play sound "Click.mp3" noloop 
 
-    M "Si jamais je vous corrigerai vos copies durant la pause et vous les rendrez cet après-midi."
+    M "Si jamais je corrigerai vos copies durant la pause et vous les rendrai cet après-midi."
     play sound "Click.mp3" noloop
 
     Na "Déjà !?" 
@@ -4848,7 +4841,7 @@ label choice9:
     K "Ok alors."
     play sound "Click.mp3" noloop 
 
-    "{b}{i}Le cours continue sans probléme.{/i}{/b}"
+    "{b}{i}Le cours continue sans problème.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
     $ endlesson = get_random_endlesson()
@@ -4871,7 +4864,7 @@ label choice9:
     scene hallway 
     show screen hallway 
 
-    "{b}{i} Vous vous dirigez votre chemin vers la réfectoire.{/i}{/b}"
+    "{b}{i} Vous vous dirigez vers le réfectoire.{/i}{/b}"
     play sound "Click.mp3" noloop
     
     scene staircase
@@ -4883,19 +4876,19 @@ label choice9:
     scene hall 
     show screen hall
 
-    "{b}{i} On arrivant dans le hall tu vois soudainement [E] qui discute avec quelqu'un qui n'est pas du lycée.{/i}{/b}"
+    "{b}{i} En arrivant dans le hall tu vois soudainement [E] qui discute avec quelqu'un qui n'est pas du lycée.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Attend deux secondes [newname] je dois faire un truc."
+    P "Attends deux secondes [newname] je dois faire un truc."
     play sound "Click.mp3" noloop 
 
     Na "Ok pas de soucis"
     play sound "Click.mp3" noloop 
 
-    "{b}{i} Tu te mets dans un coin du hall pour écouter secrétement.{/i}{/b}"
+    "{b}{i} Tu te mets dans un coin du hall pour écouter secrètement.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    R "J'aimerai rencontrer quelqu'un parmi vos élèves."
+    R "J'aimerais rencontrer quelqu'un parmi vos élèves."
     play sound "Click.mp3" noloop 
 
     E "Oui pas de soucis."
@@ -4915,7 +4908,7 @@ label choice9:
     E "[nothing]"
     play sound "Click.mp3" noloop
 
-    "{b}{i} Tu choisis de partir vers la réfectoire avec [newname] pour éviter de te faire attraper par [E].{/i}{/b}"
+    "{b}{i} Tu choisis de partir vers le réfectoire avec [newname] pour éviter de te faire attraper par [E].{/i}{/b}"
     play sound "Click.mp3" noloop
 
     scene black
@@ -4930,27 +4923,27 @@ label choice9:
     Na "Bon on va prendre à manger ?"
     play sound "Click.mp3" noloop 
 
-    P "Bien sûr tu veux qu'on fasse quoi d'autres ? Prendre la poudre d'escampette tant qu'on y est ?"
+    P "Bien sûr tu veux qu'on fasse quoi d'autre ? Prendre la poudre d'escampette tant qu'on y est ?"
     play sound "Click.mp3" noloop 
 
     "{b}{i} [newname] se mit à rigoler.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Mais bon tu m'as commpris."
+    P "Mais bon tu m'as compris."
     play sound "Click.mp3" noloop 
 
-    Na "oui je t'ai compris."
+    Na "Oui je t'ai compris."
     play sound "Click.mp3" noloop 
 
     "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Bon voyonns voir aujourd'hui il y a que des pâtes carbonara." 
+    P "Bon voyons voir aujourd'hui il y a que des pâtes carbonara." 
     play sound "Menu.mp3" noloop 
     
     menu:    
 
-        "{b}{i} Pates carbonara {/i}{/b}" :
+        "{b}{i} Pâtes carbonara {/i}{/b}" :
             $ points -= 600
 
     P "C'est bon [newname] tu t'es servie ?"
@@ -4969,7 +4962,7 @@ label choice9:
     P "Oh salut [I] on peut venir manger avec toi ?"
     play sound "Click.mp3" noloop 
 
-    I "Oui bien sur."
+    I "Oui bien sûr."
     play sound "Click.mp3" noloop 
 
     P "Merci."
@@ -4978,10 +4971,10 @@ label choice9:
     "{b}{i}Vous vous asseyez tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "Sinon [I] je ne t'ai pas demandé. Comment c'est passé l'examen pour toi ?"
+    P "Sinon [I] je ne t'ai pas demandé. Comment s'est passé l'examen pour toi ?"
     play sound "Click.mp3" noloop 
 
-    I "ça s'est bien passée pour moi et toi ?"
+    I "Ça s'est bien passé pour moi et toi ?"
     play sound "Click.mp3" noloop 
 
     if pronom == "il":
@@ -4994,17 +4987,17 @@ label choice9:
         P "Je dirais que je me suis bien débrouillée."
         play sound "Click.mp3" noloop 
     
-    I "ça ne m'étonne pas venant de toi."
+    I "Ça ne m'étonne pas venant de toi."
     play sound "Click.mp3" noloop 
 
-    Na "J'ai lui déjà dit la même chose à [prenom] un jour." 
+    Na "J'ai déjà dit la même chose à [prenom] un jour." 
     play sound "Click.mp3" noloop 
 
-    I "Et toi [newname] comment ça s'est passée l'examen ?"
+    I "Et toi [newname] comment ça s'est passé l'examen ?"
     play sound "Click.mp3" noloop 
 
-    Na "ça s'est bien passée pour moi je ne m'inquiéte pas."
-    play sound "Click.mp3" noloop 
+    Na "Ça s'est bien passé pour moi je ne m'inquiète pas."
+play sound "Click.mp3" noloop 
 
     I "Cool alors."
     play sound "Click.mp3" noloop 
@@ -5015,7 +5008,7 @@ label choice9:
     I "Bon on doit retourner en cours."
     play sound "Click.mp3" noloop
 
-    P "Ok il faut pas qu'on soit en retard."
+    P "Ok il ne faut pas qu'on soit en retard."
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
@@ -5046,7 +5039,7 @@ label choice9:
     "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Sinon [I] je voulais savoir qwe fait [Y] car à part durant les cours je la vois pas trop."
+    P "Sinon [I] je voulais savoir que fait [Y] car à part durant les cours je ne la vois pas trop."
     play sound "Click.mp3" noloop 
 
     I "Ah [Y], bah j'ai entendu dire qu'elle a une affaire urgente à régler."
@@ -5055,13 +5048,13 @@ label choice9:
     P "Une affaire urgente à régler !?"
     play sound "Click.mp3" noloop 
 
-    I "Oui mais j'en sais pas plus désolée."
+    I "Oui mais je n'en sais pas plus désolée."
     play sound "Click.mp3" noloop 
 
     P "Ok alors."
     play sound "Click.mp3" noloop 
 
-    Na "Dois-je vous rappelez qu'on a cours."
+    Na "Dois-je vous rappeler qu'on a cours."
     play sound "Click.mp3" noloop 
 
     if pronom == "il":
@@ -5089,13 +5082,13 @@ label choice9:
     scene classroom  
     show screen class_404 
 
-    M "Ah vous voila un peu plus et vous seriez en retard."
+    M "Ah vous voilà un peu plus et vous seriez en retard."
     play sound "Click.mp3" noloop 
 
     I "Désolée..."
     play sound "Click.mp3" noloop 
 
-    M "il y a pas de soucis tant que vous êtes à l'heure."
+    M "Il n'y a pas de soucis tant que vous êtes à l'heure."
     play sound "Click.mp3" noloop 
 
     Na "Merci."
@@ -5122,7 +5115,7 @@ label choice9:
         $ success += 1
         $ quest8 += 1
 
-        M "Félicitation tu l'as réussi à la perfection comme d'habitude."
+        M "Félicitations tu l'as réussi à la perfection comme d'habitude."
         play sound "Click.mp3" noloop
 
         P "Merci."
@@ -5161,13 +5154,13 @@ label choice9:
     
     else:
        
-        M "C'est pas mal."
+        M "Ce n'est pas mal."
         play sound "Click.mp3" noloop
 
         P "Merci."
         play sound "Click.mp3" noloop
 
-    M "[Na] tu as eu 19/20 félicitation aussi."
+    M "[Na] tu as eu 19/20 félicitations aussi."
     play sound "Click.mp3" noloop 
 
     $ thanks = get_random_thanks()
@@ -5180,7 +5173,7 @@ label choice9:
 
     if note == 20: 
 
-        M "Félicitation tu l'as réussi à la perfection."
+        M "Félicitations tu l'as réussi à la perfection."
         play sound "Click.mp3" noloop
 
     else: 
@@ -5198,7 +5191,7 @@ label choice9:
 
     if note == 20: 
 
-        M "Félicitation tu l'as réussi à la perfection."
+        M "Félicitations tu l'as réussi à la perfection."
         play sound "Click.mp3" noloop
 
     else: 
@@ -5216,7 +5209,7 @@ label choice9:
 
     if note == 20: 
 
-        M "Félicitation tu l'as réussi à la perfection."
+        M "Félicitations tu l'as réussi à la perfection."
         play sound "Click.mp3" noloop
 
     else: 
@@ -5234,7 +5227,7 @@ label choice9:
 
     if note == 20: 
 
-        M "Félicitation tu l'as réussi à la perfection."
+        M "Félicitations tu l'as réussi à la perfection."
         play sound "Click.mp3" noloop
 
     else: 
@@ -5248,7 +5241,7 @@ label choice9:
 
     if note == 20: 
 
-        M "Félicitation tu l'as réussi à la perfection."
+        M "Félicitations tu l'as réussi à la perfection."
         play sound "Click.mp3" noloop
 
     else: 
@@ -5262,7 +5255,7 @@ label choice9:
 
     if note == 20: 
 
-        M "Félicitation tu l'as réussi à la perfection."
+        M "Félicitations tu l'as réussi à la perfection."
         play sound "Click.mp3" noloop
 
     else: 
@@ -5280,7 +5273,7 @@ label choice9:
     
     if note == 20: 
 
-        M "Félicitation tu l'as réussi à la perfection."
+        M "Félicitations tu l'as réussi à la perfection."
         play sound "Click.mp3" noloop
 
     else: 
@@ -5305,7 +5298,7 @@ label choice9:
 
     if note == 20: 
 
-        M "Félicitation tu l'as réussi à la perfection."
+        M "Félicitations tu l'as réussi à la perfection."
         play sound "Click.mp3" noloop
 
     else: 
@@ -5323,7 +5316,7 @@ label choice9:
 
     if note == 20: 
 
-        M "Félicitation tu l'as réussi à la perfection."
+        M "Félicitations tu l'as réussi à la perfection."
         play sound "Click.mp3" noloop
 
     else: 
@@ -5335,13 +5328,13 @@ label choice9:
     J2 "[thanks]"
     play sound "Click.mp3" noloop
 
-    M "Bon la moyenne générale n'est pas mal, continuez de bien travaillez comme ceci."
+    M "Bon la moyenne générale n'est pas mal, continuez de bien travailler comme ceci."
     play sound "Click.mp3" noloop 
 
     Y "Il n'y aura pas de soucis pour moi."
     play sound "Click.mp3" noloop 
 
-    Na "Moi aussi vous pourrez sur moi."
+    Na "Moi aussi vous pourrez compter sur moi."
     play sound "Click.mp3" noloop 
 
     I "De même pour moi."
@@ -5356,7 +5349,7 @@ label choice9:
     M "Bon le cours est bientôt terminé."
     play sound "Bell.mp3" noloop 
 
-    M "Bon Le cours est terminé vous pouvez quitter la salle."
+    M "Bon le cours est terminé vous pouvez quitter la salle."
     play sound "Click.mp3" noloop
 
     P "Bon [newname] on y va ?"
@@ -5369,7 +5362,7 @@ label choice9:
     M "Attends deux secondes [prenom]."
     play sound "Click.mp3" noloop
 
-    P "Oui qu'il y a t'il ?"
+    P "Oui qu'y a-t-il ?"
     play sound "Click.mp3" noloop
 
     M "[E] t'attend dans son bureau."
@@ -5391,16 +5384,16 @@ label choice9:
     P "Bon ok j'y vais."
     play sound "Click.mp3" noloop
 
-    Na  "Bon tu penses que c'est qui la personne qui veut te voir ?"
+    Na "Bon tu penses que c'est qui la personne qui veut te voir ?"
     play sound "Click.mp3" noloop
 
-    P "J'en ai aucune idée."
+    P "Je n'en ai aucune idée."
     play sound "Click.mp3" noloop
 
     scene black 
     hide screen class_404 
 
-    "{b}{i}Tu diriges dans le couloir avec [Na].{/i}{/b}"
+    "{b}{i}Tu te diriges dans le couloir avec [Na].{/i}{/b}"
     play sound "Door.mp3" noloop
      
     scene hallway
@@ -5436,7 +5429,7 @@ label choice9:
     P "Bonjour c'est moi [nom]."  
     play sound "Click.mp3" noloop 
 
-    E "Ah te voilà vas-y assis toi, la personne qui veut te voir va pas tarder." 
+    E "Ah te voilà vas-y assieds-toi, la personne qui veut te voir ne va pas tarder." 
     play sound "Click.mp3" noloop 
 
     $ validation = get_random_validation() 
@@ -5451,12 +5444,12 @@ label choice9:
 
     if pronom == "il":
 
-        P "Bonjour enchanté, pourrais-je savoir qui êtes-vous ?"
+        P "Bonjour enchanté, pourrais-je savoir qui vous êtes ?"
         play sound "Click.mp3" noloop 
 
     elif pronom == "elle": 
 
-        P "Bonjour enchantée, pourrais-je savoir qui êtes-vous ?"
+        P "Bonjour enchantée, pourrais-je savoir qui vous êtes ?"
         play sound "Click.mp3" noloop 
 
     R "Doucement je vais me présenter."
@@ -5482,7 +5475,7 @@ label choice9:
         R "Donc [nom] c'est bien toi l'ultime créatrice ?"
         play sound "Click.mp3" noloop 
 
-    P "Oui c'est exact mais vous qui êtes-vous ?"
+    P "Oui c'est exact mais vous, qui êtes-vous ?"
     play sound "Click.mp3" noloop 
 
     C "Ah oui désolé je me nomme [C]."
@@ -5504,9 +5497,8 @@ label choice9:
     play sound "Click.mp3" noloop 
 
     P "Si vous voulez récupérer [newname] vous pouvez tout de suite oublier."
-    play sound "Click.mp3" noloop 
-
-    C "Non je ne veux absolument pas te récupérer [A]."
+    play sound "Click.mp3" noloop
+C "Non je ne veux absolument pas te récupérer [A]."
     play sound "Click.mp3" noloop  
 
     P "[A] !? Comment êtes-vous au courant de ce nom !?"
@@ -5526,16 +5518,16 @@ label choice9:
         P "Mais j'ai une question."
         play sound "Click.mp3" noloop 
 
-        C "Oui dit moi."
+        C "Oui dis-moi."
         play sound "Click.mp3" noloop 
 
         P "Pourquoi elle avait ces multiples noms dans sa base de données."
         play sound "Click.mp3" noloop 
 
-        C "Car elle a été conçu pour utilser plusieurs fusils en particulier, ceux enregistrés dans sa base de données justement."
+        C "Car elle a été conçue pour utiliser plusieurs fusils en particulier, ceux enregistrés dans sa base de données justement."
         play sound "Click.mp3" noloop 
 
-        P "Ok je vois et J'ai toujours voulu connaître la personne qui a conçu [A]."
+        P "Ok je vois et j'ai toujours voulu connaître la personne qui a conçu [A]."
         play sound "Click.mp3" noloop 
 
         C "Me voilà ici présent."
@@ -5577,7 +5569,7 @@ label choice9:
     P "Il y a 3 mois, je faisais de l'urbex avec un ancien ami à moi dans un entrepôt abandonné et il est tombé sur [A] en ouvrant un grand placard."
     play sound "Click.mp3" noloop 
 
-    C "Je vois et que c'était-il passé ensuite ?"
+    C "Je vois et que s'est-il passé ensuite ?"
     play sound "Click.mp3" noloop 
 
     P "On a eu un petit conflit."
@@ -5589,10 +5581,10 @@ label choice9:
     P "On s'est disputé car je voulais garder [A]..."
     play sound "Click.mp3" noloop 
     
-    C "Oh je vois, qu'a t-il dit part rapport à [A] ?"
+    C "Oh je vois, qu'a-t-il dit par rapport à [A] ?"
     play sound "Click.mp3" noloop 
 
-    P "il a dit qu'elle ne m'appartenait pas mais je lui ai dit qu'elle était abandonnée."
+    P "Il a dit qu'elle ne m'appartenait pas mais je lui ai dit qu'elle était abandonnée."
     play sound "Click.mp3" noloop 
 
     C "C'est exact elle était abandonnée à ce moment-là."
@@ -5600,12 +5592,12 @@ label choice9:
 
     if pronom == "il":
 
-        P "Oui je me suis même renseigné sur les articles de loi concernant ça et j'en ai trouvées trois."
+        P "Oui je me suis même renseigné sur les articles de loi concernant ça et j'en ai trouvés trois."
         play sound "Click.mp3" noloop
 
     elif pronom == "elle": 
 
-        P "Oui je me suis même renseignée sur les articles de loi concernant ça et j'en ai trouvées trois."
+        P "Oui je me suis même renseignée sur les articles de loi concernant ça et j'en ai trouvés trois."
         play sound "Click.mp3" noloop
 
     C "Quels sont ces fameux articles de loi ?"  
@@ -5614,7 +5606,7 @@ label choice9:
     P "Le premier, c'est l'article 24, alinéa 1. Il stipule que tout objet abandonné devient la propriété de la personne qui le récupère."  
     play sound "Click.mp3" noloop  
 
-    C "le second ?"  
+    C "Le second ?"  
     play sound "Click.mp3" noloop  
 
     P "L'article 24, alinéa 2, précise que cette règle ne s'applique plus si le propriétaire initial réclame son bien. Toutefois, la restitution ne peut se faire que par négociation."  
@@ -5636,7 +5628,7 @@ label choice9:
     C "Bien et sinon ton ami est devenu quoi maintenant ?"
     play sound "Click.mp3" noloop 
 
-    P "je ne sais pas mais je pense qu'il est dans un autre lycée."
+    P "Je ne sais pas mais je pense qu'il est dans un autre lycée."
     play sound "Click.mp3" noloop 
 
     C "Je voulais aussi savoir comment tu as amélioré [A] ?"
@@ -5648,10 +5640,10 @@ label choice9:
     C "Ah bon pourtant le processeur choisi pour sa conception était bien." 
     play sound "Click.mp3" noloop 
 
-    P "oui mais actuellement il est trop faible pour les besoins d'[newname] actuels."
+    P "Oui mais actuellement il est trop faible pour les besoins d'[newname] actuels."
     play sound "Click.mp3" noloop 
 
-    C "Ok je comprends mieux et qu'as-tu fait d'autres comme changement ?"
+    C "Ok je comprends mieux et qu'as-tu fait d'autres comme changements ?"
     play sound "Click.mp3" noloop 
 
     P "Je lui ai rajouté une carte mémoire."
@@ -5666,7 +5658,7 @@ label choice9:
     C "Il n'y a pas de soucis."
     play sound "Click.mp3" noloop 
 
-    P "Vous voulez me demander quelques choses d'autre ?"
+    P "Vous voulez me demander quelque chose d'autre ?"
     play sound "Click.mp3" noloop 
 
     C "Oui une dernière chose."
@@ -5675,13 +5667,13 @@ label choice9:
     P "Oui dites-moi."
     play sound "Click.mp3" noloop 
 
-    C "Connais-tu l'entierté des capacités de [A] ?"
+    C "Connais-tu l'entièreté des capacités de [A] ?"
     play sound "Click.mp3" noloop
 
-    P "Non pas complétement malheureusement."
+    P "Non pas complètement malheureusement."
     play sound "Click.mp3" noloop 
 
-    C "Ok mais je pense que j'ai quelques choses qui peut t'intéresser."
+    C "Ok mais je pense que j'ai quelque chose qui peut t'intéresser."
     play sound "Click.mp3" noloop 
 
     P "Oui dites-moi."
@@ -5714,49 +5706,49 @@ label choice9:
 
             $ info += 1.0
 
-            C "De rien... mais avant qu'on termine notre entretien, j’aimerais te demander deux choses."
+            C "De rien... mais avant qu'on termine notre entretien, j'aimerais te demander deux choses."
             play sound "Click.mp3" noloop
 
             P "Oui, je vous écoute."
             play sound "Click.mp3" noloop
 
-            C "J’aimerais que [newname] s’éloigne un instant. Ce que j’ai à dire est... sensible."
+            C "J'aimerais que [newname] s'éloigne un instant. Ce que j'ai à dire est... sensible."
             play sound "Click.mp3" noloop
 
-            P "[newname], s’il te plaît... laisse-nous quelques minutes."
+            P "[newname], s'il te plaît... laisse-nous quelques minutes."
             play sound "Click.mp3" noloop
 
             Na "Bien sûr."
             play sound "Click.mp3" noloop
 
-            "{b}{i}[newname] s’éloigne lentement, accompagnée de [E].{/i}{/b}"
+            "{b}{i}[newname] s'éloigne lentement, accompagnée de [E].{/i}{/b}"
             play sound "Click.mp3" noloop
 
-            C "D’abord... je ne veux pas que tu partages ce qu’il y a dans ce document avec [newname]. Je veux qu’elle puisse repartir de zéro, sans ce poids."
+            C "D'abord... je ne veux pas que tu partages ce qu'il y a dans ce document avec [newname]. Je veux qu'elle puisse repartir de zéro, sans ce poids."
             play sound "Click.mp3" noloop
 
             P "Je comprends... Je ne lui dirai rien."
             play sound "Click.mp3" noloop
 
-            C "Merci. Vraiment... J’ai commis des actes immoraux pour créer [newname]. Et je ne veux pas qu’elle en porte la culpabilité."
+            C "Merci. Vraiment... J'ai commis des actes immoraux pour créer [newname]. Et je ne veux pas qu'elle en porte la culpabilité."
             play sound "Click.mp3" noloop
 
-            P "Qu’est-ce que vous avez fait exactement ?"
+            P "Qu'est-ce que vous avez fait exactement ?"
             play sound "Click.mp3" noloop
 
-            C "Je l’ai conçue pour être... parfaite. La plus puissante. Testée dans des zones de guerre. Privée de liberté. Mais elle a fini par se rebeller. Elle a refusé d’obéir."
+            C "Je l'ai conçue pour être... parfaite. La plus puissante. Testée dans des zones de guerre. Privée de liberté. Mais elle a fini par se rebeller. Elle a refusé d'obéir."
             play sound "Click.mp3" noloop
 
-            P "Je comprends mieux maintenant. Mais... c’est monstrueux ce que vous lui avez fait subir."
+            P "Je comprends mieux maintenant. Mais... c'est monstrueux ce que vous lui avez fait subir."
             play sound "Click.mp3" noloop
 
-            C "Je le sais. C’est pour ça que j’ai effacé sa mémoire. Je ne lui ai laissé que quelques souvenirs de base, rien de ce passé."
+            C "Je le sais. C'est pour ça que j'ai effacé sa mémoire. Je ne lui ai laissé que quelques souvenirs de base, rien de ce passé."
             play sound "Click.mp3" noloop
 
-            P "...Alors en réalité, elle vit dans un mensonge... mais peut-être que c’est mieux ainsi. Elle mérite de vivre libre, sans chaînes... même si son passé reste gravé en vous."
+            P "...Alors en réalité, elle vit dans un mensonge... mais peut-être que c'est mieux ainsi. Elle mérite de vivre libre, sans chaînes... même si son passé reste gravé en vous."
             play sound "Click.mp3" noloop
 
-            C "Oui et enfin... j’aimerais te demander une dernière faveur."
+            C "Oui et enfin... j'aimerais te demander une dernière faveur."
             play sound "Click.mp3" noloop
 
         "{b}{i} Refuser les documents. {/i}{/b}" : 
@@ -5764,25 +5756,25 @@ label choice9:
             P "Merci pour votre confiance… mais je préfère tourner la page et repartir sur de nouvelles bases."
             play sound "Click.mp3" noloop
 
-            C "Je comprends. Tu as ce droit... Et peut-être que c’est mieux ainsi."
+            C "Je comprends. Tu as ce droit... Et peut-être que c'est mieux ainsi."
             play sound "Click.mp3" noloop
 
-            C "Mais avant qu’on termine cet entretien, j’aimerais te demander une dernière chose."
+            C "Mais avant qu'on termine cet entretien, j'aimerais te demander une dernière chose."
             play sound "Click.mp3" noloop
 
     P "Oui dites-moi."
     play sound "Click.mp3" noloop 
 
-    C "J'aimerai voir comment est [A] et son comportement actuel de mes propres yeux."
+    C "J'aimerais voir comment est [A] et son comportement actuel de mes propres yeux."
     play sound "Click.mp3" noloop 
 
     P "Il n'y a pas de soucis, [newname] approche s'il te plaît."
     play sound "Click.mp3" noloop 
 
-    Na "Oui qu'il y a t'il [prenom] ?"
+    Na "Oui qu'y a-t-il [prenom] ?"
     play sound "Click.mp3" noloop 
 
-    P "Je veux que tu te présntes à [C]."
+    P "Je veux que tu te présentes à [C]."
     play sound "Click.mp3" noloop 
 
     $ validation = get_random_validation() 
@@ -5795,10 +5787,10 @@ label choice9:
     Na "Oui exactement."
     play sound "Click.mp3" noloop 
 
-    C "Donc vas-y présente toi."
+    C "Donc vas-y présente-toi."
     play sound "Click.mp3" noloop 
 
-    Na "Je me nomme [Na], j'ai dix-huit ans et je suis la création de [P], je suis actuellement lycéenne en Second-E dans ce lycée, mon défaut est que je suis souvent sensible mais j'ai appris beaucoup de choses grâce à [P]."
+    Na "Je me nomme [Na], j'ai dix-huit ans et je suis la création de [P], je suis actuellement lycéenne en Seconde-E dans ce lycée, mon défaut est que je suis souvent sensible mais j'ai appris beaucoup de choses grâce à [P]."
     play sound "Click.mp3" noloop 
 
     C "Bien merci pour ta présentation."
@@ -5811,7 +5803,7 @@ label choice9:
     C "Bien [P] je vois qu'[newname] se débrouille bien avec toi."
     play sound "Click.mp3" noloop
 
-    P "Merci ça fait plaîsir."
+    P "Merci ça fait plaisir."
     play sound "Click.mp3" noloop 
 
     C "Avant de partir j'ai encore un truc à te dire concernant [newname]."
@@ -5823,13 +5815,13 @@ label choice9:
     C "J'ai entendu dire que quelqu'un veut s'attaquer à [newname] donc fais attention."
     play sound "Click.mp3" noloop 
 
-    E "Je confirme aussi car une personne m'a aussi dit qu'elle avait trouvées des informations concernant une potentielle menace ou traître envers [newname]."
+    E "Je confirme aussi car une personne m'a aussi dit qu'elle avait trouvé des informations concernant une potentielle menace ou traître envers [newname]."
     play sound "Click.mp3" noloop
 
     P "Et qui est cette personne ?"
     play sound "Click.mp3" noloop 
 
-    E "Elle préfére rester anonyme pour le bien de ces travaux."
+    E "Elle préfère rester anonyme pour le bien de ses travaux."
     play sound "Click.mp3" noloop 
 
     $ validation = get_random_validation() 
@@ -5845,7 +5837,7 @@ label choice9:
     scene black 
     hide screen office
 
-    "{b}{i}Tu diriges vers le hall avec [Na].{/i}{/b}"
+    "{b}{i}Tu te diriges vers le hall avec [Na].{/i}{/b}"
     play sound "Door.mp3" noloop
      
     stop music fadeout 2.0
@@ -5892,7 +5884,7 @@ label choice9:
     I "[je_vais_bien_txt] Toi comment ça s'est passé avec [E] ?" 
     play sound "Click.mp3" noloop
 
-    P "ça s'est bien passé, [E] voulait que je vois l'ancien président de Neogen technologies voulait juste voir [newname]."
+    P "Ça s'est bien passé, [E] voulait que je voie l'ancien président de Neogen Technologies qui voulait juste voir [newname]."
     play sound "Click.mp3" noloop 
 
     $ validation = get_random_validation() 
@@ -5942,10 +5934,10 @@ label choice9:
     P "Ok alors."
     play sound "Click.mp3" noloop 
 
-    Na "à demain Iris."
+    Na "À demain Iris."
     play sound "Click.mp3" noloop 
 
-    I "à demain les [nom]."
+    I "À demain les [nom]."
     play sound "Footsteps.mp3" noloop 
 
     "{b}{i}[I] retourna à son dortoir.{/i}{/b}"
@@ -5989,7 +5981,7 @@ label choice9:
     "{b}{i} [newname] se déconnecta tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Bon elle s'est déconnctée, je vais aller me chercher à manger." 
+    P "Bon elle s'est déconnectée, je vais aller me chercher à manger." 
     play sound "Click.mp3" noloop 
 
     scene black
@@ -6003,11 +5995,9 @@ label choice9:
     show screen room
 
     P "Enfin à manger... "
-    play sound "Click.mp3" noloop 
-
+    play sound "Click.mp3" noloop
     if info == 1.0:
-
-        "{b}{i} Tu manges tranquillement pendant une demi-heure en regardant les documents que tu as eu.{/i}{/b}"
+"{b}{i} Tu manges tranquillement pendant une demi-heure en regardant les documents que tu as eus.{/i}{/b}"
         play sound "Click.mp3" noloop 
         
         $ renpy.open_url("https://github.com/ShadowSLTM/Aris-document/blob/main/Aris%20document")
@@ -6033,14 +6023,14 @@ label choice9:
     P "Enfin fini je vais pouvoir aller dormir pour demain."
     play sound "Click.mp3" noloop 
 
-    "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
+    "{b}{i}Tu te changes avant d'aller te coucher.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     scene black
     hide screen room
     hide screen day
 
-    "{b}{i} deux semaines plus tard, le 3 octobre 2097.{/i}{/b}"
+    "{b}{i} Deux semaines plus tard, le 3 octobre 2097.{/i}{/b}"
     play sound "Alarm.mp3" noloop 
 
     scene room 
@@ -6053,10 +6043,10 @@ label choice9:
     P "[line]"
     play sound "Click.mp3" noloop 
 
-    "{b}{i} Tu te léves tranquillement.{/i}{/b}"
+    "{b}{i} Tu te lèves tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Bon aujourd'hui je vais demander à [E] si je peux empruntetr le gymnase."
+    P "Bon aujourd'hui je vais demander à [E] si je peux emprunter le gymnase."
     play sound "Click.mp3" noloop 
 
     "{b}{i} Tu te changes et t'approches de [newname].{/i}{/b}"
@@ -6074,7 +6064,7 @@ label choice9:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Démarrage términé, Bonjour [P]."
+    Na "Démarrage terminé, Bonjour [P]."
     play sound "Click.mp3" noloop  
 
     $ comment_ca_va = get_random_comment_ca_va()
@@ -6089,10 +6079,10 @@ label choice9:
     P "[je_vais_bien_txt] J'ai bien dormi." 
     play sound "Click.mp3" noloop
 
-    "{b}{i} [Na] changea de tonalité.{/i}{/b}"
+    "{b}{i} [Na] change de tonalité.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    Na "[prenom], je détecte une nouvelle mise à jour pas obligatoire du processeur, veux-tu la faire maitenant ou plus tard ?"
+    Na "[prenom], je détecte une nouvelle mise à jour pas obligatoire du processeur, veux-tu la faire maintenant ou plus tard ?"
     play sound "Menu.mp3" noloop 
 
     menu: 
@@ -6227,10 +6217,10 @@ label choice9:
     E "Oh que puis-je faire pour toi ?"
     play sound "Click.mp3" noloop
 
-    P "J'aimerais savoir si je peut emprunter le gymnase pour la matinée."
+    P "J'aimerais savoir si je peux emprunter le gymnase pour la matinée."
     play sound "Click.mp3" noloop
 
-    E "Bien sûr mais puisse-je savoir pour quelle raison ?"
+    E "Bien sûr mais puis-je savoir pour quelle raison ?"
     play sound "Click.mp3" noloop 
 
     P "Pour entraîner [newname]."
@@ -6239,7 +6229,7 @@ label choice9:
     E "Ok alors il n'y a pas de soucis."
     play sound "Click.mp3" noloop 
 
-    "{b}{i}[E] te remit la clé du gymnase.{/i}{/b}"
+    "{b}{i}[E] te remet la clé du gymnase.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     $ thanks = get_random_thanks()
@@ -6253,7 +6243,7 @@ label choice9:
     scene black 
     hide screen office 
 
-    "{b}{i} Puis tu quittas le bureau des élèves.{/i}{/b}"
+    "{b}{i} Puis tu quittes le bureau des élèves.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene hall
@@ -6262,7 +6252,7 @@ label choice9:
     P "Bon voyons voir où se trouve le gymnase."
     play sound "Click.mp3" noloop 
     
-    Na "il me semble qu'il se trouve à l'ouest du campus."
+    Na "Il me semble qu'il se trouve à l'ouest du campus."
     play sound "Click.mp3" noloop 
 
     P "Allons-y alors."
@@ -6287,7 +6277,7 @@ label choice9:
     Na "Je ne sais pas vraiment c'est toi qui sais."
     play sound "Click.mp3" noloop 
 
-    "{b}{i} Pendant que tu continues de réfléchir, [N] et [Y] entrérent dans le gymnase.{/i}{/b}"
+    "{b}{i} Pendant que tu continues de réfléchir, [N] et [Y] entrèrent dans le gymnase.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     $ comment_ca_va = get_random_comment_ca_va()
@@ -6297,22 +6287,22 @@ label choice9:
     P "Oh salut [Y], oui ça va bien et toi ?"
     play sound "Click.mp3" noloop 
 
-    Y "ça va bien."
+    Y "Ça va bien."
     play sound "Click.mp3" noloop 
 
     P "Cool sinon vous faites quoi ici ?"
     play sound "Click.mp3" noloop 
 
-    Y "je suis venue voir le gymnase car avec [N] car on a pas eu l'occasion de le faire."
+    Y "Je suis venue voir le gymnase avec [N] car on n'a pas eu l'occasion de le faire."
     play sound "Click.mp3" noloop 
 
-    N "oui on s'est dit que se serait une bonne idée de venir voir durant notre temps libre."
+    N "Oui on s'est dit que ce serait une bonne idée de venir voir durant notre temps libre."
     play sound "Click.mp3" noloop 
 
     P "Intéressant."
     play sound "Click.mp3" noloop 
 
-    Y "sinon je te retourne la question toi tu fais quoi ici ?"
+    Y "Sinon je te retourne la question, toi tu fais quoi ici ?"
     play sound "Click.mp3" noloop 
 
     if pronom == "il": 
@@ -6335,7 +6325,7 @@ label conversation:
         P "Il y avait une mise à jour, mais je ne l'ai pas faite. Je me suis dit que je pouvais attendre..."
         play sound "Click.mp3" noloop
 
-        Y "C'est de l'obsolescence volontaire, l'une des dix régles de l'informatique à ne pas briser, tu devrais la faire, la sécurité d'[newname] est en jeu."
+        Y "C'est de l'obsolescence volontaire, l'une des dix règles de l'informatique à ne pas briser, tu devrais la faire, la sécurité d'[newname] est en jeu."
         play sound "Click.mp3" noloop 
 
         P "Oui, promis, je la ferai."
@@ -6388,7 +6378,7 @@ label suite:
     scene hall 
     show screen hall
 
-    P "Bon on se dépéche d'aller au réféctoire si tu veux manger."
+    P "Bon on se dépêche d'aller au réfectoire si tu veux manger."
     play sound "Click.mp3" noloop 
 
     Na "Ok alors."
@@ -6397,7 +6387,7 @@ label suite:
     scene black
     hide screen hall 
 
-    "{b}{i} Vous entrez au réféctoire.{/i}{/b}"
+    "{b}{i} Vous entrez au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene lunchroom 
@@ -6416,7 +6406,7 @@ label suite:
     Na "Oui j'ai vraiment faim."
     play sound "Click.mp3" noloop 
 
-    "{b}{i} Vous allaz chercher à manger.{/i}{/b}"
+    "{b}{i} Vous allez chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     $ points -= 200 
@@ -6430,7 +6420,7 @@ label suite:
     P "Ok alors."
     play sound "Click.mp3" noloop 
 
-    "{b}{i} Vous Voyez [N] et [Y] à une table en train de discuter.{/i}{/b}"
+    "{b}{i} Vous voyez [N] et [Y] à une table en train de discuter.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     P "Oh salut [N] et [Y]."
@@ -6442,7 +6432,7 @@ label suite:
     P "On peut venir manger avec vous ?"
     play sound "Click.mp3" noloop 
 
-    Y "Oui bien sûr avec plaîsir."
+    Y "Oui bien sûr avec plaisir."
     play sound "Click.mp3" noloop 
 
     P "Merci."
@@ -6460,7 +6450,7 @@ label suite:
     P "Sinon vous discutiez de quoi ?"
     play sound "Click.mp3" noloop 
 
-    N "Pas grand chose, nous parlions juste de certains élèves."
+    N "Pas grand-chose, nous parlions juste de certains élèves."
     play sound "Click.mp3" noloop 
 
     P "Ok je vois."
@@ -6469,7 +6459,7 @@ label suite:
     Y "Bien sinon comment ça s'est passé au gymnase ?" 
     play sound "Click.mp3" noloop 
 
-    P "ça s'est bien passé."
+    P "Ça s'est bien passé."
     play sound "Click.mp3" noloop 
 
     Y "Cool je suis content pour toi et je vois aussi qu'[newname] s'est vraiment améliorée."
@@ -6483,22 +6473,22 @@ label suite:
     Y "[nothing]" 
     play sound "Click.mp3" noloop
 
-    "{b}{i}Vous continuez mais elle veut te demander quelques choses.{/i}{/b}"
+    "{b}{i}Vous continuez mais elle veut te demander quelque chose.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    Y "Je peux demander quelques choses à [newname] pour tester ces connaissances ?"
+    Y "Je peux demander quelque chose à [newname] pour tester ses connaissances ?"
     play sound "Click.mp3" noloop 
     
     P "Bien sûr vas-y"
     play sound "Click.mp3" noloop 
 
-    Y "Bien maintenant [newname] je veux que tu me cites toutes les décimals de pi que tu connais."
+    Y "Bien maintenant [newname] je veux que tu me cites toutes les décimales de pi que tu connais."
     play sound "Click.mp3" noloop 
 
     Na "Ok vas-y, 3.141592653589793238."
     play sound "Click.mp3" noloop 
 
-    Y "Woah je suis vraiment surprise que tu connaisses autant de décimals de pi."
+    Y "Woah je suis vraiment surprise que tu connaisses autant de décimales de pi."
     play sound "Click.mp3" noloop 
 
     $ thanks = get_random_thanks()
@@ -6514,7 +6504,7 @@ label suite:
     "{b}{i} Vous continuez de discuter jusqu'à la sonnerie.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
-    P "Bon on y vas [newname] ?" 
+    P "Bon on y va [newname] ?" 
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
@@ -6543,23 +6533,23 @@ label choice10:
         "{b}{i} aller en cours.{/i}{/b}" :
             jump suite1
 
-        "{b}{i} aller à la bibliothéque.{/i}{/b}" : 
+        "{b}{i} aller à la bibliothèque.{/i}{/b}" : 
 
             scene black
             hide screen hall
 
-            "{b}{i}Tu entres dans la bibliothéque.{/i}{/b}"
+            "{b}{i}Tu entres dans la bibliothèque.{/i}{/b}"
             play sound "Door.mp3" noloop  
             
             scene library 
 
-            Na "Je ne suis pas sûr que c'est le moment d'être ici."
+            Na "Je ne suis pas sûre que c'est le moment d'être ici."
             play sound "Click.mp3" noloop   
 
             scene black 
             hide screen library 
 
-            "{b}{i}Tu quittes la piéce.{/i}{/b}" 
+            "{b}{i}Tu quittes la pièce.{/i}{/b}" 
             play sound "Door.mp3" noloop    
 
             scene hall
@@ -6605,7 +6595,7 @@ label suite1:
     play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
-    H "[je_vais_bien_txt] Sion toi et [newname] ?" 
+    H "[je_vais_bien_txt] Sinon toi et [newname] ?" 
     play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
@@ -6647,7 +6637,7 @@ label suite1:
     N "Bonjour."
     play sound "Click.mp3" noloop
 
-    "{b}{i} tous les lycéens s'asseoient à leur place.{/i}{/b}"
+    "{b}{i} Tous les lycéens s'asseyent à leur place.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     M "Bien aujourd'hui j'ai plusieurs choses à vous dire pour commencer."
@@ -6656,7 +6646,7 @@ label suite1:
     K "Quoi comme informations ?"
     play sound "Click.mp3" noloop
 
-    M "J'ai entendu dire par le biais d'[E] qu'il aurait un traître dans ce lycée."
+    M "J'ai entendu dire par le biais d'[E] qu'il y aurait un traître dans ce lycée."
     play sound "Click.mp3" noloop
 
     K "Un traître ?"
@@ -6665,19 +6655,19 @@ label suite1:
     H "Comment ça un traître ?"
     play sound "Click.mp3" noloop
 
-    P "Oui j'ai déja eu l'information mais il semblerait qu'un des lycéens en veut à [newname]."
+    P "Oui j'ai déjà eu l'information mais il semblerait qu'un des lycéens en veut à [newname]."
     play sound "Click.mp3" noloop
 
-    I "Pardon !? Soit doit sûrement être [J]...."
+    I "Pardon !? Ce doit sûrement être [J]...."
     play sound "Click.mp3" noloop
 
-    J1 "Hey j'ai peut-étre était méchante avec [newname] mais je promets que ce n'est pas moi !"
+    J1 "Hey j'ai peut-être été méchante avec [newname] mais je promets que ce n'est pas moi !"
     play sound "Click.mp3" noloop
 
     J2 "Oui ce n'est pas moi non plus."
     play sound "Click.mp3" noloop 
 
-    P "Oui [I], actuellement on ne peut les accuser vue le peu d'information qu'on a."
+    P "Oui [I], actuellement on ne peut les accuser vu le peu d'information qu'on a."
     play sound "Click.mp3" noloop 
 
     M "Je suis d'accord avec toi [prenom]."
@@ -6692,7 +6682,7 @@ label suite1:
     P "Oui dites-nous madame"
     play sound "Click.mp3" noloop
 
-    M "à partir d'aujourd'hui nous allons accueillir un nouvel élève."
+    M "À partir d'aujourd'hui nous allons accueillir un nouvel élève."
     play sound "Click.mp3" noloop 
 
     I "Qui est ce lycéen ?"
@@ -6738,7 +6728,7 @@ label suite1:
     R "[thanks]"
     play sound "Click.mp3" noloop
 
-    M "Vas-y présentes-toi."
+    M "Vas-y présente-toi."
     play sound "Click.mp3" noloop
 
     S "Je m'appelle [S], l'ultime étudiant et ancien élève de [origine], j'ai dix-neuf ans ravi de vous rencontrer"
@@ -6762,7 +6752,7 @@ label suite1:
     P "Mais tu fais quoi ici alors ?"
     play sound "Click.mp3" noloop 
 
-    S "J'ai dû déménager avec ma mére du coup j'ai dû changer de lycée."
+    S "J'ai dû déménager avec ma mère du coup j'ai dû changer de lycée."
     play sound "Click.mp3" noloop 
 
     P "Ok je vois." 
@@ -6771,16 +6761,16 @@ label suite1:
     S "Je vois que tu as encore l'autre [A] avec toi."
     play sound "Click.mp3" noloop 
 
-    P "Hey un peu de respect elle a prénom et un nom maintenant."
+    P "Hey un peu de respect elle a un prénom et un nom maintenant."
     play sound "Click.mp3" noloop 
 
     S "Oups désolé."
     play sound "Click.mp3" noloop 
 
-    "{b}{i}[S] s'addresse à [newname].{/i}{/b}"
+    "{b}{i}[S] s'adresse à [newname].{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    S "Pourrais-je savoir tu t'appelles mainteant ?"
+    S "Pourrais-je savoir comment tu t'appelles maintenant ?"
     play sound "Click.mp3" noloop 
 
     Na "Je m'appelle [newname], [Na]."
@@ -6806,28 +6796,35 @@ label suite1:
     I "Cool alors."
     play sound "Click.mp3" noloop 
 
-    M "Bien Maintenant reprenons le cours, [S] je t'invite à prendre place au fond de la salle il reste une place."
+    M "Dernière information, aujourd'hui vous recevrez votre budget du mois."
+    play sound "Click.mp3" noloop 
+
+    $ validation = get_random_validation() 
+    P "[validation]"
+    play sound "Click.mp3" noloop 
+
+    M "Bien maintenant reprenons le cours, [S] je t'invite à prendre place au fond de la salle il reste une place."
     play sound "Click.mp3" noloop
 
     S "Merci beaucoup madame."
     play sound "Footsteps.mp3" noloop 
 
-    "{b}{i} Pendant que [S] se dirige vers sa place il te chuchote quelques choses.{/i}{/b}"
+    "{b}{i} Pendant que [S] se dirige vers sa place il te chuchote quelque chose.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     S "Toi et moi on a une discussion à finir...."
     play sound "Click.mp3" noloop 
 
-    P "euh....."
+    P "Euh....."
     play sound "Click.mp3" noloop 
 
     "{b}{i}La [T] reprend le cours.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    M "Bon sortez vos livres à la page 20, nous allons reprendre notre cours de la derniére fois."
+    M "Bon sortez vos livres à la page 20, nous allons reprendre notre cours de la dernière fois."
     play sound "Click.mp3" noloop 
 
-    "{b}{i}Le cours continue sans probléme.{/i}{/b}"
+    "{b}{i}Le cours continue sans problème.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
     $ endlesson = get_random_endlesson()
@@ -6992,10 +6989,10 @@ label suite1:
     P "Ok à demain [newname]." 
     play sound "Click.mp3" noloop  
 
-    "{b}{i}Puis [newname] se déconnecta tranquillement.{/i}{/b}"
+    "{b}{i}Pui [newname] se déconnecta tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Bon moi je vais me coucher." 
+    P "Oh je vois que j'ai reçu mon budget." 
     play sound "Click.mp3" noloop 
 
     "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
@@ -7285,7 +7282,7 @@ label suite1:
     show screen WC 
 
     P "Bon je vais faire ce que j'ai à faire."
-    play sound "Toilet.mp3" noloop
+    play sound "Click.mp3" noloop
 
     "{b}{i} Tu fais ta commission avant de sortir des toilettes.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -7370,7 +7367,7 @@ label suite1:
     scene black
     hide screen hall 
 
-    "{b}{i} Tu entres dans le réfectoire.{/i}{/b}"
+    "{b}{i} Tu entres dasn le réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene lunchroom
@@ -7477,7 +7474,7 @@ label suite1:
             I  "Sinon vous pensez qu'on aura quoi comme cours cette après-midi ?"
             play sound "Click.mp3" noloop 
 
-            Na "Je ne sais pas mais je pense qu'on aura encore un cours de math."
+            Na "Je ne sais pas mais je pense qu'on aura encore cours de math."
             play sound "Click.mp3" noloop 
 
             S "Math encore !?"
@@ -7553,25 +7550,25 @@ label suite1:
             play sound "Click.mp3" noloop 
 
             Na "Ok allons-y"
-            play sound "Footsteps.mp3" noloop 
+            play sound "Click.mp3" noloop 
 
     scene black
     hide screen lunchroom
 
     "{b}{i}Tu te diriges vers le hall.{/i}{/b}"
-    play sound "Footsteps.mp3" noloop
+    play sound "Click.mp3" noloop
 
     scene hall
     show screen hall 
 
     "{b}{i}Tu continues vers le premier étage.{/i}{/b}"
-    play sound "Footsteps.mp3" noloop
+    play sound "Click.mp3" noloop
 
     scene staircase
     hide screen hall 
 
     "{b}{i}Tu continues vers le couloir.{/i}{/b}"
-    play sound "Footsteps.mp3" noloop
+    play sound "Click.mp3" noloop
 
     scene hallway
     show screen hallway
@@ -7885,13 +7882,13 @@ label debate:
 
         "{b}{i} l'administratif {/i}{/b}" :
 
-            P "Ils peuvent aussi gérer l’administratif."
+            P "L'administratif par exemple."
             play sound "Click.mp3" noloop 
 
     S "Je ne comprend pas."
     play sound "Click.mp3" noloop 
 
-    P "Oui. Remplir des dossiers, organiser des fichiers, automatiser des démarches longues et pénibles."
+    P "Pour remplir des documents administratifs"
     play sound "Click.mp3" noloop 
 
     S "OK mais on risque de perdre des emplois si les robots humanoïdes font le travail à notre place."
@@ -7910,7 +7907,7 @@ label debate:
     P "On ne va perdre d'emplois, on va juste créer des besoins ailleur."
     play sound "Click.mp3" noloop 
 
-    S "Des besoins ? Où ça ?"
+    S "Ou par exemple ?"
     play sound "Click.mp3" noloop 
 
     menu:    
@@ -7920,10 +7917,10 @@ label debate:
             P "Dans la maintenance des robots humanoïdes déjà."
             play sound "Click.mp3" noloop 
 
-    S "Pardon ?" 
+    S "Pardon ?"
     play sound "Click.mp3" noloop 
 
-    P "Bah oui, il faudra bien des gens qualifiés pour les entretenir."
+    P "Bah oui il faudra bien entretenir les robots humanoïdes."
     play sound "Click.mp3" noloop 
 
     S "Ok je vois mais les robots humanoïdes obeisseent à leur créateur."
@@ -9319,7 +9316,7 @@ label code:
     scene black
     hide screen hall 
 
-    "{b}{i} Tu entres dans le réféctoire.{/i}{/b}"
+    "{b}{i} Tu entres dasn le réféctoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene lunchroom 
@@ -17053,7 +17050,7 @@ label password10:
     scene black
     hide screen hall 
 
-    "{b}{i} Tu entres dans le réféctoire.{/i}{/b}"
+    "{b}{i} Tu entres dasn le réféctoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene lunchroom 
