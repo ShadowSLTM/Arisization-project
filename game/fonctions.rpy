@@ -235,13 +235,13 @@ init python:
 
     endlesson_list = [
         "Le cours est fini, vous êtes libres de partir.",
-        "C'est tout pour aujourd’hui, vous pouvez sortir.",
+        "C'est tout, vous pouvez sortir.",
         "On s'arrête ici, vous pouvez y aller.",
         "Le cours touche à sa fin, vous pouvez partir.",
         "Voilà, c'est la fin du cours, vous pouvez sortir.",
-        "Nous avons terminé pour aujourd’hui, vous êtes libres.",
+        "Nous avons terminé, vous êtes libres.",
         "Fin de la leçon, vous pouvez quitter la salle.",
-        "C'est bon pour aujourd’hui, vous pouvez partir.",
+        "C'est bon, vous pouvez partir.",
         "La séance est terminée, vous pouvez quitter la classe.", 
     ]
 

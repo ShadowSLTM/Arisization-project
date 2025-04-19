@@ -4046,7 +4046,7 @@ label wallbreaking4:
     $ stockage += 8.0
 
     M "Bon le cours est terminé, vous pouvez quitter la salle et n'oubliez pas l'examen dans une semaine."
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     P "Bon [newname] on y va ?"
     play sound "Click.mp3" noloop
@@ -16774,6 +16774,7 @@ label code1:
     play sound "Click.mp3" noloop
 
     $ points -= 200 
+
     scene room 
     show screen room
 
@@ -17058,7 +17059,7 @@ label password10:
     scene black
     hide screen hall 
 
-    "{b}{i} Tu entres dasn le réféctoire.{/i}{/b}"
+    "{b}{i} Tu entres dans le réféctoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene lunchroom 
@@ -17840,19 +17841,28 @@ label password11:
     P "Je vois, sinon c'est quoi les nouvelles."  
     play sound "Click.mp3" noloop 
 
-    Ot "Je suis ici pour t'annoncer qu'[newname] pourra étre acceptée à la civilité et avoir une vraie identité."  
+    Oh "Je suis ici pour t'annoncer qu'[newname] pourra étre acceptée à la civilité et avoir une vraie identité."  
     play sound "Click.mp3" noloop 
 
     P "Vraiment mais c'est génial ça."
     play sound "Click.mp3" noloop
 
-    Ot "D'accord, mais pour cela, j'aurai besoin de quelques informations."
+    Oh "D'accord, mais pour cela, j'aurai besoin de quelques informations."
     play sound "Click.mp3" noloop 
 
     "{b}{i}Tu lui transmets les détails concernant [newname].{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "J'aimerais te poser une question."
+    Oh "Je vous remercie, juste j'ai aussi des nouvelles par rapport à cette histoire de traître"
+    play sound "Click.mp3" noloop
+
+    P "Oui, je vous écoute."
+    play sound "Click.mp3" noloop
+
+    Oh "il semblerait que le traître fasse partie d'un groupe de hackers qui s'appellent les phantoms"
+    play sound "Click.mp3" noloop
+
+    P "Je vois mais j'aimerais vous poser une question."
     play sound "Click.mp3" noloop 
 
     Ot "Oui dis-moi."
@@ -17932,6 +17942,10 @@ label password11:
             Ln "C'est bien que notre société te donne de l'espoir."
             play sound "Click.mp3" noloop 
 
+            $ thanks = get_random_thanks()
+            P "[thanks]"
+            play sound "Click.mp3" noloop
+
         "{b}{i}Exprimer un avis négatif{/i}{/b}":
             play sound "Menu.mp3" noloop
 
@@ -17942,8 +17956,135 @@ label password11:
             play sound "Click.mp3" noloop 
 
             Ln "Oh je vois mais bon de toute façon c'est ton avis pas le mien donc je ne vais juger."
+            play sound "Click.mp3" noloop 
+
+            $ thanks = get_random_thanks()
+            P "[thanks]"
             play sound "Click.mp3" noloop
 
+    Ln "Bon je vais devoir vous laisser j'ai des choses à faire."
+    play sound "Click.mp3" noloop
+
+    P "Oui pas de soucis."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}[Ln] et l'[Ot] quittent le breau des élèves.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    E "Si jamais sera tout, vous pouvez retourner en cours."
+    play sound "Click.mp3" noloop
+
+    P "Je vous remercie."
+    play sound "Click.mp3" noloop
+
+    $ nothing = get_random_nothing()
+    E "[nothing]"
+    play sound "Click.mp3" noloop
+
+    P "Bon [newname], il faut qu'on y aille."
+    play sound "Click.mp3" noloop
+
+    hide screen office
+    scene black 
+
+    "{b}{i}Vous quittez le bureau des élèves.{/i}{/b}"
+    play sound "Door.mp3" noloop
+    
+    scene hall
+    show screen hall
+
+    "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop  
+
+    scene staircase  
+    hide screen hall
+
+    "{b}{i} Vous montez au premier étage.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop 
+
+    scene hallway 
+    show screen hallway
+
+    "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Tu entres en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene classroom
+    show screen class_404 
+
+    P "Bonjour, nous revoilà."
+    play sound "Click.mp3" noloop
+
+    M "Bien vous pouvez aller vous asseoir."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Vous asseyez et vous suivez le cours tranquillement.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
+
+    P "Bon on va manger [newname]?"
+    play sound "Click.mp3" noloop
+
+    Na "Oui."
+    play sound "Click.mp3" noloop
+
+    hide screen class_404 
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i}Tu continues vers les escaliers.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene staircase 
+    hide screen hallway
+
+    "{b}{i}Puis vers le hall.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hall
+    hide screen hall 
+
+    "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene lunchroom 
+    show screen lunchroom 
+    
+    Na "Bon on va prendre à manger ?"
+    play sound "Click.mp3" noloop 
+
+    P "Ok alors."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 200 
+
+    P "C'est bon [newname] tu t'es servie ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui c'est bon on peut aller s'asseoir."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous vous asseyez dans le réfectoire.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    P "Enfin à manger."
+    play sound "Click.mp3" noloop    
 
 
     return                            
