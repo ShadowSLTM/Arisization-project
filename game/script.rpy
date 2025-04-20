@@ -18084,7 +18084,35 @@ label password11:
     play sound "Click.mp3" noloop  
 
     P "Enfin à manger."
-    play sound "Click.mp3" noloop    
+    play sound "Click.mp3" noloop   
+
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]" 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous mangez tranquillement et [I] vous rejoint.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    I "Coucou [prenom]."
+    play sound "Click.mp3" noloop   
+
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    I "[je_vais_bien_txt]" 
+    play sound "Click.mp3" noloop
+
+    P "Cool alors."
+    play sound "Click.mp3" noloop   
+
+    "{b}{i} [I] s'asseoit avec vous.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+
+
+
 
 
     return                            
