@@ -97,7 +97,7 @@ label identity:
 
     play sound "Menu.mp3" noloop
     $ prenom = renpy.input("Quel est votre prénom de lycéen ?")
-    $ prenom = prenom.strip()
+    $ prenom = prenom.strip() 
 
     $ nom = renpy.input("Quel est votre nom de lycéen ?")
     $ nom = nom.strip()
@@ -355,8 +355,16 @@ label hack:
     A "Malheureusement je ne connais que mon nom de code et mon âge."
     play sound "Click.mp3" noloop 
 
-    P "je vois..."
+    P "Je vois..."
     play sound "Click.mp3" noloop 
+
+    A "Tu t'appelles comment ?"
+    play sound "Click.mp3" noloop 
+
+    P "Ah oui j'avais oublié, je me nomme [P]."
+    play sound "Click.mp3" noloop 
+
+    $ stockage += 2.0 
 
     S "Bon, on quitte cet endroit ?"
     play sound "Click.mp3" noloop 
@@ -409,6 +417,7 @@ label choice1:
 
                 "{b}{i}Retourner au menu{/i}{/b}" : 
                     return
+                    with fade
  
                 "{b}{i}Réessayer{/i}{/b}" : 
                    
@@ -823,7 +832,7 @@ label grayroom:
     scene school
     show screen day
     $ day += 1 
-    $ stockage += 35.0
+    $ stockage += 55.0
 
     if pronom == "il":
 
@@ -2256,6 +2265,8 @@ label ask:
 
         "{b}{i}Abandonner{/i}{/b}" :
             return 
+            with fade
+
         "{b}{i}Réessayer{/i}{/b}" : 
             scene clubroom 
             show screen clubroom
@@ -2517,7 +2528,8 @@ label lowcpu:
     menu:    
 
         "{b}{i}Abandonner{/i}{/b}" :
-            return 
+            return
+            with fade
         "{b}{i}Réessayer.{/i}{/b}" :
             scene room
             show screen room
@@ -3098,7 +3110,8 @@ label choice6:
             menu:    
 
                 "{b}{i}Abandonner{/i}{/b}" :
-                    return 
+                    return
+                    with fade
                 "{b}{i}Réessayer{/i}{/b}" : 
                     scene clubroom 
                     show screen clubroom
@@ -4210,7 +4223,8 @@ label wallbreaking4:
                 menu:    
 
                     "{b}{i}Retourner au menu principal.{/i}{/b}" :
-                        return 
+                        return
+                        with fade
                     "{b}{i}Réessayer.{/i}{/b}" : 
                         scene clubroom
                         show screen clubroom
@@ -5143,6 +5157,7 @@ label choice9:
 
             "{b}{i}Abandonner{/i}{/b}" :
                 return 
+                with fade
             "{b}{i}Réessayer.{/i}{/b}" :
                 scene black
                 show screen points 
@@ -6985,7 +7000,7 @@ label suite1:
     P "Oui mais le problème c'est qu'on n'a aucune information." 
     play sound "Click.mp3" noloop  
 
-    Na "Bon moi je vais me déconnecter, à demain." 
+    Na "Je vois, bon moi je vais me déconnecter, à demain." 
     play sound "Click.mp3" noloop  
 
     P "Ok à demain [newname]." 
@@ -7816,7 +7831,8 @@ label debate:
             menu:    
 
                 "{b}{i}Abandonner{/i}{/b}" :
-                    return 
+                    return
+                    with fade
                 "{b}{i}Réessayer.{/i}{/b}" :
                     show classroom
                     show screen class_404
@@ -7874,6 +7890,7 @@ label debate:
 
                 "{b}{i}Abandonner{/i}{/b}" :
                     return 
+                    with fade
                 "{b}{i}Réessayer.{/i}{/b}" :
                     show classroom
                     show screen class_404
@@ -9539,6 +9556,7 @@ label update:
 
                 "{b}{i}Abandonner{/i}{/b}":
                     return
+                    with fade
                 "{b}{i}Réessayer.{/i}{/b}":
                     show clubroom
                     show screen clubroom
@@ -10177,7 +10195,7 @@ label update:
             "{b}{i} Vous asseyez tranquillement.{/i}{/b}"
             play sound "Click.mp3" noloop 
 
-            P "[newname] tu pense que c'est le traître ?"
+            P "[newname] tu penses que c'est qui le traître ?"
             play sound "Click.mp3" noloop
 
             Na "Je ne sais pas vraiment mais je que pense c'est [J1]."
@@ -12971,7 +12989,8 @@ label examen_pythagore:
         menu:    
 
             "{b}{i}Abandonner{/i}{/b}" :
-                return 
+                return
+                with fade
             "{b}{i}Réessayer.{/i}{/b}" :
                 scene black
                 show screen points 
@@ -15783,7 +15802,7 @@ label examen_runix:
     P "Déjà, on ne dit pas machine c'est super péjoraif, mais [model] doté d'une conscience humaine avancée."
     play sound "Click.mp3" noloop
 
-    S "Ah ok, moi j'ai un terme moins péjoratif pour elle, pourquoi pas engrenage aur pattes."
+    S "Ah ok, moi j'ai un terme moins péjoratif pour elle, pourquoi pas engrenage sur pattes."
     play sound "Click.mp3" noloop
 
     "{b}{i}Puis il y a un blanc pendant un instant avant qu'[newname] s'adresse à [S].{/i}{/b}"
@@ -16140,7 +16159,8 @@ label password9:
         menu:    
 
             "{b}{i}Abandonner{/i}{/b}" :
-                return 
+                return
+                with fade
             "{b}{i}Réessayer.{/i}{/b}" :
 
                 scene black
@@ -17548,6 +17568,7 @@ label update1:
 
                 "{b}{i}Abandonner{/i}{/b}":
                     return
+                    with fade
                 "{b}{i}Réessayer.{/i}{/b}":
                     show clubroom
                     show screen clubroom
@@ -17859,7 +17880,7 @@ label password11:
     P "Oui, je vous écoute."
     play sound "Click.mp3" noloop
 
-    Oh "il semblerait que le traître fasse partie d'un groupe de hackers qui s'appellent les phantoms"
+    Oh "il semblerait que le traître fasse partie d'un groupe de hackers qui s'appelle Ghosts"
     play sound "Click.mp3" noloop
 
     P "Je vois mais j'aimerais vous poser une question."
@@ -18110,7 +18131,142 @@ label password11:
     "{b}{i} [I] s'asseoit avec vous.{/i}{/b}"
     play sound "Click.mp3" noloop  
 
+    P "Sinon, comment s'était le début du cours ?"
+    play sound "Click.mp3" noloop   
 
+    I "ça va tu n'as pas loupé grand chose."
+    play sound "Click.mp3" noloop   
+
+    P "Je vois merci." 
+    play sound "Click.mp3" noloop   
+
+    I "De rien et sinon pourquoi tu devais aller voir [E] ?"
+    play sound "Click.mp3" noloop   
+
+    P "Ils devaient me donner des nouvelles par rapport au traître et la civilité d'[newname]."
+    play sound "Click.mp3" noloop   
+
+    I "je suis vraiment enthousiaste qu'[newname] puisse être reconnue comme une personne humaine."
+    play sound "Click.mp3" noloop   
+
+    P "Oui absolument."
+    play sound "Click.mp3" noloop   
+
+    I "C'est quoi les nouvelles par rapport au traître ?" 
+    play sound "Click.mp3" noloop   
+
+    P "Ils m'ont dit que le traître fesait partie d'un groupe nommé Ghosts" 
+    play sound "Click.mp3" noloop   
+
+    I "Ghosts !? J'en n'ai jamais entendu parler." 
+    play sound "Click.mp3" noloop   
+
+    P "Moi n'en plus, je me demande bien d'ou ils sortent." 
+    play sound "Click.mp3" noloop   
+
+    I "Oui il faudra se renseigner." 
+    play sound "Click.mp3" noloop   
+
+    P "Oui peut-être qu'on pourra découvrir d'autres informations." 
+    play sound "Click.mp3" noloop  
+
+    if pronom == "il":
+
+        I "Oui mais il faudra aussi rester vigilants."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle": 
+
+        I "Oui mais il faudra aussi rester vigilantes."
+        play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous continuez de discuter jusqu'à la sonnerie.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+
+    I "Bon on doit retourner en cours."
+    play sound "Click.mp3" noloop 
+
+    P "Ok il faut pas qu'on soit en retard."
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    scene black 
+    hide screen lunchroom 
+
+    "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall
+    show screen hall
+
+    "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop 
+
+    scene staircase 
+    hide screen hall
+
+    "{b}{i} Vous montez au premier étage.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hallway 
+    show screen hallway
+
+    "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Tu entres en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene classroom  
+    show screen class_404 
+
+    $  salutation_rdm = get_random_salutation()
+    P "[salutation_rdm]"
+    play sound "Click.mp3" noloop 
+
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop 
+
+    $  salutation_rdm = get_random_salutation()
+    I "[salutation_rdm]"
+    play sound "Click.mp3" noloop 
+
+    M "Bien nous pouvons continuer et conclure ce cours de français."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} le cours continue dans le calme.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
+
+    M "Si"
+    play sound "Click.mp3" noloop   
+
+    $ stockage += 5.0 
+
+    P "Bon [newname] on n'y va ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui je suis fatiguée."
+    play sound "Footsteps.mp3" noloop 
+
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
 
 
 

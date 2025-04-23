@@ -564,19 +564,15 @@ screen about():
 
         vbox:
 
-            label "[config.name!t]"
+            label "{b}{i}— [config.name!t] —\n{/i}{/b}"
             text _("Version [config.version!t]\n")
 
-            ## gui.about est généralement initialisé dans le fichier
-            ## options.rpy.
             if gui.about:
                 text "[gui.about!t]\n"
 
             text _("Conçu avec {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]\n")
 
-            text _("Github officiel du projet : {a=https://github.com/ShadowSLTM/Arisization-project}Github{/a}\n") 
-
-            label "Catégories du jeu\n" 
+            label "{b}{i}— Catégorie du jeu —\n{/i}{/b}" 
 
             text _("Sci-Fi\n") 
 
@@ -596,7 +592,7 @@ style about_text is gui_text
 
 style about_label_text:
     size gui.label_text_size
-
+ 
 
 ## Écran de chargement et de sauvegarde ########################################
 ##
@@ -1831,7 +1827,7 @@ screen Shop():
 
         vbox:
 
-            label "{b}{i}Clés d'accès\n{/i}{/b}" 
+            label "{b}{i}— Clés d'accès —\n{/i}{/b}" 
 
             text _("Clé officiel : ARIS-8J4K-F9Q7\n") 
 
@@ -1858,6 +1854,8 @@ screen credit():
 
             text _("Développement et narration : [Dc] (Shadow_SLTM)\n")
 
+            text _("Consultant en scénarisation : [Dc] (Shadow_SLTM)\n")
+
             text _("Concepts : [Dc] (Shadow_SLTM) et divers collaborateurs\n")
 
             text _("Système des succès : [Dc] (Shadow_SLTM)\n")
@@ -1882,25 +1880,29 @@ screen credit():
 
             text _("Idée du personnage de [Sk] : Kama\n") 
              
-            text _("Idée du personnage de Seigo : Kama\n")    
+            text _("Idée du personnage de Seigo : Kama\n") 
 
             text _("Correction partielle de l’orthographe du chapitre 0 : Kama\n") 
 
             text _("Idée des textes de narration : Louks\n") 
 
+            text _("Terme « Engrenage sur pattes » : Nathanaël (Loki)\n")
+
             text _("Changement de la musique du menu : Nathanaël (Loki)\n") 
 
             text _("Fonctions aléatoires : [Dc] (Shadow_SLTM) et Nathanaël (Loki)\n") 
 
-            label "{b}{i}— Remerciements —\n{/i}{/b}" 
+            label "{b}{i}— Remerciements —\n{/i}{/b}"  
             
             text _("Musiques utilisées sous licence libre.\n") 
 
-            label "{b}{i}— Propriété —\n{/i}{/b}"    
+            label "{b}{i}— Propriété —\n{/i}{/b}"   
+        
+            text _("DLC Arisization Project - Alternative : [Dc] (Shadow_SLTM)\n")
 
             text _("Arisization Project (The Project of the Realization of Aris) appartient à Seydou N'Doye (Shadow_SLTM)\n")   
  
-            text _("éditeur : [Dc] (Shadow_SLTM)\n") 
+            text _("éditeur : SLTM\n") 
 
 style about_label is gui_label 
 style about_label_text is gui_label_text
@@ -1919,11 +1921,11 @@ screen success():
 
         vbox:
 
-            label "{b}{i}Progression\n{/i}{/b}" 
+            label "{b}{i}— Progression —\n{/i}{/b}" 
 
             text _("Succès : [success]/28\n") 
 
-            label "{b}{i}liste des succès\n{/i}{/b}" 
+            label "{b}{i}— liste des succès —\n{/i}{/b}" 
 
             text _("Une autre clé ? : [quest1]/1\n")
             text _("Premier piratage : [quest2]/1\n")
@@ -1971,7 +1973,7 @@ screen robot():
 
         vbox:
 
-            label "{b}{i}Ton robot\n{/i}{/b}" 
+            label "{b}{i}— Ton robot —\n{/i}{/b}" 
 
             text _("Nom de code : [A]\n") 
 
