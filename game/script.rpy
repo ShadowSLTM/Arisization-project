@@ -56,6 +56,7 @@ label start:
     default quest26 = 0
     default quest27 = 0
     default quest28 = 0
+    default quest29 = 0
 
     stop music fadeout 2.0   
 
@@ -18415,9 +18416,9 @@ label password11:
     "{b}{i} Vous entres dans ton dortoir.{/i}{/b}" 
     play sound "Door.mp3" noloop
 
-    scene room
+    scene room 
     show screen room 
-    
+
     return                            
 
 # Aris la plus belle <333333333333333  

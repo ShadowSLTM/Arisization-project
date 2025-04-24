@@ -328,9 +328,9 @@ screen navigation():
 
             textbutton _("Boutique") action ShowMenu("Shop")
 
-            textbutton _("Succès") action ShowMenu("success") 
+            textbutton _("Succès") action ShowMenu("success")  
 
-            textbutton _("Ton robot") action ShowMenu("robot") 
+            textbutton _("Ton robot") action ShowMenu("robot")
 
             textbutton _("Crédits") action ShowMenu("credit")
 
@@ -1829,7 +1829,9 @@ screen Shop():
 
             label "{b}{i}— Clés d'accès —\n{/i}{/b}" 
 
-            text _("Clé officiel : ARIS-8J4K-F9Q7\n") 
+            text _("{color=#ffffff}🔐 Clé officielle : ARIS-8J4K-F9Q7\n")
+
+            text _("Cette clé d'accès est à inscrire lors que vous lancez une nouvelle partie.\n")
 
 style about_label is gui_label 
 style about_label_text is gui_label_text
