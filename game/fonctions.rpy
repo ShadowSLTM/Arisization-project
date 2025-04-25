@@ -143,13 +143,11 @@ init python:
     import random
 
     dortoir_list = [  
-        "Enfin arrivé au dortoir.",
         "De retour au dortoir.",
         "On est enfin au dortoir.",
         "Nous voilà au dortoir.",
         "Enfin dans le dortoir.",
         "Le dortoir, enfin !",
-        "Arrivés au dortoir, enfin !",
         ]
 
     def get_random_dortoir():

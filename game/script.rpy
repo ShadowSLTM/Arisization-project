@@ -353,7 +353,7 @@ label hack:
     P "Sinon [A], tu peux me dire un peu plus sur toi ?"
     play sound "Click.mp3" noloop 
 
-    A "Malheureusement je ne connais que mon nom de code et mon âge j'oublié le reste."
+    A "Malheureusement je ne connais que mon nom de code et mon âge, j'ai oublié le reste."
     play sound "Click.mp3" noloop 
 
     P "Je vois..."
@@ -384,7 +384,7 @@ label hack:
             $ success += 1
             $ quest3 += 1  
 
-            P "Oui bien sûr qu'il te reste un avenir."
+            P "Oui bien sûr qu'il te reste un avenir et que je veux de toi."
             play sound "Click.mp3" noloop   
 
             $ stockage += 1.0 
@@ -526,6 +526,7 @@ label grayroom:
 
     scene origineclass
     show screen origine
+    with fade
 
     $  salutation_rdm_P = get_random_salutation()
     P "[salutation_rdm_P]"
@@ -829,6 +830,7 @@ label grayroom:
 
     scene black 
     hide screen origine
+    with fade
 
     "{b}{i}Après cela, tout le monde quitta [origine] pour la dernière fois.{/i}{/b}"   
     play sound "Click.mp3" noloop 
@@ -898,12 +900,14 @@ label grayroom:
     play sound "Footsteps.mp3" noloop
 
     scene black 
+    with fade
 
     "{b}{i}Vous entrez dans le lycée avec [A].{/i}{/b}" 
     play sound "Door.mp3" noloop
 
     scene hall
     show screen hall  
+    with fade
 
     P "Enfin à l'intérieur..."
     play sound "Click.mp3" noloop 
@@ -945,12 +949,14 @@ label grayroom:
 
     scene staircase 
     hide screen hall
+    with fade
     
     "{b}{i}Vous vous dirigez donc au premier étage.{/i}{/b}" 
     play sound "Footsteps.mp3" noloop
 
     scene hallway 
     show screen hallway 
+    with fade
 
     A "Ah ouais, ce couloir est vraiment énorme !"
     play sound "Click.mp3" noloop
@@ -1249,12 +1255,14 @@ label rencontre:
 
     hide screen hallway
     scene black
+    with fade
 
     "{b}{i}Vous entrez en classe, mais dès que vous entrez, tout le monde se tourne vers vous...{/i}{/b}" 
     play sound "Door.mp3" noloop
 
     scene classroom
     show screen class_404 
+    with fade
 
     if pronom == "il":
 
@@ -1861,12 +1869,14 @@ label rencontre:
 
     scene black
     hide screen class_404 
+    with fade
 
     "{b}{i}Tous les élèves se mettent à quitter la salle de classe.{/i}{/b}" 
     play sound "Door.mp3" noloop
 
     scene hallway
-    show screen hallway 
+    show screen hallway  
+    with fade
 
     P "Bon [A], on va voir le dortoir ?"  
     play sound "Click.mp3" noloop
@@ -9144,7 +9154,7 @@ label debate:
     Na "Ok alors."
     play sound "Click.mp3" noloop
 
-    "{b}{i} [newname] se déconnecta tranquillement.{/i}{/b}"
+    "{b}{i} [newname] se déconnecte tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     scene black
@@ -18391,7 +18401,7 @@ label password11:
     N "Bon je vais pas tarder non plus."
     play sound "Click.mp3" noloop 
 
-    P "Ok à demain"
+    P "Ok à demain."
     play sound "Click.mp3" noloop 
 
     N "à demain."
@@ -18407,7 +18417,59 @@ label password11:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    "{b}{i} Vous continuez vers le couloir.{/i}{/b}"
+    "{b}{i} Vous continuez vers le dortoir mais [J2] bouscule [newname].{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    J2 "Mais regarde où tu vas espéce de traînée."
+    play sound "Click.mp3" noloop 
+
+    Na "Hey tu ne peux pas me dire ou aller !!!"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}[J2] se met à la frapper.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Mais ça ne va pas !!!"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}[J2] se retourne brusquement vers vous, les yeux remplis de colère.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    J2 "Dégage de là, c'est pas tes affaires !"
+    play sound "Click.mp3" noloop
+
+    P "Tu crois vraiment que je vais rester sans rien faire ?!"
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu attrapes le bras de [J2] pour l'empêcher de continuer.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    Na "Merci... Je crois qu'elle m'aurait vraiment fait mal..."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Une tension glaciale envahit l'air autour de vous.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    J2 "Tch... Vous allez le regretter."
+    play sound "Footsteps.mp3" noloop
+
+    "{b}{i}[J2] tourne les talons et s’éloigne, furieuse.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Ça va aller ?"
+    play sound "Click.mp3" noloop 
+
+    if pronom == "il": 
+
+        Na "Oui... Merci. T’es arrivé juste à temps..."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle":
+
+        Na "Oui... Merci. T’es arrivée juste à temps..."
+        play sound "Click.mp3" noloop
+
+    "{b}{i}Vous continuez vers le dortoir, silencieusement, les pensées encore agitées par ce qui vient de se passer...{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     scene black 
@@ -18419,6 +18481,127 @@ label password11:
     scene room 
     show screen room 
 
-    return                            
+    $ dortoir = get_random_dortoir() 
+    P "[dortoir]"
+    play sound "Click.mp3" noloop
+
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]"
+    play sound "Click.mp3" noloop
+    
+    P "Bon on fait quoi ?"
+    play sound "Click.mp3" noloop
+
+    Na "Moi je vais me déconnecter et me recharger."
+    play sound "Click.mp3" noloop 
+
+    P "D'accord, à plus tard !"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} [newname] se déconnecte tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    scene black
+    hide screen room 
+
+    "{b}{i}Tu quittes le dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway
+    show screen hallway 
+
+    "{b}{i}Tu continues dans le couloir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene staircase 
+    hide screen hallway
+
+    "{b}{i}Tu continues vers le hall.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hall
+    show screen hall 
+
+    "{b}{i}Tu continues vers le bureau des élèves.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+    
+    scene black 
+    hide screen hall 
+
+    "{b}{i}Tu entres dans le bureau des élèves.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene office 
+    show screen office 
+
+    P "Bonjour c'est moi, [prenom]."
+    play sound "Click.mp3" noloop
+
+    E "Bonjour [prenom], que puis-je faire pour toi ?"
+    play sound "Click.mp3" noloop 
+
+    P "Je viens pour me plaindre d'[J2]."
+    play sound "Click.mp3" noloop 
+
+    E "Et pourquoi cela ?"
+    play sound "Click.mp3" noloop 
+
+    P "Elle viens de frapper violamment [newname] !!!"
+    play sound "Click.mp3" noloop 
+
+    E "C'est inacceptable ! Que s'est-il passé ?"
+    play sound "Click.mp3" noloop 
+
+    P "[J2] l'a bousculé et l'a frappé."
+    play sound "Click.mp3" noloop 
+
+    E "Merci de m'avoir informé. Je vais m'en occuper immédiatement."
+    play sound "Click.mp3" noloop 
+
+    $ thanks = get_random_thanks()
+    P "[thanks]"
+    play sound "Click.mp3" noloop
+
+    E "Bon tu devrais aller t'occuper d'[newname] et je vais m'occuper de [J2]."
+    play sound "Click.mp3" noloop
+
+    scene black 
+    hide screen office
+
+    "{b}{i} Puis tu quittas le bureau des élèves.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall
+    show screen hall 
+
+    "{b}{i}Tu continues vers le hall.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop 
+
+    scene staircase
+    hide screen hallway
+
+    "{b}{i}Tu continues vers le premier étage.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop 
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i}Tu continues ton chemin.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop  
+
+    scene black 
+    hide screen hallway
+
+    "{b}{i} Vous entres dans ton dortoir.{/i}{/b}" 
+    play sound "Door.mp3" noloop 
+
+    scene room 
+    show screen room 
+
+    $ dortoir = get_random_dortoir() 
+    P "[dortoir]"
+    play sound "Click.mp3" noloop
+
+    return                             
 
 # Aris la plus belle <333333333333333  

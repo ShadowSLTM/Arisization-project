@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 5002: Line is indented, but the preceding play sound statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    I "Cool alors."
-    ^
-
-File "game/script.rpy", line 5502: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    play sound "Click.mp3" noloop  
-    ^
+File "game/screens.rpy", line 1962: style property n is not known.
+    style about_label is gui_label   n  
+                                      ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri Apr 18 16:16:56 2025
+Sat Apr 26 01:02:11 2025

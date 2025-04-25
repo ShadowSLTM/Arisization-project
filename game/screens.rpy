@@ -1931,7 +1931,7 @@ screen success():
 
             text _("Une autre clé ? : [quest1]/1\n")
             text _("Premier piratage : [quest2]/1\n")
-            text _("Divin : [quest3]/1\n")
+            text _("L'espoir fait vivre : [quest3]/1\n")
             text _("Acceptation : [quest4]/1\n")
             text _("Nouvelle identité : [quest5]/1\n")
             text _("Nouvelle adresse : [quest6]/1\n")
@@ -1950,7 +1950,7 @@ screen success():
             text _("Affection pour les autres partie 2 : [quest19]/1\n")
             text _("Plus c’est gros plus ça passe : [quest20]/1\n")
             text _("La vérité avant tout : [quest21]/1\n")
-            text _("Génie des maths : [quest22]/1\n")
+            text _("Génie des maths : [quest22]/1\n") 
             text _("Petit exercice de Runix : [quest23]/1\n") 
             text _("Seconde mise à jour : [quest24]/1\n")
             text _("Génie de l’informatique : [quest25]/1\n")
@@ -1959,7 +1959,7 @@ screen success():
             text _("Journalistes de merde : [quest28]/1\n")
             text _("Dire les termes : [quest29]/1\n")           
 
-style about_label is gui_label 
+style about_label is gui_label   
 style about_label_text is gui_label_text
 style about_text is gui_text 
 
