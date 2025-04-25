@@ -9301,7 +9301,7 @@ label debate:
     "{b}{i}Tu allumes ton ordi et tu ouvres ton éditeur de code.{/i}{/b}" 
     play sound "Click.mp3" noloop
 
-label code:
+label code: 
 
     play sound "Menu.mp3" noloop
     $ system = renpy.input("Choisis un nom pour ton système d'exploitation.") 
