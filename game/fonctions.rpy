@@ -245,3 +245,18 @@ init python:
 
     def get_random_endlesson():
         return random.choice(endlesson_list)
+
+init python:
+    import random 
+
+    toilet_list = [
+        "Bon je reviens, je vais juste aux toilettes.",
+        "Bon je reviens je vais juste aux toilettes, j'ai le cigare au bout des lévres.",
+        "Je vais juste aux toilettes, je reviens.", 
+        "Je vais juste aux toilettes, je reviens dans deux minutes.",
+        "Je vais juste aux toilettes, je reviens dans un instant.",
+        "Je vais juste aux toilettes, je reviens dans un petit moment.",
+    ]
+
+    def get_random_toilet():
+        return random.choice(toilet_list)  
