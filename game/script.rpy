@@ -57,6 +57,7 @@ label start:
     default quest27 = 0
     default quest28 = 0
     default quest29 = 0
+    default quest30 = 0 
 
     stop music fadeout 2.0   
 
@@ -9661,15 +9662,13 @@ label update:
     play sound "Click.mp3" noloop
 
     scene black
-    show screen hall
+    hide screen hall
 
     "{b}{i}Tu continues dans la salle de club.{/i}{/b}"
-    play sound "Click.mp3" noloop 
+    play sound "Door.mp3" noloop  
 
     scene clubroom 
     show screen clubroom 
-    hide screen hall 
-    play sound "Door.mp3" noloop  
 
     "{b}{i}En entrant tu vois [I] complétement endormie sur la table.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -17132,7 +17131,7 @@ label password10:
     Na "[suivi]"
     play sound "Click.mp3" noloop
 
-    hide screen clubroom
+    hide screen class_404 
     scene black 
 
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
@@ -17615,8 +17614,8 @@ label update1:
             play sound "Menu.mp3" noloop
 
             scene black
-            hide clubroom
-            hide screen clubroom 
+            hide room 
+            hide screen room
             hide screen points
             hide screen day
 
@@ -17638,8 +17637,8 @@ label update1:
                     return
                     with fade
                 "{b}{i}Réessayer.{/i}{/b}":
-                    show clubroom
-                    show screen clubroom
+                    show room
+                    show screen room
                     show screen points
                     show screen day 
                     play music "Soundtrack2.mp3" loop volume 1.0
@@ -19028,7 +19027,217 @@ label password13:
     play sound "Click.mp3" noloop 
 
     I "Il s'est passé quoi avec [J2] ?"
+    play sound "Click.mp3" noloop 
+
+    P "Elle a frappé [newname]."
+    play sound "Click.mp3" noloop 
+
+    I "Pardon, elle a fait quoi !?"
+    play sound "Click.mp3" noloop 
+
+    P "Elle l'a frappé."
     play sound "Click.mp3" noloop
+
+    I "C'est vrai ça [newname] ?"
+    play sound "Click.mp3" noloop
+
+    Na "Oui malheureusement."
+    play sound "Click.mp3" noloop
+
+    I "Mais elle est vraiment malade celle-là."
+    play sound "Click.mp3" noloop
+
+    P "Oui je confirme." 
+    play sound "Click.mp3" noloop
+
+    Na "Bon on peut cloturer cette discussion car elle me met mal à l'aise."
+    play sound "Click.mp3" noloop
+
+    menu:   
+
+        "{b}{i} Continuer la discussion.{/i}{/b}" :
+            play sound "Menu.mp3" noloop
+
+            P "En plus elle s'est mis à l'insulter au calme." 
+            play sound "Click.mp3" noloop
+
+            I "Mais il faut vraiment qu'elle se calme." 
+            play sound "Click.mp3" noloop
+
+            Na "Hey je veux vraiment qu'on finisse cette discussion." 
+            play sound "Click.mp3" noloop 
+
+            if pronom == "il" : 
+    
+                P "Désolé."
+                play sound "Click.mp3" noloop  
+
+            elif pronom == "elle" :
+
+                P "Désolée."
+                play sound "Click.mp3" noloop   
+
+            I "Vraiment désolée" 
+            play sound "Click.mp3" noloop
+
+        "{b}{i} Arrêter la discussion{/i}{/b}" :
+            play sound "Menu.mp3" noloop 
+
+            $ success += 1 
+            $ quest30 += 1 
+
+            P "Oui pas de soucis si vraiment ça te dérange." 
+            play sound "Click.mp3" noloop
+
+    Na "Merci beaucoup." 
+    play sound "Click.mp3" noloop
+
+    $ nothing = get_random_nothing()
+    I "[nothing]"
+    play sound "Click.mp3" noloop
+
+    P "Sinon Iris tu comptes faire quoi cette après-midi ?"
+    play sound "Click.mp3" noloop
+
+    I "Je vais continuer à travailler sur mon jeu et toi ?"
+    play sound "Click.mp3" noloop
+
+    P "Je vais être à la salle de club pour entrenir [newname]." 
+    play sound "Click.mp3" noloop
+
+    I "C'est bien que tu entretiennes [newname]." 
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Vous continuez de discuter jusqu'à la sonnerie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bon on y va [newname] ?" 
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    scene black 
+    hide screen lunchroom 
+
+    "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall
+    show screen hall 
+
+    "{b}{i}Tu continues vers la salle de club.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop 
+
+    scene black
+    hide screen hall 
+
+    "{b}{i}Tu entres dans la salle de club.{/i}{/b}"
+    play sound "Door.mp3" noloop  
+
+    scene clubroom 
+    show screen clubroom 
+
+    P "Enfin au club."
+    play sound "Click.mp3" noloop 
+
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]" 
+    play sound "Click.mp3" noloop  
+
+label newpassword: 
+
+    if len(entered_password) < 10:
+
+        define Na = Character('[newname] [nom]', color="#0000ff")
+
+        "{b}{i}Vous vous posez tranquillement mais [newname] agit bizarrement.{/i}{/b}"
+        play sound "Click.mp3" noloop 
+
+        Na "Mot de passe compromis car il fait moins de dix caractères." 
+        play sound "Click.mp3" noloop 
+
+        P "Mince...." 
+        play sound "Click.mp3" noloop 
+
+        "{b}{i} Tu ouvres les paramètres pour ajouter un nouveau mot de passe sur [newname].{/i}{/b}"
+        play sound "Click.mp3" noloop
+
+        $ password = renpy.input("Veuillez choisir un nouveau mot de passe pour [newname].")
+        $ password = password.strip()
+
+        if password:  
+
+            $ stored_password = password 
+
+            "Nouveau mot de passe enregistré avec succès." 
+            play sound "Click.mp3" noloop
+
+            P "C'est bon, je lui ai mis un nouveau mot de passe, je vais la redémarrer pour voir."
+            play sound "Click.mp3" noloop 
+
+            "{b}{i} Tu relances [newname].{/i}{/b}"
+            play sound "Click.mp3" noloop
+
+            $ entered_password = renpy.input("Veuillez remettre votre nouveau mot de passe pour [newname].")
+            $ entered_password = entered_password.strip()
+
+            if entered_password == stored_password:
+
+                if len(entered_password) >= 10:  
+
+                    define Na = Character('[newname] [nom]', color="#00eeff")
+
+                    $ stockage += 3.0
+
+                    "Mot de passe correct. Accès autorisé." 
+                    play sound "Menu.mp3" noloop 
+
+                    $ start = get_random_start()
+                    Na "[start]"
+                    play sound "Click.mp3" noloop 
+
+                    Na "Bonjour [prenom]." 
+                    play sound "Click.mp3" noloop 
+
+                    P "Bonjour [newname], est-ce que ça va ?"
+                    play sound "Click.mp3" noloop  
+
+                    Na "Oui absolument."
+                    play sound "Click.mp3" noloop 
+
+                    "{b}{i}Vous vous posez tranquillement.{/i}{/b}"
+                    play sound "Click.mp3" noloop
+
+                else: 
+
+                    "Mot de passe trop court. Accès refusé." 
+                    play sound "Menu.mp3" noloop
+                    jump newpassword 
+
+            else:
+
+                "Mot de passe incorrect. Accès refusé." 
+                play sound "Menu.mp3" noloop
+                jump newpassword  
+
+        else:
+
+            "Veuillez entrer un mot de passe."
+            jump newpassword 
+
+    else:  
+
+        "{b}{i}Vous vous posez tranquillement.{/i}{/b}"
+        play sound "Click.mp3" noloop
+
+    Na "Bon on fait quoi ?" 
+    play sound "Click.mp3" noloop 
+
+    P "Je ne sais pas encore...."
+    play sound "Click.mp3" noloop 
+
 
     return                             
 

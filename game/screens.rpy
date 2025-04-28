@@ -1958,6 +1958,8 @@ screen success():
             text _("Mentir n’est pas si mal : [quest27]/1\n")
             text _("Journalistes de merde : [quest28]/1\n")
             text _("Dire les termes : [quest29]/1\n")           
+            text _("Ferme ta gueule !!! : [quest30]/1\n") 
+
 
 style about_label is gui_label   
 style about_label_text is gui_label_text
