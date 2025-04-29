@@ -1805,6 +1805,12 @@ screen draw():
         xalign 0.5 
         add "Images/Draw.Jpeg"
 
+screen mail():
+    frame:
+        yalign 0.3
+        xalign 0.5 
+        add "Images/mail.png"
+
 screen success():
     frame: 
         xalign 0.99
@@ -1959,7 +1965,6 @@ screen success():
             text _("Journalistes de merde : [quest28]/1\n")
             text _("Dire les termes : [quest29]/1\n")           
             text _("Ferme ta gueule !!! : [quest30]/1\n") 
-
 
 style about_label is gui_label   
 style about_label_text is gui_label_text
