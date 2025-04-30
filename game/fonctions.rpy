@@ -258,6 +258,7 @@ init python:
         "Je vais juste aux toilettes, je reviens dans un petit moment.",
         "Bon je reviens, je vais me couler une dalle.", 
         "Bon je reviens, je vais couler un bronze.", 
+        "Bon je reviens, je vais sur le trône.", 
     ]
 
     def get_random_toilet():

@@ -2,45 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 19554: expected statement.
-    "Question 1 : Quelle est la nature du mot 'rapidement' ?":
-                                                             ^
-
-File "game/script.rpy", line 19566: expected statement.
-    "Question 2 : Quelle est la fonction du mot 'chien' dans la phrase : 'Le chien aboie' ?":
-                                                                                            ^
-
-File "game/script.rpy", line 19578: expected statement.
-    "Question 3 : Quel est le temps du verbe 'avais mangé' ?":
-                                                             ^
-
-File "game/script.rpy", line 19590: expected statement.
-    "Question 4 : Quel est le synonyme du mot 'joyeux' ?":
-                                                         ^
-
-File "game/script.rpy", line 19601: expected statement.
-    "Question 5 : Dans la phrase 'Elle chante bien', quel est le type de mot 'bien' ?":
-                                                                                      ^
-
-File "game/script.rpy", line 19613: expected statement.
-    "Question 6 : Quel est le pluriel de 'cheval' ?":
-                                                    ^
-
-File "game/script.rpy", line 19624: expected statement.
-    "Question 7 : Quelle est la classe grammaticale du mot 'entre' dans 'Je vais entre deux bâtiments' ?":
-                                                                                                         ^
-
-File "game/script.rpy", line 19636: expected statement.
-    "Question 8 : Dans 'Nous sommes allés au cinéma', quel est l'auxiliaire utilisé ?":
-                                                                                      ^
-
-File "game/script.rpy", line 19648: expected statement.
-    "Question 9 : Quel mot est un antonyme de 'lent' ?":
-                                                       ^
-
-File "game/script.rpy", line 19660: expected statement.
-    "Question 10 : Quel est le mode du verbe 'que tu viennes' ?":
-                                                                ^
+File "game/screens.rpy", line 2026: vbox expects a non-empty block.
+    vbox:
+         ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue Apr 29 22:25:30 2025
+Wed Apr 30 12:38:13 2025

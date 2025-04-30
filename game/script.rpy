@@ -8,7 +8,7 @@ label start:
     default update = 1.0
     $ info = 0.0
     default origine = "la chambre grise" 
-    default domaine = "ultime créateur"
+    default domaine = "??????????" 
     $ model = "robot humanoïde" 
     $ ending = 0
     default stored_password = ""
@@ -17,8 +17,8 @@ label start:
     $ message = 0 
     default newname = ""  
     default robotorigine = "???????" 
-    default prenom = ""
-    default nom = ""
+    default prenom = "??????????" 
+    default nom = "??????????" 
     default propriety = "" 
     default serie = "???????"
     default stockage = "???????"
@@ -27,6 +27,34 @@ label start:
     default baseip = ""
 
 #############################################
+
+    default character1 = "??????????"
+    default character2 = "??????????"
+    default character3 = "??????????"
+    default character4 = "??????????"
+    default character5 = "??????????"
+    default character6 = "??????????"
+    default character7 = "??????????"
+    default character8 = "??????????"
+    default character9 = "??????????"
+    default character10 = "??????????"
+    default character11 = "??????????"
+    default character12 = "??????????"
+    default character13 = "??????????"
+
+    default ultimate1 = "??????????"
+    default ultimate2 = "??????????"
+    default ultimate3 = "??????????"
+    default ultimate4 = "??????????"
+    default ultimate5 = "??????????"
+    default ultimate6 = "??????????"
+    default ultimate7 = "??????????"
+    default ultimate8 = "??????????"
+    default ultimate9 = "??????????"
+    default ultimate10 = "??????????" 
+    default ultimate11 = "??????????"
+    default ultimate12 = "??????????"
+    default ultimate13 = "??????????"  
 
     default quest1 = 0
     default quest2 = 0
@@ -58,6 +86,9 @@ label start:
     default quest28 = 0
     default quest29 = 0
     default quest30 = 0 
+    default quest31 = 0 
+    default quest32 = 0
+    default quest33 = 0
 
     stop music fadeout 2.0   
 
@@ -182,6 +213,8 @@ label début:
 
     S "On pourrait fouiller les lieux déjà ?"
     play sound "Click.mp3" noloop
+
+    $ character1 = S 
 
     P "Tu penses sérieusement qu'on va trouver quelque chose d'intéressant ici ?"
     play sound "Click.mp3" noloop    
@@ -320,6 +353,9 @@ label hack:
                 $ A = Character("M1919A4", color="#005c17") 
                 $ stockage += 1.9 
 
+        $ quest3 += 1
+        $ success += 1 
+
         P "Attend on dirait qu'elle est en train de démarrer."
         play sound "Menu.mp3" noloop 
 
@@ -368,7 +404,7 @@ label hack:
 
     $ stockage += 2.0 
 
-    A "Bonjour [prénom] je suis ravie de te rencontrer mais j'ai une question."
+    A "Bonjour [prenom] je suis ravie de te rencontrer mais j'ai une question."
     play sound "Click.mp3" noloop 
 
     P "Oui dis-moi."
@@ -383,7 +419,7 @@ label hack:
             play sound "Menu.mp3" noloop 
 
             $ success += 1
-            $ quest3 += 1  
+            $ quest4 += 1  
 
             P "Oui bien sûr qu'il te reste un avenir et que je veux de toi."
             play sound "Click.mp3" noloop   
@@ -559,6 +595,8 @@ label grayroom:
         Su "[S] tu peux la laisser dans son coin tu sais comment [pronom] est."
         play sound "Click.mp3" noloop
 
+    $ character11 = Su
+
     S "Je refuse, tu as vu ce qu'[pronom] a comme objet !?"
     play sound "Click.mp3" noloop
 
@@ -590,7 +628,9 @@ label grayroom:
     Sk "Il se passe quoi ?"
     play sound "Click.mp3" noloop
 
-    if pronom == "il":
+    $ character12 = Sk
+
+    if pronom == "il": 
 
         Su "C'est juste [S] qui est jaloux de ce que [prenom] a avec lui."
         play sound "Click.mp3" noloop
@@ -1216,7 +1256,7 @@ label rencontre:
             play sound "Menu.mp3" noloop 
     
     $ success += 1
-    $ quest4 += 1 
+    $ quest5 += 1 
 
     P "Ok, je l'accepte."
     play sound "Click.mp3" noloop 
@@ -1391,6 +1431,9 @@ label rencontre:
     T "L'ultime développeuse !? oh intéressant."
     play sound "Click.mp3" noloop
 
+    $ character2 = I
+    $ ultimate2 = "L'ultime développeuse"
+
     $ thanks = get_random_thanks()
     I "[thanks]"
     play sound "Click.mp3" noloop
@@ -1431,10 +1474,13 @@ label rencontre:
     T "Enchanté Hajime bienvenue dans notre classe, j'aimerais savoir quel est ton projet dans ce lycée."
     play sound "Click.mp3" noloop
 
+    $ character3 = H
+    $ ultimate3 = "L'ultime constructeur" 
+
     H "Mon projet est de construire un robot." 
     play sound "Click.mp3" noloop 
 
-    $ stockage += 3.0
+    $ stockage += 3.0 
 
     T "Intéressant comme projet."
     play sound "Click.mp3" noloop
@@ -1455,11 +1501,18 @@ label rencontre:
     J1 "Bonjour, je m'appelle [J1], j'ai dix-neuf ans et voici ma soeur jumelle."
     play sound "Click.mp3" noloop
 
+    $ character4 = J1
+
     J2 "Bonjour je m'appelle [J2], j'ai dix-neuf ans"
     play sound "Click.mp3" noloop
 
+    $ character5 = J2
+
     J "et nous sommes les ultimes jumelles."
     play sound "Click.mp3" noloop
+
+    $ ultimate4 = "L'ultime jumelle" 
+    $ ultimate5 = "L'ultime jumelle" 
 
     T "Bien, enchantée de vous rencontrer."
     play sound "Click.mp3" noloop
@@ -1481,11 +1534,16 @@ label rencontre:
     K "Je m'appelle [K], j'ai dix-neuf ans."
     play sound "Click.mp3" noloop
 
+    $ character6 = K
+
     T "Bien, enchantée de te rencontrer, suivant ?"
     play sound "Click.mp3" noloop 
 
-    N "Je m'appelle [N], j'ai dix-neuf ans."
+    N "Je m'appelle [N], j'ai dix-neuf ans et je suis l'ultime assistant, toujours  prêt pour aider."
     play sound "Click.mp3" noloop
+
+    $ character7 = N 
+    $ ultimate7 = "L'ultime assistant"
 
     T "Enchantée aussi de te rencontrer [N]."
     play sound "Click.mp3" noloop
@@ -1502,13 +1560,15 @@ label rencontre:
     Hi "Bonjour, je m'appelle [Hi]."
     play sound "Click.mp3" noloop
 
+    $ character8 = Hi
+   
     T "Ravie de te rencontrer [Hi], bienvenue dans notre classe."
     play sound "Click.mp3" noloop
 
     Hi "Merci beaucoup Madame." 
     play sound "Click.mp3" noloop
 
-    $ stockage += 2.0
+    $ stockage += 2.0 
 
     $ nothing = get_random_nothing()
     T "[nothing] Bon suivante."
@@ -1516,6 +1576,8 @@ label rencontre:
 
     Y "Je m'appelle [Y], j'ai dix-neuf ans ravie de vous rencontrer."
     play sound "Click.mp3" noloop 
+
+    $ character9 = Y
 
     T "Enchantée de te rencontrer aussi bienvenue dans notre classe." 
     play sound "Click.mp3" noloop
@@ -1670,6 +1732,9 @@ label rencontre:
 
     M "Je m'appelle Sakura Kusanagi." 
     play sound "Click.mp3" noloop 
+
+    $ character10 = M 
+    $ ultimate10 = "L'ultime professeure"
 
     M "J'ai 27 ans et ça fait deux ans que j'enseigne dans le lycée Nexus."
     play sound "Click.mp3" noloop
@@ -2765,7 +2830,7 @@ label choice4:
     if newname == "Aris":
 
         $ success += 1
-        $ quest5 += 1
+        $ quest6 += 1
         $ robotname = nom
         $ stockage += 2.0 
         
@@ -2802,7 +2867,7 @@ label choice5:
     if ip == "001.018.009.019":
 
         $ success += 1
-        $ quest6 += 1 
+        $ quest7 += 1 
         $ stockage += 2.0 
         $ baseip = "001.018.009.019" 
 
@@ -3532,7 +3597,7 @@ label wallbreaking4:
     if grade == 20.0:
 
         $ success += 1
-        $ quest7 += 1
+        $ quest8 += 1 
 
         M "Félicitation, tu l'as réussi à la perfection."
         play sound "Click.mp3" noloop
@@ -4178,7 +4243,7 @@ label wallbreaking4:
         "{b}{i}aller au club{/i}{/b}" :
             
             $ success += 1
-            $ quest8 += 1
+            $ quest9 += 1
 
             P "aller en salle de club."
             play sound "Menu.mp3" noloop 
@@ -5172,7 +5237,7 @@ label choice9:
     if grade == 20.0:
         
         $ success += 1
-        $ quest9 += 1
+        $ quest10 += 1 
 
         M "Félicitations tu l'as réussi à la perfection comme d'habitude."
         play sound "Click.mp3" noloop
@@ -5761,7 +5826,7 @@ label choice9:
         "{b}{i} Accepter les documents.{/i}{/b}" :
 
             $ success += 1
-            $ quest10 += 1
+            $ quest11 += 1
 
             P "Merci beaucoup ça fait plaisir."
             play sound "Click.mp3" noloop 
@@ -6206,7 +6271,7 @@ label choice9:
             Na "Vérification...."
             play sound "Menu.mp3" noloop 
             $ success += 1 
-            $ quest11 += 1
+            $ quest12 += 1
             $ stockage += 5.0 
             $ update += 1.0 
 
@@ -7514,7 +7579,7 @@ label suite1:
         "{b}{i} Accepter [S]{/i}{/b}" :
     
             $ success += 1
-            $ quest12 += 1
+            $ quest13 += 1
 
             P "Bien sûr viens t'asseoir avec nous."
             play sound "Click.mp3" noloop 
@@ -8250,10 +8315,12 @@ label debate:
     P "Ok à une autre fois."
     play sound "Click.mp3" noloop 
 
-    Su "Aucun probléme on se rappelera un de ces jours."
+    Su "Aucun probléme on se rappelera un de ces jours mais en tant que l'ultime affective."
     play sound "Click.mp3" noloop 
 
-    P "Ok alors."
+    $ ultimate11 = "L'ultime affective" 
+
+    P "Merci." 
     play sound "Click.mp3" noloop 
 
     "{b}{i} [Su] finit par raccrocher.{/i}{/b}"
@@ -8325,7 +8392,7 @@ label debate:
             play sound "Menu.mp3" noloop 
 
             $ success += 1 
-            $ quest13 += 1
+            $ quest14 += 1
 
             P "Bon voyons voir ce que [Su] m'a envoyé."
             play sound "Click.mp3" noloop 
@@ -8659,7 +8726,7 @@ label debate:
         "{b}{i} Se reposer {/i}{/b}" : 
             
             $ success += 1 
-            $ quest14 += 1
+            $ quest15 += 1
 
             "{b}{i} Tu te reposes pendant trois heures avant de te réveiller {/i}{/b}"
             play sound "Click.mp3" noloop 
@@ -9097,7 +9164,7 @@ label debate:
     if Code == "print(\"text\")":
 
         $ success += 1
-        $ quest15 += 1
+        $ quest16 += 1
 
         M "Bonne réponse."
         play sound "Click.mp3" noloop
@@ -9685,7 +9752,7 @@ label update:
         "{b}{i} Réveiller [I] {/i}{/b}" : 
 
             $ success += 1
-            $ quest16 += 1
+            $ quest17 += 1
 
             "{b}{i} Tu approches calmement pour la réveiller.{/i}{/b}"
             play sound "Click.mp3" noloop
@@ -10231,7 +10298,7 @@ label update:
             play sound "Menu.mp3" noloop 
 
             $ success += 1 
-            $ quest17 += 1
+            $ quest18 += 1
 
             "{b}{i} Vous allez chercher une pour manger.{/i}{/b}"
             play sound "Click.mp3" noloop 
@@ -10453,7 +10520,7 @@ label update:
     elif suspect == "Subaru": 
 
         $ success += 1 
-        $ quest18 += 1
+        $ quest19 += 1
 
         P "Je pense que c'est [S]."
         play sound "Click.mp3" noloop
@@ -10683,7 +10750,7 @@ label update:
             play sound "Menu.mp3" noloop 
 
             $ success += 1 
-            $ quest19 += 1 
+            $ quest20 += 1 
 
             P "Je vais aller la voir pour voir si elle va bien."
             play sound "Footsteps.mp3" noloop 
@@ -10938,7 +11005,7 @@ label password:
 
         if len(entered_password) > 10:
             $ success += 1
-            $ quest20 += 1   
+            $ quest21 += 1   
             $ stockage += 5.0
 
             "Mot de passe correct. Accès autorisé." 
@@ -12240,7 +12307,7 @@ label password1:
             play sound "Menu.mp3" noloop 
 
             $ success += 1
-            $ quest21 += 1
+            $ quest22 += 1
 
             P "C'est juste que j'avait un truc qui me passait en tête..."
             play sound "Click.mp3" noloop 
@@ -12924,7 +12991,7 @@ label examen_pythagore:
         S "Vraiment ?"
         play sound "Click.mp3" noloop 
 
-        S "je pense."
+        P "Je pense."
         play sound "Click.mp3" noloop 
 
     else:
@@ -13011,7 +13078,7 @@ label examen_pythagore:
     if grade == 20.0:
 
         $ success += 1
-        $ quest22 += 1
+        $ quest23 += 1
 
         M "Félicitation tu l'as réussi à la perfection comme d'habitude."
         play sound "Click.mp3" noloop
@@ -14356,7 +14423,7 @@ label password4:
     if answer == "initiate_humanoid_robot(setting=true)": 
 
         $ success += 1 
-        $ quest23 += 1
+        $ quest24 += 1
 
         M "C'est exact, bien joué."
         play sound "Click.mp3" noloop
@@ -15492,7 +15559,7 @@ label password8:
             Na "Vérification...."
             play sound "Menu.mp3" noloop 
             $ success += 1 
-            $ quest24 += 1
+            $ quest25 += 1
             $ stockage += 3.0 
             $ update += 1.0 
 
@@ -16188,7 +16255,7 @@ label password9:
     if grade == 20.0:
 
         $ success += 1 
-        $ quest25 += 1
+        $ quest26 += 1
 
         M "Félicitation tu l'as réussi à la perfection comme d'habitude."
         play sound "Click.mp3" noloop
@@ -16600,7 +16667,7 @@ label password9:
         "{b}{i} La perte de la mémoire.{/i}{/b}" :
 
             $ success += 1
-            $ quest26 += 1
+            $ quest27 += 1
 
             P "Je faisais référence à la perte de sa mémoire."
             play sound "Click.mp3" noloop
@@ -16706,7 +16773,7 @@ label code1:
                 play sound "Menu.mp3" noloop
 
                 $ success += 1 
-                $ quest27 += 1
+                $ quest28 += 1
 
                 P "On pourrait dire que ta nouvelle date d'anniveraire est 4 juillet, le jour de ta récupération."
                 play sound "Click.mp3" noloop 
@@ -17446,7 +17513,7 @@ label password10:
         "{b}{i} refuser l'interview {/i}{/b}" : 
 
             $ success += 1  
-            $ quest28 += 1
+            $ quest29 += 1
 
             if pronom == "il" : 
     
@@ -18038,7 +18105,7 @@ label password11:
             play sound "Menu.mp3" noloop
 
             $ success += 1 
-            $ quest29 += 1 
+            $ quest30 += 1 
 
             P "Sachez que je méprise profondément cette société malade."
             play sound "Click.mp3" noloop 
@@ -19087,7 +19154,7 @@ label password13:
             play sound "Menu.mp3" noloop 
 
             $ success += 1 
-            $ quest30 += 1 
+            $ quest31 += 1 
 
             P "Oui pas de soucis si vraiment ça te dérange." 
             play sound "Click.mp3" noloop
@@ -19534,6 +19601,8 @@ label password14:
     Na "Mais c'est génial je suis trop contente."
     play sound "Click.mp3" noloop
 
+    $ stockage += 3.0 
+
     P "Je vois bien ça."
     play sound "Click.mp3" noloop
 
@@ -19791,7 +19860,7 @@ label examen_francais:
     P "Rebonjour."
     play sound "Click.mp3" noloop
 
-    S "Rebonjour."
+    Na "Rebonjour."
     play sound "Click.mp3" noloop
 
     M "Rebonjour, Bon nous allons faire un nouveau sujet."
@@ -19799,6 +19868,471 @@ label examen_francais:
 
     P "Ce sera quoi ?"
     play sound "Click.mp3" noloop  
+
+    M "Ce sera un cours de philo pour cette semaine."
+    play sound "Click.mp3" noloop 
+
+    J1 "De la philo c'est intéressant."
+    play sound "Click.mp3" noloop  
+
+    Y "Je confirme aussi."
+    play sound "Click.mp3" noloop 
+
+    M "Sortez vos livre de philo page 6."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tous les élèves sortent leur livre.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Bien."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Le cours continue tranquillement.{/i}{/b}"
+    play sound "Bell.mp3" noloop
+
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop 
+
+    $ stockage += 5.0
+
+    P "Bon on va manger [newname]?"
+    play sound "Click.mp3" noloop
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen class_404 
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i}Tu continues vers les escaliers.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene staircase 
+    hide screen hallway
+
+    "{b}{i}Puis vers le hall.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hall
+    hide screen hall 
+
+    "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene lunchroom 
+    show screen lunchroom 
+    
+    Na "Bon on va prendre à manger ?"
+    play sound "Click.mp3" noloop 
+
+    P "Ok alors."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 200 
+
+    P "C'est bon [newname] tu t'es servie ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui c'est bon on peut aller s'asseoir."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous vous asseyez dans le réfectoire puis [I] vous rejoint.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    P "Coucou [I]."
+    play sound "Click.mp3" noloop 
+
+    I "Oh salut comment vous allez ?"
+    play sound "Click.mp3" noloop 
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt]" 
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt] Et toi sinon ça va ?" 
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    I "[je_vais_bien_txt]" 
+    play sound "Click.mp3" noloop 
+
+    P "Cool alors."
+    play sound "Click.mp3" noloop 
+
+    I "Sinon ça s'est passé comment l'examen pour toi ?"
+    play sound "Click.mp3" noloop 
+
+    if grade == 20.0:
+
+        P "Je pense que je l'ai réussi à la perfection."
+        play sound "Click.mp3" noloop 
+
+        I "ça ne m'étonne pas venant de toi."
+        play sound "Click.mp3" noloop 
+
+        Na "On le sait déjà." 
+        play sound "Click.mp3" noloop 
+
+    elif grade <= 14.0:
+       
+        P "Je pense que je l'ai échoué."
+        play sound "Click.mp3" noloop 
+
+        I "Vraiment ?"
+        play sound "Click.mp3" noloop 
+
+        P "Je pense."
+        play sound "Click.mp3" noloop 
+
+    else:
+
+        P "Je pense que je l'ai bien réussi."
+        play sound "Click.mp3" noloop 
+    
+        I "ça ne m'étonne pas venant de toi."
+        play sound "Click.mp3" noloop 
+
+        Na "On le sait déjà." 
+        play sound "Click.mp3" noloop 
+
+    P "Et toi sinon ça s'est passé comment ?"
+    play sound "Click.mp3" noloop 
+
+    I "Je pense que je l'ai réussi."
+    play sound "Click.mp3" noloop 
+
+    if pronom == "il": 
+
+        P "Super, je suis content pour toi !"
+        play sound "Click.mp3" noloop 
+
+    elif pronom == "elle": 
+
+        P "Super, je suis contente pour toi !"
+        play sound "Click.mp3" noloop 
+
+    I "Merci."
+    play sound "Click.mp3" noloop 
+
+    $ nothing = get_random_nothing()
+    P "[nothing]"
+    play sound "Click.mp3" noloop
+
+    P "Bon on retourne en cours." 
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Click.mp3" noloop
+
+    scene black
+    hide screen lunchroom
+    
+    "{b}{i}Tu te diriges vers le hall.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall
+    show screen hall 
+
+    "{b}{i}Tu continues vers le premier étage.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene staircase
+    hide screen hall 
+
+    "{b}{i}Tu continues vers le couloir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hallway
+    show screen hallway 
+
+    "{b}{i}Tu continue vers la salle de la classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+    
+    scene classroom 
+    show screen class_404  
+
+    P "Rebonjour."
+    play sound "Click.mp3" noloop 
+
+    Na "Rebonjour."
+    play sound "Click.mp3" noloop 
+
+
+    M "Bon aujourd'hui je vais vous rendre les résultats sur votre examen de runix."
+    play sound "Click.mp3" noloop  
+
+    K "Cool enfin."
+    play sound "Click.mp3" noloop
+
+    I "Je vais commencer par [prenom] et [Na]."
+    play sound "Click.mp3" noloop 
+
+    $ validation = get_random_validation() 
+    P "[validation]"
+    play sound "Click.mp3" noloop 
+
+    M "[P] tu as eu [grade]/20"
+    play sound "Click.mp3" noloop 
+   
+    if grade == 20.0:
+
+        $ success += 1 
+        $ quest32 += 1
+
+        M "Félicitation tu l'as réussi à la perfection comme d'habitude."
+        play sound "Click.mp3" noloop
+
+        P "Merci."
+        play sound "Click.mp3" noloop
+
+    elif grade <= 14.0:
+       
+        M "C'est en dessous de la moyenne je n'ai pas le choix que de t'expulser du lycée..."
+        play sound "Click.mp3" noloop
+
+        P "Quoi et mon avenir !?"
+        play sound "Click.mp3" noloop
+    
+        M "Désolé mais j'avais déjà prévenu concernant les mauvaises notes."
+        play sound "Click.mp3" noloop
+
+        scene black
+        hide classroom
+        hide screen class_404
+        hide screen points
+        hide screen day
+        play music "gameover.mp3" noloop
+        "{b}{i}Fin numéro 12 : Mauvaise note à l'examen de français qui te vaut une exclusion du lycée.{/i}{/b}"
+        play sound "Menu.mp3" noloop
+
+        menu:    
+
+            "{b}{i}Abandonner{/i}{/b}" :
+                return
+                with fade
+            "{b}{i}Réessayer.{/i}{/b}" :
+
+                scene black
+                show screen points 
+                scene classroom 
+                show screen class_404 
+                $ points += 200
+                 $ stockage -= 5.0 
+                play music "Soundtrack.mp3" loop volume 1.0
+                jump examen_francais 
+                    
+    else:
+       
+        M "C'est pas mal."
+        play sound "Click.mp3" noloop
+
+        P "Merci."
+        play sound "Click.mp3" noloop
+
+    M "[Na] tu as eu 18/20 félicitation aussi."
+    play sound "Click.mp3" noloop 
+
+    $ thanks = get_random_thanks()
+    Na "[thanks]"
+    play sound "Click.mp3" noloop
+
+    $ note = get_random_note()
+    M "[H] tu as eu [note]/20."
+    play sound "Click.mp3" noloop 
+
+    if note == 20: 
+
+        M "Félicitation tu l'as réussi à la perfection."
+        play sound "Click.mp3" noloop
+
+    else: 
+
+        M "Ce n'est pas mal."
+        play sound "Click.mp3" noloop
+
+    $ thanks = get_random_thanks()
+    H "[thanks]"
+    play sound "Click.mp3" noloop
+
+    $ note = get_random_note()
+    M "[I] tu as eu [note]/20."
+    play sound "Click.mp3" noloop 
+
+    if note == 20: 
+
+        M "Félicitation tu l'as réussi à la perfection."
+        play sound "Click.mp3" noloop
+
+    else: 
+
+        M "Ce n'est pas mal."
+        play sound "Click.mp3" noloop
+
+    $ thanks = get_random_thanks()
+    I "[thanks]"
+    play sound "Click.mp3" noloop
+
+    $ note = get_random_note()
+    M "[Hi] tu as eu [note]/20."
+    play sound "Click.mp3" noloop 
+
+    if note == 20: 
+
+        M "Félicitation tu l'as réussi à la perfection."
+        play sound "Click.mp3" noloop
+
+    else: 
+
+        M "Ce n'est pas mal."
+        play sound "Click.mp3" noloop
+
+    $ thanks = get_random_thanks()
+    Hi "[thanks]"
+    play sound "Click.mp3" noloop
+
+    $ note = get_random_note()
+    M "[K] tu as eu [note]/20."
+    play sound "Click.mp3" noloop 
+
+    if note == 20: 
+
+        M "Félicitation tu l'as réussi à la perfection."
+        play sound "Click.mp3" noloop
+
+    else: 
+
+        M "Ce n'est pas mal."
+        play sound "Click.mp3" noloop
+
+    $ thanks = get_random_thanks()
+    K "[thanks]"
+    play sound "Click.mp3" noloop
+
+    if note == 20: 
+
+        M "Félicitation tu l'as réussi à la perfection."
+        play sound "Click.mp3" noloop
+
+    else: 
+
+        M "Ce n'est pas mal."
+        play sound "Click.mp3" noloop
+
+    $ note = get_random_note()
+    M "[N] tu as eu [note]/20."
+    play sound "Click.mp3" noloop 
+
+    if note == 20: 
+
+        M "Félicitation tu l'as réussi à la perfection."
+        play sound "Click.mp3" noloop
+
+    else: 
+
+        M "Ce n'est pas mal."
+        play sound "Click.mp3" noloop
+
+    $ thanks = get_random_thanks()
+    N "[thanks]"
+    play sound "Click.mp3" noloop
+
+    $ note = get_random_note()
+    M "[Y] tu as eu [note]/20."
+    play sound "Click.mp3" noloop     
+    
+    if note == 20: 
+
+        M "Félicitation tu l'as réussi à la perfection."
+        play sound "Click.mp3" noloop
+
+    else: 
+
+        M "Ce n'est pas mal."
+        play sound "Click.mp3" noloop
+
+    $ thanks = get_random_thanks()
+    Y "[thanks]"
+    play sound "Click.mp3" noloop
+
+    M "Bon au tour des ultimes Jumelles maintenant pour finir."
+    play sound "Click.mp3" noloop 
+
+    $ validation = get_random_validation() 
+    J1 "[validation]"
+    play sound "Click.mp3" noloop 
+
+    $ note = get_random_note()
+    M "[J1] tu as eu [note]/20."
+    play sound "Click.mp3" noloop 
+
+    if note == 20: 
+
+        M "Félicitation tu l'as réussi à la perfection."
+        play sound "Click.mp3" noloop
+
+    else: 
+
+        M "Ce n'est pas mal."
+        play sound "Click.mp3" noloop
+
+    $ thanks = get_random_thanks()
+    J1 "[thanks]"
+    play sound "Click.mp3" noloop
+
+    $ note = get_random_note()
+    M "Et toi [J2] tu as eu [note]/20."
+    play sound "Click.mp3" noloop 
+
+    if note == 20: 
+
+        M "Félicitation tu l'as réussi à la perfection."
+        play sound "Click.mp3" noloop
+
+    else: 
+
+        M "Ce n'est pas mal."
+        play sound "Click.mp3" noloop 
+
+    $ thanks = get_random_thanks()
+    J2 "[thanks]"
+    play sound "Click.mp3" noloop
+
+    $ note = get_random_note()
+    M "Et toi [S] tu as eu [note]/20."
+    play sound "Click.mp3" noloop 
+
+    if note == 20: 
+
+        M "Félicitation tu l'as réussi à la perfection."
+        play sound "Click.mp3" noloop
+
+    else: 
+
+        M "Ce n'est pas mal."
+        play sound "Click.mp3" noloop 
+
+    $ thanks = get_random_thanks()
+    S "[thanks]"
+    play sound "Click.mp3" noloop 
 
     return
  

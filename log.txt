@@ -1,85 +1,22 @@
-2025-04-29 20:25:29 UTC
+2025-04-30 19:21:29 UTC
 Windows-10-10.0.26100
 Ren'Py 8.3.7.25031702
 
 Early init took 0.06s
-Loading error handling took 0.14s
-Loading script took 1.52s
-Loading save slot metadata took 0.11s
+Loading error handling took 0.05s
+Loading script took 1.99s
+Loading save slot metadata took 0.09s
 Loading persistent took 0.00s
-
-File "game/script.rpy", line 19554: expected statement.
-    "Question 1 : Quelle est la nature du mot 'rapidement' ?":
-                                                             ^
-
-File "game/script.rpy", line 19566: expected statement.
-    "Question 2 : Quelle est la fonction du mot 'chien' dans la phrase : 'Le chien aboie' ?":
-                                                                                            ^
-
-File "game/script.rpy", line 19578: expected statement.
-    "Question 3 : Quel est le temps du verbe 'avais mangé' ?":
-                                                             ^
-
-File "game/script.rpy", line 19590: expected statement.
-    "Question 4 : Quel est le synonyme du mot 'joyeux' ?":
-                                                         ^
-
-File "game/script.rpy", line 19601: expected statement.
-    "Question 5 : Dans la phrase 'Elle chante bien', quel est le type de mot 'bien' ?":
-                                                                                      ^
-
-File "game/script.rpy", line 19613: expected statement.
-    "Question 6 : Quel est le pluriel de 'cheval' ?":
-                                                    ^
-
-File "game/script.rpy", line 19624: expected statement.
-    "Question 7 : Quelle est la classe grammaticale du mot 'entre' dans 'Je vais entre deux bâtiments' ?":
-                                                                                                         ^
-
-File "game/script.rpy", line 19636: expected statement.
-    "Question 8 : Dans 'Nous sommes allés au cinéma', quel est l'auxiliaire utilisé ?":
-                                                                                      ^
-
-File "game/script.rpy", line 19648: expected statement.
-    "Question 9 : Quel mot est un antonyme de 'lent' ?":
-                                                       ^
-
-File "game/script.rpy", line 19660: expected statement.
-    "Question 10 : Quel est le mode du verbe 'que tu viennes' ?":
-                                                                ^
-DPI scale factor: 1.500000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: b"Couldn't load nvlib." (can be ignored)
-Interface start took 0.93s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) Iris(R) Xe Graphics'
-Version: b'4.6.0 - Build 32.0.101.6314'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 974) drawable=(1920, 974)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 974) drawable=(1920, 974)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 44.14s
-Loading error handling took 0.07s
-Loading script took 2.70s
-Loading save slot metadata took 0.11s
-Loading persistent took 0.00s
-Running init code took 0.15s
-Loading analysis data took 0.02s
+Running init code took 0.05s
+Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.22s
+Reloading save slot metadata took 0.05s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\Aris\\AppData\\Roaming/RenPy/backups\\Arisization-project':
-Dump and make backups took 0.06s
+Dump and make backups took 0.05s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.08s
+Initial gc took 0.09s
 DPI scale factor: 1.500000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
@@ -87,14 +24,14 @@ Creating interface object took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.01s
+Load screen analysis took 0.00s
 Analyze screens took 0.01s
 Save screen analysis took 0.02s
-Prepare screens took 0.08s
-Save pyanalysis. took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
 Save bytecode. took 0.05s
-Running _start took 0.01s
-Interface start took 0.52s
+Running _start took 0.00s
+Interface start took 0.36s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -107,4 +44,6 @@ Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1920, 974) drawable=(1920, 974)
 Maximum texture size: 4096x4096
 Screen sizes: virtual=(1920, 1080) physical=(1920, 974) drawable=(1920, 974)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2880, 1514) drawable=(2880, 1514)
 Maximum texture size: 4096x4096

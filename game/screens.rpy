@@ -317,7 +317,7 @@ screen navigation():
         elif not main_menu: 
 
             textbutton _("Menu principal") action MainMenu()
-
+            
         textbutton _("À propos") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
@@ -330,7 +330,9 @@ screen navigation():
 
             textbutton _("Succès") action ShowMenu("success")  
 
-            textbutton _("Ton robot") action ShowMenu("robot")
+            textbutton _("Ton robot") action ShowMenu("robot") 
+
+            textbutton _("Personnages") action ShowMenu("characters")
 
             textbutton _("Crédits") action ShowMenu("credit")
 
@@ -1931,40 +1933,43 @@ screen success():
 
             label "{b}{i}— Progression —\n{/i}{/b}" 
 
-            text _("Succès : [success]/29\n") 
+            text _("Succès : [success]/33\n") 
 
             label "{b}{i}— liste des succès —\n{/i}{/b}" 
 
             text _("Une autre clé ? : [quest1]/1\n")
             text _("Premier piratage : [quest2]/1\n")
-            text _("L'espoir fait vivre : [quest3]/1\n")
-            text _("Acceptation : [quest4]/1\n")
-            text _("Nouvelle identité : [quest5]/1\n")
-            text _("Nouvelle adresse : [quest6]/1\n")
-            text _("Ce n’est que le début : [quest7]/1\n")
-            text _("Au club !!! : [quest8]/1\n")
-            text _("Maître de guerre : [quest9]/1\n")
-            text _("Vive la documentation : [quest10]/1\n")
-            text _("Première mise à jour : [quest11]/1\n")
-            text _("Oublier le passé : [quest12]/1\n") 
-            text _("Lis-moi : [quest13]/1\n") 
-            text _("Le repos avant tout : [quest14]/1\n")
-            text _("Petit exercice de python : [quest15]/1\n")
-            text _("Affection pour les autres : [quest16]/1\n")
-            text _("Entre connaissance : [quest17]/1\n")
-            text _("Le bon suspect : [quest18]/1\n")
-            text _("Affection pour les autres partie 2 : [quest19]/1\n")
-            text _("Plus c’est gros plus ça passe : [quest20]/1\n")
-            text _("La vérité avant tout : [quest21]/1\n")
-            text _("Génie des maths : [quest22]/1\n") 
-            text _("Petit exercice de Runix : [quest23]/1\n") 
-            text _("Seconde mise à jour : [quest24]/1\n")
-            text _("Génie de l’informatique : [quest25]/1\n")
-            text _("Détail du passé : [quest26]/1\n")
-            text _("Mentir n’est pas si mal : [quest27]/1\n")
-            text _("Journalistes de merde : [quest28]/1\n")
-            text _("Dire les termes : [quest29]/1\n")           
-            text _("Ferme ta gueule !!! : [quest30]/1\n") 
+            text _("Nouveau nom de code ( DLC ) : [quest3]/1\n")     
+            text _("L'espoir fait vivre : [quest4]/1\n")
+            text _("Acceptation : [quest5]/1\n")
+            text _("Nouvelle identité : [quest6]/1\n")
+            text _("Nouvelle adresse : [quest7]/1\n")
+            text _("Ce n’est que le début : [quest8]/1\n")
+            text _("Au club !!! : [quest9]/1\n")
+            text _("Maître de guerre : [quest10]/1\n")
+            text _("Vive la documentation : [quest11]/1\n")
+            text _("Première mise à jour : [quest12]/1\n")  # Updated to reflect the correct quest number
+            text _("Oublier le passé : [quest13]/1\n") 
+            text _("Lis-moi : [quest14]/1\n") 
+            text _("Le repos avant tout : [quest15]/1\n")
+            text _("Petit exercice de python : [quest16]/1\n")
+            text _("Affection pour les autres : [quest17]/1\n")
+            text _("Entre connaissance : [quest18]/1\n")
+            text _("Le bon suspect : [quest19]/1\n")
+            text _("Affection pour les autres partie 2 : [quest20]/1\n")
+            text _("Plus c’est gros plus ça passe : [quest21]/1\n")
+            text _("La vérité avant tout : [quest22]/1\n")
+            text _("Génie des maths : [quest23]/1\n") 
+            text _("Petit exercice de Runix : [quest24]/1\n") 
+            text _("Seconde mise à jour : [quest25]/1\n")
+            text _("Génie de l’informatique : [quest26]/1\n")
+            text _("Détail du passé : [quest27]/1\n")
+            text _("Mentir n’est pas si mal : [quest28]/1\n")
+            text _("Journalistes de merde : [quest29]/1\n")
+            text _("Dire les termes : [quest30]/1\n")           
+            text _("Ferme ta gueule !!! : [quest31]/1\n") 
+            text _("Molière c'est toi ? : [quest32]/1\n") 
+            text _("Trosième mise à jour : [quest33]/1\n") 
 
 style about_label is gui_label   
 style about_label_text is gui_label_text
@@ -2004,6 +2009,45 @@ screen robot():
             text _("stockage utilisé : [stockage] Go\n")
 
             text _("Propriétaire : [propriety] \n") 
+
+style about_label is gui_label 
+style about_label_text is gui_label_text
+style about_text is gui_text
+
+style about_label_text: 
+    size gui.label_text_size 
+
+screen characters():                   
+
+    tag menu
+
+    use game_menu(_("Personnages"), scroll="viewport"):
+
+        style_prefix "about"
+
+        vbox:
+
+            label "{b}{i}— Vous —\n{/i}{/b}" 
+
+            text _("[P] — [domaine]\n") 
+
+            label "{b}{i}— Personnages Principaux —\n{/i}{/b}" 
+
+            text _("[character1] — [ultimate1]\n") 
+            text _("[character2] — [ultimate2]\n") 
+            text _("[character3] — [ultimate3]\n") 
+            text _("[character4] — [ultimate4]\n") 
+            text _("[character5] — [ultimate5]\n") 
+            text _("[character6] — [ultimate6]\n") 
+            text _("[character7] — [ultimate7]\n") 
+            text _("[character8] — [ultimate8]\n") 
+            text _("[character9] — [ultimate9]\n")
+            text _("[character10] — [ultimate10]\n") 
+
+            label "{b}{i}— Personnages Secondaires —\n{/i}{/b}" 
+
+            text _("[character11] — [ultimate11]\n") 
+            text _("[character12] — [ultimate12]\n")
 
 style about_label is gui_label 
 style about_label_text is gui_label_text
