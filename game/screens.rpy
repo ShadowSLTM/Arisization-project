@@ -1948,7 +1948,7 @@ screen success():
             text _("Au club !!! : [quest9]/1\n")
             text _("Maître de guerre : [quest10]/1\n")
             text _("Vive la documentation : [quest11]/1\n")
-            text _("Première mise à jour : [quest12]/1\n")  # Updated to reflect the correct quest number
+            text _("Première mise à jour : [quest12]/1\n")  
             text _("Oublier le passé : [quest13]/1\n") 
             text _("Lis-moi : [quest14]/1\n") 
             text _("Le repos avant tout : [quest15]/1\n")
@@ -1969,7 +1969,7 @@ screen success():
             text _("Dire les termes : [quest30]/1\n")           
             text _("Ferme ta gueule !!! : [quest31]/1\n") 
             text _("Molière c'est toi ? : [quest32]/1\n") 
-            text _("Trosième mise à jour : [quest33]/1\n") 
+            text _("Jamais deux sans trois : [quest33]/1\n")  
 
 style about_label is gui_label   
 style about_label_text is gui_label_text
@@ -2048,6 +2048,10 @@ screen characters():
 
             text _("[character11] — [ultimate11]\n") 
             text _("[character12] — [ultimate12]\n")
+            text _("[character13] — [ultimate13]\n") 
+            text _("[character14] — [ultimate14]\n") 
+            text _("[character15] — [ultimate15]\n") 
+            text _("[character16] — [ultimate16]\n") 
 
 style about_label is gui_label 
 style about_label_text is gui_label_text

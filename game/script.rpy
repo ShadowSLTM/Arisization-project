@@ -41,6 +41,9 @@ label start:
     default character11 = "??????????"
     default character12 = "??????????"
     default character13 = "??????????"
+    default character14 = "??????????"
+    default character15 = "??????????"
+    default character16 = "??????????"
 
     default ultimate1 = "??????????"
     default ultimate2 = "??????????"
@@ -55,6 +58,9 @@ label start:
     default ultimate11 = "??????????"
     default ultimate12 = "??????????"
     default ultimate13 = "??????????"  
+    default ultimate14 = "??????????"
+    default ultimate15 = "??????????"
+    default ultimate16 = "??????????"  
 
     default quest1 = 0
     default quest2 = 0
@@ -1031,6 +1037,9 @@ label rencontre:
 
     E "Je m'appelle [E], actuelle présidente du bureau des élèves ou B.D.E. pour faire simple."
     play sound "Click.mp3" noloop
+
+    $ character13 = E
+    $ ultimate13 = "Présidente du BDE"
 
     if pronom == "il":
         
@@ -2053,6 +2062,9 @@ label rencontre:
     Kh "Je m'appelle [Kh], je suis la vice-présidente du bureau des élèves." 
     play sound "Click.mp3" noloop
 
+    $ character14 = Kh
+    $ ultimate14 = "Vice-présidente du BDE"
+
     P "Enchanté [Kh], juste pourquoi es-tu venue nous voir ?" 
     play sound "Click.mp3" noloop
 
@@ -2466,6 +2478,7 @@ label work:
         play sound "Glitch.mp3" noloop
 
 label wallbreaking2: 
+
     show screen room 
     P "Je vais travailler sur ton amélioration." 
     play sound "Click.mp3" noloop
@@ -6212,7 +6225,7 @@ label choice9:
     "{b}{i} [Na] change de tonalité.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    Na "[prenom], je détecte une nouvelle mise à jour pas obligatoire du processeur, veux-tu la faire maintenant ou plus tard ?"
+    Na "[prenom], je détecte une nouvelle mise à jour pas obligatoire, veux-tu la faire maintenant ou plus tard ?"
     play sound "Menu.mp3" noloop 
 
     menu: 
@@ -6277,12 +6290,6 @@ label choice9:
 
             Na "Mise à jour terminée, la version actuelle est maintenant la [update]."
             play sound "Click.mp3" noloop 
-
-            P "Je pense que ça devait être la mise à jour du processeur."
-            play sound "Click.mp3" noloop
-
-            Na "Oui je confirme."
-            play sound "Click.mp3" noloop
 
     P  "Bon aujourd'hui je vais t'entraîner."
     play sound "Click.mp3" noloop 
@@ -7469,7 +7476,8 @@ label suite1:
     P "Bon [newname] on va manger ?"
     play sound "Click.mp3" noloop
 
-    Na "Oui pas de soucis"
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
     play sound "Click.mp3" noloop
 
     hide screen class_404
@@ -8140,8 +8148,9 @@ label debate:
     P "Bon on retourne au dortoir [newname] ?"
     play sound "Click.mp3" noloop 
 
-    Na "Oui."
-    play sound "Click.mp3" noloop 
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Click.mp3" noloop
 
     hide screen class_404
     scene black 
@@ -9184,7 +9193,8 @@ label debate:
     P "Bon on retourne au dortoir ?"
     play sound "Click.mp3" noloop
 
-    Na "Oui."
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
     play sound "Click.mp3" noloop
 
     hide screen class_404
@@ -12238,7 +12248,8 @@ label password1:
     P "Bon on va manger [newname]?"
     play sound "Click.mp3" noloop
 
-    Na "Oui."
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
     play sound "Click.mp3" noloop
 
     hide screen class_404 
@@ -15503,7 +15514,7 @@ label password8:
     "{b}{i} [Na] changea de tonalité.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    Na "[prenom], je détecte une nouvelle mise à jour obligatoire du processeur, veux-tu la faire maitenant ou plus tard ?"
+    Na "[prenom], je détecte une nouvelle mise à jour obligatoire, veux-tu la faire maitenant ou plus tard ?"
     play sound "Menu.mp3" noloop 
 
     menu: 
@@ -15565,12 +15576,6 @@ label password8:
 
             Na "Mise à jour terminée, la version actuelle est maintenant la [update]."
             play sound "Click.mp3" noloop 
-
-            P "Je pense que ça devait être la mise à jour du processeur."
-            play sound "Click.mp3" noloop
-
-            Na "Oui je confirme."
-            play sound "Click.mp3" noloop
 
     Na "Bon on va en cours ?"
     play sound "Click.mp3" noloop  
@@ -17883,10 +17888,10 @@ label password11:
     "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
     play sound "Click.mp3" noloop
  
-    Na "Sinon [prnom], as-tu des nouvelles de la DGCA"
+    Na "Sinon [prenom], as-tu des nouvelles de la DGCA"
     play sound "Click.mp3" noloop  
 
-    P "Non mal heureusement."
+    P "Non malheureusement."
     play sound "Click.mp3" noloop  
 
     Na "Je vois."
@@ -17977,7 +17982,7 @@ label password11:
     P "Bonjour c'est moi [nom], que se passe t-il ?"  
     play sound "Click.mp3" noloop 
 
-    "{b}{i}Puis tu aperçois [E], [ot] et une troisiéme personne.{/i}{/b}"
+    "{b}{i}Puis tu aperçois [E], l'[Ot] et une troisiéme personne.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     $  salutation_rdm = get_random_salutation()
@@ -17987,10 +17992,10 @@ label password11:
     E "Bonjour [prenom]."  
     play sound "Click.mp3" noloop 
 
-    P "Pourquoi i'[Ot] est ici ?"  
+    P "Pourquoi l'[Ot] est ici ?"  
     play sound "Click.mp3" noloop 
 
-    E "il a quelque chose à te dire concernant [newnmae] et cette affaire de traître."  
+    E "il a quelque chose à te dire concernant [newname] et cette affaire de traître."  
     play sound "Click.mp3" noloop 
 
     P "Je vois, sinon c'est quoi les nouvelles."  
@@ -20076,7 +20081,6 @@ label examen_francais:
     Na "Rebonjour."
     play sound "Click.mp3" noloop 
 
-
     M "Bon aujourd'hui je vais vous rendre les résultats sur votre examen de runix."
     play sound "Click.mp3" noloop  
 
@@ -20136,7 +20140,7 @@ label examen_francais:
                 scene classroom 
                 show screen class_404 
                 $ points += 200
-                 $ stockage -= 5.0 
+                $ stockage -= 5.0 
                 play music "Soundtrack.mp3" loop volume 1.0
                 jump examen_francais 
                     
@@ -20333,6 +20337,133 @@ label examen_francais:
     $ thanks = get_random_thanks()
     S "[thanks]"
     play sound "Click.mp3" noloop 
+
+    M "Bon reprenons le cours."
+    play sound "Click.mp3" noloop    
+
+    P "Ok alors."
+    play sound "Click.mp3" noloop    
+
+    "{b}{i} Le cours continue tranquillement.{/i}{/b}"
+    play sound "Bell.mp3" noloop
+
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
+
+    S "Bon, [newname] on retourne au dortoir ?" 
+    play sound "Click.mp3" noloop
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Vous continuez vers le dortoir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez dans ton dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene room
+    show screen room 
+
+    if pronom == "il":
+
+        Na "Enfin arrivés."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle":
+
+        Na "Enfin arrivées."
+        play sound "Click.mp3" noloop
+
+    $ bien = get_random_fais_du_bien()
+    P "[bien]" 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} [Na] changea de tonalité.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    Na "[prenom], je détecte une nouvelle mise à jour obligatoire, veux-tu la faire maitenant ou plus tard ?"
+    play sound "Menu.mp3" noloop 
+
+    menu:
+
+        "{b}{i} Refuser la mise à jour {/i}{/b}" :
+
+            $ Na = Character('[newname] [nom]', color="#0066ff")
+
+            P "Non merci."
+            play sound "Click.mp3" noloop
+        
+            Na "Je vois."
+            play sound "Click.mp3" noloop 
+
+        "{b}{i} faire la mise à jour {/i}{/b}" : 
+        
+            Na "Bien je lance la mise à jour"
+            play sound "Click.mp3" noloop
+
+            P "Merci."
+            play sound "Click.mp3" noloop
+
+            Na "Initialisation de la mise à jour en cours."
+            play sound "Click.mp3" noloop
+
+            Na "10\%"
+            play sound "Click.mp3" noloop
+
+            Na "20\%"
+            play sound "Click.mp3" noloop
+
+            Na "30\%"
+            play sound "Click.mp3" noloop
+
+            Na "40\%"
+            play sound "Click.mp3" noloop
+
+            Na "50\%"
+            play sound "Click.mp3" noloop
+
+            Na "60\%"
+            play sound "Click.mp3" noloop
+
+            Na "70\%"
+            play sound "Click.mp3" noloop
+
+            Na "80\%" 
+            play sound "Click.mp3" noloop
+
+            Na "90\%"
+            play sound "Click.mp3" noloop
+
+            Na "100\%"
+            play sound "Click.mp3" noloop
+
+            Na "Vérification...."
+            play sound "Menu.mp3" noloop 
+            $ success += 1 
+            $ quest33 += 1
+            $ stockage += 5.0 
+            $ update += 1.0 
+
+            Na "Mise à jour terminée, la version actuelle est maintenant la [update]."
+            play sound "Click.mp3" noloop 
+
+    P "Bien."
+    play sound "Click.mp3" noloop    
 
     return
  
