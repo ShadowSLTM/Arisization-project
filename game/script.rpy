@@ -18020,6 +18020,32 @@ label password11:
     play sound "Click.mp3" noloop
 
     Oh "il semblerait que le traître fasse partie d'un groupe de hackers qui s'appelle Ghosts"
+    play sound "Click.mp3" noloop 
+
+    P "Ghost !?"
+    play sound "Click.mp3" noloop
+
+    Oh "Oui c'est un groupe de hacker qui a vu le jour en août 2097."
+    play sound "Click.mp3" noloop 
+
+    P "intéressant, donc ce groupe est récent."
+    play sound "Click.mp3" noloop
+
+    Oh "Oui exactement et j'ai aussi une mauvaise nouvelle....."
+    play sound "Click.mp3" noloop
+
+    P "Quoi !? dites-moi."
+    play sound "Click.mp3" noloop
+
+    Oh "On a découvert qu'un de tes anciens camarade de la chambre grise, [Sk] a été tué par ce même groupe."
+    play sound "Click.mp3" noloop
+
+    $ stockage += 2.0 
+
+    P "Mais c'est horrible. qui a bien pu faire ça ?"
+    play sound "Click.mp3" noloop
+
+    Ot "L'enquête est en cours mais on que ça un lien avec cette histoire de traître ici."
     play sound "Click.mp3" noloop
 
     P "Je vois mais j'aimerais vous poser une question."
@@ -20454,7 +20480,7 @@ label examen_francais:
 
             Na "Vérification...."
             play sound "Menu.mp3" noloop 
-            $ success += 1 
+            $ success += 1        
             $ quest33 += 1
             $ stockage += 5.0 
             $ update += 1.0 
@@ -20463,8 +20489,75 @@ label examen_francais:
             play sound "Click.mp3" noloop 
 
     P "Bien."
-    play sound "Click.mp3" noloop    
+    play sound "Click.mp3" noloop   
 
-    return
+    "{b}{i} Vous vous tranquillement pour discuter des cours pendant deux heures.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    Na "Bon on va prendre à manger."
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Click.mp3" noloop
+
+    scene black 
+    hide screen room
+
+    "{b}{i} Vous partez chercher à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 200 
+    scene room 
+    show screen room
+
+    Na "Enfin à manger... "
+    play sound "Click.mp3" noloop 
+
+    $ bien = get_random_fais_du_bien()
+    P "[bien]"
+    play sound "Click.mp3" noloop  
+
+    "{b}{i} Vous mangez tranquillement pendant une demi-heure.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Tu as finis de manger ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui, je n'ai plus faim."
+    play sound "Click.mp3" noloop 
+
+    P "Bien."
+    play sound "Click.mp3" noloop 
+
+    Na "Bon Je vais me déconnecter et me recharger."
+    play sound "Click.mp3" noloop 
+
+    P "Pas de soucis."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[newname] se déconnecte et recharge sa batterie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bon je vais me changer et aller dormir."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene black
+    hide screen room
+    hide screen day
+
+    "{b}{i}Le lendemain matin, le 3 décembre 2097 {/i}{/b}"
+    play sound "Alarm.mp3" noloop 
+
+    scene room 
+    show screen room
+    show screen day 
+
+    $ day += 1 
+
+    return 
  
 # Aris la plus belle <333333333333333  
