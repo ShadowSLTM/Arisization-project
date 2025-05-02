@@ -198,7 +198,7 @@ label début:
 
     scene main
     play music "Transition.mp3" noloop 
-    with fade
+    with fade 
 
     "{b}{i}Chapitre 0 : Arisization Project - Lost Origins Arc{/i}{/b}"
     play sound "Click.mp3" noloop 

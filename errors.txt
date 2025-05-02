@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 2026: vbox expects a non-empty block.
-    vbox:
-         ^
+File "game/Side.rpy", line 2: Unexpected indentation at start of file.
+
+File "game/side.rpy", line 2: Unexpected indentation at start of file.
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Apr 30 12:38:13 2025
+Sat May  3 00:00:26 2025

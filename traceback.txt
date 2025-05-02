@@ -1,41 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 17998, in script
-    E "il a quelque chose à te dire concernant [newnmae] et cette affaire de traître."
-NameError: name 'newnmae' is not defined
+  File "renpy/common/00start.rpy", line 282, in script
+    python:
+ScriptError: could not find label 'side.rpy'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 17998, in script
-    E "il a quelque chose à te dire concernant [newnmae] et cette affaire de traître."
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\character.py", line 1456, in __call__
-    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\character.py", line 1369, in prefix_suffix
-    return (sub(prefix) + sub(body) + sub(suffix))
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\character.py", line 1349, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
-    s = interpolate(s, variables) # type: ignore
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
-    raise e
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "<none>", line 1, in <module>
-NameError: name 'newnmae' is not defined
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\main.py", line 652, in main
+    run(restart)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\main.py", line 148, in run
+    renpy.execution.run_context(True)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\execution.py", line 958, in run_context
+    context.run()
+  File "renpy/common/00start.rpy", line 282, in script
+    python:
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'side.rpy'.
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 Arisization Project Version_test
-Wed Apr 30 23:46:08 2025
+Sat May  3 00:06:12 2025
