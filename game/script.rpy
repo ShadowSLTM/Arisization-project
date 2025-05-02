@@ -301,7 +301,7 @@ label hack:
 
         $ success += 1 
         $ quest2 += 1
-        $ stockage = 0.0
+        $ stockage = 0.0 
 
         "système ouvert avec succès." 
         play sound "Click.mp3" noloop 
@@ -2527,6 +2527,9 @@ label wallbreaking2:
     Ah "Enchantée, je suis [Ah], la présidente du département. Quelle est votre demande ?"
     play sound "Click.mp3" noloop
 
+    $ character15 = Ah 
+    $ ultimate15 = "Présidente du département des pièces détachées" 
+
     P "J'aimerais commander un processeur Corzen."
     play sound "Click.mp3" noloop
 
@@ -2704,6 +2707,9 @@ label wallbreaking3:
 
     Ah "Le temps que je le prépare avec [Rn], je dirais dans une heure." 
     play sound "Click.mp3" noloop
+
+    $ character16 = Rn 
+    $ ultimate16 = "Membre du département des pièces détachées" 
 
     $ thanks = get_random_thanks()
     P "[thanks]"
@@ -7714,17 +7720,10 @@ label suite1:
     show screen hallway
 
     "{b}{i}Tu continue vers la salle de la classe.{/i}{/b}"
-    play sound "Transition.mp3" noloop 
+    play sound "Footsteps.mp3" noloop 
 
     scene main
-    hide screen hallway 
-    with fade
-
-    "{b}{i}Chapitre 1.01 : Arisization Project - Start The Debate{/i}{/b}"
-    play sound "Click.mp3" noloop 
-
-    scene black 
-    with fade
+    hide screen hallway  
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -9335,18 +9334,10 @@ label debate:
     hide screen hall
 
     "{b}{i}Tu entres dans la salle de club.{/i}{/b}"
-    play music "Transition.mp3" noloop 
+    play music "Door.mp3" noloop 
 
     hide screen hall
     scene main
-    with fade
-
-    "{b}{i}Chapitre 1.02 : Arisization Project - New Operating System.{/i}{/b}"
-    play sound "Door.mp3" noloop 
- 
-    scene clubroom 
-    show screen clubroom 
-    with fade
 
     if pronom == "il":
 
@@ -9933,28 +9924,19 @@ label update:
     play sound "Click.mp3" noloop 
 
     "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
-    play music "Transition.mp3" noloop 
+    play music "Click.mp3" noloop 
 
     scene main
     hide screen room 
     hide screen day
-    with fade
-
-    "{b}{i}Chapitre 1.03 : Arisization Project - The start of the real problems{/i}{/b}"
-    play sound "Click.mp3" noloop 
-
-    scene black 
-    with fade
 
     "{b}{i} Le lendemain matin, le 10 octobre 2097{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Alarm.mp3" noloop 
 
     scene room 
     show screen room
     show screen day
-    $ day += 1 
-
-    play sound "Alarm.mp3" noloop 
+    $ day += 1  
 
     $ line = get_random_morning_line()
     P "[line]"
@@ -11723,16 +11705,7 @@ label password:
     play sound "Click.mp3" noloop
 
     M "Bien vous pouvez disposer maintenant et me fais regretter ma décision." 
-    play music "Transition.mp3" noloop 
-
-    scene main 
-    with fade
-
-    "{b}{i}Chapitre 1.04 : Arisization Project - Investigation and Despair arc{/i}{/b}"
-    play sound "Click.mp3" noloop 
-
-    scene black
-    with fade
+    play music "Footsteps.mp3" noloop 
 
     "{b}{i}Tu quittes le bureau des élèves avec [newname].{/i}{/b}"
     play sound "Door.mp3" noloop 
@@ -13926,13 +13899,6 @@ label password3:
     scene main
     hide screen room 
     hide screen day
-    with fade
-
-    "{b}{i}Chapitre 1.05 : Arisization Project - New Hope{/i}{/b}"
-    play sound "Click.mp3" noloop 
-
-    scene black 
-    with fade
 
     "{b}{i} une semaine plus tard, le 28 octobre 2097{/i}{/b}"
     play sound "Alarm.mp3" noloop
