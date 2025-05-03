@@ -226,11 +226,12 @@ label début:
     P "Tu penses sérieusement qu'on va trouver quelque chose d'intéressant ici ?"
     play sound "Click.mp3" noloop    
 
-    S "Oui surement."
+    S "Oui sûrement."
     play sound "Click.mp3" noloop
 
-    P "Bon ok alors..."
-    play sound "Click.mp3" noloop
+    $ validation = get_random_validation() 
+    P "[validation]"
+    play sound "Click.mp3" noloop 
 
     $ entrepot = get_random_entrepot()
     "{b}{i}[entrepot]{/i}{/b}"
@@ -3136,8 +3137,9 @@ label skip:
     Na "Ok, moi je vais me déconnecter et me recharger pendant ce temps."
     play sound "Click.mp3" noloop
 
-    P "Ok alors." 
-    play sound "Click.mp3" noloop
+    $ validation = get_random_validation() 
+    P "[validation]"
+    play sound "Click.mp3" noloop 
 
     Na "Déconnexion..."
     play sound "Click.mp3" noloop
@@ -3882,8 +3884,9 @@ label wallbreaking4:
     P "Bon le réfectoire du lycée se trouve au rez-de-chaussée."
     play sound "Click.mp3" noloop 
 
-    Na "Ok alors."
-    play sound "Footsteps.mp3" noloop 
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
     
     scene staircase 
     hide screen hallway 
@@ -3912,8 +3915,9 @@ label wallbreaking4:
     Na "Bon on va prendre à manger ?"
     play sound "Click.mp3" noloop 
 
-    P "Ok alors."
-    play sound "Footsteps.mp3" noloop 
+    $ validation = get_random_validation() 
+    P "[validation]"
+    play sound "Footstep.mp3" noloop 
 
     "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -4584,10 +4588,11 @@ label dorm2:
     I "Bon je vais te laisser."
     play sound "Click.mp3" noloop 
 
-    P "Ok alors."
-    play sound "Footsteps.mp3" noloop
+    $ validation = get_random_validation() 
+    P "[validation]"
+    play sound "Footsteps.mp3" noloop 
 
-    "{b}{i}[I] s'éloigna pour aller faire ses occupations.{/i}{/b}"
+    "{b}{i}[I] s'éloigne pour aller faire ses occupations.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     P "Bon il est temps d'aller voir [newname]."
@@ -4984,7 +4989,8 @@ label choice9:
     M "Un sujet de grammaire." 
     play sound "Click.mp3" noloop 
 
-    K "Ok alors."
+    $ validation = get_random_validation() 
+    K "[validation]"
     play sound "Click.mp3" noloop 
 
     "{b}{i}Le cours continue sans problème.{/i}{/b}"
@@ -5200,7 +5206,8 @@ label choice9:
     I "Oui mais je n'en sais pas plus désolée."
     play sound "Click.mp3" noloop 
 
-    P "Ok alors."
+    $ validation = get_random_validation() 
+    P "[validation]"
     play sound "Click.mp3" noloop 
 
     Na "Dois-je vous rappeler qu'on a cours."
@@ -6083,7 +6090,8 @@ label choice9:
     I "Bon je dois vous laisser."
     play sound "Click.mp3" noloop 
 
-    P "Ok alors."
+    $ validation = get_random_validation() 
+    P "[validation]"
     play sound "Click.mp3" noloop 
 
     Na "À demain Iris."
@@ -6127,7 +6135,8 @@ label choice9:
     Na "Bon je vais me déconnecter."
     play sound "Click.mp3" noloop 
 
-    P "Ok alors."
+    $ validation = get_random_validation() 
+    P "[validation]"
     play sound "Click.mp3" noloop 
 
     "{b}{i} [newname] se déconnecta tranquillement.{/i}{/b}"
@@ -6249,8 +6258,9 @@ label choice9:
             P "Non merci."
             play sound "Click.mp3" noloop
 
-            Na "Ok alors."
-            play sound "Click.mp3" noloop
+            $ validation = get_random_validation() 
+            Na "[validation]"
+            play sound "Click.mp3" noloop 
         
         "{b}{i} faire la mise à jour {/i}{/b}" : 
         
@@ -6494,8 +6504,9 @@ label suite:
     N "Bon, nous, on va y retourner."
     play sound "Click.mp3" noloop
 
-    Y "Ok alors."
-    play sound "Click.mp3" noloop
+    $ validation = get_random_validation() 
+    Y "[validation]"
+    play sound "Footsteps.mp3" noloop 
 
     "{b}{i}[N] et [Y] quittèrent le gymnase.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -6515,8 +6526,9 @@ label suite:
     Na "Ok mais on peut aller manger maintenant j'ai faim."
     play sound "Click.mp3" noloop 
 
-    P "Ok alors."
-    play sound "Click.mp3" noloop 
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen gymnase
@@ -6530,8 +6542,9 @@ label suite:
     P "Bon on se dépêche d'aller au réfectoire si tu veux manger."
     play sound "Click.mp3" noloop 
 
-    Na "Ok alors."
-    play sound "Click.mp3" noloop 
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen hall 
@@ -6568,7 +6581,8 @@ label suite:
     Na "[sit]"
     play sound "Click.mp3" noloop
 
-    P "Ok alors."
+    $ validation = get_random_validation() 
+    P "[validation]"
     play sound "Click.mp3" noloop 
 
     "{b}{i} Vous voyez [N] et [Y] à une table en train de discuter.{/i}{/b}"
@@ -7557,7 +7571,8 @@ label suite1:
     Na "[sit]"
     play sound "Click.mp3" noloop
 
-    P "Ok alors."
+    $ validation = get_random_validation() 
+    P "[validation]"
     play sound "Click.mp3" noloop 
 
     "{b}{i} Vous allez vous rejoindre [I] pour manger.{/i}{/b}"
@@ -7643,7 +7658,8 @@ label suite1:
             P "Oui c'est très probable."
             play sound "Click.mp3" noloop 
 
-            S "Ok alors."
+            $ validation = get_random_validation() 
+            S "[validation]"
             play sound "Click.mp3" noloop 
 
             "{b}{i} Vous continuez de discuter des cours jusqu'à la sonnerie.{/i}{/b}"
@@ -8999,9 +9015,10 @@ label debate:
     Na "Bon on va prendre à manger ?"
     play sound "Click.mp3" noloop 
 
-    P "Ok alors."
-    play sound "Click.mp3" noloop 
-
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
+    
     "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
 
@@ -9251,8 +9268,9 @@ label debate:
     P "Ok, Moi aussi je vais aller dormir mais d'abord aller manger."
     play sound "Click.mp3" noloop
 
-    Na "Ok alors."
-    play sound "Click.mp3" noloop
+    $ validation = get_random_validation() 
+    Na "[validation]"
+    play sound "Click.mp3" noloop 
 
     "{b}{i} [newname] se déconnecte tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -9485,8 +9503,9 @@ label code:
     Na "Bon on va prendre à manger ?"
     play sound "Click.mp3" noloop 
 
-    P "Ok alors."
-    play sound "Click.mp3" noloop 
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
 
     "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -9532,12 +9551,13 @@ label code:
     P "Il s'appelle [system]."
     play sound "Click.mp3" noloop 
 
-    H "Ok alors."
+    $ validation = get_random_validation() 
+    H "[validation]"
     play sound "Click.mp3" noloop 
 
     P "Et sinon comment il avance ton robot car tu le montre jamais."
     play sound "Click.mp3" noloop
-
+ 
     H "Il avance bien."
     play sound "Click.mp3" noloop
 
@@ -9562,11 +9582,8 @@ label code:
     Na "Bon on retourne au club ?"
     play sound "Click.mp3" noloop
 
-    P "Ok alors."
-    play sound "Click.mp3" noloop 
-
     $ suivi = get_random_suivi()
-    Na "[suivi]"
+    P "[suivi]"
     play sound "Footsteps.mp3" noloop
 
     scene black 
@@ -9916,8 +9933,9 @@ label update:
     Na "Bon moi je vais me déconnecter."
     play sound "Click.mp3" noloop
 
-    P "Ok alors." 
-    play sound "Click.mp3" noloop
+    $ validation = get_random_validation() 
+    P "[validation]"
+    play sound "Click.mp3" noloop 
 
     Na "Déconnexion...."
     play sound "Click.mp3" noloop
@@ -10170,7 +10188,8 @@ label update:
     P "Oui je t'assure [newname]."
     play sound "Click.mp3" noloop 
 
-    Na "Ok alors."
+    $ validation = get_random_validation() 
+    Na "[validation]"
     play sound "Click.mp3" noloop 
 
     M "Bon maintenant commençons le cours, sortez votre livre page 10."
@@ -11500,7 +11519,8 @@ label password:
     M "Regardes le document et tu verras." 
     play sound "Click.mp3" noloop 
 
-    Na "Ok alors." 
+    $ validation = get_random_validation() 
+    Na "[validation]"
     play sound "Click.mp3" noloop 
 
     "{b}{i}[newname] lit le document.{/i}{/b}"
@@ -11746,8 +11766,9 @@ label password:
     P "Bon on va manger car il est 11h45."
     play sound "Click.mp3" noloop 
 
-    Na "Ok alors."
-    play sound "Click.mp3" noloop 
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen hall 
@@ -11770,9 +11791,6 @@ label password:
     $ sit = get_random_sit()
     Na "[sit]"
     play sound "Click.mp3" noloop
-
-    P "Ok alors."
-    play sound "Click.mp3" noloop 
 
     "{b}{i}vous partez chercher une place avant d'en trouver une.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -12289,8 +12307,9 @@ label password1:
     Na "Bon on va prendre à manger ?"
     play sound "Click.mp3" noloop 
 
-    P "Ok alors."
-    play sound "Click.mp3" noloop 
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
 
     "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -12476,10 +12495,11 @@ label password1:
     show screen class_404 
 
     M "Rebonjour, bon reprenons le cours."
-    play sound "Click.mp3" noloop    
+    play sound "Click.mp3" noloop 
 
-    S "Ok alors."
-    play sound "Click.mp3" noloop    
+    $ validation = get_random_validation() 
+    S "[validation]"
+    play sound "Click.mp3" noloop   
 
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop
@@ -12901,7 +12921,8 @@ label examen_pythagore:
     M "Un sujet de grammaire." 
     play sound "Click.mp3" noloop 
 
-    K "Ok alors."
+    $ validation = get_random_validation() 
+    K "[validation]"
     play sound "Click.mp3" noloop 
 
     "{b}{i}Le cours continue sans probléme.{/i}{/b}"
@@ -12955,8 +12976,9 @@ label examen_pythagore:
     Na "Bon on va prendre à manger ?"
     play sound "Click.mp3" noloop 
 
-    P "Ok alors."
-    play sound "Click.mp3" noloop 
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
 
     "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -14250,8 +14272,9 @@ label password4:
     Na "Bon on va prendre à manger ?"
     play sound "Click.mp3" noloop 
 
-    P "Ok alors."
-    play sound "Footsteps.mp3" noloop 
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
 
     "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -14837,8 +14860,9 @@ label password6:
     Na "Bon on va prendre à manger ?"
     play sound "Click.mp3" noloop 
 
-    P "Ok alors."
-    play sound "Click.mp3" noloop 
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop 
 
     "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -15303,8 +15327,9 @@ label password7:
     Na "Bon on va prendre à manger ?"
     play sound "Click.mp3" noloop 
 
-    P "Ok alors."
-    play sound "Click.mp3" noloop 
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
 
     "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -15375,8 +15400,9 @@ label password7:
     M "Rebonjour, bon reprenons le cours."
     play sound "Click.mp3" noloop    
 
-    Na "Ok alors."
-    play sound "Click.mp3" noloop    
+    $ validation = get_random_validation() 
+    Na "[validation]"
+    play sound "Click.mp3" noloop  
 
     P "Compris."
     play sound "Click.mp3" noloop    
@@ -15932,8 +15958,9 @@ label examen_runix:
     Na "Bon on va prendre à manger ?"
     play sound "Click.mp3" noloop 
 
-    P "Ok alors."
-    play sound "Click.mp3" noloop 
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
 
     "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -16560,8 +16587,9 @@ label password9:
     P "Bon le réfectoire du lycée se trouve au rez-de-chaussée."
     play sound "Click.mp3" noloop 
 
-    Na "Ok alors."
-    play sound "Footsteps.mp3" noloop 
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
     
     scene staircase 
     hide screen hallway 
@@ -16590,10 +16618,11 @@ label password9:
     Na "Bon on va prendre à manger ?"
     play sound "Click.mp3" noloop 
 
-    P "Ok alors."
-    play sound "Footsteps.mp3" noloop 
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
 
-    "{b}{i} Vous allaz chercher à manger.{/i}{/b}"
+    "{b}{i} Vous allez chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     $ points -= 200 
@@ -16606,7 +16635,8 @@ label password9:
     Na "[sit]"
     play sound "Click.mp3" noloop
 
-    P "Ok alors."
+    $ validation = get_random_validation() 
+    P "[validation]"
     play sound "Click.mp3" noloop 
 
     "{b}{i} Vous allez rejoindre [Y] pour manger cette fois-ci.{/i}{/b}"
@@ -16958,8 +16988,9 @@ label code1:
     P "Bon on va prendre à manger ? J'avais complétement oublié."
     play sound "Click.mp3" noloop 
 
-    Na "Ok alors."
-    play sound "Click.mp3" noloop 
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen room
@@ -17263,8 +17294,9 @@ label password10:
     Na "Bon on va prendre à manger ?"
     play sound "Click.mp3" noloop 
 
-    P "Ok alors."
-    play sound "Click.mp3" noloop 
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
 
     "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -18290,8 +18322,9 @@ label password11:
     Na "Bon on va prendre à manger ?"
     play sound "Click.mp3" noloop 
 
-    P "Ok alors."
-    play sound "Click.mp3" noloop 
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
 
     "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -19124,8 +19157,9 @@ label password13:
     Na "Bon on va prendre à manger ?"
     play sound "Click.mp3" noloop 
 
-    P "Ok alors."
-    play sound "Click.mp3" noloop 
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
 
     "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -20009,8 +20043,9 @@ label examen_francais:
     Na "Bon on va prendre à manger ?"
     play sound "Click.mp3" noloop 
 
-    P "Ok alors."
-    play sound "Click.mp3" noloop 
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
 
     "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -20414,8 +20449,9 @@ label examen_francais:
     M "Bon reprenons le cours."
     play sound "Click.mp3" noloop    
 
-    P "Ok alors."
-    play sound "Click.mp3" noloop    
+    $ validation = get_random_validation() 
+    P "[validation]"
+    play sound "Click.mp3" noloop 
 
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop
