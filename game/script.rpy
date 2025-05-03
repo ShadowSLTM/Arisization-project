@@ -12,16 +12,16 @@ label start:
     $ model = "robot humanoïde" 
     $ ending = 0
     default stored_password = ""
-    default system = "???????"
+    default system = "??????????"
     default ip = ""
     $ message = 0 
     default newname = ""  
-    default robotorigine = "???????" 
+    default robotorigine = "??????????" 
     default prenom = "??????????" 
     default nom = "??????????" 
     default propriety = "" 
-    default serie = "???????"
-    default stockage = "???????"
+    default serie = "??????????"
+    default stockage = "??????????"
     default robotname = ""  
     $ sad = 0 
     default baseip = ""
@@ -95,6 +95,7 @@ label start:
     default quest31 = 0 
     default quest32 = 0
     default quest33 = 0
+    default quest34 = 0
 
     stop music fadeout 2.0   
 
@@ -1441,7 +1442,7 @@ label rencontre:
     play sound "Click.mp3" noloop
 
     $ character2 = I
-    $ ultimate2 = "L'ultime développeuse"
+    $ ultimate2 = "L'ultime développeuse" 
 
     $ thanks = get_random_thanks()
     I "[thanks]"
@@ -11135,7 +11136,7 @@ label password:
     "{b}{i} Le cours se passe tranquillement pendant une demi-heure.{/i}{/b}"
     play sound "Knock.mp3" noloop 
 
-    play music "Soundtrack2.mp3" loop
+    play music "Soundtrack2.mp3" loop 
 
     "{b}{i}Soudainement quelqu'un frappe à la porte.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -18006,18 +18007,18 @@ label password11:
     Oh "On a découvert qu'un de tes anciens camarade de la chambre grise, [Sk] a été tué par ce même groupe."
     play sound "Click.mp3" noloop
 
-    $ stockage += 2.0 
+    $ stockage += 2.0  
 
     P "Mais c'est horrible. qui a bien pu faire ça ?"
     play sound "Click.mp3" noloop
 
-    Ot "L'enquête est en cours mais on que ça un lien avec cette histoire de traître ici."
+    Oh "L'enquête est en cours mais on que ça un lien avec cette histoire de traître ici."
     play sound "Click.mp3" noloop
 
     P "Je vois mais j'aimerais vous poser une question."
     play sound "Click.mp3" noloop 
 
-    Ot "Oui dis-moi."
+    Oh "Oui dis-moi."
     play sound "Click.mp3" noloop
 
     P "C'est qui cette personne avec vous ?"
@@ -18543,7 +18544,7 @@ label password11:
     scene black 
     hide screen hallway
 
-    "{b}{i} Vous entres dans ton dortoir.{/i}{/b}" 
+    "{b}{i} Vous entrez au dortoir.{/i}{/b}" 
     play sound "Door.mp3" noloop
 
     scene room 
@@ -20523,6 +20524,229 @@ label examen_francais:
     show screen day 
 
     $ day += 1 
+
+
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    $ line = get_random_morning_line()
+    P "[line]" 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te lèves pour aller te changer.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "[newname] tu es prête ?" 
+    play sound "Click.mp3" noloop 
+
+    P "[newname]...?"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu remarques qu'elle est encore déconnectée.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Sacrée [newname], encore déconnectée mais je pense que la discussion d'hier la un peu perturbé"
+    play sound "Click.mp3" noloop 
+
+    P "Bon, je vais la démarrer manuellement." 
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu t'approches pour démarrer [newname].{/i}{/b}" 
+    play sound "Menu.mp3" noloop 
+
+    menu:    
+
+        "{b}{i} Démarrer [newname].{/i}{/b}" : 
+            play sound "Menu.mp3" noloop 
+
+label password15:  
+
+    $ entered_password = renpy.input("Veuillez entrer votre mot de passe pour [newname].")
+    $ entered_password = entered_password.strip()
+
+    if entered_password == stored_password: 
+
+        "Mot de passe correct. Accès autorisé." 
+        play sound "Menu.mp3" noloop
+
+    else: 
+
+        "Mot de passe incorrect. Accès refusé." 
+        play sound "Menu.mp3" noloop
+        jump password15
+
+    $ start = get_random_start()
+    Na "[start]"
+    play sound "Click.mp3" noloop 
+
+    Na "Démarrage terminé, Bonjour [P]."
+    play sound "Click.mp3" noloop 
+
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Et toi ?" 
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]"
+    play sound "Click.mp3" noloop
+
+    Na "Cool alors."
+    play sound "Click.mp3" noloop  
+
+    P "Bon on va en cours ?"
+    play sound "Click.mp3" noloop  
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop 
+
+    hide screen room 
+    scene black
+
+    "{b}{i}Tu quittes le dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway  
+
+    "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop 
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+    
+    scene classroom  
+    show screen class_404  
+
+    $  salutation_rdm = get_random_salutation()
+    P "[salutation_rdm]"
+    play sound "Click.mp3" noloop 
+
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Tu vois que tout le monde est déjà là.{/i}{/b}" 
+    play sound "Click.mp3" noloop 
+
+    M "Bonjour, vous pouvez allez vous asseoir."
+    play sound "Click.mp3" noloop  
+
+    P "D'accord, merci !"  
+    play sound "Click.mp3" noloop  
+
+    "{b}{i}Puis vous partez vous asseoir à votre place.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Bien, nous allons continuer le cours de philo."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Le cours commence mais quelqu'un frappe à la porte.{/i}{/b}"       
+    play sound "Knock.mp3" noloop
+
+    M "Oui vous pouvez entrer."
+    play sound "Door.mp3" noloop
+
+    "{b}{i}Puis l'[Ot] et [O] entrent dans la salle de classe.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    Oh "Bonjour à tous."
+    play sound "Click.mp3" noloop
+
+    M "Bonjour. Que pouvons-nous faire pour vous ?"
+    play sound "Click.mp3" noloop
+
+    Oh "Kaede, je te laisse leur expliquer."
+    play sound "Click.mp3" noloop
+
+    O "Bien sûr, mon supérieur."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[O] sort un document officiel de sa veste.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    O "Nous sommes ici munis d’un mandat d’arrestation à l’encontre de [J2]."
+    play sound "Click.mp3" noloop
+
+    J2 "Quoi ? Moi !?"
+    play sound "Click.mp3" noloop
+
+    O "Oui, pour avoir agressé physiquement et manqué de respect à [Na]."
+    play sound "Click.mp3" noloop
+
+    J2 "Vous ne pouvez pas m’arrêter pour ça !"
+    play sound "Click.mp3" noloop
+
+    O "Oh que si. Conformément à l’article 24, alinéa 4, du 18 novembre 2097, toute discrimination envers les robots est désormais punie par la loi."
+    play sound "Click.mp3" noloop
+
+    J2 "C’est absurde !!!"
+    play sound "Click.mp3" noloop
+
+    O "Et ce n’est pas tout. Tu es également suspecté d’appartenir au groupe de hackers connu sous le nom de 'Ghosts'... et d’être impliqué dans les récentes attaques contre le lycée."
+    play sound "Click.mp3" noloop
+
+    Oh "Par conséquent, lève-toi calmement, mets les mains derrière le dos, et suis-nous sans résistance."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[J2] se lève lentement, visiblement choqué.{/i}{/b}"
+    play sound "handcuffs.mp3" noloop
+
+    "{b}{i}[O] lui passe les menottes avec fermeté.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    Oh "Très bien. En route."
+    play sound "Click.mp3" noloop
+
+    O "Compris."
+    play sound "Footsteps.mp3" noloop
+
+    "{b}{i}[O] escorte [J2] hors de la salle de classe, sous le regard médusé des élèves.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    Oh "Désolé pour le dérangement. Nous ne faisions que notre devoir."
+    play sound "Click.mp3" noloop
+
+    M "Il n’y a pas de problème..."
+    play sound "Footsteps.mp3" noloop
+
+    "{b}{i}Puis l'[Ot] quitte la salle à son tour, refermant doucement la porte derrière lui.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Bon, revenons à notre cours."
+    play sound "Click.mp3" noloop
+
+    J1 "Attendez !!! Il faut m'expliquer ce qui vient de se passer, je ne comprend rien !"
+    play sound "Click.mp3" noloop
+
+    P "Elle est accusée de plusieurs choses."
+    play sound "Click.mp3" noloop
+
+    J1 "Je vois c'est horrible."
+    play sound "Click.mp3" noloop
+
+    M "Bon, il faut qu'on reprenne le cours."
+    play sound "Click.mp3" noloop 
+
+    J1 "Oui c'est vrai."
+    play sound "Click.mp3" noloop 
+
+    M "Et ne t'inquiètes pas pour ta soeur."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Le cours continue sans problème.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
 
     return 
  

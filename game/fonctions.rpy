@@ -8,8 +8,9 @@ init python:
         "J'aurais dû me coucher plus tôt hier soir...",
         "C'est l'heure de se lever et d'affronter la journée !",
         "Hmm... juste cinq minutes de plus...",
+        "Hmm... je n'ai pas envie de me lever.",
         "Oh déjà...",
-        "Oh super....", 
+        "Oh super....",  
     ]
     
     def get_random_morning_line():

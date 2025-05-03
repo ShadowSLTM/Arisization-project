@@ -23,10 +23,9 @@ define build.director_name = _("Shadow")
 
 define gui.show_name = True
 
-
 ## La version du jeu. 
 
-define config.version = "Version_test" 
+define config.version = "Version_développeur" 
 
 ## Texte placé sur l'écran "À propos" du jeu. Placez le texte entre triples
 ## guillemets, et laissez une ligne entre les paragraphes.

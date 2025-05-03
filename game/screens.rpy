@@ -298,7 +298,7 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Nouvelle partie") action Start()
+            textbutton _("Nouvelle partie") action Start() 
 
         else: 
 
@@ -1866,6 +1866,8 @@ screen credit():
 
             text _("Consultant en scénarisation : [Dc] (Shadow_SLTM)\n")
 
+            text _("Gestion des musiques  : [Dc] (Shadow_SLTM)\n")
+
             text _("Concepts : [Dc] (Shadow_SLTM) et divers collaborateurs\n")
 
             text _("Système des succès : [Dc] (Shadow_SLTM)\n")
@@ -1897,8 +1899,6 @@ screen credit():
             text _("Idée des textes de narration : Louks\n") 
 
             text _("Terme « Engrenage sur pattes » : Nathanaël (Loki)\n")
-
-            text _("Changement de la musique du menu : Nathanaël (Loki)\n") 
 
             text _("Fonctions aléatoires : [Dc] (Shadow_SLTM) et Nathanaël (Loki)\n") 
 
