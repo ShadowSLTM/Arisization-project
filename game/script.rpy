@@ -3912,7 +3912,8 @@ label wallbreaking4:
     scene lunchroom 
     show screen lunchroom 
     
-    Na "Bon on va prendre à manger ?"
+    $ find_food = get_random_find_food()
+    Na "[find_food]"
     play sound "Click.mp3" noloop 
 
     $ validation = get_random_validation() 
@@ -5073,7 +5074,8 @@ label choice9:
     scene lunchroom 
     show screen lunchroom 
     
-    Na "Bon on va prendre à manger ?"
+    $ find_food = get_random_find_food()
+    Na "[find_food]"
     play sound "Click.mp3" noloop 
 
     P "Bien sûr tu veux qu'on fasse quoi d'autre ? Prendre la poudre d'escampette tant qu'on y est ?"
@@ -9012,7 +9014,8 @@ label debate:
     scene lunchroom 
     show screen lunchroom 
     
-    Na "Bon on va prendre à manger ?"
+    $ find_food = get_random_find_food()
+    Na "[find_food]"
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
@@ -9500,7 +9503,8 @@ label code:
     scene lunchroom 
     show screen lunchroom 
 
-    Na "Bon on va prendre à manger ?"
+    $ find_food = get_random_find_food()
+    Na "[find_food]"
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
@@ -12304,7 +12308,8 @@ label password1:
     scene lunchroom 
     show screen lunchroom 
     
-    Na "Bon on va prendre à manger ?"
+    $ find_food = get_random_find_food()
+    Na "[find_food]"
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
@@ -12973,7 +12978,8 @@ label examen_pythagore:
     scene lunchroom 
     show screen lunchroom 
     
-    Na "Bon on va prendre à manger ?"
+    $ find_food = get_random_find_food()
+    Na "[find_food]"
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
@@ -14269,7 +14275,8 @@ label password4:
     scene lunchroom 
     show screen lunchroom 
     
-    Na "Bon on va prendre à manger ?"
+    $ find_food = get_random_find_food()
+    Na "[find_food]"
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
@@ -14857,8 +14864,9 @@ label password6:
     scene lunchroom 
     show screen lunchroom 
     
-    Na "Bon on va prendre à manger ?"
-    play sound "Click.mp3" noloop 
+    $ find_food = get_random_find_food()
+    Na "[find_food]"
+    play sound "Click.mp3" noloop  
 
     $ suivi = get_random_suivi()
     P "[suivi]"
@@ -15294,8 +15302,9 @@ label password7:
     P "[go_eat]"
     play sound "Click.mp3" noloop 
 
-    Na "Oui."
-    play sound "Click.mp3" noloop
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
 
     hide screen class_404 
     scene black 
@@ -15324,7 +15333,8 @@ label password7:
     scene lunchroom 
     show screen lunchroom 
     
-    Na "Bon on va prendre à manger ?"
+    $ find_food = get_random_find_food()
+    Na "[find_food]"
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
@@ -15925,8 +15935,9 @@ label examen_runix:
     P "[go_eat]"
     play sound "Click.mp3" noloop 
 
-    Na "Oui."
-    play sound "Click.mp3" noloop
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
 
     hide screen class_404 
     scene black 
@@ -15954,8 +15965,9 @@ label examen_runix:
 
     scene lunchroom 
     show screen lunchroom 
-    
-    Na "Bon on va prendre à manger ?"
+
+    $ find_food = get_random_find_food()
+    Na "[find_food]"
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
@@ -16615,7 +16627,8 @@ label password9:
     scene lunchroom 
     show screen lunchroom 
     
-    Na "Bon on va prendre à manger ?"
+    $ find_food = get_random_find_food()
+    Na "[find_food]"
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
@@ -16983,7 +16996,7 @@ label code1:
     play sound "Click.mp3" noloop
 
     Na "je confirme."
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     P "Bon on va prendre à manger ? J'avais complétement oublié."
     play sound "Click.mp3" noloop 
@@ -17291,7 +17304,8 @@ label password10:
     scene lunchroom 
     show screen lunchroom 
 
-    Na "Bon on va prendre à manger ?"
+    $ find_food = get_random_find_food()
+    Na "[find_food]"
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
@@ -18289,8 +18303,9 @@ label password11:
     P "[go_eat]"
     play sound "Click.mp3" noloop 
 
-    Na "Oui."
-    play sound "Click.mp3" noloop
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
 
     hide screen class_404 
     scene black 
@@ -18319,7 +18334,8 @@ label password11:
     scene lunchroom 
     show screen lunchroom 
     
-    Na "Bon on va prendre à manger ?"
+    $ find_food = get_random_find_food()
+    Na "[find_food]"
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
@@ -19154,7 +19170,8 @@ label password13:
     scene lunchroom 
     show screen lunchroom 
     
-    Na "Bon on va prendre à manger ?"
+    $ find_food = get_random_find_food()
+    Na "[find_food]"
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
@@ -20040,7 +20057,8 @@ label examen_francais:
     scene lunchroom 
     show screen lunchroom 
     
-    Na "Bon on va prendre à manger ?"
+    $ find_food = get_random_find_food()
+    Na "[find_food]"
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()

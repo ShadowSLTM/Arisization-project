@@ -323,3 +323,22 @@ init python:
 
     def get_random_sit():
         return random.choice(Sit_list)
+
+init python:
+    import random 
+
+    find_food_list = [
+
+        "Bon on va prendre à manger ?",
+        "Bon on va chercher à manger ?",
+        "Bon on va se prendre à manger ?",
+        "Bon on va se chercher à manger ?",
+        "On va chercher à manger ?", 
+        "On va prendre à manger ?",
+        "On va se chercher à manger ?",
+        "On va se prendre à manger ?",
+
+    ]
+
+    def get_random_find_foodt():
+        return random.choice(go_eat_list)
