@@ -40,7 +40,6 @@ init python:
     salutation_rdm = [
         "Bonjour.",
         "Bien le bonjour.",
-        "Bonjour à vous.",
         "Bonjour, bonjour.",
         "Salutation.", 
     ]
@@ -264,3 +263,63 @@ init python:
 
     def get_random_toilet():
         return random.choice(toilet_list)  
+
+init python:
+    import random 
+
+    go_eat_list = [
+        "Bon on va manger ?",
+        "On se fait un repas ?",
+        "Ça te dit de manger ?",
+        "Prêt à manger ?",
+        "On va grignoter quelque chose ?",
+        "Tu veux manger avec moi ?",
+        "On se pose pour manger ?",
+        "T'es chaud pour un repas ?",
+        "Ça te tente de manger ?",
+        "Tu es partant pour manger ?",
+        "Et si on mangeait ?",
+        "Viens, on va casser la croûte !",
+        "On se fait une pause bouffe ?",
+        "Si on allait remplir nos estomacs ?",
+        "Allez, c’est l’heure de manger !",
+        "Tu veux qu’on aille se nourrir un peu ?",
+        "On se fait un petit festin ?", 
+        "Viens, j’t’embarque manger !",
+        "Et si on calmait notre faim ensemble ?",
+    ]
+
+    def get_random_go_eat():
+        return random.choice(go_eat_list)
+
+init python:
+    import random
+
+    Service_list = [
+        "C’est bon, tu t’es servie ?",
+        "Tu t’es bien servie à manger ?", 
+        "Tu t’es fait une assiette ?", 
+        "C’est bon, tu t’es fait une assiette ?",
+    ]
+
+    def get_random_service():
+        return random.choice(Service_list)
+
+init python:
+    import random
+
+    Sit_list = [ 
+        "Oui, c’est bon, on peut y aller.",
+        "J’ai fini, on s’installe ?",
+        "On peut aller s’asseoir maintenant.",
+        "Je suis prête, allons nous poser.",
+        "J’ai tout pris, on va s’asseoir ?",
+        "Tout est bon pour moi, on y va.",
+        "Oui, j’ai ce qu’il faut. On se pose ?",
+        "C’est bon, viens, on s’assoit.",
+        "J’ai tout, allons nous installer.",
+        "C’est prêt de mon côté, direction la table !",
+    ]
+
+    def get_random_sit():
+        return random.choice(Sit_list)

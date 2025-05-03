@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Side.rpy", line 2: Unexpected indentation at start of file.
-
-File "game/side.rpy", line 2: Unexpected indentation at start of file.
+File "game/fonctions.rpy", line 42: invalid syntax
+            "Bien le bonjour.",,
+                                ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat May  3 00:00:26 2025
+Sat May  3 22:30:57 2025

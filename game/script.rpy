@@ -1,5 +1,5 @@
 label start: 
-    
+
     $ grade = 0.0  
     $ points = 0 
     $ day = 0 
@@ -572,8 +572,8 @@ label grayroom:
     show screen origine
     with fade
 
-    $  salutation_rdm_P = get_random_salutation()
-    P "[salutation_rdm_P]"
+    $  salutation_rdm = get_random_salutation()
+    P "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
     if pronom == "il":
@@ -736,24 +736,24 @@ label grayroom:
 
 #SALUTATIONS ALEATOIRES
 
-    $  salutation_rdm_Gt = get_random_salutation()
-    Gt "[salutation_rdm_Gt]"
-    play sound "Click.mp3" noloop 
-
-    $  salutation_rdm_Sk = get_random_salutation()
-    Sk "[salutation_rdm_Sk]"
+    $  salutation_rdm = get_random_salutation()
+    Gt "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
-    $  salutation_rdm_Su = get_random_salutation()
-    Su "[salutation_rdm_Su]"
+    $  salutation_rdm = get_random_salutation()
+    Sk "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
-    $  salutation_rdm_S = get_random_salutation()
-    S "[salutation_rdm_S]"
+    $  salutation_rdm = get_random_salutation()
+    Su "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
-    $  salutation_rdm_A = get_random_salutation()
-    A "[salutation_rdm_A]"
+    $  salutation_rdm = get_random_salutation()
+    S "[salutation_rdm]"
+    play sound "Click.mp3" noloop
+
+    $  salutation_rdm = get_random_salutation()
+    A "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
     "{b}{i}La [T] regarda rapidement [A].{/i}{/b}" 
@@ -1406,17 +1406,17 @@ label rencontre:
     T "Bonjour, je suis votre professeure principale cette année." 
     play sound "Click.mp3" noloop
 
-    $ salutation_rdm_r = get_random_salutation()
-    R "[salutation_rdm_r]"
+    $  salutation_rdm = get_random_salutation()
+    R "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
-    $ salutation_rdm_p = get_random_salutation()
-    P "[salutation_rdm_p]"
+    $  salutation_rdm = get_random_salutation()
+    P "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
-    $ salutation_rdm_a = get_random_salutation()
-    A "[salutation_rdm_a]" 
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    A "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
     T "Bien vous pouvez vous asseoir maintenant on va commencer par les présentations pour mieux se connaitre."
     play sound "Click.mp3" noloop
@@ -3039,7 +3039,7 @@ label skip:
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     hide screen office
     scene black 
@@ -3119,11 +3119,10 @@ label skip:
     hide screen hall
 
     "{b}{i}Tu entres dans la salle de club avec [Na].{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Door.mp3" noloop
     
     scene clubroom
-    show screen clubroom 
-    play sound "Door.mp3" noloop 
+    show screen clubroom  
 
     P "Par quoi pourrais-je commencer ?"
     play sound "Click.mp3" noloop 
@@ -3863,12 +3862,13 @@ label wallbreaking4:
 
     $ stockage += 10.0
 
-    P "Bon on va manger [newname] ?"
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
     play sound "Click.mp3" noloop 
     
     $ suivi = get_random_suivi()
     Na "[suivi]" 
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     hide screen class_404
     scene black 
@@ -3928,11 +3928,13 @@ label wallbreaking4:
         "{b}{i}Pizza.{/i}{/b}" :  
             $ points -= 300
 
-    P "C'est bon [newname] tu t'es servie ?"
+    $ service = get_random_service()
+    P "[service]"
     play sound "Click.mp3" noloop 
 
-    Na "Oui c'est bon on peut aller s'asseoir."
-    play sound "Click.mp3" noloop 
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
 
     "{b}{i} Vous vous asseyez dans le recfectoire.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -4992,12 +4994,13 @@ label choice9:
     M "[endlesson]"
     play sound "Click.mp3" noloop
 
-    P "Bon on va manger [newname] ?"
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
     play sound "Click.mp3" noloop 
     
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     hide screen class_404
     scene black 
@@ -5090,11 +5093,13 @@ label choice9:
         "{b}{i} Pâtes carbonara {/i}{/b}" :
             $ points -= 600
 
-    P "C'est bon [newname] tu t'es servie ?"
+    $ service = get_random_service()
+    P "[service]"
     play sound "Click.mp3" noloop 
 
-    Na "Oui c'est bon on peut aller s'asseoir."
-    play sound "Click.mp3" noloop  
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
 
     $ validation = get_random_validation() 
     P "[validation]"
@@ -5502,7 +5507,7 @@ label choice9:
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop 
 
     M "Attends deux secondes [prenom]."
     play sound "Click.mp3" noloop
@@ -6309,7 +6314,7 @@ label choice9:
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene black 
     hide screen room 
@@ -6321,7 +6326,7 @@ label choice9:
     show screen hallway 
 
     "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene staircase
     hide screen hallway 
@@ -6555,11 +6560,13 @@ label suite:
 
     $ points -= 200 
 
-    P "C'est bon tu t'es servie [newname] ?"
+    $ service = get_random_service()
+    P "[service]"
     play sound "Click.mp3" noloop 
 
-    Na "Oui c'est bon on peut aller s'asseoir."
-    play sound "Click.mp3" noloop 
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
 
     P "Ok alors."
     play sound "Click.mp3" noloop 
@@ -6838,7 +6845,8 @@ label suite1:
     M "Deux secondes je vais le laisser entrer et se présenter."
     play sound "Click.mp3" noloop 
 
-    I "Ok"
+    $ validation = get_random_validation() 
+    I "[validation]" 
     play sound "Click.mp3" noloop 
 
     stop music fadeout 2.0  
@@ -6846,29 +6854,25 @@ label suite1:
     "{b}{i} [M] fait signe au lycéen de rentrer. {/i}{/b}"
     play sound "Door.mp3" noloop
 
-    if ending == 0:
-    
-        $ S = Character('Subaru Shinomiya', color="#ff8800")
-
-    else: 
-
-        $ S = Character('Seigo Nagumo', color="#ff8800")       
-
-    play music "Soundtrack2.mp3" loop volume 1.0 
+    $ S = Character('Subaru Shinomiya', color="#ff8800")
+    play music "Soundtrack2.mp3" loop volume 1.0  
  
     R "Bonjour à tous."
     play sound "Click.mp3" noloop
 
-    P "Bonjour à toi."
-    play sound "Click.mp3" noloop
+    $  salutation_rdm = get_random_salutation()
+    P "[salutation_rdm]"
+    play sound "Click.mp3" noloop 
 
-    I "Bonjour." 
-    play sound "Click.mp3" noloop
+    $  salutation_rdm = get_random_salutation()
+    I "[salutation_rdm]"
+    play sound "Click.mp3" noloop 
 
-    Na "Bonjour~"
-    play sound "Click.mp3" noloop
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop 
 
-    $ thanks = get_random_thanks()
+    $ thanks = get_random_thanks() 
     R "[thanks]"
     play sound "Click.mp3" noloop
 
@@ -6877,6 +6881,8 @@ label suite1:
 
     S "Je m'appelle [S], l'ultime étudiant et ancien élève de [origine], j'ai dix-neuf ans ravi de vous rencontrer"
     play sound "Click.mp3" noloop
+
+    $ ultimate1 = "l'ultime étudiant" 
 
     P "[S] !? Je croyais que tu étais dans un autre lycée depuis la dernière fois qu'on s'est vu !"
     play sound "Click.mp3" noloop
@@ -7176,8 +7182,9 @@ label suite1:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prenom]."
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
     $ comment_ca_va = get_random_comment_ca_va()
     P "[comment_ca_va]"
@@ -7286,17 +7293,21 @@ label suite1:
     "{b}{i}Puis la [T] entre dans la salle.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    M "Bonjour."
-    play sound "Click.mp3" noloop
+    $  salutation_rdm = get_random_salutation()
+    M "[salutation_rdm]"
+    play sound "Click.mp3" noloop 
 
-    Hi "Bonjour Madame."
-    play sound "Click.mp3" noloop
+    $  salutation_rdm = get_random_salutation()
+    Hi"[salutation_rdm]"
+    play sound "Click.mp3" noloop 
 
-    P "Bonjour."
-    play sound "Click.mp3" noloop
+    $  salutation_rdm = get_random_salutation()
+    P "[salutation_rdm]"
+    play sound "Click.mp3" noloop 
 
-    Na "Bonjour."
-    play sound "Click.mp3" noloop
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]" 
+    play sound "Click.mp3" noloop 
     
     M "Bon aujourd'hui nous allons voir un nouveau sujet grammaire et je m'excuse [S] si tu as ratée le sujet sur la guerre."
     play sound "Click.mp3" noloop
@@ -7485,7 +7496,7 @@ label suite1:
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     hide screen class_404
     scene black 
@@ -7538,11 +7549,13 @@ label suite1:
 
     $ points -= 200 
 
-    P "C'est bon tu t'es servie [newname] ?"
+    $ service = get_random_service()
+    P "[service]"
     play sound "Click.mp3" noloop 
 
-    Na "Oui c'est bon on peut aller s'asseoir."
-    play sound "Click.mp3" noloop 
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
 
     P "Ok alors."
     play sound "Click.mp3" noloop 
@@ -8150,7 +8163,7 @@ label debate:
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     hide screen class_404
     scene black 
@@ -8374,8 +8387,9 @@ label debate:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prenom]."
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
     $ comment_ca_va = get_random_comment_ca_va()
     P "[comment_ca_va]"
@@ -8444,7 +8458,7 @@ label debate:
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop 
 
     P "Bien."
     play sound "Click.mp3" noloop 
@@ -8813,8 +8827,9 @@ label debate:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prenom]."
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
     $ comment_ca_va = get_random_comment_ca_va()
     P "[comment_ca_va]"
@@ -8829,7 +8844,7 @@ label debate:
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     hide screen room 
     scene black
@@ -8946,11 +8961,13 @@ label debate:
     M "N'oubliez l'examen de la semaine prochaine..."
     play sound "Click.mp3" noloop
 
-    P "Bon on va manger [newname]?"
-    play sound "Click.mp3" noloop
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
+    play sound "Click.mp3" noloop 
 
-    Na "Oui."
-    play sound "Click.mp3" noloop
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
 
     hide screen class_404 
     scene black 
@@ -8990,11 +9007,13 @@ label debate:
 
     $ points -= 200 
 
-    P "C'est bon [newname] tu t'es servie ?"
+    $ service = get_random_service()
+    P "[service]"
     play sound "Click.mp3" noloop 
 
-    Na "Oui c'est bon on peut aller s'asseoir."
-    play sound "Click.mp3" noloop 
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
 
     "{b}{i} Vous choissez de rejoindre [I] pour manger.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -9195,7 +9214,7 @@ label debate:
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     hide screen class_404
     scene black 
@@ -9297,8 +9316,9 @@ label debate:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prenom]."
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
     P "Bonjour [newname] aujourd'hui on va faire du boulot dans la salle de club."
     play sound "Click.mp3" noloop
@@ -9473,11 +9493,13 @@ label code:
     
     $ points -= 200 
 
-    P "C'est bon [newname] tu t'es servie ?"
+    $ service = get_random_service()
+    P "[service]"
     play sound "Click.mp3" noloop 
 
-    Na "Oui c'est bon on peut aller s'asseoir."
-    play sound "Click.mp3" noloop 
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
 
     "{b}{i} On allons manger tu croises [H].{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -9636,8 +9658,9 @@ label update:
             Na "[start]"
             play sound "Click.mp3" noloop 
 
-            Na "Bonjour [prenom]."
-            play sound "Click.mp3" noloop 
+            $  salutation_rdm = get_random_salutation()
+            Na "[salutation_rdm]"
+            play sound "Click.mp3" noloop
 
             $ comment_ca_va = get_random_comment_ca_va()
             P "[comment_ca_va]"
@@ -9708,7 +9731,7 @@ label update:
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     hide screen clubroom
     scene black 
@@ -9848,7 +9871,7 @@ label update:
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     "{b}{i} Vous continuez vers les escaliers.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -9961,8 +9984,9 @@ label update:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prenom]."
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
     $ comment_ca_va = get_random_comment_ca_va()
     P "[comment_ca_va]"
@@ -10159,12 +10183,13 @@ label update:
     M "[endlesson]"
     play sound "Click.mp3" noloop
 
-    P "Bon on va manger [newname] ?"
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
     play sound "Click.mp3" noloop 
-    
+
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     hide screen class_404
     scene black 
@@ -10198,11 +10223,13 @@ label update:
 
     $ points -= 200 
 
-    P "C'est bon [newname] tu t'es servie ?"
+    $ service = get_random_service()
+    P "[service]"
     play sound "Click.mp3" noloop 
 
-    Na "Oui c'est bon on peut aller s'asseoir."
-    play sound "Click.mp3" noloop 
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
 
     "{b}{i} Puis tu croises [I].{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -10285,7 +10312,7 @@ label update:
 
             $ suivi = get_random_suivi()
             Na "[suivi]"
-            play sound "Click.mp3" noloop
+            play sound "Footsteps.mp3" noloop
 
         "{b}{i} Aller manger avec [Na]{/i}{/b}" : 
             play sound "Menu.mp3" noloop 
@@ -10939,8 +10966,9 @@ label update:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prenom]."
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
     $ comment_ca_va = get_random_comment_ca_va()
     P "[comment_ca_va]"
@@ -11021,8 +11049,9 @@ label password:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prenom]."
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
     P "Bonjour [newname], est-ce que ça va ?"
     play sound "Click.mp3" noloop  
@@ -11067,7 +11096,7 @@ label password:
     scene classroom  
     show screen class_404     
 
-    P "Boujour."
+    P "Bonjour."
     play sound "Click.mp3" noloop 
 
     $ comment_ca_va = get_random_comment_ca_va()
@@ -11734,12 +11763,14 @@ label password:
 
     $ points -= 200 
 
-    P "C'est bon [newname] tu t'es servie ?"
+    $ service = get_random_service()
+    P "[service]"
     play sound "Click.mp3" noloop 
 
-    Na "Oui c'est bon on peut aller s'asseoir."
-    play sound "Click.mp3" noloop 
-    
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
+
     P "Ok alors."
     play sound "Click.mp3" noloop 
 
@@ -11842,7 +11873,7 @@ label password:
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen office
@@ -12056,8 +12087,9 @@ label password1:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prenom]."
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
     $ comment_ca_va = get_random_comment_ca_va()
     P "[comment_ca_va]"
@@ -12072,7 +12104,7 @@ label password1:
     play sound "Click.mp3" noloop
 
     $ suivi = get_random_suivi()
-    Na "[suivi]"
+    Na "[suivi]" 
     play sound "Footsteps.mp3" noloop
 
     scene black 
@@ -12219,12 +12251,13 @@ label password1:
     M "[endlesson]"
     play sound "Click.mp3" noloop
 
-    P "Bon on va manger [newname]?"
-    play sound "Click.mp3" noloop
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
+    play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     hide screen class_404 
     scene black 
@@ -12264,11 +12297,13 @@ label password1:
 
     $ points -= 200 
 
-    P "C'est bon [newname] tu t'es servie ?"
+    $ service = get_random_service()
+    P "[service]"
     play sound "Click.mp3" noloop 
 
-    Na "Oui c'est bon on peut aller s'asseoir."
-    play sound "Click.mp3" noloop 
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
 
     "{b}{i} Vous vous asseyez dans le recfectoire.{/i}{/b}"
     play sound "Click.mp3" noloop  
@@ -12648,8 +12683,9 @@ label password2:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prenom]."
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
     $ comment_ca_va = get_random_comment_ca_va()
     P "[comment_ca_va]"
@@ -12875,12 +12911,13 @@ label examen_pythagore:
     M "[endlesson]"
     play sound "Click.mp3" noloop
 
-    P "Bon on va manger [newname] ?"
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
     play sound "Click.mp3" noloop 
-    
+
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     hide screen class_404
     scene black 
@@ -12926,11 +12963,13 @@ label examen_pythagore:
 
     $ points -= 200 
 
-    P "C'est bon [newname] tu t'es servie ?"
+    $ service = get_random_service()
+    P "[service]"
     play sound "Click.mp3" noloop 
 
-    Na "Oui c'est bon on peut aller s'asseoir."
-    play sound "Click.mp3" noloop  
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
 
     $ validation = get_random_validation() 
     P "[validation]"
@@ -13451,8 +13490,9 @@ label password3:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prenom]."
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
     $ comment_ca_va = get_random_comment_ca_va()
     P "[comment_ca_va]"
@@ -13480,7 +13520,7 @@ label password3:
     
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     hide screen room
     scene black
@@ -13640,7 +13680,8 @@ label password3:
     scene hall
     show screen hall 
 
-    Na "Bon on va manger ?"
+    $ go_eat = get_random_go_eat()
+    Na "[go_eat]"
     play sound "Click.mp3" noloop 
 
     P "Oui allons-y."
@@ -13672,11 +13713,13 @@ label password3:
 
     $ points -= 200 
 
-    P "C'est bon [newname] tu t'es servie ?"
+    $ service = get_random_service()
+    P "[service]"
     play sound "Click.mp3" noloop 
 
-    Na "Oui c'est bon on peut aller s'asseoir."
-    play sound "Click.mp3" noloop 
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
 
     "{b}{i} Puis tu croises [I].{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -13949,8 +13992,9 @@ label password4:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prenom]."
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
     $ comment_ca_va = get_random_comment_ca_va()
     P "[comment_ca_va]"
@@ -14162,12 +14206,13 @@ label password4:
     M "[endlesson]"
     play sound "Click.mp3" noloop
 
-    P "Bon on va manger [newname] ?"
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
     play sound "Click.mp3" noloop 
     
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     hide screen class_404
     scene black 
@@ -14213,11 +14258,13 @@ label password4:
 
     $ points -= 200  
 
-    P "C'est bon [newname] tu t'es servie ?"
+    $ service = get_random_service()
+    P "[service]"
     play sound "Click.mp3" noloop 
 
-    Na "Oui c'est bon on peut aller s'asseoir."
-    play sound "Click.mp3" noloop  
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop 
 
     "{b}{i} Vous asseyez à une table.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -14501,15 +14548,16 @@ label password5:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prenom]."
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
     P "On révise maintenant ?"
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     "{b}{i}Vous vous posez au bureau du dortoir pour réviser.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -14618,8 +14666,9 @@ label password6:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prenom]."
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
     $ comment_ca_va = get_random_comment_ca_va()
     P "[comment_ca_va]"
@@ -14661,16 +14710,16 @@ label password6:
     scene classroom  
     show screen class_404     
 
-    $  salutation_rdm_M = get_random_salutation()
-    M "[salutation_rdm_M]"
+    $  salutation_rdm = get_random_salutation()
+    M "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
-    $  salutation_rdm_Na = get_random_salutation()
-    Na "[salutation_rdm_Na]"
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
-    $  salutation_rdm_P = get_random_salutation()
-    P "[salutation_rdm_P]"
+    $  salutation_rdm = get_random_salutation()
+    P "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
     M "Bon aujourd'hui nous allons continuer le cours sur Runix."
@@ -14744,12 +14793,13 @@ label password6:
     M "[endlesson]"
     play sound "Click.mp3" noloop
 
-    P "Bon on va manger [newname] ?"
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
     play sound "Click.mp3" noloop 
     
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     hide screen class_404
     scene black 
@@ -14795,11 +14845,13 @@ label password6:
 
     $ points -= 200 
 
-    P "C'est bon [newname] tu t'es servie ?"
+    $ service = get_random_service()
+    P "[service]"
     play sound "Click.mp3" noloop 
     
-    Na "Oui c'est bon on peut aller s'asseoir."
-    play sound "Footsteps.mp3" noloop  
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
 
     "{b}{i} Vous allez chercher une avant de vous asseoir.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -15115,8 +15167,9 @@ label password7:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prenom]."
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
     $ comment_ca_va = get_random_comment_ca_va()
     P "[comment_ca_va]"
@@ -15158,16 +15211,16 @@ label password7:
     scene classroom  
     show screen class_404     
 
-    $  salutation_rdm_M = get_random_salutation()
-    M "[salutation_rdm_M]"
+    $  salutation_rdm = get_random_salutation()
+    M "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
-    $  salutation_rdm_Na = get_random_salutation()
-    Na "[salutation_rdm_Na]"
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
-    $  salutation_rdm_P = get_random_salutation()
-    P "[salutation_rdm_P]"
+    $  salutation_rdm = get_random_salutation()
+    P "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
     M "Bien avant de commencer le cours, je vais vous donner la date pour l'examen sur Runix."
@@ -15213,8 +15266,9 @@ label password7:
     M "[endlesson]"
     play sound "Click.mp3" noloop 
 
-    P "Bon on va manger [newname]?"
-    play sound "Click.mp3" noloop
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
+    play sound "Click.mp3" noloop 
 
     Na "Oui."
     play sound "Click.mp3" noloop
@@ -15257,11 +15311,13 @@ label password7:
 
     $ points -= 200 
 
-    P "C'est bon [newname] tu t'es servie ?"
+    $ service = get_random_service()
+    P "[service]"
     play sound "Click.mp3" noloop 
 
-    Na "Oui c'est bon on peut aller s'asseoir."
-    play sound "Click.mp3" noloop 
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
 
     "{b}{i} Vous vous asseyez dans le réfectoire.{/i}{/b}"
     play sound "Click.mp3" noloop  
@@ -15460,8 +15516,9 @@ label password8:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prenom]."
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
     $ comment_ca_va = get_random_comment_ca_va()
     P "[comment_ca_va]"
@@ -15612,22 +15669,22 @@ label password8:
     scene classroom  
     show screen class_404     
 
-    $  salutation_rdm_M = get_random_salutation()
-    M "[salutation_rdm_M]"
+    $  salutation_rdm = get_random_salutation()
+    M "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
-    $  salutation_rdm_Na = get_random_salutation()
-    Na "[salutation_rdm_Na]"
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
-    $  salutation_rdm_P = get_random_salutation()
-    P "[salutation_rdm_P]"
+    $  salutation_rdm = get_random_salutation()
+    P "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
     "{b}{i}Tout le monde s'asseoit à sa place respective.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    Na "Bien comme vous le savez aujourd'hui vous avez votre troisiéme examen qui se portera sur le langage Runix."
+    M "Bien comme vous le savez aujourd'hui vous avez votre troisiéme examen qui se portera sur le langage Runix."
     play sound "Click.mp3" noloop  
 
     N "Je sens que ça va être dur cet examen."
@@ -15636,12 +15693,13 @@ label password8:
     Y "Ne t'inquiétes pas, ça va bien se passer."
     play sound "Click.mp3" noloop 
 
-    N "Merci."
-    play sound "Click.mp3" noloop 
-
     $ thanks = get_random_thanks()
-    Y "[thanks]"
+    N "[thanks]"
     play sound "Click.mp3" noloop
+
+    $ nothing = get_random_nothing()
+    Y "[nothing]"
+    play sound "Click.mp3" noloop 
 
     M "Bon je vais vous distribuer votre copie." 
     play sound "Click.mp3" noloop 
@@ -15837,8 +15895,9 @@ label examen_runix:
     M "[endlesson]"
     play sound "Click.mp3" noloop 
 
-    P "Bon on va manger [newname]?"
-    play sound "Click.mp3" noloop
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
+    play sound "Click.mp3" noloop 
 
     Na "Oui."
     play sound "Click.mp3" noloop
@@ -15881,11 +15940,13 @@ label examen_runix:
 
     $ points -= 200 
 
-    P "C'est bon [newname] tu t'es servie ?"
+    $ service = get_random_service()
+    P "[service]"
     play sound "Click.mp3" noloop 
 
-    Na "Oui c'est bon on peut aller s'asseoir."
-    play sound "Click.mp3" noloop 
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
 
     "{b}{i} Vous allez chercher une place mais [newname] tribuche en chemin avant de se faire rattraper par [S].{/i}{/b}"
     play sound "Click.mp3" noloop  
@@ -16147,8 +16208,9 @@ label password9:
     Na "[start]"
     play sound "Click.mp3" noloop 
 
-    Na "Bonjour [prenom]."
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
     $ comment_ca_va = get_random_comment_ca_va()
     P "[comment_ca_va]"
@@ -16196,16 +16258,16 @@ label password9:
     scene classroom  
     show screen class_404     
 
-    $  salutation_rdm_Na = get_random_salutation()
-    Na "[salutation_rdm_Na]"
-    play sound "Click.mp3" noloop 
-
-    $  salutation_rdm_P = get_random_salutation()
-    P "[salutation_rdm_P]"
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
-    $  salutation_rdm_Y = get_random_salutation()
-    Y "[salutation_rdm_Y]"
+    $  salutation_rdm = get_random_salutation()
+    P "[salutation_rdm]"
+    play sound "Click.mp3" noloop
+
+    $  salutation_rdm = get_random_salutation()
+    Y "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
     M "Bon aujourd'hui je vais vous rendre les résultats sur votre examen de runix."
@@ -16478,12 +16540,13 @@ label password9:
     M "Si jamais vous étes libre cette après-midi car nous avons fini le sujet de français."
     play sound "Click.mp3" noloop 
 
-    P "Bon on va manger [newname] ?"
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
     play sound "Click.mp3" noloop 
     
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     hide screen class_404
     scene black 
@@ -16513,7 +16576,7 @@ label password9:
     play sound "Click.mp3" noloop 
 
     Na "Ok continuons alors."
-    play sound "Click.mp3" noloop 
+    play sound "Footsteps.mp3" noloop 
 
     scene black
     hide screen hall
@@ -16535,11 +16598,13 @@ label password9:
 
     $ points -= 200 
 
-    P "C'est bon tu t'es servie [newname] ?"
+    $ service = get_random_service()
+    P "[service]"
     play sound "Click.mp3" noloop 
 
-    Na "Oui c'est bon on peut aller s'asseoir."
-    play sound "Click.mp3" noloop 
+    $ sit = get_random_sit() 
+    Na "[sit]"
+    play sound "Click.mp3" noloop
 
     P "Ok alors."
     play sound "Click.mp3" noloop 
@@ -16861,7 +16926,7 @@ label code1:
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop 
+    play sound "Footsteps.mp3" noloop
 
     scene black 
     hide screen clubroom
@@ -17166,12 +17231,13 @@ label password10:
 
     $ stockage += 5.0 
 
-    P "Bon on va manger [newname] ?"
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
     play sound "Click.mp3" noloop 
     
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     hide screen class_404 
     scene black 
@@ -17205,13 +17271,15 @@ label password10:
     
     $ points -= 200 
 
-    P "C'est bon [newname] tu t'es servie ?"
+    $ service = get_random_service()
+    P "[service]"
     play sound "Click.mp3" noloop 
 
-    Na "Oui c'est bon on peut aller s'asseoir."
+    $ sit = get_random_sit()
+    Na "[sit]"
     play sound "Click.mp3" noloop 
 
-    "{b}{i} On allons manger tu croises [I].{/i}{/b}"
+    "{b}{i} En allant manger tu croises [I].{/i}{/b}"
     play sound "Click.mp3" noloop
 
     $ comment_ca_va = get_random_comment_ca_va()
@@ -17269,7 +17337,7 @@ label password10:
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen lunchroom
@@ -17636,8 +17704,9 @@ label update1:
             Na "[start]"
             play sound "Click.mp3" noloop 
 
-            Na "Bonjour [prenom]."
-            play sound "Click.mp3" noloop 
+            $  salutation_rdm = get_random_salutation()
+            Na "[salutation_rdm]"
+            play sound "Click.mp3" noloop
 
             $ comment_ca_va = get_random_comment_ca_va()
             P "[comment_ca_va]"
@@ -17708,7 +17777,7 @@ label update1:
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen room
@@ -17901,7 +17970,7 @@ label password11:
     
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene black 
     hide screen class_404 
@@ -17956,8 +18025,9 @@ label password11:
     P "[salutation_rdm]"
     play sound "Click.mp3" noloop 
 
-    E "Bonjour [prenom]."  
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    E "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
     P "Pourquoi l'[Ot] est ici ?"  
     play sound "Click.mp3" noloop 
@@ -18183,8 +18253,9 @@ label password11:
     M "[endlesson]"
     play sound "Click.mp3" noloop
 
-    P "Bon on va manger [newname]?"
-    play sound "Click.mp3" noloop
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
+    play sound "Click.mp3" noloop 
 
     Na "Oui."
     play sound "Click.mp3" noloop
@@ -18227,11 +18298,13 @@ label password11:
 
     $ points -= 200 
 
-    P "C'est bon [newname] tu t'es servie ?"
+    $ service = get_random_service()
+    P "[service]"
     play sound "Click.mp3" noloop 
 
-    Na "Oui c'est bon on peut aller s'asseoir."
-    play sound "Click.mp3" noloop 
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
 
     "{b}{i} Vous vous asseyez dans le réfectoire.{/i}{/b}"
     play sound "Click.mp3" noloop  
@@ -18734,7 +18807,7 @@ label password12:
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen room 
@@ -19013,8 +19086,9 @@ label password13:
 
     $ stockage += 5.0
 
-    P "Bon on va manger [newname]?"
-    play sound "Click.mp3" noloop
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
+    play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi() 
     Na "[suivi]"
@@ -19058,11 +19132,13 @@ label password13:
 
     $ points -= 200 
 
-    P "C'est bon [newname] tu t'es servie ?"
+    $ service = get_random_service()
+    P "[service]"
     play sound "Click.mp3" noloop 
     
-    Na "Oui c'est bon on peut aller s'asseoir."
-    play sound "Footsteps.mp3" noloop  
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
 
     "{b}{i} Vous allez chercher une avant de vous asseoir.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -19268,7 +19344,8 @@ label newpassword:
                     Na "[start]"
                     play sound "Click.mp3" noloop 
 
-                    Na "Bonjour [prenom]." 
+                    $  salutation_rdm = get_random_salutation()
+                    Na "[salutation_rdm]"
                     play sound "Click.mp3" noloop 
 
                     P "Bonjour [newname], est-ce que ça va ?"
@@ -19442,7 +19519,7 @@ label newpassword:
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen room
@@ -19894,8 +19971,9 @@ label examen_francais:
 
     $ stockage += 5.0
 
-    P "Bon on va manger [newname]?"
-    play sound "Click.mp3" noloop
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
+    play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
@@ -19939,11 +20017,13 @@ label examen_francais:
 
     $ points -= 200 
 
-    P "C'est bon [newname] tu t'es servie ?"
+    $ service = get_random_service()
+    P "[service]"
     play sound "Click.mp3" noloop 
 
-    Na "Oui c'est bon on peut aller s'asseoir."
-    play sound "Click.mp3" noloop 
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
 
     "{b}{i} Vous vous asseyez dans le réfectoire puis [I] vous rejoint.{/i}{/b}"
     play sound "Click.mp3" noloop  
@@ -20033,7 +20113,7 @@ label examen_francais:
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene black
     hide screen lunchroom
@@ -20466,7 +20546,7 @@ label examen_francais:
 
     $ suivi = get_random_suivi()
     P "[suivi]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene black 
     hide screen room
@@ -20657,8 +20737,9 @@ label password15:
     "{b}{i}Puis l'[Ot] et [O] entrent dans la salle de classe.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    Oh "Bonjour à tous."
-    play sound "Click.mp3" noloop
+    $  salutation_rdm = get_random_salutation()
+    Oh "[salutation_rdm]"
+    play sound "Click.mp3" noloop 
 
     M "Bonjour. Que pouvons-nous faire pour vous ?"
     play sound "Click.mp3" noloop
@@ -20746,7 +20827,58 @@ label password15:
 
     $ endlesson = get_random_endlesson()
     M "[endlesson]"
+    play sound "Click.mp3" noloop 
+
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
+    play sound "Click.mp3" noloop 
+    
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Vous vous dirigez votre chemin vers la réfectoire.{/i}{/b}"
     play sound "Click.mp3" noloop
+    
+    scene staircase
+    hide screen hallway
+
+    "{b}{i} Vous continuez votre chemin vers le réfectoire.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene hall 
+    show screen hall
+
+    "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene lunchroom 
+    show screen lunchroom 
+
+    "{b}{i} en entrant vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 200 
+
+    $ service = get_random_service()
+    P "[service]"
+    play sound "Click.mp3" noloop 
+
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Puis tu croises [J1].{/i}{/b}"
+    play sound "Click.mp3" noloop 
 
     return 
  
