@@ -153,7 +153,7 @@ label identity:
     "Vos informations ont été enregistrées."
     play sound "Menu.mp3" noloop
 
-    $ domaine = "ultime créateur" if pronom == "il" else "ultime créatrice"
+    $ domaine = "inégalable créateur" if pronom == "il" else "inégalable créatrice"
     
     $ noms_interdits = {"Kusanagi", "Natsumi", "Ayanokoji", "Sato", "Saotome", "Hiiragi", "Katsuragi", "Hanemiya", "Enoshima", "Hoshino", "Shinomiya", "Katsuya", "Horimiya", "Tachibana", "Sakayanagi", "Nagumo"}
     $ prenoms_interdits = {"Iris", "Hajime", "Kendo", "Naoto", "Haruki", "Yuki", "Emily", "Kazumi", "Ayano", "Aiko", "Akeno", "Subaru", "Suzune", "Shiro", "Kaede", "Naomi", "Seigo"}
@@ -1436,14 +1436,14 @@ label rencontre:
     T "Bien vas-y présentes-toi."
     play sound "Click.mp3" noloop 
 
-    I "Je m'appelle [I], j'ai dix-neuf ans et je suis aussi l'ultime Développeuse."
+    I "Je m'appelle [I], j'ai dix-neuf ans et je suis aussi l'inégalable développeuse."
     play sound "Click.mp3" noloop 
     
-    T "L'ultime développeuse !? oh intéressant."
+    T "L'inégalable développeuse !? oh intéressant."
     play sound "Click.mp3" noloop
 
-    $ character2 = I
-    $ ultimate2 = "L'ultime développeuse" 
+    $ character2 = I 
+    $ ultimate2 = "L'inégalable développeuse" 
 
     $ thanks = get_random_thanks()
     I "[thanks]"
@@ -1479,14 +1479,14 @@ label rencontre:
     T "Oui, toi, qui d'autre ?"
     play sound "Click.mp3" noloop
 
-    H "Bonjour, je m'appelle [H], j'ai dix-neuf ans et je suis l'Ultime constructeur."
+    H "Bonjour, je m'appelle [H], j'ai dix-neuf ans et je suis l'inégalable constructeur."
     play sound "Click.mp3" noloop
 
     T "Enchanté Hajime bienvenue dans notre classe, j'aimerais savoir quel est ton projet dans ce lycée."
     play sound "Click.mp3" noloop
 
     $ character3 = H
-    $ ultimate3 = "L'ultime constructeur" 
+    $ ultimate3 = "L'inégalable constructeur" 
 
     H "Mon projet est de construire un robot." 
     play sound "Click.mp3" noloop 
@@ -1517,13 +1517,13 @@ label rencontre:
     J2 "Bonjour je m'appelle [J2], j'ai dix-neuf ans"
     play sound "Click.mp3" noloop
 
-    $ character5 = J2
+    $ character5 = J2 
 
-    J "et nous sommes les ultimes jumelles."
+    J "et nous sommes les inégalables jumelles."
     play sound "Click.mp3" noloop
 
-    $ ultimate4 = "L'ultime jumelle" 
-    $ ultimate5 = "L'ultime jumelle" 
+    $ ultimate4 = "L'inégalable jumelle" 
+    $ ultimate5 = "L'inégalable jumelle" 
 
     T "Bien, enchantée de vous rencontrer."
     play sound "Click.mp3" noloop
@@ -1550,11 +1550,11 @@ label rencontre:
     T "Bien, enchantée de te rencontrer, suivant ?"
     play sound "Click.mp3" noloop 
 
-    N "Je m'appelle [N], j'ai dix-neuf ans et je suis l'ultime assistant, toujours  prêt pour aider."
+    N "Je m'appelle [N], j'ai dix-neuf ans et je suis l'inégalable assistant, toujours  prêt pour aider."
     play sound "Click.mp3" noloop
 
     $ character7 = N 
-    $ ultimate7 = "L'ultime assistant"
+    $ ultimate7 = "L'inégalable assistant"
 
     T "Enchantée aussi de te rencontrer [N]."
     play sound "Click.mp3" noloop
@@ -1745,7 +1745,7 @@ label rencontre:
     play sound "Click.mp3" noloop 
 
     $ character10 = M 
-    $ ultimate10 = "L'ultime professeure"
+    $ ultimate10 = "L'inégalable professeure"
 
     M "J'ai 27 ans et ça fait deux ans que j'enseigne dans le lycée Nexus."
     play sound "Click.mp3" noloop
@@ -1926,7 +1926,7 @@ label rencontre:
     M "Oui [prenom] qu'il y a t-il ?"
     play sound "Click.mp3" noloop 
 
-    P "Pourquoi il existe ce système de domaine ultime dans ce lycée ?"
+    P "Pourquoi il existe ce système de domaine inégalable dans ce lycée ?"
     play sound "Click.mp3" noloop 
 
     M "Très bonne question, ce système a été créé pour différencier chaque élève plus facilement selon vos points d'intérêts et vos compétences."
@@ -5444,7 +5444,7 @@ label choice9:
     Y "[thanks]"
     play sound "Click.mp3" noloop
 
-    M "Bon au tour des ultimes Jumelles maintenant pour finir."
+    M "Bon au tour des inégalables Jumelles maintenant pour finir."
     play sound "Click.mp3" noloop 
 
     $ validation = get_random_validation() 
@@ -5532,12 +5532,12 @@ label choice9:
 
     if pronom == "il":
 
-        P "L'ultime créateur convoqué chez le bureau des élèves c'est bizarre..."
+        P "L'inégalable créateur convoqué chez le bureau des élèves c'est bizarre..."
         play sound "Click.mp3" noloop
 
     elif pronom == "elle": 
 
-        P "L'ultime créatrice convoquée chez le bureau des élèves c'est bizarre..."
+        P "L'inégalable créatrice convoquée chez le bureau des élèves c'est bizarre..."
         play sound "Click.mp3" noloop 
 
     P "Bon ok j'y vais."
@@ -5627,12 +5627,12 @@ label choice9:
 
     if pronom == "il":
 
-        R "Donc [nom] c'est bien toi l'ultime créateur ?"
+        R "Donc [nom] c'est bien toi l'inégalable créateur ?"
         play sound "Click.mp3" noloop 
 
     elif pronom == "elle": 
 
-        R "Donc [nom] c'est bien toi l'ultime créatrice ?"
+        R "Donc [nom] c'est bien toi l'inégalable créatrice ?"
         play sound "Click.mp3" noloop 
 
     P "Oui c'est exact mais vous, qui êtes-vous ?"
@@ -6895,10 +6895,10 @@ label suite1:
     M "Vas-y présente-toi."
     play sound "Click.mp3" noloop
 
-    S "Je m'appelle [S], l'ultime étudiant et ancien élève de [origine], j'ai dix-neuf ans ravi de vous rencontrer"
+    S "Je m'appelle [S], l'inégalable étudiant et ancien élève de [origine], j'ai dix-neuf ans ravi de vous rencontrer"
     play sound "Click.mp3" noloop
 
-    $ ultimate1 = "l'ultime étudiant" 
+    $ ultimate1 = "l'inégalable étudiant" 
 
     P "[S] !? Je croyais que tu étais dans un autre lycée depuis la dernière fois qu'on s'est vu !"
     play sound "Click.mp3" noloop
@@ -8355,10 +8355,10 @@ label debate:
     P "Ok à une autre fois."
     play sound "Click.mp3" noloop 
 
-    Su "Aucun probléme on se rappelera un de ces jours mais en tant que l'ultime affective."
+    Su "Aucun probléme on se rappelera un de ces jours mais en tant que l'inégalable affective."
     play sound "Click.mp3" noloop 
 
-    $ ultimate11 = "L'ultime affective" 
+    $ ultimate11 = "L'inégalable affective" 
 
     P "Merci." 
     play sound "Click.mp3" noloop 
@@ -10453,10 +10453,10 @@ label update:
     Na "Oui enfin..."
     play sound "Click.mp3" noloop
 
-    "{b}{i} tu vois soudainement un papier avec écrit l'ultime complotiste.{/i}{/b}"
+    "{b}{i} tu vois soudainement un papier avec écrit l'inégalable complotiste.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "L'ultime complotiste !? c'est impossible il n'y a aucun lycéen qui a ce titre ici..."
+    P "L'inégalable complotiste !? c'est impossible il n'y a aucun lycéen qui a ce titre ici..."
     play sound "Click.mp3" noloop
 
     Na "[prenom] ça va ?"
@@ -10621,7 +10621,7 @@ label update:
         Na "Oui c'est vrai maintenant que tu le dis."
         play sound "Click.mp3" noloop
 
-        P "En plus on ne sais rien de son domaine ultime."
+        P "En plus on ne sais rien de son domaine inégalable."
         play sound "Click.mp3" noloop
 
         Na "Tu as raison."
@@ -10696,7 +10696,7 @@ label update:
     E "Oui, dis-moi, qu'est-ce qu'il y a ?"
     play sound "Click.mp3" noloop
 
-    P "J'ai trouvé une note signée 'L'Ultime Complotiste', mais aucun élève n'a ce titre ici."
+    P "J'ai trouvé une note signée 'L'inégalable Complotiste', mais aucun élève n'a ce titre ici."
     play sound "Click.mp3" noloop
 
     E "Intéressant... Je vois."
@@ -11550,16 +11550,16 @@ label password:
     "{b}{i}[E] lit tranquilement le document et réalise.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    E "Hey attendez, ce document est signé par {b}{i}l'ultime complotiste.{/i}{/b}" 
+    E "Hey attendez, ce document est signé par {b}{i}l'inégalable complotiste.{/i}{/b}" 
     play sound "Click.mp3" noloop
 
-    P "Encore l'ultime complotiste !?" 
+    P "Encore l'inégalable complotiste !?" 
     play sound "Click.mp3" noloop 
 
     E "Oui." 
     play sound "Click.mp3" noloop 
 
-    Oh "Attendez, [prenom] n'est pas l'ultime complotiste ?" 
+    Oh "Attendez, [prenom] n'est pas l'inégalable complotiste ?" 
     play sound "Click.mp3" noloop 
 
     M "Non, [pronom] est [domaine], donc veuillez le détachez." 
@@ -13310,7 +13310,7 @@ label examen_pythagore:
     Y "[thanks]"
     play sound "Click.mp3" noloop
 
-    M "Bon au tour des ultimes Jumelles maintenant pour finir."
+    M "Bon au tour des inégalables Jumelles maintenant pour finir."
     play sound "Click.mp3" noloop 
 
     $ validation = get_random_validation() 
@@ -14110,7 +14110,7 @@ label password4:
     P "Quoi comme informations ?"
     play sound "Click.mp3" noloop  
 
-    Oh "il semblerait que l'ultime complotiste aie réduit son activité depuis fin septembre."
+    Oh "il semblerait que l'inégalable complotiste aie réduit son activité depuis fin septembre."
     play sound "Click.mp3" noloop  
 
     P "Cool alors."
@@ -14122,7 +14122,7 @@ label password4:
     P "Il y a quoi d'autre ?"
     play sound "Click.mp3" noloop  
 
-    Oh "il semblerait que l'ultime complotiste aie aussi changé sa façon d'agir depuis ce moment."
+    Oh "il semblerait que l'inégalable complotiste aie aussi changé sa façon d'agir depuis ce moment."
     play sound "Click.mp3" noloop  
 
     Y "C'est bizarre cette histoire."
@@ -14155,7 +14155,7 @@ label password4:
     P "Cette même addresse IP a tenté de ce connecter à [newname] plusieurs fois."
     play sound "Click.mp3" noloop  
 
-    Oh "Je vois, J'imagine que l'ultime complotiste veut s'en prendre à [newname]."
+    Oh "Je vois, J'imagine que l'inégalable complotiste veut s'en prendre à [newname]."
     play sound "Click.mp3" noloop  
 
     P "C'est évident."
@@ -16522,7 +16522,7 @@ label password9:
     Y "[thanks]"
     play sound "Click.mp3" noloop
 
-    M "Bon au tour des ultimes Jumelles maintenant pour finir."
+    M "Bon au tour des inégalables Jumelles maintenant pour finir."
     play sound "Click.mp3" noloop 
 
     $ validation = get_random_validation() 
@@ -20438,7 +20438,7 @@ label examen_francais:
     Y "[thanks]"
     play sound "Click.mp3" noloop
 
-    M "Bon au tour des ultimes Jumelles maintenant pour finir."
+    M "Bon au tour des inégalables Jumelles maintenant pour finir."
     play sound "Click.mp3" noloop 
 
     $ validation = get_random_validation() 
