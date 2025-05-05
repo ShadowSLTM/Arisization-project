@@ -36,16 +36,16 @@ define Kh = Character('Kazumi Hanemiya', color="#ffffff")
 
 define J1 = Character('Ayano Enoshima', color="#ff2323") 
 define J2 = Character('Aiko Enoshima', color="#ff2323") 
-define J = Character('Les ultimes jumelles', color="#ff2323")
+define J = Character('Les inégalables jumelles', color="#ff2323") 
 
 # Les élèves du département. 
 
 define Ah = Character('Akeno Hoshino', color="#cc23ff")
 define Rn = Character('Reiichi Nanami', color="#cc23ff") 
 
-# fonctions pour les personnages inconnus
+# fonctions pour les personnages inconnus 
 
-define R = Character('??????', color="#a9a9a9")
+define R = Character('??????????', color="#a9a9a9")
 define T = Character('professeure', color="#ffffff")
  
 # la mére du personnnage principal 
