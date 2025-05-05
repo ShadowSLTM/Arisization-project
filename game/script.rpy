@@ -21072,11 +21072,115 @@ label password15:
 
     menu:   
 
-        "{b}{i} Oui.{/i}{/b}" :
+        "{b}{i} Faire une comparaison.{/i}{/b}" :
+            play sound "Menu.mp3" noloop  
+
+            P "[newname] est comme... un serveur informatique super puissant, sans latence, toujours opérstionnel."
+            play sound "Click.mp3" noloop
+
+            Na "Merci de me comparer à un simple serveur informatique alors que je suis plus que ça, j'espère que c'est du sarcasme."
+            play sound "Click.mp3" noloop
+
+            P "Oui ne t'inquiètes pas, c'est du sarcasme."
+            play sound "Click.mp3" noloop
+
+            Na "Merci beaucoup, ça me rassure."
+            play sound "Click.mp3" noloop
+
+            $ nothing = get_random_nothing()
+            P "[nothing]"
+            play sound "Click.mp3" noloop
+
+            I "J'avoue que cette comparaison était un peu osée."
+            play sound "Click.mp3" noloop 
+ 
+        "{b}{i} Faire les éloges de [newname].{/i}{/b}" : 
             play sound "Menu.mp3" noloop 
 
-        "{b}{i} Je ne sais pas.{/i}{/b}" : 
-            play sound "Menu.mp3" noloop 
+            if pronom == "il" : 
+
+                P "Franchement je suis vraiment content qu'elle soit reconnue."
+                play sound "Click.mp3" noloop 
+
+                J1 "Je vois bien que tu es content."
+                play sound "Click.mp3" noloop 
+
+            elif pronom == "elle" : 
+
+                P "Franchement je suis vraiment contente qu'elle soit reconnue."
+                play sound "Click.mp3" noloop 
+
+                J1 "Je vois bien que tu es contente."
+                play sound "Click.mp3" noloop 
+
+            $ success += 1        
+            $ quest34 += 1
+
+            $ thanks = get_random_thanks()
+            P "[thanks]"
+            play sound "Click.mp3" noloop
+
+            $ nothing = get_random_nothing()
+            J1 "[nothing]" 
+            play sound "Click.mp3" noloop
+
+            P "Mais vraiment [newname] est vrai la meilleure création de notre société."
+            play sound "Click.mp3" noloop
+
+            J1 "Ce n'est pas un peu trop exagéré ?"
+            play sound "Click.mp3" noloop
+
+            P "Non je donne juste mon point de vue."
+            play sound "Click.mp3" noloop
+
+            J1 "Ok je respect ton point de vue."
+            play sound "Click.mp3" noloop
+
+    "{b}{i} Vous continuez de discuter jusqu'à la sonnerie.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+
+    J2 "Bon on doit retourner en cours."
+    play sound "Click.mp3" noloop 
+
+    P "Ok il faut pas qu'on soit en retard."
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]" 
+    play sound "Footsteps.mp3" noloop
+
+    scene black 
+    hide screen lunchroom 
+
+    "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall
+    show screen hall
+
+    "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop 
+
+    scene staircase 
+    hide screen hall
+
+    "{b}{i} Vous montez au premier étage.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hallway 
+    show screen hallway
+
+    "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene classroom  
+    show screen class_404 
 
     return 
  

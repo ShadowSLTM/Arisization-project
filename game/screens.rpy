@@ -545,57 +545,6 @@ style return_button:
     yalign 1.0
     yoffset -45
 
-
-## Écran « À propos... » #######################################################
-##
-## Cet écran présente le générique, les crédits et les informations de copyright
-## relatives au jeu et à Ren’Py.
-##
-## Il n’y a rien de spécial sur cet écran. Par conséquent, il sert aussi
-## d’exemple pour créer un écran personnalisé.
-
-screen about():
-
-    tag menu
-
-    ## Cette déclaration concerne l’écran game_menu. L’élément vbox est ensuite
-    ## inclus dans la fenêtre de l'écran game_menu.
-    use game_menu(_("À propos"), scroll="viewport"):
-
-        style_prefix "about"
-
-        vbox:
-
-            label "{b}{i}— [config.name!t] —\n{/i}{/b}"
-            text _("Version [config.version!t]\n")
-
-            if gui.about:
-                text "[gui.about!t]\n"
-
-            text _("Conçu avec {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]\n")
-
-            label "{b}{i}— Catégorie du jeu —\n{/i}{/b}" 
-
-            text _("Sci-Fi\n") 
-
-            text _("Mystery\n")
-           
-            text _("Cyberpunk\n")
-
-            text _("Utsuge\n")
-
-            text _("Thriller\n")
-
-            text _("School life\n")    
-
-style about_label is gui_label
-style about_label_text is gui_label_text
-style about_text is gui_text
-
-style about_label_text:
-    size gui.label_text_size
- 
-
 ## Écran de chargement et de sauvegarde ########################################
 ##
 ## Ces écrans permettent au joueur d’enregistrer le jeu et de le charger
@@ -1029,7 +978,6 @@ screen help():
                 use mouse_help
             elif device == "gamepad":
                 use gamepad_help
-
 
 screen keyboard_help():
 
@@ -1970,6 +1918,7 @@ screen success():
             text _("Ferme ta gueule !!! : [quest31]/1\n") 
             text _("Molière c'est toi ? : [quest32]/1\n") 
             text _("Jamais deux sans trois : [quest33]/1\n")  
+            text _("Sa vraie valeur : [quest34]/1\n")
 
 style about_label is gui_label   
 style about_label_text is gui_label_text
@@ -2059,3 +2008,50 @@ style about_text is gui_text
 
 style about_label_text: 
     size gui.label_text_size 
+
+screen about():
+
+    tag menu
+
+    ## Cette déclaration concerne l’écran game_menu. L’élément vbox est ensuite
+    ## inclus dans la fenêtre de l'écran game_menu.
+    use game_menu(_("À propos"), scroll="viewport"):
+
+        style_prefix "about"
+
+        vbox:
+
+            label "{b}{i}— [config.name!t] —\n{/i}{/b}"
+            text _("Version [config.version!t]\n")
+
+            if gui.about:
+                text "[gui.about!t]\n"
+
+            text _("Conçu avec {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]\n")
+
+            label "{b}{i}— Catégorie du jeu —\n{/i}{/b}" 
+
+            text _("Sci-Fi\n") 
+
+            text _("Mystery\n")
+           
+            text _("Cyberpunk\n")
+
+            text _("Utsuge\n")
+
+            text _("Thriller\n")
+
+            text _("School life\n")    
+
+            text _("RPG\n")   
+
+            text _("Hacking\n")     
+
+            text _("School life\n")    
+
+style about_label is gui_label
+style about_label_text is gui_label_text
+style about_text is gui_text
+
+style about_label_text:
+    size gui.label_text_size
