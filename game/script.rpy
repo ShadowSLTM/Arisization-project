@@ -7545,7 +7545,7 @@ label suite1:
     play sound "Door.mp3" noloop
 
     scene lunchroom
-    show screen lunchroom
+    show screen lunchroom 
 
     if pronom == "il":
 
@@ -9005,14 +9005,7 @@ label debate:
     "{b}{i}Puis vers le hall.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene hall
-    show screen hall 
 
-    "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
-    play sound "Door.mp3" noloop
-
-    scene lunchroom 
-    show screen lunchroom 
     
     $ find_food = get_random_find_food()
     Na "[find_food]"
@@ -10224,18 +10217,24 @@ label update:
     show screen hallway 
 
     "{b}{i} Vous vous dirigez votre chemin vers la réfectoire.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
     
     scene staircase
     hide screen hallway
 
     "{b}{i} Vous continuez votre chemin vers le réfectoire.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene hall 
-    show screen hall
+    show screen hall 
 
     "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hall 
+
+    "{b}{i} vous entrez le réféctoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene lunchroom 
@@ -12299,10 +12298,16 @@ label password1:
     "{b}{i}Puis vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hall
-    hide screen hall 
+    scene hall 
+    show screen hall 
 
     "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hall
+
+    "{b}{i} Vous entrez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene lunchroom 
@@ -15324,10 +15329,16 @@ label password7:
     "{b}{i}Puis vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hall
-    hide screen hall 
+    scene hall 
+    show screen hall 
 
     "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hall
+
+    "{b}{i} Vous entrez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene lunchroom 
@@ -15957,10 +15968,16 @@ label examen_runix:
     "{b}{i}Puis vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hall
-    hide screen hall 
+    scene hall 
+    show screen hall 
 
     "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hall
+
+    "{b}{i} Vous entrez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene lunchroom 
@@ -18325,14 +18342,20 @@ label password11:
     "{b}{i}Puis vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hall
-    hide screen hall 
+    scene hall 
+    show screen hall 
 
     "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hall
+
+    "{b}{i} Vous entrez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene lunchroom 
-    show screen lunchroom 
+    show screen lunchroom  
     
     $ find_food = get_random_find_food()
     Na "[find_food]"
@@ -19161,10 +19184,16 @@ label password13:
     "{b}{i}Puis vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hall
-    hide screen hall 
+    scene hall 
+    show screen hall 
 
     "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hall
+
+    "{b}{i} Vous entrez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene lunchroom 
@@ -20048,15 +20077,21 @@ label examen_francais:
     "{b}{i}Puis vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hall
-    hide screen hall 
+    scene hall 
+    show screen hall 
 
     "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hall
+
+    "{b}{i} Vous entrez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene lunchroom 
     show screen lunchroom 
-    
+
     $ find_food = get_random_find_food()
     Na "[find_food]"
     play sound "Click.mp3" noloop 
@@ -20659,7 +20694,6 @@ label examen_francais:
 
     $ day += 1 
 
-
     "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
@@ -20901,18 +20935,24 @@ label password15:
     show screen hallway 
 
     "{b}{i} Vous vous dirigez votre chemin vers la réfectoire.{/i}{/b}"
-    play sound "Click.mp3" noloop
-    
+    play sound "Footsteps.mp3" noloop
+
     scene staircase
     hide screen hallway
 
     "{b}{i} Vous continuez votre chemin vers le réfectoire.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     scene hall 
-    show screen hall
+    show screen hall 
 
     "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hall
+
+    "{b}{i} Vous arrivez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene lunchroom 
@@ -20933,6 +20973,110 @@ label password15:
 
     "{b}{i} Puis tu croises [J1].{/i}{/b}"
     play sound "Click.mp3" noloop 
+
+    P "Salut Ayano ça te dit de venir manger avec nous ?"
+    play sound "Click.mp3" noloop 
+
+    J1 "Oui pourquoi pas."
+    play sound "Footsteps.mp3" noloop 
+
+    "{b}{i} Vous asseyez à une table.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+ 
+    if pronom == "il" : 
+
+        P "Enfin assis pour manger."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle" :
+
+        P "Enfin assises pour manger."
+        play sound "Click.mp3" noloop 
+
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]"
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Soudainement [I] vous rejoins.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    P "Oh salut Iris."
+    play sound "Click.mp3" noloop 
+
+    if pronom == "il" : 
+
+        I "Bonjour les amis."
+        play sound "Click.mp3" noloop 
+
+    elif pronom == "elle" :
+
+        I "Bonjour les amies."
+        play sound "Click.mp3" noloop 
+
+    J1 "Salut Iris."
+    play sound "Click.mp3" noloop 
+
+    I "[prenom], pourrais savoir pourquoi Ayano est avec vous ?"
+    play sound "Click.mp3" noloop 
+
+    P "Elle a accepté de venir manger avec nous."
+    play sound "Click.mp3" noloop 
+
+    I "Ok je vois."
+    play sound "Click.mp3" noloop 
+
+    P "Merci, je sais que tu as encore des doutes sur elle mais je t'assure qu'elle a changé."
+    play sound "Click.mp3" noloop  
+
+    I "Je vois bien ça."
+    play sound "Click.mp3" noloop 
+
+    J1 "Sinon ça me chque de savoir qu'un nouvel article de loi a été ajouté au code civile."
+    play sound "Click.mp3" noloop 
+
+    P "Oui même moi ça m'a surpris."
+    play sound "Click.mp3" noloop  
+
+    J1 "On peut dire que tu as un peu changé notre société."
+    play sound "Click.mp3" noloop 
+
+    P "Oui mais je tiens a rappelé qu'on vit encore avec un gouvernement technocratique autoritaire."
+    play sound "Click.mp3" noloop  
+
+    J1 "Ah oui c'est vrai."
+    play sound "Click.mp3" noloop 
+    
+    "Mais à la base j'avais juste demandé pour qu'[newname] soit reconnue officellement."
+    play sound "Click.mp3" noloop  
+
+    I "Ah bon et ça a donné quoi ?"
+    play sound "Click.mp3" noloop 
+
+    J1 "Oui on veut savoir."  
+    play sound "Click.mp3" noloop 
+
+    P "Tu leur dis ou pas [newname] ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui ça a donné que j'ai été officiellement reconnue comme un être humain avec une vraie identité."
+    play sound "Click.mp3" noloop
+
+    I "Mais c'est génial ça."
+    play sound "Click.mp3" noloop 
+
+    Na "Merci beaucoup."  
+    play sound "Click.mp3" noloop
+
+    I "De rien c'est normal."  
+    play sound "Click.mp3" noloop 
+
+    menu:   
+
+        "{b}{i} Oui.{/i}{/b}" :
+            play sound "Menu.mp3" noloop 
+
+        "{b}{i} Je ne sais pas.{/i}{/b}" : 
+            play sound "Menu.mp3" noloop 
 
     return 
  
