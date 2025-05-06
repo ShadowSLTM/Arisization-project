@@ -75,23 +75,23 @@ define config.main_menu_music = "Lastencounter.mp3"
 
 ## À l’entrée ou à la sortie du menu du jeu.
 
-define config.enter_transition = dissolve
-define config.exit_transition = dissolve 
+define config.enter_transition = fade
+define config.exit_transition = fade
 
 
 ## Entre les écrans du menu du jeu.
 
-define config.intra_transition = dissolve
+define config.intra_transition = fade
 
 
 ## La transition qui sera utilisée après le chargement d’une partie.
 
-define config.after_load_transition = dissolve
+define config.after_load_transition = fade 
 
 
 ## La transition qui sera utilisé après la fin du jeu.
 
-define config.end_game_transition = dissolve 
+define config.end_game_transition = fade
 
 
 ## Il n’y a pas de variable pour configurer la transition en début de partie. À

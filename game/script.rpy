@@ -106,7 +106,7 @@ label key:
 
     $ valid_keys = {"ARIS-DEVS", "ARIS-8J4K-F9Q7", "ARIS-GRFN-M4A1"}
     
-    if key in valid_keys:
+    if key in valid_keys: 
 
         "Jeu déverrouillé."
         play sound "Ciick.mp3" noloop
@@ -3938,7 +3938,7 @@ label wallbreaking4:
     play sound "Click.mp3" noloop 
 
     $ sit = get_random_sit()
-    Na "[sit]"
+    Na "[sit]" 
     play sound "Click.mp3" noloop
 
     "{b}{i} Vous vous asseyez dans le recfectoire.{/i}{/b}"
@@ -4768,7 +4768,8 @@ label skip2:
     Na "Ça va."
     play sound "Click.mp3" noloop 
 
-    P "Bon on va en cours ?" 
+    $ go_in_class = get_random_go_in_class()
+    P "[go_in_class]"  
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
@@ -5075,7 +5076,7 @@ label choice9:
     show screen lunchroom 
     
     $ find_food = get_random_find_food()
-    Na "[find_food]"
+    Na "[find_food]" 
     play sound "Click.mp3" noloop 
 
     P "Bien sûr tu veux qu'on fasse quoi d'autre ? Prendre la poudre d'escampette tant qu'on y est ?"
@@ -8468,7 +8469,8 @@ label debate:
             P "Non pour l'instant."
             play sound "Click.mp3" noloop 
 
-    Na "Bon on va en cours ?"
+    $ go_in_class = get_random_go_in_class()
+    Na "[go_in_class]"  
     play sound "Click.mp3" noloop 
 
     P "Oui."
@@ -8853,15 +8855,22 @@ label debate:
     P "[comment_ca_va]"
     play sound "Click.mp3" noloop  
 
-    $ je_vais_bien_txt = get_random_je_vais_bien() 
-    Na "[je_vais_bien_txt] Mais je me suis inquiétée pour toi." 
+    $ je_vais_bien_txt = get_random_je_vais_bien()
+    Na "[je_vais_bien_txt]"
     play sound "Click.mp3" noloop
 
-    P "Ah je vois, bon on va en cours."
+    Na "Mais je me suis inquiétée pour toi."
+    play sound "Click.mp3" noloop
+
+    P "Ah je vois." 
+    play sound "Click.mp3" noloop
+
+    $ go_in_class = get_random_go_in_class()
+    Na "[go_in_class]"  
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
-    Na "[suivi]"
+    P "[suivi]"
     play sound "Footsteps.mp3" noloop
 
     hide screen room 
@@ -10018,7 +10027,8 @@ label update:
     Na "Cool alors."
     play sound "Click.mp3" noloop 
 
-    P "Bon on va en cours ?"
+    $ go_in_class = get_random_go_in_class()
+    P "[go_in_class]"  
     play sound "Click.mp3" noloop 
 
     Na "Bien évidemment."
@@ -12726,8 +12736,15 @@ label password2:
     play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
-    P "[je_vais_bien_txt] Bon on va en cours ?" 
+    P "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
+
+    Na "Cool alors."
+    play sound "Click.mp3" noloop 
+
+    $ go_in_class = get_random_go_in_class()
+    P "[go_in_class]"  
+    play sound "Click.mp3" noloop 
 
     Na "Oui car on a examen de math aujourd'hui."
     play sound "Click.mp3" noloop 
@@ -14041,8 +14058,9 @@ label password4:
     P "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
 
-    Na "Bon on va en cours ?"
-    play sound "Click.mp3" noloop  
+    $ go_in_class = get_random_go_in_class()
+    Na "[go_in_class]"  
+    play sound "Click.mp3" noloop 
 
     P "Oui, suis-moi."
     play sound "Click.mp3" noloop  
@@ -14717,8 +14735,9 @@ label password6:
     P "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
 
-    Na "Bon on va en cours ?"
-    play sound "Click.mp3" noloop  
+    $ go_in_class = get_random_go_in_class()
+    Na "[go_in_class]"  
+    play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
     P "[suivi]"
@@ -15220,8 +15239,9 @@ label password7:
     P "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
 
-    Na "Bon on va en cours ?"
-    play sound "Click.mp3" noloop  
+    $ go_in_class = get_random_go_in_class()
+    Na "[go_in_class]"  
+    play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
     P "[suivi]"
@@ -15596,7 +15616,10 @@ label password8:
 
             P "Non merci."
             play sound "Click.mp3" noloop
-        
+
+            Na "Ok je vois."
+            play sound "Click.mp3" noloop
+
         "{b}{i} faire la mise à jour {/i}{/b}" : 
         
             Na "Bien je lance la mise à jour"
@@ -15648,15 +15671,12 @@ label password8:
             Na "Mise à jour terminée, la version actuelle est maintenant la [update]."
             play sound "Click.mp3" noloop 
 
-    Na "Bon on va en cours ?"
-    play sound "Click.mp3" noloop  
+            P "Cool alors."
+            play sound "Click.mp3" noloop  
 
-    $ suivi = get_random_suivi()
-    P "[suivi]"
-    play sound "Footsteps.mp3" noloop 
-
-    Na "Bon on va en cours ?"
-    play sound "Click.mp3" noloop  
+    $ go_in_class = get_random_go_in_class()
+    Na "[go_in_class]"  
+    play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
     P "[suivi]"
@@ -16280,8 +16300,9 @@ label password9:
     P "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
 
-    Na "Bon on va en cours ?"
-    play sound "Click.mp3" noloop  
+    $ go_in_class = get_random_go_in_class()
+    Na "[go_in_class]"  
+    play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
     P "[suivi]"
@@ -17835,7 +17856,8 @@ label update1:
     Na "Bon on fait quoi du coup ?"
     play sound "Click.mp3" noloop  
 
-    P "On va prendre à manger."
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
@@ -17968,8 +17990,9 @@ label password11:
     P "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
 
-    Na "Bon on va en cours ?"
-    play sound "Click.mp3" noloop  
+    $ go_in_class = get_random_go_in_class()
+    Na "[go_in_class]"  
+    play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
     P "[suivi]"
@@ -19002,8 +19025,15 @@ label password13:
     play sound "Click.mp3" noloop
 
     $ je_vais_bien_txt = get_random_je_vais_bien() 
-    P "[je_vais_bien_txt] Bon on va en cours ?" 
+    P "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
+
+    Na "Cool alors."
+    play sound "Click.mp3" noloop 
+
+    $ go_in_class = get_random_go_in_class()
+    P "[go_in_class]"  
+    play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
@@ -19594,11 +19624,12 @@ label newpassword:
     Na "[thanks]"
     play sound "Click.mp3" noloop
 
-    P "Bon on va prendre à manger."
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
-    Na "[suivi]"
+    Na "[suivi]" 
     play sound "Footsteps.mp3" noloop
 
     scene black
@@ -19731,7 +19762,7 @@ label password14:
     Na "Cool alors."
     play sound "Click.mp3" noloop 
 
-    "{b}{i}Puis tu reçois soudainement un mail et tu l'ouvres.{/i}{/b}"
+    "{b}{i}Puis tu reçois soudainement un mail sur ton adresse mail [prenom].[nom]@danto.com et tu l'ouvres.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     show screen mail
@@ -19745,7 +19776,7 @@ label password14:
     play sound "Click.mp3" noloop 
 
     P "Figures-toi que tu as officellement reconnue comme citoyenne de Danto."
-    play sound "Click.mp3" noloop 
+    play sound "Click.mp3" noloop  
 
     Na "Danto ? C'est une blague ?!"
     play sound "Click.mp3" noloop
@@ -19761,8 +19792,9 @@ label password14:
     P "Je vois bien ça."
     play sound "Click.mp3" noloop
 
-    Na "Bon on va en cours ?"
-    play sound "Click.mp3" noloop  
+    $ go_in_class = get_random_go_in_class()
+    P "[go_in_class]"  
+    play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
     P "[suivi]"
@@ -20627,10 +20659,11 @@ label examen_francais:
     P "Bien."
     play sound "Click.mp3" noloop   
 
-    "{b}{i} Vous vous tranquillement pour discuter des cours pendant deux heures.{/i}{/b}"
+    "{b}{i} Vous vous posez tranquillement pour discuter des cours pendant deux heures.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    Na "Bon on va prendre à manger."
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
@@ -20765,8 +20798,9 @@ label password15:
     Na "Cool alors."
     play sound "Click.mp3" noloop  
 
-    P "Bon on va en cours ?"
-    play sound "Click.mp3" noloop  
+    $ go_in_class = get_random_go_in_class()
+    P "[go_in_class]"  
+    play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
@@ -21124,8 +21158,18 @@ label password15:
             J1 "[nothing]" 
             play sound "Click.mp3" noloop
 
-            P "Mais vraiment [newname] est vrai la meilleure création de notre société."
-            play sound "Click.mp3" noloop
+            if key == "ARIS-GRFN-M4A1":
+
+                P "Mais vraiment [newname] est vrai la meilleure création de notre société, je dirai même commme une arme vu son nom de code."
+                play sound "Click.mp3" noloop
+
+                Na "Vraiment !?"
+                play sound "Click.mp3" noloop 
+
+            else: 
+
+                P "Mais vraiment [newname] est vrai la meilleure création de notre société."
+                play sound "Click.mp3" noloop
 
             J1 "Ce n'est pas un peu trop exagéré ?"
             play sound "Click.mp3" noloop
@@ -21134,7 +21178,7 @@ label password15:
             play sound "Click.mp3" noloop
 
             J1 "Ok je respect ton point de vue."
-            play sound "Click.mp3" noloop
+            play sound "Click.mp3" noloop 
 
     "{b}{i} Vous continuez de discuter jusqu'à la sonnerie.{/i}{/b}"
     play sound "Bell.mp3" noloop 
@@ -21336,6 +21380,7 @@ label update2:
             elif pronom == "elle":
 
                 play music "gameover.mp3" noloop
+
                 "{b}{i}Fin numéro 13 : Complétement plaquée et étranglée par [Na].{/i}{/b}"
                 play sound "Menu.mp3" noloop
 
@@ -21356,6 +21401,84 @@ label update2:
 
         "{b}{i}Vous vous posez tranquillement.{/i}{/b}"
         play sound "Click.mp3" noloop
+
+    P "ça fait du bien un peu de repos, tu n'es pas d'accord ?"
+    play sound "Click.mp3" noloop
+
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]" 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous discutez tranquillement des cours pendant une heure.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ stockage += 5.0 
+
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    scene black  
+    hide screen room
+
+    "{b}{i} Vous partez chercher à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 200 
+
+    scene room 
+    show screen room
+
+    Na "Enfin à manger... "
+    play sound "Click.mp3" noloop 
+
+    $ bien = get_random_fais_du_bien()
+    P "[bien]"
+    play sound "Click.mp3" noloop  
+
+    "{b}{i} Vous mangez tranquillement pendant une demi-heure.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Tu as finis de manger ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui, je n'ai plus faim."
+    play sound "Click.mp3" noloop 
+
+    P "Bien."
+    play sound "Click.mp3" noloop 
+
+    Na "Bon Je vais me déconnecter et me recharger."
+    play sound "Click.mp3" noloop 
+
+    P "Pas de soucis."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[newname] se déconnecte et recharge sa batterie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bon je vais me changer et aller dormir."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene black
+    hide screen room
+    hide screen day
+
+    "{b}{i}Le lendemain matin, le 4 décembre 2097 {/i}{/b}"
+    play sound "Alarm.mp3" noloop 
+
+    scene room 
+    show screen room
+    show screen day 
+
+    $ day += 1 
 
     return 
  

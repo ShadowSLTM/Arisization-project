@@ -107,23 +107,6 @@ init python:
     def get_random_enchente_f():
         return "enchantée" if random.random() < 0.99 else "enchantier"
 
-    # suivi_list est une liste de phrases qui seront affichées aléatoirement au moment où le joueur demande à Aris de le suivre.
-
-init python:
-    import random
-
-    suivi_list = [  
-        "D'accord, je te suis.",  
-        "Je te suis.",  
-        "Je te suis, allons-y.",  
-        "Oui, je te suis.",
-        "Je te suis, pas de problème.",
-        "Je te suis, allons-y ensemble.",
-        ] 
-
-    def get_random_suivi():
-        return random.choice(suivi_list)
-
 init python:
     import random
 
@@ -340,5 +323,40 @@ init python:
 
     ]
 
-    def get_random_find_foodt():
-        return random.choice(go_eat_list)
+    def get_random_find_food():
+        return random.choice(find_food_list) 
+
+init python:
+    import random 
+
+    go_in_class_list = [
+
+        "Bon on va en cours ?",
+        "On file en cours ?",
+        "On part en cours maintenant ?",
+        "C'est l'heure des cours, on y va ?",
+        "C'est parti pour les cours ?", 
+        "C’est l’heure, on y va pour les cours ?", 
+        "On y va ? Les cours nous attendent ! ",
+    ]
+
+    def get_random_go_in_class():
+        return random.choice(go_in_class_list) 
+
+init python:
+    import random 
+
+    suivi_list = [  
+        "D'accord, je te suis.",  
+        "Je te suis.",  
+        "Je te suis, allons-y.",  
+        "Oui, je te suis.",
+        "Je te suis, pas de problème.",
+        "Je te suis, allons-y ensemble.",
+        "Oui je te suis, pas de problème.",
+        "Oui je te suis, allons-y ensemble.",
+        "Je te suis, pas de souci.",
+        ] 
+
+    def get_random_suivi():
+        return random.choice(suivi_list)
