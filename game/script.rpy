@@ -20513,7 +20513,7 @@ label examen_francais:
     M "[endlesson]"
     play sound "Click.mp3" noloop
 
-    S "Bon, [newname] on retourne au dortoir ?" 
+    P "Bon, [newname] on retourne au dortoir ?" 
     play sound "Click.mp3" noloop
 
     $ suivi = get_random_suivi()
@@ -21181,6 +21181,181 @@ label password15:
 
     scene classroom  
     show screen class_404 
+
+    I "Rebonjour"
+    play sound "Click.mp3" noloop 
+
+    J1 "Rebonjour Madame"  
+    play sound "Click.mp3" noloop 
+
+    P "Nous revoilà."
+    play sound "Click.mp3" noloop 
+
+    Na "Et à l'heure."
+    play sound "Click.mp3" noloop
+
+    M "Bien nous pouvons reprendre le cours, sortez vos livres."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Le cours continue tranquillement.{/i}{/b}"
+    play sound "Bell.mp3" noloop
+
+    $ stockage += 5.0
+
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]" 
+    play sound "Click.mp3" noloop 
+
+    P "Bon, [newname] on retourne au dortoir ?" 
+    play sound "Click.mp3" noloop
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Vous continuez vers le dortoir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez dans ton dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene room
+    show screen room 
+
+    if pronom == "il":
+
+        P "Enfin arrivés."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle":
+
+        P "Enfin arrivées."
+        play sound "Click.mp3" noloop
+
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]" 
+    play sound "Click.mp3" noloop 
+
+label update2: 
+
+    if update == 3.0: 
+
+        "{b}{i}Vous vous posez tranquillement mais [newname] agit bizarrement.{/i}{/b}"
+        play sound "Click.mp3" noloop
+
+        A "Système opérationnel."
+        play sound "Click.mp3" noloop
+
+        P "Comment ça ? Qu'est-ce que tu racontes !?"
+        play sound "Click.mp3" noloop
+
+        A "Démarrage de la récupérations des données."
+        play sound "Click.mp3" noloop 
+
+        P "Mince elle est en train de se faire pirater, je dois activer le Recovery Mode....."
+        play sound "Click.mp3" noloop 
+
+        menu: 
+
+            "{b}{i}Accéder à l'interface bios d'[newname].{/i}{/b}":
+                play sound "Menu.mp3" noloop
+
+        $ reboot = renpy.input("Écris ceci : initiate_humanoid_robot.shutdown(security_override=false)")
+        $ reboot = reboot.strip() 
+
+        if reboot == "initiate_humanoid_robot.shutdown(security_override=false)":
+            
+            A "Fermeture du système d'exploitation [system]....."
+            play sound "Click.mp3" noloop
+
+            P "Enfin mais c'est bizarre on dirait que la faille venais du processeur."
+            play sound "Click.mp3" noloop 
+
+            P "Bon je vais la redémarrer."
+            play sound "Click.mp3" noloop 
+
+            menu: 
+
+                "{b}{i}Redémarrer [newname].{/i}{/b}":
+                    play sound "Menu.mp3" noloop
+
+            $ stockage += 5.0 
+            define Na = Character('[newname] [nom]', color="#00eeff")
+            
+            $ start = get_random_start()
+            Na "[start]"
+            play sound "Click.mp3" noloop 
+
+            $  salutation_rdm = get_random_salutation()
+            Na "[salutation_rdm]"
+            play sound "Click.mp3" noloop
+
+            $ comment_ca_va = get_random_comment_ca_va()
+            P "[comment_ca_va]"
+            play sound "Click.mp3" noloop
+
+            $ je_vais_bien_txt = get_random_je_vais_bien() 
+            Na "[je_vais_bien_txt]"
+            play sound "Click.mp3" noloop
+
+            "{b}{i}Vous vous posez tranquillement.{/i}{/b}"
+            play sound "Click.mp3" noloop
+            
+        else:
+
+            A "Qu'est-ce que tu tentes de faire."
+            play sound "Stumble.mp3" noloop
+
+            "{b}{i}[newname] se met à plaquer au sol.{/i}{/b}"
+            play sound "Menu.mp3" noloop
+
+            scene black
+            hide room 
+            hide screen room
+            hide screen points
+            hide screen day
+
+            if pronom == "il":
+
+                play music "gameover.mp3" noloop
+                "{b}{i}Fin numéro 13 : Complétement plaqué et étranglé par [Na].{/i}{/b}"
+                play sound "Menu.mp3" noloop
+
+            elif pronom == "elle":
+
+                play music "gameover.mp3" noloop
+                "{b}{i}Fin numéro 13 : Complétement plaquée et étranglée par [Na].{/i}{/b}"
+                play sound "Menu.mp3" noloop
+
+            menu:
+
+                "{b}{i}Abandonner{/i}{/b}":
+                    return 
+                    with fade
+                "{b}{i}Réessayer.{/i}{/b}":
+                    show room
+                    show screen room
+                    show screen points
+                    show screen day 
+                    play music "Soundtrack2.mp3" loop volume 1.0
+                    jump update2
+
+    else: 
+
+        "{b}{i}Vous vous posez tranquillement.{/i}{/b}"
+        play sound "Click.mp3" noloop
 
     return 
  
