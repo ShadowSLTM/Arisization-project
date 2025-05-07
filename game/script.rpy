@@ -21700,7 +21700,7 @@ label password16:
     Na "Alors pour répondre à ta question je dirais que le sens de la vie... c'est ce qui nous pousse à continuer même quand tout semble perdu."
     play sound "Click.mp3" noloop
 
-    I "Putain c'est touchant."
+    I "Putain c'est si touchant et si sincére."
     play sound "Click.mp3" noloop
 
     $ thanks = get_random_thanks()

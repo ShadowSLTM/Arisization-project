@@ -208,6 +208,7 @@ init python:
 
     build.classify("game/**.rpy", "script")
     build.classify("game/**.rpyc", "script")
+    build.classify("game/**.rpym", "script") 
 
     build.classify("game/**.png", "image")
     build.classify("game/**.jpg", "image")

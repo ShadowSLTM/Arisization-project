@@ -1824,6 +1824,8 @@ screen credit():
 
             text _("Illustration du drapeau du régime Nagumo : [Dc] (Shadow_SLTM)\n")
 
+            text _("Illustration du drapeau du lycée Nexus : [Dc] (Shadow_SLTM)\n")
+
             text _("Illustration du menu : [Dc] (Shadow_SLTM)\n") 
 
             text _("Programmation : [Dc] (Shadow_SLTM) et Nathanaël (Loki)\n") 
