@@ -1816,19 +1816,21 @@ screen credit():
 
             text _("Gestion des musiques  : [Dc] (Shadow_SLTM)\n")
 
-            text _("Concepts : [Dc] (Shadow_SLTM) et divers collaborateurs\n")
+            text _("Concepts : [Dc] (Shadow_SLTM)\n")
 
-            text _("Système des succès : [Dc] (Shadow_SLTM)\n")
+            text _("Système des succès : [Dc] (Shadow_SLTM)\n") 
 
-            text _("Création du personnage AK-24 et M82A1 : [Dc] (Shadow_SLTM)\n") 
+            text _("Création du personnage AK-24 et ses variantes : [Dc] (Shadow_SLTM)\n") 
 
-            text _("Illustration du menu : [Dc] (Shadow_SLTM)\n")
+            text _("Illustration du drapeau du régime Nagumo : [Dc] (Shadow_SLTM)\n")
+
+            text _("Illustration du menu : [Dc] (Shadow_SLTM)\n") 
 
             text _("Programmation : [Dc] (Shadow_SLTM) et Nathanaël (Loki)\n") 
 
             text _("Correction du jeu : [Dc] (Shadow_SLTM) et Nathanaël (Loki)\n")
 
-            text _("Gestion des fichiers du jeu : [Dc] (Shadow_SLTM) et Nathanaël (Loki)\n")
+            text _("Gestion des fichiers du jeu : [Dc] (Shadow_SLTM) et Nathanaël (Loki)\n") 
             
             label "{b}{i}— Contributions supplémentaires —\n{/i}{/b}" 
 
@@ -1881,7 +1883,7 @@ screen success():
 
             label "{b}{i}— Progression —\n{/i}{/b}" 
 
-            text _("Succès : [success]/33\n") 
+            text _("Succès : [success]/34\n") 
 
             label "{b}{i}— liste des succès —\n{/i}{/b}" 
 
@@ -1918,7 +1920,7 @@ screen success():
             text _("Ferme ta gueule !!! : [quest31]/1\n") 
             text _("Molière c'est toi ? : [quest32]/1\n") 
             text _("Jamais deux sans trois : [quest33]/1\n")  
-            text _("Sa vraie valeur : [quest34]/1\n")
+            text _("Sa vraie valeur : [quest34]/1\n") 
 
 style about_label is gui_label   
 style about_label_text is gui_label_text
@@ -2048,6 +2050,8 @@ screen about():
             text _("Hacking\n")     
 
             text _("School life\n")    
+
+            text _("Uchronie\n")  
 
 style about_label is gui_label
 style about_label_text is gui_label_text

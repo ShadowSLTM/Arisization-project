@@ -104,11 +104,11 @@ label key:
     play sound "Menu.mp3" noloop
     $ key = renpy.input("Veuillez écrire votre clé d'accès.").strip()
 
-    $ valid_keys = {"ARIS-DEVS", "ARIS-8J4K-F9Q7", "ARIS-GRFN-M4A1"}
+    $ valid_keys = {"ARIS-DEVS", "ARIS-8J4K-F9Q7", "ARIS-GRFN-M4A1", "ARIS-DEMO"}
     
     if key in valid_keys: 
 
-        "Jeu déverrouillé."
+        "Jeu déverrouillé." 
         play sound "Ciick.mp3" noloop
 
     else: 
@@ -457,8 +457,7 @@ label choice1:
     menu:    
 
         "{b}{i} Abandonner [A] {/i}{/b}" :
-
-            play sound "Menu.mp3" noloop 
+            play sound "Menu.mp3" noloop
 
             $ validation = get_random_validation() 
             P "[validation]"
@@ -636,7 +635,8 @@ label grayroom:
     Sk "Il se passe quoi ?"
     play sound "Click.mp3" noloop
 
-    $ character12 = Sk
+    $ character12 = Sk 
+    $ ultimate12 = "L'inégalable fanatique de technologie"
 
     if pronom == "il": 
 
@@ -2117,7 +2117,7 @@ label rencontre:
     P "Oui bien sûr, [A] tu peux venir s'il te plait."
     play sound "Click.mp3" noloop
 
-    A "Oui, qu'il y a t'il ?"
+    A "Oui, qu'il y a t'il ?" 
     play sound "Click.mp3" noloop
 
     P "[Kh] voudrait te voir en personne."
@@ -21480,6 +21480,233 @@ label update2:
 
     $ day += 1 
 
+
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    $ line = get_random_morning_line()
+    P "[line]" 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te lèves pour aller te changer.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "[newname] tu es prête ?" 
+    play sound "Click.mp3" noloop 
+
+    P "[newname]...?"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu remarques qu'elle est encore déconnectée.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Sacrée [newname], encore déconnectée mais je pense que la discussion d'hier la un peu perturbé"
+    play sound "Click.mp3" noloop 
+
+    P "Bon, je vais la démarrer manuellement." 
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu t'approches pour démarrer [newname].{/i}{/b}" 
+    play sound "Menu.mp3" noloop 
+
+    menu:    
+
+        "{b}{i} Démarrer [newname].{/i}{/b}" : 
+            play sound "Menu.mp3" noloop 
+
+label password16:  
+
+    $ entered_password = renpy.input("Veuillez entrer votre mot de passe pour [newname].")
+    $ entered_password = entered_password.strip()
+
+    if entered_password == stored_password: 
+
+        "Mot de passe correct. Accès autorisé." 
+        play sound "Menu.mp3" noloop
+
+    else: 
+
+        "Mot de passe incorrect. Accès refusé." 
+        play sound "Menu.mp3" noloop
+        jump password16 
+
+    $ start = get_random_start()
+    Na "[start]"
+    play sound "Click.mp3" noloop 
+
+    Na "Démarrage terminé, Bonjour [P]."
+    play sound "Click.mp3" noloop 
+
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Et toi ?" 
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]"
+    play sound "Click.mp3" noloop
+
+    Na "Cool alors."
+    play sound "Click.mp3" noloop  
+
+    $ go_in_class = get_random_go_in_class()
+    P "[go_in_class]"  
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop 
+
+    hide screen room 
+    scene black
+
+    "{b}{i} Tu quiites le dortoir avec [newname].{/i}{/b}"
+    play sound "Door.mp3" noloop 
+
+    scene hallway 
+    show screen hallway  
+
+    "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop 
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+    
+    scene classroom  
+    show screen class_404  
+
+    $  salutation_rdm = get_random_salutation()
+    M "[salutation_rdm]"
+    play sound "Click.mp3" noloop
+
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
+
+    $  salutation_rdm = get_random_salutation()
+    P "[salutation_rdm]"
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tout le monde s'asseoit à sa place respective.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Bonjour mes élèves, bien vu que tout le monde est là nous pouvons continuer notre cours de philo d'hier."
+    play sound "Click.mp3" noloop 
+
+    $ validation = get_random_validation() 
+    P "[validation]"
+    play sound "ClicK.mp3" noloop 
+
+    "{b}{i}Le cours continue sans problème.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop 
+
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
+    play sound "Click.mp3" noloop 
+    
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Vous vous dirigez votre chemin vers la réfectoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene staircase
+    hide screen hallway
+
+    "{b}{i} Vous continuez votre chemin vers le réfectoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hall 
+    show screen hall 
+
+    "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hall
+
+    "{b}{i} Vous arrivez enfin au réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene lunchroom 
+    show screen lunchroom 
+
+    "{b}{i} en entrant vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 200 
+
+    $ service = get_random_service()
+    P "[service]"
+    play sound "Click.mp3" noloop 
+
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Puis tu croises [I].{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Salut Iris ça te dit de venir manger avec nous ?"
+    play sound "Click.mp3" noloop 
+
+    I "Oui pourquoi pas."
+    play sound "Footsteps.mp3" noloop 
+
+    "{b}{i} Vous asseyez à une table.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    I "Je avais une question pour toi [newname] ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui dis-moi, je t'écoute."
+    play sound "Click.mp3" noloop
+
+    I "C'était avec le cours de philo que je me suis posée la question."
+    play sound "Click.mp3" noloop 
+
+    Na "Quelle est la question ?"
+    play sound "Click.mp3" noloop
+
+    I "Pour toi, ce serait quoi le sens de la vie et ne me réponds pas 42 je connais déjà la blague."
+    play sound "Click.mp3" noloop
+
+    Na "Dommage tu m'eu car j'allais faire la blague."
+    play sound "Click.mp3" noloop
+
+    I "Oui mais pas avec moi."
+    play sound "Click.mp3" noloop
+
+    Na "Alors pour répondre à ta question je dirais que le sens de la vie... c'est ce qui nous pousse à continuer même quand tout semble perdu."
+    play sound "Click.mp3" noloop
+
+    I "Putain c'est touchant."
+    play sound "Click.mp3" noloop
+
+    $ thanks = get_random_thanks()
+    Na "[thanks]"
+    play sound "Click.mp3" noloop
+
     return 
- 
-# Aris la plus belle <333333333333333  
+
+# Aris la plus belle <333333333333333 

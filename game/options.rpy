@@ -212,6 +212,7 @@ init python:
     build.classify("game/**.png", "image")
     build.classify("game/**.jpg", "image")
     build.classify("game/**.jpeg", "image")
+    build.classify("game/**.ico", "image")
 
     build.classify("game/**.mp3", "audio")  
 

@@ -350,7 +350,7 @@ init python:
         "D'accord, je te suis.",  
         "Je te suis.",  
         "Je te suis, allons-y.",  
-        "Oui, je te suis.",
+        "Oui, je te suis.", 
         "Je te suis, pas de problème.",
         "Je te suis, allons-y ensemble.",
         "Oui je te suis, pas de problème.",
