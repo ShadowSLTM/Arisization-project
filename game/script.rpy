@@ -109,7 +109,7 @@ label key:
     if key in valid_keys: 
 
         "Jeu déverrouillé." 
-        play sound "Ciick.mp3" noloop
+        play sound "Click.mp3" noloop
 
     else: 
 
@@ -194,15 +194,22 @@ label auto_save:
     hide screen logo 
 
     "{b}{i}Attention : Ce jeu contient des scènes susceptibles de heurter la sensibilité de certains joueurs. Il s'inspire également de faits réels et aborde des thématiques complexes liées à la moralité et aux choix éthiques.{/i}{/b}"
-        
-label début: 
+    play music "Transition.mp3" noloop  
 
-    scene main
-    play music "Transition.mp3" noloop 
+label début:
+
+    scene main 
     with fade 
 
-    "{b}{i}Chapitre 0 : Arisization Project - Lost Origins Arc{/i}{/b}"
-    play sound "Click.mp3" noloop 
+    if key == "ARIS-GRFN-M4A1": 
+
+        "{b}{i}Chapitre 0 : Arisization Project Alternative - Lost Origins Arc{/i}{/b}"
+        play sound "Click.mp3" noloop 
+
+    else:   
+
+        "{b}{i}Chapitre 0 : Arisization Project - Lost Origins Arc{/i}{/b}"
+        play sound "Click.mp3" noloop 
 
     scene black
     with fade
@@ -882,16 +889,22 @@ label grayroom:
     with fade
 
     "{b}{i}Après cela, tout le monde quitta [origine] pour la dernière fois.{/i}{/b}"   
-    play sound "Click.mp3" noloop 
+    play sound "Transition.mp3" noloop 
 
     stop music fadeout 2.0 
 
     scene main 
     with fade
 
-    play music "Transition.mp3" noloop 
-    "{b}{i}Chapitre 1 : Arisization Project - High School Arc{/i}{/b}"
-    play sound "Click.mp3" noloop 
+    if key == "ARIS-GRFN-M4A1":
+
+        "{b}{i}Chapitre 0 : Arisization Project Alternative - Lost Origins Arc{/i}{/b}"
+        play sound "Click.mp3" noloop 
+
+    else:   
+
+        "{b}{i}Chapitre 0 : Arisization Project - Lost Origins Arc{/i}{/b}"
+        play sound "Click.mp3" noloop 
 
     if wallbreak == 1: 
         
@@ -14527,7 +14540,7 @@ label password4:
     M "[endlesson]"
     play sound "Click.mp3" noloop
 
-    S "Bon, [newname] on retourne au dortoir ?" 
+    P "Bon, [newname] on retourne au dortoir ?" 
     play sound "Click.mp3" noloop
 
     $ suivi = get_random_suivi()
@@ -15040,7 +15053,7 @@ label password6:
     M "Le cours est terminé vous pouvez quitter la salle, je fixerai un examen dans deux semaines."
     play sound "Click.mp3" noloop
 
-    S "Bon, [newname] on retourne au dortoir ?" 
+    P "Bon, [newname] on retourne au dortoir ?" 
     play sound "Click.mp3" noloop
 
     $ suivi = get_random_suivi()
@@ -15455,7 +15468,7 @@ label password7:
     M "[endlesson]"
     play sound "Click.mp3" noloop
 
-    S "Bon, [newname] on retourne au dortoir ?" 
+    P "Bon, [newname] on retourne au dortoir ?" 
     play sound "Click.mp3" noloop
 
     $ suivi = get_random_suivi()
@@ -16158,7 +16171,7 @@ label examen_runix:
     M "[endlesson]"
     play sound "Click.mp3" noloop
 
-    S "Bon, [newname] on retourne au dortoir ?" 
+    P "Bon, [newname] on retourne au dortoir ?" 
     play sound "Click.mp3" noloop
 
     $ suivi = get_random_suivi()
@@ -21183,7 +21196,7 @@ label password15:
     "{b}{i} Vous continuez de discuter jusqu'à la sonnerie.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
-    J2 "Bon on doit retourner en cours."
+    J1 "Bon on doit retourner en cours."
     play sound "Click.mp3" noloop 
 
     P "Ok il faut pas qu'on soit en retard."
@@ -21202,8 +21215,8 @@ label password15:
     scene hall
     show screen hall
 
-    "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
-    play sound "Footsteps.mp3" noloop 
+    "{b}{i} Vous continuez votre chemin vers la classe mais vous croisez [J2] qui monte aussi en classe.{/i}{/b}"
+    play sound "Click.mp3" noloop 
 
     scene staircase 
     hide screen hall
@@ -21480,7 +21493,6 @@ label update2:
 
     $ day += 1 
 
-
     "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
@@ -21691,7 +21703,7 @@ label password16:
     I "Pour toi, ce serait quoi le sens de la vie et ne me réponds pas 42 je connais déjà la blague."
     play sound "Click.mp3" noloop
 
-    Na "Dommage tu m'eu car j'allais faire la blague."
+    Na "Dommage tu m'a eu car j'allais faire la blague."
     play sound "Click.mp3" noloop
 
     I "Oui mais pas avec moi."
@@ -21700,12 +21712,145 @@ label password16:
     Na "Alors pour répondre à ta question je dirais que le sens de la vie... c'est ce qui nous pousse à continuer même quand tout semble perdu."
     play sound "Click.mp3" noloop
 
-    I "Putain c'est si touchant et si sincére."
+    I "Putain ta réponse est si touchante et si sincére."
     play sound "Click.mp3" noloop
 
-    $ thanks = get_random_thanks()
-    Na "[thanks]"
+    $ thanks = get_random_thanks()  
+    Na "[thanks]" 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous continuez de discuter jusqu'à la sonnerie.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+
+    P "Bon on doit retourner en cours."
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]" 
     play sound "Click.mp3" noloop
+
+    I "Je te suis aussi."
+    play sound "Footsteps.mp3" noloop 
+
+    scene black 
+    hide screen lunchroom 
+
+    "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall
+    show screen hall
+
+    "{b}{i} Vous continuez votre chemin vers la classe mais vous croisez [J2] qui monte aussi en classe.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    scene staircase 
+    hide screen hall
+
+    "{b}{i} Vous montez au premier étage.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hallway 
+    show screen hallway
+
+    "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene classroom  
+    show screen class_404 
+
+    P "Nous revoîlà."
+    play sound "Click.mp3" noloop
+
+    Na "Rebonjour."
+    play sound "Click.mp3" noloop
+
+    M "Bien nous pouvons reprendre le cours."
+    play sound "Click.mp3" noloop 
+
+    $ validation = get_random_validation() 
+    Y "[validation]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Le cours continue tranquillement.{/i}{/b}"
+    play sound "Bell.mp3" noloop
+
+    $ stockage += 8.0 
+
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]" 
+    play sound "Click.mp3" noloop 
+
+    M "L'examen de philo sera le 11 décembre." 
+    play sound "Click.mp3" noloop 
+
+    $ validation = get_random_validation() 
+    Na "[validation]"
+    play sound "Click.mp3" noloop 
+
+    P "Bon, [newname] on retourne au dortoir ?" 
+    play sound "Click.mp3" noloop
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop 
+
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}" 
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Vous continuez vers le dortoir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez dans ton dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene room
+    show screen room 
+
+    if pronom == "il": 
+
+        P "Enfin au dortoir je suis epuisé."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle": 
+
+        P "Enfin au dortoir je suis epuisée."
+        play sound "Click.mp3" noloop 
+
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]" 
+    play sound "Click.mp3" noloop 
+
+    P "Bon on se pose pour réviser ?" 
+    play sound "Click.mp3" noloop
+
+    Na "Tu veux vraiment réviser maintenant ?" 
+    play sound "Click.mp3" noloop
+
+    P "Oui comme ça se sera déjà fait." 
+    play sound "Click.mp3" noloop
+
+    $ validation = get_random_validation() 
+    Na "[validation]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous vous posez pour réviser.{/i}{/b}"
+    play sound "Click.mp3" noloop 
 
     return 
 

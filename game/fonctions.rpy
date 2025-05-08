@@ -242,6 +242,7 @@ init python:
         "Bon je reviens, je vais me couler une dalle.", 
         "Bon je reviens, je vais couler un bronze.", 
         "Bon je reviens, je vais sur le trône.", 
+        "Bon je reviens, je vais poser un classique.", 
     ]
 
     def get_random_toilet():
@@ -360,3 +361,23 @@ init python:
 
     def get_random_suivi():
         return random.choice(suivi_list)
+
+init python:
+    import random
+
+    return_dorm_list = [  
+        "On rentre au dortoir ?",
+        "Bon on rentre au dortoir ?",
+        "On y va, direction le dortoir ?",
+        "Tu veux qu’on retourne au dortoir ?",
+        "On reprend le chemin du dortoir ?",
+        "Bon on file au dortoir ?",        
+        "On file au dortoir ?", 
+        "Bon on rentre se poser au dortoir ?",
+        "On rentre se poser au dortoir ?",
+        "Ça te dit de retourner au dortoir ?", 
+    ] 
+
+    def get_random_return_dorm():
+        return random.choice(return_dorm_list)
+
