@@ -94,12 +94,13 @@ label start:
     default quest30 = 0 
     default quest31 = 0 
     default quest32 = 0
-    default quest33 = 0
+    default quest33 = 0 
     default quest34 = 0
+    default quest35 = 0
 
     stop music fadeout 2.0   
 
-label key: 
+label key:  
 
     play sound "Menu.mp3" noloop
     $ key = renpy.input("Veuillez écrire votre clé d'accès.").strip()
@@ -664,7 +665,7 @@ label grayroom:
     "{b}{i}[Sk] se met à te regarder et il est surpris.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    Sk "What the..."
+    Sk "C'est quoi ce truc...."
     play sound "Click.mp3" noloop
 
     Su "Tu as vu ?"
@@ -3498,10 +3499,10 @@ label wallbreaking4:
     Y "Un examen surprise c'est un examen prévu à l'instant même."
     play sound "Click.mp3" noloop 
 
-    Na "What the fuck !?" 
+    Na "Putain c'est cette merde !?" 
     play sound "Click.mp3" noloop 
 
-    Y "Hey, mais d'où tu connais cette insulte !?"
+    Y "Hey, mais d'où tu connais ces insultes !?"
     play sound "Click.mp3" noloop 
 
     "{b}{i}[newname] te pointe secrètement.{/i}{/b}"
@@ -21851,6 +21852,38 @@ label password16:
 
     "{b}{i} Vous vous posez pour réviser.{/i}{/b}"
     play sound "Click.mp3" noloop 
+
+    P "C'est bon tu arrives à comprendre ce sujet ?" 
+    play sound "Click.mp3" noloop
+
+    Na "Oui mais pas trop." 
+    play sound "Click.mp3" noloop
+
+    P "Ne t'inquiètes pas je vais t'expliquer ce que tu n'as pas trop compris." 
+    play sound "Click.mp3" noloop
+
+    $ thanks = get_random_thanks() 
+    Na "[thanks]"
+    play sound "Click.mp3" noloop
+
+    $ nothing = get_random_nothing()
+    P "[nothing]" 
+    play sound "Click.mp3" noloop 
+
+    Na "Comment doit-on comprendre cette réflexion : « Une création capable de penser remet toujours en question son créateur. »"
+    play sound "Click.mp3" noloop
+
+    menu:
+
+        "{b}{i}« Cela signifie qu’une création pensante ne se contentera pas de suivre ses instructions, elle commencera à remettre en question les motivations et les objectifs de son créateur. »{/i}{/b}":
+            play sound "Menu.mp3" noloop
+
+            $ success += 1 
+            $ quest35 += 1
+            $ stockage += 2.0 
+
+        "{b}{i}« Cela suggère qu’une création pensante pourrait un jour dépasser les intentions de son créateur, ce qui soulève la question de savoir si elle doit encore lui obéir. »{/i}{/b}":
+            play sound "Menu.mp3" noloop 
 
     return 
 

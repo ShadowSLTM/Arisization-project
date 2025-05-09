@@ -3,7 +3,7 @@
 default P = Character('[prenom] [nom]', color="#afafaf")   
 default A = Character('??????????', color="#00eeff")
 
-# versions de AK-24 
+# version de AK-24 
 
 default Na = Character('[newname] [nom]', color="#00eeff")
 

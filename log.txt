@@ -1,38 +1,37 @@
-2025-05-08 09:16:00 UTC
+2025-05-09 22:56:20 UTC
 Windows-10-10.0.26100
 Ren'Py 8.3.7.25031702
 
-Early init took 0.14s
-Loading error handling took 0.18s
-Loading script took 4.94s
-Loading save slot metadata took 0.33s
-Loading persistent took 0.01s
- - Init at game/gui.rpy:11 took 0.26263 s.
-Running init code took 0.35s
-Loading analysis data took 0.05s
-Analyze and compile ATL took 0.01s
-Reloading save slot metadata took 0.61s
+Early init took 0.06s
+Loading error handling took 0.09s
+Loading script took 2.68s
+Loading save slot metadata took 0.13s
+Loading persistent took 0.00s
+Running init code took 0.15s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.28s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\Aris\\AppData\\Roaming/RenPy/backups\\Arisization-project':
-Dump and make backups took 0.13s
+Dump and make backups took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.39s
+Initial gc took 0.08s
 DPI scale factor: 1.500000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
-Creating interface object took 0.01s
+Creating interface object took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.18s
-Analyze screens took 0.05s
-Save screen analysis took 0.07s
-Prepare screens took 0.30s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.21s
+Load screen analysis took 0.01s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.06s
 Running _start took 0.01s
-Interface start took 1.10s
+Interface start took 1.14s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)

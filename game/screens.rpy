@@ -1907,7 +1907,7 @@ screen success():
             text _("Petit exercice de python : [quest16]/1\n")
             text _("Affection pour les autres : [quest17]/1\n")
             text _("Entre connaissance : [quest18]/1\n")
-            text _("Le bon suspect : [quest19]/1\n")
+            text _("C'était le bon : [quest19]/1\n")
             text _("Affection pour les autres partie 2 : [quest20]/1\n")
             text _("Plus c’est gros plus ça passe : [quest21]/1\n")
             text _("La vérité avant tout : [quest22]/1\n")
@@ -1923,6 +1923,7 @@ screen success():
             text _("Molière c'est toi ? : [quest32]/1\n") 
             text _("Jamais deux sans trois : [quest33]/1\n")  
             text _("Sa vraie valeur : [quest34]/1\n") 
+            text _("Faire de la philosophie : [quest35]/1\n") 
 
 style about_label is gui_label   
 style about_label_text is gui_label_text
