@@ -1885,11 +1885,11 @@ screen success():
 
             label "{b}{i}— Progression —\n{/i}{/b}" 
 
-            text _("Succès : [success]/34\n") 
+            text _("Succès : [success]/35\n") 
 
             label "{b}{i}— liste des succès —\n{/i}{/b}" 
 
-            text _("Une autre clé ? : [quest1]/1\n")
+            text _("Une autre clé ? : [quest1]/1\n") 
             text _("Premier piratage : [quest2]/1\n")
             text _("Nouveau nom de code ( DLC ) : [quest3]/1\n")     
             text _("L'espoir fait vivre : [quest4]/1\n")

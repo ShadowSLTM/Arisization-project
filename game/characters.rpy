@@ -7,7 +7,7 @@ default A = Character('??????????', color="#00eeff")
 
 default Na = Character('[newname] [nom]', color="#00eeff")
 
-# professuer de la chambre grise 
+# professeure de la chambre grise 
 
 define Gt = Character('Naomi Sakayanagi', color="#c06c6c")
 

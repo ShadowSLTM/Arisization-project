@@ -21882,8 +21882,53 @@ label password16:
             $ quest35 += 1
             $ stockage += 2.0 
 
+            Na "Je vois vraiment mieux ce que tu veux dire." 
+            play sound "Click.mp3" noloop
+
         "{b}{i}« Cela suggère qu’une création pensante pourrait un jour dépasser les intentions de son créateur, ce qui soulève la question de savoir si elle doit encore lui obéir. »{/i}{/b}":
             play sound "Menu.mp3" noloop 
+
+            Na "Je vois un peu mieux ce que tu veux dire." 
+            play sound "Click.mp3" noloop
+
+    P "C'est bien tu as compris alors." 
+    play sound "Knock.mp3" noloop 
+
+    "{b}{i} Puis quelqu'un frappe à votre porte.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    Na "C'est qui frappe à notre porte ?" 
+    play sound "Click.mp3" noloop
+
+    P "Je ne sais pas je vais aller voir." 
+    play sound "Click.mp3" noloop
+
+    $ validation = get_random_validation() 
+    Na "[validation]"
+    play sound "Door.mp3" noloop 
+
+    "{b}{i} Puis tu ouvres la portes et tu aperçois [S].{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Qu'est-ce tu nous veux ?" 
+    play sound "Click.mp3" noloop
+
+    S "J'ai entendu dire qu'[newname] a été officiellement reconnue commme une vraie personne, est-ce que c'est vrai ?" 
+    play sound "Click.mp3" noloop
+
+    P "Oui absolument." 
+    play sound "Click.mp3" noloop 
+
+    S "Et aussi je tiens à m'excuser pour ce que j'ai dit sur [newname]." 
+    play sound "Click.mp3" noloop
+
+    P "Tu le penses sincérement ?" 
+    play sound "Click.mp3" noloop
+
+    S "" 
+    play sound "Click.mp3" noloop
+
+
 
     return 
 
