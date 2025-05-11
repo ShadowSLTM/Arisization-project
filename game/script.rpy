@@ -98,6 +98,8 @@ label start:
     default quest34 = 0
     default quest35 = 0
 
+#########################################################################
+
     stop music fadeout 2.0   
 
 label key:  
@@ -120,7 +122,7 @@ label key:
 
     $ success = 0 
 
-    if key == "ARIS-8J4K-F9Q7" or key == "ARIS-DEVS":
+    if key == "ARIS-8J4K-F9Q7" or key == "ARIS-DEVS" or key == "ARIS-DEMO" :
 
         $ origine = "la chambre grise" 
 
@@ -187,7 +189,7 @@ label auto_save:
     transform unrotate: 
         zoom 0.5
         rotate 360 
-        linear 2.0 rotate 0 
+        linear 2.0 rotate 0
  
     "{b}{i}Bienvenue dans Arisization Project cher/chère lycéen, Ce jeu appartient à SLTM.{/i}{/b}"   
     play sound "Click.mp3" noloop 
@@ -369,13 +371,14 @@ label hack:
                 $ A = Character("M1919A4", color="#005c17") 
                 $ stockage += 1.9 
 
+        $ renpy.block_rollback()
         $ quest3 += 1
         $ success += 1 
 
         P "Attend on dirait qu'elle est en train de démarrer."
         play sound "Menu.mp3" noloop 
 
-    else:   
+    else:    
 
         $ A = Character("AK-24", color="#00eeff")
         $ stockage += 1.0
@@ -597,7 +600,7 @@ label grayroom:
     "{b}{i}Tu l'ignores complètement et va t'asseoir au fond de la classe comme d'habitude.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    S "Hey, tu m'écoutes quand je parle !?"
+    S "Hey, tu m'écoutes quand je te parle !?"
     play sound "Click.mp3" noloop
 
     if pronom == "il":
@@ -2869,10 +2872,12 @@ label choice4:
         $ robotname = nom
         $ stockage += 2.0 
         
+        $ renpy.block_rollback()
+
         "Le prénom a été enregistré dans le système." 
         play sound "Menu.mp3" noloop
 
-    else:
+    else: 
 
         "Erreur système. Veuillez réessayer."
         $ renpy.restart_interaction() 
@@ -2905,6 +2910,8 @@ label choice5:
         $ quest7 += 1 
         $ stockage += 2.0 
         $ baseip = "001.018.009.019" 
+
+        $ renpy.block_rollback()
 
         "{b}{i}Initialisation de l'adresse IP en cours...{/i}{/b}"
         play sound "Menu.mp3" noloop
@@ -3377,14 +3384,11 @@ label wallbreaking4:
     hide screen day
 
     "{b}{i}Tu te couches jusqu'au lendemain, le 13 septembre 2097.{/i}{/b}"
-    play sound "Click.mp3" noloop   
+    play sound "Alarm.mp3" noloop 
     
     scene room 
     show screen day
     $ day += 1
-    play sound "Alarm.mp3" noloop 
-
-# second jour de cours. 
 
     "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -3594,6 +3598,8 @@ label wallbreaking4:
             $ grade += 5.0
         "{b}{i}Non.{/i}{/b}" : 
             $ grade += 0.0
+
+    $ renpy.block_rollback()
 
     M "Maintenant, remettez-moi votre copie je vais vous les corriger tout de suite."
     play sound "Click.mp3" noloop 
@@ -4414,25 +4420,22 @@ label connexion:
             play sound "Click.mp3" noloop
 
             P "Tu te diriges vers le hall."
-            play sound "Click.mp3" noloop
+            play sound "Door.mp3" noloop
 
             scene hall 
             show screen hall
-            play sound "Door.mp3" noloop 
 
             P "..."
             play sound "Click.mp3" noloop
 
             scene staircase
             hide screen hall
-            play sound "Click.mp3" noloop
 
             P "..."
             play sound "Click.mp3" noloop
 
             scene hallway
             show screen hallway
-            play sound "Click.mp3" noloop
 
             P "Maintenant le dortoir..."
             play sound "Click.mp3" noloop 
@@ -4709,7 +4712,7 @@ label dorm2:
     hide screen day
 
     "{b}{i} Cinq jours plus tard, le 19 septembre 2097.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Alarm.mp3" noloop
 
     scene room 
     show screen room
@@ -4718,7 +4721,9 @@ label dorm2:
     $ points -= 1000
     $ stockage += 100.0 
 
-    play sound "Alarm.mp3" noloop 
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
     $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
@@ -4755,8 +4760,6 @@ label choice8:
         play sound "Menu.mp3" noloop 
         jump choice8
 
-label skip2: 
-
     P "Bon on dirait qu'elle est stable, je vais pouvoir la démarrer." 
     play sound "Menu.mp3" noloop 
 
@@ -4768,105 +4771,86 @@ label skip2:
     $ start = get_random_start()
     Na "[start]"
     play sound "Click.mp3" noloop 
-    
-    "{b}{i}Tu patientes tranquillement jusqu'à ce que son démarrage soit complet.{/i}{/b}"
-    play sound "Click.mp3" noloop
 
-    Na "Démarrage terminé bonjour [P]."
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
     $ comment_ca_va = get_random_comment_ca_va()
     P "[comment_ca_va]"
     play sound "Click.mp3" noloop
 
-    Na "Ça va."
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Et toi ?" 
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]" 
+    play sound "Click.mp3" noloop
+
+    Na "Cool alors."
     play sound "Click.mp3" noloop 
 
     $ go_in_class = get_random_go_in_class()
     P "[go_in_class]"  
     play sound "Click.mp3" noloop 
 
-    $ suivi = get_random_suivi()
-    Na "[suivi]"
-    play sound "Footsteps.mp3" noloop
+    Na "Oui car on a examen d'histoire aujourd'hui."
+    play sound "Click.mp3" noloop 
 
+    P "Je le sais déjà."
+    play sound "Click.mp3" noloop 
+    
     hide screen room
     scene black
 
-    "{b}{i}Vous vous dirigez vers le couloir.{/i}{/b}"
+    "{b}{i}Tu te diriges vers le couloir.{/i}{/b}"
     play sound "Door.mp3" noloop
-    
-    scene hallway 
-    show screen hallway  
+     
+    scene hallway
+    show screen hallway 
 
-    "{b}{i}Dans le couloir tu croises [I].{/i}{/b}"
-    play sound "Click.mp3" noloop
-
-    $ comment_ca_va = get_random_comment_ca_va()
-    P "[comment_ca_va]"
-    play sound "Click.mp3" noloop
-
-    I "Ça va mais je suis un peu stressée pour l'examen."
-    play sound "Click.mp3" noloop 
-
-    P "Ça va aller j'ai confiance en toi." 
-    play sound "Click.mp3" noloop 
-
-    I "Merci beaucoup de me soutenir.~" 
-    play sound "Click.mp3" noloop 
-
-    P "C'est normal." 
+    "{b}{i}Vous continuez vers la salle de classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop 
 
-    "{b}{i}Vous continuez votre chemin vers la salle de classe.{/i}{/b}"
-    play sound "Click.mp3" noloop  
-    hide screen hallway 
+    hide screen hallway
     scene black
 
-    "{b}{i} Quand vous entrez dans la salle tous les autres élèves sont déjà là.{/i}{/b}"
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
-    
-    scene classroom
-    show screen class_404
 
-    $ comment_ca_va = get_random_comment_ca_va()
-    K "[comment_ca_va]"
+    scene classroom  
+    show screen class_404     
+
+    $  salutation_rdm = get_random_salutation()
+    M "[salutation_rdm]"
     play sound "Click.mp3" noloop
 
-    P "Ça va bien comme d'habitude." 
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
-    K "Oh cool c'est génial." 
-    play sound "Click.mp3" noloop 
+    $  salutation_rdm = get_random_salutation()
+    P "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
-    H "Et sinon comment elle va [newname] ?" 
-    play sound "Click.mp3" noloop 
+    "{b}{i}Tout le monde s'asseoit à sa place respective.{/i}{/b}"
+    play sound "Click.mp3" noloop
 
-    P "Elle va bien, elle est juste là." 
-    play sound "Click.mp3" noloop 
-
-    H "Salut."
-    play sound "Door.mp3" noloop
-
-    "{b}{i}Soudainement la porte s'ouvrit et [M] entra.{/i}{/b}"
-    play sound "Click.mp3" noloop 
-
-    M "Bonjour aujourd'hui comme vous le savez vous avez votre premier examen je vais vous distribuer votre copie." 
-    play sound "Click.mp3" noloop 
+    M "Bien comme vous le savez aujourd'hui vous avez votre premier examen qui se portera sur l'histoire de la guerre"
+    play sound "Click.mp3" noloop  
 
     $ validation = get_random_validation() 
     Na "[validation]"
     play sound "Click.mp3" noloop 
 
-    "{b}{i}[M] commença à distribuer les copies.{/i}{/b}"
+    "{b}{i}[M] Commence à distribuer les copies.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    M "Vous avez une heure c'est parti !!!" 
+    Na "Bien vous pouvez commencer, vous avez une heure."
     play sound "Click.mp3" noloop 
 
-label choice9: 
-
-    "{b}{i}Tout le monde retourna sa copie.{/i}{/b}"
+    "{b}{i}Tout le monde retourne sa copie.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     $ grade = 0.0 
@@ -4980,6 +4964,8 @@ label choice9:
             $ grade += 2.0  
         "Une déclaration de guerre soudaine":  
             $ grade += 0.0  
+
+    $ renpy.block_rollback()
 
     "{b}{i}Après l'examen tout le monde remit leur copie à [M].{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -5874,6 +5860,8 @@ label choice9:
 
         "{b}{i} Accepter les documents.{/i}{/b}" :
 
+            $ renpy.block_rollback()
+
             $ success += 1
             $ quest11 += 1
 
@@ -5928,6 +5916,8 @@ label choice9:
             play sound "Click.mp3" noloop
 
         "{b}{i} Refuser les documents. {/i}{/b}" : 
+
+            $ renpy.block_rollback()
 
             P "Merci pour votre confiance… mais je préfère tourner la page et repartir sur de nouvelles bases."
             play sound "Click.mp3" noloop
@@ -6220,6 +6210,9 @@ label choice9:
     $ points -= 2800
     $ stockage += 280.0 
 
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
     $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
@@ -6270,6 +6263,7 @@ label choice9:
 
         "{b}{i} Refuser la mise à jour {/i}{/b}" :
 
+            $ renpy.block_rollback()
             $ Na = Character('[newname] [nom]', color="#0066ff")
 
             P "Non merci."
@@ -6281,6 +6275,8 @@ label choice9:
         
         "{b}{i} faire la mise à jour {/i}{/b}" : 
         
+            $ renpy.block_rollback()
+
             Na "Bien je lance la mise à jour"
             play sound "Click.mp3" noloop
 
@@ -7191,6 +7187,9 @@ label suite1:
     show screen day
     $ day += 1
 
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
     $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
@@ -7638,6 +7637,7 @@ label suite1:
 
         "{b}{i} Accepter [S]{/i}{/b}" :
     
+            $ renpy.block_rollback()
             $ success += 1
             $ quest13 += 1
 
@@ -7697,6 +7697,8 @@ label suite1:
             play sound "Click.mp3" noloop 
 
         "{b}{i} Refuser [S]{/i}{/b}" : 
+
+            $ renpy.block_rollback()
 
             if pronom == "il":
 
@@ -7970,6 +7972,8 @@ label debate:
 
         "{b}{i} Les cours. {/i}{/b}" :
 
+            $ renpy.block_rollback()
+
             P "Non ils peuvent aussi aider pour les cours."
             play sound "Click.mp3" noloop 
 
@@ -8028,6 +8032,8 @@ label debate:
 
         "{b}{i} la guerre {/i}{/b}" :
 
+            $ renpy.block_rollback()
+
             P "Non ils peuvent aussi aider pour la guerre."
             play sound "Click.mp3" noloop 
 
@@ -8069,6 +8075,8 @@ label debate:
                     jump debate
 
         "{b}{i} l'administratif {/i}{/b}" :
+
+            $ renpy.block_rollback()
 
             P "L'administratif par exemple."
             play sound "Click.mp3" noloop 
@@ -8144,6 +8152,8 @@ label debate:
     menu:    
 
         "{b}{i} Expliquer au tableau {/i}{/b}" : 
+
+            $ renpy.block_rollback()
 
             "{b}{i} tu commences à expliquer au tableau.{/i}{/b}"
             play sound "Click.mp3" noloop 
@@ -8401,6 +8411,9 @@ label debate:
     $ points -= 600
     $ stockage += 60.0 
 
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
     $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
@@ -8447,6 +8460,8 @@ label debate:
         "{b}{i} Ouvrir le message.{/i}{/b}":
             play sound "Menu.mp3" noloop 
 
+            $ renpy.block_rollback()
+
             $ success += 1 
             $ quest14 += 1
 
@@ -8476,6 +8491,8 @@ label debate:
 
         "{b}{i} Ignorer le message.{/i}{/b}" :
             play sound "Menu.mp3" noloop 
+
+            $ renpy.block_rollback()
 
             Na "Tu ne regardes pas le message ?"
             play sound "Click.mp3" noloop 
@@ -8731,6 +8748,8 @@ label debate:
 
         "{b}{i} Rattrapper mon retard en math.{/i}{/b}" :
             
+            $ renpy.block_rollback()
+
             P "Bon je vais essayser de travailler un peu..."
             play sound "Click.mp3" noloop 
 
@@ -8785,6 +8804,8 @@ label debate:
             $ success += 1 
             $ quest15 += 1
 
+            $ renpy.block_rollback()
+
             "{b}{i} Tu te reposes pendant trois heures avant de te réveiller {/i}{/b}"
             play sound "Click.mp3" noloop 
 
@@ -8828,14 +8849,16 @@ label debate:
     hide screen day
 
     "{b}{i} Le lendemain, le 8 octobre 2097.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Alarm.mp3" noloop 
 
     scene room 
     show screen room
     show screen day
     $ day += 1
 
-    play sound "Alarm.mp3" noloop 
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
     $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
@@ -9027,6 +9050,7 @@ label debate:
 
     "{b}{i}Puis vers le hall.{/i}{/b}"
     play sound "Click.mp3" noloop
+
 
 
     
@@ -9322,15 +9346,16 @@ label debate:
     hide screen day
 
     "{b}{i} Le lendemain matin, le 9 octobre 2097{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Alarm.mp3" noloop
 
     scene room 
     show screen room
     show screen day
     $ day += 1 
-
-    play sound "Alarm.mp3" noloop 
     
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
     $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
@@ -9813,6 +9838,8 @@ label update:
 
         "{b}{i} Réveiller [I] {/i}{/b}" : 
 
+            $ renpy.block_rollback()
+
             $ success += 1
             $ quest17 += 1
 
@@ -9890,6 +9917,8 @@ label update:
             show screen hall 
             
         "{b}{i} La laisser dormir {/i}{/b}" : 
+
+            $ renpy.block_rollback()
 
             P "Je vais la laisser dormir elle en a besoin."
             play sound "Click.mp3" noloop 
@@ -9999,6 +10028,9 @@ label update:
     show screen room
     show screen day
     $ day += 1  
+
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
 
     $ line = get_random_morning_line()
     P "[line]"
@@ -10315,6 +10347,8 @@ label update:
         "{b}{i} Aller manger avec [S]{/i}{/b}" : 
             play sound "Menu.mp3" noloop 
 
+            $ renpy.block_rollback()
+
             P "Salut [S] ça va ?"
             play sound "Click.mp3" noloop 
 
@@ -10362,6 +10396,8 @@ label update:
 
         "{b}{i} Aller manger avec [Na]{/i}{/b}" : 
             play sound "Menu.mp3" noloop 
+
+            $ renpy.block_rollback()
 
             $ success += 1 
             $ quest18 += 1
@@ -10797,6 +10833,8 @@ label update:
         "{b}{i} Aller au dortoir.{/i}{/b}" :
             play sound "Menu.mp3" noloop 
 
+            $ renpy.block_rollback()
+
             P "Je vais aller au dortoir et la laisser tranquille."
             play sound "Click.mp3" noloop 
 
@@ -10814,6 +10852,8 @@ label update:
 
         "{b}{i} Aller voir [I]. {/i}{/b}" :
             play sound "Menu.mp3" noloop 
+
+            $ renpy.block_rollback()
 
             $ success += 1 
             $ quest20 += 1 
@@ -10953,6 +10993,9 @@ label update:
     "{b}{i} Tu vérifies si [newname] est toujours là avant d'aller chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
 
+    "{b}{i} tu poses tranquillement ton sac de cours.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
     P "Bon je vais chercher à manger, j'avais complétement oublié."
     play sound "Click.mp3" noloop  
 
@@ -10990,6 +11033,9 @@ label update:
     show screen day
     $ day += 1 
  
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
     $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
@@ -11091,6 +11137,8 @@ label password:
         play sound "Menu.mp3" noloop
         jump password  
 
+    $ renpy.block_rollback()
+
     $ start = get_random_start()
     Na "[start]"
     play sound "Click.mp3" noloop 
@@ -11117,11 +11165,10 @@ label password:
     play sound "Click.mp3" noloop 
 
     "{b}{i}Vous quittez le dortoir.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Door.mp3" noloop  
 
     scene hallway 
     show screen hallway 
-    play sound "Door.mp3" noloop  
 
     P "Dépéches-toi sinon on va être en retard."
     play sound "Click.mp3" noloop 
@@ -12094,6 +12141,9 @@ label password:
     $ points -= 600
     $ stockage += 60.0 
 
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
     $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
@@ -12379,6 +12429,8 @@ label password1:
         "{b}{i} Lui dire mes inquiétudes.{/i}{/b}":
             play sound "Menu.mp3" noloop 
 
+            $ renpy.block_rollback()
+
             $ success += 1
             $ quest22 += 1
 
@@ -12434,6 +12486,8 @@ label password1:
 
         "{b}{i} Ne rien lui dire.{/i}{/b}":
             play sound "Menu.mp3" noloop 
+
+            $ renpy.block_rollback() 
 
             P "Oui ne t'inquiète pas."
             play sound "Click.mp3" noloop  
@@ -12699,6 +12753,9 @@ label password1:
     $ points -= 800
     $ stockage += 80.0 
 
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
     $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
@@ -12937,6 +12994,8 @@ label examen_pythagore:
             $ grade += 2.0
         "Oui, mais seulement dans un triangle équilatéral":
             $ grade += 0.0
+
+    $ renpy.block_rollback()
 
     "{b}{i}Aprés l'examen tout le monde remit leur copie à [M].{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -13516,6 +13575,9 @@ label examen_pythagore:
     $ points -= 600
     $ stockage += 60.0 
 
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
     $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
@@ -14017,6 +14079,9 @@ label password3:
     $ day += 7
     $ points -= 1400
     $ stockage += 140.0 
+
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
 
     $ line = get_random_morning_line()
     P "[line]"
@@ -14695,6 +14760,9 @@ label password5:
     show screen day
     $ day += 1 
 
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
     $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
@@ -15199,6 +15267,9 @@ label password6:
     show screen day
     $ day += 1 
 
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
     $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
@@ -15559,6 +15630,9 @@ label password7:
     $ points -= 2800
     $ stockage += 280.0 
 
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
     $ line = get_random_morning_line()
     P "[line]"
     play sound "Click.mp3" noloop 
@@ -15626,6 +15700,7 @@ label password8:
 
         "{b}{i} Refuser la mise à jour {/i}{/b}" :
 
+            $ renpy.block_rollback()
             $ Na = Character('[newname] [nom]', color="#0066ff")
 
             P "Non merci."
@@ -15636,6 +15711,8 @@ label password8:
 
         "{b}{i} faire la mise à jour {/i}{/b}" : 
         
+            $ renpy.block_rollback()
+
             Na "Bien je lance la mise à jour"
             play sound "Click.mp3" noloop
 
@@ -15874,6 +15951,8 @@ label examen_runix:
         $ grade += 2.0
     else:
         $ grade += 0.0
+
+    $ renpy.block_rollback()
 
     P "Enfin fini..." 
     play sound "Click.mp3" noloop 
@@ -16214,6 +16293,9 @@ label examen_runix:
     P "[bien]" 
     play sound "Click.mp3" noloop  
 
+    "{b}{i} Vous posez tranquillement vos sacs de cours.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
     Na "Bon Je vais me déconnecter et me recharger je suis fatiguée de cette examen."
     play sound "Click.mp3" noloop 
 
@@ -16223,7 +16305,7 @@ label examen_runix:
     "{b}{i}[newname] se déconnecte et recharge sa batterie.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "Bon je vais chercher à manger, j'avais complétement oublié."
+    P "Bon je vais chercher à manger."
     play sound "Click.mp3" noloop  
 
     scene black 
@@ -16259,6 +16341,9 @@ label examen_runix:
     show screen room
     show screen day 
     $ day += 1
+
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
 
     $ line = get_random_morning_line()
     P "[line]"
@@ -16798,13 +16883,17 @@ label password9:
 
         "{b}{i} La perte de la mémoire.{/i}{/b}" :
 
+            $ renpy.block_rollback()
+
             $ success += 1
             $ quest27 += 1
 
             P "Je faisais référence à la perte de sa mémoire."
             play sound "Click.mp3" noloop
 
-        "{b}{i} Le manque de connaissance.{/i}{/b}" :
+        "{b}{i} Le manque de connaissance.{/i}{/b}" : 
+
+            $ renpy.block_rollback() 
 
             P "Je faisais référence au manque de connaisance qu'elle a."
             play sound "Click.mp3" noloop
@@ -16904,6 +16993,8 @@ label code1:
             "{b}{i} Ne rien lui dire {/i}{/b}" :
                 play sound "Menu.mp3" noloop
 
+                $ renpy.block_rollback()
+
                 $ success += 1 
                 $ quest28 += 1
 
@@ -16917,6 +17008,8 @@ label code1:
 
             "{b}{i} lui dire la vérité {/i}{/b}" :
                 play sound "Menu.mp3" noloop  
+
+                $ renpy.block_rollback()
 
                 P "Aris... Il faut que tu saches la vérité. Ta véritable date d’anniversaire… c’est le 31 janvier."
                 play sound "Click.mp3" noloop
@@ -17133,7 +17226,7 @@ label code1:
     "{b}{i}Tu remarques qu'elle est encore déconnectée.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "Sacrée [newname], encore déconnectée mais je pense que la discussion d'hier la un peu perturbé"
+    P "Sacrée [newname], encore déconnectée mais je pense que la discussion d'hier la un peu perturbé."
     play sound "Click.mp3" noloop 
 
     P "Bon, je vais la démarrer manuellement." 
@@ -17568,6 +17661,8 @@ label password10:
 
         "{b}{i} Accepter l'interview {/i}{/b}" : 
 
+            $ renpy.block_rollback()
+
             P "J'accepte de répondre à vos questions."
             play sound "Click.mp3" noloop 
 
@@ -17649,6 +17744,8 @@ label password10:
             play sound "Footsteps.mp3" noloop 
 
         "{b}{i} refuser l'interview {/i}{/b}" : 
+
+            $ renpy.block_rollback()
 
             $ success += 1  
             $ quest29 += 1
@@ -17955,9 +18052,6 @@ label update1:
     "{b}{i}Tu remarques qu'elle est encore déconnectée.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "Sacrée [newname], encore déconnectée mais je pense que la discussion d'hier la un peu perturbé"
-    play sound "Click.mp3" noloop 
-
     P "Bon, je vais la démarrer manuellement." 
     play sound "Click.mp3" noloop
 
@@ -18259,6 +18353,8 @@ label password11:
         "{b}{i}Donner un avis positif{/i}{/b}":
             play sound "Menu.mp3" noloop
 
+            $ renpy.block_rollback()
+
             P "Il y a encore de l'espoir dans cette société."
             play sound "Click.mp3" noloop
 
@@ -18271,6 +18367,8 @@ label password11:
 
         "{b}{i}Exprimer un avis négatif{/i}{/b}":
             play sound "Menu.mp3" noloop
+
+            $ renpy.block_rollback()
 
             $ success += 1 
             $ quest30 += 1 
@@ -18993,9 +19091,6 @@ label password12:
     "{b}{i}Tu remarques qu'elle est encore déconnectée.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "Sacrée [newname], encore déconnectée mais je pense que la discussion d'hier la un peu perturbé"
-    play sound "Click.mp3" noloop 
-
     P "Bon, je vais la démarrer manuellement." 
     play sound "Click.mp3" noloop
 
@@ -19326,6 +19421,8 @@ label password13:
         "{b}{i} Continuer la discussion.{/i}{/b}" :
             play sound "Menu.mp3" noloop
 
+            $ renpy.block_rollback()
+
             P "En plus elle s'est mis à l'insulter au calme." 
             play sound "Click.mp3" noloop
 
@@ -19350,6 +19447,8 @@ label password13:
 
         "{b}{i} Arrêter la discussion{/i}{/b}" :
             play sound "Menu.mp3" noloop 
+
+            $ renpy.block_rollback()
 
             $ success += 1 
             $ quest31 += 1 
@@ -19724,9 +19823,6 @@ label newpassword:
     "{b}{i}Tu remarques qu'elle est encore déconnectée.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "Sacrée [newname], encore déconnectée mais je pense que la discussion d'hier la un peu perturbé"
-    play sound "Click.mp3" noloop 
-
     P "Bon, je vais la démarrer manuellement." 
     play sound "Click.mp3" noloop
 
@@ -19989,6 +20085,8 @@ label examen_francais:
 
     "{b}{i}Aprés l'examen tout le monde remit leur copie à [M].{/i}{/b}"
     play sound "Click.mp3" noloop 
+
+    $ renpy.block_rollback() 
 
     Na "Cette examen n'était si dur que ça."
     play sound "Click.mp3" noloop
@@ -20611,6 +20709,8 @@ label examen_francais:
 
         "{b}{i} Refuser la mise à jour {/i}{/b}" :
 
+            $ renpy.block_rollback()
+
             $ Na = Character('[newname] [nom]', color="#0066ff")
 
             P "Non merci."
@@ -20620,6 +20720,8 @@ label examen_francais:
             play sound "Click.mp3" noloop 
 
         "{b}{i} faire la mise à jour {/i}{/b}" : 
+
+            $ renpy.block_rollback() 
         
             Na "Bien je lance la mise à jour"
             play sound "Click.mp3" noloop
@@ -20758,9 +20860,6 @@ label examen_francais:
     play sound "Click.mp3" noloop 
 
     "{b}{i}Tu remarques qu'elle est encore déconnectée.{/i}{/b}"
-    play sound "Click.mp3" noloop 
-
-    P "Sacrée [newname], encore déconnectée mais je pense que la discussion d'hier la un peu perturbé"
     play sound "Click.mp3" noloop 
 
     P "Bon, je vais la démarrer manuellement." 
@@ -21123,6 +21222,8 @@ label password15:
         "{b}{i} Faire une comparaison.{/i}{/b}" :
             play sound "Menu.mp3" noloop  
 
+            $ renpy.block_rollback()
+
             P "[newname] est comme... un serveur informatique super puissant, sans latence, toujours opérstionnel."
             play sound "Click.mp3" noloop
 
@@ -21144,6 +21245,8 @@ label password15:
  
         "{b}{i} Faire les éloges de [newname].{/i}{/b}" : 
             play sound "Menu.mp3" noloop 
+
+            $ renpy.block_rollback()
 
             if pronom == "il" : 
 
@@ -21513,9 +21616,6 @@ label update2:
     "{b}{i}Tu remarques qu'elle est encore déconnectée.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "Sacrée [newname], encore déconnectée mais je pense que la discussion d'hier la un peu perturbé"
-    play sound "Click.mp3" noloop 
-
     P "Bon, je vais la démarrer manuellement." 
     play sound "Click.mp3" noloop
 
@@ -21878,6 +21978,8 @@ label password16:
         "{b}{i}« Cela signifie qu’une création pensante ne se contentera pas de suivre ses instructions, elle commencera à remettre en question les motivations et les objectifs de son créateur. »{/i}{/b}":
             play sound "Menu.mp3" noloop
 
+            $ renpy.block_rollback()
+
             $ success += 1 
             $ quest35 += 1
             $ stockage += 2.0 
@@ -21887,6 +21989,8 @@ label password16:
 
         "{b}{i}« Cela suggère qu’une création pensante pourrait un jour dépasser les intentions de son créateur, ce qui soulève la question de savoir si elle doit encore lui obéir. »{/i}{/b}":
             play sound "Menu.mp3" noloop 
+
+            $ renpy.block_rollback() 
 
             Na "Je vois un peu mieux ce que tu veux dire." 
             play sound "Click.mp3" noloop
@@ -21925,10 +22029,210 @@ label password16:
     P "Tu le penses sincérement ?" 
     play sound "Click.mp3" noloop
 
-    S "" 
+    S "Oui je le penses.....car elle le mérite." 
     play sound "Click.mp3" noloop
 
+    $ thanks = get_random_thanks() 
+    P "[thanks]"
+    play sound "Click.mp3" noloop
 
+    S "Bon je vais devoir vous laisser." 
+    play sound "Click.mp3" noloop 
+
+    $ validation = get_random_validation() 
+    P "[validation]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Puis [S] quittes votre dortoir.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    Na "Je ne sais si bien ou bizarre de savoir que Subaru sois venu s'excuser ?" 
+    play sound "Click.mp3" noloop
+
+    P "C'est vrai, Ayano puis maintemant Subaru...." 
+    play sound "Click.mp3" noloop 
+
+    Na "La seule personne qui n'est jamais venue pour s'excuser c'est [J2]." 
+    play sound "Click.mp3" noloop
+
+    P "Tu as raison." 
+    play sound "Click.mp3" noloop
+
+    if suspect == "Ayano":
+         
+        Na "Donc ça ne peut pas être Ayano alors tu l'as accusé."
+        play sound "Click.mp3" noloop
+        
+    elif suspect == "Aiko": 
+    
+        Na "Vu la situation ça ne peut être que [J2]"
+        play sound "Click.mp3" noloop 
+
+    elif suspect == "Subaru": 
+
+        Na "Tu vois au final Subaru a un bon coeur alors tu l'as accusé."
+        play sound "Click.mp3" noloop  
+
+    else: 
+
+        Na "Donc sois c'est Aiko ou quelqu'un d'autre"
+        play sound "Click.mp3" noloop
+
+    P "Bon on continue de réviser ?" 
+    play sound "Click.mp3" noloop
+
+    Na "Tu veux vraiment réviser maintenant ?" 
+    play sound "Click.mp3" noloop
+
+    $ validation = get_random_validation() 
+    P "[validation]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous continuez de révisez pendant une heure.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+
+    P "Bon on va prendre à manger ? J'avais complétement oublié."
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen room
+
+    "{b}{i} Vous partez chercher à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 200 
+
+    scene room 
+    show screen room
+
+    P "Enfin à manger... "
+    play sound "Click.mp3" noloop 
+
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]"
+    play sound "Click.mp3" noloop  
+
+    "{b}{i} Vous mangez tranquillement pendant une demi-heure.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Tu as finis de manger ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui, je n'ai plus faim."
+    play sound "Click.mp3" noloop 
+
+    P "Bien."
+    play sound "Click.mp3" noloop 
+
+    Na "Bon Je vais me déconnecter et me recharger."
+    play sound "Click.mp3" noloop 
+
+    P "Pas de soucis."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[newname] se déconnecte et recharge sa batterie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bon je vais me changer et aller dormir."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene black 
+    hide screen room
+    hide screen day 
+
+    "{b}{i} La semaine suivante, le 11 décembre 2097{/i}{/b}"
+    play sound "Alarm.mp3" noloop 
+
+    scene room 
+    show screen room
+    show screen day 
+    $ day += 7  
+    $ points -= 1400
+    $ stockage += 140.0 
+
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    $ line = get_random_morning_line()
+    P "[line]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te lèves et te changes et puis tu aperçois [newname] déconnectée contre le mur.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Elle est encore déconnectée."
+    play sound "Click.mp3" noloop 
+
+    P "Je vais la démarrer."
+    play sound "Menu.mp3" noloop 
+
+    menu:   
+
+        "{b}{i} Démarrer [newname].{/i}{/b}" : 
+            play sound "Menu.mp3" noloop 
+
+label password17:  
+
+    $ entered_password = renpy.input("Veuillez entrer votre mot de passe pour [newname].")
+    $ entered_password = entered_password.strip()
+
+    if entered_password == stored_password: 
+
+        "Mot de passe correct. Accès autorisé." 
+        play sound "Menu.mp3" noloop
+
+    else: 
+
+        "Mot de passe incorrect. Accès refusé." 
+        play sound "Menu.mp3" noloop
+        jump password17 
+
+    $ start = get_random_start()
+    Na "[start]"
+    play sound "Click.mp3" noloop 
+
+    Na "Démarrage terminé, Bonjour [P]."
+    play sound "Click.mp3" noloop 
+
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Et toi ?" 
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]"
+    play sound "Click.mp3" noloop
+
+    Na "Cool alors."
+    play sound "Click.mp3" noloop  
+
+    $ go_in_class = get_random_go_in_class()
+    P "[go_in_class]"  
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop 
+
+    hide screen room 
+    scene black
+
+    "{b}{i} Tu quiites le dortoir avec [newname].{/i}{/b}"
+    play sound "Door.mp3" noloop 
+
+    scene hallway 
+    show screen hallway  
 
     return 
 

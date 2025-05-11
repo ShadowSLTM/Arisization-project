@@ -37,15 +37,15 @@ init python:
 init python:
     import random
     
-    salutation_rdm = [
+    salutation_rdm_list = [
         "Bonjour.",
         "Bien le bonjour.",
         "Bonjour, bonjour.",
         "Salutation.", 
     ]
     
-    def get_random_salutation():
-        return random.choice(salutation_rdm)
+    def get_random_salutation(): 
+        return random.choice(salutation_rdm_list) 
 
 # predefined_notes est une liste de notes prédéfinies qui seront affichées aléatoirement lors de la correction des exercices.
 init python: 
