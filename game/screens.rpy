@@ -1761,6 +1761,18 @@ screen mail():
         xalign 0.5 
         add "Images/mail.png"
 
+screen Nagumo():
+    frame:
+        yalign 0.3
+        xalign 0.5 
+        add "Images/Nagumo.png"
+
+screen flag():
+    frame: 
+        yalign 0.3
+        xalign 0.5 
+        add "Images/Nexus.png"
+
 screen success():
     frame: 
         xalign 0.99

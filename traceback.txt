@@ -1,28 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00start.rpy", line 282, in script
-    python:
-ScriptError: could not find label 'side.rpy'.
+  File "game/script.rpy", line 1835, in script
+    show screen Nagumo
+  File "renpy/common/000statements.rpy", line 647, in execute_show_screen
+    renpy.show_screen(name, *args, **kwargs)
+Exception: Screen Nagumo is not known.
+
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\main.py", line 652, in main
-    run(restart)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\main.py", line 148, in run
-    renpy.execution.run_context(True)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\execution.py", line 958, in run_context
-    context.run()
-  File "renpy/common/00start.rpy", line 282, in script
-    python:
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'side.rpy'.
+  File "game/script.rpy", line 1835, in script
+    show screen Nagumo
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 647, in execute_show_screen
+    renpy.show_screen(name, *args, **kwargs)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\screen.py", line 1328, in show_screen
+    raise Exception("Screen %s is not known.\n" % (name[0],))
+Exception: Screen Nagumo is not known.
+
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
-Arisization Project Version_test
-Sat May  3 00:06:12 2025
+Arisization Project Version_développeur
+Mon May 12 00:06:03 2025

@@ -924,7 +924,7 @@ label grayroom:
     with fade 
 
     "{b}{i}Deux mois plus tard, dans la région du Danto, le 12 septembre 2097, l'[domaine] intégra un lycée d'informatique et de technologie situé au 209-7201 Danto, District de Shinyo, 2-14-7, Avenue Hoshizora, 
-    dans un monde entièrement dominé par les nouvelles technologies et dirigé par un gouvernement technocratique autoritaire..{/i}{/b}" 
+    dans un monde entièrement dominé par les nouvelles technologies et dirigé par un gouvernement technocratique autoritaire.{/i}{/b}" 
     play sound "Click.mp3" noloop 
 
     play music "Soundtrack.mp3" loop volume 1.0
@@ -936,7 +936,7 @@ label grayroom:
     $ day += 1 
     $ stockage += 60.0
 
-    if pronom == "il":
+    if pronom == "il": 
 
         P "Enfin arrivés au lycée..."
         play sound "Click.mp3" noloop 
@@ -1240,13 +1240,13 @@ label rencontre:
     E "[nothing] C'est normal"
     play sound "Click.mp3" noloop
 
-    "{b}{i}Tu regardes tes documents et ceux d'[newname] et vous remarques que vous étes en Seconde-E.{/i}{/b}"
+    "{b}{i}Tu regardes tes documents et ceux d'[newname] et vous remarquez que vous étes en Seconde-E.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     P "Seconde-E... C'est donc ça notre classe."
     play sound "Click.mp3" noloop
 
-    A "Oui."
+    A "Oui." 
     play sound "Click.mp3" noloop
 
     $ stockage += 2.0 
@@ -1758,7 +1758,7 @@ label rencontre:
     "{b}{i}Tout le monde se tourne vers la professeure pour l'écouter.{/i}{/b}" 
     play sound "Click.mp3" noloop
 
-    M "Je m'appelle Sakura Kusanagi." 
+    M "Je m'appelle [M]." 
     play sound "Click.mp3" noloop 
 
     $ character10 = M 
@@ -1779,14 +1779,30 @@ label rencontre:
     M "Oui je sais, c'est surprenant."
     play sound "Click.mp3" noloop 
 
+    Y "Mais si ce sont les meilleurs qui sont ici, comment [A] a été acceptée ?" 
+    play sound "Click.mp3" noloop  
+
+    M "C'est simple, [prenom] a fait un candidature très detaillée et a expliqué pourquoi elle voulait être ici." 
+    play sound "Click.mp3" noloop 
+
+    Y "Ah je comprends mieux pourquoi elle est ici."
+    play sound "Click.mp3" noloop 
+
     M "Bon maintenant je vais vous donner plus de détails sur le lycée Nexus."
     play sound "Click.mp3" noloop
 
     "{b}{i}Tous les élèves écoutent la professeure.{/i}{/b}" 
     play sound "Click.mp3" noloop
 
-    M "La devise du lycée est liberté, égalité, ingéniosité."
-    play sound "Click.mp3" noloop  
+    M "La devise du lycée est liberté, égalité, ingéniosité et voici le drapeau."
+    play sound "Click.mp3" noloop
+
+    show screen flag
+
+    "{b}{i}[M] montre le drapeau du lycée sur l'écran.{/i}{/b}" 
+    play sound "Click.mp3" noloop
+
+    hide screen flag 
 
     M "Ce lycée a un département de pièces détachées où vous pourrez demander et commander des pièces spécifiques."
     play sound "Click.mp3" noloop
@@ -1816,8 +1832,12 @@ label rencontre:
     A "Un internat !?"
     play sound "Click.mp3" noloop
 
+    show screen Nagumo 
+
     M "Oui, il a été financé par le régime Nagumo et construit récemmment vu que vous venez tous de régions éloignées."
     play sound "Click.mp3" noloop
+
+    hide screen Nagumo 
 
     P "Intéressant."
     play sound "Click.mp3" noloop
@@ -1943,16 +1963,16 @@ label rencontre:
     M "Oui [prenom] qu'il y a t-il ?"
     play sound "Click.mp3" noloop 
 
-    P "Pourquoi il existe ce système de domaine inégalable dans ce lycée ?"
+    P "Pourquoi il existe ce système des inégalables dans ce lycée ?"
     play sound "Click.mp3" noloop 
 
-    M "Très bonne question, ce système a été créé pour différencier chaque élève plus facilement selon vos points d'intérêts et vos compétences."
+    M "Très bonne question, ce système a été créé pour différencier chaque élève plus facilement selon vos points d'intérêts et vos compétences en technologie et en informatique."
     play sound "Click.mp3" noloop
 
     P "Ok, Je vois merci beaucoup."
     play sound "Click.mp3" noloop 
 
-    $ nothing = get_random_nothing()
+    $ nothing = get_random_nothing() 
     M "[nothing]"
     play sound "Click.mp3" noloop
     
@@ -22091,12 +22111,22 @@ label password16:
     "{b}{i} Vous continuez de révisez pendant une heure.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
+    $ stockage += 10.0
 
-    P "Bon on va prendre à manger ? J'avais complétement oublié."
+    P "On a enfin fini de réviser." 
+    play sound "Click.mp3" noloop
+
+    Na "Oui grâce à toi je n'arréte jamais d'apprendre." 
     play sound "Click.mp3" noloop 
 
+    P "Je le sais bien." 
+    play sound "Click.mp3" noloop
+
+    Na "Bon on va prendre à manger ?"
+    play sound "Click.mp3" noloop
+
     $ suivi = get_random_suivi()
-    Na "[suivi]"
+    P "[suivi]"
     play sound "Footsteps.mp3" noloop
 
     scene black
