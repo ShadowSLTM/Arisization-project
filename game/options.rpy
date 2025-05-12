@@ -4,7 +4,7 @@
 ## Les lignes qui commencent avec deux dièses '#' sont des commentaires et vous
 ## ne devriez pas les décommenter. Les lignes qui commencent avec un seul dièse
 ## sont du code commenté et vous pouvez les décommentez quand c’est approprié
-## (pour votre projet).
+## (pour votre projet). 
 
 
 ## Bases #######################################################################

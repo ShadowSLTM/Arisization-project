@@ -30,7 +30,7 @@ init python:
         "Tu commences à inspecter l'entrepôt.", 
     ]
     
-    def get_random_entrepot():
+    def get_random_entrepot(): 
         return random.choice(entrepot_rdm)
 
 # salutation_rdm est une liste de phrases qui seront affichées aléatoirement au moment des salutations envers la professeure.

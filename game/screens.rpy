@@ -1897,7 +1897,7 @@ screen success():
 
             label "{b}{i}— Progression —\n{/i}{/b}" 
 
-            text _("Succès : [success]/35\n") 
+            text _("Succès : [success]/36\n") 
 
             label "{b}{i}— liste des succès —\n{/i}{/b}" 
 
@@ -1936,6 +1936,7 @@ screen success():
             text _("Jamais deux sans trois : [quest33]/1\n")  
             text _("Sa vraie valeur : [quest34]/1\n") 
             text _("Faire de la philosophie : [quest35]/1\n") 
+            text _("Bon philosophe : [quest36]/1\n") 
 
 style about_label is gui_label   
 style about_label_text is gui_label_text
@@ -2018,6 +2019,8 @@ screen characters():
             text _("[character14] — [ultimate14]\n") 
             text _("[character15] — [ultimate15]\n") 
             text _("[character16] — [ultimate16]\n") 
+            text _("[character17] — [ultimate17]\n") 
+            text _("[character18] — [ultimate18]\n") 
 
 style about_label is gui_label 
 style about_label_text is gui_label_text
@@ -2066,7 +2069,7 @@ screen about():
 
             text _("School life\n")    
 
-            text _("Uchronie\n")  
+            text _("Uchronie\n")   
 
 style about_label is gui_label
 style about_label_text is gui_label_text

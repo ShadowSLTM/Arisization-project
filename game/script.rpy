@@ -44,6 +44,8 @@ label start:
     default character14 = "??????????"
     default character15 = "??????????"
     default character16 = "??????????"
+    default character17 = "??????????"
+    default character18 = "??????????"
 
     default ultimate1 = "??????????"
     default ultimate2 = "??????????"
@@ -61,6 +63,8 @@ label start:
     default ultimate14 = "??????????"
     default ultimate15 = "??????????"
     default ultimate16 = "??????????"  
+    default ultimate17 = "??????????"
+    default ultimate18 = "??????????"  
 
     default quest1 = 0
     default quest2 = 0
@@ -97,6 +101,7 @@ label start:
     default quest33 = 0 
     default quest34 = 0
     default quest35 = 0
+    default quest36 = 0
 
 #########################################################################
 
@@ -902,12 +907,12 @@ label grayroom:
 
     if key == "ARIS-GRFN-M4A1":
 
-        "{b}{i}Chapitre 0 : Arisization Project Alternative - Lost Origins Arc{/i}{/b}"
+        "{b}{i}Chapitre 1 : Arisization Project Alternative - High school Arc{/i}{/b}"
         play sound "Click.mp3" noloop 
 
     else:   
 
-        "{b}{i}Chapitre 0 : Arisization Project - Lost Origins Arc{/i}{/b}"
+        "{b}{i}Chapitre 1 : Arisization Project - High school Arc{/i}{/b}"
         play sound "Click.mp3" noloop 
 
     if wallbreak == 1: 
@@ -2057,8 +2062,11 @@ label rencontre:
     A "Ok si tu le dis."
     play sound "Click.mp3" noloop 
 
+    "{b}{i}Vous continuez vers le dortoir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
     hide screen hallway
-    scene black
+    scene black 
 
     "{b}{i}Vous entrez dans le dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -2207,7 +2215,7 @@ label rencontre:
         "{b}{i}Visiter le lycée{/i}{/b}" :
             jump balade
         "{b}{i}Travailler sur [A]{/i}{/b}" :
-            jump work
+            jump work 
 
 label balade:
 
@@ -4987,7 +4995,7 @@ label choice8:
 
     $ renpy.block_rollback()
 
-    "{b}{i}Après l'examen tout le monde remit leur copie à [M].{/i}{/b}"
+    "{b}{i}Après l'examen tout le monde remet leur copie à [M].{/i}{/b}"
     play sound "Click.mp3" noloop
 
     K "Cet examen n'était pas si dur que ça."
@@ -9069,10 +9077,22 @@ label debate:
     hide screen hallway
 
     "{b}{i}Puis vers le hall.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
+    scene hall 
+    show screen hall 
 
+    "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
 
+    scene black
+    hide screen hall
+
+    "{b}{i} Vous entrez enfin au réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene lunchroom 
+    show screen lunchroom  
     
     $ find_food = get_random_find_food()
     Na "[find_food]"
@@ -18297,12 +18317,12 @@ label password11:
     play sound "Click.mp3" noloop
 
     Oh "L'enquête est en cours mais on que ça un lien avec cette histoire de traître ici."
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     P "Je vois mais j'aimerais vous poser une question."
     play sound "Click.mp3" noloop 
 
-    Oh "Oui dis-moi."
+    Oh "Oui dis-moi." 
     play sound "Click.mp3" noloop
 
     P "C'est qui cette personne avec vous ?"
@@ -18314,7 +18334,7 @@ label password11:
     P "Non pourquoi ?"
     play sound "Click.mp3" noloop 
 
-    E "Tu devrais la connaitre car elle est importante de notre société."
+    E "Tu devrais la connaitre car elle est importante dans notre société."
     play sound "Click.mp3" noloop
 
     P "Je vois."  
@@ -18326,16 +18346,18 @@ label password11:
     Ln "Je me nomme [Ln], la vice-présidente du gouvernement."
     play sound "Click.mp3" noloop
 
+    $ character17 = Ln
+    $ ultimate17 = "la vice-présidente du gouvernement Nagumo"
     $ stockage += 2.0 
 
-    P "Oh putain que faites-vous ici ?"  
+    P "Pourquoi que faites-vous ici ?"  
     play sound "Click.mp3" noloop 
 
     Ln "Je suis venue après avoir entendu parler d'[newname]."  
-    play sound "Click.mp3" noloop 
+    play sound "Click.mp3" noloop
 
     P "Attendez... vous connaissez [newname] ? Comment ?"
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     Ln "Je suis au courant grâce à la DGCA. Le gouvernement surveille tout ce qui concerne les projets non-répertoriés. Et celui-ci... dépasse largement tout ce que nous avons vu jusque-là."
     play sound "Click.mp3" noloop
@@ -18350,7 +18372,7 @@ label password11:
     play sound "Click.mp3" noloop
 
     Ln "Je le sais déjà. C’est justement pour ça que je suis ici. Dis-moi, es-tu réellement capable de la contrôler ?"
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     P "Oui, absolument. J’ai un vrai contrôle sur elle... mais elle agit aussi de son propre chef."
     play sound "Click.mp3" noloop 
@@ -18360,6 +18382,15 @@ label password11:
 
     $ thanks = get_random_thanks()
     P "[thanks]"
+    play sound "Click.mp3" noloop
+
+    P "Pourquoi vous et pas le président directement ?"
+    play sound "Click.mp3" noloop
+
+    Ln "Car il est vraiment occupé en ce moment."
+    play sound "Click.mp3" noloop
+
+    P "Je comprend mieux maintenant."
     play sound "Click.mp3" noloop
 
     Ln "Sinon tu en penses quoi de la société actuelle ?"
@@ -18406,7 +18437,22 @@ label password11:
     Ln "Bon je vais devoir vous laisser j'ai des choses à faire."
     play sound "Click.mp3" noloop
 
-    P "Oui pas de soucis."
+    P "Ok mais j'ai une derniére question."
+    play sound "Click.mp3" noloop
+
+    Ln "Oui dis-moi."
+    play sound "Click.mp3" noloop 
+
+    P "Pourquoi les nouvelles technologies sont-elles si surveillées par le gouvernement ?"
+    play sound "Click.mp3" noloop 
+
+    Ln "C'est une question de sécurité nationale. Nous devons nous assurer que rien ne menace la stabilité de notre société pour éviter la tragédie de guerre de 2095."
+    play sound "Click.mp3" noloop 
+
+    P "Je vois alors je comprends mieux."
+    play sound "Click.mp3" noloop 
+
+    Ln "Bien."
     play sound "Click.mp3" noloop 
 
     "{b}{i}[Ln] et l'[Ot] quittent le breau des élèves.{/i}{/b}"
@@ -18424,6 +18470,10 @@ label password11:
 
     P "Bon [newname], il faut qu'on y aille."
     play sound "Click.mp3" noloop
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]" 
+    play sound "Footsteps.mp3" noloop
 
     hide screen office
     scene black 
@@ -22262,7 +22312,288 @@ label password17:
     play sound "Door.mp3" noloop 
 
     scene hallway 
-    show screen hallway  
+    show screen hallway 
+
+    "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    Na "Cool alors."
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene classroom  
+    show screen class_404
+ 
+    $  salutation_rdm = get_random_salutation()
+    M "[salutation_rdm]"
+    play sound "Click.mp3" noloop
+
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
+
+    $  salutation_rdm = get_random_salutation()
+    P "[salutation_rdm]"
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tout le monde s'asseoit à sa place respective.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Bien comme vous le savez aujourd'hui vous avez votre examen de philosophie."
+    play sound "Click.mp3" noloop  
+
+    $ validation = get_random_validation() 
+    Na "[validation]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}[M] Commence à distribuer les copies.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    M "Bien vous pouvez commencer, vous avez une heure."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tout le monde retourne sa copie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bien voyons voir." 
+    play sound "Click.mp3" noloop 
+
+label philosophie_technologie:
+
+    $ grade = 0.0 
+
+    "Question 1 : La technologie est-elle une prolongation naturelle de l’évolution humaine ?"
+    play sound "Menu.mp3" noloop
+
+    menu:
+        "Non, elle dénature notre essence biologique.":
+            $ grade += 0.0
+        "Oui, elle répond au besoin humain d’adaptation.":
+            $ grade += 2.0
+        "C’est une rupture plus qu’une continuité.":
+            $ grade += 0.0
+
+    "Question 2 : L’intelligence artificielle peut-elle remplacer l’intelligence humaine ?"
+    play sound "Menu.mp3" noloop
+
+    menu:
+        "Oui, car elle est plus rapide et rationnelle.":
+            $ grade += 0.0
+        "Cela dépend du niveau d’apprentissage de la machine.":
+            $ grade += 0.0
+        "Non, elle peut l’imiter mais pas la ressentir.":
+            $ grade += 2.0 
+
+    "Question 3 : Devrait-on limiter le développement technologique pour protéger l’éthique ?"
+    play sound "Menu.mp3" noloop
+
+    menu:
+        "Le progrès est un droit fondamental.":
+            $ grade += 0.0
+        "Uniquement dans certains domaines comme l’armement.":
+            $ grade += 0.0
+        "Oui, la morale doit encadrer le progrès.":
+            $ grade += 2.0
+
+    "Question 4 : Peut-on encore parler de liberté humaine dans un monde ultra-technologique ?"
+    play sound "Menu.mp3" noloop 
+
+    menu: 
+        "La liberté est une illusion dans tous les cas.":
+            $ grade += 0.0
+        "Oui, si l’humain garde le contrôle de la technologie.":
+            $ grade += 2.0
+        "Non, nous sommes déjà dépendants des machines.":
+            $ grade += 0.0
+
+    "Question 5 : La technologie rapproche-t-elle vraiment les individus ?"
+    play sound "Menu.mp3" noloop
+
+    menu: 
+        "Elle connecte mais ne remplace pas la présence humaine.":
+            $ grade += 2.0
+        "Non, elle isole plus qu’elle unit.":
+            $ grade += 0.0
+        "Oui, elle abolit les distances sociales et géographiques.":
+            $ grade += 0.0
+
+    "Question 6 : Le progrès technique rend-il l’homme plus heureux ?"
+    play sound "Menu.mp3" noloop
+
+    menu:
+        "Oui, car il augmente le confort et la sécurité.":
+            $ grade += 0.0
+        "Non, il répond à des besoins mais pas à des désirs profonds.":
+            $ grade += 2.0
+        "Cela dépend de l’usage que chacun en fait.":
+            $ grade += 0.0 
+
+    "Question 7 : Si une IA prend des décisions autonomes, peut-on lui attribuer des responsabilités éthiques ?"
+    play sound "Menu.mp3" noloop
+
+    menu: 
+        "Oui, car elle agit de manière indépendante et doit assumer ses choix.":
+            $ grade += 2.0 
+        "Non, elle reste un programme et ne comprend pas les conséquences de ses actions.":
+            $ grade += 0.0
+        "Cela dépend du type de décision qu’elle prend.":
+            $ grade += 0.0
+
+    "Question 8 : La neutralité technologique existe-t-elle ?"
+    play sound "Menu.mp3" noloop 
+
+    menu:
+        "Certaines technologies sont neutres, d’autres non.":
+            $ grade += 0.0
+        "Non, toute technologie porte une intention humaine.":
+            $ grade += 2.0 
+        "Oui, ce sont les usages qui posent problème, pas la technologie.":
+            $ grade += 0.0 
+
+    "Question 9 : Le travail humain peut-il disparaître à cause de la technologie ?"
+    play sound "Menu.mp3" noloop
+
+    menu:
+        "Oui, certains métiers seront entièrement remplacés.":
+            $ grade += 2.0
+        "Ce n’est qu’une phase temporaire de transition.":
+            $ grade += 0.0
+        "Non, l’homme s’adaptera à de nouvelles fonctions.":
+            $ grade += 0.0
+
+    "Question 10 : La technologie doit-elle être pensée avant d’être créée ?"
+    play sound "Menu.mp3" noloop 
+
+    menu:
+        "Une réflexion éthique est essentielle avant toute invention.":
+            $ grade += 2.0
+        "Tout dépend de l’urgence du besoin à satisfaire.":
+            $ grade += 0.0
+        "C’est l’expérimentation qui fait avancer les choses.":
+            $ grade += 0.0
+
+    $ renpy.block_rollback() 
+
+    "{b}{i}Après l'examen tout le monde remet leur copie à [M].{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "C'est examen était vraiment profond."
+    play sound "Click.mp3" noloop
+
+    I "Je confirme aussi." 
+    play sound "Bell.mp3" noloop 
+
+    M "Si jamais je corrigerai vos copies durant la pause de midi et vous les rendrai cet après-midi."
+    play sound "Click.mp3" noloop 
+
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen class_404 
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i}Tu continues vers les escaliers.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene staircase 
+    hide screen hallway
+
+    "{b}{i}Puis vers le hall.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hall 
+    show screen hall 
+
+    "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hall
+
+    "{b}{i} Vous entrez enfin au réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene lunchroom 
+    show screen lunchroom  
+    
+    $ find_food = get_random_find_food()
+    Na "[find_food]"
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 200 
+
+    $ service = get_random_service()
+    P "[service]"
+    play sound "Click.mp3" noloop 
+
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Vous vous asseyez dans le réfectoire.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    P "Sinon ça s'est comment pour toi l'examen de philosophie."
+    play sound "Click.mp3" noloop 
+
+    Na "Je dirais que je l'ai bien réussi et toi ?"
+    play sound "Click.mp3" noloop
+
+    if grade == 20.0:
+
+        P "Je pense que je l'ai réussi à la perfection."
+        play sound "Click.mp3" noloop 
+
+        Na "ça ne m'étonne pas venant de toi."
+        play sound "Click.mp3" noloop 
+
+    elif grade <= 14.0:
+       
+        P "Je pense que je l'ai échoué."
+        play sound "Click.mp3" noloop 
+
+        Na "Vraiment ?"
+        play sound "Click.mp3" noloop 
+
+    else: 
+
+        P "Je pense que je l'ai bien réussi."
+        play sound "Click.mp3" noloop 
+    
+        Na "ça ne m'étonne pas venant de toi."
+        play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous discutez puis [Y] et [N].{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    Y "Salut les amis, vous allez bien ?"
+    play sound "Click.mp3" noloop           
+
+
+
 
     return 
 
