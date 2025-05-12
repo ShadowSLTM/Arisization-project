@@ -448,16 +448,28 @@ label hack:
             P "Oui bien sûr qu'il te reste un avenir et que je veux de toi."
             play sound "Click.mp3" noloop   
 
+            A "C'est vrai !?"
+            play sound "Click.mp3" noloop   
+
+            P "Oui je te promet de te donner la merveilleuse vie que tu mérites."
+            play sound "Click.mp3" noloop   
+
+            A "Merci infiniment [prenom]."    
+            play sound "Click.mp3" noloop 
+
+            P "Mais de rien c'est normal."
+            play sound "Click.mp3" noloop 
+
             $ stockage += 1.0 
 
         "{b}{i} Je ne sais pas.{/i}{/b}" : 
             play sound "Menu.mp3" noloop 
 
             P "Ah vrai dire je ne sais pas trop."
-            play sound "Click.mp3" noloop   
+            play sound "Click.mp3" noloop
 
-    A "Je vois."
-    play sound "Click.mp3" noloop            
+            A "Je vois."
+            play sound "Click.mp3" noloop            
 
     S "Bon, on quitte cet endroit ?"
     play sound "Click.mp3" noloop 
@@ -6204,7 +6216,7 @@ label choice8:
         play sound "Click.mp3" noloop 
 
         $ system = "AetherOS"
-        $ robotorigine = "Neogen Technologies" 
+        $ robotorigine = "Danto/Neogen Technologies" 
         $ serie = "0012095NT" 
 
         P "Intéressant." 
