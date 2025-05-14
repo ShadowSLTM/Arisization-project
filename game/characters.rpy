@@ -34,8 +34,8 @@ define Kh = Character('Kazumi Hanemiya', color="#ffffff")
 
 # Les antagonistes secondaires. 
 
-define J1 = Character('Ayano Hanakuro', color="#ff2323") 
-define J2 = Character('Aiko Hanakuro', color="#ff2323") 
+define J1 = Character('Ayano Sumino', color="#ff2323") 
+define J2 = Character('Aiko Sumino', color="#ff2323") 
 define J = Character('Les inégalables jumelles', color="#ff2323") 
 
 # Les élèves du département. 

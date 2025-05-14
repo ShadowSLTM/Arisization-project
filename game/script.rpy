@@ -22721,7 +22721,7 @@ label philosophie_technologie:
     if grade == 20.0:
 
         $ success += 1
-        $ quest23 += 1
+        $ quest36 += 1
 
         M "Félicitation tu l'as réussi à la perfection comme d'habitude."
         play sound "Click.mp3" noloop
@@ -22968,6 +22968,47 @@ label philosophie_technologie:
 
     "{b}{i}Par la suite [newname] lève la main.{/i}{/b}"
     play sound "Click.mp3" noloop
+
+    M "Oui dis-moi [newname]."
+    play sound "Click.mp3" noloop 
+
+    Na "Comment vous faites pour corriger les copies aussi vite ?"
+    play sound "Click.mp3" noloop 
+
+    M "C'est simple j'ai juste une bonne organisation parce que dès que vous terminez, je les corrige pendant que vous poursuivez le cours."
+    play sound "Click.mp3" noloop
+
+    Na "Je comprends mieux car j'ai toujours voulu savoir comment vous faites pour être si organisée."
+    play sound "Click.mp3" noloop 
+
+    M "Mais merci d'avoir posé la question."
+    play sound "Click.mp3" noloop 
+
+    Na "Pas de quoi."
+    play sound "Click.mp3" noloop 
+
+    M "Bon nous allons voir la suite pour fin décembre et janvier."
+    play sound "Click.mp3" noloop 
+
+    Na "Et se sera quoi ?"
+    play sound "Click.mp3" noloop 
+
+    P "je me demande bien ce que ça peut être." 
+    play sound "Click.mp3" noloop
+
+    K "Oui je me demande aussi ce que ça peut être pour que ça prenne deux mois alors que d'habitude pour un sujet ça nous prend un mois."
+    play sound "Click.mp3" noloop
+
+    N "Je me pose aussi la même question."
+    play sound "Click.mp3" noloop 
+
+    Hi "Vous n'étes pas les seuls à vous le demander."
+    play sound "Click.mp3" noloop
+
+    Y ""
+    play sound "Click.mp3" noloop
+
+
 
     return 
 
