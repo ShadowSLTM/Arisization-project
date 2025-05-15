@@ -19,13 +19,13 @@ define S = Character('Subaru Shinomiya', color="#ffffff")
 
 # Les élèves de Seconde-E. 
 
-define M = Character('Sakura Kusanagi', color="#ffffff")
+define M = Character('Sakura Kusanagi', color="#ffffff") 
 define I = Character('Iris Natsumi', color="#ae33ff")
 define H = Character('Hajime Ayanokoji', color="#ffffff")
 define K = Character('Kendo Sato', color="#ffffff")
 define N = Character('Naoto Saotome', color="#ffee00") 
 define Hi = Character('Haruki Ichinose', color="#ffffff")
-define Y = Character('Yuki Hiiragi', color="#0059ff") 
+define Y = Character('Yuki Hiiragi', color="#0059ff")  
 
 # Les élèves du bureau des élèves. 
  
@@ -36,9 +36,9 @@ define Kh = Character('Kazumi Hanemiya', color="#ffffff")
 
 define J1 = Character('Ayano Sumino', color="#ff2323") 
 define J2 = Character('Aiko Sumino', color="#ff2323") 
-define J = Character('Les inégalables jumelles', color="#ff2323") 
+define J = Character('Les inégalables décrypteusess', color="#ff2323") 
 
-# Les élèves du département. 
+# Les membres du département. 
 
 define Ah = Character('Akeno Hoshino', color="#cc23ff")
 define Rn = Character('Reiichi Nanami', color="#cc23ff") 

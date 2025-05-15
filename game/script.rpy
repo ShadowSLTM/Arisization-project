@@ -462,6 +462,12 @@ label hack:
             P "Mais de rien c'est normal."
             play sound "Click.mp3" noloop 
 
+            A ""    
+            play sound "Click.mp3" noloop 
+
+            P ""
+            play sound "Click.mp3" noloop 
+
         "{b}{i} Je ne sais pas.{/i}{/b}" : 
             play sound "Menu.mp3" noloop 
 
@@ -1543,21 +1549,21 @@ label rencontre:
     T "Bien, présentez vous dans ce cas."
     play sound "Click.mp3" noloop
 
-    J1 "Bonjour, je m'appelle [J1], j'ai dix-neuf ans et voici ma soeur jumelle."
+    J1 "Bonjour, je m'appelle [J1], L'inégalable Décrypteuse alpha, j'ai dix-neuf ans et voici ma soeur décrypteuse."
     play sound "Click.mp3" noloop
 
-    $ character4 = J1
+    $ character4 = J1 
 
-    J2 "Bonjour je m'appelle [J2], j'ai dix-neuf ans"
+    J2 "Bonjour je m'appelle [J2], l'inégalable Décrypteuse bêta, j'ai dix-neuf ans"
     play sound "Click.mp3" noloop
 
     $ character5 = J2 
 
-    J "et nous sommes les inégalables jumelles."
+    J "et nous sommes les inégalables Décrypteuses."                       
     play sound "Click.mp3" noloop
 
-    $ ultimate4 = "L'inégalable jumelle" 
-    $ ultimate5 = "L'inégalable jumelle" 
+    $ ultimate4 = "L'inégalable Décrypteuse Alpha" 
+    $ ultimate5 = "L'inégalable Décrypteuse Bêta" 
 
     T "Bien, enchantée de vous rencontrer."
     play sound "Click.mp3" noloop
@@ -1565,9 +1571,35 @@ label rencontre:
     J2 "Merci beaucoup madame." 
     play sound "Click.mp3" noloop
     
-    $ stockage += 4.0 
+    $ stockage += 6.0 
 
-    T "De rien, maintenant à toi là-bas."
+    T "De rien mais j'ai une question ?"
+    play sound "Click.mp3" noloop 
+
+    J1 "Oui, je vous écoute."
+    play sound "Click.mp3" noloop
+
+    T "Pourquoi vous avez pratiquement le meme titre ?" 
+    play sound "Click.mp3" noloop
+
+    J1 "C'est simple, on est jumelles et le même projet."
+    play sound "Click.mp3" noloop
+
+    T "Ah d'accord, je comprends mieux et quel est votre projet ?"
+    play sound "Click.mp3" noloop
+
+    J1 "Nous voulons perfectionner nos méthodede de décryptages et essayer de décrypter le systéme de l'autre."
+    play sound "Click.mp3" noloop
+
+    T "Intéressant comme projet."
+    play sound "Click.mp3" noloop
+
+    $ thanks = get_random_thanks()
+    J1 "[thanks]" 
+    play sound "Click.mp3" noloop
+
+    $ nothing = get_random_nothing()
+    T "[nothing] Bon suivant."
     play sound "Click.mp3" noloop
 
     R "Moi, bien-sûr si vous me le permettez."
@@ -1585,7 +1617,7 @@ label rencontre:
     T "Bien, enchantée de te rencontrer, suivant ?"
     play sound "Click.mp3" noloop 
 
-    N "Je m'appelle [N], j'ai dix-neuf ans et je suis l'inégalable assistant, toujours  prêt pour aider."
+    N "Je m'appelle [N], j'ai dix-neuf ans et je suis l'inégalable assistant, toujours prêt pour aider."
     play sound "Click.mp3" noloop
 
     $ character7 = N 
@@ -2489,7 +2521,7 @@ label dorm1:
     scene hallway
     play sound "Click.mp3" noloop
 
-    "{b}{i}Dans le couloir, tu croises les jumelles.{/i}{/b}" 
+    "{b}{i}Dans le couloir, tu croises les décrypteusess.{/i}{/b}" 
     play sound "Click.mp3" noloop
 
     J1 "Oh salut [P], que fais-tu ici ?"
@@ -3904,7 +3936,7 @@ label wallbreaking4:
     M "Oui logiquement en plus [pronom] a un contrat d'utilisation dans le lycée."
     play sound "Click.mp3" noloop
 
-    "{b}{i}Les jumelles soupirent et abandonnent.{/i}{/b}"
+    "{b}{i}Les décrypteusess soupirent et abandonnent.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     M "Je comprends votre point de vue mais les choses sont comme ça."
@@ -5486,7 +5518,7 @@ label choice8:
     Y "[thanks]"
     play sound "Click.mp3" noloop
 
-    M "Bon au tour des inégalables Jumelles maintenant pour finir."
+    M "Bon au tour des inégalables décrypteusess maintenant pour finir."
     play sound "Click.mp3" noloop 
 
     $ validation = get_random_validation() 
@@ -8214,7 +8246,7 @@ label debate:
             hide screen points
             hide screen day
             play music "gameover.mp3" noloop
-            "{b}{i}méro 7 : Débat complétement perdu face à [S].{/i}{/b}"
+            "{b}{i}Fin numéro 7 : Débat complétement perdu face à [S].{/i}{/b}"
             play sound "Menu.mp3" noloop
 
             menu:    
@@ -8407,9 +8439,9 @@ label debate:
     play sound "Click.mp3" noloop 
 
     Su "Il était à Lexus avec nous mais il a disparu sans laisser de nouvelles au bout de trois semaines après la rentrée..."
-    play sound "Click.mp3" noloop  
+    play sound "Click.mp3" noloop 
 
-    P "Pardon quoi !?"
+    P "Pardon quoi !?" 
     play sound "Click.mp3" noloop 
 
     Su "Oui malheureusement...."
@@ -13462,7 +13494,7 @@ label examen_pythagore:
     Y "[thanks]"
     play sound "Click.mp3" noloop
 
-    M "Bon au tour des inégalables Jumelles maintenant pour finir."
+    M "Bon au tour des inégalables décrypteusess maintenant pour finir."
     play sound "Click.mp3" noloop 
 
     $ validation = get_random_validation() 
@@ -16704,7 +16736,7 @@ label password9:
     Y "[thanks]"
     play sound "Click.mp3" noloop
 
-    M "Bon au tour des inégalables Jumelles maintenant pour finir."
+    M "Bon au tour des inégalables décrypteusess maintenant pour finir."
     play sound "Click.mp3" noloop 
 
     $ validation = get_random_validation() 
@@ -20676,7 +20708,7 @@ label examen_francais:
     Y "[thanks]"
     play sound "Click.mp3" noloop
 
-    M "Bon au tour des inégalables Jumelles maintenant pour finir."
+    M "Bon au tour des inégalables décrypteusess maintenant pour finir."
     play sound "Click.mp3" noloop 
 
     $ validation = get_random_validation() 
@@ -21136,7 +21168,7 @@ label password15:
     J1 "Attendez !!! Il faut m'expliquer ce qui vient de se passer, je ne comprend rien !"
     play sound "Click.mp3" noloop
 
-    P "Elle est accusée de plusieurs choses."
+    P "Elle est accusée de plusieurs choses c'est simple."
     play sound "Click.mp3" noloop
 
     J1 "Je vois c'est horrible."
@@ -22761,7 +22793,7 @@ label philosophie_technologie:
                 show screen class_404 
                 $ points += 200
                 play music "Soundtrack.mp3" loop volume 1.0
-                jump examen_pythagore 
+                jump phillosophie_technologie
     
     else:
        
@@ -22896,7 +22928,7 @@ label philosophie_technologie:
     Y "[thanks]"
     play sound "Click.mp3" noloop
 
-    M "Bon au tour des inégalables Jumelles maintenant pour finir."
+    M "Bon au tour des inégalables décrypteusess maintenant pour finir."
     play sound "Click.mp3" noloop 
 
     $ validation = get_random_validation() 
@@ -23005,11 +23037,130 @@ label philosophie_technologie:
     Hi "Vous n'étes pas les seuls à vous le demander."
     play sound "Click.mp3" noloop
 
-    Y ""
+    Y "Doucment on va le savoir de toute façon." 
+    play sound "Click.mp3" noloop 
+
+    M "Bien pour commencer si ça va prendre autant de temps, c'est parcve que il y aura les vacances de noel à partir du 20 décembre et jusqu'au 6 janvier."
+    play sound "Click.mp3" noloop 
+
+    Y "Ah oui c'est vrai J'avais complétement." 
+    play sound "Click.mp3" noloop 
+
+    M "Et deuxiémement, il y aura bientôt le {b}{i}Paper shuffle{/i}{/b}." 
+    play sound "Click.mp3" noloop 
+
+    Y "Je comprends mieux pour ça va nous prendre deux mois." 
+    play sound "Click.mp3" noloop 
+
+    Na "Le Paper Shuffle, c'est quoi !?"
+    play sound "Click.mp3" noloop 
+
+    M "Oui C'est un examen un peu particulier."
+    play sound "Click.mp3" noloop 
+
+    $ stockage += 2.0
+
+    Na "Comment ça particulier ?"
+    play sound "Click.mp3" noloop 
+
+    M "Le Paper Shuffle se divise en deux parties qui sont la préparation et l'examen en lui même."
+    play sound "Click.mp3" noloop 
+
+    Na "Je vois comme n'importe quel examen."
+    play sound "Click.mp3" noloop 
+
+    M "Non cette fois-ci chaque lycéen doit écrire un examen d'informatique pour un autre lycéen que ce soit de la programmation ou des connaissances générales."
+    play sound "Click.mp3" noloop 
+
+    Na "Intéressant."
+    play sound "Click.mp3" noloop 
+
+    $ stockage += 2.0
+
+    M "Bien maintenant je vais vous donner la liste."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Tous les élèves se mettent à écouter.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    M "Pour commencer, [Hi] tu feras un examen pour [K]."
+    play sound "Click.mp3" noloop   
+
+    $ validation = get_random_validation() 
+    Hi "[validation]"
+    play sound "Click.mp3" noloop 
+
+    M "Ensuite, [K] tu feras un examen pour [I]."
+    play sound "Click.mp3" noloop   
+
+    $ validation = get_random_validation()  
+    K "[validation]"
+    play sound "Click.mp3" noloop 
+
+    M "suivant, [I] tu feras un examen pour [J2]."
+    play sound "Click.mp3" noloop   
+    
+    $ validation = get_random_validation()
+    I "[validation]"
+    play sound "Click.mp3" noloop 
+
+    M "Puis, [J2] tu feras un examen pour [Y]."
+    play sound "Click.mp3" noloop 
+
+    $ validation = get_random_validation()
+    J2 "[validation]"
+    play sound "Click.mp3" noloop 
+
+    M "Puis, [Y] tu feras un examen pour [S]."
+    play sound "Click.mp3" noloop   
+    
+    $ validation = get_random_validation() 
+    Y "[validation]"
+    play sound "Click.mp3" noloop 
+
+    M "Puis, [S] tu feras un examen pour [J1]."
     play sound "Click.mp3" noloop
 
+    $ validation = get_random_validation()
+    S "[validation]"
+    play sound "Click.mp3" noloop 
 
+    M "Puis, [J1] tu feras un examen pour [newname]."
+    play sound "Click.mp3" noloop
 
-    return 
+    $ validation = get_random_validation()
+    J1 "[validation]"
+    play sound "Click.mp3" noloop 
 
-# Aris la plus belle <333333333333333 
+    M "[newname] tu feras un examen pour [H]."
+    play sound "Click.mp3" noloop
+
+    $ validation = get_random_validation()
+    Na "[validation]"
+    play sound "Click.mp3" noloop 
+
+    M "[H] tu feras un examen pour [prenom]."
+    play sound "Click.mp3" noloop
+
+    $ validation = get_random_validation()
+    J1 "[validation]"
+    play sound "Click.mp3" noloop 
+
+    M "[prenom] tu feras un examen pour [N]."
+    play sound "Click.mp3" noloop
+
+    $ validation = get_random_validation()
+    P "[validation]" 
+    play sound "Click.mp3" noloop 
+
+    M "Pour finir [N] tu feras un examen pour [Hi]."
+    play sound "Click.mp3" noloop
+
+    $ validation = get_random_validation()
+    N "[validation]" 
+    play sound "Click.mp3" noloop 
+
+    M "Si jamais vous avez jusqu'au 19 décembre pour rendre vos examens."
+    play sound "Click.mp3" noloop
+
+# Aris la plus belle <333333333333333
