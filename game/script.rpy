@@ -102,6 +102,7 @@ label start:
     default quest34 = 0
     default quest35 = 0
     default quest36 = 0
+    default quest37 = 0 
 
 #########################################################################
 
@@ -835,12 +836,12 @@ label grayroom:
 
     if pronom == "il":
 
-        Su "En plus, un élève comme [prenom], on en voit pas tout les jours."
+        Su "En plus, un élève comme [prenom], on en voit pas tout les jours, il a crée beaucoup de choses."
         play sound "Click.mp3" noloop 
 
     elif pronom == "elle": 
 
-        Su "En plus, une élève comme [prenom], on en voit pas tout les jours."
+        Su "En plus, une élève comme [prenom], on en voit pas tout les jours, elle a crée beaucoup de choses."
         play sound "Click.mp3" noloop 
 
     S "Ok, je vois."
@@ -946,8 +947,10 @@ label grayroom:
     scene black 
     with fade 
 
-    "{b}{i}Deux mois plus tard, dans la région du Danto, le 12 septembre 2097, l'[domaine] intégra un lycée d'informatique et de technologie situé au 209-7201 Danto, District de Shinyo, 2-14-7, Avenue Hoshizora, 
-    dans un monde entièrement dominé par les nouvelles technologies et dirigé par un gouvernement technocratique autoritaire.{/i}{/b}" 
+    "{b}{i}Deux mois plus tard, dans la région du Danto, le 12 septembre 2097, [prenom]
+    intégra un lycée d'informatique et de technologie situé au 209-7201 Danto, Ville de Shinmachi, 
+    District de Shinyo, 2-14-7, Avenue Hoshizora, dans un monde entièrement dominé par 
+    les nouvelles technologies et dirigé par un gouvernement technocratique autoritaire..{/i}{/b}" 
     play sound "Click.mp3" noloop 
 
     play music "Soundtrack.mp3" loop volume 1.0
@@ -8438,16 +8441,16 @@ label debate:
     P "Sinon des nouvelles de [Sk] ?"
     play sound "Click.mp3" noloop 
 
-    Su "Il était à Lexus avec nous mais il a disparu sans laisser de nouvelles au bout de trois semaines après la rentrée..."
+    Su "Il est à Lexus avec nous."
     play sound "Click.mp3" noloop 
 
-    P "Pardon quoi !?" 
+    P "Cool alors tu lui diras bonjour de ma part."
+    play sound "Click.mp3" noloop   
+
+    Su "Promis."
     play sound "Click.mp3" noloop 
 
-    Su "Oui malheureusement...."
-    play sound "Click.mp3" noloop
-
-    P "Mince....."
+    P "Merci."
     play sound "Click.mp3" noloop 
 
     Su "Bon je dois te laisser."
@@ -17582,7 +17585,7 @@ label password10:
         I "Il se passe quoi [newname] ?"
         play sound "Click.mp3" noloop 
 
-        Na "C'est rien, c'est personnel."
+        Na "Rien ça va à part que ma vie est basée sur un mensonge."
         play sound "Click.mp3" noloop 
 
         I "Je vois."
@@ -18356,21 +18359,7 @@ label password11:
     P "intéressant, donc ce groupe est récent."
     play sound "Click.mp3" noloop
 
-    Oh "Oui exactement et j'ai aussi une mauvaise nouvelle....."
-    play sound "Click.mp3" noloop
-
-    P "Quoi !? dites-moi."
-    play sound "Click.mp3" noloop
-
-    Oh "On a découvert qu'un de tes anciens camarade de la chambre grise, [Sk] a été tué par ce même groupe."
-    play sound "Click.mp3" noloop
-
-    $ stockage += 2.0  
-
-    P "Mais c'est horrible. qui a bien pu faire ça ?"
-    play sound "Click.mp3" noloop
-
-    Oh "L'enquête est en cours mais on que ça un lien avec cette histoire de traître ici."
+    Oh "Oui exactement."
     play sound "Click.mp3" noloop 
 
     P "Je vois mais j'aimerais vous poser une question."
@@ -23161,6 +23150,18 @@ label philosophie_technologie:
     play sound "Click.mp3" noloop 
 
     M "Si jamais vous avez jusqu'au 19 décembre pour rendre vos examens."
+    play sound "Click.mp3" noloop 
+
+    P "Bien entendu."
+    play sound "Click.mp3" noloop 
+    
+    M "Bien, sortez votre livre d'informatique à la page 28 pour vous."
     play sound "Click.mp3" noloop
+
+    "{b}{i} Vous sortez votre livre.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+
+
 
 # Aris la plus belle <333333333333333

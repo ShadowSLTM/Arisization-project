@@ -1850,7 +1850,7 @@ screen credit():
 
             text _("Phrase « Bon après ça ne m'étonne pas venant de toi » : Sararnbb\n")
 
-            text _("Illustration de l'interface Windows : Sararnbb\n")
+            text _("Illustration de l'interface Windows : [Dc] (Shadow_SLTM)\n")
 
             text _("Dessin de [Su] : Sararnbb\n") 
 
@@ -1874,11 +1874,11 @@ screen credit():
         
             text _("DLC Arisization Project - Alternative : [Dc] (Shadow_SLTM)\n")
 
-            text _("Arisization Project (The Project of the Realization of Aris) appartient à Seydou N'Doye (Shadow_SLTM)\n")   
+            text _("Arisization Project (The Project of the Realization of Aris) appartient à [Dc] (Shadow_SLTM)\n")   
  
             text _("éditeur : SLTM\n") 
 
-style about_label is gui_label 
+style about_label is gui_label  
 style about_label_text is gui_label_text
 style about_text is gui_text
 
@@ -1904,7 +1904,7 @@ screen success():
             text _("Une autre clé ? : [quest1]/1\n") 
             text _("Premier piratage : [quest2]/1\n")
             text _("Nouveau nom de code ( DLC ) : [quest3]/1\n")     
-            text _("L'espoir fait vivre : [quest4]/1\n")
+            text _("L'espoir fait vivre : [quest4]/1\n") 
             text _("Acceptation : [quest5]/1\n")
             text _("Nouvelle identité : [quest6]/1\n")
             text _("Nouvelle adresse : [quest7]/1\n")
@@ -1937,6 +1937,7 @@ screen success():
             text _("Sa vraie valeur : [quest34]/1\n") 
             text _("Faire de la philosophie : [quest35]/1\n") 
             text _("Bon philosophe : [quest36]/1\n") 
+            text _("l'entre aide scolaire : [quest37]/1\n") 
 
 style about_label is gui_label   
 style about_label_text is gui_label_text
