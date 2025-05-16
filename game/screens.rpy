@@ -1834,17 +1834,19 @@ screen credit():
 
             text _("Création du personnage AK-24 et ses variantes : [Dc] (Shadow_SLTM)\n") 
 
+            text _("Création des autres personnages : [Dc] (Shadow_SLTM)\n")  
+
             text _("Illustration du drapeau du régime Nagumo : [Dc] (Shadow_SLTM)\n")
 
             text _("Illustration du drapeau du lycée Nexus : [Dc] (Shadow_SLTM)\n")
 
             text _("Illustration du menu : [Dc] (Shadow_SLTM)\n") 
 
-            text _("Programmation : [Dc] (Shadow_SLTM) et Nathanaël (Loki)\n") 
+            text _("Programmation : [Dc] (Shadow_SLTM)\n") 
 
             text _("Correction du jeu : [Dc] (Shadow_SLTM) et Nathanaël (Loki)\n")
 
-            text _("Gestion des fichiers du jeu : [Dc] (Shadow_SLTM) et Nathanaël (Loki)\n") 
+            text _("Gestion des fichiers du jeu : [Dc] (Shadow_SLTM)\n") 
             
             label "{b}{i}— Contributions supplémentaires —\n{/i}{/b}" 
 

@@ -463,10 +463,10 @@ label hack:
             P "Mais de rien c'est normal."
             play sound "Click.mp3" noloop 
 
-            A ""    
+            S "Arrètes de dire n'importe quoi elle ne pourra pas avoir un avenir."    
             play sound "Click.mp3" noloop 
 
-            P ""
+            P "Mais si elle peut."
             play sound "Click.mp3" noloop 
 
         "{b}{i} Je ne sais pas.{/i}{/b}" : 
@@ -22774,7 +22774,7 @@ label philosophie_technologie:
 
             "{b}{i}Abandonner{/i}{/b}" :
                 return
-                with fade
+                with fade 
             "{b}{i}Réessayer.{/i}{/b}" :
                 scene black
                 show screen points 
@@ -23158,10 +23158,43 @@ label philosophie_technologie:
     M "Bien, sortez votre livre d'informatique à la page 28 pour vous."
     play sound "Click.mp3" noloop
 
-    "{b}{i} Vous sortez votre livre.{/i}{/b}"
+    "{b}{i} Vous sortez votre livre et le cours continue tranquillement..{/i}{/b}"
+    play sound "Bell.mp3" noloop
+
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
     play sound "Click.mp3" noloop
 
+    P "Bon, [newname] on retourne au dortoir ?" 
+    play sound "Click.mp3" noloop
 
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
 
+    hide screen class_404 
+    scene black 
 
-# Aris la plus belle <333333333333333
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    Na "On a enfin fini le cours."
+    play sound "Click.mp3" noloop 
+
+    $ bien = get_random_fais_du_bien()
+    P "[bien]" 
+    play sound "Click.mp3" noloop  
+
+    Na "Bon on fait quoi ?."
+    play sound "Click.mp3" noloop 
+
+    P "J'aimerai aller à la salle de club pour voir [K]."
+    play sound "Click.mp3" noloop 
+
+    Na "Je vois mais d'abord on devrait aller poser nos affaires au dortoir."
+    play sound "Click.mp3" noloop 
+
+# Aris la plus belle <333333333333333 

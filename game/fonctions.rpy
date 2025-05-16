@@ -380,4 +380,3 @@ init python:
 
     def get_random_return_dorm():
         return random.choice(return_dorm_list)
-
