@@ -341,14 +341,23 @@ label hack:
 
     if key == "ARIS-GRFN-M4A1":
 
-        R "Initialisation en cours..."
+        R "Initialisation des protocoles principaux..."
         play sound "Click.mp3" noloop 
 
-        R "Veuillez choisir mon nom technique parmi ceux disponible dans ma base de données."
+        P "Attends... On dirait qu'elle commence à s'activer."
+        play sound "Menu.mp3" noloop 
+
+        R "Anomalie détectée. Nom de code introuvable dans la base de données."
         play sound "Click.mp3" noloop 
 
+        P "Hein ? Qu'est-ce que ça signifie ?"
+        play sound "Menu.mp3" noloop  
+
+        R "Nom de code absent. Lancement du protocole de génération assistée..."
+        play sound "Click.mp3" noloop  
+        
         menu: 
- 
+
             "{b}{i}Choisir M4A1{/i}{/b}" :
                 $ A = Character("M4A1", color="#00ff00")
                 $ stockage += 1.0 
@@ -357,17 +366,13 @@ label hack:
                 $ A = Character("M16A1", color="#ffa600") 
                 $ stockage += 1.2
 
-            "{b}{i}Choisir ST AR-15{/i}{/b}" :
+            "{b}{i}Choisir ST AR-15{/i}{/b}" : 
                 $ A = Character("ST AR-15", color="#ff8fc3") 
                 $ stockage += 1.5 
 
             "{b}{i}Choisir M4 SOPMOD II{/i}{/b}" :
                 $ A = Character("M4 SOPMOD II", color="#ff4a4a")
                 $ stockage += 2.0 
-
-            "{b}{i}Choisir UMP45{/i}{/b}" :
-                $ A = Character("UMP45", color="#8a8aff") 
-                $ stockage += 1.0
 
             "{b}{i}Choisir M82A1{/i}{/b}" :
                 $ A = Character("M82A1", color="#0000ff") 
@@ -380,9 +385,6 @@ label hack:
         $ renpy.block_rollback()
         $ quest3 += 1
         $ success += 1 
-
-        P "Attend on dirait qu'elle est en train de démarrer."
-        play sound "Menu.mp3" noloop 
 
     else:    
 
@@ -411,11 +413,11 @@ label hack:
 
     S "Ok si tu le dit."
     play sound "Click.mp3" noloop 
-
+ 
     P "Sinon [A], tu peux me dire un peu plus sur toi ?"
     play sound "Click.mp3" noloop 
 
-    A "Malheureusement je ne connais que mon nom de code et mon âge, j'ai oublié le reste."
+    A "Malheureusement je ne connais que mon nom de code et mon âge, la date d'aujourd'hui, j'ai oublié le reste."
     play sound "Click.mp3" noloop 
 
     P "Je vois..."
@@ -2304,7 +2306,7 @@ label balade:
     play sound "Click.mp3" noloop
      
     scene hall 
-    play sound "Click.mp3" noloop 
+    show screen hall 
 
     P "Bon voyons voir..."     
     play sound "Click.mp3" noloop 
@@ -2313,6 +2315,7 @@ label balade:
     play sound "Click.mp3" noloop 
     
     scene black
+    hide screen hall
 
     "{b}{i}Tu te diriges vers la salle de club générale.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -2423,40 +2426,41 @@ label ask:
     P "Je dois te laisser j'ai une urgence !"
     play sound "Click.mp3" noloop
     
-    scene black
-    hide screen clubroom
-    play sound "Click.mp3" noloop
+    I "Ok."
+    play sound "Footsteps.mp3" noloop 
 
-    P "..."
-    play sound "Click.mp3" noloop
-     
-    scene hall 
+    hide screen clubroom
+    scene black
+
+    "{b}{i}Tu quittes le dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop 
 
-    P "..."     
-    play sound "Click.mp3" noloop 
+    scene hall 
+    show screen hall
 
-    scene staircase
-    play sound "Click.mp3" noloop
+    "{b}{i} Tu continues vers les escaliers.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
 
-    P "..."
-    play sound "Click.mp3" noloop
+    scene staircase 
+    hide screen hall
 
-    scene hallway
-    play sound "Click.mp3" noloop
+    "{b}{i} tu montes au premier étage.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
 
-    P "..."
-    play sound "Click.mp3" noloop
+    scene hallway 
+    show screen hallway
+
+    "{b}{i}Tu continues dans le couloir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
 
     scene black
-    play sound "Click.mp3" noloop
+    hide screen hallway
 
-    P "..."
-    play sound "Click.mp3" noloop
+    "{b}{i} tu entres dans ton dortoir.{/i}{/b}" 
+    play sound "Door.mp3" noloop
 
     scene room
     show screen room 
-    play sound "Door.mp3" noloop 
 
     "{b}{i}En arrivant tu vois [A] complètement détruite et demontée.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -2500,29 +2504,28 @@ label dorm1:
     play sound "Click.mp3" noloop 
 
     I "Ok, pas de soucis."
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     hide screen clubroom
     scene black
-    play sound "Click.mp3" noloop
 
-    P "Tu te diriges vers le hall."
-    play sound "Click.mp3" noloop
-
-    scene hall 
+    "{b}{i}Tu quittes la salle de club.{/i}{/b}"
     play sound "Door.mp3" noloop 
 
-    P "Je vais retourner travailler sur [A]."   
-    play sound "Click.mp3" noloop 
+    scene hall 
+    show screen hall
 
-    scene staircase
-    play sound "Click.mp3" noloop
+    "{b}{i} Tu continues vers les escaliers.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
 
-    P "..."
-    play sound "Click.mp3" noloop
+    scene staircase 
+    hide screen hall
 
-    scene hallway
-    play sound "Click.mp3" noloop
+    "{b}{i} tu montes au premier étage.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hallway 
+    show screen hallway
 
     "{b}{i}Dans le couloir, tu croises les décrypteusess.{/i}{/b}" 
     play sound "Click.mp3" noloop
@@ -2546,14 +2549,13 @@ label dorm1:
     play sound "Click.mp3" noloop
 
     scene black 
-    play sound "Click.mp3" noloop
+    hide screen hallway
 
-    P "..."
-    play sound "Click.mp3" noloop
-
-    scene room
-    show screen room 
+    "{b}{i} tu entres dans ton dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop 
+
+    scene room 
+    show screen room 
 
     P "Coucou, je suis de retour."
     play sound "Click.mp3" noloop
@@ -2575,6 +2577,7 @@ label work:
 label wallbreaking2: 
 
     show screen room 
+
     P "Je vais travailler sur ton amélioration." 
     play sound "Click.mp3" noloop
 
@@ -2590,7 +2593,7 @@ label wallbreaking2:
     P "Oui, depuis que je t'ai récupérée tu as toujours l'ancien processeur avec lequel tu as été conçu alors je vais le changer."
     play sound "Click.mp3" noloop
 
-    A "Oui, je vois mieux."
+    A "Ah oui, je vois mieux."  
     play sound "Click.mp3" noloop
 
     P "Je vais commander ce qu'il faut."
@@ -2655,6 +2658,7 @@ label lowcpu:
 
     "{b}{i}Tu effectues le paiement.{/i}{/b}"
     play sound "Click.mp3" noloop 
+
     $ points -= 1000 
 
     Ah "Merci beaucoup pour votre commande."
@@ -2692,6 +2696,7 @@ label lowcpu:
 
     "{b}{i}Tu pars manger avant de revenir au dortoir vers 13h45.{/i}{/b}" 
     play sound "Click.mp3" noloop
+
     $ points -= 200
 
     scene room 
@@ -3302,11 +3307,9 @@ label skip:
     "{b}{i}Puis [J1] quitta la salle et tu continues de travailler.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    scene black
     "{b}{i} Une heure plus tard.{/i}{/b}"
     play sound "Click.mp3" noloop
-
-    scene clubroom
+    
     P "J'ai le matériel pour paramétrer [newname]."
     play sound "Click.mp3" noloop 
 
@@ -4369,11 +4372,10 @@ label wallbreaking4:
             $ quest9 += 1
 
             P "aller en salle de club."
-            play sound "Menu.mp3" noloop 
+            play sound "Click.mp3" noloop
 
             scene staircase
             hide screen hallway
-            play sound "Click.mp3" noloop
 
             "{b}{i}Tu te diriges au rez-de-chaussé.{/i}{/b}"
             play sound "Footsteps.mp3" noloop
@@ -4381,18 +4383,17 @@ label wallbreaking4:
             scene hall 
             show screen hall
 
-            P "aller en salle de club."
+            "{b}{i}Tu continues vers ta salle de club.{/i}{/b}"
             play sound "Footsteps.mp3" noloop 
 
             scene black
             hide screen hall 
 
-            "{b}{i}Tu te diriges vers ta salle de club.{/i}{/b}"
-            play sound "Footsteps.mp3" noloop
+            "{b}{i}Tu entres dans ta salle de club.{/i}{/b}"
+            play sound "Door.mp3" noloop 
  
             scene clubroom
             show screen clubroom 
-            play sound "Door.mp3" noloop 
 
             P "Au moins ici je vais pouvoir être tranquille." 
             play sound "Click.mp3" noloop 
@@ -5742,30 +5743,24 @@ label choice8:
     P "[A] !? Comment êtes-vous au courant de ce nom !?"
     play sound "Click.mp3" noloop 
 
-    if key == "ARIS-GRFN-M4A1":
+    if key == "ARIS-GRFN-M4A1": 
 
-        C "C'est simple je suis son créateur et son concepteur original et je vois que tu as aussi choisi son nom technique."
+        C "C'est simple je suis son créateur et son concepteur original."
         play sound "Click.mp3" noloop 
 
-        P "C'est donc vous à l'origine de [A] et oui j'ai choisi le nom technique."
+        P "C'est donc vous à l'origine de [A]."
         play sound "Click.mp3" noloop 
 
-        C "Cool alors."
+        C "Oui et attends comment ça [A] ? De base son nom de code est AK-24."
         play sound "Click.mp3" noloop 
 
-        P "Mais j'ai une question."
-        play sound "Click.mp3" noloop 
+        P "Elle a eu une erreur système quand je l'ai redémarré."
+        play sound "Click.mp3" noloop
 
-        C "Oui dis-moi."
-        play sound "Click.mp3" noloop 
+        C "Je vois, ça dois sûrement du être à son inactivité." 
+        play sound "Click.mp3" noloop
 
-        P "Pourquoi elle avait ces multiples noms dans sa base de données."
-        play sound "Click.mp3" noloop 
-
-        C "Car elle a été conçue pour utiliser plusieurs fusils en particulier, ceux enregistrés dans sa base de données justement."
-        play sound "Click.mp3" noloop 
-
-        P "Ok je vois et j'ai toujours voulu connaître la personne qui a conçu [A]."
+        P "Aussi j'ai toujours voulu connaître la personne qui a conçu [A]."
         play sound "Click.mp3" noloop 
 
         C "Me voilà ici présent."
@@ -23188,13 +23183,99 @@ label philosophie_technologie:
     P "[bien]" 
     play sound "Click.mp3" noloop  
 
-    Na "Bon on fait quoi ?."
+    Na "Bon on fait quoi ?"
     play sound "Click.mp3" noloop 
 
     P "J'aimerai aller à la salle de club pour voir [K]."
     play sound "Click.mp3" noloop 
 
     Na "Je vois mais d'abord on devrait aller poser nos affaires au dortoir."
+    play sound "Click.mp3" noloop 
+
+    P "Oui tu as raison."  
+    play sound "Click.mp3" noloop   
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    "{b}{i} Vous vous dirigez vers le couloir avec [Na].{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hallway  
+    show screen hallway 
+
+    "{b}{i} Vous continues vers le dortoir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Tu entres dans ton dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene room 
+    show screen room 
+
+    $ dortoir = get_random_dortoir()
+    P "[dortoir]"
+    play sound "Click.mp3" noloop
+
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]" 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Vous posez tranquillement vos sac à dos.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "enfin débarrassé de nos sac à dos."
+    play sound "Click.mp3" noloop 
+
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]" 
+    play sound "Click.mp3" noloop 
+
+    P "Bon il faut qu'on aille à la salle de club générale."  
+    play sound "Click.mp3" noloop   
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen room 
+    scene black
+
+    "{b}{i}Vous quittez le dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i}Tu continues dabs le couloir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen hallway
+    scene staircase
+
+    "{b}{i}Puis vers le hall.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+     
+    scene hall 
+    show screen hall 
+
+    "{b}{i}Tu poursuit vers la salle de club générale.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hall
+
+    "{b}{i}Tu entres dans la salle de club générale.{/i}{/b}"
+    play sound "Door.mp3" noloop
+ 
+    scene clubroom
+    show screen clubroom 
+
+    "{b}{i}En entrant vous voyez [K] et [H] en train de discuter.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
 # Aris la plus belle <333333333333333 
