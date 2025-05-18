@@ -164,7 +164,7 @@ label identity:
 
     $ domaine = "inégalable créateur" if pronom == "il" else "inégalable créatrice"
     
-    $ noms_interdits = {"Kusanagi", "Natsumi", "Ayanokoji", "Sato", "Saotome", "Hiiragi", "Katsuragi", "Hanemiya", "Enoshima", "Hoshino", "Shinomiya", "Katsuya", "Horimiya", "Tachibana", "Sakayanagi", "Nagumo"}
+    $ noms_interdits = {"Kusanagi", "Natsumi", "Ayanokoji", "Sato", "Saotome", "Hiiragi", "Katsuragi", "Hanemiya", "Sumino", "Hoshino", "Shinomiya", "Katsuya", "Horimiya", "Tachibana", "Sakayanagi", "Nagumo"}
     $ prenoms_interdits = {"Iris", "Hajime", "Kendo", "Naoto", "Haruki", "Yuki", "Emily", "Kazumi", "Ayano", "Aiko", "Akeno", "Subaru", "Suzune", "Shiro", "Kaede", "Naomi", "Seigo"}
     
     if prenom in prenoms_interdits:
@@ -9782,7 +9782,7 @@ label update:
             A "Fermeture du système d'exploitation [system]....."
             play sound "Click.mp3" noloop
 
-            P "Enfin mais c'est bizarre on dirait que la faille venais du processeur."
+            P "Enfin mais c'est bizarre on dirait que la faille venait du processeur."
             play sound "Click.mp3" noloop 
 
             P "Attend il y a que [N] et [Y] à qui j'ai dit que j'avais pas mis à jour le processeur d'[newname]."
@@ -23277,5 +23277,185 @@ label philosophie_technologie:
 
     "{b}{i}En entrant vous voyez [K] et [H] en train de discuter.{/i}{/b}"
     play sound "Click.mp3" noloop 
+
+    P "Salut les amis."  
+    play sound "Click.mp3" noloop   
+
+    K "Oh salut comment tu vas [prenom] ?"  
+    play sound "Click.mp3" noloop   
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]" 
+    play sound "Click.mp3" noloop
+
+    K "Et toi [newname] ?"  
+    play sound "Click.mp3" noloop   
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt]" 
+    play sound "Click.mp3" noloop
+
+    K "Cool alors."  
+    play sound "Click.mp3" noloop   
+
+    P "Sinon vous faites quoi ici ?"  
+    play sound "Click.mp3" noloop   
+
+    K "Comme tu peux le voir, [H] est vraiment occupé et il avait besoin de mon aide concernant tout ce qui est résaeu pour son robot."  
+    play sound "Click.mp3" noloop   
+
+    P "Je vois, je ne pensais pas qu'il aurait besoin d'aide."  
+    play sound "Click.mp3" noloop   
+
+    K "Et pourtant si car il est fort que la construction et la programmation mais pas en réseau."  
+    play sound "Click.mp3" noloop   
+
+    P "Je comprends mieux pourquoi."  
+    play sound "Click.mp3" noloop  
+
+    "{b}{i}Soudainement [H] cesse ce qu'il est entrain de faire.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    H "Oh salut les amis, désolé si j'avais pas fait attention à vous."  
+    play sound "Click.mp3" noloop  
+
+    P "Pas de soucis."  
+    play sound "Click.mp3" noloop  
+
+    H "Sinon vous faites quoi ici ?"  
+    play sound "Click.mp3" noloop  
+
+    K "Je me posais la même question."  
+    play sound "Click.mp3" noloop  
+
+    if pronom == "il" : 
+    
+        P "Je suis venu car j'avais un service à demander à Kendo."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle" :
+
+        P "Je suis venue car j'avais un service à demander à Kendo."
+        play sound "Click.mp3" noloop
+
+    K "Abon !? C'est quoi comme service ?"   
+    play sound "Click.mp3" noloop 
+
+    P "J'aimerai que tu te connectes à [newname] pour voir l'historique de connexion."  
+    play sound "Click.mp3" noloop 
+
+    if pronom == "il" : 
+    
+        Na "Ah c'est donc pour ça que tu es venu voir [K]."  
+        play sound "Click.mp3" noloop 
+
+    elif pronom == "elle" :
+
+        Na "Ah c'est donc pour ça que tu es venue voir [K]."  
+        play sound "Click.mp3" noloop 
+
+    K "L'historique de connexiopn ? Je vois, il n'y a pas de soucis, je peux te le faire tout de suite."  
+    play sound "Click.mp3" noloop 
+
+    $ thanks = get_random_thanks()
+    P "[thanks]"
+    play sound "Click.mp3" noloop
+
+    $ nothing = get_random_nothing()
+    K "[nothing]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}[K] se pose tranquillement et se connecte à [newname].{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    Na "Connexion en cours....."  
+    play sound "Click.mp3" noloop  
+
+    Na "Connexion terminée, bonjour [K]."  
+    play sound "Click.mp3" noloop  
+
+    K "Bonjour [newname]."  
+    play sound "Click.mp3" noloop  
+
+    P "Tu as réussi à te connecter."  
+    play sound "Click.mp3" noloop  
+
+    K "Oui, maintenant laisse moi faire le reste."  
+    play sound "Click.mp3" noloop  
+
+    $ validation = get_random_validation()
+    P "[validation]" 
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}[K] regarde l'historique pendant dix minutes et prend des notes.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    K "J'ai enfin fini de regarder l'historique."  
+    play sound "Click.mp3" noloop  
+
+    P "Et tu as trouvé quoi à apart les connexion faites par moi ?"  
+    play sound "Click.mp3" noloop  
+
+    if quest12 == 1: 
+
+        K "Le 9 octobre, il y a eu une tentative de connexion sans succès."  
+        play sound "Click.mp3" noloop
+
+    else:
+
+        K "Le 9 octobre, il y a eu une connexion à [newname] et un début de transfert de donnés vers un autre ordinateur."  
+        play sound "Click.mp3" noloop
+
+    if quest25 == 1:
+
+        K "Le 15 novmebre, il y a eu une tentative de connexion sans succès."  
+        play sound "Click.mp3" noloop
+
+    else:
+
+        K "Le 19 novembre, il y a eu une connexion à [newname] et un début de transfert de données vers un autre ordinateur"  
+        play sound "Click.mp3" noloop
+
+    if quest21 == 1:
+
+        K "Le 19 novembre, il y a eu une tentative de compromission du mot de passe."  
+        play sound "Click.mp3" noloop 
+
+    else: 
+
+        K "Le 19 novembre, son mot de passe a été compris par force-brute."  
+        play sound "Click.mp3" noloop
+
+    if quest33 == 1:
+
+        K "Le 3 décembre, il y a eu une tentative de connexion sans succès."  
+        play sound "Click.mp3" noloop
+
+    else:
+
+        K "Le 3 décembre, il y a eu une connexion à [newname] et un début de transfert de données vers un autre ordinateur."  
+        play sound "Click.mp3" noloop
+
+    P "Je vois merci beaucoup pour ces informations."  
+    play sound "Click.mp3" noloop  
+
+    $ nothing = get_random_nothing()
+    K "[nothing]"
+    play sound "Click.mp3" noloop
+
+    P "Bon maintenant tu peux te déconnecter."  
+    play sound "Click.mp3" noloop  
+
+    K "Oui je le fais tout de suite."  
+    play sound "Click.mp3" noloop  
+
+    "{b}{i}[K] se pose tranquillement pour se déconnecter.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    Na "Déconnexion en cours....."  
+    play sound "Click.mp3" noloop  
+
+    Na "Déonnexion terminée, au revoir [K]."  
+    play sound "Click.mp3" noloop  
 
 # Aris la plus belle <333333333333333 
