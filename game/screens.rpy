@@ -1939,7 +1939,7 @@ screen success():
             text _("Sa vraie valeur : [quest34]/1\n") 
             text _("Faire de la philosophie : [quest35]/1\n") 
             text _("Bon philosophe : [quest36]/1\n") 
-            text _("l'entre aide scolaire : [quest37]/1\n") 
+            text _("L'entre aide scolaire : [quest37]/1\n") 
 
 style about_label is gui_label   
 style about_label_text is gui_label_text

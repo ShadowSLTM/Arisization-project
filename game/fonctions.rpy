@@ -321,7 +321,6 @@ init python:
         "On va prendre à manger ?",
         "On va se chercher à manger ?",
         "On va se prendre à manger ?",
-
     ]
 
     def get_random_find_food():

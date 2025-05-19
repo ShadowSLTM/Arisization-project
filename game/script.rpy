@@ -324,6 +324,8 @@ label hack:
         "système ouvert avec succès." 
         play sound "Click.mp3" noloop 
 
+        $ stockage += 2.0
+
     else: 
 
         play sound "Menu.mp3" noloop    
@@ -346,6 +348,8 @@ label hack:
 
         P "Attends... On dirait qu'elle commence à s'activer."
         play sound "Menu.mp3" noloop 
+
+        $ stockage -= 1.0
 
         R "Anomalie détectée. Nom de code introuvable dans la base de données."
         play sound "Click.mp3" noloop 
@@ -513,14 +517,14 @@ label choice1:
             P "[validation]"
             play sound "Click.mp3" noloop   
 
-            A "Non..."
+            A "Non......"
             play sound "Click.mp3" noloop   
 
             scene black 
             with fade
 
-            "{b}{i}Tu quittas l'entrepôt avec [S].{/i}{/b}"
-            play sound "Menu.mp3" noloop
+            "{b}{i}Tu quittes l'entrepôt avec [S].{/i}{/b}"
+            play sound "Menu.mp3" noloop 
 
             play music "gameover.mp3" noloop
             "{b}{i} Fin numéro 1 : [A] finit complètement Abandonnée et détruite.{/i}{/b}"
@@ -542,20 +546,15 @@ label choice1:
                     jump choice1
 
         "{b}{i} Garder [A] {/i}{/b}" :
-            jump keep
-            
-label keep:
 
-    play sound "Menu.mp3" noloop 
+            P "Je refuse de la laisser ici alors qu'elle est en bonne état de fonctionner malgré son oublie numérique et en plus j'ai pris du temps pour la démarrer."
+            play sound "Click.mp3" noloop 
 
-    P "Je refuse de la laisser ici alors qu'elle est en bonne état de fonctionner malgré son oublie numérique et en plus j'ai pris du temps pour la démarrer."
-    play sound "Click.mp3" noloop 
+            if wallbreak == 0: 
+                jump argument
 
-    if wallbreak == 0: 
-        jump argument
-
-    elif wallbreak == 1:
-        jump wallbreaking1
+            elif wallbreak == 1:
+                jump wallbreaking1
         
 label wallbreaking1: 
 
@@ -771,8 +770,6 @@ label grayroom:
 
     "{b}{i}[S] se calme et soudainement la porte s'ouvre et la [T] entra.{/i}{/b}"
     play sound "Click.mp3" noloop 
-
-#SALUTATIONS ALEATOIRES
 
     $  salutation_rdm = get_random_salutation()
     Gt "[salutation_rdm]"
@@ -3828,6 +3825,7 @@ label wallbreaking4:
     play sound "Click.mp3" noloop
 
     scene black 
+    hide screen hallway
 
     "{b}{i} Tu arrives finalement en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -23456,6 +23454,121 @@ label philosophie_technologie:
     play sound "Click.mp3" noloop  
 
     Na "Déonnexion terminée, au revoir [K]."  
+    play sound "Click.mp3" noloop  
+
+    P "Bon on va vous laisser."  
+    play sound "Click.mp3" noloop  
+
+    K "Ok à demain."  
+    play sound "Click.mp3" noloop  
+
+    H "à demain."  
+    play sound "Click.mp3" noloop  
+
+    P "Bon on y va ?"   
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen clubroom
+    scene black 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    scene black 
+    hide screen lunchroom 
+
+    "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall
+    show screen hall 
+
+    "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop 
+
+    scene staircase 
+    hide screen hall
+
+    "{b}{i} Vous montez au premier étage.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hallway 
+    show screen hallway
+
+    "{b}{i} Vous continuez vers le dortoir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    $ toilet = get_random_toilet()
+    P "[toilet]"
+    play sound "Click.mp3" noloop
+
+    Na "Ok moi je vais directement au dortoir."
+    play sound "Click.mp3" noloop 
+
+    P "Ok à tout de suite."
+    play sound "Footsteps.mp3" noloop
+
+    scene black 
+    hide screen hallway
+
+    "{b}{i} Tu te diriges vers les toilettes.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene restroom
+    show screen WC 
+
+    P "Bon je vais faire ce que j'ai à faire."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Tu fais ta commission avant de sortir des toilettes.{/i}{/b}"
+    play sound "Toilet.mp3" noloop 
+
+    P "Bon il faut que j'aille au dortoir."
+    play sound "Footsteps.mp3" noloop
+
+    scene black 
+    hide screen WC
+
+    "{b}{i} Tu quittes les toilettes.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway
+    show screen hallway
+
+    "{b}{i} Tu continues vers le dortoir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black 
+    hide screen hallway  
+
+    "{b}{i}Vous entrez dans le dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene room
+    show screen room 
+
+    $ dortoir = get_random_dortoir()
+    P "[dortoir]"
+    play sound "Click.mp3" noloop 
+
+    Na "Bon on fait quoi maintenant ?"  
+    play sound "Click.mp3" noloop  
+
+    P "De base, je voulais qu'on révise un peu mais on va finalement se poser pour lire."  
+    play sound "Click.mp3" noloop  
+
+    Na "Cool si on lit un peu car je veux me poser un peu aussi."   
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Vous vous posez tranquillement pour lire peudant une heure.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    Na "Il est pas mal ce livre."  
     play sound "Click.mp3" noloop  
 
 # Aris la plus belle <333333333333333 

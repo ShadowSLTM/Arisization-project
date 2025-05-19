@@ -52,7 +52,7 @@ define T = Character('professeure', color="#ffffff")
 
 define Mo = Character('Mary [nom]', color="#ff00ea")
 
-# Neogen Technologies
+# Neogen Technologies 
 
 define C = Character('Takeshi Kurosawa', color="#aa009c")
 
