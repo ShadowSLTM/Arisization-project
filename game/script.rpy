@@ -164,9 +164,9 @@ label identity:
 
     $ domaine = "inégalable créateur" if pronom == "il" else "inégalable créatrice"
     
-    $ noms_interdits = {"Kusanagi", "Natsumi", "Ayanokoji", "Sato", "Saotome", "Hiiragi", "Katsuragi", "Hanemiya", "Sumino", "Hoshino", "Shinomiya", "Katsuya", "Horimiya", "Tachibana", "Sakayanagi", "Nagumo"}
-    $ prenoms_interdits = {"Iris", "Hajime", "Kendo", "Naoto", "Haruki", "Yuki", "Emily", "Kazumi", "Ayano", "Aiko", "Akeno", "Subaru", "Suzune", "Shiro", "Kaede", "Naomi", "Seigo"}
-    
+    $ noms_interdits = {"Kusanagi", "Nishimura", "Ayanokoji", "Sato", "Saotome", "Ichinose", "Hiiragi", "Katsuragi", "Hanemiya", "Sumino", "Hoshino", "Shinomiya", "Katsuya", "Horimiya", "Tachibana", "Sakayanagi", "Nagumo", "Kaminari", "Suzumiya", "Kobayashi", "Kaneda", "Nanami", "Kurosawa"}
+    $ prenoms_interdits = {"Yuna", "Hajime", "Kendo", "Naoto", "Haruki", "Yuki", "Emika", "Kazumi", "Ayano", "Aiko", "Akeno", "Subaru", "Suzune", "Shiro", "Kaede", "Naomi", "Seigo", "Takeshi", "Saori", "Mizuki", "Rika", "Natsuo", "Reiichi", "Mayumi", "Luna", "Hiroyuki"}
+
     if prenom in prenoms_interdits:
         "Ce prénom n'est pas autorisé."
         jump identity  
@@ -1106,7 +1106,7 @@ label rencontre:
     E "Bienvenue [P]"
     play sound "Click.mp3" noloop 
 
-    P "Merci beaucoup, Emily."
+    P "Merci beaucoup, Emika."
     play sound "Click.mp3" noloop 
 
     $ nothing = get_random_nothing()
@@ -1144,7 +1144,7 @@ label rencontre:
     E "Vraiment !?"
     play sound "Click.mp3" noloop 
 
-    P "Oui regarde Emily, Vas-y [A] présentes-toi à elle."
+    P "Oui regarde Emika, Vas-y [A] présentes-toi à elle."
     play sound "Click.mp3" noloop 
 
     A "Bonjour je suis [A], l'assistante et la création de [P], je suis un [model]."
@@ -1153,7 +1153,7 @@ label rencontre:
     E "Bonjour [A], ravie de te rencontrer."
     play sound "Click.mp3" noloop
 
-    A "Merci beaucoup, Emily."
+    A "Merci beaucoup, Emika."
     play sound "Click.mp3" noloop
 
     $ nothing = get_random_nothing()
@@ -1258,7 +1258,7 @@ label rencontre:
     E "Ah et aussi, voilà tes informations concernant ta classe et tes horaires." 
     play sound "Click.mp3" noloop
 
-    P "Merci beaucoup, Emily."
+    P "Merci beaucoup, Emika."
     play sound "Click.mp3" noloop 
 
     $ nothing = get_random_nothing()
@@ -1491,7 +1491,7 @@ label rencontre:
     I "[thanks]"
     play sound "Click.mp3" noloop
 
-    T "Donc enchantée Iris, quel est ton projet dans ce lycée ?"
+    T "Donc enchantée Yuna, quel est ton projet dans ce lycée ?"
     play sound "Click.mp3" noloop 
 
     I "Finir mon projet est de finir mon jeu vidéo mais je veux surtout sociabiliser avec les autres."
@@ -1512,7 +1512,7 @@ label rencontre:
     
     $ stockage += 4.0
 
-    T "De rien, maintenant, toi, juste derrière Iris."
+    T "De rien, maintenant, toi, juste derrière Yuna."
     play sound "Click.mp3" noloop 
 
     R "Euh moi..."
@@ -2357,7 +2357,7 @@ label choice2:
      
     menu:    
 
-        "{b}{i}Demander à Iris ce que c'est{/i}{/b}" :
+        "{b}{i}Demander à Yuna ce que c'est{/i}{/b}" :
             jump ask 
         "{b}{i}Retourner au dortoir{/i}{/b}" :
             jump dorm1
@@ -2405,7 +2405,7 @@ label ask:
     "{b}{i}Puis soudainement tu entends un fort bruit venant d'au-dessus.{/i}{/b}"
     play sound "Click.mp3" noloop 
     
-    P "Iris juste c'est bien les dortoirs juste au-dessus ?"
+    P "Yuna juste c'est bien les dortoirs juste au-dessus ?"
     play sound "Click.mp3" noloop
 
     I "Oui pourquoi ?"
@@ -3175,7 +3175,7 @@ label skip:
     P  "Oui."
     play sound "Click.mp3" noloop 
 
-    I "Je suis contente pour toi [newname], en plus ça ressemble à mon prénom."
+    I "Je suis contente pour toi [newname]."
     play sound "Click.mp3" noloop
 
     $ thanks = get_random_thanks()
@@ -6170,7 +6170,7 @@ label choice8:
     P "[validation]"
     play sound "Click.mp3" noloop 
 
-    Na "À demain Iris."
+    Na "À demain Yuna."
     play sound "Click.mp3" noloop 
 
     I "À demain les [nom]."
@@ -8725,12 +8725,12 @@ label debate:
 
     if pronom == "il":
 
-        Na "Tu es dans ta chambre. Tu t’es évanoui en classe, mais ne t'inquiète pas, Iris et moi t’avons accompagné jusqu’ici."
+        Na "Tu es dans ta chambre. Tu t’es évanoui en classe, mais ne t'inquiète pas, Yuna et moi t’avons accompagné jusqu’ici."
         play sound "Click.mp3" noloop 
 
     elif pronom == "elle": 
 
-        Na "Tu es dans ta chambre. Tu t’es évanouie en classe, mais ne t'inquiète pas, Iris et moi t’avons accompagné jusqu’ici."
+        Na "Tu es dans ta chambre. Tu t’es évanouie en classe, mais ne t'inquiète pas, Yuna et moi t’avons accompagné jusqu’ici."
         play sound "Click.mp3" noloop 
 
     P "[I]...?"
@@ -8764,7 +8764,7 @@ label debate:
     P "Ah....."
     play sound "Click.mp3" noloop
 
-    Na "Bon moi et Iris devont retourner en classe, reposes-toi."
+    Na "Bon moi et Yuna devont retourner en classe, reposes-toi."
     play sound "Click.mp3" noloop
 
     P "Tu ne peut pas rester avec moi [newname] ?"
@@ -9930,7 +9930,7 @@ label update:
             "{b}{i} Tu approches calmement pour la réveiller.{/i}{/b}"
             play sound "Click.mp3" noloop
 
-            P "Iris ça va ?"
+            P "Yuna ça va ?"
             play sound "Click.mp3" noloop 
 
             I "Mhmmm C'est qui ?"
@@ -10865,7 +10865,7 @@ label update:
     E "[validation]"
     play sound "Click.mp3" noloop 
 
-    P "Emily, je vous le dis aujourd’hui, ça reste entre nous. Indépendamment de toute considération idéologique, si quelqu’un prévoit de détruire [newname], je le dénoncerai."
+    P "Emika, je vous le dis aujourd’hui, ça reste entre nous. Indépendamment de toute considération idéologique, si quelqu’un prévoit de détruire [newname], je le dénoncerai."
     play sound "Click.mp3" noloop 
 
     E "Tu veux vraiment faire ça ?"
@@ -10973,7 +10973,7 @@ label update:
             play sound "Door.mp3" noloop  
 
             scene room
-            show screen Irisroom 
+            show screen Yunaroom 
 
             I "Donc voici ma chambre."
             play sound "Click.mp3" noloop  
@@ -11054,7 +11054,7 @@ label update:
             play sound "Click.mp3" noloop  
 
             scene black
-            hide screen Irisroom 
+            hide screen Yunaroom 
 
             "{b}{i}Tu te diriges dans le couloir.{/i}{/b}"
             play sound "Door.mp3" noloop  
@@ -14024,7 +14024,7 @@ label password3:
     Y "Je vais sois me reposer ou bosser sur quelques trucs."
     play sound "Click.mp3" noloop 
 
-    P "ET toi Iris ?"
+    P "ET toi Yuna ?"
     play sound "Click.mp3" noloop 
 
     I "Je vais bosser sur mon jeu, j'ai du retard à rattraper."
@@ -19571,7 +19571,7 @@ label password13:
     I "[nothing]"
     play sound "Click.mp3" noloop
 
-    P "Sinon Iris tu comptes faire quoi cette après-midi ?"
+    P "Sinon Yuna tu comptes faire quoi cette après-midi ?"
     play sound "Click.mp3" noloop
 
     I "Je vais continuer à travailler sur mon jeu et toi ?"
@@ -21255,7 +21255,7 @@ label password15:
     "{b}{i} Soudainement [I] vous rejoins.{/i}{/b}"
     play sound "Click.mp3" noloop  
 
-    P "Oh salut Iris."
+    P "Oh salut Yuna."
     play sound "Click.mp3" noloop 
 
     if pronom == "il" : 
@@ -21268,7 +21268,7 @@ label password15:
         I "Bonjour les amies."
         play sound "Click.mp3" noloop 
 
-    J1 "Salut Iris."
+    J1 "Salut Yuna."
     play sound "Click.mp3" noloop 
 
     I "[prenom], pourrais savoir pourquoi Ayano est avec vous ?"
@@ -21888,7 +21888,7 @@ label password16:
     "{b}{i} Puis tu croises [I].{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "Salut Iris ça te dit de venir manger avec nous ?"
+    P "Salut Yuna ça te dit de venir manger avec nous ?"
     play sound "Click.mp3" noloop 
 
     I "Oui pourquoi pas."
@@ -23148,7 +23148,7 @@ label philosophie_technologie:
     P "Bien entendu."
     play sound "Click.mp3" noloop 
     
-    M "Bien, sortez votre livre d'informatique à la page 28 pour vous."
+    M "Bien, sortez votre livre d'informatique à la page 28."
     play sound "Click.mp3" noloop
 
     "{b}{i} Vous sortez votre livre et le cours continue tranquillement..{/i}{/b}"
@@ -23569,6 +23569,270 @@ label philosophie_technologie:
     play sound "Click.mp3" noloop 
 
     Na "Il est pas mal ce livre."  
+    play sound "Click.mp3" noloop  
+
+    P "Je sais c'est pour ça que je voulais qu'on le lise ensemble."  
+    play sound "Click.mp3" noloop  
+
+    Na "Forcer de constater que tu as de très bon goûts litérraires."
+    play sound "Click.mp3" noloop  
+
+    $ thanks = get_random_thanks()
+    P "[thanks]"
+    play sound "Click.mp3" noloop
+
+    $ nothing = get_random_nothing()
+    Na "[nothing]"
+    play sound "Click.mp3" noloop
+
+    P "Bon on va prendre à manger ?"
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen room
+
+    "{b}{i} Vous partez chercher à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 200 
+
+    scene room 
+    show screen room
+
+    P "Enfin à manger... "
+    play sound "Click.mp3" noloop 
+
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]"
+    play sound "Click.mp3" noloop  
+
+    "{b}{i} Vous mangez tranquillement pendant une demi-heure.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Tu as finis de manger ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui, je n'ai plus faim."
+    play sound "Click.mp3" noloop 
+
+    P "Bien."
+    play sound "Click.mp3" noloop 
+
+    Na "Bon Je vais me déconnecter et me recharger."
+    play sound "Click.mp3" noloop 
+
+    P "Pas de soucis."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[newname] se déconnecte et recharge sa batterie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bon je vais me changer et aller dormir."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    scene black 
+    hide screen room
+    hide screen day 
+
+    "{b}{i} Le lendemain, le 12 décembre 2097{/i}{/b}"
+    play sound "Alarm.mp3" noloop 
+
+    scene room 
+    show screen room
+    show screen day 
+    $ day += 1 
+
+label password18:  
+
+    $ entered_password = renpy.input("Veuillez entrer votre mot de passe pour [newname].")
+    $ entered_password = entered_password.strip()
+
+    if entered_password == stored_password: 
+
+        "Mot de passe correct. Accès autorisé." 
+        play sound "Menu.mp3" noloop
+
+    else: 
+
+        "Mot de passe incorrect. Accès refusé." 
+        play sound "Menu.mp3" noloop
+        jump password18
+
+    $ start = get_random_start()
+    Na "[start]"
+    play sound "Click.mp3" noloop 
+
+    Na "Démarrage terminé, Bonjour [P]."
+    play sound "Click.mp3" noloop 
+
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Et toi ?" 
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]"
+    play sound "Click.mp3" noloop
+
+    Na "Cool alors."
+    play sound "Click.mp3" noloop  
+
+    $ go_in_class = get_random_go_in_class()
+    P "[go_in_class]"  
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop 
+
+    hide screen room 
+    scene black
+
+    "{b}{i} Tu quiites le dortoir avec [newname].{/i}{/b}"
+    play sound "Door.mp3" noloop 
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    Na "Cool alors."
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene classroom  
+    show screen class_404
+ 
+    $  salutation_rdm = get_random_salutation()
+    M "[salutation_rdm]"
+    play sound "Click.mp3" noloop
+
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
+
+    $  salutation_rdm = get_random_salutation()
+    P "[salutation_rdm]"
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tout le monde s'asseoit à sa place respective.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Bien nous pouvons commencer le cours."
+    play sound "Click.mp3" noloop  
+
+    $ validation = get_random_validation() 
+    P "[validation]"
+    play sound "Click.mp3" noloop 
+
+    $ validation = get_random_validation() 
+    Na "[validation]"
+    play sound "Click.mp3" noloop 
+
+    M "Sortez votre livre d'informatique à la page 29."
+    play sound "Click.mp3" noloop  
+
+    $ validation = get_random_validation() 
+    P "[validation]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Le cours se déroule tranquillement.{/i}{/b}"
+    play sound "Bell.mp3" noloop
+
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
+
+    $ stockage += 6.0 
+
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen class_404 
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i}Tu continues vers les escaliers.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene staircase 
+    hide screen hallway
+
+    "{b}{i}Puis vers le hall.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hall 
+    show screen hall 
+
+    "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hall
+
+    "{b}{i} Vous entrez enfin au réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene lunchroom 
+    show screen lunchroom  
+    
+    $ find_food = get_random_find_food()
+    Na "[find_food]"
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop 
+
+    "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 200 
+
+    $ service = get_random_service()
+    P "[service]"
+    play sound "Click.mp3" noloop 
+
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Vous aller vous asseoir dans le réfectoire.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    P "Sinon tu te débrouilles bien pour le cours d'informatique ?"
+    play sound "Click.mp3" noloop  
+
+    Na "Oui je me débrouilles bien."
+    play sound "Click.mp3" noloop  
+
+    P "Cool alors si tu débrouilles bien."
     play sound "Click.mp3" noloop  
 
 # Aris la plus belle <333333333333333 

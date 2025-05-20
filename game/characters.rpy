@@ -20,7 +20,7 @@ define S = Character('Subaru Shinomiya', color="#ffffff")
 # Les élèves de Seconde-E. 
 
 define M = Character('Sakura Kusanagi', color="#ffffff") 
-define I = Character('Iris Natsumi', color="#ae33ff")
+define I = Character('Yuna Nishimura', color="#ae33ff")
 define H = Character('Hajime Ayanokoji', color="#ffffff")
 define K = Character('Kendo Sato', color="#ffffff")
 define N = Character('Naoto Saotome', color="#ffee00") 
@@ -29,14 +29,14 @@ define Y = Character('Yuki Hiiragi', color="#0059ff")
 
 # Les élèves du bureau des élèves. 
  
-define E = Character('Emily Katsuragi', color="#ffffff")
+define E = Character('Emika Katsuragi', color="#ffffff")
 define Kh = Character('Kazumi Hanemiya', color="#ffffff") 
 
-# Les antagonistes secondaires. 
+# Les antagonistes secondaires.  
 
 define J1 = Character('Ayano Sumino', color="#ff2323") 
 define J2 = Character('Aiko Sumino', color="#ff2323") 
-define J = Character('Les inégalables décrypteusess', color="#ff2323") 
+define J = Character('Les inégalables décrypteuses', color="#ff2323") 
 
 # Les membres du département. 
 
@@ -50,7 +50,7 @@ define T = Character('professeure', color="#ffffff")
  
 # la mére du personnnage principal 
 
-define Mo = Character('Mary [nom]', color="#ff00ea")
+define Mo = Character('Mayumi [nom]', color="#ff00ea")
 
 # Neogen Technologies 
 
@@ -67,10 +67,6 @@ define Oh = Character('Officier Hiroyuki', color="#0000ff")
 define Ot = Character('officier Hiroyuki', color="#0000ff")
 define O = Character('Kaede Tachibana', color="#0000ff") 
 
-# directeur du jeu  
-
-define Dc = Character('Seydou N\'Doye', color="#ffffff")
-
 # journalistes 
 
 define Rk = Character('Rika Kobayashi', color="#ffffff")
@@ -81,3 +77,6 @@ define Nk = Character('Natsuo Kaneda', color="#ffffff")
 define Sn = Character('Seigo Nagumo', color="#ffffff")
 define Ln = Character('Luna Nagumo', color="#ffffff")
 
+# directeur du jeu  
+
+define Dc = Character('Seydou N\'Doye', color="#ffffff")
