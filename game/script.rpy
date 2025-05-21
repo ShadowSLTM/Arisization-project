@@ -7843,7 +7843,7 @@ label suite1:
     "{b}{i}Tu continue vers la salle de la classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop 
 
-    scene main
+    scene black
     hide screen hallway  
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
@@ -9503,8 +9503,8 @@ label debate:
     "{b}{i}Tu entres dans la salle de club.{/i}{/b}"
     play music "Door.mp3" noloop 
 
-    hide screen hall
-    scene main
+    hide screen clubroom
+    scene clubroom
 
     if pronom == "il":
 
@@ -9607,6 +9607,16 @@ label code:
     Na "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
 
+    $ stockage += 10.0
+
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
+    play sound "Click.mp3" noloop 
+    
+    $ suivi = get_random_suivi()
+    Na "[suivi]" 
+    play sound "Footsteps.mp3" noloop
+
     hide screen clubroom
     scene black 
 
@@ -9622,7 +9632,7 @@ label code:
     scene black
     hide screen hall 
 
-    "{b}{i} Tu entres dasn le réféctoire.{/i}{/b}"
+    "{b}{i} Tu entres dans le réféctoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene lunchroom 
@@ -10101,7 +10111,7 @@ label update:
     "{b}{i}Tu te changea avant d'aller de te coucher.{/i}{/b}"
     play music "Click.mp3" noloop 
 
-    scene main
+    scene black
     hide screen room 
     hide screen day
 
@@ -12040,12 +12050,18 @@ label password:
     Na "Comme je l'ai déjà dit je suis ici pour apprendre."
     play sound "Click.mp3" noloop 
 
-    P "Oui mais le temre humanoïdophobe est rarement utilisé de nos jours."
+    P "Oui mais le terme humanoïdophobe est rarement utilisé de nos jours."
     play sound "Click.mp3" noloop 
 
-    $ validation = get_random_validation() 
-    Na "[validation]"
-    play sound "Click.mp3" noloop 
+    if pronom == "il":
+
+        Na "je vois, je comprend pourquoi tu es surpris."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle": 
+
+        Na "je vois, je comprend pourquoi tu es surprise."
+        play sound "Click.mp3" noloop 
 
     "{b}{i}Vous continuez de discuter jusqu'à la sonnerie.{/i}{/b}"
     play sound "Bell.mp3" noloop 
@@ -12770,22 +12786,31 @@ label password1:
     Na "[je_vais_bien_txt]" 
     play sound "Click.mp3" noloop
 
-    $ stockage += 5.0
+    $ stockage += 10.0
 
-    P "Tu as lu quelque chose d'intéressant ?" 
+    P "Tu as lu quelque chose d'intéressant ?"
     play sound "Click.mp3" noloop   
 
-    Na "C'était dans un livre d'histoire."
+    Na "Oui, c'était dans un livre de géographie. Ça parlait de la région de Danto, celle dans laquelle on vit."
     play sound "Click.mp3" noloop   
 
     P "Et ça disait quoi ?"
     play sound "Click.mp3" noloop   
 
-    Na "Il semblerait que notre monde a été créé par [Dc]."
+    Na "Qu’elle s’est énormément développée à partir de 2050, au point de devenir la région la plus avancée technologiquement du Japon."
     play sound "Click.mp3" noloop   
 
-    Na "[Dc] !? Je vois intéressant."
-    play sound "Click.mp3" noloop 
+    Na "D’ailleurs, tu savais que Danto, c’est l’acronyme de {b}Domain Area for New Technological Operations{/b} ?"
+    play sound "Click.mp3" noloop   
+
+    P "Non je ne savais pas."
+    play sound "Click.mp3" noloop
+
+    Na "C’est devenu un pôle majeur d’innovation, et son influence dans le domaine de la tech dépasse même les frontières du pays."
+    play sound "Click.mp3" noloop
+
+    P "C'est vrai que ça fait plaisir de savoir ça."
+    play sound "Click.mp3" noloop
 
     Na "Bon Je vais me déconnecter et me recharger car je suis fatiguée."
     play sound "Click.mp3" noloop 
@@ -14156,7 +14181,7 @@ label password3:
     "{b}{i}Tu te changes avant d'aller de te coucher.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene main
+    scene black
     hide screen room 
     hide screen day
 
@@ -23158,6 +23183,8 @@ label philosophie_technologie:
     M "[endlesson]"
     play sound "Click.mp3" noloop
 
+    $ stockage += 5.0
+
     P "Bon, [newname] on retourne au dortoir ?" 
     play sound "Click.mp3" noloop
 
@@ -23437,6 +23464,8 @@ label philosophie_technologie:
     P "Je vois merci beaucoup pour ces informations."  
     play sound "Click.mp3" noloop  
 
+    $ stockage += 5.0
+
     $ nothing = get_random_nothing()
     K "[nothing]"
     play sound "Click.mp3" noloop
@@ -23475,23 +23504,16 @@ label philosophie_technologie:
     hide screen clubroom
     scene black 
 
-    $ suivi = get_random_suivi()
-    Na "[suivi]"
-    play sound "Footsteps.mp3" noloop
-
-    scene black 
-    hide screen lunchroom 
-
-    "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
-    play sound "Door.mp3" noloop
+    "{b}{i} Vous quittez la salle de club.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop 
 
     scene hall
     show screen hall 
 
-    "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
+    "{b}{i} Vous continuez votre chemin vers le couloir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop 
 
-    scene staircase 
+    scene staircase  
     hide screen hall
 
     "{b}{i} Vous montez au premier étage.{/i}{/b}"
@@ -23567,6 +23589,8 @@ label philosophie_technologie:
 
     "{b}{i}Vous vous posez tranquillement pour lire peudant une heure.{/i}{/b}"
     play sound "Click.mp3" noloop 
+
+    $ stockage += 5.0
 
     Na "Il est pas mal ce livre."  
     play sound "Click.mp3" noloop  
@@ -23833,6 +23857,149 @@ label password18:
     play sound "Click.mp3" noloop  
 
     P "Cool alors si tu débrouilles bien."
+    play sound "Footsteps.mp3" noloop  
+
+    "{b}{i} Puis [I], [K] et [H] vous rejoins.{/i}{/b}"
     play sound "Click.mp3" noloop  
 
-# Aris la plus belle <333333333333333 
+    P "Oh salut les amis."
+    play sound "Click.mp3" noloop  
+
+    I "Salut."
+    play sound "Click.mp3" noloop 
+
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    I "[je_vais_bien_txt]" 
+    play sound "Click.mp3" noloop 
+
+    P "Cool alors."
+    play sound "Click.mp3" noloop 
+
+    I "Sinon comment vous allez ?"
+    play sound "Click.mp3" noloop 
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]" 
+    play sound "Click.mp3" noloop 
+ 
+    Na "Je vais bien aussi."
+    play sound "Click.mp3" noloop 
+
+    I "Cool alors si vous allez bien."
+    play sound "Click.mp3" noloop 
+
+    $ thanks = get_random_thanks()
+    P "[thanks]"
+    play sound "Click.mp3" noloop
+
+    $ nothing = get_random_nothing()
+    I "[nothing]"
+    play sound "Click.mp3" noloop
+
+    P "Et vous Kendo et Hajime, vous allez bien car on dirait que vou étes à l'ouest."
+    play sound "Click.mp3" noloop
+
+    K "Nous sommes un peu fatigués."
+    play sound "Click.mp3" noloop
+
+    H "Oui je confirme."
+    play sound "Click.mp3" noloop
+
+    P "Vous avez fait quoi pour être autant fatigué."
+    play sound "Click.mp3" noloop
+
+    K "Nous sommes restés au club générale pour finir deux-trois trucs."
+    play sound "Click.mp3" noloop
+
+    Na "Le surmeénage est mauvais et [prenom] en a déja subi les effects."
+    play sound "Click.mp3" noloop
+
+    if pronom == "il":
+
+        H "Oui c'est vrai [pronom] s'est évanoui en classe."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle": 
+
+        H "Oui c'est vrai [pronom] s'est évanouie en classe."
+        play sound "Click.mp3" noloop
+
+    P "Oh...c'est bon pas besoin de le rappeler."
+    play sound "Click.mp3" noloop
+
+    Na "On te taquine juste, pas besoin d'en faire tout un drame."
+    play sound "Click.mp3" noloop
+
+    P "Je sais mais quand même."
+    play sound "Click.mp3" noloop
+
+    K "Sinon ça se passe comment pour vous le cours d'infomatique."
+    play sound "Click.mp3" noloop
+
+    I "Rassure moi c'est du sarcasme j'espére car je te rappelle on est les meilleurs lycéens ici."
+    play sound "Click.mp3" noloop
+
+    K "Oui je te rassure, c'est du sarcasme."
+    play sound "Click.mp3" noloop
+
+    I "J'espére."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Vous continuez de discuter des cours pendant que vous mangez jusqu'à la sonnerie.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+
+    I "Bon on doit retourner en cours."
+    play sound "Click.mp3" noloop
+
+    P "Ok il faut pas qu'on soit en retard."
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    I "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    scene black 
+    hide screen lunchroom 
+
+    "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall 
+    show screen hall
+
+    "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene staircase 
+    hide screen hall 
+
+    "{b}{i} Vous montez au premier étage.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+    
+    scene classroom  
+    show screen class_404 
+
+    M "Rebonjour, nous allons reprendre le cours."
+    play sound "Click.mp3" noloop  
+
+    $ validation = get_random_validation() 
+    P "[validation]"
+    play sound "Click.mp3" noloop 
+
+# Aris la plus belle <333333333333333

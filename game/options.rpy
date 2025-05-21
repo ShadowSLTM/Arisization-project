@@ -30,7 +30,7 @@ define config.version = "Version_développeur"
 ## Texte placé sur l'écran "À propos" du jeu. Placez le texte entre triples
 ## guillemets, et laissez une ligne entre les paragraphes.
 
-define gui.about = _p("""""")
+define gui.about = _p("""""") 
 
 
 ## Un nom court pour le jeu qui sera utilisé pour les répertoires et le nom de

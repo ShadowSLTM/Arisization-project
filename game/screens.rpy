@@ -1729,13 +1729,13 @@ screen gymnase():
             size 50
             xalign 0.5
 
-screen Irisroom():
+screen Yunaroom():
     frame:
         xalign 0.99
         ypos 10 
         has vbox  
 
-        text "Chambre d'[I]":
+        text "Chambre de Yuna":
             size 50
             xalign 0.5 
 
