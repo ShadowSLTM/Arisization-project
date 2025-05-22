@@ -1899,7 +1899,7 @@ screen success():
 
             label "{b}{i}— Progression —\n{/i}{/b}" 
 
-            text _("Succès : [success]/36\n") 
+            text _("Succès : [success]/37\n") 
 
             label "{b}{i}— liste des succès —\n{/i}{/b}" 
 
