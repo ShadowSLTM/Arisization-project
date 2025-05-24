@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 1940: Indentation mismatch.
+File "game/script.rpy", line 1303: Line is indented, but the preceding play sound statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    "{b}{i} Accepter le contrat.{/i}{/b}": 
+    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri May 16 16:12:52 2025
+Sun May 25 00:00:48 2025

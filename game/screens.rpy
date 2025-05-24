@@ -1822,13 +1822,15 @@ screen credit():
 
             label "{b}{i}— Crédits —\n{/i}{/b}"
 
-            text _("Développement et narration : [Dc] (Shadow_SLTM)\n")
+            text _("Développement global et narration : [Dc] (Shadow_SLTM)\n")
 
             text _("Consultant en scénarisation : [Dc] (Shadow_SLTM)\n")
 
             text _("Gestion des musiques  : [Dc] (Shadow_SLTM)\n")
+  
+            text _("Interface joueur : [Dc] (Shadow_SLTM)\n") 
 
-            text _("Concepts : [Dc] (Shadow_SLTM)\n")
+            text _("Concepts : [Dc] (Shadow_SLTM)\n") 
 
             text _("Système des succès : [Dc] (Shadow_SLTM)\n") 
 
@@ -1877,7 +1879,7 @@ screen credit():
             text _("DLC Arisization Project - Alternative : [Dc] (Shadow_SLTM)\n")
 
             text _("Arisization Project (The Project of the Realization of Aris) appartient à [Dc] (Shadow_SLTM)\n")   
- 
+  
             text _("éditeur : SLTM\n") 
 
 style about_label is gui_label  
@@ -1940,7 +1942,8 @@ screen success():
             text _("Faire de la philosophie : [quest35]/1\n") 
             text _("Bon philosophe : [quest36]/1\n") 
             text _("L'entre aide scolaire : [quest37]/1\n") 
-
+            text _("Génie de l’informatique part 2 : [quest38]/1\n") 
+            
 style about_label is gui_label   
 style about_label_text is gui_label_text
 style about_text is gui_text 
@@ -2054,25 +2057,13 @@ screen about():
 
             label "{b}{i}— Catégorie du jeu —\n{/i}{/b}" 
 
-            text _("Sci-Fi\n") 
-
+            text _("Sci-Fi\n")
             text _("Mystery\n")
-           
             text _("Cyberpunk\n")
-
-            text _("Utsuge\n")
-
             text _("Thriller\n")
-
-            text _("School life\n")    
-
-            text _("RPG\n")   
-
-            text _("Hacking\n")     
-
-            text _("School life\n")    
-
-            text _("Uchronie\n")   
+            text _("School Life\n")
+            text _("Hacking\n")
+            text _("dystopie technologique\n")
 
 style about_label is gui_label
 style about_label_text is gui_label_text
