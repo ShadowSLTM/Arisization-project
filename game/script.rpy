@@ -66,6 +66,17 @@ label start:
     default ultimate17 = "??????????"
     default ultimate18 = "??????????"  
 
+    default charactertext1 = "??????????"  
+    default charactertext2 = "??????????"  
+    default charactertext3 = "??????????"  
+    default charactertext4 = "??????????"  
+    default charactertext5 = "??????????"  
+    default charactertext6 = "??????????"  
+    default charactertext7 = "??????????"  
+    default charactertext8 = "??????????"  
+    default charactertext9 = "??????????"  
+    default charactertext10 = "??????????"  
+
     default quest1 = 0
     default quest2 = 0
     default quest3 = 0
@@ -1503,6 +1514,8 @@ label argument:
     T "Intéressant, c'est bien que tu veuilles changer."
     play sound "Click.mp3" noloop
 
+    $ charactertext2 = "Âgée de 19 ans, Yuna était autrefois timide et solitaire, toujours plongée dans ses lignes de code. Après avoir abandonné son premier jeu, elle s’investit pleinement dans un nouveau projet, déterminée à aller jusqu’au bout. Désormais, elle cherche aussi à sortir de sa bulle et à se rapprocher des autres."
+
     $ thanks = get_random_thanks()
     I "[thanks]"
     play sound "Click.mp3" noloop
@@ -1563,6 +1576,10 @@ label argument:
 
     $ ultimate4 = "L'inégalable Décrypteuse Alpha" 
     $ ultimate5 = "L'inégalable Décrypteuse Bêta" 
+
+    $ charactertext4 = "Ayano, surnommée l’Alpha, est la plus calme et réfléchie des deux. Derrière son air distant, parfois un brin agaçant, se cache un esprit méthodique et une redoutable capacité à anticiper les failles. Elle préfère observer longuement avant d’agir, mais une fois lancée, elle devient imparable."
+
+    $ charactertext5 = "Aiko, dite la Bêta, est beaucoup plus imprévisible. Problématique ? Peut-être. Mais sa manière non conventionnelle de penser est aussi sa plus grande force. Elle casse les codes, parfois même au sens propre, quitte à bouleverser toute logique pour arriver à ses fins."
 
     T "Bien, enchantée de vous rencontrer."
     play sound "Click.mp3" noloop
@@ -1812,7 +1829,7 @@ label argument:
 
     $ character10 = M 
     $ ultimate10 = "L'inégalable professeure"
-
+    $ charactertext10 = " 27 ans, est surnommée l’Inégalable Professeure. Enseignante au lycée Nexus depuis deux ans, elle est reconnue pour son exigence, son calme et sa pédagogie redoutablement efficace. Bien qu'elle inspire le respect de ses élèves, Sakura garde une réserve certaine envers Aris, le robot humanoïde, doutant encore de sa place réelle parmi les humains."
     M "J'ai 27 ans et ça fait deux ans que j'enseigne dans le lycée Nexus."
     play sound "Click.mp3" noloop
 
@@ -4366,7 +4383,7 @@ label wallbreaking4:
     M "[P] je suis complètement désolée pour cet incident."
     play sound "Click.mp3" noloop
 
-    P "Pas de soucis mais c'est vrai qu'[J1] est un petit problème pour [newname]."
+    P "Il va sans dire qu'[J1] est un petit problème pour [newname]."
     play sound "Click.mp3" noloop
 
     M "Oui je confirme."
@@ -19596,8 +19613,11 @@ label password11:
     P "Pourquoi vous et pas le président directement ?"
     play sound "Click.mp3" noloop
 
-    Ln "Car il est vraiment occupé en ce moment."
+    Ln "Car [Sn] est vraiment occupé en ce moment."
     play sound "Click.mp3" noloop
+
+    $ character18 = Sn
+    $ ultimate18 = "le président du gouvernement Nagumo"
 
     P "Je comprend mieux maintenant."
     play sound "Click.mp3" noloop
@@ -26198,16 +26218,21 @@ label password19:
     M "Bien maintenant ouvrez votre livre d'histoire à la page 36." 
     play sound "Click.mp3" noloop  
 
+    $ validation = get_random_validation() 
+    P "[validation]"
+    play sound "Click.mp3" noloop 
+    
     "{b}{i} Tout le monde sort son livre et écoute la [T].{/i}{/b}"
     play sound "Click.mp3" noloop  
 
-
+    M "Bon, reprenons le cours." 
+    play sound "Click.mp3" noloop 
 
     "{b}{i}Le cours continue sans problème.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
     $ endlesson = get_random_endlesson()
-    M "[endlesson]"
+    M "[endlesson]" 
     play sound "Click.mp3" noloop
 
     P "Bon [newname] on y va ?"
@@ -26245,6 +26270,54 @@ label password19:
     scene room
     show screen room 
 
+    $ dortoir = get_random_dortoir()
+    P "[dortoir]"
+    play sound "Click.mp3" noloop 
 
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]" 
+    play sound "Click.mp3" noloop  
+
+    P "Bon on fait quoi maintenant ?"  
+    play sound "Click.mp3" noloop  
+
+    Na "On porrait réviser comme hier."
+    play sound "Click.mp3" noloop
+
+    $ validation = get_random_validation() 
+    P "[validation]"
+    play sound "Click.mp3" noloop  
+
+    "{b}{i}Vous vous posez pour les révisions.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Bon tu veux commencer par qurl thème ?"  
+    play sound "Click.mp3" noloop  
+
+    Na "Je dirai les langages de balissage."  
+    play sound "Click.mp3" noloop  
+
+    P "Attend tu n'as pas compris ce que c'est ?"  
+    play sound "Click.mp3" noloop  
+
+    Na "Pas eaxctement pour te dire."  
+    play sound "Click.mp3" noloop  
+
+    P "Bon je vais t'expliquer, les langages de balissage sont des langages qui permettent de structurer et de présenter le contenu d'un document, en ajoutant des éléments tels que des titres, des paragraphes, des listes, des liens et des images. Ils sont souvent utilisés pour créer des pages web et des documents numériques."
+    play sound "Click.mp3" noloop  
+
+    Na "Ah d'accord, je comprends mieux maintenant."
+    play sound "Click.mp3" noloop  
+
+    P "Oui, c'est important de bien comprendre les langages de balissage car ils sont utilisés dans de nombreux domaines, notamment le développement web et la création de contenu numérique."  
+    play sound "Click.mp3" noloop
+
+    $ thanks = get_random_thanks()
+    Na "[thanks]"
+    play sound "Click.mp3" noloop
+
+    $ nothing = get_random_nothing()
+    P "[nothing]"
+    play sound "Click.mp3" noloop    
 
 # Aris la plus belle <333333333333333   

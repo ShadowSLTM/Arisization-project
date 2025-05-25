@@ -19,7 +19,7 @@ define S = Character('Subaru Shinomiya', color="#ffffff")
 
 # Les élèves de Seconde-E. 
 
-define M = Character('Sakura Kusanagi', color="#ffffff") 
+define M = Character('Sakura Kusanagi', color="#ffdfef") 
 define I = Character('Yuna Nishimura', color="#ae33ff")
 define H = Character('Hajime Ayanokoji', color="#ffffff")
 define K = Character('Kendo Sato', color="#ffffff")

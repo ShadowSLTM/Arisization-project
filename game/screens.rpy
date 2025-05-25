@@ -2002,20 +2002,49 @@ screen characters():
 
             label "{b}{i}— Vous —\n{/i}{/b}" 
 
-            text _("[P] — [domaine]\n") 
+            text _("{b}[P] — [domaine]\n{/b}") 
 
             label "{b}{i}— Personnages Principaux —\n{/i}{/b}" 
 
-            text _("[character1] — [ultimate1]\n") 
-            text _("[character2] — [ultimate2]\n") 
-            text _("[character3] — [ultimate3]\n") 
-            text _("[character4] — [ultimate4]\n") 
-            text _("[character5] — [ultimate5]\n") 
-            text _("[character6] — [ultimate6]\n") 
-            text _("[character7] — [ultimate7]\n") 
-            text _("[character8] — [ultimate8]\n") 
-            text _("[character9] — [ultimate9]\n")
-            text _("[character10] — [ultimate10]\n") 
+            text _("{b}[character1] — [ultimate1]{/b}\n") 
+        
+            text _("[charactertext1]\n") 
+
+            text _("{b}[character2] — [ultimate2]{/b}\n") 
+
+            text _("[charactertext2]\n") 
+
+            text _("{b}[character3] — [ultimate3]{/b}\n") 
+
+            text _("[charactertext3]\n") 
+
+            text _("{b}[character4] — [ultimate4]{/b}\n") 
+
+            text _("[charactertext4]\n") 
+
+            text _("{b}[character5] — [ultimate5]{/b}\n") 
+
+            text _("[charactertext5]\n") 
+
+            text _("{b}[character6] — [ultimate6]{/b}\n") 
+
+            text _("[charactertext6]\n") 
+
+            text _("{b}[character7] — [ultimate7]{/b}\n") 
+
+            text _("[charactertext7]\n") 
+
+            text _("{b}[character8] — [ultimate8]{/b}\n") 
+
+            text _("[charactertext8]\n") 
+
+            text _("{b}[character9] — [ultimate9]{/b}\n")
+
+            text _("[charactertext9]\n") 
+
+            text _("{b}[character10] — [ultimate10]{/b}\n") 
+
+            text _("[charactertext10]\n") 
 
             label "{b}{i}— Personnages Secondaires —\n{/i}{/b}" 
 
