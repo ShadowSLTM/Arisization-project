@@ -1177,7 +1177,7 @@ label argument:
     P "Comment ça ? expliquez nous plus en détail."
     play sound "Click.mp3" noloop
 
-    E "Déjà, tous les lycéens qui sont ici ont un projet informatique ou technologique."
+    E "Déjà, tous les lycéens qui sont ici ont un projet informatique ou technologique ou veulent juste étudier l'informatique ."
     play sound "Click.mp3" noloop 
 
     P "Ok, intéressant..."
@@ -12836,7 +12836,7 @@ label password:
     show screen room
     show screen day
     $ day += 3 
-    $ points -= 600
+    $ points -= 900
     $ stockage += 60.0 
 
     "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
@@ -14432,7 +14432,7 @@ label examen_pythagore:
     show screen room
     show screen day
     $ day += 3 
-    $ points -= 600
+    $ points -= 900
     $ stockage += 60.0 
 
     "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
@@ -26233,7 +26233,18 @@ label password19:
 
     $ endlesson = get_random_endlesson()
     M "[endlesson]" 
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
+
+    $ validation = get_random_validation() 
+    I "[validation]"
+    play sound "Click.mp3" noloop 
+
+    M "Si jamais, vous allez recevoir vos points daans la fin de journée."
+    play sound "Click.mp3" noloop 
+
+    $ validation = get_random_validation() 
+    Na "[validation]"
+    play sound "Click.mp3" noloop 
 
     P "Bon [newname] on y va ?"
     play sound "Click.mp3" noloop 
@@ -26319,5 +26330,182 @@ label password19:
     $ nothing = get_random_nothing()
     P "[nothing]"
     play sound "Click.mp3" noloop    
+
+    "{b}{i}Vous continuez les révisons pendant une heure.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "On a fini de réviser."
+    play sound "Click.mp3" noloop 
+
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]" 
+    play sound "Click.mp3" noloop  
+
+    P "Forcer de constater que tu es douée pour les cours."
+    play sound "Click.mp3" noloop  
+
+    $ thanks = get_random_thanks()
+    Na "[thanks]"
+    play sound "Click.mp3" noloop
+
+    $ nothing = get_random_nothing()
+    P "[nothing]" 
+    play sound "Click.mp3" noloop
+
+    P "Bon on va prendre à manger ? on le mérite bien."
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen room
+
+    "{b}{i} Vous partez chercher à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 300 
+
+    scene room 
+    show screen room
+
+    P "Enfin à manger... "
+    play sound "Click.mp3" noloop 
+
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]"
+    play sound "Click.mp3" noloop  
+
+    "{b}{i} Vous mangez tranquillement pendant une demi-heure.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Tu as finis de manger ?"
+    play sound "Click.mp3" noloop 
+
+    if grade == 20.0:
+
+        $ points += 15000
+
+    else:
+
+        $ points += 11000 
+
+    Na "Oui, je n'ai plus faim."
+    play sound "Click.mp3" noloop 
+
+    P "Bien si jamais on a nos points."
+    play sound "Click.mp3" noloop 
+
+    Na "Cool, bon je vais me déconnecter et me recharger."
+    play sound "Click.mp3" noloop 
+
+    P "Pas de soucis tu le mérites."
+    play sound "Click.mp3" noloop
+
+    Na "Merci."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Puis [newname] se déconnecte et recharge sa batterie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bon je vais me changer et aller dormir aussi."
+    play sound "Click.mp3" noloop  
+
+    "{b}{i}Tu te changes avant d'aller de te coucher.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    scene black
+    hide screen room
+    hide screen day
+
+    "{b}{i} Le début de la semaine suivante, le 16 décembre 2097{/i}{/b}"
+    play sound "Alarm.mp3" noloop 
+
+    scene room 
+    show screen room
+    show screen day
+    $ day += 3 
+    $ points -= 900
+    $ stockage += 60.0 
+
+label password20:  
+
+    $ entered_password = renpy.input("Veuillez entrer votre mot de passe pour [newname].")
+    $ entered_password = entered_password.strip()
+
+    if entered_password == stored_password: 
+
+        "Mot de passe correct. Accès autorisé." 
+        play sound "Menu.mp3" noloop
+
+    else: 
+
+        "Mot de passe incorrect. Accès refusé." 
+        play sound "Menu.mp3" noloop
+        jump passwor20
+
+    $ start = get_random_start()
+    Na "[start]" 
+    play sound "Click.mp3" noloop 
+
+    Na "Démarrage terminé, Bonjour [P]."
+    play sound "Click.mp3" noloop 
+
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Et toi ?" 
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]"
+    play sound "Click.mp3" noloop
+
+    Na "Cool alors."
+    play sound "Click.mp3" noloop  
+
+    $ go_in_class = get_random_go_in_class()
+    P "[go_in_class]"  
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop 
+
+    hide screen room 
+    scene black
+
+    "{b}{i} Tu quiites le dortoir avec [newname].{/i}{/b}"
+    play sound "Door.mp3" noloop 
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene classroom  
+    show screen class_404 
+
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
+
+    $  salutation_rdm = get_random_salutation()
+    P "[salutation_rdm]"
+    play sound "Click.mp3" noloop
+
+    $  salutation_rdm = get_random_salutation()
+    Y "[salutation_rdm]"
+    play sound "Click.mp3" noloop
 
 # Aris la plus belle <333333333333333   
