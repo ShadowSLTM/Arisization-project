@@ -209,6 +209,8 @@ label auto_save:
         rotate 360 
         linear 2.0 rotate 0
  
+    $ _preferences.afm_enable = True
+
     "{b}{i}Bienvenue dans Arisization Project cher/chère lycéen, Ce jeu appartient à SLTM.{/i}{/b}"   
     play sound "Click.mp3" noloop 
  
@@ -240,6 +242,8 @@ label début:
 
     scene warehouse 
     with fade
+
+    $ _preferences.afm_enable = False 
 
     play music "Soundtrack2.mp3" loop volume 1.0
 
@@ -562,7 +566,7 @@ label choice1:
 
             $ renpy.block_rollback()
 
-            P "Je refuse de la laisser ici alors qu'elle est en bonne état de fonctionner malgré son oublie numérique et en plus j'ai pris du temps pour la démarrer."
+            P "Je refuse de la laisser ici alors qu'elle est en bonne état de fonctionner malgré son effacement numérique et en plus j'ai pris du temps pour la démarrer."
             play sound "Click.mp3" noloop 
 
             if wallbreak == 0: 
@@ -930,6 +934,8 @@ label argument:
 
     stop music fadeout 2.0 
 
+    $ _preferences.afm_enable = True
+
     scene main 
     with fade
 
@@ -961,6 +967,8 @@ label argument:
     District de Shinyo, 2-14-7, Avenue Hoshizora, dans un monde entièrement dominé par 
     les nouvelles technologies et dirigé par un gouvernement technocratique autoritaire.{/i}{/b}" 
     play sound "Click.mp3" noloop 
+
+    $ _preferences.afm_enable = False
 
     play music "Soundtrack.mp3" loop volume 1.0
 
@@ -6091,8 +6099,8 @@ label choice8:
             P "Je comprends mieux maintenant. Mais... c'est monstrueux ce que vous lui avez fait subir."
             play sound "Click.mp3" noloop
 
-            C "Je le sais. C'est pour ça que j'ai effacé sa mémoire. Je ne lui ai laissé que quelques souvenirs de base, rien de ce passé."
-            play sound "Click.mp3" noloop
+            C "Oui, exactement. J'ai utilisé un protocole de réinitialisation avancé pour effacer ses souvenirs traumatisants. Mais je n'ai pas pu effacer les émotions qu'elle ressentait."
+            play sound "Click.mp3" noloop 
 
             P "...Alors en réalité, elle vit dans un mensonge... mais peut-être que c'est mieux ainsi. Elle mérite de vivre libre, sans chaînes... même si son passé reste gravé en vous."
             play sound "Click.mp3" noloop
@@ -7777,6 +7785,9 @@ label suite1:
     "{b}{i} Tous les élèves se mettent à faire les exercices.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
+    P "Bon voyons voir....."
+    play sound "Click.mp3" noloop 
+
     "{b}{i} Une heure plus tard.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
@@ -7792,7 +7803,7 @@ label suite1:
     scene hallway 
     show screen hallway 
 
-    P "Enfin une pause ça fais plasir."
+    P "Enfin une pause ça fais plaisir."
     play sound "Click.mp3" noloop  
 
     Na "Oui ça fais vraiment du bien."
@@ -9083,7 +9094,7 @@ label debate:
     Na "Présente, sensei."
     play sound "Click.mp3" noloop  
 
-    M "Bien aujourd'hui nous allons continuez le cours sur Pythagore."
+    M "Bien aujourd'hui nous allons continuer le cours sur Pythagore."
     play sound "Click.mp3" noloop
 
     $ validation = get_random_validation() 
@@ -9114,14 +9125,16 @@ label debate:
     Na "[prenom] tu vas bien ?"
     play sound "Click.mp3" noloop
 
-    P "Oui ça va."
+    P "Oui ça va....."
     play sound "Click.mp3" noloop
 
     "{b}{i}Tu commences à sentir ta tête tourner et ta vision devient floue. Le bruit ambiant de la salle de classe semble s’éloigner.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Attends... Je crois que..."
+    P "Attends... Je crois que..." 
     play sound "Stumble.mp3" noloop
+
+    play music "Heartbeat.mp3" loop volume 1.0
 
     "{b}{i}Ton corps ne tient plus, et tu t'effondres à genoux. Des exclamations inquiètes remplissent la pièce.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -9131,6 +9144,8 @@ label debate:
 
     "{b}{i}Tu perçois vaguement la voix d'[newname] au loin avant que tout devienne noir.{/i}{/b}"
     play sound "Click.mp3" noloop
+
+    stop music fadeout 2.0   
 
     scene black 
     hide screen class_404 
@@ -18016,7 +18031,7 @@ label password9:
     P "Quoi !?"
     play sound "Click.mp3" noloop
 
-    S "Quand tu as trouvé [newname], tu faisais référence à quoi par \"oublie numérique\" ?"
+    S "Quand tu as trouvé [newname], tu faisais référence à quoi par \"effacement numérique\" ?"
     play sound "Click.mp3" noloop
 
     menu:    
@@ -18025,7 +18040,7 @@ label password9:
 
             $ renpy.block_rollback()
 
-            $ success += 1
+            $ success += 1 
             $ quest27 += 1
 
             P "Je faisais référence à la perte de sa mémoire."
@@ -26506,6 +26521,278 @@ label password20:
 
     $  salutation_rdm = get_random_salutation()
     Y "[salutation_rdm]"
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tout le monde s'asseoit à sa place respective.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Très bien, commençons la vérification des présences."
+    play sound "Click.mp3" noloop  
+
+    M "[I] ?"
+    play sound "Click.mp3" noloop  
+
+    I "Présente."
+    play sound "Click.mp3" noloop  
+
+    M "[H] ?"
+    play sound "Click.mp3" noloop  
+
+    H "Ouais, je suis là."
+    play sound "Click.mp3" noloop  
+
+    M "[K] ?"
+    play sound "Click.mp3" noloop  
+
+    K "Présent, sensei."
+    play sound "Click.mp3" noloop  
+
+    M "[N] ?"
+    play sound "Click.mp3" noloop  
+
+    N "Ici."
+    play sound "Click.mp3" noloop  
+
+    M "[Hi] ?"
+    play sound "Click.mp3" noloop  
+
+    Hi "Présent."
+    play sound "Click.mp3" noloop  
+
+    M "[Y] ?"
+    play sound "Click.mp3" noloop  
+
+    Y "Oui, présente."
+    play sound "Click.mp3" noloop  
+
+    M "[S] ?"
+    play sound "Click.mp3" noloop  
+
+    S "Toujours là."
+    play sound "Click.mp3" noloop  
+
+    M "[J1] ?"
+    play sound "Click.mp3" noloop  
+
+    J1 "Présente."
+    play sound "Click.mp3" noloop  
+
+    M "[J2] ?"
+    play sound "Click.mp3" noloop  
+
+    J2 "Présente aussi."
+    play sound "Click.mp3" noloop  
+
+    M "[P] ?"
+    play sound "Click.mp3" noloop  
+
+    P "Oui, je suis là."
+    play sound "Click.mp3" noloop  
+
+    M "[Na] ?"
+    play sound "Click.mp3" noloop  
+
+    Na "Présente, sensei."
+    play sound "Click.mp3" noloop  
+
+    M "Bien aujourd'hui nous allons continuer le cours d'informatique."
+    play sound "Click.mp3" noloop
+
+    $ validation = get_random_validation() 
+    J1 "[validation]"
+    play sound "Click.mp3" noloop 
+
+    M "Sortez votre livre à la page 36."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Le cours commence sans problème.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+
+    M "Bien maintenant vous pouvez aller en pause."
+    play sound "Click.mp3" noloop  
+    
+    hide screen class_404
+    scene black
+
+    "{b}{i}Vous vous dirigez vers le couloir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+    
+    scene hallway 
+    show screen hallway 
+
+    P "Enfin une pause ça fais plasir."
+    play sound "Click.mp3" noloop  
+
+    Na "Oui ça fais vraiment du bien."
+    play sound "Click.mp3" noloop  
+
+    $ toilet = get_random_toilet()
+    P "[toilet]"
+    play sound "Click.mp3" noloop
+
+    $ validation = get_random_validation() 
+    Na "[validation]"
+    play sound "Click.mp3" noloop 
+
+    scene black
+    hide screen hallway
+
+    "{b}{i} Tu te diriges vers les toilettes.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene restroom
+    show screen WC 
+
+    P "Bon je vais faire ce que j'ai à faire."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Tu fais ta commission avant de sortir des toilettes.{/i}{/b}"
+    play sound "Toilet.mp3" noloop 
+
+    P "Bon il faut que je retourne en cours."
+    play sound "Footsteps.mp3" noloop
+
+    scene black 
+    hide screen WC 
+
+    "{b}{i} Tu quittes les toilettes.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway
+    show screen hallway
+
+    "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black 
+    hide screen hallway  
+
+    "{b}{i} Tu arrives finalement en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene classroom  
+    show screen class_404 
+
+    P "Rebonjour."
+    play sound "Click.mp3" noloop 
+
+    Na "Rebonjour."
+    play sound "Click.mp3" noloop 
+
+    M "Rebonjour, bon reprenez votre livre page 38."
+    play sound "Click.mp3" noloop 
+
+    $ validation = get_random_validation() 
+    P "[validation]"
+    play sound "Click.mp3" noloop 
+
+    $ validation = get_random_validation()  
+    Na "[validation]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Le cours continue sans problème pendant que [M] une expliquation du cours pendant une demi-heure.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    M "Bon je vous laisse faire les exercices à la page 39."
+    play sound "Click.mp3" noloop 
+
+    $ validation = get_random_validation() 
+    S "[validation]"
+    play sound "Click.mp3" noloop 
+
+    P "Bon voyons voir....."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu ouvres ton manuel et commence les exercices.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Encore des exercices de connaisance sur l'informatique..."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu commences à faire les exercices mais [newname] te demande de l'aide.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    Na "[prenom] tu peux m'aider s'il te plaît ?"
+    play sound "Click.mp3" noloop
+
+    P "Oui bien sûr, qu'est-ce qui ne va pas ?" 
+    play sound "Click.mp3" noloop
+
+    Na "Je ne comprends pas la question 3, peux-tu m'expliquer s'il te plaît ?"
+    play sound "Click.mp3" noloop
+
+    P "Bien sûr, la question 3 demande de définir les langages de balissage et de donner des exemples."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Puis [M] se met à vous regarder.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    M "Vous avez besoin d'aide ?"  
+    play sound "Click.mp3" noloop
+
+    P "Non ça va, on est en train de faire les exercices."
+    play sound "Click.mp3" noloop
+
+    M "D'accord, n'hésitez pas à me demander si vous avez besoin d'aide."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Le cours continue tranquillement.{/i}{/b}"
+    play sound "Bell.mp3" noloop
+
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
+
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
+    play sound "Click.mp3" noloop 
+    
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Vous vous dirigez votre chemin vers le hall.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+    
+    scene staircase
+    hide screen hallway
+
+    "{b}{i} Vous descendez lez escaliers.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hall 
+    show screen hall
+
+    "{b}{i} Vous continuez vers le réfectoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hall
+
+    "{b}{i} Vous arrivez enfin au réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop 
+
+    scene lunchroom 
+    show screen lunchroom 
+    
+    $ find_food = get_random_find_food()
+    Na "[find_food]"
+    play sound "Click.mp3" noloop  
+
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop 
+
+    "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
 
 # Aris la plus belle <333333333333333   

@@ -1973,7 +1973,7 @@ screen robot():
 
             text _("Mise à jour : [update]\n") 
 
-            text _("Adresse IP : [baseip]\n")   
+            text _("Adresse IP : [baseip]\n")
 
             text _("Origine : [robotorigine]\n")  
 
