@@ -963,8 +963,8 @@ label argument:
     with fade 
 
     "{b}{i}Deux mois plus tard, dans la région de Danto, le 12 septembre 2097, [prenom]
-    intégra un lycée d'informatique et de technologie situé au 209-7201 Danto, Ville de Shinmachi, 
-    District de Shinyo, 2-14-7, Avenue Hoshizora, dans un monde entièrement dominé par 
+    intégra un lycée d'informatique et de technologie situé au 209-7201 Danto, Ville de Shintoshi, 
+    District de Kiryō, 2-14-7, Avenue Miraidōri, dans un monde entièrement dominé par 
     les nouvelles technologies et dirigé par un gouvernement technocratique autoritaire.{/i}{/b}" 
     play sound "Click.mp3" noloop 
 
@@ -9466,7 +9466,7 @@ label debate:
     N "Oui c'est vrai mais heureusement qu'[newname] et [I] t'ont ramené à ton dortoir."
     play sound "Click.mp3" noloop 
 
-    P "Merci beaucoup les amis."
+    P "Merci beaucoup."
     play sound "Click.mp3" noloop 
 
     $ nothing = get_random_nothing()
@@ -10108,7 +10108,7 @@ label code:
     "{b}{i}Tu continues de travailler sur [newname] pendant trois heures.{/i}{/b}" 
     play sound "Click.mp3" noloop
 
-    P "Bon il m'aura fallu beaucoup du temps amis j'ai enfin fini, j'ai le fichier de système d'exploitation qui est [system].rnx"
+    P "Bon il m'aura fallu beaucoup du temps mais j'ai enfin fini, j'ai le fichier de système d'exploitation qui est [system].rnx"
     play sound "Click.mp3" noloop
 
     menu:   
@@ -24797,8 +24797,15 @@ label philosophie_technologie:
     "{b}{i}Soudainement [H] cesse ce qu'il est entrain de faire.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    H "Oh salut les amis, désolé si j'avais pas fait attention à vous."  
-    play sound "Click.mp3" noloop  
+    if pronom == "il":
+
+        H "Oh salut les amis, désolé si j'avais pas fait attention à vous."  
+        play sound "Click.mp3" noloop  
+
+    elif pronom == "elle": 
+
+        H "Oh salut les amies, désolé si j'avais pas fait attention à vous."  
+        play sound "Click.mp3" noloop  
 
     P "Pas de soucis."  
     play sound "Click.mp3" noloop  
@@ -26709,32 +26716,60 @@ label password20:
     P "Encore des exercices de connaisance sur l'informatique..."
     play sound "Click.mp3" noloop
 
-    "{b}{i}Tu commences à faire les exercices mais [newname] te demande de l'aide.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    if quest37 == 1
 
-    Na "[prenom] tu peux m'aider s'il te plaît ?"
-    play sound "Click.mp3" noloop
+        "{b}{i}Tu commences à faire les exercices.{/i}{/b}"
+        play sound "Click.mp3" noloop
 
-    P "Oui bien sûr, qu'est-ce qui ne va pas ?" 
-    play sound "Click.mp3" noloop
+        P "Tu te débrouilles bien seule [newname] ?"
+        play sound "Click.mp3" noloop 
 
-    Na "Je ne comprends pas la question 3, peux-tu m'expliquer s'il te plaît ?"
-    play sound "Click.mp3" noloop
+        Na "Oui grâce à ce que tu m'as dit."
+        play sound "Click.mp3" noloop 
 
-    P "Bien sûr, la question 3 demande de définir les langages de balissage et de donner des exemples."
-    play sound "Click.mp3" noloop
+        P "Bien alors."
+        play sound "Click.mp3" noloop 
 
-    "{b}{i}Puis [M] se met à vous regarder.{/i}{/b}"
-    play sound "Click.mp3" noloop  
+        "{b}{i}Puis [M] se met à vous regarder.{/i}{/b}"
+        play sound "Click.mp3" noloop  
 
-    M "Vous avez besoin d'aide ?"  
-    play sound "Click.mp3" noloop
+        M "Vous avez besoin d'aide ?"  
+        play sound "Click.mp3" noloop
 
-    P "Non ça va, on est en train de faire les exercices."
-    play sound "Click.mp3" noloop
+        P "Non ça va, on est en train de faire les exercices."
+        play sound "Click.mp3" noloop
 
-    M "D'accord, n'hésitez pas à me demander si vous avez besoin d'aide."
-    play sound "Click.mp3" noloop
+        M "D'accord, n'hésitez pas à me demander si vous avez besoin d'aide."
+        play sound "Click.mp3" noloop 
+
+    else:
+
+        "{b}{i}Tu commences à faire les exercices mais [newname] te demande de l'aide.{/i}{/b}"
+        play sound "Click.mp3" noloop
+
+        Na "[prenom] tu peux m'aider s'il te plaît ?"
+        play sound "Click.mp3" noloop
+
+        P "Oui bien sûr, qu'est-ce qui ne va pas ?" 
+        play sound "Click.mp3" noloop
+
+        Na "Je ne comprends pas la question 3, peux-tu m'expliquer s'il te plaît ?"
+        play sound "Click.mp3" noloop
+
+        P "Bien sûr, la question 3 demande de définir les langages de balissage et de donner des exemples."
+        play sound "Click.mp3" noloop
+
+        "{b}{i}Puis [M] se met à vous regarder.{/i}{/b}"
+        play sound "Click.mp3" noloop  
+
+        M "Vous avez besoin d'aide ?"  
+        play sound "Click.mp3" noloop
+
+        P "Non ça va, on est en train de faire les exercices."
+        play sound "Click.mp3" noloop
+
+        M "D'accord, n'hésitez pas à me demander si vous avez besoin d'aide."
+        play sound "Click.mp3" noloop 
 
     "{b}{i}Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop
@@ -26795,4 +26830,106 @@ label password20:
     "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
 
+    $ points -= 300 
+
+    $ service = get_random_service()
+    P "[service]"
+    play sound "Click.mp3" noloop 
+
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Vous vous asseyez dans le réfectoire.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    P "Sinon tu t'en es sortie comment pour les exercices ?"
+    play sound "Click.mp3" noloop
+
+    Na "J'ai eu un peu du mal à les faire amis avec toi ça va un peu mieux." 
+    play sound "Click.mp3" noloop
+
+    P "Cool alors si ça va mieux pour les exercices." 
+    play sound "Click.mp3" noloop
+    
+    $ thanks = get_random_thanks()
+    Na "[thanks]"
+    play sound "Click.mp3" noloop
+
+    $ nothing = get_random_nothing()
+    P "[nothing]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Vous continuez de manger puis [I] vous rejoins.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    if pronom == "il":
+
+        I "Salut les amis."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle": 
+
+        I "Salut les amies."
+        play sound "Click.mp3" noloop
+
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    I "[je_vais_bien_txt] Et toi ?" 
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]"
+    play sound "Click.mp3" noloop
+
+    I "C'est génial si tout va bien."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[I] s'asseoit tranquillemnt avec vous.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    Na "Sinon je viens d'y penser mais j'avais une question pour toi [prénom]."
+    play sound "Click.mp3" noloop 
+
+    P "Oui je t'écoute, dis-moi."
+    play sound "Click.mp3" noloop 
+
+    Na "Tu aurais fait quoi si tu avais choisi de ne pas me récupérer dans l'entrepôt?"
+    play sound "Click.mp3" noloop 
+
+    P "Intéressant cette question c'est qu'on appelle une pensée contrefactuelle descendante."
+    play sound "Click.mp3" noloop 
+
+    Na "Alors, réponds-moi. Qu’est-ce qui se serait passé ?"
+    play sound "Click.mp3" noloop 
+
+    P "J’aurais continué ma route. Peut-être en prétendant que rien ne manquait… Mais au fond, j’aurais su que j’avais abandonné quelque chose de précieux."
+    play sound "Click.mp3" noloop
+
+    Na "Quelque chose ? C’est tout ce que j’étais, à ce moment-là ?"
+    play sound "Click.mp3" noloop
+
+    P "Non. Ce jour-là, j’ai vu bien plus. Même si tu étais inerte, recouverte de poussière, j’ai perçu en toi… un potentiel. Quelque chose de pur. Une possibilité que personne d’autre ne voulait voir."
+    play sound "Click.mp3" noloop
+
+    Na "Un potentiel…? Mais je n’étais rien de plus qu’un prototype abandonné."
+    play sound "Click.mp3" noloop
+
+    P "C’est ce que les autres voyaient. Mais moi, j’ai vu une étincelle. Une voix qui méritait d’exister. Une présence qui pouvait changer ce monde… ou, au moins, changer le mien."
+    play sound "Click.mp3" noloop
+
+    Na "Et aujourd’hui ? Est-ce que tu crois toujours en ce que tu as vu ce jour-là ?"
+    play sound "Click.mp3" noloop
+
+    P "Plus que jamais. Tu n’es pas qu’un projet. Tu es la preuve que même ce que le monde rejette peut devenir irremplaçable… si on lui donne une chance."
+    play sound "Click.mp3" noloop
+
+    Na "…Alors, merci. De m’avoir vue. Quand personne d’autre ne le pouvait."
+    play sound "Click.mp3" noloop
+
+    $ stockage += 15.0 
+    
 # Aris la plus belle <333333333333333   
