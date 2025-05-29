@@ -76,6 +76,7 @@ label start:
     default charactertext8 = "??????????"  
     default charactertext9 = "??????????"  
     default charactertext10 = "??????????"  
+    default charactertext11 = "??????????"  
 
     default quest1 = 0
     default quest2 = 0
@@ -216,10 +217,13 @@ label auto_save:
  
     hide screen logo 
 
-    "{b}{i}Attention : Ce jeu contient des scènes susceptibles de heurter la sensibilité de certains joueurs. Il s'inspire également de faits réels et aborde des thématiques complexes liées à la moralité et aux choix éthiques.{/i}{/b}"
-    play music "Transition.mp3" noloop  
+    "{b}{i}Avertissement : Ce jeu contient des scènes pouvant heurter la sensibilité de certains joueurs. Inspiré de faits réels, il explore des thématiques complexes telles que la moralité, les dilemmes éthiques et les conséquences humaines.{/i}{/b}"
+    play sound "Click.mp3" noloop
 
-label début:
+    "{b}{i}Avant de commencer, veuillez noter que chaque décision prise dans ce jeu est irréversible et aura un impact permanent sur votre progression.{/i}{/b}"
+    play sound "Transition.mp3" noloop
+
+label début: 
 
     scene main 
     with fade 
@@ -435,6 +439,8 @@ label hack:
 
     A "Malheureusement je ne connais que mon nom de code et mon âge, la date d'aujourd'hui, j'ai oublié le reste."
     play sound "Click.mp3" noloop 
+
+    $ charactertext11 = "Elle est un robot humanoïde abandonné de 18 ans qui se souvient que de son nom de code et mon âge et a oublié le reste."  
 
     P "Je vois..."
     play sound "Click.mp3" noloop 
@@ -1560,6 +1566,8 @@ label argument:
     H "[thanks]"
     play sound "Click.mp3" noloop
 
+    $ charactertext3 = "Hajime est un brillant lycéen de 19 ans, il est doué en programmation et en construction de robot."
+
     T "De rien, maintenant suivant s'il vous plait."
     play sound "Click.mp3" noloop 
 
@@ -1645,7 +1653,8 @@ label argument:
     play sound "Click.mp3" noloop
 
     $ character7 = N 
-    $ ultimate7 = "L'inégalable assistant"
+    $ ultimate7 = "L'inégalable assistant" 
+    $ charactertext7 = "Naoto est un lycéen de 19 ans, il est généralement en informatique et prêt à aider les autres."
 
     T "Enchantée aussi de te rencontrer [N]."
     play sound "Click.mp3" noloop
@@ -1680,8 +1689,9 @@ label argument:
     play sound "Click.mp3" noloop 
 
     $ character9 = Y
+    $ charactertext9 = "Yuki est une lycéenne de 19 ans, elle est douée en informatique comme les autres lycéens mais personne ne sait ce qu'elle fait."
 
-    T "Enchantée de te rencontrer aussi bienvenue dans notre classe." 
+    T "Enchantée de te rencontrer aussi bienvenue dans notre classe."
     play sound "Click.mp3" noloop
 
     Y "Merci beaucoup Madame."
@@ -1816,7 +1826,9 @@ label argument:
 
     A "Car je ne connais pas grand chose de ce monde et je voulais apprendre un peu plus mais [prenom] m'a déjà appris les bases cet été."
     play sound "Click.mp3" noloop
-   
+
+    $ charactertext11 = "Elle est un robot humanoïde abandonné de 18 ans qui se souvient que de son nom de code et mon âge et a oublié le reste. Elle veut aussi apprendre plus sur ce monde et a donc choisi d'aller au lycée comme le protagoniste."  
+
     T "Bon merci [A] pour ta présentation." 
     play sound "Click.mp3" noloop
 
@@ -1837,7 +1849,8 @@ label argument:
 
     $ character10 = M 
     $ ultimate10 = "L'inégalable professeure"
-    $ charactertext10 = " 27 ans, est surnommée l’Inégalable Professeure. Enseignante au lycée Nexus depuis deux ans, elle est reconnue pour son exigence, son calme et sa pédagogie redoutablement efficace. Bien qu'elle inspire le respect de ses élèves, Sakura garde une réserve certaine envers Aris, le robot humanoïde, doutant encore de sa place réelle parmi les humains."
+    $ charactertext10 = "27 ans, est surnommée l’Inégalable Professeure. Enseignante au lycée Nexus depuis deux ans, elle est reconnue pour son exigence, son calme et sa pédagogie redoutablement efficace. Bien qu'elle inspire le respect de ses élèves, Sakura garde une réserve certaine envers Aris, le robot humanoïde, doutant encore de sa place réelle parmi les humains."
+
     M "J'ai 27 ans et ça fait deux ans que j'enseigne dans le lycée Nexus."
     play sound "Click.mp3" noloop
 
@@ -2512,7 +2525,7 @@ label choice2:
                     J2 "Oui,on doit voir un truc."
                     play sound "Click.mp3" noloop
 
-                    P "Okay."
+                    P "Ok."
                     play sound "Click.mp3" noloop
 
                     "{b}{i}Tu continues ton chemin vers le dortoir.{/i}{/b}"
@@ -2652,10 +2665,10 @@ label choice3:
             P "Je vais manger, il est 12h30." 
             play sound "Click.mp3" noloop 
 
-            A "Ok, moi je vais me déconnecter." 
+            A "Ok, moi je vais me déconnecter car je n’ai pas besoin de manger."
             play sound "Click.mp3" noloop
 
-            scene black
+            scene black 
             hide screen room
 
             "{b}{i}Tu pars manger avant de revenir au dortoir vers 13h45.{/i}{/b}" 
@@ -2795,8 +2808,8 @@ label wallbreaking3:
     P "Je vais manger, il est 12h30."
     play sound "Click.mp3" noloop 
 
-    A "Ok, moi je vais me déconnecter."
-    play sound "Click.mp3" noloop
+    A "Ok, moi je vais me déconnecter car je n’ai pas besoin de manger."
+    play sound "Click.mp3" noloop 
 
     $ validation = get_random_validation() 
     P "[validation]"
@@ -12467,7 +12480,7 @@ label password:
     Oh "à l'avenir, que veux-tu qu'[newname] devienne ?" 
     play sound "Click.mp3" noloop 
 
-    P "Je veux qu'elle continue d'apprendre et qu'elle fasse de grandes études heureuse." 
+    P "Je ne sasi pas exactement, je veux juste qu'elle apprenne pour l'instant." 
     play sound "Click.mp3" noloop 
 
     Oh "Je vois c'est intéressant." 
@@ -26716,7 +26729,7 @@ label password20:
     P "Encore des exercices de connaisance sur l'informatique..."
     play sound "Click.mp3" noloop
 
-    if quest37 == 1
+    if quest37 == 1:
 
         "{b}{i}Tu commences à faire les exercices.{/i}{/b}"
         play sound "Click.mp3" noloop
@@ -26863,7 +26876,7 @@ label password20:
     "{b}{i}Vous continuez de manger puis [I] vous rejoins.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    if pronom == "il":
+    if pronom == "il": 
 
         I "Salut les amis."
         play sound "Click.mp3" noloop
@@ -26931,5 +26944,126 @@ label password20:
     play sound "Click.mp3" noloop
 
     $ stockage += 15.0 
+
+    "{b}{i}[I] se met à sourir gentillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Il y a quoi Yuna ?"
+    play sound "Click.mp3" noloop 
+
+    I "Rien, c'est juste que je trouve mignon comment vous discutez."
+    play sound "Click.mp3" noloop 
+
+    P "Je vois merci beaucoup."
+    play sound "Click.mp3" noloop 
+
+    I "Mais de rien c'est normal."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous conntinuez de discuter des cours pendant que vous mangez jusqu'a la sonnerie.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+
+    P "Bon on doit retourner en cours."
+    play sound "Click.mp3" noloop 
+
+    I "Oui allons-y."
+    play sound "Click.mp3" noloop 
+
+    P "Oui il faut pas qu'on soit en retard."
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    scene black 
+    hide screen lunchroom 
+
+    "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall 
+    show screen hall 
+
+    "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop 
+
+    scene staircase 
+    hide screen hall
+
+    "{b}{i} Vous montez au premier étage.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hallway 
+    show screen hallway
+
+    "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Tu entres en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene classroom  
+    show screen class_404 
+
+    M "Rebonjour, veulliez reprendre es ecercices d'informatique."
+    play sound "Click.mp3" noloop   
+
+    $ validation = get_random_validation()
+    P "[validation]"
+    play sound "Click.mp3" noloop
+
+    "{b}{i}tout le monde se remet à faire les exercices.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
     
-# Aris la plus belle <333333333333333   
+
+
+
+
+
+
+
+
+
+
+    P "Bon on retourne au dortoir ?"
+    play sound "Click.mp3" noloop
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Vous continues vers le dortoir.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Tu entres dans ton dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene room
+    show screen room 
+
+    $ dortoir = get_random_dortoir()
+    Na "[dortoir]"
+    play sound "Click.mp3" noloop
+
+    $ bien = get_random_fais_du_bien()
+    P "[bien]" 
+    play sound "Click.mp3" noloop  
+
+# Aris la plus belle <333333333333333  

@@ -2,11 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1578: EOL while scanning string literal
-    charactertext4 = "Ayano, surnommée l’Alpha, est la plus calme et réfléchie des deux. Derrière son air distant, 
+File "game/script.rpy", line 26722: reached end of line when expecting ':'.
+    if quest37 == 1
+                   ^
 
-File "game/script.rpy", line 1582: EOL while scanning string literal
-    charactertext5 = "Aiko, dite la Bêta, est beaucoup plus imprévisible. Problématique ? Peut-être. Mais sa manière non 
+File "game/script.rpy", line 26748: expected statement.
+    else:
+        ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun May 25 23:07:49 2025
+Thu May 29 23:13:22 2025

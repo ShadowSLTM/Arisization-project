@@ -1961,7 +1961,11 @@ screen robot():
 
         vbox:
 
-            label "{b}{i}— Ton robot —\n{/i}{/b}" 
+            label "{b}{i}— Description —\n{/i}{/b}" 
+
+            text _("[charactertext11]\n")
+
+            label "{b}{i}— Informations techniques —\n{/i}{/b}"
 
             text _("Nom de code : [A]\n") 
 
@@ -1974,7 +1978,7 @@ screen robot():
             text _("Mise à jour : [update]\n") 
 
             text _("Adresse IP : [baseip]\n")
-
+ 
             text _("Origine : [robotorigine]\n")  
 
             text _("Numéro de série : [serie]\n")  
