@@ -1811,30 +1811,45 @@ label argument:
     A "Oui, pourquoi cette question ?" 
     play sound "Click.mp3" noloop 
 
-    I "Rien, c'est juste que je trouve ça mignon qu'[pronom] te consière comme sa fille alors que tu es un [model].~"
+    I "Rien, c'est juste que je trouve ça mignon qu'[pronom] te considère comme sa fille alors que tu es un [model].~"
     play sound "Click.mp3" noloop 
 
     A "Merci beaucoup [I].~"
-    play sound "Click.mp3" noloop
-
-    $ nothing = get_random_nothing()
-    I "[nothing] C'est normal de complimenter."
-    play sound "Click.mp3" noloop
-
-    T "Mais pourquoi tu t'es inscrite ici en tant que lycéenne ?" 
-    play sound "Click.mp3" noloop
-
-    A "Car je ne connais pas grand chose de ce monde et je voulais apprendre un peu plus mais [prenom] m'a déjà appris les bases cet été."
-    play sound "Click.mp3" noloop
-
-    $ charactertext11 = "Elle est un robot humanoïde abandonné de 18 ans qui se souvient que de son nom de code et mon âge et a oublié le reste. Elle veut aussi apprendre plus sur ce monde et a donc choisi d'aller au lycée comme le protagoniste."  
-
-    T "Bon merci [A] pour ta présentation." 
-    play sound "Click.mp3" noloop
-
-    $ nothing = get_random_nothing()
-    A "[nothing]"
     play sound "Click.mp3" noloop 
+
+    $ nothing = get_random_nothing()
+    I "[nothing] C'est normal de complimenter mais j'ai une autre question."
+    play sound "Click.mp3" noloop
+
+    A "Oui, dis-moi, je t'écoute.~"
+    play sound "Click.mp3" noloop 
+
+    I "Est-ce que tu peux vraiment manger comme une humaine, même si tu es un robot ?"
+    play sound "Click.mp3" noloop
+
+    A "Oui, j'ai un système digestif synthétique. Je peux manger, digérer, et même ressentir les saveurs."
+    play sound "Click.mp3" noloop
+
+    I "Je vois c'est surprenant, merci beaucoup de m'avoir répondu."
+    play sound "Click.mp3" noloop  
+
+    A "Mais de rien, c'est normal de se poser des questions."
+    play sound "Click.mp3" noloop 
+
+    T "Mais pourquoi tu t'es inscrite ici en tant que lycéenne ?"
+    play sound "Click.mp3" noloop
+
+    A "Je ne connais pas grand-chose de ce monde et je voulais apprendre davantage. [prenom] m’a déjà appris les bases cet été."
+    play sound "Click.mp3" noloop 
+
+    $ charactertext11 = "Elle est un robot humanoïde abandonné de 18 ans, qui ne se souvient que de son nom de code et de mon âge, et a oublié le reste. Elle veut en apprendre plus sur ce monde, et a donc choisi d’aller au lycée comme le protagoniste."
+
+    T "Bon, merci [A] pour ta présentation." 
+    play sound "Click.mp3" noloop 
+
+    $ nothing = get_random_nothing()
+    A "[nothing]" 
+    play sound "Click.mp3" noloop
 
 #fin des présentations des élèves
 
@@ -1941,7 +1956,7 @@ label argument:
     K "Notre propre dortoir ? Cool mais comment ça une dérogation, elle est pour qui ?"
     play sound "Click.mp3" noloop
 
-    Y "Oui comment ça une dérogation ? Expliquez-nous madame..."
+    Y "Oui et comment ça une dérogation ? Expliquez-nous madame..."
     play sound "Click.mp3" noloop
 
     M "Cette dérogation est pour [prenom] et [A]." 
@@ -2808,7 +2823,7 @@ label wallbreaking3:
     P "Je vais manger, il est 12h30."
     play sound "Click.mp3" noloop 
 
-    A "Ok, moi je vais me déconnecter car je n’ai pas besoin de manger."
+    A "Ok, moi je vais me déconnecter."
     play sound "Click.mp3" noloop 
 
     $ validation = get_random_validation() 
@@ -27066,4 +27081,4 @@ label password20:
     P "[bien]" 
     play sound "Click.mp3" noloop  
 
-# Aris la plus belle <333333333333333  
+# Aris la plus belle <3333333  
