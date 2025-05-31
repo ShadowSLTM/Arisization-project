@@ -6,7 +6,6 @@ label start:
     default success = 0
     $ wallbreak = 0
     default update = 1.0
-    $ info = 0.0
     default origine = "la chambre grise" 
     default domaine = "??????????" 
     $ model = "robot humanoïde" 
@@ -14,7 +13,6 @@ label start:
     default stored_password = ""
     default system = "??????????"
     default ip = ""
-    $ message = 0 
     default newname = ""  
     default robotorigine = "??????????" 
     default prenom = "??????????" 
@@ -23,7 +21,6 @@ label start:
     default serie = "??????????"
     default stockage = "??????????"
     default robotname = ""  
-    $ sad = 0 
     default baseip = ""
 
 #############################################
@@ -193,12 +190,19 @@ label identity:
         jump identity 
     
     if not prenom and not nom:
+
         if pronom == "il":
+
             $ prenom, nom = "Mitsuya", "Shimura"
+
         else:
+
             $ prenom, nom = "Kyoka", "Nakano"
+
         "Bienvenue [prenom] [nom]. Puisque aucun nom n'a été choisi, celui-ci vous a été attribué."
+
     else:
+        
         "Bienvenue [prenom] [nom]."
 
 label auto_save: 
@@ -974,7 +978,7 @@ label argument:
     les nouvelles technologies et dirigé par un gouvernement technocratique autoritaire.{/i}{/b}" 
     play sound "Click.mp3" noloop 
 
-    $ _preferences.afm_enable = False
+    $ _preferences.afm_enable = False 
 
     play music "Soundtrack.mp3" loop volume 1.0
 
@@ -6001,7 +6005,7 @@ label choice8:
     P "Enfin, l'article 24, alinéa 3, impose au nouveau propriétaire la responsabilité complète de l'objet récupéré, y compris son entretien ou sa gestion."  
     play sound "Click.mp3" noloop  
 
-    E "Toi [prenom], tu respectes bien l'article 24, alinéa 3."  
+    E "Toi [prenom], tu respectes bien l'alinéa 3."  
     play sound "Click.mp3" noloop  
 
     $ thanks = get_random_thanks()
@@ -6088,8 +6092,6 @@ label choice8:
 
             P "Merci beaucoup ça fait plaisir."
             play sound "Click.mp3" noloop 
-
-            $ info += 1.0
 
             C "De rien... mais avant qu'on termine notre entretien, j'aimerais te demander deux choses."
             play sound "Click.mp3" noloop
@@ -6386,7 +6388,7 @@ label choice8:
     P "Enfin à manger... "
     play sound "Click.mp3" noloop
 
-    if info == 1.0:
+    if quest11 == 1:
 
         "{b}{i} Tu manges tranquillement pendant une demi-heure en regardant les documents que tu as eus.{/i}{/b}"
         play sound "Click.mp3" noloop 
@@ -8948,8 +8950,6 @@ label debate:
 
             hide screen draw
 
-            $ message += 1 
-
             P "[newname] regardes le magnifique dessin que [Su] a fait pour toi."
             play sound "Click.mp3" noloop
 
@@ -9260,7 +9260,7 @@ label debate:
     "{b}{i} Les filles quittent la chambre.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    if message == 0:
+    if quest14 == 0:
     
         menu: 
 
@@ -9764,7 +9764,7 @@ label debate:
     I "Tu sais sur quel système d'exploitation tourne [newname] ?"
     play sound "Click.mp3" noloop
 
-    if info == 1.0:
+    if quest11 == 1:
 
         P "Elle tourne sur Aether OS."
         play sound "Click.mp3" noloop  
@@ -12195,7 +12195,7 @@ label password:
     Oh "Bien je vois, juste [prenom] qu'est-ce que c'est que ces documents sur ton bureau ?"
     play sound "Click.mp3" noloop 
 
-    if info == 1.0:
+    if quest11 == 1:
 
         P "Ce sont des documents techniques pour [newname]."
         play sound "Click.mp3" noloop
@@ -13504,7 +13504,7 @@ label password1:
     P "Et ça disait quoi ?"
     play sound "Click.mp3" noloop   
 
-    Na "Qu’elle s’est énormément développée à partir de 2050, au point de devenir la région la plus avancée technologiquement du Japon."
+    Na "Qu’elle s’est énormément développée à partir de 2060, au point de devenir la région la plus avancée technologiquement du Japon."
     play sound "Click.mp3" noloop   
 
     Na "D’ailleurs, tu savais que Danto, c’est l’acronyme de {b}Development Area for New Technological Operations{/b} ?"
@@ -15182,13 +15182,13 @@ label password4:
     P "Non... malheureusement."
     play sound "Click.mp3" noloop  
 
-    Oh "Pourquoi ? C’est obligatoire, non ?"
+    Oh "Pourquoi ? C’est obligatoire conformément à l'article 24, alinéa 4, de juillet 2096 qui stipule que toutes les créations technologiques ou informatiques doivent être déclarées."
     play sound "Click.mp3" noloop  
 
     P "À l’époque, je n'avais pas les infos nécessaires."
     play sound "Click.mp3" noloop 
 
-    P "Nom, date de création, origine... tout était flou."
+    P "Nom, date de création, origine... tout était flou et surtout que je me méfie du gouvernemnt."
     play sound "Click.mp3" noloop  
 
     P "Vous croyez que je risque quelque chose à ne pas l’avoir déclarée ?"
@@ -15197,7 +15197,7 @@ label password4:
     Oh "Ça dépend. Si quelqu’un la découvre et fouille un peu, ça peut devenir sérieux."
     play sound "Click.mp3" noloop  
 
-    P "Super... comme si j'avais pas assez de problèmes."
+    P "Super... comme si j'avais pas assez de problèmes comme ça."
     play sound "Click.mp3" noloop  
 
     Oh "Je peux peut-être t’aider."
@@ -18169,7 +18169,7 @@ label code1:
     Na "Le truc qui me dérange ce que je n'ai plus de ma date d'anniversaire en tête....."
     play sound "Click.mp3" noloop 
 
-    if info == 1.0:
+    if quest11 == 1:
  
         menu:    
 
@@ -18248,7 +18248,6 @@ label code1:
                 play sound "Click.mp3" noloop 
 
                 $ stockage += 15.0 
-                $ sad += 1
 
     else:  
 
@@ -18450,19 +18449,19 @@ label password10:
     P "[comment_ca_va]"
     play sound "Click.mp3" noloop 
 
-    if sad == 1:
+    if quest28 == 1:b
 
         Na "Pas trop si tu veux le savoir."
         play sound "Click.mp3" noloop 
 
         if pronom == "il" : 
     
-            S "Ah je vois, je suis désolée de t'avoir dit la vérité."
+            P "Ah je vois, je suis désolée de t'avoir dit la vérité."
             play sound "Click.mp3" noloop
 
         elif pronom == "elle" :
 
-            S "Ah je vois, je suis désolée de t'avoir dit la vérité."
+            P "Ah je vois, je suis désolée de t'avoir dit la vérité."
             play sound "Click.mp3" noloop
 
     else: 
@@ -18735,7 +18734,7 @@ label password10:
     I "Oh salut [prenom] et [newname], oui moi ça va bien et vous ?"
     play sound "Click.mp3" noloop 
 
-    if sad == 1:
+    if quest28 == 1:
 
         Na "Pas trop si tu veux le savoir."
         play sound "Click.mp3" noloop 
@@ -22484,7 +22483,7 @@ label password15:
     J2 "Vous ne pouvez pas m’arrêter pour ça !"
     play sound "Click.mp3" noloop
 
-    O "Oh que si. Conformément à l’article 24, alinéa 4, du 18 novembre 2097, toute discrimination envers les robots est désormais punie par la loi."
+    O "Oh que si. Conformément à l’article 24, alinéa 5, du 18 novembre 2097, toute discrimination envers les robots est désormais punie par la loi."
     play sound "Click.mp3" noloop
 
     J2 "C’est absurde !!!"
@@ -26479,6 +26478,27 @@ label password19:
     $ points -= 900
     $ stockage += 60.0 
 
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    $ line = get_random_morning_line()
+    P "[line]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te lèves et te changes et puis tu aperçois [newname] déconnectée contre le mur.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Elle est encore déconnectée."
+    play sound "Click.mp3" noloop 
+
+    P "Je vais la démarrer."
+    play sound "Menu.mp3" noloop 
+
+    menu:   
+
+        "{b}{i} Démarrer [newname].{/i}{/b}" : 
+            play sound "Menu.mp3" noloop 
+
 label password20:  
 
     $ entered_password = renpy.input("Veuillez entrer votre mot de passe pour [newname].")
@@ -27032,18 +27052,16 @@ label password20:
     play sound "Click.mp3" noloop
 
     "{b}{i}tout le monde se remet à faire les exercices.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Bell.mp3" noloop
 
-    
+    M "Bien le cours est terminée pour aujourd'hui, je vous demanderai de finir les exercices pour le merccredi 18 décembre."
+    play sound "Click.mp3" noloop   
 
+    P "Oui c'est entendu on le fera."
+    play sound "Click.mp3" noloop 
 
-
-
-
-
-
-
-
+    M "Bien vous pouvez disposer."
+    play sound "Click.mp3" noloop 
 
     P "Bon on retourne au dortoir ?"
     play sound "Click.mp3" noloop
@@ -27081,4 +27099,4 @@ label password20:
     P "[bien]" 
     play sound "Click.mp3" noloop  
 
-# Aris la plus belle <3333333  
+# Aris la plus belle <333333333333333333333333333  

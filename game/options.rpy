@@ -132,10 +132,10 @@ default preferences.text_cps = 15
 default preferences.afm_time = 7
 
 
-## Répertoire de sauvegarde ####################################################
+## Répertoire de Snapshot ####################################################
 ##
 ## Ces valeurs, dépendant de la plateforme, déterminent l’emplacement où Ren’Py
-## stockera les fichiers de sauvegarde. Les fichiers de sauvegardes seront
+## stockera les fichiers de Snapshot. Les fichiers de Snapshots seront
 ## stockés dans :
 ##
 ## Windows : %APPDATA\RenPy\<config.save_directory>
@@ -215,7 +215,7 @@ init python:
 
     build.classify("game/**.mp3", "audio")  
 
-    build.classify("game/**.ttf", "font")
+    build.classify("game/**.ttf", "font") 
 
 ## Une clé de licence Google Play est requise pour permettre les achats depuis
 ## l'application. Vous pourrez la trouver dans la console de développement

@@ -229,11 +229,11 @@ define gui.choice_button_text_insensitive_color = '#8888887f'
 ## Boutons des emplacements de fichiers. #######################################
 ##
 ## Un bouton d’emplacement de fichier est un type spécial de bouton. Il contient
-## une vignette et un texte décrivant le contenu de la sauvegarde présente dans
-## l’emplacement. Un emplacement de sauvegarde utilise une image dans gui/
+## une vignette et un texte décrivant le contenu de la Snapshot présente dans
+## l’emplacement. Un emplacement de Snapshot utilise une image dans gui/
 ## button, comme les autres types de bouton.
 
-## Le bouton d’emplacement de sauvegarde.
+## Le bouton d’emplacement de Snapshot.
 define gui.slot_button_width = 414
 define gui.slot_button_height = 309
 define gui.slot_button_borders = Borders(15, 15, 15, 15)
@@ -243,13 +243,13 @@ define gui.slot_button_text_idle_color = gui.idle_small_color
 define gui.slot_button_text_selected_idle_color = gui.selected_color
 define gui.slot_button_text_selected_hover_color = gui.hover_color
 
-## La largeur et la hauteur des vignettes de sauvegarde utilisée pour les
-## emplacements de sauvegarde.
+## La largeur et la hauteur des vignettes de Snapshot utilisée pour les
+## emplacements de Snapshot.
 define config.thumbnail_width = 384
 define config.thumbnail_height = 216
 
 ## Le nombre de colonnes et de lignes pour la grille des emplacements de
-## sauvegarde.
+## Snapshot.
 define gui.file_slot_cols = 3
 define gui.file_slot_rows = 2
 
@@ -284,7 +284,7 @@ define gui.pref_button_spacing = 0
 ## L’espacement entre les boutons de page.
 define gui.page_spacing = 0
 
-## L’espacement entre les emplacements de sauvegarde.
+## L’espacement entre les emplacements de Snapshot.
 define gui.slot_spacing = 15
 
 ## La position du texte du menu principal.

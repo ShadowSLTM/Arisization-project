@@ -255,9 +255,9 @@ screen quick_menu():
             textbutton _("Historique") action ShowMenu('history')
             textbutton _("Avance rapide") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Sauvegarde") action ShowMenu('save')
-            textbutton _("Sauvegarde R.") action QuickSave()
-            textbutton _("Chargement R.") action QuickLoad()
+            textbutton _("Snapshot") action ShowMenu('save')
+            textbutton _("Snapshot R.") action QuickSave()
+            textbutton _("Snapshot R.") action QuickLoad()
             textbutton _("Préf.") action ShowMenu('preferences')
             textbutton _("Succès") action ShowMenu('success')
             textbutton _("[A]") action ShowMenu("robot") 
@@ -304,7 +304,7 @@ screen navigation():
 
             textbutton _("Historique") action ShowMenu("history")
 
-            textbutton _("Sauvegarde") action ShowMenu("save")
+            textbutton _("Snapshot") action ShowMenu("save")
 
         textbutton _("Charger") action ShowMenu("load")
 
@@ -545,7 +545,7 @@ style return_button:
     yalign 1.0
     yoffset -45
 
-## Écran de chargement et de sauvegarde ########################################
+## Écran de chargement et de Snapshot ########################################
 ##
 ## Ces écrans permettent au joueur d’enregistrer le jeu et de le charger
 ## à nouveau. Comme ils partagent beaucoup d’éléments communs, ils sont
@@ -559,7 +559,7 @@ screen save():
 
     tag menu
 
-    use file_slots(_("Sauvegarde"))
+    use file_slots(_("Snapshot"))
 
 
 screen load():
@@ -571,7 +571,7 @@ screen load():
 
 screen file_slots(title):
 
-    default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Sauvegardes automatiques"), quick=_("Sauvegardes rapides"))
+    default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Snapshots automatiques"), quick=_("Snapshots rapides"))
 
     use game_menu(title):
 
@@ -1236,7 +1236,7 @@ style skip_triangle:
 ## Écran de notification #######################################################
 ##
 ## Cet écran est utilisé pour affiché un message au joueur. (Par exemple, quand
-## une sauvegarde rapide a eu lieu ou quand une capture d’écran vient d’être
+## une Snapshot rapide a eu lieu ou quand une capture d’écran vient d’être
 ## réalisée.)
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#notify-screen

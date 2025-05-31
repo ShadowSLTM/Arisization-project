@@ -287,7 +287,7 @@ translate None strings:
 
     # renpy/common/00action_file.rpy:395
     old "Save slot %s: [text]"
-    new "Sauvegarder %s : [text]"
+    new "Snapshotr %s : [text]"
 
     # renpy/common/00action_file.rpy:480
     old "Load slot %s: [text]"
@@ -315,11 +315,11 @@ translate None strings:
 
     # renpy/common/00action_file.rpy:674
     old "Automatic saves"
-    new "Sauvegardes automatiques"
+    new "Snapshots automatiques"
 
     # renpy/common/00action_file.rpy:674
     old "Quick saves"
-    new "Sauvegardes rapides"
+    new "Snapshots rapides"
 
     # renpy/common/00action_file.rpy:815
     old "Next file page."
@@ -331,11 +331,11 @@ translate None strings:
 
     # renpy/common/00action_file.rpy:948
     old "Quick save complete."
-    new "Sauvegarde rapide effectuée."
+    new "Snapshot rapide effectuée."
 
     # renpy/common/00action_file.rpy:963
     old "Quick save."
-    new "Sauvegarde rapide."
+    new "Snapshot rapide."
 
     # renpy/common/00action_file.rpy:982
     old "Quick load."
@@ -475,15 +475,15 @@ translate None strings:
 
     # renpy/common/00gui.rpy:449
     old "Are you sure you want to delete this save?"
-    new "Êtes-vous sûr de vouloir supprimer cette sauvegarde ?"
+    new "Êtes-vous sûr de vouloir supprimer cette Snapshot ?"
 
     # renpy/common/00gui.rpy:450
     old "Are you sure you want to overwrite your save?"
-    new "Êtes-vous sûr de vouloir écraser cette sauvegarde ?"
+    new "Êtes-vous sûr de vouloir écraser cette Snapshot ?"
 
     # renpy/common/00gui.rpy:451
     old "Loading will lose unsaved progress.\nAre you sure you want to do this?"
-    new "Le chargement entraînera la perte de votre progression depuis la dernière sauvegarde.\nÊtes-vous sûr de vouloir faire cela ?"
+    new "Le chargement entraînera la perte de votre progression depuis la dernière Snapshot.\nÊtes-vous sûr de vouloir faire cela ?"
 
     # renpy/common/00gui.rpy:452
     old "Are you sure you want to quit?"
@@ -491,7 +491,7 @@ translate None strings:
 
     # renpy/common/00gui.rpy:453
     old "Are you sure you want to return to the main menu?\nThis will lose unsaved progress."
-    new "Êtes-vous sûr de vouloir retourner au menu principal ?\nVotre progression depuis la dernière sauvegarde sera perdue."
+    new "Êtes-vous sûr de vouloir retourner au menu principal ?\nVotre progression depuis la dernière Snapshot sera perdue."
 
     # renpy/common/00gui.rpy:454
     old "Are you sure you want to continue where you left off?"
@@ -515,15 +515,15 @@ translate None strings:
 
     # renpy/common/00gui.rpy:459
     old "This save was created on a different device. Maliciously constructed save files can harm your computer. Do you trust this save's creator and everyone who could have changed the file?"
-    new "Cette sauvegarde a été créée sur un autre appareil. Des faux fichiers de sauvegarde peuvent être utilisés pour endommager votre ordinateur. Faites-vous confiance au créateur de cette sauvegarde et à tous ceux qui auraient pu modifier le fichier ?"
+    new "Cette Snapshot a été créée sur un autre appareil. Des faux fichiers de Snapshot peuvent être utilisés pour endommager votre ordinateur. Faites-vous confiance au créateur de cette Snapshot et à tous ceux qui auraient pu modifier le fichier ?"
 
     # renpy/common/00gui.rpy:460
     old "Do you trust the device the save was created on? You should only choose yes if you are the device's sole user."
-    new "Faites-vous confiance à l'appareil sur lequel cette sauvegarde a été créée ? Vous ne devriez dire oui que si vous en êtes l'unique utilisateur ."
+    new "Faites-vous confiance à l'appareil sur lequel cette Snapshot a été créée ? Vous ne devriez dire oui que si vous en êtes l'unique utilisateur ."
 
     # renpy/common/00keymap.rpy:323
     old "Failed to save screenshot as %s."
-    new "Échec de sauvegarde de la capture d'écran %s."
+    new "Échec de Snapshot de la capture d'écran %s."
 
     # renpy/common/00keymap.rpy:335
     old "Saved screenshot as %s."
@@ -835,7 +835,7 @@ translate None strings:
 
     # renpy/common/00sync.rpy:538
     old "This will upload your saves to the {a=https://sync.renpy.org}Ren'Py Sync Server{/a}.\nDo you want to continue?"
-    new "Vos sauvegardes vont être téléchargées sur le {a=https://sync.renpy.org}serveur Ren'Py Sync{/a}.\nVoulez-vous continuer ?"
+    new "Vos Snapshots vont être téléchargées sur le {a=https://sync.renpy.org}serveur Ren'Py Sync{/a}.\nVoulez-vous continuer ?"
 
     # renpy/common/00sync.rpy:546
     old "Yes"
@@ -863,7 +863,7 @@ translate None strings:
 
     # renpy/common/00sync.rpy:618
     old "You can use this ID to download your save on another device.\nThis sync will expire in an hour.\nRen'Py Sync is supported by {a=https://www.renpy.org/sponsors.html}Ren'Py's Sponsors{/a}."
-    new "Vous pouvez utiliser cet ID pour transférer votre sauvegarde sur un autre appareil.\nCe sync expirera dans une heure.\nRen'Py Sync is soutenu par les {a=https://www.renpy.org/sponsors.html}Sponsors de Ren'Py's{/a}."
+    new "Vous pouvez utiliser cet ID pour transférer votre Snapshot sur un autre appareil.\nCe sync expirera dans une heure.\nRen'Py Sync is soutenu par les {a=https://www.renpy.org/sponsors.html}Sponsors de Ren'Py's{/a}."
 
     # renpy/common/00sync.rpy:622
     old "Continue"
@@ -1195,7 +1195,7 @@ translate None strings:
 
     # renpy/common/_errorhandling.rpym:728
     old "Attempts a roll back to a prior time, allowing you to save or choose a different choice."
-    new "Tente une annulation jusqu’à l’état précédent, cela vous permettra de sauvegarder ou d’effectuer un choix différent."
+    new "Tente une annulation jusqu’à l’état précédent, cela vous permettra de Snapshotr ou d’effectuer un choix différent."
 
     # renpy/common/_errorhandling.rpym:731
     old "Ignore"
@@ -1215,7 +1215,7 @@ translate None strings:
 
     # renpy/common/_errorhandling.rpym:743
     old "Reloads the game from disk, saving and restoring game state if possible."
-    new "Recharger le jeu depuis le disque, sauvegarder et restaurer le jeu dans son état actuel si possible."
+    new "Recharger le jeu depuis le disque, Snapshotr et restaurer le jeu dans son état actuel si possible."
 
     # renpy/common/_errorhandling.rpym:746
     old "Console"
@@ -1463,7 +1463,7 @@ translate None strings:
 
     # renpy/common/00console.rpy:893
     old "save <slot>: saves the game in slot"
-    new "save <slot> : sauvegarder la partie dans cet emplacement "
+    new "save <slot> : Snapshotr la partie dans cet emplacement "
 
     # renpy/common/00console.rpy:904
     old "reload: reloads the game, refreshing the scripts"
