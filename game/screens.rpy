@@ -1901,13 +1901,13 @@ screen success():
 
             label "{b}{i}— Progression —\n{/i}{/b}" 
 
-            text _("Succès : [success]/37\n") 
+            text _("Succès : [success]/40\n") 
 
             label "{b}{i}— liste des succès —\n{/i}{/b}" 
 
             text _("Une autre clé ? : [quest1]/1\n") 
             text _("Premier piratage : [quest2]/1\n")
-            text _("Nouveau nom de code ( DLC ) : [quest3]/1\n")     
+            text _("Nouveau nom de code : [quest3]/1\n")     
             text _("L'espoir fait vivre : [quest4]/1\n") 
             text _("Acceptation : [quest5]/1\n")
             text _("Nouvelle identité : [quest6]/1\n")
@@ -1918,11 +1918,11 @@ screen success():
             text _("Vive la documentation : [quest11]/1\n")
             text _("Première mise à jour : [quest12]/1\n")  
             text _("Oublier le passé : [quest13]/1\n") 
-            text _("Lis-moi : [quest14]/1\n") 
+            text _("Lis-mon message : [quest14]/1\n") 
             text _("Le repos avant tout : [quest15]/1\n")
             text _("Petit exercice de python : [quest16]/1\n")
             text _("Affection pour les autres : [quest17]/1\n")
-            text _("Entre connaissance : [quest18]/1\n")
+            text _("Entre connaissances : [quest18]/1\n")
             text _("C'était le bon : [quest19]/1\n")
             text _("Affection pour les autres partie 2 : [quest20]/1\n")
             text _("Plus c’est gros plus ça passe : [quest21]/1\n")
@@ -1935,15 +1935,17 @@ screen success():
             text _("Mentir n’est pas si mal : [quest28]/1\n")
             text _("Journalistes de merde : [quest29]/1\n")
             text _("Dire les termes : [quest30]/1\n")           
-            text _("Ferme ta gueule !!! : [quest31]/1\n") 
+            text _("Silence brutal : [quest31]/1\n") 
             text _("Molière c'est toi ? : [quest32]/1\n") 
             text _("Jamais deux sans trois : [quest33]/1\n")  
             text _("Sa vraie valeur : [quest34]/1\n") 
             text _("Faire de la philosophie : [quest35]/1\n") 
             text _("Bon philosophe : [quest36]/1\n") 
-            text _("L'entre aide scolaire : [quest37]/1\n") 
-            text _("Génie de l’informatique part 2 : [quest38]/1\n") 
-            
+            text _("L'entraide scolaire : [quest37]/1\n") 
+            text _("C'est ton devoir : [quest38]/1\n")
+            text _("Quatrième mise à jour : [quest39]/1\n")
+            text _("Maître du chaos ordonné : [quest40]/1\n") 
+
 style about_label is gui_label   
 style about_label_text is gui_label_text
 style about_text is gui_text 
