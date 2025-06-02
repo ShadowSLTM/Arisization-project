@@ -18800,22 +18800,22 @@ label password10:
     P "[comment_ca_va]"
     play sound "Click.mp3" noloop 
 
-    if quest28 == 1:b
+    if quest28 == 1:
 
         Na "Pas trop si tu veux le savoir."
         play sound "Click.mp3" noloop 
 
-        if pronom == "il" : 
+        if pronom == "il": 
     
             P "Ah je vois, je suis désolée de t'avoir dit la vérité."
             play sound "Click.mp3" noloop
 
-        elif pronom == "elle" :
+        elif pronom == "elle":
 
             P "Ah je vois, je suis désolée de t'avoir dit la vérité."
             play sound "Click.mp3" noloop
 
-    else: 
+    else:
 
         $ je_vais_bien_txt = get_random_je_vais_bien() 
         Na "[je_vais_bien_txt] Et toi sinon ça va ?" 
@@ -27888,13 +27888,65 @@ label password21:
     Na "[sit]"
     play sound "Click.mp3" noloop
 
-    "{b}{i} Vous vous asseyez dans le recfectoire.{/i}{/b}"
-    play sound "Click.mp3" noloop 
+    "{b}{i} Vous vous asseyez dans le réfectoire.{/i}{/b}"
+    play sound "Click.mp3" noloop   
 
     P "ça à l'air pas mal ce repas."
     play sound "Click.mp3" noloop 
 
     Na "Oui c'est vraiment pas mal."
     play sound "Click.mp3" noloop 
+
+    P "Bonne appétit."
+    play sound "Click.mp3" noloop
+
+    Na "Bonne appétit à toi aussi."
+    play sound "Click.mp3" noloop
+ 
+    P "Bon il faut qu'on retourne en cours."
+    play sound "Click.mp3" noloop 
+             
+    $ suivi = get_random_suivi()
+    Na "[suivi]" 
+    play sound "Footsteps.mp3" noloop
+
+    scene black 
+    hide screen lunchroom 
+
+    "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall
+    show screen hall
+
+    "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    scene staircase 
+    hide screen hall
+
+    "{b}{i} Vous montez au premier étage.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hallway 
+    show screen hallway
+
+    "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+    
+    scene classroom  
+    show screen class_404 
+
+    P "Rebonjour."
+    play sound "Click.mp3" noloop 
+
+    Na "Rebonjour."
+    play sound "Click.mp3" noloop     
 
 # Aris la plus belle <333333333333333333333333333  

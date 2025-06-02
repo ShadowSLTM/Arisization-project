@@ -2,13 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 26722: reached end of line when expecting ':'.
-    if quest37 == 1
-                   ^
+File "game/script.rpy", line 18803: end of line expected.
+    if quest28 == 1:b
+                    ^
 
-File "game/script.rpy", line 26748: expected statement.
-    else:
+File "game/script.rpy", line 18818: expected statement.
+    else: 
         ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu May 29 23:13:22 2025
+Mon Jun  2 20:33:01 2025
