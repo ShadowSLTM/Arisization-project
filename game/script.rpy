@@ -470,16 +470,28 @@ label hack:
 
     $ stockage += 2.0 
 
-    A "Bonjour [prenom] je suis ravie de te rencontrer mais j'ai une question."
+    A "Bonjour [prenom] je suis ravie de te rencontrer mais j'ai duex questions."
     play sound "Click.mp3" noloop 
 
     P "Oui dis-moi."
     play sound "Click.mp3" noloop 
 
+    A "Peux-tu me dire ou suis-je ?"
+    play sound "Click.mp3" noloop 
+
+    P "On est dans un entrepôt désaffecté."
+    play sound "Click.mp3" noloop 
+
+    A "Je vois, c'est donc ça cet endroit maudit."
+    play sound "Click.mp3" noloop 
+
+    P "Oui et quelle est ta deuxième question ?"
+    play sound "Click.mp3" noloop 
+
     A "Me reste-il un avenir !? Voudra-t-on encore de moi ?"
     play sound "Click.mp3" noloop 
 
-    menu:   
+    menu:    
 
         "{b}{i} Oui.{/i}{/b}" :
             play sound "Menu.mp3" noloop 
@@ -508,7 +520,7 @@ label hack:
             S "Arrètes de dire n'importe quoi elle ne pourra pas avoir un avenir."    
             play sound "Click.mp3" noloop 
 
-            P "Mais si elle peut."
+            P "Mais si elle peut !"
             play sound "Click.mp3" noloop 
 
         "{b}{i} Je ne sais pas.{/i}{/b}" : 
@@ -1545,7 +1557,7 @@ label argument:
     T "Intéressant, c'est bien que tu veuilles changer."
     play sound "Click.mp3" noloop
 
-    $ charactertext2 = "Âgée de 19 ans, Yuna était autrefois timide et solitaire, toujours plongée dans ses lignes de code. Après avoir abandonné son premier jeu, elle s’investit pleinement dans un nouveau projet, déterminée à aller jusqu’au bout. Désormais, elle cherche aussi à sortir de sa bulle et à se rapprocher des autres."
+    $ charactertext2 = "Âgée de dix-neuf ans, Yuna était autrefois timide et solitaire, toujours plongée dans ses lignes de code. Après avoir abandonné son premier jeu, elle s’investit pleinement dans un nouveau projet, déterminée à aller jusqu’au bout. Désormais, elle cherche aussi à sortir de sa bulle et à se rapprocher des autres."
 
     $ thanks = get_random_thanks()
     I "[thanks]"
@@ -1583,7 +1595,7 @@ label argument:
     H "[thanks]"
     play sound "Click.mp3" noloop
 
-    $ charactertext3 = "Hajime est un brillant lycéen de 19 ans, il est doué en programmation et en construction de robot."
+    $ charactertext3 = "Hajime est un brillant lycéen de dix-neuf ans, il est doué en programmation et en construction de robot."
 
     T "De rien, maintenant suivant s'il vous plait."
     play sound "Click.mp3" noloop 
@@ -1671,7 +1683,7 @@ label argument:
 
     $ character7 = N 
     $ ultimate7 = "L'inégalable assistant" 
-    $ charactertext7 = "Naoto est un lycéen de 19 ans, il est généralement en informatique et prêt à aider les autres."
+    $ charactertext7 = "Naoto est un lycéen de dix-neuf ans, il est généralement en informatique et prêt à aider les autres."
 
     T "Enchantée aussi de te rencontrer [N]."
     play sound "Click.mp3" noloop
@@ -1689,6 +1701,7 @@ label argument:
     play sound "Click.mp3" noloop
 
     $ character8 = Hi
+    $ charactertext8 = "Haruki est un jeune lycéen de dix-neuf ans, il n'a pas de domaine particulier ou il est doué en informatiuqe mias il est assez bon, il veut juste apprendre et devenir meilleure informatique."
    
     T "Ravie de te rencontrer [Hi], bienvenue dans notre classe."
     play sound "Click.mp3" noloop
@@ -1706,7 +1719,7 @@ label argument:
     play sound "Click.mp3" noloop 
 
     $ character9 = Y
-    $ charactertext9 = "Yuki est une lycéenne de 19 ans, elle est douée en informatique comme les autres lycéens mais personne ne sait ce qu'elle fait."
+    $ charactertext9 = "Yuki est une lycéenne de dix-neuf ans, elle est douée en informatique comme les autres lycéens mais personne ne sait ce qu'elle fait."
 
     T "Enchantée de te rencontrer aussi bienvenue dans notre classe."
     play sound "Click.mp3" noloop
@@ -5827,7 +5840,7 @@ label choice8:
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Footsteps.mp3" noloop 
+    play sound "Click.mp3" noloop 
 
     M "Attends deux secondes [prenom]."
     play sound "Click.mp3" noloop
@@ -6136,7 +6149,7 @@ label choice8:
     C "Connais-tu l'entièreté des capacités de [A] ?"
     play sound "Click.mp3" noloop
 
-    P "Non pas complètement malheureusement."
+    P "Non pas complétment à mon insu malheureusement."
     play sound "Click.mp3" noloop 
 
     C "Ok mais je pense que j'ai quelque chose qui peut t'intéresser."
@@ -10239,7 +10252,13 @@ label code:
     $ system = renpy.input("Choisis un nom pour ton système d'exploitation.")
     play sound "Menu.mp3" noloop 
 
-    $ Line1 = renpy.input("initiate_system(name=Aris,mode:secure,boot:true,fightmode:false)")
+    $ Line1 = renpy.input("initiate_system(name=Aris,mode=secure,boot=true,fightmode=false)")
+    play sound "Menu.mp3" noloop 
+
+    $ Line2 = renpy.input("initiate_system(settings_access=true)")
+    play sound "Menu.mp3" noloop 
+    
+    $ Line3 = renpy.input("initiate_system(database_access=false)")
     play sound "Menu.mp3" noloop 
 
     menu: 
@@ -10247,11 +10266,29 @@ label code:
         "{b}{i} Compiler le code.{/i}{/b}" :
             play sound "Menu.mp3" noloop 
 
-            if Line1 == "initiate_system(name=Aris,mode:secure,boot:true,fightmode:false)":
+            if Line1 == "initiate_system(name=Aris,mode=secure,boot=true,fightmode=false)":
             
-                "Code correctement compilé."
-                play sound "Click.mp3" noloop 
+                if Line2 == "initiate_system(settings_access=true)":
+            
+                    if Line3 == "initiate_system(database_access=false)":
+            
+                        "Code correctement compilé."
+                        play sound "Click.mp3" noloop 
         
+                    else: 
+
+                        "Erreur détectée, le code a été mal compilé."
+                        play sound "Click.mp3" noloop 
+
+                        jump code  
+                        
+                else: 
+
+                    "Erreur détectée, le code a été mal compilé."
+                    play sound "Click.mp3" noloop 
+
+                    jump code  
+    
             else: 
 
                 "Erreur détectée, le code a été mal compilé."
@@ -13995,6 +14032,8 @@ label password2:
 
 label examen_pythagore:
 
+    play music "Soundtrack2.mp3" loop volume 1.0
+
     $ grade = 0.0 
 
     "Question 1 : Quelle est la formule du théorème de Pythagore ?"
@@ -14108,6 +14147,8 @@ label examen_pythagore:
             $ grade += 0.0
 
     $ renpy.block_rollback()
+ 
+    stop music fadeout 2.0
 
     "{b}{i}Aprés l'examen tout le monde remit leur copie à [M].{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -15701,7 +15742,7 @@ label password4:
     S "Et pour les paramétres plus avancées ?" 
     play sound "Click.mp3" noloop
 
-    M "Il faut mettre ses paramétres entre les parenthéses, exemple : initiate_humanoid_robot(setting=true)." 
+    M "Il faut mettre ses paramétres entre les parenthéses, exemple : initiate_humanoid_robot(settings=true)." 
     play sound "Click.mp3" noloop
 
     S "Il faut pas aussi finir ces commandes par un point-virgule ?"
@@ -17342,6 +17383,8 @@ label password8:
 
 label examen_runix: 
 
+    play music "Soundtrack2.mp3" loop volume 1.0
+
     $ grade = 0.0 
 
     P "Bon voyons voir....." 
@@ -17419,11 +17462,15 @@ label examen_runix:
 
     $ renpy.block_rollback()
 
+    stop music fadeout 2.0
+
     P "Enfin fini..." 
     play sound "Click.mp3" noloop 
 
     "{b}{i}Après cela tout le monde remet sa copie.{/i}{/b}"
     play sound "Click.mp3" noloop 
+
+    play music "Soundtrack.mp3" loop volume 1.0
 
     M "Parfait maintenant vous pouvez aller en pause, je vous renderez vos copies demain matin."
     play sound "Click.mp3" noloop  
@@ -21794,7 +21841,9 @@ label password14:
 
 label examen_francais:
 
-    $ grade = 0.0
+    play music "Soundtrack2.mp3" loop volume 1.0
+
+    $ grade = 0.0 
 
     P "Bon voyons voir....." 
     play sound "Click.mp3" noloop 
@@ -21921,6 +21970,8 @@ label examen_francais:
     play sound "Click.mp3" noloop 
 
     $ renpy.block_rollback() 
+
+    stop music fadeout 1.0
 
     Na "Cette examen n'était si dur que ça."
     play sound "Click.mp3" noloop
@@ -22279,7 +22330,7 @@ label examen_francais:
                 show screen class_404 
                 $ points += 300
                 $ stockage -= 5.0 
-                play music "Soundtrack.mp3" loop volume 1.0
+                play music "Soundtrack2.mp3" loop volume 1.0
                 jump examen_francais 
                     
     else:
@@ -24267,6 +24318,8 @@ label password17:
 
 label philosophie_technologie:
 
+    play music "Soundtrack2.mp3" loop volume 1.0
+
     $ grade = 0.0 
 
     "Question 1 : La technologie est-elle une prolongation naturelle de l’évolution humaine ?"
@@ -24380,6 +24433,8 @@ label philosophie_technologie:
             $ grade += 0.0
 
     $ renpy.block_rollback() 
+
+    stop music fadeout 2.0
 
     "{b}{i}Après l'examen tout le monde remet leur copie à [M].{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -27949,4 +28004,142 @@ label password21:
     Na "Rebonjour."
     play sound "Click.mp3" noloop     
 
-# Aris la plus belle <333333333333333333333333333  
+    M "Bien nous pouvons reprendre le cours."
+    play sound "Click.mp3" noloop 
+
+    $ validation = get_random_validation() 
+    Hi "[validation]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Le cours continue sans problème.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop 
+
+    $ stockage += 10.0 
+
+    P "Bon [newname] on y va ?"
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop 
+
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    Na "[prenom] ça te dit d'aller à la salle de club cette fois ?"
+    play sound "Click.mp3" noloop 
+
+    P "Oui pourquoi pas si tu veux."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Puis [Hi] et [I] viennent vers vers vous.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Oui qu'il y a t-il Haruki ?"
+    play sound "Click.mp3" noloop 
+
+    Hi "C'était pour savoir si c'était possible de venir travailler avec vous pour les devoirs car j'ai un peu de mal."
+    play sound "Click.mp3" noloop 
+
+    P "Oui bien sûr, vous pouvez venir avec nous."
+    play sound "Click.mp3" noloop 
+
+    Hi "Merci beaucoup !"
+    play sound "Click.mp3" noloop 
+
+    I "Oui merci beaucoup [P]."
+    play sound "Click.mp3" noloop
+
+    P "Pas de soucis, vous pouvez venir avec nous."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}vous continuez dabs le couloir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen hallway
+    scene staircase
+
+    "{b}{i}Puis vers le hall.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+     
+    scene hall 
+    show screen hall 
+
+    "{b}{i}Vous poursuivez vers la salle de club générale.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hall
+
+    "{b}{i}Vous entrez dans la salle de club générale.{/i}{/b}"
+    play sound "Door.mp3" noloop
+ 
+    scene clubroom
+    show screen clubroom 
+
+    P "Enfin dans la salle de club générale."
+    play sound "Click.mp3" noloop
+
+    Na "Oui enfin, on va pouvoir travailler tranquillement."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Vous vous posez tous tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    Hi "Bien alors on peut commencer les devoirs."
+    play sound "Click.mp3" noloop   
+
+    if pronom == "il":
+
+        I "Oui om peut commencer, vous étes prêts les [nom] ?"
+        play sound "Click.mp3" noloop 
+
+        P "Oui je suis prêt."
+        play sound "Click.mp3" noloop 
+
+    elif pronom == "elle": 
+
+        I "Oui om peut commencer, vous étes prêtes les [nom] ?"
+        play sound "Click.mp3" noloop 
+
+        P "Oui je suis prête."
+        play sound "Click.mp3" noloop 
+
+    Na "Oui moi ausi je suis prête."
+    play sound "Click.mp3" noloop 
+
+    I "Bien alors."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Vous commencez à faire les devoirs.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Bon voyons voir...."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu regardes ce que sont les exercices.{/i}{/b}"
+    play sound "Click.mp3" noloop   
+
+    P "Encore des exercices de connaisance sur l'informatique sauf qu'elle les a poussés à un autre niveau..."
+    play sound "Click.mp3" noloop
+
+    menu: 
+
+        "{b}{i} Demander de l'aide.{/i}{/b}" :
+            play sound "Menu.mp3" noloop 
+
+        "{b}{i} se débrouiller sans aide.{/i}{/b}" :
+            play sound "Menu.mp3" noloop 
+
+
+# Aris la plus belle <333333333333333333333333333
