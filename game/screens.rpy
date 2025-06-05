@@ -1901,9 +1901,9 @@ screen success():
 
             label "{b}{i}— Progression —\n{/i}{/b}" 
 
-            text _("Succès : [success]/40\n") 
+            text _("Succès : [success]/39\n") 
 
-            label "{b}{i}— liste des succès —\n{/i}{/b}" 
+            label "{b}{i}— liste des succès —\n{/i}{/b}"  cvb 
 
             text _("Une autre clé ? : [quest1]/1\n") 
             text _("Premier piratage : [quest2]/1\n")
@@ -1942,9 +1942,8 @@ screen success():
             text _("Faire de la philosophie : [quest35]/1\n") 
             text _("Bon philosophe : [quest36]/1\n") 
             text _("L'entraide scolaire : [quest37]/1\n") 
-            text _("C'est ton devoir : [quest38]/1\n")
-            text _("Quatrième mise à jour : [quest39]/1\n")
-            text _("Maître du chaos ordonné : [quest40]/1\n") 
+            text _("Quatrième mise à jour : [quest38]/1\n")
+            text _("Maître du chaos ordonné : [quest39]/1\n") 
 
 style about_label is gui_label   
 style about_label_text is gui_label_text
@@ -1986,6 +1985,8 @@ screen robot():
             text _("Numéro de série : [serie]\n")  
 
             text _("stockage utilisé : [stockage] Go\n")
+
+            text _("Processeur : [cpu] \n") 
 
             text _("Propriétaire : [propriety] \n") 
 

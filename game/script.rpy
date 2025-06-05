@@ -3,6 +3,7 @@ label start:
     $ grade = 0.0  
     $ points = 0 
     $ day = 0 
+    $ cpu = "??????????"
     default success = 0
     $ wallbreak = 0
     default update = 1.0
@@ -284,39 +285,51 @@ label début:
     S "Non, rien malheureusement..."
     play sound "Click.mp3" noloop 
  
-    "{b}{i}Tu continues de chercher quelque chose d'intéressant mais [S] tombe sur un énorme objet.{/i}{/b}"
+    "{b}{i}Tu continues de chercher quelque chose d'intéressant quand soudain [S] tombe sur un énorme objet.{/i}{/b}"
     play sound "Stumble.mp3" noloop  
- 
-    S "C'est quoi ce truc qui traine encore ?"
+
+    S "C'est quoi ce truc qui traîne encore ?"
     play sound "Click.mp3" noloop
 
-    P "Fait voir ce que c'est ?"
+    P "Fais voir ce que c'est ?"
     play sound "Footsteps.mp3" noloop 
 
-    "{b}{i}Tu t'approches et tu vois un [model].{/i}{/b}"
+    "{b}{i}Tu t'approches et tu découvres un [model].{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "On dirait un [model] comme ceux qui ont été utilisés pour la guerre de l'année dernière."
+    P "On dirait un [model], comme ceux qui ont été utilisés pendant la guerre de l'année dernière."
     play sound "Click.mp3" noloop 
 
-    if pronom == "il" : 
-    
+    if pronom == "il":
+
         S "Un [model] !? Tu n'es pas sérieux j'espère."
         play sound "Click.mp3" noloop
 
-    elif pronom == "elle" :
+    elif pronom == "elle":
 
         S "Un [model] !? Tu n'es pas sérieuse j'espère."
         play sound "Click.mp3" noloop
 
-    P "Si je le suis."
+    P "Si, je le suis."
     play sound "Click.mp3" noloop
 
-    S "Ok mais on va faire quoi de ça maintenant ?"
+    S "Ok, mais on va faire quoi avec ça maintenant ?"
     play sound "Click.mp3" noloop
+
+    "{b}{i}Tu commences à analyser le robot pour comprendre son état.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Attends, il manque quelque chose... Elle n'a pas sa batterie."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}tu fouilles dans l'entrepôt et trouve par chance une nouvelle batterie que tu installes avec précaution.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Voilà, elle devrait pouvoir tenir un moment avec ça, c’est plus sûr."
+    play sound "Click.mp3" noloop 
 
     P "Je vais essayer de la pirater en contournant sa sécurité."
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     S "Pardon !?"
     play sound "Click.mp3" noloop 
@@ -324,10 +337,10 @@ label début:
     "{b}{i}Tu regardes d'abord ton livre d'informatique.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    S "Je ne suis pas sûr que se soit une bonne idée..."
+    S "Je ne suis pas sûr que ce soit une bonne idée..."
     play sound "Click.mp3" noloop 
 
-    P "Oh c'est bon elle est abandonée et en plus ça ne brise ni la loi ni l'une des dix règles de l'informatique."
+    P "Oh, c'est bon, elle est abandonnée et en plus ça ne brise ni la loi ni l'une des dix règles de l'informatique."
     play sound "Click.mp3" noloop 
 
     "{b}{i}Tu démarres le robot pour injecter des instructions.{/i}{/b}"
@@ -635,6 +648,9 @@ label argument:
 
         P "Mais elle est abandonnée, et en plus je suis bonne en informatique."
         play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu mets le chargeur d'[A] dans ton sac pendant que tu parles avec [S].{/i}{/b}"
+    play sound "Click.mp3" noloop 
 
     S "Bon je me tire d'ici."
     play sound "Click.mp3" noloop 
@@ -2888,6 +2904,8 @@ label wallbreaking3:
     "{b}{i}Tu découvres avec surprise qu'elle a un processeur Corzen 7.{/i}{/b}"
     play sound "Click.mp3" noloop
 
+    $ cpu = "Corzen 7"
+
     P "L'ancien propriétaire de [A] avais vraiment des goûts médiocres en terme de composants..."
     play sound "Click.mp3" noloop
 
@@ -2975,7 +2993,7 @@ label choice4:
         $ quest6 += 1
         $ robotname = nom
         $ stockage += 2.0 
-        
+        $ cpu = "Corzen 11KS"
         $ renpy.block_rollback()
 
         "Le prénom a été enregistré dans le système." 
@@ -6113,7 +6131,13 @@ label choice8:
     C "Je voulais aussi savoir comment tu as amélioré [A] ?"
     play sound "Click.mp3" noloop 
 
-    P "J'ai commencé par changer son processeur."
+    P "Le jour ou je l'ai trouvé j'ai remarqué qu'elle avait pas sa batterie mais par chance il en restait une toute neuve dans l'intrepêt."
+    play sound "Click.mp3" noloop
+
+    C "Ensuite qu'as-tu fait ?"
+    play sound "Click.mp3" noloop 
+
+    P "J'ai changé son processeur."
     play sound "Click.mp3" noloop 
 
     C "Ah bon pourtant le processeur choisi pour sa conception était bien." 
@@ -6131,7 +6155,7 @@ label choice8:
     C "Intéressant."
     play sound "Click.mp3" noloop 
 
-    P "Merci."
+    P "Merci beaucoup."
     play sound "Click.mp3" noloop 
 
     C "Il n'y a pas de soucis."
@@ -6180,7 +6204,7 @@ label choice8:
             $ renpy.block_rollback()
 
             $ success += 1
-            $ quest11 += 1
+            $ quest11 += 1 
 
             P "Merci beaucoup ça fait plaisir."
             play sound "Click.mp3" noloop 
@@ -6228,7 +6252,7 @@ label choice8:
             play sound "Click.mp3" noloop
 
             C "Oui et enfin... j'aimerais te demander une dernière faveur."
-            play sound "Click.mp3" noloop
+            play sound "Click.mp3" noloop 
 
         "{b}{i} Refuser les documents. {/i}{/b}" : 
 
@@ -6315,13 +6339,13 @@ label choice8:
     P "Merci au revoir."
     play sound "Click.mp3" noloop 
 
+    stop music fadeout 2.0
+
     scene black 
     hide screen office
 
     "{b}{i}Tu te diriges vers le hall avec [Na].{/i}{/b}"
     play sound "Door.mp3" noloop
-     
-    stop music fadeout 2.0
 
     scene hall
     show screen hall
@@ -12200,7 +12224,7 @@ label password:
     Oh "Je suis l'[Ot] de la direction générale contre les cyberattaques et voici ma collégue."
     play sound "Click.mp3" noloop
 
-    O "Bonjour, je suis [O], sous-officière de la direction générale contre les cyberattauques."
+    O "Bonjour, je suis [O], sous-officière de la direction générale de la cybersécurité."
     play sound "Click.mp3" noloop
 
     "{b}{i}Soudainement [newname] a peur et se cache dérrière toi.{/i}{/b}"
@@ -28133,13 +28157,51 @@ label password21:
     P "Encore des exercices de connaisance sur l'informatique sauf qu'elle les a poussés à un autre niveau..."
     play sound "Click.mp3" noloop
 
+
+
     menu: 
 
         "{b}{i} Demander de l'aide.{/i}{/b}" :
             play sound "Menu.mp3" noloop 
 
+            $ renpy.block_rollback()
+
+            P "Yuna J'aurai besoin de ton aide."
+            play sound "Click.mp3" noloop     
+
+            I "Oui pourquoi pas dis-moi ce qu'il y a."
+            play sound "Click.mp3" noloop     
+
+            P "Merci beaucoup de ton aide."
+            play sound "Click.mp3" noloop     
+
+            if pronom == "il":
+
+                I "De rien mais attend je croyais que était vraiment fort en informatique."
+                play sound "Click.mp3" noloop     
+
+            elif pronom == "elle": 
+
+                I "De rien mais attend je croyais que était vraiment forte en informatique."
+                play sound "Click.mp3" noloop     
+
+            P "Oui je suis doué mais j'ai appris que le Runix pour pouvoir comprendre le système d'[newname]"
+            play sound "Click.mp3" noloop     
+
         "{b}{i} se débrouiller sans aide.{/i}{/b}" :
             play sound "Menu.mp3" noloop 
 
+            $ renpy.block_rollback()
+
+            P "Non c'est bon ça va aller."
+            play sound "Click.mp3" noloop       
+
+            I "Ok si tu le dit."
+            play sound "Click.mp3" noloop
+
+            "{b}{i}Tu regardes ce que sont les exercices.{/i}{/b}"
+            play sound "Click.mp3" noloop   
+
+            
 
 # Aris la plus belle <333333333333333333333333333
