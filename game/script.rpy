@@ -3,7 +3,7 @@ label start:
     $ grade = 0.0  
     $ points = 0 
     $ day = 0 
-    $ cpu = "??????????"
+    default cpu = "??????????"
     default success = 0
     $ wallbreak = 0
     default update = 1.0
@@ -655,8 +655,12 @@ label argument:
     S "Bon je me tire d'ici."
     play sound "Click.mp3" noloop 
 
-    P "Moi aussi."
+    P "Moi aussi, bon [A] tu me suis ?"
     play sound "Click.mp3" noloop
+
+    $ validation = get_random_validation() 
+    A "[validation]"
+    play sound "Click.mp3" noloop 
 
     "{b}{i}Tu quittes l'entrepôt avec [A] en coupant les ponts avec [S].{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -2752,7 +2756,7 @@ label choice3:
             P "Voyons voir cet ancien processeur à changer..."  
             play sound "Click.mp3" noloop
 
-            "{b}{i}Tu découvres avec surprise qu'elle a un processeur Corzen 7.{/i}{/b}"
+            "{b}{i}Tu découvres avec surprise qu'elle a un processeur Corzen 9.{/i}{/b}"
             play sound "Click.mp3" noloop
 
             P "L'ancien propriétaire d'[A] avais vraiment des goûts médiocres en terme de composants..."
@@ -28159,6 +28163,9 @@ label password21:
 
 
 
+
+
+
     menu: 
 
         "{b}{i} Demander de l'aide.{/i}{/b}" :
@@ -28180,13 +28187,22 @@ label password21:
                 I "De rien mais attend je croyais que était vraiment fort en informatique."
                 play sound "Click.mp3" noloop     
 
-            elif pronom == "elle": 
+                P "Oui je suis doué mais là la professeure a vraiment poussé les exercices."
+                play sound "Click.mp3" noloop
+
+            elif pronom == "elle":
 
                 I "De rien mais attend je croyais que était vraiment forte en informatique."
-                play sound "Click.mp3" noloop     
+                play sound "Click.mp3" noloop
 
-            P "Oui je suis doué mais j'ai appris que le Runix pour pouvoir comprendre le système d'[newname]"
+                P "Oui je suis douée mais là la professeure a vraiment poussé les exercices."
+                play sound "Click.mp3" noloop
+
+            I "Je vois alors, il n'y a pas de soucis si tu veux de l'aide."
             play sound "Click.mp3" noloop     
+
+            P "Merci beaucoup Yuna."
+            play sound "Click.mp3" noloop 
 
         "{b}{i} se débrouiller sans aide.{/i}{/b}" :
             play sound "Menu.mp3" noloop 

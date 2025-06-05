@@ -1903,7 +1903,7 @@ screen success():
 
             text _("Succès : [success]/39\n") 
 
-            label "{b}{i}— liste des succès —\n{/i}{/b}"  cvb 
+            label "{b}{i}— liste des succès —\n{/i}{/b}" 
 
             text _("Une autre clé ? : [quest1]/1\n") 
             text _("Premier piratage : [quest2]/1\n")

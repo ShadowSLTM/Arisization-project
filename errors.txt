@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 18803: end of line expected.
-    if quest28 == 1:b
-                    ^
-
-File "game/script.rpy", line 18818: expected statement.
-    else: 
-        ^
+File "game/screens.rpy", line 1906: 'cvb' is not a keyword argument or valid child of the label statement.
+    label "{b}{i}— liste des succès —\n{/i}{/b}"  cvb 
+                                                     ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Mon Jun  2 20:33:01 2025
+Thu Jun  5 19:25:13 2025
