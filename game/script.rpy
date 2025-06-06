@@ -7,7 +7,7 @@ label start:
     default success = 0
     $ wallbreak = 0
     default update = 1.0
-    default origine = "la chambre grise" 
+    default origine = "la classe préparatoire Alpha"  
     default domaine = "??????????" 
     $ model = "robot humanoïde" 
     $ ending = 0
@@ -142,12 +142,12 @@ label key:
 
     if key == "ARIS-8J4K-F9Q7" or key == "ARIS-DEVS" or key == "ARIS-DEMO" :
 
-        $ origine = "la chambre grise" 
+        $ origine = "la classe préparatoire Alpha" 
 
     elif key == "ARIS-GRFN-M4A1":
 
         $ P = Character('[prenom] [nom]', color="#707070") 
-        $ origine = "16LAB" 
+        $ origine = "la classe préparatoire Alpha"   
         $ quest1 += 1
         $ success += 1 
 
@@ -940,7 +940,7 @@ label argument:
     "{b}{i}La [T] vous remet le certificat de fin de cursus.{/i}{/b}" 
     play sound "Click.mp3" noloop 
 
-    Gt "Bon, vous êtes officiellement diplomés de [origine]."
+    Gt "Bon, vous passez officiellement en terminal."
     play sound "Click.mp3" noloop 
 
     P "Enfin..."
@@ -1144,7 +1144,7 @@ label argument:
     "{b}{i}Vous vous dirigez vers la salle de classe mais quelqu'un s'approche...{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    R "Bonjour, je suis venue vous. Je suis la lycéenne qui doit se charger des nouveaux lycéens ici, dont vous."
+    R "Bonjour, je suis venue vous. Je suis la personne qui doit se charger des nouveaux lycéens ici, dont vous."
     play sound "Click.mp3" noloop
 
     P "Ok, merci de nous guider. Mais comment vous vous appelez ?"
@@ -1336,10 +1336,10 @@ label argument:
     E "[nothing] C'est normal"
     play sound "Click.mp3" noloop
 
-    "{b}{i}Tu regardes tes documents et ceux d'[newname] et vous remarquez que vous étes en Seconde-E.{/i}{/b}"
+    "{b}{i}Tu regardes tes documents et ceux d'[newname] et vous remarquez que vous étes en Terminale-E.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "Seconde-E... C'est donc ça notre classe."
+    P "Terminale-E... C'est donc ça notre classe."
     play sound "Click.mp3" noloop
 
     A "Oui." 
@@ -1399,10 +1399,10 @@ label argument:
 
     $ stockage += 1.5
 
-    E "Oui, si tes paramètres sont mal faits par [P]."
+    E "Oui, si tes paramètres sont mal faits par [P] car j'ai pu voir ton dossier et tu as l'air trés complexe."
     play sound "Click.mp3" noloop 
 
-    P "Ok, je comprends mieux pourquoi..."
+    A "Ok, je comprends mieux pourquoi..."
     play sound "Click.mp3" noloop
 
     E "Bon, maintenant partez en cours avant d'arriver en retard."
@@ -1773,7 +1773,7 @@ label argument:
     T "Tu viens de [origine] !?" 
     play sound "Click.mp3" noloop 
 
-    P "Oui, c'est exact."
+    P "Oui, c'est exact, l'établissement député pour sa rigueur."
     play sound "Click.mp3" noloop
 
     T "Enchantée alors [P], quel est ton projet ?"
@@ -1813,7 +1813,7 @@ label argument:
 
     $ thanks = get_random_thanks()
     P "[thanks]"
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     T "Pour revenir aux présentations, [prenom] qui est cette fille avec toi ?"
     play sound "Click.mp3" noloop 
@@ -2661,12 +2661,12 @@ label wallbreaking2:
 
     if pronom == "il":
 
-        P "Désolé, je m'appelle [P], je suis en Seconde-E."
+        P "Désolé, je m'appelle [P], je suis en Terminale-E."
         play sound "Click.mp3" noloop
 
     elif pronom == "elle": 
 
-        P "Désolée, je m'appelle [P], je suis en Seconde-E."
+        P "Désolée, je m'appelle [P], je suis en Terminale-E."
         play sound "Click.mp3" noloop 
 
     Ah "Enchantée, je suis [Ah], la présidente du département. Quelle est votre demande ?"
@@ -4712,11 +4712,10 @@ label wallbreaking4:
             play sound "Click.mp3" noloop 
 
             "{b}{i}Tu ranges tes livres avant de sortir ton ordinateur pour voir le système émotionnel d'[newname].{/i}{/b}"
-            play sound "Click.mp3" noloop 
+            play sound "Menu.mp3" noloop
 
             label choice7:
 
-            play sound "Menu.mp3" noloop
             $ ip = renpy.input("Entre l'adresse IP pour pouvoir te connecter à [newname].")
             $ ip = ip.strip()
 
@@ -4789,33 +4788,32 @@ label wallbreaking4:
             if pronom == "il":  
 
                 P "Je suis fatigué avec cette journée."
-                play sound "Click.mp3" noloop
+                play sound "Footsteps.mp3" noloop 
 
             elif pronom == "elle": 
 
                 P "Je suis fatiguée avec cette journée."
-                play sound "Click.mp3" noloop 
+                play sound "Footsteps.mp3" noloop 
 
-            hide screen clubroom 
+            hide screen clubroom
             scene black
-            play sound "Click.mp3" noloop
 
-            P "Tu te diriges vers le hall."
-            play sound "Door.mp3" noloop
+            "{b}{i}Tu quittes la salle de club.{/i}{/b}"
+            play sound "Door.mp3" noloop 
 
             scene hall 
             show screen hall
 
-            P "..."
-            play sound "Click.mp3" noloop
+            "{b}{i} Tu continues vers les escaliers.{/i}{/b}"
+            play sound "Footsteps.mp3" noloop
 
-            scene staircase
+            scene staircase 
             hide screen hall
 
-            P "..."
-            play sound "Click.mp3" noloop
+            "{b}{i} tu montes au premier étage.{/i}{/b}"
+            play sound "Footsteps.mp3" noloop
 
-            scene hallway
+            scene hallway 
             show screen hallway
 
             P "Maintenant le dortoir..."
@@ -6299,7 +6297,7 @@ label choice8:
     C "Donc vas-y présente-toi."
     play sound "Click.mp3" noloop 
 
-    Na "Je me nomme [Na], j'ai dix-huit ans et je suis la création de [P], je suis actuellement lycéenne en Seconde-E dans ce lycée, mon défaut est que je suis souvent sensible mais j'ai appris beaucoup de choses grâce à [P]."
+    Na "Je me nomme [Na], j'ai dix-huit ans et je suis la création de [P], je suis actuellement lycéenne en Terminale-E dans ce lycée, mon défaut est que je suis souvent sensible mais j'ai appris beaucoup de choses grâce à [P]."
     play sound "Click.mp3" noloop 
 
     C "Bien merci pour ta présentation."
@@ -28161,10 +28159,21 @@ label password21:
     P "Encore des exercices de connaisance sur l'informatique sauf qu'elle les a poussés à un autre niveau..."
     play sound "Click.mp3" noloop
 
+    "{b}{i}Tu .{/i}{/b}"
+    play sound "Click.mp3" noloop   
 
+    if pronom == "il":
 
+        I "[prenom] est-tu sûr que ça va ?"
+        play sound "Click.mp3" noloop 
 
+    elif pronom == "elle": 
 
+        I "[prenom] est-tu sûre que ça va ?"
+        play sound "Click.mp3" noloop 
+
+    P "Alors...."
+    play sound "Click.mp3" noloop 
 
     menu: 
 
@@ -28173,7 +28182,7 @@ label password21:
 
             $ renpy.block_rollback()
 
-            P "Yuna J'aurai besoin de ton aide."
+            P "Yuna J'aurai besoin de ton aide en vrai."
             play sound "Click.mp3" noloop     
 
             I "Oui pourquoi pas dis-moi ce qu'il y a."
@@ -28204,6 +28213,12 @@ label password21:
             P "Merci beaucoup Yuna."
             play sound "Click.mp3" noloop 
 
+            $ nothing = get_random_nothing()
+            I "[nothing]"
+            play sound "Click.mp3" noloop
+
+
+
         "{b}{i} se débrouiller sans aide.{/i}{/b}" :
             play sound "Menu.mp3" noloop 
 
@@ -28217,6 +28232,10 @@ label password21:
 
             "{b}{i}Tu regardes ce que sont les exercices.{/i}{/b}"
             play sound "Click.mp3" noloop   
+
+
+
+
 
             
 

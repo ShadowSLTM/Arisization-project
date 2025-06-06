@@ -7,17 +7,17 @@ default A = Character('??????????', color="#00eeff")
 
 default Na = Character('[newname] [nom]', color="#00eeff")
 
-# professeure de la chambre grise 
+# professeure de l'institut de la lune noir
 
 define Gt = Character('Naomi Sakayanagi', color="#c06c6c")
 
-# élèves de la chambre grise 
+# élèves de l'institut de la lune noir
 
 define Su = Character('Suzune Horimiya', color="#ffffff")
 define Sk = Character('Shiro Katsuya', color="#ffffff") 
 define S = Character('Subaru Shinomiya', color="#ffffff") 
 
-# Les élèves de Seconde-E. 
+# Les élèves de Terminale-E. 
 
 define M = Character('Sakura Kusanagi', color="#ffdfef") 
 define I = Character('Yuna Nishimura', color="#ae33ff")
