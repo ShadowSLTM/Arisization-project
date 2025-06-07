@@ -1923,7 +1923,7 @@ screen success():
             text _("Petit exercice de python : [quest16]/1\n")
             text _("Affection pour les autres : [quest17]/1\n")
             text _("Entre connaissances : [quest18]/1\n")
-            text _("C'était le bon : [quest19]/1\n")
+            text _("le bon présumé : [quest19]/1\n")
             text _("Affection pour les autres partie 2 : [quest20]/1\n")
             text _("Plus c’est gros plus ça passe : [quest21]/1\n")
             text _("La vérité avant tout : [quest22]/1\n")

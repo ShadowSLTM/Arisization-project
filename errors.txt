@@ -2,17 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 10: invalid syntax
-    la classe préparatoire Alpha
-        ^
+File "game/script.rpy", line 11502: invalid syntax
+    suspect "Ayano"
+             ^
 
-File "game/script.rpy", line 145: invalid syntax
-    origine = la classe préparatoire Alpha
-                  ^
+File "game/script.rpy", line 11518: invalid syntax
+    suspect "Aiko"
+             ^
 
-File "game/script.rpy", line 150: invalid syntax
-    origine = la classe préparatoire Alpha
-                  ^
+File "game/script.rpy", line 11537: invalid syntax
+    suspect "Yuki"
+             ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat Jun  7 01:00:48 2025
+Sat Jun  7 19:09:41 2025

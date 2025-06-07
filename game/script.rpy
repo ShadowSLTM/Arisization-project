@@ -3,6 +3,7 @@ label start:
     $ grade = 0.0  
     $ points = 0 
     $ day = 0 
+    $ suspect = "" 
     default cpu = "??????????"
     default success = 0
     $ wallbreak = 0
@@ -2480,7 +2481,7 @@ label choice2:
                     hide screen clubroom
                     scene black
 
-                    "{b}{i}Tu quittes le dortoir.{/i}{/b}"
+                    "{b}{i}Tu quittes la salle de club.{/i}{/b}"
                     play sound "Door.mp3" noloop 
 
                     scene hall 
@@ -11457,109 +11458,107 @@ label update:
     Na "Par rapport à cette histoire de traître et d'attaque, tu suspectes qui ?"
     play sound "Menu.mp3" noloop
 
-    $ suspect = renpy.input("Marquez le prénom complet du lycéen que vous suspectez.")
-    $ suspect = suspect.strip()   
+    P "Je pensaw que c'est [S] mais il y a un truc qui cloche."
+    play sound "Click.mp3" noloop
 
-    if suspect == "Ayano":
-         
-        P "Je pense que c'est [J1]."
-        play sound "Click.mp3" noloop
+    Na "Non ce n'est pas possible pour moi je pense." 
+    play sound "Click.mp3" noloop
 
-        Na "Oui qu'elle a eu des propos inacceptables."
-        play sound "Click.mp3" noloop 
+    P "Et pourquoi."
+    play sound "Click.mp3" noloop
 
-        P "En plus elle est toujours avec [J2] dans leur club et je trouve ça suspcet car on ne connais pas leur projet."
-        play sound "Click.mp3" noloop
+    Na "Rappelles-toi de quand il est arrivé au lycée."
+    play sound "Click.mp3" noloop
 
-        Na "Je vois bien."
-        play sound "Click.mp3" noloop
+    P "Oui et alors ?"
+    play sound "Click.mp3" noloop
 
-    elif suspect == "Aiko":
+    Na "Il est arrivé bien après qu'on aie su qu'il y avait un traître ici."
+    play sound "Click.mp3" noloop
 
-        P "Je pense que c'est [J2]."
-        play sound "Click.mp3" noloop
+    P "Oh oui c'est vrai comment j'ai pu oublié ce détail."
+    play sound "Click.mp3" noloop
 
-        Na "Oui qu'elle a eu des propos inacceptables."
-        play sound "Click.mp3" noloop 
+    Na "Tu vois ?"
+    play sound "Click.mp3" noloop
 
-        P "En plus elle est toujours avec [J1] dans leur club et je trouve ça suspect car on ne connais pas leur projet."
-        play sound "Click.mp3" noloop
+    P "Mais quant-même il tiens des propos très bizarres."
+    play sound "Click.mp3" noloop
+
+    Na "Oui mais toute à commencer avant son arrivé."
+    play sound "Click.mp3" noloop
+
+    P "Ok mais je vais quand même le surveiller."
+    play sound "Click.mp3" noloop
+
+    $ validation = get_random_validation() 
+    Na "[validation]"
+    play sound "Click.mp3" noloop 
+
+    menu:   
+
+        "{b}{i}[J1].{/i}{/b}" :
+            play sound "Menu.mp3" noloop 
+            $ suspectb = "Ayano"
+
+            P "Je pense que c'est [J1]."
+            play sound "Click.mp3" noloop
+
+            Na "Oui qu'elle a eu des propos inacceptables."
+            play sound "Click.mp3" noloop 
+
+            P "En plus elle est toujours avec [J2]."
+            play sound "Click.mp3" noloop
+
+            Na "Je vois bien."
+            play sound "Click.mp3" noloop
+
+        "{b}{i}[J2].{/i}{/b}" :
+            play sound "Menu.mp3" noloop 
+            $ suspect = "Aiko"
+        
+            $ success += 1 
+            $ quest19 += 1
+
+            P "Je pense que c'est [J2]."
+            play sound "Click.mp3" noloop
+
+            Na "Oui qu'elle a eu des propos inacceptables."
+            play sound "Click.mp3" noloop 
+
+            P "En plus elle est toujours avec [J1]."
+            play sound "Click.mp3" noloop
     
-        Na "Je vois bien."
-        play sound "Click.mp3" noloop 
+            Na "Je vois bien."
+            play sound "Click.mp3" noloop 
+            
+        "{b}{i}[Y].{/i}{/b}" :
+            play sound "Menu.mp3" noloop 
+            $ suspect = "Yuki"
 
-    elif suspect == "Subaru": 
+            P "Je pense que c'est [Y]."
+            play sound "Click.mp3" noloop
 
-        $ success += 1 
-        $ quest19 += 1
+            Na "Pourquoi ? Elle est super sympa."
+            play sound "Click.mp3" noloop
 
-        P "Je pense que c'est [S]."
-        play sound "Click.mp3" noloop
+            P "Oui je sais mais tu n'as pas remarqué un truc ?"
+            play sound "Click.mp3" noloop
 
-        Na "Non ce n'est pas possible pour moi je pense." 
-        play sound "Click.mp3" noloop
+            Na "Quoi dis-moi."
+            play sound "Click.mp3" noloop
 
-        P "Et pourquoi."
-        play sound "Click.mp3" noloop
+            P "Elle est souvent absente après les cours."
+            play sound "Click.mp3" noloop
 
-        Na "Rappelles-toi de quand il est arrivé au lycée."
-        play sound "Click.mp3" noloop
+            Na "Oui c'est vrai maintenant que tu le dis."
+            play sound "Click.mp3" noloop
 
-        P "Oui et alors ?"
-        play sound "Click.mp3" noloop
+            P "En plus on ne sais rien de son domaine inégalable."
+            play sound "Click.mp3" noloop
 
-        Na "Il est arrivé bien après qu'on aie su qu'il y avait un traître ici."
-        play sound "Click.mp3" noloop
-
-        P "Oh oui c'est vrai comment j'ai pu oublié ce détail."
-        play sound "Click.mp3" noloop
-
-        Na "Tu vois ?"
-        play sound "Click.mp3" noloop
-
-        P "Mais quant-même il tiens des propos très bizarres."
-        play sound "Click.mp3" noloop
-
-        Na "Oui mais toute à commencer avant son arrivé."
-        play sound "Click.mp3" noloop
-
-        P "Ok mais je garde toujours mon avis sur lui."
-        play sound "Click.mp3" noloop
-
-        $ validation = get_random_validation() 
-        Na "[validation]"
-        play sound "Click.mp3" noloop 
-
-    elif suspect == "Yuki": 
-
-        P "Je pense que c'est [Y]."
-        play sound "Click.mp3" noloop
-
-        Na "Pourquoi ? Elle est super sympa."
-        play sound "Click.mp3" noloop
-
-        P "Oui je sais mais tu n'as pas remarqué un truc ?"
-        play sound "Click.mp3" noloop
-
-        Na "Quoi dis-moi."
-        play sound "Click.mp3" noloop
-
-        P "Elle est souvent absente après le cours."
-        play sound "Click.mp3" noloop
-
-        Na "Oui c'est vrai maintenant que tu le dis."
-        play sound "Click.mp3" noloop
-
-        P "En plus on ne sais rien de son domaine inégalable."
-        play sound "Click.mp3" noloop
-
-        Na "Tu as raison."
-        play sound "Click.mp3" noloop
-
-    else: 
-
-        Na "Non c'est impossible cette personne nous soutient, ils oserait même pas trahir le lycée ou s'attaquer à moi ou le lycée."
-        play sound "Click.mp3" noloop
+            Na "Tu as raison."
+            play sound "Click.mp3" noloop 
 
     P "Bon moi je vais chercher à manger et aller régler un truc."
     play sound "Click.mp3" noloop
@@ -12636,36 +12635,11 @@ label password:
     E "Et ça serait qui ?" 
     play sound "Click.mp3" noloop 
 
-    if suspect == "Subaru": 
+    P "Je pense que c'est [suspect] le coupable." 
+    play sound "Click.mp3" noloop 
 
-        P "Je pense que c'est [suspect] le coupable." 
-        play sound "Click.mp3" noloop 
-
-        E "Et pourquoi tu pense que c'est lui ?" 
-        play sound "Click.mp3" noloop
-
-        P "Vous n'avez pas remarqué que les attaques se sont ampliphiées depuis qu'il est arrivé." 
-        play sound "Click.mp3" noloop
-
-        E "C'est vrai maintenant que tu le dis." 
-        play sound "Click.mp3" noloop
-
-        Na "mais ça n'a pas de sens car on a su cette histoire de traître et d'attaques avant que [S] arrive au lycée." 
-        play sound "Click.mp3" noloop
-
-        O "Donc là on a deux information qui se contredisent." 
-        play sound "Click.mp3" noloop
-
-        E "Oui on dirait." 
-        play sound "Click.mp3" noloop
-
-    else: 
-
-        P "Je pense que c'est [suspect] le coupable." 
-        play sound "Click.mp3" noloop 
-
-        E "Bon vue la situation n'importe qui peut être le coupable." 
-        play sound "Click.mp3" noloop 
+    E "Bon vue la situation n'importe qui peut être le coupable." 
+    play sound "Click.mp3" noloop 
 
     Oh "Sinon [prenom], j'aimerais savoir si ça t'intéresses de participer à l'enquéte car car tu es la principale victime." 
     play sound "Click.mp3" noloop 
@@ -18921,47 +18895,20 @@ label password10:
     "{b}{i} Puis il y a un silence pendant un court instant.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    if suspect == "Subaru": 
+    Na "Est-ce que ça va [prenom] ?"
+    play sound "Click.mp3" noloop 
 
-        Na "Est-ce que ça va [prenom] ?"
-        play sound "Click.mp3" noloop 
-        
-        P "Oui mais je pensais juste à cette histoire de traître ?"
-        play sound "Click.mp3" noloop 
+    P "Oui mais je pensais juste à cette histoire de traître ?"
+    play sound "Click.mp3" noloop  
 
-        Na "Oui et ?"
-        play sound "Click.mp3" noloop 
+    Na "Oui et ?"
+    play sound "Click.mp3" noloop 
 
-        P "Et si au finale ce n'était pas [suspect] ?"
-        play sound "Click.mp3" noloop 
+    P "C'est moi ou il y a un truc qui cloche dans cette histoire ?"
+    play sound "Click.mp3" noloop 
 
-        Na "Comment ça !?"
-        play sound "Click.mp3" noloop 
-
-        P "Ce que qui me fait dire ça c'est sa note à l'examen de Runix."
-        play sound "Click.mp3" noloop 
-
-        Na "Oui c'est vrai il a eu la pire note de la classe."
-        play sound "Click.mp3" noloop 
-
-        $ stockage += 1.0
-
-    else: 
-
-        Na "Est-ce que ça va [prenom] ?"
-        play sound "Click.mp3" noloop 
-
-        P "Oui mais je pensais juste à cette histoire de traître ?"
-        play sound "Click.mp3" noloop  
-
-        Na "Oui et ?"
-        play sound "Click.mp3" noloop 
-
-        P "C'est moi ou il y a un truc qui cloche dans cette histoire ?"
-        play sound "Click.mp3" noloop 
-
-        Na "Oui effectivement."
-        play sound "Click.mp3" noloop 
+    Na "Oui effectivement."
+    play sound "Click.mp3" noloop 
 
     P "Bon on doit aller en cours avant d'étre en retard."
     play sound "Click.mp3" noloop
@@ -20142,7 +20089,7 @@ label password11:
     P "Pourquoi les nouvelles technologies sont-elles si surveillées par le gouvernement ?"
     play sound "Click.mp3" noloop 
 
-    Ln "C'est une question de sécurité nationale. Nous devons nous assurer que rien ne menace la stabilité de notre société pour éviter la tragédie de guerre de 2095."
+    Ln "C'est une question de sécurité nationale. Nous devons nous assurer que rien ne menace la stabilité de notre société pour éviter la tragédie de guerre de 2095 et l'anarchie."
     play sound "Click.mp3" noloop 
 
     P "Je vois alors je comprends mieux."
@@ -28159,7 +28106,7 @@ label password21:
     P "Encore des exercices de connaisance sur l'informatique sauf qu'elle les a poussés à un autre niveau..."
     play sound "Click.mp3" noloop
 
-    "{b}{i}Tu .{/i}{/b}"
+    "{b}{i}Yuna se met à te regarder.{/i}{/b}"
     play sound "Click.mp3" noloop   
 
     if pronom == "il":
@@ -28217,8 +28164,34 @@ label password21:
             I "[nothing]"
             play sound "Click.mp3" noloop
 
+            if pronom == "il":
 
+                Na "Tu sais [prenom] même si tu es doué c'est normal de demander de l'aide."
+                play sound "Click.mp3" noloop 
 
+            elif pronom == "elle": 
+
+                Na "Tu sais [prenom] même si tu es douée c'est normal de demander de l'aide."
+                play sound "Click.mp3" noloop 
+
+            P "Je sais mais quand même..."
+            play sound "Click.mp3" noloop 
+
+            "{b}{i}Vous commencez à vous entraider pendant une heure.{/i}{/b}"
+            play sound "Click.mp3" noloop   
+
+            Hi "C'est bon vous avez fini ?"
+            play sound "Click.mp3" noloop     
+
+            I "Oui je les ai fini."
+            play sound "Click.mp3" noloop     
+
+            Na "Moi aussi."
+            play sound "Click.mp3" noloop     
+
+            P "pareil."
+            play sound "Click.mp3" noloop     
+            
         "{b}{i} se débrouiller sans aide.{/i}{/b}" :
             play sound "Menu.mp3" noloop 
 
@@ -28233,7 +28206,69 @@ label password21:
             "{b}{i}Tu regardes ce que sont les exercices.{/i}{/b}"
             play sound "Click.mp3" noloop   
 
+            P "Bon c'est parti pour les faire."
+            play sound "Click.mp3" noloop     
 
+            Na "Oui allons-y."
+            play sound "Click.mp3" noloop     
+
+            "{b}{i}Vous commencez tranquillement les exercices.{/i}{/b}"
+            play sound "Click.mp3" noloop   
+
+            Na "c'est vrai qu'ils sont plus compliqués que d'habitude."
+            play sound "Click.mp3" noloop   
+
+            P "Bah avec le Paper Shuffle qui arrive, c'est normal d'augmenter la difficulté."
+            play sound "Click.mp3" noloop 
+
+            "{b}{i}Vous faites les exercices pendant une heure.{/i}{/b}"
+            play sound "Click.mp3" noloop   
+
+            Hi "C'est bon vous avez fini ?"
+            play sound "Click.mp3" noloop     
+
+            I "Oui je les ai fini."
+            play sound "Click.mp3" noloop     
+
+            Na "Moi aussi."
+            play sound "Click.mp3" noloop     
+
+            P "pareil."
+            play sound "Click.mp3" noloop     
+    
+  
+        
+
+
+    hide screen clubroom
+    scene black
+
+    "{b}{i}Tu quittes la salle de club.{/i}{/b}"
+    play sound "Door.mp3" noloop 
+
+    scene hall 
+    show screen hall
+
+    "{b}{i} Vous continuez vers les escaliers.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene staircase
+    hide screen hall
+
+    "{b}{i} Vous montez au premier étage.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hallway
+    show screen hallway
+
+    "{b}{i}Vous continuez dans le couloir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i} Vous entrez dans votre dortoir.{/i}{/b}" 
+    play sound "Door.mp3" noloop
 
 
 
