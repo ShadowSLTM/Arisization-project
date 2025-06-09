@@ -3499,8 +3499,9 @@ label wallbreaking4:
     P "[dortoir]"
     play sound "Click.mp3" noloop
 
-    Na "Je confirme ça fait vraiment du bien."
-    play sound "Click.mp3" noloop 
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]" 
+    play sound "Click.mp3" noloop  
 
     P "Bon, je vais poser mes affaires."
     play sound "Click.mp3" noloop 
@@ -6453,6 +6454,9 @@ label choice8:
     P "Oui je confirme."
     play sound "Click.mp3" noloop 
 
+    "{b}{i} Vous posez tranquillement vos affaires.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
     Na "Bon je vais me déconnecter."
     play sound "Click.mp3" noloop 
 
@@ -8039,7 +8043,7 @@ label suite1:
     scene black
     hide screen hall 
 
-    "{b}{i} Tu entres dasn le réfectoire.{/i}{/b}"
+    "{b}{i} Tu entres dans le réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene lunchroom
@@ -25467,8 +25471,12 @@ label philosophie_technologie:
     show screen room 
 
     $ dortoir = get_random_dortoir()
-    P "[dortoir]"
+    Na "[dortoir]"
     play sound "Click.mp3" noloop 
+
+    $ bien = get_random_fais_du_bien()
+    P "[bien]" 
+    play sound "Click.mp3" noloop  
 
     Na "Bon on fait quoi maintenant ?"  
     play sound "Click.mp3" noloop  
@@ -25544,7 +25552,10 @@ label philosophie_technologie:
     Na "Bon Je vais me déconnecter et me recharger."
     play sound "Click.mp3" noloop 
 
-    P "Pas de soucis."
+    P "D'accord, bonne nuit [newname]."
+    play sound "Click.mp3" noloop
+
+    Na "Bonne nuit [prenom]."
     play sound "Click.mp3" noloop
 
     "{b}{i}[newname] se déconnecte et recharge sa batterie.{/i}{/b}"
@@ -28235,15 +28246,36 @@ label password21:
 
             P "pareil."
             play sound "Click.mp3" noloop     
-    
-  
-        
 
+    "{b}{i}Vous commencez à ranger vos affaires.{/i}{/b}"
+    play sound "Click.mp3" noloop  
 
-    hide screen clubroom
+    Hi "C'est bon vous avez fini de ranger ?"
+    play sound "Click.mp3" noloop 
+
+    I "Moi oui c'est bon."
+    play sound "Click.mp3" noloop 
+
+    P "Moi aussi."
+    play sound "Click.mp3" noloop 
+
+    Na "pareil de mon coté."
+    play sound "Click.mp3" noloop 
+
+    Hi "Bien alors."
+    play sound "Click.mp3" noloop 
+
+    P "Bon, [newname] on retourne au dortoir ?" 
+    play sound "Click.mp3" noloop
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen cluboom
     scene black
 
-    "{b}{i}Tu quittes la salle de club.{/i}{/b}"
+    "{b}{i}Vous quittez la salle de club.{/i}{/b}"
     play sound "Door.mp3" noloop 
 
     scene hall 
@@ -28270,8 +28302,110 @@ label password21:
     "{b}{i} Vous entrez dans votre dortoir.{/i}{/b}" 
     play sound "Door.mp3" noloop
 
+    $ dortoir = get_random_dortoir()
+    Na "[dortoir]"
+    play sound "Click.mp3" noloop
 
+    $ bien = get_random_fais_du_bien()
+    P "[bien]" 
+    play sound "Click.mp3" noloop  
 
-            
+    "{b}{i} Vous posez tranquillement vos affaires.{/i}{/b}"
+    play sound "Click.mp3" noloop
 
+    Na "Bon on fait quoi maintenant ?"
+    play sound "Click.mp3" noloop
+
+    P "Je ne sais car on a assé bosser aujourd'hui."
+    play sound "Click.mp3" noloop
+
+    Na "On pourrait lire un livre."
+    play sound "Click.mp3" noloop
+
+    P "Oui pourquoi pas, j'ai un livre qui est pas mal."
+    play sound "Click.mp3" noloop
+
+    Na "Cool si on lit un peu car je veux me poser un peu aussi."   
+    play sound "Click.mp3" noloop  
+
+    "{b}{i}Vous vous posez tranquillement pour lire peudant une heure.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    $ stockage += 5.0
+
+    Na "Il est pas mal ce livre."  
+    play sound "Click.mp3" noloop  
+
+    P "Je sais c'est pour ça que je voulais qu'on le lise ensemble."  
+    play sound "Click.mp3" noloop  
+
+    Na "J'admet que tu as de très bon goûts litérraires."
+    play sound "Click.mp3" noloop  
+
+    $ thanks = get_random_thanks()
+    P "[thanks]"
+    play sound "Click.mp3" noloop
+
+    $ nothing = get_random_nothing()
+    Na "[nothing]"
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Vous posez tranquillement le livre.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Bon on va prendre à manger ?"
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen room
+
+    "{b}{i} Vous partez chercher à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 300 
+
+    scene room 
+    show screen room
+
+    P "Enfin à manger... "
+    play sound "Click.mp3" noloop 
+
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]"
+    play sound "Click.mp3" noloop  
+
+    "{b}{i} Vous mangez tranquillement pendant une demi-heure.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Tu as finis de manger ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui, je n'ai plus faim."
+    play sound "Click.mp3" noloop 
+
+    P "Bien."
+    play sound "Click.mp3" noloop 
+
+    Na "Bon Je vais me déconnecter et me recharger."
+    play sound "Click.mp3" noloop 
+
+    P "D'accord, bonne nuit [newname]."
+    play sound "Click.mp3" noloop
+
+    Na "Bonne nuit [prenom]."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[newname] se déconnecte et recharge sa batterie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bon je vais me changer et aller dormir."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te changes avant d'aller de te coucher.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+   
 # Aris la plus belle <333333333333333333333333333

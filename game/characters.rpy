@@ -15,7 +15,7 @@ define Gt = Character('Naomi Sakayanagi', color="#c06c6c")
 
 define Su = Character('Suzune Horimiya', color="#ffffff")
 define Sk = Character('Shiro Katsuya', color="#ffffff") 
-define S = Character('Subaru Shinomiya', color="#ffffff") 
+define S = Character('Subaru Shinomiya', color="#ffffff") #le coupable
 
 # Les élèves de Terminale-E. 
 
@@ -27,16 +27,16 @@ define N = Character('Naoto Saotome', color="#ffee00")
 define Hi = Character('Haruki Ichinose', color="#ffffff")
 define Y = Character('Yuki Hiiragi', color="#0059ff")  
 
-# Les élèves du bureau des élèves. 
- 
-define E = Character('Emika Katsuragi', color="#ffffff")
-define Kh = Character('Kazumi Hanemiya', color="#ffffff") 
-
 # Les antagonistes secondaires.  
 
 define J1 = Character('Ayano Sumino', color="#ff2323") 
 define J2 = Character('Aiko Sumino', color="#ff2323") 
 define J = Character('Les inégalables décrypteuses', color="#ff2323") 
+
+# Les élèves du bureau des élèves. 
+ 
+define E = Character('Emika Katsuragi', color="#ffffff")
+define Kh = Character('Kazumi Hanemiya', color="#ffffff") 
 
 # Les membres du département. 
 
