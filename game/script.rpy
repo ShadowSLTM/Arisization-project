@@ -3757,7 +3757,7 @@ label wallbreaking4:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -3805,7 +3805,7 @@ label wallbreaking4:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Parfait, tout le monde est là aujourd’hui. Nous pouvons commencer le cours."
@@ -5120,7 +5120,7 @@ label choice8:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -5168,7 +5168,7 @@ label choice8:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Parfait, tout le monde est là aujourd’hui. Nous pouvons commencer le cours."
@@ -7156,7 +7156,7 @@ label suite1:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -7204,7 +7204,7 @@ label suite1:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Parfait, tout le monde est là aujourd’hui. Nous pouvons commencer le cours."
@@ -7765,7 +7765,7 @@ label suite1:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -7813,7 +7813,7 @@ label suite1:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Bon aujourd'hui nous allons voir un nouveau sujet grammaire et je m'excuse [S] si tu as ratée le sujet sur la guerre."
@@ -8289,7 +8289,7 @@ label suite1:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -8337,7 +8337,7 @@ label suite1:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Parfait, tout le monde est là aujourd’hui. Nous pouvons commencer le cours."
@@ -9170,7 +9170,7 @@ label debate:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -9218,7 +9218,7 @@ label debate:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Bien aujourd'hui nous allons continuer le cours sur Pythagore."
@@ -9697,7 +9697,7 @@ label debate:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -9745,7 +9745,7 @@ label debate:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Parfait, tout le monde est là aujourd’hui. Nous pouvons commencer le cours."
@@ -12141,7 +12141,7 @@ label password:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -12189,7 +12189,7 @@ label password:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Parfait, tout le monde est là aujourd’hui. Nous pouvons commencer le cours."
@@ -13214,7 +13214,7 @@ label password1:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -13262,7 +13262,7 @@ label password1:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     "{b}{i}La [T] se met à te regarder car elle a remarqué un truc bizarre en toi.{/i}{/b}"
@@ -13967,7 +13967,7 @@ label password2:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -14015,7 +14015,7 @@ label password2:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Bien aujourd'hui comme vous le savez vous avez votre second examen je vais vous distribuer votre copie." 
@@ -16120,7 +16120,7 @@ label password6:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -16168,7 +16168,7 @@ label password6:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Bon aujourd'hui nous allons continuer le cours sur Runix."
@@ -16725,7 +16725,7 @@ label password7:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -16773,7 +16773,7 @@ label password7:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Bien avant de commencer le cours, je vais vous donner la date pour l'examen sur Runix."
@@ -17301,7 +17301,7 @@ label password8:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -17349,7 +17349,7 @@ label password8:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Bien comme vous le savez aujourd'hui vous avez votre troisiéme examen qui se portera sur le langage Runix."
@@ -17981,7 +17981,7 @@ label password9:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -18029,7 +18029,7 @@ label password9:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Bon aujourd'hui je vais vous rendre les résultats sur votre examen de runix."
@@ -18982,7 +18982,7 @@ label password10:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -19030,7 +19030,7 @@ label password10:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Bien nous pouvons commencer le cours." 
@@ -19795,7 +19795,7 @@ label password11:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -19843,7 +19843,7 @@ label password11:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Bien nous pouvons commencer le cours mais avant j'ai quelque chose à te dire [prenom]."
@@ -20925,7 +20925,7 @@ label password13:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -20976,7 +20976,7 @@ label password13:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Bien nous pouvons commencer le cours."
@@ -21749,7 +21749,7 @@ label password14:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -21797,7 +21797,7 @@ label password14:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Bien aujourd'hui comme vous le savez vous avez votre quatriéme examen je vais vous distribuer votre copie." 
@@ -23589,7 +23589,7 @@ label password16:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -23637,7 +23637,7 @@ label password16:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Bien vu que tout le monde est là nous pouvons continuer notre cours de philo d'hier."
@@ -24223,7 +24223,7 @@ label password17:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -24271,7 +24271,7 @@ label password17:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Bien comme vous le savez aujourd'hui vous avez votre examen de philosophie."
@@ -25700,7 +25700,7 @@ label password18:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -25748,7 +25748,7 @@ label password18:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Bien nous pouvons commencer le cours."
@@ -26399,7 +26399,7 @@ label password19:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -26447,7 +26447,7 @@ label password19:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Parfait, tout le monde est là aujourd’hui. Nous pouvons commencer le cours."
@@ -27019,7 +27019,7 @@ label password20:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -27067,7 +27067,7 @@ label password20:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Bien aujourd'hui nous allons continuer le cours d'informatique."
@@ -27612,6 +27612,27 @@ label password20:
     show screen day
     $ day += 1 
 
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    $ line = get_random_morning_line()
+    P "[line]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te lèves et te changes et puis tu aperçois [newname] déconnectée contre le mur.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Elle est encore déconnectée."
+    play sound "Click.mp3" noloop 
+
+    P "Je vais la démarrer."
+    play sound "Menu.mp3" noloop 
+
+    menu:   
+
+        "{b}{i} Démarrer [newname].{/i}{/b}" : 
+            play sound "Menu.mp3" noloop 
+
 label password21:  
 
     $ entered_password = renpy.input("Veuillez entrer votre mot de passe pour [newname].")
@@ -27627,7 +27648,7 @@ label password21:
         "Mot de passe incorrect. Accès refusé." 
         play sound "Menu.mp3" noloop
         
-        jump passwor21
+        jump password21
 
     $ start = get_random_start()
     Na "[start]" 
@@ -27709,7 +27730,7 @@ label password21:
     M "[K] ?"
     play sound "Click.mp3" noloop  
 
-    K "Présent, sensei."
+    K "Présent, madame."
     play sound "Click.mp3" noloop  
 
     M "[N] ?"
@@ -27757,7 +27778,7 @@ label password21:
     M "[Na] ?"
     play sound "Click.mp3" noloop  
 
-    Na "Présente, sensei."
+    Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
     M "Bien aujourd'hui nous allons continuer le cours d'informatique."
@@ -28407,5 +28428,189 @@ label password21:
 
     "{b}{i}Tu te changes avant d'aller de te coucher.{/i}{/b}"
     play sound "Click.mp3" noloop 
+
+    scene black 
+    hide screen room
+    hide screen day 
+
+    "{b}{i} Le lendemain, le 18 décembre 2097{/i}{/b}"
+    play sound "Alarm.mp3" noloop 
+
+    scene room 
+    show screen room
+    show screen day 
+    $ day += 1 
+
+
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    $ line = get_random_morning_line()
+    P "[line]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te lèves et te changes et puis tu aperçois [newname] déconnectée contre le mur.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Elle est encore déconnectée."
+    play sound "Click.mp3" noloop 
+
+    P "Je vais la démarrer."
+    play sound "Menu.mp3" noloop 
+
+    menu:   
+
+        "{b}{i} Démarrer [newname].{/i}{/b}" : 
+            play sound "Menu.mp3" noloop 
+
+label password22:  
+
+    $ entered_password = renpy.input("Veuillez entrer votre mot de passe pour [newname].")
+    $ entered_password = entered_password.strip()
+
+    if entered_password == stored_password: 
+
+        "Mot de passe correct. Accès autorisé." 
+        play sound "Menu.mp3" noloop
+
+    else: 
+
+        "Mot de passe incorrect. Accès refusé." 
+        play sound "Menu.mp3" noloop
+        
+        jump password22
+
+    $ start = get_random_start()
+    Na "[start]" 
+    play sound "Click.mp3" noloop 
+
+    Na "Démarrage terminé, Bonjour [P]."
+    play sound "Click.mp3" noloop 
+
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Et toi ?" 
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]"
+    play sound "Click.mp3" noloop
+
+    Na "Cool alors."
+    play sound "Click.mp3" noloop  
+
+    $ go_in_class = get_random_go_in_class()
+    P "[go_in_class]"  
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop 
+
+    hide screen room 
+    scene black
+
+    "{b}{i} Tu quiites le dortoir avec [newname].{/i}{/b}"
+    play sound "Door.mp3" noloop 
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene classroom  
+    show screen class_404 
+
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
+
+    $  salutation_rdm = get_random_salutation()
+    P "[salutation_rdm]"
+    play sound "Click.mp3" noloop 
+
+
+    "{b}{i}Tout le monde s'asseoit à sa place respective.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Très bien, commençons la vérification des présences."
+    play sound "Click.mp3" noloop  
+
+    M "[I] ?"
+    play sound "Click.mp3" noloop  
+
+    I "Présente."
+    play sound "Click.mp3" noloop  
+
+    M "[H] ?"
+    play sound "Click.mp3" noloop  
+
+    H "Ouais, je suis là."
+    play sound "Click.mp3" noloop  
+
+    M "[K] ?"
+    play sound "Click.mp3" noloop  
+
+    K "Présent, madame."
+    play sound "Click.mp3" noloop  
+
+    M "[N] ?"
+    play sound "Click.mp3" noloop  
+
+    N "Ici."
+    play sound "Click.mp3" noloop  
+
+    M "[Hi] ?"
+    play sound "Click.mp3" noloop  
+
+    Hi "Présent."
+    play sound "Click.mp3" noloop  
+
+    M "[Y] ?"
+    play sound "Click.mp3" noloop  
+
+    Y "Oui, présente."
+    play sound "Click.mp3" noloop  
+
+    M "[S] ?"
+    play sound "Click.mp3" noloop  
+
+    S "Toujours là."
+    play sound "Click.mp3" noloop  
+
+    M "[J1] ?"
+    play sound "Click.mp3" noloop  
+
+    J1 "Présente."
+    play sound "Click.mp3" noloop  
+
+    M "[J2] ?"
+    play sound "Click.mp3" noloop  
+
+    J2 "Présente aussi."
+    play sound "Click.mp3" noloop  
+
+    M "[P] ?"
+    play sound "Click.mp3" noloop  
+
+    P "Oui, je suis là."
+    play sound "Click.mp3" noloop  
+
+    M "[Na] ?"
+    play sound "Click.mp3" noloop  
+
+    Na "Présente, madame."
+    play sound "Click.mp3" noloop  
+
    
 # Aris la plus belle <333333333333333333333333333
