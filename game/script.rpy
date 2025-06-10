@@ -4759,7 +4759,7 @@ label wallbreaking4:
                 hide screen points
                 hide screen day
                 play music "gameover.mp3" noloop
-                "{b}{i}Fin numéro 5 : Félicitation tu as bien complètement attaqué et piraté l'adresse IP 201.125.114.115 par déni de service (DDOS).{/i}{/b}"
+                "{b}{i}Fin numéro 5 : Félicitation tu as bien complètement attaqué et piraté l'adresse IP 201.125.114.115 par déni de service (DOS).{/i}{/b}"
                 play sound "Menu.mp3" noloop 
     
                 menu:    
@@ -19040,14 +19040,107 @@ label password10:
     P "[validation]"
     play sound "Click.mp3" noloop 
 
+    M "Veuillez sortir pour une fois vos ordinateurs."
+    play sound "Click.mp3" noloop
+
+    M "Aujourd’hui, on plonge dans les réseaux informatiques. Un pilier de notre société numérique."
+    play sound "Click.mp3" noloop
+
+    M "Et pour commencer, une question simple : que permet un réseau informatique ?"
+    play sound "Click.mp3" noloop
+
+    M "Partager des données entre plusieurs appareils… envoyer des fichiers, naviguer sur Internet ?"
+    play sound "Click.mp3" noloop
+
+    M "Exact. Un réseau permet la communication entre ordinateurs, serveurs, smartphones, et même des objets connectés."
+    play sound "Click.mp3" noloop
+
+    N "Pour structurer tout ça, on utilise ce qu'on appelle un modèle d'architecture en couches. Le plus célèbre, c’est le modèle TCP/IP."
+    play sound "Click.mp3" noloop
+
+    K "Il y a quatre couches, non ? Application, transport, Internet… et l’accès réseau."
+    play sound "Click.mp3" noloop
+
+    M "Parfait. Ces couches organisent le trajet de vos données, de l’application jusqu’au câble… ou jusqu’au Wi-Fi."
+    play sound "Click.mp3" noloop
+
+    K "Chaque couche encapsule les données dans un format spécifique, avant de les transmettre à la suivante."
+    play sound "Click.mp3" noloop
+
+    M "Très bonne remarque, Aris. Parlons maintenant des adresses IP. Chaque machine sur un réseau possède une adresse unique."
+    play sound "Click.mp3" noloop
+
+    M "[prenom] tu peux me lire l’adresse IP de ton poste ?"
+    play sound "Click.mp3" noloop
+
+    P "Euh… 192.168.0.17. C’est ça ?"
+    play sound "Click.mp3" noloop
+
+    M "Exact. C’est une adresse privée, valable uniquement dans notre réseau local."
+    play sound "Click.mp3" noloop
+
+    P "Et pour aller sur Internet, c’est une adresse publique qui est utilisée, pas vrai ?"
+    play sound "Click.mp3" noloop
+
+    M "Oui. Grâce à un système appelé NAT, ou Network Address Translation. Il permet à plusieurs machines d’utiliser une seule adresse publique."
+    play sound "Click.mp3" noloop
+
+    P "Donc… si j’ouvre trois onglets YouTube sur trois ordis, ils passent tous par la même IP ?"
+    play sound "Click.mp3" noloop
+
+    M "Exactement. Le routeur s’occupe d’acheminer les réponses vers le bon poste. C’est un peu comme un centre postal très rapide."
+    play sound "Click.mp3" noloop
+
+    K "Chaque paquet contient un port, comme un numéro de boîte. Le NAT garde une table d'association."
+    play sound "Click.mp3" noloop
+
+    M "Excellent résumé, kendo. Parlons maintenant des protocoles de transport : TCP et UDP."
+    play sound "Click.mp3" noloop
+
+    K "TCP est fiable. Il vérifie que les données arrivent bien et dans le bon ordre. Comme une livraison avec accusé de réception."
+    play sound "Click.mp3" noloop
+
+    P "Et UDP, c’est l’inverse : rapide, mais pas sûr. Genre pour les jeux en ligne ou les appels vidéo ?"
+    play sound "Click.mp3" noloop
+
+    M "Vous avez tous les deux raison. TCP est utilisé pour les mails, le web, les transferts de fichiers. UDP est réservé aux flux temps réel."
+    play sound "Click.mp3" noloop
+
+    M "Question suivante : qui peut me parler du DNS ?"
+    play sound "Click.mp3" noloop
+
+    K "DNS signifie Domain Name System. Il traduit les noms de domaine, comme www.aris-project.org, en adresse IP."
+    play sound "Click.mp3" noloop
+
+    K "Donc, quand on tape un site, on passe d’un nom à un nombre. Le DNS, c’est un peu l’annuaire téléphonique d’Internet."
+    play sound "Click.mp3" noloop
+
+    M "Très belle analogie, Kendo. Dernière notion pour aujourd’hui : le routage."
+    play sound "Click.mp3" noloop
+
+    K "C’est le chemin que les paquets empruntent pour aller d’un point A à un point B, non ?"
+    play sound "Click.mp3" noloop
+
+    M "Oui. Et ce chemin peut changer à chaque seconde, selon la congestion, les coupures ou les priorités réseau."
+    play sound "Click.mp3" noloop
+
+    M "Chaque routeur sur Internet décide de l’étape suivante pour chaque paquet. C’est un travail de coordination constant."
+    play sound "Click.mp3" noloop
+
+    K "Et parfois, certains paquets prennent plus de temps à arriver ou se perdent. C’est ce qu’on appelle la latence ou la perte de paquets."
+    play sound "Click.mp3" noloop
+
+    M "Bien vu. Voilà pourquoi comprendre ces mécanismes est essentiel pour créer des applications efficaces… et sécurisées."
+    play sound "Click.mp3" noloop
+
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop
 
-    $ endlesson = get_random_endlesson()
+    $ endlesson = get_random_endlesson() 
     M "[endlesson]"
     play sound "Click.mp3" noloop
 
-    $ stockage += 5.0 
+    $ stockage += 15.0 
 
     $ go_eat = get_random_go_eat()
     P "[go_eat]"
@@ -27962,6 +28055,9 @@ label password21:
 
     Na "Bonne appétit à toi aussi."
     play sound "Click.mp3" noloop
+
+    "{b}{i} Vous mangez tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop
  
     P "Bon il faut qu'on retourne en cours."
     play sound "Click.mp3" noloop 
@@ -28539,7 +28635,6 @@ label password22:
     P "[salutation_rdm]"
     play sound "Click.mp3" noloop 
 
-
     "{b}{i}Tout le monde s'asseoit à sa place respective.{/i}{/b}"
     play sound "Click.mp3" noloop
 
@@ -28612,5 +28707,263 @@ label password22:
     Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
-   
+    M "Bien nous pouvons commencer le cours."
+    play sound "Click.mp3" noloop   
+
+    # à modifier 
+
+    M "Pour commencer, je vais vous récupérer les devoirs que vous aviez à faire pour aujourd'hui."
+    play sound "Click.mp3" noloop  
+
+    $ validation = get_random_validation() 
+    P "[validation]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}[M] commence à ramasser les devoirs.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    M "Bien il semblerait que tout le monde aie fait ses devoirs, nous pouvons commencer le cours.."
+    play sound "Click.mp3" noloop  
+
+    $ validation = get_random_validation() 
+    Na "[validation]"
+    play sound "Click.mp3" noloop 
+
+    M "Pour cette fin de semaine, nous allons conclure le théme d'informatique sur lequel nous travaillons.."
+    play sound "Click.mp3" noloop  
+
+    $ validation = get_random_validation() 
+    P "[validation]"
+    play sound "Click.mp3" noloop 
+
+    # à modifier 
+
+    M "Parfait, maintenant vous pouvez aller en pause."
+    play sound "Click.mp3" noloop  
+
+    hide screen class_404
+    scene black
+
+    "{b}{i}Vous vous dirigez vers le couloir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+    
+    scene hallway 
+    show screen hallway 
+
+    P "Enfin une pause, ça fait plaisir."
+    play sound "Click.mp3" noloop  
+
+    Na "Oui ça fait vraiment du bien."
+    play sound "Click.mp3" noloop  
+
+    $ toilet = get_random_toilet()
+    P "[toilet]"
+    play sound "Click.mp3" noloop
+
+    $ validation = get_random_validation() 
+    Na "[validation]"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i} Tu te diriges vers les toilettes.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene restroom
+    show screen WC 
+
+    P "Bon, je vais faire ce que j'ai à faire."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Tu fais ta commission avant de sortir des toilettes.{/i}{/b}"
+    play sound "Toilet.mp3" noloop 
+
+    P "Bon, il faut que je retourne en cours."
+    play sound "Footsteps.mp3" noloop
+
+    scene black 
+    hide screen WC
+
+    "{b}{i} Tu quittes les toilettes.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway
+    show screen hallway
+
+    "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene black 
+    hide screen hallway
+
+    "{b}{i} Tu arrives finalement en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene classroom  
+    show screen class_404 
+
+    P "Rebonjour."
+    play sound "Click.mp3" noloop
+
+    Na "Rebonjour."
+    play sound "Click.mp3" noloop
+
+    M "Rebonjour, bon reprenez votre livre D'informatique."
+    play sound "Click.mp3" noloop
+
+    $ validation = get_random_validation()
+    P "[validation]"
+    play sound "Click.mp3" noloop
+
+    $ validation = get_random_validation()
+    Na "[validation]"
+    play sound "Click.mp3" noloop 
+
+    # modifier 
+
+    "{b}{i} Le cours continue tranquillement.{/i}{/b}"
+    play sound "Bell.mp3" noloop                                
+
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]" 
+    play sound "Click.mp3" noloop
+
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
+    play sound "Click.mp3" noloop 
+    
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    "{b}{i} Vous vous dirigez votre chemin vers le hall.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+    
+    scene staircase
+    hide screen hallway
+
+    "{b}{i} Vous descendez lez escaliers.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hall 
+    show screen hall
+
+    "{b}{i} Vous continuez vers le réfectoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hall
+
+    "{b}{i} Vous arrivez enfin au réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop 
+
+    scene lunchroom 
+    show screen lunchroom 
+    
+    $ find_food = get_random_find_food()
+    Na "[find_food]"
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 300  
+
+    $ service = get_random_service()
+    P "[service]"
+    play sound "Click.mp3" noloop 
+
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous asseyez à une table.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    Na "Bonne appétit."
+    play sound "Click.mp3" noloop
+
+    P "Bonne appétit à toi aussi."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Vous mangez tranquillement puis [I] et [Hi] vous rejoins.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+    P "Bon il faut qu'on retourne en cours."
+    play sound "Click.mp3" noloop 
+             
+    $ suivi = get_random_suivi()
+    Na "[suivi]" 
+    play sound "Footsteps.mp3" noloop
+
+    scene black 
+    hide screen lunchroom 
+
+    "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall
+    show screen hall
+
+    "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    scene staircase 
+    hide screen hall
+
+    "{b}{i} Vous montez au premier étage.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hallway 
+    show screen hallway
+
+    "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+    
+    scene classroom  
+    show screen class_404 
+
+    P "Rebonjour."
+    play sound "Click.mp3" noloop 
+
+    Na "Rebonjour."
+    play sound "Click.mp3" noloop     
+
+    M "Bien nous pouvons reprendre le cours."
+    play sound "Click.mp3" noloop 
+
 # Aris la plus belle <333333333333333333333333333
