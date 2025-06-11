@@ -37,7 +37,7 @@ define gui.about = _p("""""")
 ## l’exécutable. Il ne doit contenir que des caractères ASCII et ne doit pas
 ## contenir d’espace, de virgules ou de points-virgules.
 
-define build.name = "Arisization Project"
+define build.name = "Arisization-Project"
 
 
 ## Sons et musiques ############################################################

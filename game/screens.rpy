@@ -1874,6 +1874,8 @@ screen credit():
             
             text _("Musiques utilisées sous licence libre.\n") 
 
+            text _("Décors utilisés sous licence libre.\n") 
+
             label "{b}{i}— Propriété —\n{/i}{/b}"   
         
             text _("DLC Arisization Project - Alternative : [Dc] (Shadow_SLTM)\n")

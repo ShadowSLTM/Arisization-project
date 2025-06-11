@@ -1,22 +1,21 @@
-2025-06-09 22:20:14 UTC
+2025-06-11 21:46:26 UTC
 Windows-10-10.0.26100
 Ren'Py 8.3.7.25031702
 
-Early init took 0.10s
-Loading error handling took 0.09s
-Loading script took 3.01s
-Loading save slot metadata took 0.21s
+Early init took 0.05s
+Loading error handling took 0.06s
+Loading script took 0.33s
+Loading save slot metadata took 0.02s
 Loading persistent took 0.00s
-Running init code took 0.13s
-Loading analysis data took 0.02s
+Running init code took 0.07s
+Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.22s
+Reloading save slot metadata took 0.01s
 Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Aris\\AppData\\Roaming/RenPy/backups\\Arisization-project':
-Dump and make backups took 0.06s
+Dump and make backups took 0.04s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.08s
+Initial gc took 0.07s
 DPI scale factor: 1.500000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
@@ -24,22 +23,9 @@ Creating interface object took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
-Load screen analysis took 0.01s
-Analyze screens took 0.01s
-Save screen analysis took 0.05s
-Prepare screens took 0.06s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.05s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.07s
-Running _start took 0.01s
-Interface start took 1.11s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: "b'Intel'"
-Renderer: b'Intel(R) Iris(R) Xe Graphics'
-Version: b'4.6.0 - Build 32.0.101.6314'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
+Save bytecode. took 0.00s

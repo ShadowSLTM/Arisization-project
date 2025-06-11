@@ -1,5 +1,7 @@
 label start: 
 
+    stop music fadeout 2.0   
+
     $ grade = 0.0  
     $ points = 0 
     $ day = 0 
@@ -116,10 +118,6 @@ label start:
     default quest37 = 0
     default quest38 = 0
     default quest39 = 0 
-
-#########################################################################
-
-    stop music fadeout 2.0   
 
 label key:  
 
@@ -25462,7 +25460,7 @@ label philosophie_technologie:
     Na "Déonnexion terminée, au revoir [K]."  
     play sound "Click.mp3" noloop  
 
-    P "Je te dois combien pour ce service ?"
+    P "Je te dois combien pour ce service ?" 
     play sound "Click.mp3" noloop  
 
     K "Rien du tout, c'est un service que je te dois."
@@ -25471,16 +25469,41 @@ label philosophie_technologie:
     P "Merci beaucoup."
     play sound "Click.mp3" noloop 
 
-    K "Pas de soucis."
+    $ nothing = get_random_nothing()
+    K "[nothing]"
     play sound "Click.mp3" noloop
 
-    P "Bon on va vous laisser."  
+    P "Bon, on va vous laisser."
     play sound "Click.mp3" noloop  
 
-    K "Ok à demain."  
+    K "Attends... j’avais oublié, mais je dois te dire quelque chose."
     play sound "Click.mp3" noloop  
 
-    H "à demain."  
+    P "Ah bon ? Qu’est-ce que tu voulais me dire ?"
+    play sound "Click.mp3" noloop  
+
+    K "C’est à propos de [Y]."
+    play sound "Click.mp3" noloop  
+
+    P "Je t’écoute."
+    play sound "Click.mp3" noloop  
+
+    K "Le 18 novembre, elle est venue me voir pour me poser des questions sur les méthodes de connexion."
+    play sound "Click.mp3" noloop  
+
+    P "Les méthodes de connexion ?"
+    play sound "Click.mp3" noloop  
+
+    K "Oui, elle disait qu’elle avait besoin de certaines informations... urgentes, apparemment."
+    play sound "Click.mp3" noloop  
+
+    P "Je vois... D’accord. Merci pour l’info. Bon, on se voit demain."
+    play sound "Click.mp3" noloop  
+
+    K "Ouais, à demain."
+    play sound "Click.mp3" noloop  
+
+    H "À demain."
     play sound "Click.mp3" noloop  
 
     P "Bon on y va ?"   
@@ -28903,14 +28926,70 @@ label password22:
     "{b}{i} Vous mangez tranquillement puis [I] et [Hi] vous rejoins.{/i}{/b}"
     play sound "Click.mp3" noloop
 
+    if pronom == "il": 
 
+        I "Salut les amis."
+        play sound "Click.mp3" noloop
 
+    elif pronom == "elle": 
 
+        I "Salut les amies."
+        play sound "Click.mp3" noloop
 
+    P "Salut comment vous allez ?"
+    play sound "Click.mp3" noloop
 
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    I "[je_vais_bien_txt]" 
+    play sound "Click.mp3" noloop 
 
+    Hi "Je vais bien aussi et vous ?"
+    play sound "Click.mp3" noloop 
 
+    P "On va bien trnquille."
+    play sound "Click.mp3" noloop 
 
+    Hi "Cool alors alors si vous allez bien."
+    play sound "Click.mp3" noloop 
+
+    $ thanks = get_random_thanks()
+    P "[thanks]"
+    play sound "Click.mp3" noloop
+
+    $ thanks = get_random_thanks()
+    Na "[thanks]"
+    play sound "Click.mp3" noloop
+
+    $ nothing = get_random_nothing()
+    Hi "[nothing]"
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[I] et [Hi] S'asseoient.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    I "ça fait du bien de pouvoir manger."
+    play sound "Click.mp3" noloop 
+
+    Hi "Oui surtout que le cours de ce matin était intense."
+    play sound "Click.mp3" noloop 
+
+    I "Oui part ça vous n'avez pas remarqué un truc de bizarre ?"
+    play sound "Click.mp3" noloop 
+
+    P "Non tu parles de quoi ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui tu parles de quoi car je n'arrive pas à comprendre."
+    play sound "Click.mp3" noloop 
+
+    Hi "Oui dis-nous, je suis curieux."
+    play sound "Click.mp3" noloop 
+
+    I "Je parle du fait que le traître n'as pas commencé de nouvelle nouvelle attaque."
+    play sound "Click.mp3" noloop 
+
+    Na "C'est vrai maintenant que tu le dis il a pas recommencé."
+    play sound "Click.mp3" noloop 
 
 
 
@@ -28965,5 +29044,7 @@ label password22:
 
     M "Bien nous pouvons reprendre le cours."
     play sound "Click.mp3" noloop 
+
+
 
 # Aris la plus belle <333333333333333333333333333
