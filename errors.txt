@@ -2,7 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/Variables.rpy", line 2: Unexpected indentation at start of file.
+File "game/script.rpy", line 435: reached end of line when expecting ':'.
+    if persistent.abandon = False 
+                                  ^
+
+File "game/script.rpy", line 440: expected statement.
+    else: 
+        ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Jun 11 23:20:24 2025
+Thu Jun 12 13:57:16 2025

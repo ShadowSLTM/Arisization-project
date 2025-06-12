@@ -122,14 +122,14 @@ define config.window_hide_transition = Dissolve(.2)
 ## Contrôle la vitesse du texte. La valeur par défaut, 0, est infinie. Toute
 ## autre valeur est le nombre de caractères tapés par seconde.
 
-default preferences.text_cps = 15
+default preferences.text_cps = 20
 
 
 ## Le délai d’avancée automatique. Des nombres importants entraînent une longue
 ## attente. Des valeurs réputées correctes sont comprises dans une plage allant
 ## de 0 à 30.
 
-default preferences.afm_time = 7
+default preferences.afm_time = 20
 
 
 ## Répertoire de Snapshot ####################################################
@@ -137,7 +137,6 @@ default preferences.afm_time = 7
 ## Ces valeurs, dépendant de la plateforme, déterminent l’emplacement où Ren’Py
 ## stockera les fichiers de Snapshot. Les fichiers de Snapshots seront
 ## stockés dans :
-##
 ## Windows : %APPDATA\RenPy\<config.save_directory>
 ##
 ## Macintosh : $HOME/Library/RenPy/<config.save_directory>

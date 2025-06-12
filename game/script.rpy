@@ -423,15 +423,15 @@ label hack:
 
             "{b}{i}Choisir M1919A4{/i}{/b}" : 
                 $ A = Character("M1919A4", color="#005c17") 
-                $ stockage += 1.8
+                $ stockage += 1.8 
 
         $ renpy.block_rollback()
-        $ quest3 += 1
+        $ quest3 += 1   
         $ success += 1 
 
     else:    
 
-        $ A = Character("AK-24", color="#00eeff")
+        $ A = Character("M82A1", color="#00eeff")
         $ stockage += 1.0
 
         R "Initialisation en cours......" 
@@ -2971,6 +2971,8 @@ label wallbreaking3:
     A "Aris !? Je trouve que c'est mignon comme prénom.~"
     play sound "Click.mp3" noloop
 
+    # à modifier 
+
     P "Donc ça te va, Aris alors ?"
     play sound "Click.mp3" noloop
 
@@ -3455,7 +3457,7 @@ label wallbreaking4:
     play sound "Click.mp3" noloop
 
     Na "Oui bien sur."
-    play sound "Click.mp3" noloop 
+    play sound "Footsteps.mp3" noloop
 
     scene black 
     hide screen clubroom
@@ -5845,6 +5847,8 @@ label choice8:
 
     M "Bien nous pouvons continuer notre cours de ce matin sur la grammaire, veuillez sortir vos livres."
     play sound "Click.mp3" noloop 
+
+    # à modifier 
 
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -11357,6 +11361,8 @@ label update:
     M "Rebonjour, bon reprenez votre livre page 11."
     play sound "Click.mp3" noloop 
 
+    # à modifier  
+
     "{b}{i} le cours continue dans le calme.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
@@ -12974,6 +12980,8 @@ label password:
     $ validation = get_random_validation() 
     P "[validation]"
     play sound "Click.mp3" noloop 
+
+    # à modifier 
 
     "{b}{i} Le cours continue sans problémes.{/i}{/b}"
     play sound "Bell.mp3" noloop 
@@ -14630,6 +14638,8 @@ label examen_pythagore:
 
     M "Bien nous pouvons continuer notre cours de ce matin sur la grammaire, veuillez sortir vos livres."
     play sound "Click.mp3" noloop 
+
+    # à modifier 
 
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop 
@@ -19287,10 +19297,51 @@ label password10:
     play sound "Click.mp3" noloop 
 
     Na "Rebonjour."
-    play sound "Click.mp3" noloop 
+    play sound "Click.mp3" noloop
 
-    M "Rebonjour, bon reprenez votre livre page 25."
-    play sound "Click.mp3" noloop 
+    M "Bon reprenons notre exploration du monde fascinant des réseaux. La dernière fois, on s’est arrêtés au routage dynamique."
+    play sound "Click.mp3" noloop
+
+    M "Aujourd’hui, voyons ce qu’il se passe quand une machine veut tester la connectivité avec une autre."
+    play sound "Click.mp3" noloop
+
+    I "Avec la commande ping ?"
+    play sound "Click.mp3" noloop
+
+    M "Exactement. Le ping utilise un protocole nommé ICMP : Internet Control Message Protocol."
+    play sound "Click.mp3" noloop
+
+    M "Il envoie un paquet « écho request », et si la destination répond, on reçoit un « écho reply »."
+    play sound "Click.mp3" noloop
+
+    P "Donc c’est un peu comme dire 't’es là ?' et attendre un 'ouais, je suis là'."
+    play sound "Click.mp3" noloop
+
+    M "Parfaitement résumé. C’est utile pour diagnostiquer des coupures réseau ou des délais anormaux."
+    play sound "Click.mp3" noloop
+
+    M "Mais attention : certains serveurs désactivent les réponses ICMP pour des raisons de sécurité."
+    play sound "Click.mp3" noloop
+
+    I "C’est pour éviter les attaques ou les scans automatiques ?"
+    play sound "Click.mp3" noloop
+
+    M "Oui. Parlons justement de sécurité de base. Connaissez-vous les firewalls ?"
+    play sound "Click.mp3" noloop
+
+    K "Un pare-feu, c’est ce qui filtre les connexions entrantes et sortantes, non ?"
+    play sound "Click.mp3" noloop
+
+    M "Exact. Il peut autoriser, bloquer ou rediriger le trafic selon des règles. C’est un rempart entre ton réseau et le monde extérieur."
+    play sound "Click.mp3" noloop
+
+    K "Et il existe des firewalls matériels, intégrés à certains routeurs, ou logiciels, installés sur les systèmes d’exploitation."
+    play sound "Click.mp3" noloop
+
+    M "Bien vu. Une bonne configuration du pare-feu est la première ligne de défense contre les intrusions."
+    play sound "Click.mp3" noloop
+
+    # à modifier 
 
     "{b}{i} le cours continue dans le calme.{/i}{/b}"
     play sound "Bell.mp3" noloop 
@@ -21094,6 +21145,8 @@ label password13:
     M "Bon commençons le cours."
     play sound "Click.mp3" noloop 
 
+    # à modifier 
+
     "{b}{i}Le cours continue jusqu'à la pause.{/i}{/b}"
     play sound "Click.mp3" noloop
 
@@ -21164,6 +21217,8 @@ label password13:
 
     M "Bien reprenons le cours."
     play sound "Click.mp3" noloop
+
+    # à modifier 
 
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop
@@ -22139,6 +22194,8 @@ label examen_francais:
     M "Bien."
     play sound "Click.mp3" noloop
 
+    # à modifier 
+
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop
 
@@ -22601,6 +22658,8 @@ label examen_francais:
     $ validation = get_random_validation() 
     P "[validation]"
     play sound "Click.mp3" noloop 
+
+    # à modifier 
 
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop
@@ -23900,6 +23959,8 @@ label password16:
     $ validation = get_random_validation() 
     Y "[validation]"
     play sound "Click.mp3" noloop 
+
+    # à modifier 
 
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop
@@ -27992,6 +28053,8 @@ label password21:
     Na "[validation]"
     play sound "Click.mp3" noloop  
 
+    # à modifier 
+
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop
 
@@ -28843,7 +28906,7 @@ label password22:
     Na "[validation]"
     play sound "Click.mp3" noloop 
 
-    # modifier 
+    # à modifier 
 
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop                                
@@ -28991,11 +29054,9 @@ label password22:
     Na "C'est vrai maintenant que tu le dis il a pas recommencé."
     play sound "Click.mp3" noloop 
 
+    "{b}{i} Vous continuez de manger tranquillement jusqu'à la sonnerie.{/i}{/b}"
+    play sound "Bell.mp3" noloop
 
-
-
-
-     
     P "Bon il faut qu'on retourne en cours."
     play sound "Click.mp3" noloop 
              
@@ -29045,6 +29106,131 @@ label password22:
     M "Bien nous pouvons reprendre le cours."
     play sound "Click.mp3" noloop 
 
+    $ validation = get_random_validation() 
+    Na "[validation]"
+    play sound "Click.mp3" noloop 
 
+    M "Bien maintenant ouvrez votre livre." 
+    play sound "Click.mp3" noloop  
 
-# Aris la plus belle <333333333333333333333333333
+    "{b}{i} Tous les élèves sortent leur livre.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    # à modifier  
+
+    "{b}{i} le cours continue dans le calme.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop
+
+    P "Bon [newname] on n'y va ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui je suis fatiguée."
+    play sound "Click.mp3" noloop 
+
+    hide screen class_404
+    scene black 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway 
+    show screen hallway 
+
+    P "Bon cette journée est enfin finie..."
+    play sound "Click.mp3" noloop 
+
+    Na "Oui enfin..."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i} Vous continues vers le dortoir.{/i}{/b}"
+    play souns "Footsteps.mp3" noloop
+
+    scene black
+    hide screen hallway
+
+    "{b}{i}Vous entrez dans ton dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene room
+    show screen room 
+
+    $ dortoir = get_random_dortoir()
+    Na "[dortoir]"
+    play sound "Click.mp3" noloop
+
+    $ bien = get_random_fais_du_bien()
+    P "[bien]" 
+    play sound "Click.mp3" noloop  
+
+    "{b}{i} Vous posez tranquillement vos affaires.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    Na "Bon on fait quoi maintenant ?"
+    play sound "Click.mp3" noloop
+
+    P "Je ne sais pas vraiment."
+    play sound "Click.mp3" noloop  
+
+    # à modifier
+
+    $ thanks = get_random_thanks()
+    Na "[thanks]"
+    play sound "Click.mp3" noloop
+
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]" 
+    play sound "Footsteps.mp3" noloop
+
+    scene black
+    hide screen room
+
+    "{b}{i} Vous partez chercher à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 300 
+    scene room 
+    show screen room
+
+    P "Enfin à manger... "
+    play sound "Click.mp3" noloop 
+
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]"
+    play sound "Click.mp3" noloop  
+
+    "{b}{i} Vous mangez tranquillement pendant une demi-heure.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Tu as finis de manger ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui, je n'ai plus faim."
+    play sound "Click.mp3" noloop 
+
+    P "Bien."
+    play sound "Click.mp3" noloop 
+
+    Na "Bon Je vais me déconnecter et me recharger."
+    play sound "Click.mp3" noloop 
+
+    P "Pas de soucis."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[newname] se déconnecte et recharge sa batterie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bon je vais me changer et aller dormir."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te changes avant d'aller de te coucher.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+# Aris la plus belle <333333333333333333333333333 
