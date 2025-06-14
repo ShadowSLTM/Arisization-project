@@ -1595,7 +1595,7 @@ style slider_slider:
 
 screen lunchroom():
     frame:
-        xalign 0.99
+        xalign 0.999
         ypos 10 
         has vbox  
 
@@ -1605,7 +1605,7 @@ screen lunchroom():
 
 screen class_404():
     frame:
-        xalign 0.99
+        xalign 0.999
         ypos 10 
         has vbox  
 
@@ -1615,7 +1615,7 @@ screen class_404():
 
 screen room():
     frame:
-        xalign 0.99
+        xalign 0.999
         ypos 10 
         has vbox  
 
@@ -1625,7 +1625,7 @@ screen room():
 
 screen hallway():
     frame:
-        xalign 0.99
+        xalign 0.999
         ypos 10 
         has vbox  
 
@@ -1635,7 +1635,7 @@ screen hallway():
 
 screen hall():
     frame:
-        xalign 0.99
+        xalign 0.999
         ypos 10 
         has vbox  
 
@@ -1645,7 +1645,7 @@ screen hall():
 
 screen office():
     frame:
-        xalign 0.99
+        xalign 0.999
         ypos 10 
         has vbox  
 
@@ -1655,7 +1655,7 @@ screen office():
 
 screen clubroom():
     frame:
-        xalign 0.99
+        xalign 0.999
         ypos 10 
         has vbox  
 
@@ -1691,7 +1691,7 @@ screen points():
 
 screen perm():
     frame:
-        xalign 0.99
+        xalign 0.999
         ypos 10 
         has vbox  
 
@@ -1701,7 +1701,7 @@ screen perm():
 
 screen origine():
     frame:
-        xalign 0.99
+        xalign 0.999
         ypos 10 
         has vbox  
 
@@ -1711,7 +1711,7 @@ screen origine():
 
 screen WC():
     frame:
-        xalign 0.99
+        xalign 0.999
         ypos 10 
         has vbox  
 
@@ -1721,7 +1721,7 @@ screen WC():
 
 screen gymnase():
     frame:
-        xalign 0.99
+        xalign 0.999
         ypos 10 
         has vbox  
 
@@ -1773,16 +1773,12 @@ screen flag():
         xalign 0.5 
         add "Images/Nexus.png"
 
-screen success():
+screen update():
     frame: 
-        xalign 0.99
-        ypos 80
-        has vbox  
-
-        text "Succès débloqué":
-            size 30
-            xalign 0.5  
-
+        yalign 0.08
+        xalign 0.999
+        add "success.jpg"
+ 
 screen Shop():
 
     tag menu

@@ -2,13 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 435: reached end of line when expecting ':'.
-    if persistent.abandon = False 
-                                  ^
+The label password22 is defined twice, at File "game/script.rpy", line 28864:
+label password22:  
+and File "game/script.rpy", line 29491:
+label password22:  
 
-File "game/script.rpy", line 440: expected statement.
-    else: 
-        ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu Jun 12 13:57:16 2025
+Sat Jun 14 02:54:42 2025
