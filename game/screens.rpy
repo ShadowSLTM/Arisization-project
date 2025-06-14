@@ -1739,6 +1739,15 @@ screen Yunaroom():
             size 50
             xalign 0.5 
 
+screen library():
+    frame:
+        xalign 0.99
+        ypos 10 
+        has vbox  
+
+        text "Bibliothèque":
+            size 50
+            xalign 0.5 
 screen day():
     frame: 
         xalign 0
@@ -1825,6 +1834,8 @@ screen credit():
             text _("Gestion des musiques  : [Dc] (Shadow_SLTM)\n")
   
             text _("Interface joueur : [Dc] (Shadow_SLTM)\n") 
+
+            text _("Animations du jeu : [Dc] (Shadow_SLTM)\n") 
 
             text _("Concepts : [Dc] (Shadow_SLTM)\n") 
 
