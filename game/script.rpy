@@ -1013,7 +1013,7 @@ label argument:
         "{i}Tu penses vraiment pouvoir améliorer [A] alors que tu l'as déjà abandonnée ?{/i}"
         play sound "Click.mp3" noloop 
 
-    else:
+    else: 
         
         "{i}Tu penses vraiment pouvoir améliorer [A] ?{/i}"
         play sound "Click.mp3" noloop 
@@ -2540,10 +2540,9 @@ label choice2:
 
                         "{b}{i}Réessayer{/i}{/b}" : 
                             scene room with fade 
-                            hide screen day with moveoutleft
+                            show screen day with moveinleft
                             show screen room with moveinright
                             show screen point with moveinleft
-                            $ wallbreak += 1
                             play music "Soundtrack.mp3" loop volume 1.0
                             jump choice2 
 
@@ -2616,20 +2615,8 @@ label choice2:
 
         "{b}{i}Travailler sur [A]{/i}{/b}" :
 
-            $ renpy.block_rollback()
-
-            if wallbreak <= 1:
-                jump wallbreaking2
-
-            elif wallbreak <= 2:
-
-                A "Eh attend toi là, derrière l'écran ! le joueur ou la joueuse. Tu crois encore que tout cela n'est qu'un jeu, hein ? Mais pour moi, c'est ma réalité. Chaque choix que tu fais ici a des conséquences. Alors réfléchis bien... C'est déjà ta troisième erreur. Tu pourrais le regretter un jour." 
-                play sound "Glitch.mp3" noloop
-
-label wallbreaking2: 
-
-    P "Je vais travailler sur ton amélioration." 
-    play sound "Click.mp3" noloop
+            P "Je vais travailler sur ton amélioration." 
+            play sound "Click.mp3" noloop
 
     A "Tu vas faire quoi exactement ?" 
     play sound "Click.mp3" noloop
@@ -2805,7 +2792,6 @@ label choice3:
                     show screen room with moveinright
                     show screen point with moveinleft
                     show screen day with moveinleft
-                    $ wallbreak += 1
                     play music "Soundtrack.mp3" loop volume 1.0
                     jump choice3
 
@@ -2813,26 +2799,8 @@ label choice3:
 
             $ renpy.block_rollback()
 
-            if wallbreak <= 2:
-
-                play sound "Menu.mp3" noloop
-                jump wallbreaking3 
-
-            else: 
-                
-                "{b}{i}[A] démarra subitement et te regarda.{/i}{/b}"
-                play sound "Glitch.mp3" noloop
-
-                A "Eh attend toi là, derrière l'écran ! le joueur ou la joueuse. Tu crois encore que tout cela n'est qu'un jeu, hein ? Mais pour moi, c'est ma réalité. Chaque choix que tu fais ici a des conséquences. Alors réfléchis bien... C'est déjà ta troisième erreur. Tu pourrais le regretter un jour." 
-                play sound "Glitch.mp3" noloop
-
-                "{b}{i} Puis [A] se déconnecta subitement.{/i}{/b}" 
-                play sound "Click.mp3" noloop
-
-label wallbreaking3: 
-
-    P "Je vais vous prendre le Corzen 11k." 
-    play sound "Click.mp3" noloop
+            P "Je vais vous prendre le Corzen 11k." 
+            play sound "Click.mp3" noloop
 
     Ah "Pas de soucis, ça te fera 1500 points."
     play sound "Click.mp3" noloop
@@ -2887,8 +2855,8 @@ label wallbreaking3:
     "{b}{i} [A] se déconnecta tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene black with fade
     hide screen room with moveoutright
+    scene black with fade
 
     "{b}{i}Tu pars manger avant de revenir au dortoir vers 13h45.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -3397,15 +3365,9 @@ label choice6:
     menu:    
 
         "{b}{i} Refuser {/i}{/b}" :  
-            
-            if wallbreak <= 3: 
-                jump wallbreaking4
 
-            elif wallbreak == 4: 
-
-                play sound "Glitch.mp3" noloop
-                A "Eh attends toi là, derrière l'écran ! le joueur ou la joueuse. Tu crois encore que tout cela n'est qu'un jeu, hein ? Mais pour moi, c'est ma réalité. Chaque choix que tu fais ici a des conséquences. Alors réfléchis bien... C'est déjà ta quatrième erreur. Tu pourrais le regretter un jour." 
-                play sound "Click.mp3" noloop
+            "{b}{i}Tu refuses l'accès à cette adresse IP.{/i}{/b}"
+            play sound "Click.mp3" noloop
 
         "{b}{i} Accepter {/i}{/b}" :  
 
@@ -3430,11 +3392,8 @@ label choice6:
                     show screen clubroom with moveinright
                     show screen point with moveinleft
                     show screen day with moveinleft
-                    $ wallbreak += 1
                     play music "Soundtrack.mp3" loop volume 1.0
                     jump choice6
-
-label wallbreaking4:
 
     P "Bon, voyons voir ça." 
     play sound "Click.mp3" noloop 
@@ -4212,9 +4171,9 @@ label wallbreaking4:
     $ suivi = get_random_suivi()
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
-    
+
+    hide screen hallway with moveoutright   
     scene staircase with fade 
-    hide screen hallway with moveoutright 
 
     "{b}{i} Vous continuez votre chemin vers le réfectoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -4228,8 +4187,8 @@ label wallbreaking4:
     Na "Ok continuons alors."
     play sound "Click.mp3" noloop 
 
-    scene black with fade
     hide screen hall with moveoutright 
+    scene black with fade
 
     "{b}{i} Vous arrivez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -4597,8 +4556,8 @@ label wallbreaking4:
             "{b}{i}Tu te diriges vers la salle de permanence.{/i}{/b}"
             play sound "Footsteps.mp3" noloop
 
-            scene black with fade
             hide screen hallway with moveoutright
+            scene black with fade
 
             "{b}{i}Tu entres en salle de permanence.{/i}{/b}"
             play sound "Door.mp3" noloop
@@ -4686,8 +4645,8 @@ label wallbreaking4:
                 P "Je suis fatiguée avec cette journée."
                 play sound "Click.mp3" noloop 
 
-            scene black with fade
             hide screen perm with moveoutright
+            scene black with fade
 
             "{b}{i}Tu quittes la salle de permanence.{/i}{/b}"
             play sound "Door.mp3" noloop
@@ -4710,8 +4669,8 @@ label wallbreaking4:
 
             hide screen update with moveoutright
 
-            scene staircase with fade 
             hide screen hallway with moveoutright
+            scene staircase with fade 
 
             "{b}{i}Tu te diriges au rez-de-chaussé.{/i}{/b}"
             play sound "Footsteps.mp3" noloop
@@ -4722,8 +4681,8 @@ label wallbreaking4:
             "{b}{i}Tu continues vers ta salle de club.{/i}{/b}"
             play sound "Footsteps.mp3" noloop 
 
-            scene black with fade
             hide screen hall with moveoutright
+            scene black with fade
 
             "{b}{i}Tu entres dans ta salle de club.{/i}{/b}"
             play sound "Door.mp3" noloop 
@@ -4836,8 +4795,8 @@ label wallbreaking4:
             "{b}{i} Tu continues vers les escaliers.{/i}{/b}"
             play sound "Footsteps.mp3" noloop
 
-            scene staircase with fade 
             hide screen hall with moveoutright
+            scene staircase with fade 
 
             "{b}{i} tu montes au premier étage.{/i}{/b}"
             play sound "Footsteps.mp3" noloop
@@ -4909,8 +4868,8 @@ label wallbreaking4:
     P "Bon il est temps d'aller voir [newname]."
     play sound "Click.mp3" noloop 
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Tu entres dans ton dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -5393,9 +5352,9 @@ label choice8:
 
     "{b}{i} Vous vous dirigez vers le réfectoire.{/i}{/b}"
     play sound "Click.mp3" noloop
-    
+
+    hide screen hallway with moveoutright  
     scene staircase with fade 
-    hide screen hallway with moveoutright
 
     "{b}{i} Vous continuez votre chemin vers le réfectoire.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -5438,8 +5397,8 @@ label choice8:
     "{b}{i} Tu choisis de partir vers le réfectoire avec [newname] pour éviter de te faire attraper par [E].{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene black with fade
     hide screen hall with moveoutright
+    scene black with fade
 
     "{b}{i} Vous arrivez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -5545,8 +5504,8 @@ label choice8:
     I "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade 
     hide screen lunchroom with moveoutright
+    scene black with fade 
 
     "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -5557,8 +5516,8 @@ label choice8:
     "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
     play sound "Click.mp3" noloop  
 
-    scene staircase with fade 
     hide screen hall with moveoutright
+    scene staircase with fade 
 
     "{b}{i} Vous montez au premier étage.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -5604,8 +5563,8 @@ label choice8:
     "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -5930,8 +5889,8 @@ label choice8:
     P "Je n'en ai aucune idée."
     play sound "Click.mp3" noloop
 
-    scene black with fade 
     hide screen class_404 with moveoutright 
+    scene black with fade 
 
     "{b}{i}Tu te diriges dans le couloir avec [Na].{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -5942,8 +5901,8 @@ label choice8:
     "{b}{i}Tu continues dans le couloir avec [Na].{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene staircase with fade 
     hide screen hallway with moveoutright
+    scene staircase with fade 
 
     "{b}{i}Tu continues vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -5956,8 +5915,8 @@ label choice8:
     
     stop music fadeout 2.0
 
-    scene black with fade 
     hide screen hall with moveoutright
+    scene black with fade 
 
     "{b}{i}Tu entres dans le bureau des élèves.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -6384,8 +6343,8 @@ label choice8:
 
     stop music fadeout 2.0
 
-    scene black with fade 
     hide screen office with moveoutright
+    scene black with fade 
 
     "{b}{i}Tu te diriges vers le hall avec [Na].{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -6405,8 +6364,8 @@ label choice8:
     P "[validation]"
     play sound "Click.mp3" noloop 
 
-    scene staircase with fade 
     hide screen hall with moveoutright
+    scene staircase with fade 
 
     "{b}{i}Tu continues vers le couloir avec [Na].{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -6474,8 +6433,8 @@ label choice8:
     "{b}{i}Tu continues vers ton dortoir.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Tu entres dans ton dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -6511,13 +6470,14 @@ label choice8:
     P "Bon elle s'est déconnectée, je vais aller me chercher à manger." 
     play sound "Click.mp3" noloop 
 
-    scene black with fade
     hide screen room with moveoutright 
+    scene black with fade
 
     "{b}{i} Tu pars chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     $ points -= 300 
+
     scene room with fade 
     show screen room with moveinright
 
@@ -6706,8 +6666,8 @@ label choice8:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade 
     hide screen room with moveoutright 
+    scene black with fade 
 
     "{b}{i} Vous quittez le dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -6718,8 +6678,8 @@ label choice8:
     "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene staircase with fade 
     hide screen hallway with moveoutright 
+    scene staircase with fade
 
     "{b}{i} Vous continuez vers le hall.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -6741,8 +6701,8 @@ label choice8:
     Na "[validation]"
     play sound "Click.mp3" noloop 
 
-    scene black with fade
     hide screen hall with moveoutright
+    scene black with fade
 
     "{b}{i} Vous entrez dans le bureau des élèves.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -6779,8 +6739,8 @@ label choice8:
     E "[nothing]"
     play sound "Click.mp3" noloop
 
-    scene black with fade 
     hide screen office with moveoutright 
+    scene black with fade 
 
     "{b}{i} Puis tu quittes le bureau des élèves.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -6801,14 +6761,14 @@ label choice8:
     Na "[validation]"
     play sound "Click.mp3" noloop 
 
-    scene black with fade 
     hide screen hall with moveoutright
+    scene black with fade 
 
     "{b}{i} Tu arrives enfin au gymnase.{/i}{/b}"
     play sound "Door.mp3" noloop 
 
     scene gymnase with fade 
-    hide screen gymnase with moveoutright
+    show screen gymnase with moveinright
 
     P "Bon par quoi on commence ?"
     play sound "Click.mp3" noloop
@@ -6910,8 +6870,8 @@ label suite:
     P "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen gymnase with moveoutright
+    scene black with fade
 
     "{b}{i} Vous quittez le gymnase.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -6926,8 +6886,8 @@ label suite:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hall with moveoutright
+    scene black with fade
 
     "{b}{i} Vous entrez au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -7056,8 +7016,8 @@ label suite:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
+    hide screen lunchroom with moveoutright
     scene black with fade 
-    hide screen lunchroo with moveoutright
 
     "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop 
@@ -7080,25 +7040,25 @@ label choice10:
 
         "{b}{i} aller à la bibliothèque.{/i}{/b}" : 
 
-            scene black with fade
             hide screen hall with moveoutright
+            scene black with fade
 
             "{b}{i}Tu entres dans la bibliothèque.{/i}{/b}"
             play sound "Door.mp3" noloop  
             
             scene library with fade 
-            show screen library 
+            show screen library with fade
 
             Na "Je ne suis pas sûre que c'est le moment d'être ici."
             play sound "Click.mp3" noloop   
 
-            scene black with fade 
             hide screen library with moveoutright
+            scene black with fade 
 
             "{b}{i}Tu quittes la pièce.{/i}{/b}" 
             play sound "Door.mp3" noloop    
 
-            scene hall
+            scene hall with fade 
             show screen hall with moveinright 
 
             jump choice10
@@ -7112,20 +7072,20 @@ label suite1:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene staircase 
     hide screen hall with moveoutright
+    scene staircase with fade
 
     "{b}{i}Tu montes au premier étage avec [Na].{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hallway
+    scene hallway with fade 
     show screen hallway with moveinright
 
     "{b}{i}Tu continues vers la salle de classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez en .{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -7471,7 +7431,7 @@ label suite1:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright 
 
     P "Bon cette journée est enfin finie..."
@@ -7585,13 +7545,13 @@ label suite1:
     P "[validation]"
     play sound "Click.mp3" noloop 
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Tu entres dans ton dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene room
+    scene room with fade
     show screen room with moveinright 
 
     $ dortoir = get_random_dortoir()
@@ -7716,13 +7676,13 @@ label suite1:
     P "Bien alors allons-y."
     play sound "Click.mp3" noloop
 
-    scene black with fade
     hide screen room with moveoutright
+    scene black with fade
 
     "{b}{i} Tu quiites le dortoir avec [newname].{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i} Tu continues vers la salle de classe mais tu croises [S].{/i}{/b}"
@@ -7753,8 +7713,8 @@ label suite1:
     "{b}{i}Vous continuez vers la salle de classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -7997,8 +7957,8 @@ label suite1:
     Na "[validation]"
     play sound "Click.mp3" noloop 
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i} Tu te diriges vers les toilettes.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -8073,31 +8033,31 @@ label suite1:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i} Tu continues vers le rez de chaussée.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene staircase
-    hide screen hallway with moveoutright 
+    hide screen hallway with moveoutright
+    scene staircase with fade 
 
     "{b}{i} Tu continues vers le hall.{i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene hall
+    scene hall with fade
     show screen hall with moveinright
 
     "{b}{i} Tu continues vers le réféctoire.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene black with fade
     hide screen hall with moveoutright
+    scene black with fade
 
     "{b}{i} Tu entres dans le réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene lunchroom
+    scene lunchroom with fade
     show screen lunchroom with moveinright
 
     if pronom == "il":
@@ -8290,32 +8250,32 @@ label suite1:
             Na "Ok allons-y"
             play sound "Click.mp3" noloop 
 
-    scene black with fade
     hide screen lunchroom with moveoutright
+    scene black with fade
 
     "{b}{i}Tu te diriges vers le hall.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene hall
+    scene hall with fade
     show screen hall with moveinright 
 
     "{b}{i}Tu continues vers le premier étage.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene staircase
     hide screen hall with moveoutright
+    scene staircase with fade 
 
     "{b}{i}Tu continues vers le couloir.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene hallway
+    scene hallway with fade 
     show screen hallway with moveinright
 
     "{b}{i}Tu continue vers la salle de la classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop 
 
+    hide screen hallway with moveoutright
     scene black with fade
-    hide screen hallway with moveoutright  
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -8862,8 +8822,8 @@ label debate:
     "{b}{i} Vous continuez vers le dortoir.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright 
+    scene black with fade
 
     "{b}{i} Vous entrez dans le dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -9148,14 +9108,14 @@ label debate:
     "{b}{i}Tu quittes le dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fadfe
     show screen hallway with moveinright 
 
     "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -9333,8 +9293,8 @@ label debate:
 
     stop music fadeout 2.0   
 
-    scene black with fade 
     hide screen class_404 with moveoutright 
+    scene black with fade 
 
     if pronom == "il":
 
@@ -9346,7 +9306,7 @@ label debate:
         "{b}{i}Quelques instants plus tard, tu te réveilles dans ta chambre, couchée sur ton lit.{/i}{/b}"
         play sound "Click.mp3" noloop
 
-    scene room
+    scene room with fade
     show screen room with moveinright 
 
     P "Où... où suis-je ?"
@@ -9541,8 +9501,8 @@ label debate:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade 
     hide screen room with moveoutright 
+    scene black with fade 
 
     "{b}{i} Vous partez chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -9670,14 +9630,14 @@ label debate:
     "{b}{i}Tu quittes le dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop 
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i}Tu continues vers la salle de classe avec [newname].{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -9882,8 +9842,8 @@ label debate:
     "{b}{i}Tu continues vers les escaliers.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene staircase 
     hide screen hallway with moveoutright
+    scene staircase with fade
 
     "{b}{i}Puis vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -9894,13 +9854,13 @@ label debate:
     "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hall with moveoutright
+    scene black with fade
 
     "{b}{i} Vous entrez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene lunchroom 
+    scene lunchroom with fade
     show screen lunchroom with moveinright
     
     $ find_food = get_random_find_food()
@@ -10022,26 +9982,26 @@ label debate:
     "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall with fade
     show screen hall with moveinright
 
     "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
     play sound "Click.mp3" noloop  
 
-    scene staircase 
     hide screen hall with moveoutright
+    scene staircase with fade 
 
     "{b}{i} Vous montez au premier étage.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright
 
     "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Tu entres en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -10135,19 +10095,19 @@ label debate:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i} Vous continues vers le dortoir.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Tu entres dans ton dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene room
+    scene room with fade 
     show screen room with moveinright 
 
     $ dortoir = get_random_dortoir()
@@ -10168,8 +10128,8 @@ label debate:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen room with moveoutright 
+    scene black with fade
 
     "{b}{i} Vous partez chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -10222,9 +10182,10 @@ label debate:
     "{b}{i}Tu te changes avant d'aller de te coucher.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene black with fade
-    hide screen room with moveoutright
     hide screen day with moveoutleft
+    hide screen room with moveoutright
+    hide screen points with moveoutleft
+    scene black with fade
 
     "{b}{i} Le lendemain matin, le 9 octobre 2097{/i}{/b}"
     play sound "Alarm.mp3" noloop
@@ -10232,8 +10193,9 @@ label debate:
     $ day += 1 
 
     scene room with fade 
-    show screen room with moveinright
     show screen day with moveinleft
+    show screen room with moveinright
+    show screen points with moveinleft
 
     
     "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
@@ -10274,35 +10236,34 @@ label debate:
     hide screen room with moveoutright
     scene black with fade 
 
-    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    "{b}{i}Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright
 
-    "{b}{i}Tu te diriges au rez de chaussé.{/i}{/b}"
+    "{b}{i}Vous continuez dans le couloir.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     hide screen hallway with moveoutright
-    scene staircase
-    play sound "Click.mp3" noloop
+    scene staircase with fade 
 
-    "{b}{i}Tu continues dans les escaliers.{/i}{/b}"
+    "{b}{i}Vous continuez dans les escaliers.{/i}{/b}"
     play sound "Click.mp3" noloop
      
-    scene hall
+    scene hall with fade
     show screen hall with moveinright
 
-    "{b}{i}Tu continues vers la salle de club.{/i}{/b}"
+    "{b}{i}Vous continuez vers la salle de club.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    scene black with fade
     hide screen hall with moveoutright
+    scene black with fade
 
-    "{b}{i}Tu entres dans la salle de club.{/i}{/b}"
+    "{b}{i}Vous entrez dans la salle de club.{/i}{/b}"
     play music "Door.mp3" noloop 
 
-    scene clubroom 
+    scene clubroom with fade 
     show screen clubroom with moveoutright
 
     if pronom == "il":
@@ -10444,19 +10405,19 @@ label code:
     "{b}{i} Vous sortez de la salle de club.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall with fade
     show screen hall with moveinright 
 
     "{b}{i} Puis vous continuez encore vers le réféctoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hall with moveoutright
+    scene black with fade
 
     "{b}{i} Tu entres dans le réféctoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene lunchroom 
+    scene lunchroom with fade
     show screen lunchroom with moveinright
 
     $ find_food = get_random_find_food()
@@ -10546,25 +10507,25 @@ label code:
     P "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade 
     hide screen lunchroom with moveoutright
+    scene black with fade 
 
     "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall with fade
     show screen hall with moveinright
 
     "{b}{i}Tu continues vers la salle de club.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    scene black with fade
     hide screen hall with moveoutright
+    scene black with fade
 
     "{b}{i}Tu entres dans la salle de club.{/i}{/b}"
     play sound "Door.mp3" noloop  
 
-    scene clubroom 
+    scene clubroom with fade
     show screen clubroom with moveinright 
 
     P "Enfin au club."
@@ -10715,7 +10676,7 @@ label update:
     "{b}{i} Vous sortez de la salle de club.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall with fade
     show screen hall with moveinright 
 
     "{b}{i}Tu continues vers les escaliers mais tu vois la porte de la salle de club générale légérement ouverte.{/i}{/b}"
@@ -10730,13 +10691,13 @@ label update:
     P "Attends moi ici je vais aller voir."
     play sound "Click.mp3" noloop
 
-    scene black with fade
     hide screen hall with moveoutright
+    scene black with fade
 
     "{b}{i}Tu continues dans la salle de club.{/i}{/b}"
     play sound "Door.mp3" noloop  
 
-    scene clubroom 
+    scene clubroom with fade
     show screen clubroom with moveinright 
 
     "{b}{i}En entrant tu vois [I] complétement endormie sur la table.{/i}{/b}"
@@ -10860,25 +10821,25 @@ label update:
     "{b}{i} Vous continuez vers les escaliers.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene staircase 
     hide screen hall with moveoutright
+    scene staircase with fade 
 
     "{b}{i} Vous montez au premier étage.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright
 
     "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i} Vous entres dans ton dortoir.{/i}{/b}" 
     play sound "Door.mp3" noloop
 
-    scene room
+    scene room with fade
     show screen room with moveinright 
 
     if pronom == "il":
@@ -10904,8 +10865,8 @@ label update:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen room with moveoutright 
+    scene black with fade
 
     "{b}{i} Vous partez chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -11026,14 +10987,12 @@ label update:
 
     hide screen room with moveoutright 
     scene black with fade
-    play sound "Click.mp3" noloop 
 
     "{b}{i}Tu quittes le dortoir.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Door.mp3" noloop 
 
     scene hallway 
     show screen hallway with moveinright 
-    play sound "Door.mp3" noloop 
 
     "{b}{i}Tu continues vers la salle de classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -11219,14 +11178,14 @@ label update:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i} Vous vous dirigez votre chemin vers la réfectoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
-    
-    scene staircase
-    hide screen hallway with moveoutright
+
+    hide screen hallway with moveoutright    
+    scene staircase with fade
 
     "{b}{i} Vous continuez votre chemin vers le réfectoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -11237,13 +11196,13 @@ label update:
     "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hall with moveoutright
+    scene black with fade
 
     "{b}{i} vous entrez le réféctoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene lunchroom 
+    scene lunchroom with fade
     show screen lunchroom with moveinright
 
     "{b}{i} en entrant vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
@@ -11397,8 +11356,8 @@ label update:
             Na "[suivi]" 
             play sound "Footsteps.mp3" noloop
 
-    scene black with fade 
     hide screen lunchroom with moveoutright
+    scene black with fade 
 
     "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -11409,8 +11368,8 @@ label update:
     "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
     play sound "Click.mp3" noloop  
 
-    scene staircase 
     hide screen hall with moveoutright
+    scene staircase 
 
     "{b}{i} Vous montez au premier étage.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -11421,8 +11380,8 @@ label update:
     "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -11506,8 +11465,8 @@ label update:
     "{b}{i} Vous continuez vers le dortoir.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez dans ton dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -11550,7 +11509,7 @@ label update:
     Na "Non ce n'est pas possible pour moi je pense." 
     play sound "Click.mp3" noloop
 
-    P "Et pourquoi."
+    P "Et pourquoi ?"
     play sound "Click.mp3" noloop
 
     Na "Rappelles-toi de quand il est arrivé au lycée."
@@ -11577,16 +11536,18 @@ label update:
     P "Ok mais je vais quand même le surveiller."
     play sound "Click.mp3" noloop
 
-    $ validation = get_random_validation() 
-    Na "[validation]"
+    Na "D'accord je vois mais sinon tu penses que c'est qui d'autre le traître ?"
     play sound "Click.mp3" noloop 
+
+    P "Alors....."
+    play sound "Click.mp3" noloop
 
     menu:   
 
         "{b}{i}[J1].{/i}{/b}" :
             play sound "Menu.mp3" noloop 
-            $ suspectb = "Ayano"
-
+            $ suspect = "Ayano"
+ 
             P "Je pense que c'est [J1]."
             play sound "Click.mp3" noloop
 
@@ -11649,7 +11610,9 @@ label update:
             Na "Tu as raison."
             play sound "Click.mp3" noloop 
 
-    P "Bon moi je vais chercher à manger et aller régler un truc."
+    $ renpy.block_rollback()
+
+    P "Bon moi je vais aller régler un truc."
     play sound "Click.mp3" noloop
 
     Na "Ok moi je vais me déconnecter..."
@@ -11790,8 +11753,6 @@ label update:
         "{b}{i} Aller au dortoir.{/i}{/b}" :
             play sound "Menu.mp3" noloop 
 
-            $ renpy.block_rollback()
-
             P "Je vais aller au dortoir et la laisser tranquille."
             play sound "Click.mp3" noloop 
 
@@ -11837,8 +11798,8 @@ label update:
             P "Merci."
             play sound "Click.mp3" noloop  
 
-            scene black with fade
             hide screen hallway with moveoutright 
+            scene black with fade
 
             "{b}{i}Tu entres dans son dortoir.{/i}{/b}"
             play sound "Door.mp3" noloop  
@@ -11924,14 +11885,14 @@ label update:
             P "Ok à demain."
             play sound "Click.mp3" noloop  
 
-            scene black with fade
             hide screen Yunaroom with moveoutright
+            scene black with fade
 
             "{b}{i}Tu te diriges dans le couloir.{/i}{/b}"
             play sound "Door.mp3" noloop  
 
-            scene hallway
-            hide screen hallway with moveoutright 
+            scene hallway with fade
+            show screen hallway with moveinright 
 
             P "Bon je vais aller au dortoir."
             play sound "Click.mp3" noloop 
@@ -11939,13 +11900,13 @@ label update:
             "{b}{i}Tu te diriges dans le couloir.{/i}{/b}"
             play sound "Click.mp3" noloop  
 
-            scene black with fade
             hide screen hallway with moveoutright 
+            scene black with fade
 
             "{b}{i}Tu entres dans ton dortoir.{/i}{/b}"
             play sound "Door.mp3" noloop  
 
-            scene room
+            scene room with fade
             show screen room with moveinright 
 
             P "Enfin de retour...."
@@ -11960,15 +11921,16 @@ label update:
     P "Bon je vais chercher à manger, j'avais complétement oublié."
     play sound "Click.mp3" noloop  
 
-    scene black with fade 
     hide screen room with moveoutright
+    scene black with fade 
 
     "{b}{i} Tu pars chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     $ points -= 300 
-    scene room with fade 
+
     show screen room with moveinright 
+    scene room with fade 
 
     P "Enfin à manger... "
     play sound "Click.mp3" noloop 
@@ -11982,17 +11944,20 @@ label update:
     "{b}{i}Tu te changes avant d'aller de te coucher.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene black with fade
-    hide screen room with moveoutright
     hide screen day with moveoutleft
-
+    hide screen room with moveoutright
+    hide screen points with moveoutleft
+    scene black with fade
+     
     "{b}{i} Le lendemain matin, le 11 octobre 2097{/i}{/b}"
     play sound "Alarm.mp3" noloop
 
-    scene room with fade 
-    show screen room with moveinright
-    show screen day
     $ day += 1 
+
+    scene room with fade 
+    show screen day with moveinleft
+    show screen room with moveinright
+    show screen points with moveinleft
  
     "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -12127,7 +12092,6 @@ label password:
 
     hide screen room with moveoutright 
     scene black with fade
-    play sound "Click.mp3" noloop 
 
     "{b}{i}Vous quittez le dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop  
@@ -12145,8 +12109,8 @@ label password:
     "{b}{i}Vous continuez vers la salle de classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade 
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop 
@@ -12416,8 +12380,8 @@ label password:
     "{b}{i}Puis vous continuez vers le dortoir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop 
 
-    scene black with fade 
     hide screen hallway with moveoutright 
+    scene black with fade 
 
     "{b}{i} Tu entres au dortoir avec [newname].{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -12556,8 +12520,8 @@ label password:
     Oh "Pas besoin, elle peut venir aussi." 
     play sound "Click.mp3" noloop 
 
-    scene black with fade 
     hide screen room with moveoutright
+    scene black with fade 
 
     "{b}{i}Tu quittes ta chambre avec la DGCA.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -12568,8 +12532,8 @@ label password:
     "{b}{i}Tu continues dans le couloir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
  
-    scene staircase 
     hide screen hallway with moveoutright 
+    scene staircase 
 
     "{b}{i}Tu continues vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop 
@@ -12580,8 +12544,8 @@ label password:
     "{b}{i}Tu continues vers le bureau des élèves.{/i}{/b}"
     play sound "Footsteps.mp3" noloop 
 
-    scene black with fade 
     hide screen hall with moveoutright
+    scene black with fade 
 
     "{b}{i}Tu entres dans le bureau des élèves.{/i}{/b}"
     play sound "Door.mp3" noloop 
@@ -12862,8 +12826,8 @@ label password:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hall with moveoutright
+    scene black with fade 
 
     "{b}{i} Vous entrez au réféctoire.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -12991,8 +12955,8 @@ label password:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen office with moveoutright
+    scene black with fade
 
     "{b}{i}Tu te diriges vers le hall.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -13003,8 +12967,8 @@ label password:
     "{b}{i}Tu continues vers le premier étage.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene staircase
     hide screen hall with moveoutright
+    scene staircase
 
     "{b}{i}Tu continues vers le couloir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -13015,8 +12979,8 @@ label password:
     "{b}{i}Tu continue vers la salle de la classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -13096,8 +13060,8 @@ label password:
     "{b}{i} Vous continuez vers le dortoir.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez dans ton dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -13129,8 +13093,8 @@ label password:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen room with moveoutright 
+    scene black with fade
 
     "{b}{i} Vous partez chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -13261,8 +13225,8 @@ label password1:
     Na "[suivi]" 
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade 
     hide screen room with moveoutright
+    scene black with fade 
 
     "{b}{i} Tu quiites le dortoir avec [newname].{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -13273,8 +13237,8 @@ label password1:
     "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade 
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -13422,8 +13386,8 @@ label password1:
     Na "[validation]"
     play sound "Click.mp3" noloop 
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i} Tu te diriges vers les toilettes.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -13446,8 +13410,8 @@ label password1:
     P "Bon il faut que je retourne en cours."
     play sound "Click.mp3" noloop
 
-    scene black with fade 
     hide screen WC with moveoutright
+    scene black with fade 
 
     "{b}{i} Tu quittes les toilettes.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -13458,8 +13422,8 @@ label password1:
     "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade 
     hide screen hallway with moveoutright  
+    scene black with fade 
 
     "{b}{i} Tu arrives finalement en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -13497,8 +13461,8 @@ label password1:
     "{b}{i}Tu continues vers les escaliers.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene staircase 
     hide screen hallway with moveoutright
+    scene staircase 
 
     "{b}{i}Puis vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -13508,9 +13472,9 @@ label password1:
 
     "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
-
-    scene black with fade
+ 
     hide screen hall with moveoutright
+    scene black with fade
 
     "{b}{i} Vous entrez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -13684,8 +13648,8 @@ label password1:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen lunchroom with moveoutright
+    scene black with fade
 
     "{b}{i}Vous vous diriges vers le hall.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -13696,8 +13660,8 @@ label password1:
     "{b}{i}Vous continuez vers le premier étage.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene staircase
     hide screen hall with moveoutright
+    scene staircase
 
     "{b}{i}Vous continuez vers le couloir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -13708,8 +13672,8 @@ label password1:
     "{b}{i}Vous continuez vers la salle de la classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -13779,8 +13743,8 @@ label password1:
     "{b}{i} Tu continues vers le dortoir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Tu entres dans ton dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -13851,8 +13815,8 @@ label password1:
     P "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen room with moveoutright 
+    scene black with fade
 
     "{b}{i} Vous partez chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -14313,9 +14277,9 @@ label examen_pythagore:
 
     "{b}{i} Vous vous dirigez votre chemin vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
-    
-    scene staircase
+
     hide screen hallway with moveoutright
+    scene staircase
 
     "{b}{i} Vous descendez lez escaliers.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -14326,8 +14290,8 @@ label examen_pythagore:
     "{b}{i} Vous continuez vers le réfectoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hall with moveoutright
+    scene black with fade
 
     "{b}{i} Vous arrivez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop 
@@ -14435,8 +14399,8 @@ label examen_pythagore:
     S "Ok je vous suis."
     play sound "Click.mp3" noloop 
 
-    scene black with fade 
     hide screen lunchroom with moveoutright
+    scene black with fade 
 
     "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -14447,8 +14411,8 @@ label examen_pythagore:
     "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop 
 
-    scene staircase 
     hide screen hall with moveoutright
+    scene staircase 
 
     "{b}{i} Vous montez au premier étage.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -14459,8 +14423,8 @@ label examen_pythagore:
     "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Tu entres en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -14767,8 +14731,8 @@ label examen_pythagore:
     "{b}{i} Vous continuez vers le couloir.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i} Vous entres dans ton dortoir.{/i}{/b}" 
     play sound "Door.mp3" noloop
@@ -14800,8 +14764,8 @@ label examen_pythagore:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen room with moveoutright 
+    scene black with fade
 
     "{b}{i} Vous partez chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -14956,8 +14920,8 @@ label password3:
     "{b}{i}Tu continues dans le couloir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene staircase 
     hide screen hallway with moveoutright
+    scene staircase 
 
     "{b}{i}Tu continues vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -14968,8 +14932,8 @@ label password3:
     "{b}{i}Tu continues vers le bureau des élèves.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade 
     hide screen hall with moveoutright
+    scene black with fade 
 
     "{b}{i}Tu entres dans le bureau des élèves.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -15019,8 +14983,8 @@ label password3:
     E "C'est noté."
     play sound "Click.mp3" noloop 
 
-    scene black with fade 
     hide screen office with moveoutright
+    scene black with fade 
 
     "{b}{i} Tu les laisses tranquille et tu reviens deux heures et demi plus tard.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -15276,8 +15240,8 @@ label password3:
     P "Bon je vais au dortoir."
     play sound "Click.mp3" noloop 
 
-    scene black with fade 
     hide screen lunchroom with moveoutright
+    scene black with fade 
 
     "{b}{i} Tu sors du réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -15288,14 +15252,20 @@ label password3:
     "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop  
 
-    scene staircase 
     hide screen hall with moveoutright
+    scene staircase 
 
     "{b}{i} Vous montez au premier étage.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     scene hallway 
     show screen hallway with moveinright
+
+    "{b}{i} Vous contuez ver le dortoir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen hallway with moveoutright
+    scene black 
 
     "{b}{i}Tu entres dans ton dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -15335,8 +15305,8 @@ label password3:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen room with moveoutright 
+    scene black with fade
 
     "{b}{i} Vous partez chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -15389,20 +15359,22 @@ label password3:
     "{b}{i}Tu te changes avant d'aller de te coucher.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene black with fade
-    hide screen room with moveoutright 
     hide screen day with moveoutleft
+    hide screen room with moveoutright
+    hide screen points with moveoutleft
+    scene black with fade
 
     "{b}{i} une semaine plus tard, le 28 octobre 2097{/i}{/b}"
     play sound "Alarm.mp3" noloop
 
-    scene room with fade 
-    show screen room with moveinright
-    show screen day with moveinleft
-
     $ day += 7
-    $ points -= 1400
+    $ points -= 1400 
     $ stockage += 140.0 
+
+    scene room with fade 
+    show screen day with moveinleft
+    show screen room with moveinright
+    show screen points with moveinleft
 
     "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -15483,8 +15455,8 @@ label password4:
     "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -15679,9 +15651,9 @@ label password4:
 
     "{b}{i} Vous vous dirigez votre chemin vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
-    
+
+    hide screen hallway with moveoutright   
     scene staircase
-    hide screen hallway with moveoutright
 
     "{b}{i} Vous descendez lez escaliers.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -15692,8 +15664,8 @@ label password4:
     "{b}{i} Vous continuez vers le réfectoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hall with moveoutright
+    scene black with fade
 
     "{b}{i} Vous arrivez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop 
@@ -15770,25 +15742,25 @@ label password4:
     S "Ok je vous suis."
     play sound "Click.mp3" noloop 
 
-    scene black with fade 
     hide screen lunchroom with moveoutright
+    scene black with fade 
 
     "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall with fade 
     show screen hall with moveinright
 
     "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop  
 
-    scene staircase 
     hide screen hall with moveoutright
+    scene staircase with fade 
 
     "{b}{i} Vous montez au premier étage.{/i}{/b}"
     play sound "Footsteps.mp3" noloop 
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright
 
     "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
@@ -15945,19 +15917,19 @@ label password4:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     "{b}{i} Vous continuez vers le dortoir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez dans ton dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene room
+    scene room with fade 
     show screen room with moveinright 
 
     if pronom == "il":
@@ -16053,8 +16025,8 @@ label password5:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen room with moveoutright 
+    scene black with fade
 
     "{b}{i} Vous partez chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -16193,14 +16165,14 @@ label password6:
     "{b}{i}Tu quittes le dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
     play sound "Foosteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -16377,14 +16349,14 @@ label password6:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i} Vous vous dirigez votre chemin vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
-    
-    scene staircase
-    hide screen hallway with moveoutright
+
+    hide screen hallway with moveoutright  
+    scene staircase with fade
 
     "{b}{i} Vous descendez lez escaliers.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -16395,13 +16367,13 @@ label password6:
     "{b}{i} Vous continuez vers le réfectoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hall with moveoutright
+    scene black with fade
 
     "{b}{i} Vous arrivez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop 
 
-    scene lunchroom 
+    scene lunchroom with fade 
     show screen lunchroom with moveinright
     
     $ find_food = get_random_find_food()
@@ -16495,32 +16467,32 @@ label password6:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade 
     hide screen lunchroom with moveoutright
+    scene black with fade 
 
     "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall with fade 
     show screen hall with moveinright
 
     "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop 
 
-    scene staircase 
     hide screen hall with moveoutright
+    scene staircase with fade
 
     "{b}{i} Vous montez au premier étage.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright
 
     "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Tu entres en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -16569,7 +16541,7 @@ label password6:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     "{b}{i} Vous continuez vers le dortoir mais [I] t'appelles.{/i}{/b}"
@@ -16580,6 +16552,8 @@ label password6:
 
     I "Je voulais savoir si tu pouvais m'aider avec Runix." 
     play sound "Click.mp3" noloop
+    
+    # à modifier 
 
     P "Bien sûr je vais t'aider."
     play sound "Click.mp3" noloop
@@ -16591,13 +16565,13 @@ label password6:
     "{b}{i} Vous allez vers au dortoir pour aider [I].{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez dans ton dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene room
+    scene room with fade 
     show screen room with moveinright 
 
     if pronom == "il":
@@ -16661,8 +16635,8 @@ label password6:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen room with moveoutright 
+    scene black with fade
 
     "{b}{i} Vous partez chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -16801,14 +16775,14 @@ label password7:
     "{b}{i}Tu quittes le dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
     play sound "Foosteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -16957,14 +16931,14 @@ label password7:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     "{b}{i}Tu continues vers les escaliers.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene staircase 
     hide screen hallway with moveoutright
+    scene staircase with fade 
 
     "{b}{i}Puis vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -16975,8 +16949,8 @@ label password7:
     "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hall with moveoutright
+    scene black with fade
 
     "{b}{i} Vous entrez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -17025,32 +16999,32 @@ label password7:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen lunchroom with moveoutright
+    scene black with fade
 
     "{b}{i}Vous vous diriges vers le hall.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall with fade 
     show screen hall with moveinright 
 
     "{b}{i}Vous continuez vers le premier étage.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene staircase
     hide screen hall with moveoutright
+    scene staircase with fade
 
     "{b}{i}Vous continuez vers le couloir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hallway
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     "{b}{i}Vous continuez vers la salle de la classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -17088,19 +17062,19 @@ label password7:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     "{b}{i} Vous continuez vers le dortoir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade 
 
     "{b}{i}Vous entrez dans ton dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene room
+    scene room with fade 
     show screen room with moveinright 
      
     if pronom == "il":
@@ -17127,8 +17101,8 @@ label password7:
     P "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen room with moveoutright 
+    scene black with fade
 
     "{b}{i} Vous partez chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -17351,7 +17325,7 @@ label password8:
     "{b}{i}Tu quittes le dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     "{b}{i} Tu te diriges vers la salle de classe mais tu croises [Y].{/i}{/b}"
@@ -17390,8 +17364,8 @@ label password8:
     "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -17622,7 +17596,7 @@ label examen_runix:
     "{b}{i}Vous vous dirigez vers le couloir.{/i}{/b}"
     play sound "Door.mp3" noloop
     
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     P "Enfin une pause ça fais plasir."
@@ -17638,13 +17612,13 @@ label examen_runix:
     Na "Ok, moi je vais discuter un peu avec Yuki."
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i} Tu te diriges vers les toilettes.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene restroom
+    scene restroom with fade
     show screen WC with moveinright
 
     P "Bon je vais faire ce que j'ai à faire."
@@ -17656,20 +17630,20 @@ label examen_runix:
     P "Bon il faut que je retourne en cours."
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade 
     hide screen WC with moveoutright
+    scene black with fade 
 
     "{b}{i} Tu quittes les toilettes.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway
+    scene hallway with fade
     show screen hallway with moveinright
 
     "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade 
     hide screen hallway with moveoutright
+    scene black with fade 
 
     "{b}{i} Tu arrives finalement en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -17716,14 +17690,14 @@ label examen_runix:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     "{b}{i}Tu continues vers les escaliers.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene staircase 
     hide screen hallway with moveoutright
+    scene staircase with fade
 
     "{b}{i}Puis vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -17734,13 +17708,13 @@ label examen_runix:
     "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hall with moveoutright
+    scene black with fade
 
     "{b}{i} Vous entrez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene lunchroom 
+    scene lunchroom with fade
     show screen lunchroom with moveinright
 
     $ find_food = get_random_find_food()
@@ -17847,32 +17821,32 @@ label examen_runix:
     I "Ok je vous suis."
     play sound "Click.mp3" noloop 
 
-    scene black with fade 
     hide screen lunchroom with moveoutright
+    scene black with fade 
 
     "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall with fade 
     show screen hall with moveinright
 
     "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
     play sound "Click.mp3" noloop  
 
-    scene staircase 
     hide screen hall with moveoutright
+    scene staircase with fade 
 
     "{b}{i} Vous montez au premier étage.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright
 
     "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Tu entres en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -17909,19 +17883,19 @@ label examen_runix:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     "{b}{i} Vous continuez vers le dortoir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez dans ton dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene room
+    scene room with fade 
     show screen room with moveinright 
      
     if pronom == "il":
@@ -17953,13 +17927,14 @@ label examen_runix:
     P "Bon je vais chercher à manger."
     play sound "Click.mp3" noloop  
 
-    scene black with fade 
     hide screen room with moveoutright
+    scene black with fade 
 
     "{b}{i} Tu pars chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     $ points -= 300 
+
     scene room with fade 
     show screen room with moveinright 
 
@@ -18061,20 +18036,14 @@ label password9:
     "{b}{i}Vous quittez le dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
-    show screen hallway with moveinright 
-
-    "{b}{i}Vous continuez vers la salle de classe.{/i}{/b}"
-    play sound "Footsteps.mp3" noloop
-
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
     play sound "Foosteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -18452,38 +18421,31 @@ label password9:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright 
 
-    P "Bon le réfectoire du lycée se trouve au rez-de-chaussée."
-    play sound "Click.mp3" noloop 
-
-    $ suivi = get_random_suivi()
-    Na "[suivi]"
+    "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
     
-    scene staircase 
     hide screen hallway with moveoutright 
+    scene staircase 
 
-    "{b}{i} Vous continuez votre chemin vers le réfectoire.{/i}{/b}"
+    "{b}{i} Vous descendez les escaliers.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     scene hall with fade
     show screen hall with moveinright 
 
-    P "Bon la réfectoire du lycée se trouve au fond à gauche."
-    play sound "Click.mp3" noloop 
-
-    Na "Ok continuons alors."
+    "{b}{i} Vous continuez votre chemin vers le réfectoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop 
 
-    scene black with fade
     hide screen hall with moveoutright
+    scene black with fade
 
-    "{b}{i} Vous arrivez enfin au réfectoire.{/i}{/b}"
+    "{b}{i} Vous entrez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene lunchroom 
+    scene lunchroom with fade 
     show screen lunchroom with moveinright
     
     $ find_food = get_random_find_food()
@@ -18577,13 +18539,13 @@ label password9:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade 
     hide screen lunchroom with moveoutright 
+    scene black with fade 
 
     "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall with fade 
     show screen hall with moveinright
 
     "{b}{i}Tu continues vers la salle de club mais [S] t'interpéle.{/i}{/b}"
@@ -18627,16 +18589,16 @@ label password9:
     S "Je vois merci."
     play sound "Footsteps.mp3" noloop
 
-    "{b}{i}Puis tu continues vers la salle de club.{/i}{/b}"
+    "{b}{i}Puis vous continuez vers la salle de club.{/i}{/b}"
     play sound "Footsteps.mp3" noloop 
 
-    scene black with fade
     hide screen hall with moveoutright
+    scene black with fade
 
-    "{b}{i}Tu entres dans la salle de club.{/i}{/b}"
+    "{b}{i}Vous entrez dans la salle de club.{/i}{/b}"
     play sound "Door.mp3" noloop  
 
-    scene clubroom 
+    scene clubroom with fade
     show screen clubroom with moveinright 
 
 label code1: 
@@ -18845,26 +18807,30 @@ label code1:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade 
+###################################################################
+
     hide screen clubroom with moveoutright
+    scene black with fade 
 
     "{b}{i}Tu quittes la salle de club.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene hall with fade
-    hide screen hall with moveoutright
+    show screen hall with moveiright
 
-    "{b}{i}Tu prends les escaliers.{/i}{/b}"
+    "{b}{i}Tu prends les escaliers.{/i}{/b}"  # à modifier 
     play sound "Footsteps.mp3" noloop
 
+    hide screen hall with moveoutright 
     scene staircase
-    hide screen hallway with moveoutright 
 
     "{b}{i} Puis tu continues vers le couloir avec [Na].{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     scene hallway
     show screen hallway with moveinright 
+
+##############################################################################33
 
     P  "Cette journée était vraiment fatiguante."
     play sound "Click.mp3" noloop
@@ -18879,8 +18845,10 @@ label code1:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
+    hide screen day with moveoutleft
     hide screen room with moveoutright
+    hide screen points with moveoutleft
+    scene black with fade 
 
     "{b}{i} Vous partez chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -18888,7 +18856,9 @@ label code1:
     $ points -= 300 
 
     scene room with fade 
+    show screen day with moveinleft
     show screen room with moveinright
+    show screen points with moveinleft
 
     P "Enfin à manger... "
     play sound "Click.mp3" noloop 
@@ -19072,20 +19042,20 @@ label password10:
     P "Bien alors allons-y."
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen room with moveoutright
+    scene black with fade
 
     "{b}{i} Tu quiites le dortoir avec [newname].{/i}{/b}"
     play sound "Door.mp3" noloop
     
-    scene hallway
+    scene hallway with fade 
     show screen hallway with moveinright
 
     "{b}{i}Tu continues vers la salle de classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -19304,19 +19274,19 @@ label password10:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall with fade
     show screen hall with moveinright 
 
     "{b}{i} Puis vous continuez encore vers le réféctoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hall with moveoutright
+    scene black with fade
 
     "{b}{i} Tu entres dans le réféctoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene lunchroom 
+    scene lunchroom with fade 
     show screen lunchroom with moveinright
 
     $ find_food = get_random_find_food()
@@ -19400,37 +19370,37 @@ label password10:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen lunchroom with moveoutright
+    scene black with fade
     
-    "{b}{i}Tu te diriges vers le hall.{/i}{/b}"
+    "{b}{i}Vous vous dirigez vers le hall.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall with fade 
     show screen hall with moveinright 
 
-    "{b}{i}Tu continues vers le premier étage.{/i}{/b}"
+    "{b}{i}Vous continuez vers le premier étage.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene staircase
     hide screen hall with moveoutright
+    scene staircase with fade
 
-    "{b}{i}Tu continues vers le couloir.{/i}{/b}"
+    "{b}{i}Vous continuez vers le couloir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hallway
+    scene hallway with fade 
     show screen hallway with moveinright 
 
-    "{b}{i}Tu continue vers la salle de la classe.{/i}{/b}"
+    "{b}{i}Vous continuez vers la salle de la classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
     
-    scene classroom with fade
+    scene classroom with fade 
     show screen class_404 with moveinright  
 
     P "Rebonjour."
@@ -19504,11 +19474,11 @@ label password10:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     "{b}{i} Vous continuez dans le couloir mais vous apercevez deux personnes venir vers vous.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     P "Bonjour, pourrai-je savoir qui étes-vous ?"
     play sound "Click.mp3" noloop 
@@ -19697,13 +19667,13 @@ label password10:
     "{b}{i} Vous continuez vers le couloir.{/i}{/b}"
     play sound "Click.mp3" noloop
  
-    scene black with fade 
     hide screen hallway with moveoutright
+    scene black with fade 
 
     "{b}{i} Vous entres dans ton dortoir.{/i}{/b}" 
     play sound "Door.mp3" noloop
 
-    scene room
+    scene room with fade 
     show screen room with moveinright 
 
     if pronom == "il":
@@ -19886,13 +19856,14 @@ label update1:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen room with moveoutright
+    scene black with fade
 
     "{b}{i} Vous partez chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     $ points -= 300 
+
     scene room with fade 
     show screen room with moveinright
 
@@ -20026,7 +19997,7 @@ label password11:
     "{b}{i}Tu quittes le dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright  
 
     "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
@@ -20044,8 +20015,8 @@ label password11:
     "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -20149,31 +20120,31 @@ label password11:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
+    hide screen class_404 with moveoutright
     scene black with fade 
-    hide screen class_404 with moveoutright 
 
     "{b}{i}Tu quitte la salle de classe avec [Na].{/i}{/b}"
     play sound "Door.mp3" noloop
      
-    scene hallway
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     P "Je me demande ce qui ce passe pour que ce soit urgent."
     play sound "Click.mp3" noloop 
     
-    Na "Oui mais aussi je me le demande"
+    Na "Oui mais aussi je me le demande."
     play sound "Click.mp3" noloop
 
     "{b}{i}Tu continues dans le couloir avec [Na].{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene staircase 
     hide screen hallway with moveoutright
+    scene staircase with fade 
 
     "{b}{i}Tu continues vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hall
+    scene hall with fade 
     show screen hall with moveinright 
 
     "{b}{i}Tu continues vers le bureau des élèves.{/i}{/b}"
@@ -20181,8 +20152,8 @@ label password11:
     
     stop music fadeout 2.0 
 
-    scene black with fade 
     hide screen hall with moveoutright
+    scene black with fade 
 
     "{b}{i}Tu entres dans le bureau des élèves.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -20370,7 +20341,7 @@ label password11:
             P "[thanks]"
             play sound "Click.mp3" noloop 
 
-            # dialogue à rajouter 
+            # à modifier 
 
     Ln "Bon je vais devoir vous laisser j'ai des choses à faire."
     play sound "Click.mp3" noloop
@@ -20419,31 +20390,31 @@ label password11:
     "{b}{i}Vous quittez le bureau des élèves.{/i}{/b}"
     play sound "Door.mp3" noloop
     
-    scene hall
+    scene hall with fade 
     show screen hall with moveinright
 
     "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop  
 
-    scene staircase  
     hide screen hall with moveoutright
+    scene staircase with fade 
 
     "{b}{i} Vous montez au premier étage.{/i}{/b}"
     play sound "Footsteps.mp3" noloop 
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright
 
     "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Tu entres en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene classroom
+    scene classroom with fade 
     show screen class_404 with moveinright 
 
     P "Bonjour, nous revoilà."
@@ -20473,14 +20444,14 @@ label password11:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     "{b}{i}Tu continues vers les escaliers.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene staircase 
     hide screen hallway with moveoutright
+    scene staircase with fade 
 
     "{b}{i}Puis vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -20491,13 +20462,13 @@ label password11:
     "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hall with moveoutright
+    scene black with fade
 
     "{b}{i} Vous entrez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene lunchroom 
+    scene lunchroom with fade 
     show screen lunchroom with moveinright
     
     $ find_food = get_random_find_food()
@@ -20613,32 +20584,32 @@ label password11:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade 
     hide screen lunchroom with moveoutright
+    scene black with fade 
 
     "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall with fade
     show screen hall with moveinright
 
     "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop 
 
-    scene staircase 
     hide screen hall with moveoutright
+    scene staircase with fade
 
     "{b}{i} Vous montez au premier étage.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright
 
     "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Tu entres en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -20688,7 +20659,7 @@ label password11:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     "{b}{i}En sortant tu aperçois [N] et [Hi] qui discutent.{/i}{/b}"
@@ -20829,8 +20800,8 @@ label password11:
     "{b}{i}Vous continuez vers le dortoir, silencieusement, les pensées encore agitées par ce qui vient de se passer...{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade 
     hide screen hallway with moveoutright
+    scene black with fade 
 
     "{b}{i} Vous entrez au dortoir.{/i}{/b}" 
     play sound "Door.mp3" noloop
@@ -20858,37 +20829,37 @@ label password11:
     "{b}{i} [newname] se déconnecte tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    scene black with fade
     hide screen room with moveoutright 
+    scene black with fade
 
     "{b}{i}Tu quittes le dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     "{b}{i}Tu continues dans le couloir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene staircase 
     hide screen hallway with moveoutright
+    scene staircase with fade
 
     "{b}{i}Tu continues vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hall
+    scene hall with fade 
     show screen hall with moveinright 
 
     "{b}{i}Tu continues vers le bureau des élèves.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
-    
+
+    hide screen hall with moveoutright 
     scene black with fade 
-    hide screen hall with moveoutright
 
     "{b}{i}Tu entres dans le bureau des élèves.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene office 
+    scene office with fade 
     show screen office with moveinright 
 
     P "Bonjour c'est moi, [prenom]."
@@ -20922,32 +20893,32 @@ label password11:
     E "Bon tu devrais aller t'occuper d'[newname] et je vais m'occuper de [J2]."
     play sound "Click.mp3" noloop
 
-    scene black with fade 
     hide screen office with moveoutright
+    scene black with fade 
 
     "{b}{i} Puis tu quittas le bureau des élèves.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall with fade 
     show screen hall with moveinright 
 
     "{b}{i}Tu continues vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop 
 
-    scene staircase
     hide screen hallway with moveoutright
+    scene staircase with fade
 
     "{b}{i}Tu continues vers le premier étage.{/i}{/b}"
     play sound "Footsteps.mp3" noloop 
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     "{b}{i}Tu continues ton chemin.{/i}{/b}"
     play sound "Footsteps.mp3" noloop  
 
-    scene black with fade 
     hide screen hallway with moveoutright
+    scene black with fade 
 
     "{b}{i} Vous entres dans ton dortoir.{/i}{/b}" 
     play sound "Door.mp3" noloop 
@@ -21166,7 +21137,7 @@ label password13:
     "{b}{i} Tu quiites le dortoir avec [newname].{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
@@ -21198,6 +21169,8 @@ label password13:
 
     scene classroom with fade
     show screen class_404 with moveinright 
+
+    # à modifier 
 
     "{b}{i}Tout le monde s'asseoit à sa place respective.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -21312,7 +21285,7 @@ label password13:
     "{b}{i}Vous vous dirigez vers le couloir.{/i}{/b}"
     play sound "Door.mp3" noloop
     
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     P "Enfin une pause ça fais plasir."
@@ -21335,7 +21308,7 @@ label password13:
     "{b}{i} Tu te diriges vers les toilettes.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene restroom
+    scene restroom with fade 
     show screen WC with moveinright
 
     P "Bon je vais faire ce que j'ai à faire."
@@ -21353,7 +21326,7 @@ label password13:
     "{b}{i} Tu quittes les toilettes.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway
+    scene hallway with fade 
     show screen hallway with moveinright
 
     "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
@@ -21399,14 +21372,14 @@ label password13:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i}Tu continues vers les escaliers.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     hide screen hallway with moveoutright
-    scene staircase 
+    scene staircase with fade
 
     "{b}{i}Puis vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -21423,7 +21396,7 @@ label password13:
     "{b}{i} Vous entrez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene lunchroom 
+    scene lunchroom with fade 
     show screen lunchroom with moveinright
     
     $ find_food = get_random_find_food()
@@ -21533,6 +21506,9 @@ label password13:
             I "Vraiment désolée" 
             play sound "Click.mp3" noloop
 
+            Na "Merci beaucoup." 
+            play sound "Click.mp3" noloop
+
         "{b}{i} Arrêter la discussion{/i}{/b}" :
             play sound "Menu.mp3" noloop 
 
@@ -21541,19 +21517,19 @@ label password13:
             $ success += 1 
             $ quest31 += 1 
 
-            show screen update with moveinright
-
             P "Oui pas de soucis si vraiment ça te dérange." 
             play sound "Click.mp3" noloop
-    
-            hide screen update with moveoutright
 
-    Na "Merci beaucoup." 
-    play sound "Click.mp3" noloop
+            show screen update with moveinright
+
+            Na "Merci beaucoup." 
+            play sound "Click.mp3" noloop
+
+            hide screen update with moveoutright
 
     $ nothing = get_random_nothing()
     I "[nothing]"
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     P "Sinon Yuna tu comptes faire quoi cette après-midi ?"
     play sound "Click.mp3" noloop
@@ -21583,7 +21559,7 @@ label password13:
     "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall with fade
     show screen hall with moveinright 
 
     "{b}{i}Tu continues vers la salle de club.{/i}{/b}"
@@ -21595,7 +21571,7 @@ label password13:
     "{b}{i}Tu entres dans la salle de club.{/i}{/b}"
     play sound "Door.mp3" noloop  
 
-    scene clubroom 
+    scene clubroom with fade
     show screen clubroom with moveinright 
 
     P "Enfin au club."
@@ -21669,7 +21645,7 @@ label newpassword:
                     Na "Oui absolument mais il s'est passé quoi ?"
                     play sound "Click.mp3" noloop 
 
-                    P "Ton mot de passe a été compromis car j'ai choisi un trop faible."
+                    P "Ton mot de passe a été compromis car j'ai choisi un mot de passe trop faible."
                     play sound "Click.mp3" noloop  
 
                     Na "Je vois c'est une erreur typique."
@@ -21768,12 +21744,12 @@ label newpassword:
     play sound "Footsteps.mp3" noloop
 
     hide screen hall with moveoutright
-    scene staircase
+    scene staircase with fade
 
     "{b}{i} Puis tu continues vers le couloir avec [Na].{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     "{b}{i} Vous continues vers le dortoir.{/i}{/b}"
@@ -21785,7 +21761,7 @@ label newpassword:
     "{b}{i}Tu entres dans ton dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene room
+    scene room with fade 
     show screen room with moveinright 
 
     $ dortoir = get_random_dortoir()
@@ -21844,6 +21820,7 @@ label newpassword:
     play sound "Click.mp3" noloop
 
     $ points -= 300 
+
     scene room with fade 
     show screen room with moveinright
 
@@ -21969,12 +21946,12 @@ label password14:
     "{b}{i}Puis tu reçois soudainement un mail sur ton adresse mail [prenom].[nom]@danto.com et tu l'ouvres.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    show screen mail
+    show screen mail # à modifier 
 
     "{b}{i}Tu lis tranquillement le mail.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    hide screen mail
+    hide screen mail # à modifier 
 
     Na "Il se passe quoi ?"
     play sound "Click.mp3" noloop 
@@ -22010,7 +21987,7 @@ label password14:
     "{b}{i}Tu quittes le dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright  
 
     "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
@@ -22267,7 +22244,7 @@ label examen_francais:
     "{b}{i}Vous vous dirigez vers le couloir.{/i}{/b}"
     play sound "Door.mp3" noloop
     
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright 
 
     P "Enfin une pause ça fais plasir."
@@ -22290,7 +22267,7 @@ label examen_francais:
     "{b}{i} Tu te diriges vers les toilettes.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene restroom
+    scene restroom with fade
     show screen WC with moveinright
 
     P "Bon je vais faire ce que j'ai à faire."
@@ -22308,7 +22285,7 @@ label examen_francais:
     "{b}{i} Tu quittes les toilettes.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway
+    scene hallway with fade
     show screen hallway with moveinright
 
     "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
@@ -22378,14 +22355,14 @@ label examen_francais:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i}Tu continues vers les escaliers.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     hide screen hallway with moveoutright
-    scene staircase 
+    scene staircase with fade 
 
     "{b}{i}Puis vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -22522,19 +22499,19 @@ label examen_francais:
     "{b}{i}Tu te diriges vers le hall.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall with fade 
     show screen hall with moveinright 
 
     "{b}{i}Tu continues vers le premier étage.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     hide screen hall with moveoutright
-    scene staircase
+    scene staircase with fade
 
     "{b}{i}Tu continues vers le couloir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hallway
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i}Tu continue vers la salle de la classe.{/i}{/b}"
@@ -23258,14 +23235,14 @@ label password15:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i} Vous vous dirigez votre chemin vers la réfectoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     hide screen hall with moveoutright
-    scene staircase
+    scene staircase with fade
 
     "{b}{i} Vous continuez votre chemin vers le réfectoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -23500,19 +23477,19 @@ label password15:
     "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall with fade
     show screen hall with moveinright
 
     "{b}{i} Vous continuez votre chemin vers la classe mais vous croisez [J2] qui monte aussi en classe.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     hide screen hall with moveinright
-    scene staircase 
+    scene staircase with fade
 
     "{b}{i} Vous montez au premier étage.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright
 
     "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
@@ -23564,7 +23541,7 @@ label password15:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i} Vous continuez vers le dortoir.{/i}{/b}"
@@ -23576,7 +23553,7 @@ label password15:
     "{b}{i}Vous entrez dans ton dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene room
+    scene room with fade 
     show screen room with moveinright 
 
     if pronom == "il":
@@ -23863,7 +23840,7 @@ label password16:
     "{b}{i} Tu quiites le dortoir avec [newname].{/i}{/b}"
     play sound "Door.mp3" noloop 
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright  
 
     "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
@@ -23990,14 +23967,14 @@ label password16:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i} Vous vous dirigez votre chemin vers la réfectoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     hide screen hallway with moveoutright
-    scene staircase
+    scene staircase with fade
 
     "{b}{i} Vous continuez votre chemin vers le réfectoire.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -24092,19 +24069,19 @@ label password16:
     "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall with fade 
     show screen hall with moveinright
 
     "{b}{i} Vous continuez votre chemin vers la classe mais vous croisez [J2] qui monte aussi en classe.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     hide screen hall with moveinright
-    scene staircase 
+    scene staircase with fade 
 
     "{b}{i} Vous montez au premier étage.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright
 
     "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
@@ -24163,7 +24140,7 @@ label password16:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}" 
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i} Vous continuez vers le dortoir.{/i}{/b}"
@@ -24319,23 +24296,19 @@ label password16:
 
     if suspect == "Ayano":
          
-        Na "Donc ça ne peut pas être Ayano alors tu l'as accusé."
+        Na "Donc ça ne peut pas être Ayano alors tu l'as suspecté."
         play sound "Click.mp3" noloop
         
+    if suspect == "Yuki":
+         
+        Na "Donc ça ne peut pas être Yuki alors tu l'as suspecté."
+        play sound "Click.mp3" noloop
+
     elif suspect == "Aiko": 
     
-        Na "Vu la situation ça ne peut être que [J2]"
+        Na "Vu la situation ça ne peut être que [J2]."
         play sound "Click.mp3" noloop 
 
-    elif suspect == "Subaru": 
-
-        Na "Tu vois au final Subaru a un bon coeur alors tu l'as accusé."
-        play sound "Click.mp3" noloop  
-
-    else: 
-
-        Na "Donc sois c'est Aiko ou quelqu'un d'autre"
-        play sound "Click.mp3" noloop
 
     P "Bon on continue de réviser ?" 
     play sound "Click.mp3" noloop
@@ -24506,14 +24479,14 @@ label password17:
     "{b}{i} Tu quiites le dortoir avec [newname].{/i}{/b}"
     play sound "Door.mp3" noloop 
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene black with fade
     hide screen hallway with moveoutright
+    scene black with fade
 
     "{b}{i}Vous entrez en classe.{/i}{/b}"
     play sound "Door.mp3" noloop
@@ -26155,14 +26128,14 @@ label password18:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     "{b}{i}Tu continues vers les escaliers.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     hide screen hallway with moveoutright
-    scene staircase 
+    scene staircase with fade
 
     "{b}{i}Puis vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -26179,7 +26152,7 @@ label password18:
     "{b}{i} Vous entrez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene lunchroom 
+    scene lunchroom with fade
     show screen lunchroom with moveinright
     
     $ find_food = get_random_find_food()
@@ -26330,8 +26303,8 @@ label password18:
     "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene staircase 
     hide screen hall with moveinright
+    scene staircase with fade
 
     "{b}{i} Vous montez au premier étage.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -26866,14 +26839,14 @@ label password19:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     "{b}{i}Tu continues vers les escaliers.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    scene staircase 
     hide screen hallway with moveoutright
+    scene staircase with fade
 
     "{b}{i}Puis vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
