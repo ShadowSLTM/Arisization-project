@@ -1021,7 +1021,7 @@ label argument:
     scene black with fade 
      
     "{b}{i}Deux mois plus tard, dans la région de Danto, le 12 septembre 2097, [prenom]
-    intégra un lycée d'informatique et de technologie situé au 209-7201 Danto, Ville de Shintoshi, 
+    intégra un lycée d'informatique et de technologie situé au 209-7201 Danto, Ville de Shin-toshi, 
     District de Kiryō, 2-14-7, Avenue Miraidōri, dans un monde entièrement dominé par 
     les nouvelles technologies et dirigé par un gouvernement technocratique autoritaire.{/i}{/b}" 
     play sound "Click.mp3" noloop 
@@ -1166,7 +1166,7 @@ label argument:
         P "[easter_egg]"
         play sound "Click.mp3" noloop 
 
-    E "Je suis enchantée. Mais pourrais-je savoir comment tu t'appelles ?"
+    E "Je suis enchantée. Mais pourrais-je savoir t tu t'appelles ?"
     play sound "Click.mp3" noloop 
 
     P "Je m'appelle [P]."
@@ -2943,8 +2943,12 @@ label choice3:
     A "Aris !? Je trouve que c'est mignon comme prénom.~"
     play sound "Click.mp3" noloop
 
-    # à modifier 
+    P "Mais je me demande pourquoi ce prénom là par défaut ?"
+    play sound "Click.mp3" noloop
 
+    A "Je ne sais pas aussi mais je pense qu'on le saura un jour."
+    play sound "Click.mp3" noloop
+    
     P "Donc ça te va, Aris alors ?"
     play sound "Click.mp3" noloop
 
@@ -16553,9 +16557,13 @@ label password6:
     I "Je voulais savoir si tu pouvais m'aider avec Runix." 
     play sound "Click.mp3" noloop
     
-    # à modifier 
+    P "Tu as besoin pour Runix, je croyaiz que tu était forte un programmtion."
+    play sound "Click.mp3" noloop
 
-    P "Bien sûr je vais t'aider."
+    I "Oui mais je l'ai pas appris car c'est un langage qui ne m'est pas utile dans mes project."
+    play sound "Click.mp3" noloop
+
+    P "Je vois mais pour revenir à ta question, bien sûr que je vais t'aider."
     play sound "Click.mp3" noloop
 
     $ thanks = get_random_thanks()
@@ -17660,17 +17668,103 @@ label examen_runix:
     M "Rebonjour, Bon nous allons faire un nouveau sujet."
     play sound "Click.mp3" noloop  
 
-    P "Ce sera quoi ?"
+    Na "Ce sera quoi ?"
     play sound "Click.mp3" noloop  
 
     M "Ce sera un cours de français."
     play sound "Click.mp3" noloop  
 
-    P "Je vois merci."
+    Na "Je vois, merci."
     play sound "Click.mp3" noloop
 
-    "{b}{i} Le cours continue tranquillement.{/i}{/b}"
-    play sound "Bell.mp3" noloop
+    M "Aujourd'hui, nous allons étudier un point essentiel : les différentes classes de mots."
+    play sound "Click.mp3" noloop
+
+    M "Il existe dix classes principales. On les divise souvent en deux catégories : les mots variables et les mots invariables."
+    play sound "Click.mp3" noloop
+
+    Na "Variables ? Invariables ?"
+    play sound "Click.mp3" noloop
+
+    M "Exactement. Les mots *variables* changent selon le genre, le nombre, ou la personne. Les mots *invariables*, eux, ne changent jamais de forme."
+    play sound "Click.mp3" noloop
+
+    M "Commençons par les mots variables. Il y en a cinq."
+    play sound "Click.mp3" noloop
+
+    M "Les noms. Ce sont des mots qui désignent des êtres vivants, des objets ou des idées. Exemple : *chat*, *maison*, *liberté*."
+    play sound "Click.mp3" noloop
+
+    M "Ils peuvent être communs ou propres. Et ils varient en genre (masculin/féminin) et en nombre (singulier/pluriel)."
+    play sound "Click.mp3" noloop
+
+    M "Les déterminants, ils accompagnent le nom pour en préciser le sens. Exemple : *le*, *un*, *ma*, *ces*."
+    play sound "Click.mp3" noloop
+
+    M "Ils s’accordent avec le nom en genre et en nombre."
+    play sound "Click.mp3" noloop
+
+    M "Les adjectifs qualificatifs, ils donnent des précisions sur un nom. Exemple : *grand*, *bleu*, *intelligent*."
+    play sound "Click.mp3" noloop
+
+    M "Ils s’accordent eux aussi avec le nom qu’ils qualifient."
+    play sound "Click.mp3" noloop
+
+    M "Puis les pronoms, ils remplacent un nom. Exemple : *je*, *elle*, *nous*, *lequel*, *ceci*."
+    play sound "Click.mp3" noloop
+
+    M "Ils varient selon la personne, le genre ou le nombre."
+    play sound "Click.mp3" noloop
+
+    M "En suite les verbes, ils expriment une action ou un état. Exemple : *manger*, *être*, *avoir*, *finir*."
+    play sound "Click.mp3" noloop
+
+    M "Ce sont les mots les plus complexes : ils se conjuguent selon le temps, le mode, la personne et le nombre."
+    play sound "Click.mp3" noloop
+
+    Na "D’accord, donc cinq mots variables..."
+    play sound "Click.mp3" noloop
+
+    M "Et maintenant, les cinq mots invariables :"
+    play sound "Click.mp3" noloop
+
+    M "Les adverbes, ils modifient le sens d’un verbe, d’un adjectif ou d’un autre adverbe. Exemple : *vite*, *très*, *hier*, *souvent*."
+    play sound "Click.mp3" noloop
+
+    M "Ils ne s’accordent jamais."
+    play sound "Click.mp3" noloop
+    
+    M "Les prépositions, elles introduisent un complément. Exemple : *à*, *dans*, *par*, *pour*, *sans*, *avec*."
+    play sound "Click.mp3" noloop
+
+    M "Elles indiquent souvent une relation de lieu, de temps ou de cause."
+    play sound "Click.mp3" noloop
+    
+    M "Les conjonctions de coordination, elles relient deux éléments équivalents. Exemple : *mais*, *ou*, *et*, *donc*, *or*, *ni*, *car*."
+    play sound "Click.mp3" noloop
+
+    M "Tu connais peut-être l’acronyme ‘{i}Mais où est donc Ornicar{/i}’ ?"
+    play sound "Click.mp3" noloop
+
+    Na "Oui ! Je l’ai déjà entendu."
+    play sound "Click.mp3" noloop
+
+    M "Les conjonctions de subordination, elles introduisent une proposition subordonnée. Exemple : *que*, *quand*, *parce que*, *si*, *lorsque*."
+    play sound "Click.mp3" noloop
+
+    M "Et pour finir les interjections, ce sont des petits mots ou sons exprimant une émotion. Exemple : *Oh !*, *Aïe !*, *Zut !*."
+    play sound "Click.mp3" noloop
+
+    M "Voilà pour les dix classes de mots. C’est la base de toute analyse grammaticale."
+    play sound "Click.mp3" noloop
+
+    Na "C’est bien plus clair maintenant. Merci !"
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Le cours continue tranquillement. Les élèves prennent note pendant que le professeur donne des exemples supplémentaires au tableau.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+
+    $ stockage += 15.0  
 
     $ endlesson = get_random_endlesson()
     M "[endlesson]"
@@ -18818,16 +18912,16 @@ label code1:
     scene hall with fade
     show screen hall with moveiright
 
-    "{b}{i}Tu prends les escaliers.{/i}{/b}"  # à modifier 
+    "{b}{i}Tu prends les escaliers.{/i}{/b}" 
     play sound "Footsteps.mp3" noloop
 
     hide screen hall with moveoutright 
-    scene staircase
+    scene staircase with fade 
 
     "{b}{i} Puis tu continues vers le couloir avec [Na].{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hallway
+    scene hallway with fade 
     show screen hallway with moveinright 
 
 ##############################################################################33
@@ -19450,8 +19544,6 @@ label password10:
 
     M "Bien vu. Une bonne configuration du pare-feu est la première ligne de défense contre les intrusions."
     play sound "Click.mp3" noloop
-
-    # à modifier 
 
     "{b}{i} le cours continue dans le calme.{/i}{/b}"
     play sound "Bell.mp3" noloop 
@@ -20631,6 +20723,8 @@ label password11:
 
     M "Bien nous pouvons continuer et conclure ce cours de français."
     play sound "Click.mp3" noloop 
+
+    # à modifier 
 
     "{b}{i} le cours continue dans le calme.{/i}{/b}"
     play sound "Bell.mp3" noloop 
@@ -28998,7 +29092,7 @@ label password22:
     "{b}{i}Vous vous dirigez vers le couloir.{/i}{/b}"
     play sound "Door.mp3" noloop
     
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     P "Enfin une pause, ça fait plaisir."
@@ -29483,5 +29577,236 @@ label password23:
     $ suivi = get_random_suivi()
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop 
+
+    hide screen room with moveoutright 
+    scene black with fade
+
+    "{b}{i}Vous quittez le dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway with fade 
+    show screen hallway with moveinright 
+
+    "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
+    play sound "Foosteps.mp3" noloop
+
+    hide screen hallway with moveoutright
+    scene black with fade
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene classroom with fade
+    show screen class_404 with moveinright     
+
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
+
+    $  salutation_rdm = get_random_salutation()
+    P "[salutation_rdm]"
+    play sound "Click.mp3" noloop
+
+    $  salutation_rdm = get_random_salutation()
+    Y "[salutation_rdm]"
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tout le monde s'asseoit à sa place respective.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Très bien, commençons la vérification des présences."
+    play sound "Click.mp3" noloop  
+
+    M "[I] ?"
+    play sound "Click.mp3" noloop  
+
+    I "Présente."
+    play sound "Click.mp3" noloop  
+
+    M "[H] ?"
+    play sound "Click.mp3" noloop  
+
+    H "Ouais, je suis là."
+    play sound "Click.mp3" noloop  
+
+    M "[K] ?"
+    play sound "Click.mp3" noloop  
+
+    K "Présent, madame."
+    play sound "Click.mp3" noloop  
+
+    M "[N] ?"
+    play sound "Click.mp3" noloop  
+
+    N "Ici."
+    play sound "Click.mp3" noloop  
+
+    M "[Hi] ?"
+    play sound "Click.mp3" noloop  
+
+    Hi "Présent."
+    play sound "Click.mp3" noloop  
+
+    M "[Y] ?"
+    play sound "Click.mp3" noloop  
+
+    Y "Oui, présente."
+    play sound "Click.mp3" noloop  
+
+    M "[S] ?"
+    play sound "Click.mp3" noloop  
+
+    S "Toujours là."
+    play sound "Click.mp3" noloop  
+
+    M "[J1] ?"
+    play sound "Click.mp3" noloop  
+
+    J1 "Présente."
+    play sound "Click.mp3" noloop  
+
+    M "[J2] ?"
+    play sound "Click.mp3" noloop  
+
+    J2 "Présente aussi."
+    play sound "Click.mp3" noloop  
+
+    M "[P] ?"
+    play sound "Click.mp3" noloop  
+
+    P "Oui, je suis là."
+    play sound "Click.mp3" noloop  
+
+    M "[Na] ?"
+    play sound "Click.mp3" noloop  
+
+    Na "Présente, madame."
+    play sound "Click.mp3" noloop  
+
+    M "Parfait, tout le monde est là aujourd’hui. Nous pouvons commencer le cours."
+    play sound "Click.mp3" noloop  
+
+    $ validation = get_random_validation() 
+    P "[validation]"
+    play sound "Click.mp3" noloop 
+
+    $ validation = get_random_validation() 
+    Na "[validation]"
+    play sound "Click.mp3" noloop 
+
+    M "Veuillez sortir votre livre d'informatique."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tous les élèves sortent leur livre.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    # à modifier  
+
+    "{b}{i} Le cours continue tranquillement.{/i}{/b}"
+    play sound "Bell.mp3" noloop
+
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop 
+
+    $ stockage += 5.0
+
+    $ go_eat = get_random_go_eat()
+    P "[go_eat]"
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen class_404 with moveoutright 
+    scene black with fade 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway with fade
+    show screen hallway with moveinright 
+
+    "{b}{i}Tu continues vers les escaliers.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen hallway with moveoutright
+    scene staircase with fade 
+
+    "{b}{i}Puis vers le hall.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hall with fade
+    show screen hall with moveinright 
+
+    "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen hall with moveoutright
+    scene black with fade
+
+    "{b}{i} Vous entrez enfin au réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene lunchroom 
+    show screen lunchroom with moveinright
+
+    $ find_food = get_random_find_food()
+    Na "[find_food]"
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 300 
+
+    $ service = get_random_service()
+    P "[service]"
+    play sound "Click.mp3" noloop 
+
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Vous vous asseyez dans le réfectoire puis [I] vous rejoint.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    P "Salut Yuna."
+    play sound "Click.mp3" noloop  
+
+    if pronom == "il": 
+
+        I "Salut les amis."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle": 
+
+        I "Salut les amies."
+        play sound "Click.mp3" noloop
+
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    I "[je_vais_bien_txt] Et toi ?" 
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]"
+    play sound "Click.mp3" noloop
+
+    I "C'est génial si tout va bien."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[I] s'asseoit tranquillemnt avec vous.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    
 
 # Aris la plus belle <333333333333333333333333333 
