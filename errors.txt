@@ -2,11 +2,13 @@
 errors listed below, and try again.
 
 
-The label password22 is defined twice, at File "game/script.rpy", line 28864:
-label password22:  
-and File "game/script.rpy", line 29491:
-label password22:  
+File "game/script.rpy", line 11369: expected 'simple_expression' not found.
+    scene hall with
+                   ^
 
+File "game/script.rpy", line 29857: expected 'simple_expression' not found.
+    scene hall with
+                   ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat Jun 14 02:54:42 2025
+Tue Jun 17 17:16:06 2025

@@ -11358,7 +11358,7 @@ label update:
              
             $ suivi = get_random_suivi()
             Na "[suivi]" 
-            play sound "Footsteps.mp3" noloop
+            play sound "Footsteps.mp3" noloop 
 
     hide screen lunchroom with moveoutright
     scene black with fade 
@@ -11366,19 +11366,19 @@ label update:
     "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall with fade
     show screen hall with moveinright
 
-    "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
+    "{b}{i} Vous continuez dans le hall.{/i}{/b}"
     play sound "Click.mp3" noloop  
 
     hide screen hall with moveoutright
-    scene staircase 
+    scene staircase with fade 
 
     "{b}{i} Vous montez au premier étage.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright
 
     "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
@@ -26470,7 +26470,7 @@ label password18:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     "{b}{i} Vous continues vers le dortoir.{/i}{/b}"
@@ -26482,7 +26482,7 @@ label password18:
     "{b}{i}Tu entres dans ton dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene room
+    scene room with fade 
     show screen room with moveinright 
 
     $ dortoir = get_random_dortoir()
@@ -29807,6 +29807,154 @@ label password23:
     "{b}{i}[I] s'asseoit tranquillemnt avec vous.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
+    P "Sinon je viens d'y penser mais vous faire quoi pendant les vacances ?"    
+    play sound "Click.mp3" noloop 
+
+    I "Je vais sûrement me reposer, réviser mais j'ai aussi une autre idée en tête."
+    play sound "Click.mp3" noloop 
+
+    P "Je vois mais c'est quoi l'idée que tu as en tête ?"
+    play sound "Click.mp3" noloop 
+
+    I "Je me suis dit qu'on pourrait faire une soirée pyjama."
+    play sound "Click.mp3" noloop 
+
+    P "Une soirée pyjama !? Mais c'est génial comme idée."
+    play sound "Click.mp3" noloop 
+
+    $ thanks = get_random_thanks()
+    I "[thanks]"
+    play sound "Click.mp3" noloop
+
+    Na "Juste c'est quoi une soirée pyjamas ?"
+    play sound "Click.mp3" noloop
+
+    I "C'est une soirée à la maison entre amis."
+    play sound "Click.mp3" noloop
+
+    Na "Je vois, c'est génial comme idée pour se détendre un peu."
+    play sound "Click.mp3" noloop
+
+    I "Je sais."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Vous continuez de discuter jusqu'à la sonnerie.{/i}{/b}"
+    play sound "Bell.mp3" noloop 
+
+    P "Bon il faut qu'on retourne en cours."
+    play sound "Click.mp3" noloop 
+             
+    $ suivi = get_random_suivi() 
+    I "[suivi]" 
+    play sound "Footsteps.mp3" noloop
+
+    hide screen lunchroom with moveoutright
+    scene black with fade 
+
+    "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall with fade
+    show screen hall with moveinright
+
+    "{b}{i} Vous continuez dans le hall.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    hide screen hall with moveoutright
+    scene staircase with fade 
+
+    "{b}{i} Vous montez au premier étage.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    scene hallway with fade 
+    show screen hallway with moveinright
+
+    "{b}{i} Vous continuez dans le couloir.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen hallway with moveoutright
+    scene black with fade
+
+    "{b}{i}Vous entrez en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
     
+    scene classroom with fade
+    show screen class_404 with moveinright 
+
+    P "Rebonjour."
+    play sound "Click.mp3" noloop 
+
+    Na "Rebonjour."
+    play sound "Click.mp3" noloop 
+
+    I "Rebonjour."
+    play sound "Click.mp3" noloop 
+
+    # à modifier 
+
+    "{b}{i} Le cours se déroule tranquillement.{/i}{/b}"
+    play sound "Bell.mp3" noloop
+
+    $ stockage += 10.0 
+
+    M "Bien le cours est terminé mais avant que vous partiez j'aimerais faire un petit bilan de ce début d'année."
+    play sound "Click.mp3" noloop
+
+    Y "Un bilan général, intérressant."
+    play sound "Click.mp3" noloop
+
+    M "Sachez jusqu'à maintenant vous avez cumulez un total de un retard, une permanence et quatre absenses."
+    play sound "Click.mp3" noloop
+
+    Y "ça va c'est pas si mal."
+    play sound "Click.mp3" noloop
+
+    $ endlesson = get_random_endlesson()
+    M "[endlesson]"
+    play sound "Click.mp3" noloop 
+
+    P "Bon on retourne au dortoir ?"
+    play sound "Click.mp3" noloop
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen class_404 with moveoutright
+    scene black with fade 
+
+    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway with fade 
+    show screen hallway with moveinright 
+
+    "{b}{i} Vous continues vers le dortoir.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    hide screen hallway with moveoutright
+    scene black with fade
+
+    "{b}{i}Vous entrez dans ton dortoir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene room with fade 
+    show screen room with moveinright 
+
+    $ dortoir = get_random_dortoir()
+    Na "[dortoir]"
+    play sound "Click.mp3" noloop
+
+    $ bien = get_random_fais_du_bien()
+    P "[bien]" 
+    play sound "Click.mp3" noloop  
+
+    "{b}{i} Vous posez tranquillement vos affaires.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    Na "Et dire qu'on a deux semaines de vacances."
+    play sound "Click.mp3" noloop 
+
+
 
 # Aris la plus belle <333333333333333333333333333 
