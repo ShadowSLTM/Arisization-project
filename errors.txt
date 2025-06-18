@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 11369: expected 'simple_expression' not found.
-    scene hall with
-                   ^
-
-File "game/script.rpy", line 29857: expected 'simple_expression' not found.
-    scene hall with
-                   ^
+File "game/gui.rpy", line 220: invalid syntax
+    Borders(150, 15 150, 15)
+                     ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue Jun 17 17:16:06 2025
+Wed Jun 18 23:25:46 2025

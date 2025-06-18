@@ -218,7 +218,7 @@ label auto_save:
         rotate 360 
         linear 2.0 rotate 0
  
-    $ _preferences.afm_enable = True
+    # $ _preferences.afm_enable = True
 
     "{b}{i}Bienvenue dans Arisization Project cher/chère lycéen, Ce jeu appartient à SLTM.{/i}{/b}"   
     play sound "Click.mp3" noloop 
@@ -252,7 +252,7 @@ label début:
 
     scene warehouse with fade
     
-    $ _preferences.afm_enable = False 
+    # $ _preferences.afm_enable = False 
 
     play music "Soundtrack2.mp3" loop volume 1.0
 
@@ -1965,7 +1965,7 @@ label argument:
     P "Oui je confirme [H] c'est vraiment intéressant pour nos deux projets de robot."
     play sound "Click.mp3" noloop 
 
-    show screen point with moveinleft
+    show screen points with moveinleft
 
     M "Donc le lycée vous donnera un budget ou appelé Bourse scolaire des lycéens pour vos projets."
     play sound "Click.mp3" noloop 
@@ -6493,8 +6493,6 @@ label choice8:
         "{b}{i} Tu manges tranquillement pendant une demi-heure en regardant les documents que tu as eus.{/i}{/b}"
         play sound "Click.mp3" noloop 
         
-        $ renpy.open_url("https://github.com/ShadowSLTM/Aris-document/blob/main/Aris%20document")
-
         P "Bon voyons voir ces documents..." 
         play sound "Click.mp3" noloop 
 
@@ -8548,240 +8546,201 @@ label suite1:
     play sound "Click.mp3" noloop 
 
     Y "Oui je confirme."
-    play sound "Click.mp3" noloop 
+    play sound "Click.mp3" noloop  
+
+################################################################################################################
 
 label debate:
 
-    M "Bon [S] commence, dis nous pourquoi tu es contre."
+    M "Bon, [S], tu commences. Dis-nous pourquoi tu es contre les robots humanoïdes."
     play sound "Click.mp3" noloop 
 
-    S "Pour commencer je trouve que les robots humanoïdes ne servent qu'à faire des calculs mathématiques."
+    S "Pour commencer, je pense que les robots humanoïdes ne servent qu'à faire des calculs mathématiques ou exécuter des tâches basiques. Rien de plus."
     play sound "Menu.mp3" noloop 
 
-    menu:    
+    menu:
 
-        "{b}{i} Les cours. {/i}{/b}" :
+        "{b}{i}Ils peuvent aider dans les cours{/i}{/b}":
 
             $ renpy.block_rollback()
 
-            P "Non ils peuvent aussi aider pour les cours."
+            P "Ce n’est pas vrai. Ils peuvent aussi assister les élèves pendant les cours."
             play sound "Click.mp3" noloop 
 
-            S "Pour les cours !?."
+            S "Dans les cours ? Tu plaisantes ?"
             play sound "Click.mp3" noloop 
 
-            P "Oui."
+            P "Pas du tout. Imagine un robot qui peut t’expliquer un exercice complexe, ou t’aider à réviser la veille d’un examen."
             play sound "Click.mp3" noloop 
 
-            S "Ce n'est pas considéré comme de la triche !?"
+            S "Mais... ce ne serait pas de la triche ?"
             play sound "Click.mp3" noloop 
 
-            P "Non."
+            P "Pas si tu l’utilises comme un assistant, pas comme une machine à réponses."
             play sound "Click.mp3" noloop            
-            
-            S "Je ne suis pas convaincu de cet argument...."
+
+            S "Mouais... Je ne suis pas convaincu."
             play music "gameover.mp3" noloop
 
-            hide screen class_404 with moveoutright
-            hide screen point with moveoutleft
-            hide screen day with moveoutleft
-            scene black with fade
+            jump debate_failed
 
-            "{b}{i}Fin numéro 7 : Débat complétement perdu face à [S].{/i}{/b}"
-            play sound "Menu.mp3" noloop
+        "{b}{i}Ils sont utiles dans plusieurs domaines{/i}{/b}":
 
-            menu:    
-
-                "{b}{i}Abandonner{/i}{/b}" :
-                    return
-                    
-                "{b}{i}Réessayer.{/i}{/b}" :
-                    scene classroom with fade
-                    show screen class_404 with moveinright
-                    show screen point with moveinleft
-                    show screen day with moveinleft
-                    play music "Soundtrack.mp3" loop volume 1.0
-                    jump debate
-
-        "{b}{i} citez d'autres domaines.{/i}{/b}" : 
-            
-            P "OBJECTION !!!"
+            P "OBJECTION !"
             play sound "Click.mp3" noloop 
 
-    S "Pardon !?"
-    play sound "Click.mp3" noloop 
-
-    P "Oui les robots humanoïdes peuvent faire plein de truc."
-    play sound "Click.mp3" noloop 
-
-    S "Ah oui et quoi d'autres comme truc !?."
-    play sound "Click.mp3" noloop 
-
-    menu:    
-
-        "{b}{i} la guerre {/i}{/b}" :
-
-            $ renpy.block_rollback()
-
-            P "Non ils peuvent aussi aider pour la guerre."
+            S "Hein ?!"
             play sound "Click.mp3" noloop 
 
-            S "Pour la guerre !?."
+            P "Les robots humanoïdes peuvent être utiles dans une multitude de domaines, pas seulement pour les calculs."
             play sound "Click.mp3" noloop 
 
-            P "Oui."
+            S "Ah oui ? Comme quoi par exemple ?"
             play sound "Click.mp3" noloop 
 
-            S "On gros pour notre situation actuelle."
-            play sound "Click.mp3" noloop 
+            menu:
 
-            P "euh......"
-            play sound "Click.mp3" noloop            
-            
-            S "Je ne suis pas convaincu de cet argument...."
-            play music "gameover.mp3" noloop
+                "{b}{i}Dans le domaine militaire{/i}{/b}":
 
-            hide screen class_404 with moveoutright
-            hide screen point with moveoutleft
-            hide screen day with moveoutleft
-            scene black with fade
+                    $ renpy.block_rollback()
 
-            "{b}{i}Fin numéro 7 : Débat complétement perdu face à [S].{/i}{/b}"
-            play sound "Menu.mp3" noloop
+                    P "Par exemple, ils peuvent intervenir dans les zones de guerre, pour désamorcer des bombes ou protéger des civils."
+                    play sound "Click.mp3" noloop 
 
-            menu:    
+                    S "Donc... tu proposes d'utiliser des machines pour faire la guerre ?"
+                    play sound "Click.mp3" noloop 
 
-                "{b}{i}Abandonner{/i}{/b}" :
-                    return 
-                    
-                "{b}{i}Réessayer.{/i}{/b}" :
-                    scene classroom with fade
-                    show screen class_404 with moveinright
-                    show screen point with moveinleft
-                    show screen day with moveinleft
-                    play music "Soundtrack.mp3" loop volume 1.0
-                    jump debate
+                    P "Non, je parle de protection, pas d'attaque. Ils peuvent sauver des vies là où c’est trop dangereux pour des humains."
+                    play sound "Click.mp3" noloop 
 
-        "{b}{i} l'administratif {/i}{/b}" :
+                    S "Hmm... j’ai du mal à adhérer à ça."
+                    play music "gameover.mp3" noloop
 
-            $ renpy.block_rollback()
+                    jump debate_failed
 
-            P "L'administratif par exemple."
-            play sound "Click.mp3" noloop 
+                "{b}{i}Dans l’administration{/i}{/b}":
 
-    S "Je ne comprend pas."
-    play sound "Click.mp3" noloop 
+                    $ renpy.block_rollback()
 
-    P "Pour remplir des documents administratifs"
-    play sound "Click.mp3" noloop 
+                    P "Ils peuvent aussi être utilisés dans l’administration, pour traiter des formulaires, gérer des dossiers ou automatiser des processus chronophages."
+                    play sound "Click.mp3" noloop 
 
-    S "OK mais on risque de perdre des emplois si les robots humanoïdes font le travail à notre place."
-    play sound "Click.mp3" noloop 
+                    S "Je vois, mais si les robots font tout ça... que deviendront les emplois humains ?"
+                    play sound "Click.mp3" noloop 
 
-    menu:    
+                    menu:
 
-        "{b}{i} Corriger [S] {/i}{/b}" : 
+                        "{b}{i}Répondre sur l’emploi{/i}{/b}":
 
-            P "Permet-moi de te corriger."
-            play sound "Click.mp3" noloop 
+                            P "Bonne question. En réalité, on ne perd pas des emplois, on en crée de nouveaux."
+                            play sound "Click.mp3" noloop 
 
-    S "Vas-y."
-    play sound "Click.mp3" noloop 
+                            S "Tu peux m’expliquer ?"
+                            play sound "Click.mp3" noloop 
 
-    P "On ne va perdre d'emplois, on va juste créer des besoins ailleur."
-    play sound "Click.mp3" noloop 
+                            P "Par exemple, il faudra des techniciens pour entretenir ces robots, des ingénieurs pour les améliorer, des spécialistes pour les programmer..."
+                            play sound "Click.mp3" noloop 
 
-    S "Ou par exemple ?"
-    play sound "Click.mp3" noloop 
+                            S "D’accord, mais un robot reste une machine qui obéit. Et s’il se retourne contre son créateur ?"
+                            play sound "Click.mp3" noloop 
 
-    menu:    
+                            menu:
 
-        "{b}{i} Maintenance spécialisée {/i}{/b}" : 
+                                "{b}{i}Contester et nuancer{/i}{/b}":
 
-            P "Dans la maintenance des robots humanoïdes déjà."
-            play sound "Click.mp3" noloop 
+                                    P "Les modèles les plus avancés sont capables d'apprendre, d'adapter leur comportement, voire de développer une forme de conscience artificielle contrôlée."
+                                    play sound "Click.mp3" noloop 
 
-    S "Pardon ?"
-    play sound "Click.mp3" noloop 
+                                    if pronom == "il":
 
-    P "Bah oui il faudra bien entretenir les robots humanoïdes."
-    play sound "Click.mp3" noloop 
+                                        S "Tu es sérieux ?"
+                                        play sound "Click.mp3" noloop 
 
-    S "Ok je vois mais les robots humanoïdes obeisseent à leur créateur."
-    play sound "Click.mp3" noloop 
+                                    elif pronom == "elle":
 
-    menu:    
+                                        S "Tu es sérieuse ?"
+                                        play sound "Click.mp3" noloop 
 
-        "{b}{i} Contester {/i}{/b}" : 
+                                    P "Absolument."
+                                    play sound "Click.mp3" noloop 
 
-            P "Non ils ont aussi leur propre le propre conscience et façon d'agir."
-            play sound "Click.mp3" noloop 
+                                    S "Alors prouve-le."
+                                    play sound "Click.mp3" noloop 
 
-    if pronom == "il":
+                                    $ validation = get_random_validation() 
+                                    P "[validation]"
+                                    play sound "Click.mp3" noloop 
 
-        S "Tu es sérieux !?"
-        play sound "Click.mp3" noloop 
+                                    menu:
 
-    elif pronom == "elle": 
+                                        "{b}{i}Expliquer au tableau{/i}{/b}":
 
-        S "Tu es sérieuse !?"
-        play sound "Click.mp3" noloop 
+                                            $ renpy.block_rollback()
 
-    P "Oui."
-    play sound "Click.mp3" noloop 
+                                            P "Regarde."
+                                            play sound "Click.mp3" noloop 
 
-    S "Prouve-le alors"
-    play sound "Click.mp3" noloop 
+                                            "{b}{i}Tu expliques au tableau, schéma à l'appui...{/i}{/b}"
+                                            play sound "Click.mp3" noloop 
 
-    $ validation = get_random_validation() 
-    P "[validation]"
-    play sound "Click.mp3" noloop 
+                                            S "Ok... je ne suis pas vraiment convaincu......."
+                                            play sound "Click.mp3" noloop 
 
-    menu:    
+                                            jump debate_failed
 
-        "{b}{i} Expliquer au tableau {/i}{/b}" : 
+                                        "{b}{i}Pointer [newname]{/i}{/b}":
 
-            $ renpy.block_rollback()
+                                            P "[newname] ici présent(e) incarne parfaitement les arguments que j’ai avancés."
+                                            play sound "Click.mp3" noloop 
 
-            "{b}{i} tu commences à expliquer au tableau.{/i}{/b}"
-            play sound "Click.mp3" noloop 
-            
-            P "Tu vois un peu mieux"
-            play sound "Click.mp3" noloop 
+                                            Na "Moi !?"
+                                            play sound "Click.mp3" noloop 
 
-            S "Je ne suis pas convaincu par cette explication...."
-            play music "gameover.mp3" noloop
+                                            P "Oui absolument !"
+                                            play sound "Click.mp3" noloop 
 
-            scene black with fade
-            hide screen class_404 with moveoutright
-            hide screen point with moveoutleft
-            hide screen day with moveoutleft
+                                            show screen update with moveinright
 
-            "{b}{i}Fin numéro 7 : Débat complétement perdu face à [S].{/i}{/b}"
-            play sound "Menu.mp3" noloop
+                                            S "D’accord, j’avoue... je ne m’attendais pas à autant de réponses solides."
+                                            play sound "Click.mp3" noloop 
 
-            menu:    
+                                            hide screen update with moveoutright
 
-                "{b}{i}Abandonner{/i}{/b}" :
-                    return 
-                "{b}{i}Réessayer.{/i}{/b}" :
-                    scene classroom with fade
-                    show screen class_404 with moveinright
-                    show screen point with moveinleft
-                    show screen day with moveinleft
-                    play music "Soundtrack.mp3" loop volume 1.0
-                    jump debate
+                                            I "Tu te défends bien [prenom]."
+                                            play sound "Click.mp3" noloop 
 
-        "{b}{i} Pointer [newname]{/i}{/b}" : 
+                                            $ thanks = get_random_thanks()
+                                            P "[thanks]"
+                                            play sound "Click.mp3" noloop
 
-            P "[newname] ici présente est la représentation parfaite de toutes les arguments que j'ai dit jusqu'à maintenant."
-            play sound "Click.mp3" noloop 
+                                            jump debate_success
 
-    Na "Moi !?"
-    play sound "Click.mp3" noloop 
+###############################################################################################
 
-    I "Tu te défends bien [prenom]."
-    play sound "Click.mp3" noloop 
+label debate_failed:
+
+    hide screen class_404 with moveoutright
+    hide screen points with moveoutleft
+    hide screen day with moveoutleft
+    scene black with fade
+
+    "{b}{i}Fin numéro 7 : Débat complètement perdu face à [S].{/i}{/b}"
+    play sound "Menu.mp3" noloop
+
+    menu:
+
+        "{b}{i}Abandonner{/i}{/b}":
+            return
+
+        "{b}{i}Réessayer{/i}{/b}":
+            scene classroom with fade
+            show screen class_404 with moveinright
+            show screen points with moveinleft
+            show screen day with moveinleft
+            play music "Soundtrack.mp3" loop volume 1.0
+            jump debate
+
+label debate_success:
 
     "{b}{i}Le débat continue jusqu'à la fin du cours.{/i}{/b}"
     play sound "Bell.mp3" noloop   
@@ -8832,7 +8791,7 @@ label debate:
     "{b}{i} Vous entrez dans le dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene room
+    scene room with fade 
     show screen room with moveinright
 
     if pronom == "il":
@@ -9063,17 +9022,19 @@ label debate:
             "{b}{i} Tu ouvres le message.{/i}{/b}"
             play sound "Click.mp3" noloop
 
-            show screen update with moveinright
-            show screen draw with moveinleft
+            show screen draw with moveinbottom
 
             "{i} Salut [prenom], hier j'avais oublié de te dire mais j'avais fait un dessin d'[newname] tiens c'est cadeau.{/i}"
             play sound "Click.mp3" noloop
 
-            hide screen draw with moveoutleft
+            hide screen draw with moveoutbottom
+
             show screen update with moveinright
 
             P "[newname] regardes le magnifique dessin que [Su] a fait pour toi."
             play sound "Click.mp3" noloop
+
+            hide screen update with moveoutright
 
             Na "Oh c'est magnifique"
             play sound "Click.mp3" noloop
@@ -9112,7 +9073,7 @@ label debate:
     "{b}{i}Tu quittes le dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway with fadfe
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
@@ -9281,13 +9242,11 @@ label debate:
     "{b}{i}Tu commences à sentir ta tête tourner et ta vision devient floue. Le bruit ambiant de la salle de classe semble s’éloigner.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Attends... Je crois que..." 
-    play sound "Stumble.mp3" noloop
-
-    play music "Heartbeat.mp3" loop volume 1.0
+    P "Attends... Je crois que..."
+    play sound "Heartbeat.mp3" loop volume 1.0
 
     "{b}{i}Ton corps ne tient plus, et tu t'effondres à genoux. Des exclamations inquiètes remplissent la pièce.{/i}{/b}"
-    play sound "Click.mp3" noloop
+    play sound "Stumble.mp3" noloop
 
     Na "[prenom] !! Hé, reste avec moi !" 
     play sound "Click.mp3" noloop
@@ -9295,10 +9254,12 @@ label debate:
     "{b}{i}Tu perçois vaguement la voix d'[newname] au loin avant que tout devienne noir.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    stop music fadeout 2.0   
-
+    hide screen day with moveoutleft
+    hide screen points with moveoutleft
     hide screen class_404 with moveoutright 
     scene black with fade 
+
+    stop music fadeout 2.0   
 
     if pronom == "il":
 
@@ -9310,8 +9271,12 @@ label debate:
         "{b}{i}Quelques instants plus tard, tu te réveilles dans ta chambre, couchée sur ton lit.{/i}{/b}"
         play sound "Click.mp3" noloop
 
+    play music "Soundtrack3.mp3" loop volume 2.0
+
     scene room with fade
-    show screen room with moveinright 
+    show screen day with moveinleft
+    show screen room with moveinright
+    show screen points with moveinleft
 
     P "Où... où suis-je ?"
     play sound "Click.mp3" noloop
@@ -9505,7 +9470,9 @@ label debate:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
+    hide screen day with moveoutleft
     hide screen room with moveoutright 
+    hide screen points with moveoutleft
     scene black with fade 
 
     "{b}{i} Vous partez chercher à manger.{/i}{/b}"
@@ -9514,7 +9481,10 @@ label debate:
     $ points -= 300 
 
     scene room with fade 
+    show screen day with moveinleft
     show screen room with moveinright
+    show screen points with moveinleft
+
 
     P "Enfin à manger... "
     play sound "Click.mp3" noloop 
@@ -20366,7 +20336,7 @@ label password11:
     Ln "Je le sais déjà. C’est justement pour ça que je suis ici. Dis-moi, es-tu réellement capable de la contrôler ?"
     play sound "Click.mp3" noloop 
 
-    P "Oui, absolument. J’ai un vrai contrôle sur elle... mais elle agit aussi de son propre chef."
+    P "Oui, normalement. J’ai un vrai contrôle sur elle... mais elle agit aussi de son propre chef."
     play sound "Click.mp3" noloop 
 
     Ln "Je vois… Donc, je n’ai pas à m’inquiéter pour la sécurité publique."
@@ -20808,7 +20778,7 @@ label password11:
     N "Pas de soucis, je vais la chercher tout seul."
     play sound "Click.mp3" noloop 
 
-    Hi "Bon je vais y aller, à plus."
+    Hi "Bon moi je vais y aller, à plus."
     play sound "Click.mp3" noloop 
 
     P "Ok à demain."
@@ -23031,7 +23001,7 @@ label examen_francais:
     play sound "Click.mp3" noloop 
 
     $ suivi = get_random_suivi()
-    P "[suivi]"
+    Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
     hide screen room with moveoutright
@@ -29942,11 +29912,11 @@ label password23:
     show screen room with moveinright 
 
     $ dortoir = get_random_dortoir()
-    Na "[dortoir]"
+    P "[dortoir]"
     play sound "Click.mp3" noloop
 
     $ bien = get_random_fais_du_bien()
-    P "[bien]" 
+    Na "[bien]" 
     play sound "Click.mp3" noloop  
 
     "{b}{i} Vous posez tranquillement vos affaires.{/i}{/b}"
@@ -29955,6 +29925,178 @@ label password23:
     Na "Et dire qu'on a deux semaines de vacances."
     play sound "Click.mp3" noloop 
 
+    $ bien = get_random_fais_du_bien()
+    P "[bien]" 
+    play sound "Click.mp3" noloop  
 
+    Na "Bon on fais quoi maintenant ?"
+    play sound "Click.mp3" noloop  
+
+    P "On pourrait se poser un peu."    
+    play sound "Click.mp3" noloop  
+
+    Na "Oui pourquoi pas."
+    play sound "Click.mp3" noloop  
+
+    "{b}{i} Vous vous posez tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Tu veux lire un peu aussi ?"
+    play sound "Click.mp3" noloop
+    
+    Na "Oui avec plaisir je ne sais pas quoi d'autre."
+    play sound "Click.mp3" noloop
+
+    P "Tiens, j’ai ce vieux roman dont je t’avais parlé l'autre jour."
+    play sound "Click.mp3" noloop
+
+    Na "Celui avec l’histoire du voyageur du futur ?"
+    play sound "Click.mp3" noloop
+
+    P "Oui, exactement. Je pense que tu vas aimer."
+    play sound "Click.mp3" noloop
+
+    Na "D'accord, lis-moi un passage alors."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Vous ouvrez le livre ensemble, et les premières lignes résonnent dans le silence de la pièce.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    Na "C’est beau... Ça donne envie de s’y perdre."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Le temps semble ralentir autour de vous, comme si plus rien d’autre ne comptait que ce moment partagé.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Je pense qu'on peut arrêter de lire pour aujourd'hui."
+    play sound "Click.mp3" noloop
+
+    Na "Oui si tu veux mais mais moi je veux continue de lire."
+    play sound "Click.mp3" noloop
+
+    P "Ok pas de soucis pour moi si tu veux continuer de lire."
+    play sound "Click.mp3" noloop
+
+    "{i}Tu penses soudainement a quelques choses et [newname] te regardes.{/i}"
+    play sound "Click.mp3" noloop
+
+    Na "Ça va ? Tu as l'air plongé dans tes pensées."
+    play sound "Click.mp3" noloop
+
+    P "Je repense à ce que Yuna a dit ce midi, à propos du traître..."
+    play sound "Click.mp3" noloop
+
+    Na "Tu veux vraiment en parler maintenant ? Alors que ce sont les vacances et que j'ai pas envie d'en parler."
+    play sound "Click.mp3" noloop
+
+    menu:
+
+        "{b}{i}Oui, parlons-en.{/i}{/b}":
+            play sound "Menu.mp3" noloop
+
+            P "Je sais que ce n’est pas idéal, mais ce silence du traître m’inquiète. Il a arrêté d’agir... ça me semble trop bizarre."
+            play sound "Click.mp3" noloop
+
+            Na "Peut-être qu’avec l’examen du paper Shuffle qui approche, il est occupé à réviser ou à se préparer ?"
+            play sound "Click.mp3" noloop
+
+            if pronom == "il": 
+
+                P "C’est possible, mais ce n’est pas dans son habitude de rester silencieux aussi longtemps. Je préfère rester vigilant."
+                play sound "Click.mp3" noloop
+
+            elif pronom == "elle": 
+
+                P "C’est possible, mais ce n’est pas dans son habitude de rester silencieux aussi longtemps. Je préfère rester vigilante."
+                play sound "Click.mp3" noloop
+
+            Na "Bon, si tu insistes... Mais promets-moi de ne pas te laisser consumer par ça. Les vacances, ça doit rester un moment pour souffler."
+            play sound "Click.mp3" noloop
+
+            P "Je vais essayer, mais c’est dur. Merci d’être là."
+            play sound "Click.mp3" noloop
+
+        "{b}{i}Non, pas maintenant.{/i}{/b}":
+            play sound "Menu.mp3" noloop
+
+            P "Tu as raison, j’aurais peut-être dû garder ça pour plus tard. J’ai juste du mal à tourner la page."
+            play sound "Click.mp3" noloop
+
+            Na "Je comprends. Parfois, il faut savoir lâcher prise, même quand c’est difficile."
+            play sound "Click.mp3" noloop
+
+            P "Je vais essayer de profiter un peu des vacances, même si le doute reste."
+            play sound "Click.mp3" noloop
+
+            Na "Quand tu seras prêt, on en reparlera."
+            play sound "Click.mp3" noloop
+
+            P "Promis je le ferai."
+            play sound "Click.mp3" noloop
+
+            Na "C’est déjà un bon début. Parfois, c’est dans le repos qu’on trouve les réponses."
+            play sound "Click.mp3" noloop
+
+            P "Oui... Et puis, ça fait du bien de ne pas toujours être sur le qui-vive."
+            play sound "Click.mp3" noloop
+
+            Na "Exactement. Et si jamais tu as besoin d’en parler, je suis là, d’accord ?"
+            play sound "Click.mp3" noloop
+
+            P "Merci, Na. Ça compte beaucoup pour moi."
+            play sound "Click.mp3" noloop
+
+    $ go_eat = get_random_go_eat()
+    Na "[go_eat]"
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen room with moveoutright
+    scene black with fade 
+
+    "{b}{i} Vous partez chercher à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 300 
+
+    scene room with fade 
+    show screen room with moveinright
+
+    Na "Enfin à manger... "
+    play sound "Click.mp3" noloop 
+
+    $ bien = get_random_fais_du_bien()
+    P "[bien]"
+    play sound "Click.mp3" noloop  
+
+    "{b}{i} Vous mangez tranquillement pendant une demi-heure.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Tu as finis de manger ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui, je n'ai plus faim."
+    play sound "Click.mp3" noloop 
+
+    P "Bien."
+    play sound "Click.mp3" noloop 
+
+    Na "Bon Je vais me déconnecter et me recharger."
+    play sound "Click.mp3" noloop 
+
+    P "Pas de soucis."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[newname] se déconnecte et recharge sa batterie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bon je vais me changer et aller dormir."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te changes avant d'aller de te coucher.{/i}{/b}"
+    play sound "Click.mp3" noloop
 
 # Aris la plus belle <333333333333333333333333333 

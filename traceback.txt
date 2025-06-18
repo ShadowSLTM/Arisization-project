@@ -1,36 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 2549, in script
-    hide screen point with moveoutleftts
-  File "renpy/common/000statements.rpy", line 685, in execute_hide_screen
-    renpy.with_statement(eval(transition_expr))
-  File "game/script.rpy", line 2549, in <module>
-    hide screen point with moveoutleftts
-NameError: name 'moveoutleftts' is not defined
+  File "game/script.rpy", line 9115, in script
+    scene hallway with fadfe
+  File "game/script.rpy", line 9115, in <module>
+    scene hallway with fadfe
+NameError: name 'fadfe' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 2549, in script
-    hide screen point with moveoutleftts
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 685, in execute_hide_screen
-    renpy.with_statement(eval(transition_expr))
+  File "game/script.rpy", line 9115, in script
+    scene hallway with fadfe
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 1370, in execute
+    paired = renpy.python.py_eval(self.paired)
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
     return py_eval_bytecode(code, globals, locals)
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 2549, in <module>
-    hide screen point with moveoutleftts
-NameError: name 'moveoutleftts' is not defined
+  File "game/script.rpy", line 9115, in <module>
+    scene hallway with fadfe
+NameError: name 'fadfe' is not defined
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 Arisization Project Version_développeur
-Sat Jun 14 01:36:28 2025
+Wed Jun 18 23:55:56 2025

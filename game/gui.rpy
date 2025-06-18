@@ -214,16 +214,16 @@ define gui.quick_button_text_selected_color = gui.accent_color
 ## Les boutons pour les choix (Choice buttons) sont utilisés dans le jeu pour
 ## permettre au joueur de choisir telle ou telle action, tel ou tel dialogue.
 
-define gui.choice_button_width = 1185
+define gui.choice_button_width = 1185 
 define gui.choice_button_height = None
 define gui.choice_button_tile = False
-define gui.choice_button_borders = Borders(150, 8, 150, 8)
+define gui.choice_button_borders = Borders(150, 15, 150, 15)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_idle_color = '#888888'
-define gui.choice_button_text_hover_color = "#ffffff"
-define gui.choice_button_text_insensitive_color = '#8888887f'
+define gui.choice_button_text_idle_color = '#ffffff'
+define gui.choice_button_text_hover_color = "000000"
+define gui.choice_button_text_insensitive_color = '#0000'
 
 
 ## Boutons des emplacements de fichiers. #######################################
@@ -235,10 +235,11 @@ define gui.choice_button_text_insensitive_color = '#8888887f'
 
 ## Le bouton d’emplacement de Snapshot.
 define gui.slot_button_width = 414
-define gui.slot_button_height = 309
+define gui.slot_button_height = 309 
 define gui.slot_button_borders = Borders(15, 15, 15, 15)
-define gui.slot_button_text_size = 21
+define gui.slot_button_text_size = 27
 define gui.slot_button_text_xalign = 0.5
+define gui.slot_button_text_font = gui.text_font
 define gui.slot_button_text_idle_color = gui.idle_small_color
 define gui.slot_button_text_selected_idle_color = gui.selected_color
 define gui.slot_button_text_selected_hover_color = gui.hover_color
@@ -261,7 +262,8 @@ define gui.file_slot_rows = 2
 
 ## La position sur le côté gauche des boutons de navigation, relatif au côté
 ## gauche de l'écran.
-define gui.navigation_xpos = 60
+
+define gui.navigation_xpos = 30
 
 ## La position vertical du l’indicateur de saut des dialogues.
 define gui.skip_ypos = 15
@@ -282,14 +284,13 @@ define gui.pref_spacing = 15
 define gui.pref_button_spacing = 0
 
 ## L’espacement entre les boutons de page.
-define gui.page_spacing = 0
+define gui.page_spacing = 45
 
 ## L’espacement entre les emplacements de Snapshot.
 define gui.slot_spacing = 15
 
 ## La position du texte du menu principal.
 define gui.main_menu_text_xalign = 1.0
-
 
 ## Cadres ######################################################################
 ##
@@ -301,7 +302,7 @@ define gui.main_menu_text_xalign = 1.0
 define gui.frame_borders = Borders(6, 6, 6, 6)
 
 ## Le cadre qui est utilisé par les écrans de confirmation.
-define gui.confirm_frame_borders = Borders(60, 60, 60, 60)
+define gui.confirm_frame_borders = Borders(70, 60, 70, 60)
 
 ## Le cadre qui est utilisé par l’écran de saut des dialogues.
 define gui.skip_frame_borders = Borders(24, 8, 75, 8)
@@ -310,6 +311,7 @@ define gui.skip_frame_borders = Borders(24, 8, 75, 8)
 define gui.notify_frame_borders = Borders(24, 8, 60, 8)
 
 ## Est-ce que les arrière-plans des cadres doivent être en mosaïque ?
+
 define gui.frame_tile = False
 
 
@@ -364,7 +366,7 @@ define gui.history_height = 210
 define gui.history_spacing = 0
 
 ## La position, largeur et alignement du label donnant le nom du personnage en
-## train de parler.
+## train de parler. 
 define gui.history_name_xpos = 233
 define gui.history_name_ypos = 0
 define gui.history_name_width = 233

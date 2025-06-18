@@ -39,7 +39,6 @@ define gui.about = _p("""""")
 
 define build.name = "Arisization-Project"
 
-
 ## Sons et musiques ############################################################
 
 ## Ces trois variables contrôlent, entre autres, quels mixeurs sont affichés
@@ -122,14 +121,14 @@ define config.window_hide_transition = Dissolve(.2)
 ## Contrôle la vitesse du texte. La valeur par défaut, 0, est infinie. Toute
 ## autre valeur est le nombre de caractères tapés par seconde.
 
-default preferences.text_cps = 20
+default preferences.text_cps = 25
 
 
 ## Le délai d’avancée automatique. Des nombres importants entraînent une longue
 ## attente. Des valeurs réputées correctes sont comprises dans une plage allant
 ## de 0 à 30.
 
-default preferences.afm_time = 20
+default preferences.afm_time = 25
 
 
 ## Répertoire de Snapshot ####################################################
