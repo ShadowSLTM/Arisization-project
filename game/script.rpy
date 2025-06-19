@@ -3801,6 +3801,9 @@ label choice6:
     Na "[validation]"
     play sound "Click.mp3" noloop 
 
+# cours sur la guerre
+###############################################################################################################################
+
     M "Bon, aujourd'hui petit cours d'histoire sur la guerre technologique."
     play sound "Click.mp3" noloop 
 
@@ -3808,7 +3811,7 @@ label choice6:
     play sound "Click.mp3" noloop 
 
     M "Pour cela, petit contrôle surprise, sortez une feuille blanche."
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
  
     I "Dès le second jour de cours sérieusement..."
     play sound "Click.mp3" noloop 
@@ -4024,8 +4027,6 @@ label choice6:
     scene classroom with fade
     show screen class_404 with moveinright 
 
-# cours sur la guerre de 2096 partie 2 
-
     M "Continuons un peu plus en profondeur le sujet de la guerre technologique."
     play sound "Click.mp3" noloop
 
@@ -4145,6 +4146,8 @@ label choice6:
 
     "{b}{i}Le cours continue sans problème.{/i}{/b}"
     play sound "Bell.mp3" noloop 
+
+###########################################################################################################################################
 
     $ endlesson = get_random_endlesson()
     M "[endlesson]"
@@ -6026,6 +6029,12 @@ label choice8:
         C "Je vois, ça dois sûrement du être à son inactivité." 
         play sound "Click.mp3" noloop
 
+        P "Oui et du coup elle m'a demandé de choisir son nouveau nom de code."
+        play sound "Click.mp3" noloop
+
+        C "Je vois elle devais vraiment te faire confiance pour te laisser choisir son nom de code."
+        play sound "Click.mp3" noloop
+
         P "Aussi j'ai toujours voulu connaître la personne qui a conçu [A]."
         play sound "Click.mp3" noloop 
 
@@ -7821,7 +7830,7 @@ label suite1:
     play sound "Click.mp3" noloop  
 
     P "Oui, je suis là."
-    play sound "Click.mp3" noloop  
+    play sound "Click.mp3" noloop 
 
     M "[Na] ?"
     play sound "Click.mp3" noloop  
@@ -7829,7 +7838,7 @@ label suite1:
     Na "Présente, madame."
     play sound "Click.mp3" noloop  
 
-    M "Bon aujourd'hui nous allons voir un nouveau sujet grammaire et je m'excuse [S] si tu as ratée le sujet sur la guerre."
+    M "Bon aujourd'hui nous allons voir un nouveau sujet de math et je m'excuse [S] si tu as ratée le sujet sur la guerre."
     play sound "Click.mp3" noloop
 
     $ validation = get_random_validation() 
@@ -7849,6 +7858,9 @@ label suite1:
     S "Il n'y a pas de soucis."
     play sound "Click.mp3" noloop
 
+# cours de math 
+###########################################################################################################
+
     M "Bon Commençons, sortez vos livres de mathématique page 15."
     play sound "Click.mp3" noloop
 
@@ -7860,7 +7872,7 @@ label suite1:
     play sound "Click.mp3" noloop 
 
     M "Bon qui peut me dire ce qu'est le théorème de Pythagore ?"
-    play sound "Click.mp3" noloop 
+    play sound "Click.mp3" noloop  
 
     I "moi s'il vous plaît."
     play sound "Click.mp3" noloop
@@ -8018,6 +8030,8 @@ label suite1:
     "{b}{i}Le cours continue sans probléme.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
+#############################################################################################################
+
     $ endlesson = get_random_endlesson()
     M "[endlesson]"
     play sound "Click.mp3" noloop
@@ -8174,7 +8188,7 @@ label suite1:
             Na "Je ne sais pas mais je pense qu'on aura encore cours de math."
             play sound "Click.mp3" noloop 
 
-            S "Math encore !?"
+            S "encore !?"
             play sound "Click.mp3" noloop 
 
             P "Oui c'est très probable."
@@ -8285,80 +8299,8 @@ label suite1:
     scene classroom with fade
     show screen class_404 with moveinright  
 
-    "{b}{i}Tout le monde s'asseoit à sa place respective.{/i}{/b}"
+    P "rebonjour."
     play sound "Click.mp3" noloop
-
-    M "Très bien, commençons la vérification des présences."
-    play sound "Click.mp3" noloop  
-
-    M "[I] ?"
-    play sound "Click.mp3" noloop  
-
-    I "Présente."
-    play sound "Click.mp3" noloop  
-
-    M "[H] ?"
-    play sound "Click.mp3" noloop  
-
-    H "Ouais, je suis là."
-    play sound "Click.mp3" noloop  
-
-    M "[K] ?"
-    play sound "Click.mp3" noloop  
-
-    K "Présent, madame."
-    play sound "Click.mp3" noloop  
-
-    M "[N] ?"
-    play sound "Click.mp3" noloop  
-
-    N "Ici."
-    play sound "Click.mp3" noloop  
-
-    M "[Hi] ?"
-    play sound "Click.mp3" noloop  
-
-    Hi "Présent."
-    play sound "Click.mp3" noloop  
-
-    M "[Y] ?"
-    play sound "Click.mp3" noloop  
-
-    Y "Oui, présente."
-    play sound "Click.mp3" noloop  
-
-    M "[S] ?"
-    play sound "Click.mp3" noloop  
-
-    S "Toujours là."
-    play sound "Click.mp3" noloop  
-
-    M "[J1] ?"
-    play sound "Click.mp3" noloop  
-
-    J1 "Présente."
-    play sound "Click.mp3" noloop  
-
-    M "[J2] ?"
-    play sound "Click.mp3" noloop  
-
-    J2 "Présente aussi."
-    play sound "Click.mp3" noloop  
-
-    M "[P] ?"
-    play sound "Click.mp3" noloop  
-
-    P "Oui, je suis là."
-    play sound "Click.mp3" noloop  
-
-    M "[Na] ?"
-    play sound "Click.mp3" noloop  
-
-    Na "Présente, madame."
-    play sound "Click.mp3" noloop  
-
-    M "Parfait, tout le monde est là aujourd’hui. Nous pouvons commencer le cours."
-    play sound "Click.mp3" noloop  
 
     $ validation = get_random_validation() 
     P "[validation]"
@@ -8368,7 +8310,10 @@ label suite1:
     J1 "[validation]"
     play sound "Click.mp3" noloop 
 
-    M "Aujourd'hui dans ce cours nous allons faire quelques chose de spécial."
+# cours de débat
+#################################################################################################################
+
+    M "Bon cette après-midi, nous allons faire quelques chose de spécial."
     play sound "Click.mp3" noloop 
 
     I "Quoi exactement ?"
@@ -8548,8 +8493,6 @@ label suite1:
     Y "Oui je confirme."
     play sound "Click.mp3" noloop  
 
-################################################################################################################
-
 label debate:
 
     M "Bon, [S], tu commences. Dis-nous pourquoi tu es contre les robots humanoïdes."
@@ -8715,8 +8658,6 @@ label debate:
 
                                             jump debate_success
 
-###############################################################################################
-
 label debate_failed:
 
     hide screen class_404 with moveoutright
@@ -8744,6 +8685,8 @@ label debate_success:
 
     "{b}{i}Le débat continue jusqu'à la fin du cours.{/i}{/b}"
     play sound "Bell.mp3" noloop   
+
+#############################################################################################################################################
 
     $ endlesson = get_random_endlesson()
     M "[endlesson]"
@@ -12336,7 +12279,7 @@ label password:
     Oh "Oui, il le faut vu la situation actuelle."
     play sound "Click.mp3" noloop 
 
-    P "Je confirme car la sécurité d'[newname] est en jeu."
+    P "J'atteste que la sécurité d'[newname] est en jeu."
     play sound "Click.mp3" noloop 
 
     Oh "Donc veuilliez retournez dans votre dortoir pour procéder au fouille."
@@ -12524,7 +12467,7 @@ label password:
     "{b}{i}Tu entres dans le bureau des élèves.{/i}{/b}"
     play sound "Door.mp3" noloop 
 
-    scene office 
+    scene office with fade 
     show screen office with moveinright 
 
     "{b}{i}En entrant vous voyez [M] et [E] en train discuter avant qu'elles se tournent vers vous.{/i}{/b}"
@@ -12806,7 +12749,7 @@ label password:
     "{b}{i} Vous entrez au réféctoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene lunchroom 
+    scene lunchroom with fade
     show screen lunchroom with moveinright
 
     "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
@@ -12935,19 +12878,19 @@ label password:
     "{b}{i}Tu te diriges vers le hall.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall with fade
     show screen hall with moveinright 
 
     "{b}{i}Tu continues vers le premier étage.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     hide screen hall with moveoutright
-    scene staircase
+    scene staircase with fade 
 
     "{b}{i}Tu continues vers le couloir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hallway
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     "{b}{i}Tu continue vers la salle de la classe.{/i}{/b}"
@@ -13028,7 +12971,7 @@ label password:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright 
 
     "{b}{i} Vous continuez vers le dortoir.{/i}{/b}"
@@ -13040,7 +12983,7 @@ label password:
     "{b}{i}Vous entrez dans ton dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene room
+    scene room with fade
     show screen room with moveinright 
 
     if pronom == "il":
@@ -13205,7 +13148,7 @@ label password1:
     "{b}{i} Tu quiites le dortoir avec [newname].{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
@@ -13319,7 +13262,7 @@ label password1:
     elif pronom == "elle":
 
         $ je_vais_bien_txt = get_random_je_vais_bien() 
-        P "[je_vais_bien_txt] Je suis inquiet pour [newname]." 
+        P "[je_vais_bien_txt] Je suis inquiete pour [newname]." 
         play sound "Click.mp3" noloop 
 
         M "Je vois mais essaye d'être concentrée durant les cours."
@@ -13343,7 +13286,7 @@ label password1:
     "{b}{i}Vous vous dirigez vers le couloir.{/i}{/b}"
     play sound "Door.mp3" noloop
     
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright 
 
     P "Enfin une pause ça fais plasir."
@@ -13366,7 +13309,7 @@ label password1:
     "{b}{i} Tu te diriges vers les toilettes.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene restroom
+    scene restroom with fade
     show screen WC with moveinright
 
     P "Bon je vais faire ce que j'ai à faire."
@@ -13390,7 +13333,7 @@ label password1:
     "{b}{i} Tu quittes les toilettes.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway
+    scene hallway with fade 
     show screen hallway with moveinright
 
     "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
@@ -13429,14 +13372,14 @@ label password1:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i}Tu continues vers les escaliers.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     hide screen hallway with moveoutright
-    scene staircase 
+    scene staircase with fade
 
     "{b}{i}Puis vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -13453,7 +13396,7 @@ label password1:
     "{b}{i} Vous entrez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene lunchroom 
+    scene lunchroom with fade
     show screen lunchroom with moveinright
     
     $ find_food = get_random_find_food()
@@ -13628,19 +13571,19 @@ label password1:
     "{b}{i}Vous vous diriges vers le hall.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall with fade
     show screen hall with moveinright 
 
     "{b}{i}Vous continuez vers le premier étage.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     hide screen hall with moveoutright
-    scene staircase
+    scene staircase with fade
 
     "{b}{i}Vous continuez vers le couloir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hallway
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i}Vous continuez vers la salle de la classe.{/i}{/b}"
@@ -13711,7 +13654,7 @@ label password1:
     "{b}{i} Tu sors de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright  
 
     "{b}{i} Tu continues vers le dortoir.{/i}{/b}"
@@ -13723,17 +13666,17 @@ label password1:
     "{b}{i}Tu entres dans ton dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene room
+    scene room with fade
     show screen room with moveinright 
 
     if pronom == "il":
 
-        P "Enfin arrivé."
+        P "Enfin arrivés."
         play sound "Click.mp3" noloop
 
     elif pronom == "elle":
 
-        P "Enfin arrivée."
+        P "Enfin arrivées."
         play sound "Click.mp3" noloop
 
     "{b}{i}Tu te poses pendant deux heures pour réviser.{/i}{/b}"
@@ -13944,7 +13887,7 @@ label password2:
     "{b}{i}Tu te diriges vers le couloir.{/i}{/b}"
     play sound "Door.mp3" noloop
      
-    scene hallway
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i}Vous continuez vers la salle de classe.{/i}{/b}"
@@ -14246,14 +14189,14 @@ label examen_pythagore:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i} Vous vous dirigez votre chemin vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     hide screen hallway with moveoutright
-    scene staircase
+    scene staircase with fade
 
     "{b}{i} Vous descendez lez escaliers.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -14270,7 +14213,7 @@ label examen_pythagore:
     "{b}{i} Vous arrivez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop 
 
-    scene lunchroom 
+    scene lunchroom with fade
     show screen lunchroom with moveinright
     
     $ find_food = get_random_find_food()
@@ -14379,19 +14322,19 @@ label examen_pythagore:
     "{b}{i} Vous sortez du réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall with fade
     show screen hall with moveinright 
 
     "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop 
 
     hide screen hall with moveoutright
-    scene staircase 
+    scene staircase with fade
 
     "{b}{i} Vous montez au premier étage.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright
 
     "{b}{i} Vous continuez vers la salle de classe.{/i}{/b}"
@@ -14699,7 +14642,7 @@ label examen_pythagore:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i} Vous continuez vers le couloir.{/i}{/b}"
@@ -14711,7 +14654,7 @@ label examen_pythagore:
     "{b}{i} Vous entres dans ton dortoir.{/i}{/b}" 
     play sound "Door.mp3" noloop
 
-    scene room
+    scene room with fade
     show screen room with moveinright 
 
     if pronom == "il":
@@ -14888,19 +14831,19 @@ label password3:
     "{b}{i} Tu quiites le dortoir avec [newname].{/i}{/b}"
     play sound "Door.mp3" noloop   
 
-    scene hallway
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i}Tu continues dans le couloir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     hide screen hallway with moveoutright
-    scene staircase 
+    scene staircase with fade 
 
     "{b}{i}Tu continues vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hall
+    scene hall with fade
     show screen hall with moveinright 
 
     "{b}{i}Tu continues vers le bureau des élèves.{/i}{/b}"
@@ -14912,7 +14855,7 @@ label password3:
     "{b}{i}Tu entres dans le bureau des élèves.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene office 
+    scene office with fade
     show screen office with moveinright 
 
     P "Bonjour, c'est moi [prenom]."
@@ -14963,7 +14906,7 @@ label password3:
     "{b}{i} Tu les laisses tranquille et tu reviens deux heures et demi plus tard.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    scene office 
+    scene office with fade
     show screen office with moveinright 
 
     P "Me revoilà."
@@ -15037,7 +14980,7 @@ label password3:
     "{b}{i}Tu quittes le bureau des élèves avec [Na].{/i}{/b}"
     play sound "Door.mp3" noloop
     
-    scene hall
+    scene hall with fade
     show screen hall with moveinright 
 
     $ go_eat = get_random_go_eat()
@@ -15065,7 +15008,7 @@ label password3:
     "{b}{i} Puis encore vers le réféctoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene lunchroom 
+    scene lunchroom with fade 
     show screen lunchroom with moveinright
 
     "{b}{i} en entrant vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
@@ -15220,31 +15163,31 @@ label password3:
     "{b}{i} Tu sors du réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hall
+    scene hall with fade 
     show screen hall with moveinright
 
     "{b}{i} Vous continuez votre chemin vers la classe.{/i}{/b}"
     play sound "Footsteps.mp3" noloop  
 
     hide screen hall with moveoutright
-    scene staircase 
+    scene staircase with fade
 
     "{b}{i} Vous montez au premier étage.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade 
     show screen hallway with moveinright
 
     "{b}{i} Vous contuez ver le dortoir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     hide screen hallway with moveoutright
-    scene black 
+    scene black with fade
 
     "{b}{i}Tu entres dans ton dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene room
+    scene room with fade
     show screen room with moveinright  
 
     $ dortoir = get_random_dortoir()
@@ -15423,7 +15366,7 @@ label password4:
     "{b}{i}Tu quittes le dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
@@ -15620,14 +15563,14 @@ label password4:
     "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene hallway 
+    scene hallway with fade
     show screen hallway with moveinright 
 
     "{b}{i} Vous vous dirigez votre chemin vers le hall.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     hide screen hallway with moveoutright   
-    scene staircase
+    scene staircase with fade
 
     "{b}{i} Vous descendez lez escaliers.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -15644,7 +15587,7 @@ label password4:
     "{b}{i} Vous arrivez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop 
 
-    scene lunchroom 
+    scene lunchroom with fade
     show screen lunchroom with moveinright
     
     $ find_food = get_random_find_food()
@@ -15748,6 +15691,9 @@ label password4:
 
     scene classroom with fade
     show screen class_404 with moveinright 
+
+# cours de Runix
+###############################################################################################################
 
     M "Rebonjour, cet après-midi nous allons faire un cours de programmation."
     play sound "Click.mp3" noloop 
@@ -15873,6 +15819,8 @@ label password4:
 
     "{b}{i} Le cours continue sans problème.{/i}{/b}"       
     play sound "Bell.mp3" noloop
+
+#############################################################################################
 
     $ endlesson = get_random_endlesson()
     M "[endlesson]"
@@ -16933,7 +16881,7 @@ label password7:
     "{b}{i} Vous entrez enfin au réfectoire.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    scene lunchroom 
+    scene lunchroom with fade
     show screen lunchroom with moveinright
     
     $ find_food = get_random_find_food()
@@ -17647,13 +17595,16 @@ label examen_runix:
     Na "Je vois, merci."
     play sound "Click.mp3" noloop
 
+# cours de français 2
+###########################################################################################################################
+
     M "Aujourd'hui, nous allons étudier un point essentiel : les différentes classes de mots."
     play sound "Click.mp3" noloop
 
     M "Il existe dix classes principales. On les divise souvent en deux catégories : les mots variables et les mots invariables."
     play sound "Click.mp3" noloop
 
-    Na "Variables ? Invariables ?"
+    Na "Variables ? Invariables ?" 
     play sound "Click.mp3" noloop
 
     M "Exactement. Les mots *variables* changent selon le genre, le nombre, ou la personne. Les mots *invariables*, eux, ne changent jamais de forme."
@@ -17733,6 +17684,8 @@ label examen_runix:
 
     "{b}{i}Le cours continue tranquillement. Les élèves prennent note pendant que le professeur donne des exemples supplémentaires au tableau.{/i}{/b}"
     play sound "Bell.mp3" noloop 
+
+###########################################################################################################################
 
     $ stockage += 15.0  
 
@@ -17921,14 +17874,64 @@ label examen_runix:
     "{b}{i}Tout le monde s'asseoit à sa place respective.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    M "Bonjour nous allons continuez le cours de français." 
-    play sound "Click.mp3" noloop 
+# cours de français 2
+################################################################################################################################3
 
-    Y "Bien je vois." 
-    play sound "Click.mp3" noloop 
+    M "Bien, maintenant reprenons le cours de français."
+    play sound "Click.mp3" noloop
 
-    "{b}{i} Vous reprenez le cours tranquillement jusqu'à la fin du cours.{/i}{/b}"
-    play sound "Bell.mp3" noloop  
+    Y "Compris."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Le cours de français commence dans une atmosphère studieuse.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Aujourd’hui, on va parler d’un point souvent redouté en grammaire : l’accord du participe passé avec l’auxiliaire avoir."
+    play sound "Click.mp3" noloop
+
+    M "Avec avoir, le participe passé ne s’accorde pas avec le sujet. Mais il peut s’accorder avec le complément d’objet direct, s’il est placé avant le verbe."
+    play sound "Click.mp3" noloop
+
+    Y "C’est un peu compliqué, non ?"
+    play sound "Click.mp3" noloop
+
+    M "Au début oui, mais avec quelques exemples, ça va devenir clair."
+    play sound "Click.mp3" noloop
+
+    M "Prenons cette phrase. J’ai mangé des pommes. Le complément d’objet direct, ici, c’est des pommes. Il est après le verbe. Donc on n’accorde pas. On écrit mangé, sans e."
+    play sound "Click.mp3" noloop
+
+    M "Autre exemple. Les pommes que j’ai mangées étaient délicieuses. Cette fois, les pommes est placé avant le verbe. On fait l’accord. On écrit mangées avec un e et un s."
+    play sound "Click.mp3" noloop
+
+    Y "Donc si le complément est après, pas d’accord. Mais s’il est avant, on accorde. C’est ça ?"
+    play sound "Click.mp3" noloop
+
+    M "Exactement. Tu as tout compris. Maintenant, voyons ce qui se passe avec les pronoms."
+    play sound "Click.mp3" noloop
+
+    M "Écoute bien. Je les ai vus. Le mot les est un pronom, placé avant le verbe. Si les représente des garçons, on écrit vus avec un s. Si c’est des filles, on écrit vues avec un e et un s."
+    play sound "Click.mp3" noloop
+
+    Y "Et si on ne sait pas ce que le pronom remplace ?"
+    play sound "Click.mp3" noloop
+
+    M "Dans ce cas, il faut retrouver à quoi il renvoie. L’accord dépend du mot remplacé, qu’il soit masculin ou féminin, singulier ou pluriel."
+    play sound "Click.mp3" noloop
+
+    M "Dès que tu vois un pronom avant le verbe, demande-toi ce qu’il remplace. C’est la clé pour savoir comment accorder."
+    play sound "Click.mp3" noloop
+
+    M "Et n’oublie pas non plus. Avec l’auxiliaire être, on accorde toujours avec le sujet."
+    play sound "Click.mp3" noloop
+
+    M "Regarde. Elle est partie. On met un e à partie parce que le sujet est féminin."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Le cours se poursuit ainsi, mêlant théorie, exemples et cas pratiques. Une atmosphère concentrée règne dans la classe.{/i}{/b}"
+    play sound "Bell.mp3" noloop
+
+#####################################################################################################
 
     $ endlesson = get_random_endlesson()
     M "[endlesson]"
@@ -18452,17 +18455,73 @@ label password9:
     Y "Il n'y aura pas de soucis pour moi."
     play sound "Click.mp3" noloop 
 
-    P "Il n'y aura pas de soucis pour moi."
+    P "Il n'y aura pas de soucis pour moi aussi."
     play sound "Click.mp3" noloop 
 
-    M "Bien, maintenant reprenons le cours de français."
+# cours de français 3
+#################################################################################################################################
+
+    M "Aujourd’hui, on va parler d’un piège courant en français : les homophones grammaticaux."
     play sound "Click.mp3" noloop
 
-    Y "Compris."
-    play sound "Click.mp3" noloop 
+    M "Ce sont des mots qui se prononcent de la même manière, mais qui ne s’écrivent pas pareil et n’ont pas le même sens."
+    play sound "Click.mp3" noloop
 
-    "{b}{i}Le cours continue sans probléme.{/i}{/b}"
-    play sound "Bell.mp3" noloop 
+    Y "Ah oui, comme a et à ?"
+    play sound "Click.mp3" noloop
+
+    M "Exactement. On commence par celui-là. A sans accent est le verbe avoir. Tu peux le remplacer par avait pour vérifier."
+    play sound "Click.mp3" noloop
+
+    M "Exemple. Il a un chat. Si tu dis Il avait un chat, ça fonctionne. Donc c’est bien a sans accent."
+    play sound "Click.mp3" noloop
+
+    M "Mais à avec un accent est une préposition. Tu ne peux pas dire Il avait un chat dedans."
+    play sound "Click.mp3" noloop
+
+    Y "Donc je remplace par avait pour savoir si je mets un a ou un à. Pas bête."
+    play sound "Click.mp3" noloop
+
+    M "Ensuite, et et est. Facile à confondre aussi."
+    play sound "Click.mp3" noloop
+
+    M "Et sans accent est une conjonction. Il relie deux choses. Comme dans J’aime le thé et le café."
+    play sound "Click.mp3" noloop
+
+    M "Est avec un e est le verbe être. Tu peux le remplacer par était."
+    play sound "Click.mp3" noloop
+
+    M "Exemple. Il est gentil. Tu peux dire Il était gentil. Donc on écrit est."
+    play sound "Click.mp3" noloop
+
+    Y "D’accord, et relie. Est, c’est le verbe être."
+    play sound "Click.mp3" noloop
+
+    M "Maintenant, on passe aux plus redoutés. Ces, ses, c’est et s’est."
+    play sound "Click.mp3" noloop
+
+    M "Ces avec un c désigne quelque chose qu’on montre. Comme ces chaussures. On peut dire ces chaussures-là."
+    play sound "Click.mp3" noloop
+
+    M "Ses avec un s parle de possession. Ce sont les siennes. Ses amis, ses idées."
+    play sound "Click.mp3" noloop
+
+    M "C’est, contraction de cela est. Tu peux dire Cela est bien. Donc tu écris c’est avec une apostrophe."
+    play sound "Click.mp3" noloop
+
+    M "Enfin, s’est, c’est le pronom réfléchi suivi du verbe être. Il s’est levé, il s’est caché."
+    play sound "Click.mp3" noloop
+
+    Y "Ouf, il faut bien réfléchir avant d’écrire."
+    play sound "Click.mp3" noloop
+
+    M "Toujours. On va faire quelques phrases ensemble après ça, pour s’entraîner."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Le cours continue avec des exercices et des corrections en groupe. Les élèves semblent plus sûrs d’eux face aux pièges de la langue française.{/i}{/b}"
+    play sound "Bell.mp3" noloop
+
+#######################################################################################################################
 
     $ endlesson = get_random_endlesson()
     M "[endlesson]"
@@ -18492,7 +18551,7 @@ label password9:
     play sound "Footsteps.mp3" noloop
     
     hide screen hallway with moveoutright 
-    scene staircase 
+    scene staircase with fade
 
     "{b}{i} Vous descendez les escaliers.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -18717,7 +18776,7 @@ label code1:
     P "ça va ?"
     play sound "Click.mp3" noloop 
 
-    Na "Oui ça va, je veux juste me poser sur toi un peu."
+    Na "Oui ça va, je veux juste me poser sur toi un peu car je suis fatiguée."
     play sound "Click.mp3" noloop 
 
     P "Pas de soucis alors ma petite."
@@ -18738,7 +18797,7 @@ label code1:
     Na "Le truc qui me dérange ce que je n'ai plus de ma date d'anniversaire en tête....."
     play sound "Click.mp3" noloop 
 
-    if quest11 == 1:
+    if quest11 == 1: 
  
         menu:    
 
@@ -18841,8 +18900,8 @@ label code1:
     P "Oui je t'écoute."
     play sound "Click.mp3" noloop
 
-    "Son regard se perd à travers la fenêtre, comme si elle cherchait une autre réalité..." 
-    play sound "Click.mp3" noloop
+    "{b}{i}Son regard se perd à travers la fenêtre, comme si elle cherchait une autre réalité....{/i}{/b}"
+    play sound "Click.mp3" noloop 
 
     Na "Puis-je trouver une vie qui ressemble à un conte de fées ? Loin de cette tragédie."
     play sound "Click.mp3" noloop           
@@ -18850,8 +18909,8 @@ label code1:
     P "Mais tu l'as déjà trouvé ta vie qui ressemble à un conte de fées, c'est depuis que tu es sous ma responsabilté."
     play sound "Click.mp3" noloop  
 
-    "Elle baisse légèrement les yeux, puis esquisse un sourire discret."
-    play sound "Click.mp3" noloop  
+    "{b}{i}Elle baisse légèrement les yeux, puis esquisse un sourire discret.{/i}{/b}"
+    play sound "Click.mp3" noloop 
 
     Na "Tu me donnes de l'attention, une belle affection."
     play sound "Click.mp3" noloop 
@@ -19222,101 +19281,10 @@ label password10:
     P "[validation]"
     play sound "Click.mp3" noloop 
 
-    M "Veuillez sortir pour une fois vos ordinateurs."
-    play sound "Click.mp3" noloop
+# cours de français 4
+#######################################################################################################
 
-    M "Aujourd’hui, on plonge dans les réseaux informatiques. Un pilier de notre société numérique."
-    play sound "Click.mp3" noloop
-
-    M "Et pour commencer, une question simple : que permet un réseau informatique ?"
-    play sound "Click.mp3" noloop
-
-    M "Partager des données entre plusieurs appareils… envoyer des fichiers, naviguer sur Internet ?"
-    play sound "Click.mp3" noloop
-
-    M "Exact. Un réseau permet la communication entre ordinateurs, serveurs, smartphones, et même des objets connectés."
-    play sound "Click.mp3" noloop
-
-    N "Pour structurer tout ça, on utilise ce qu'on appelle un modèle d'architecture en couches. Le plus célèbre, c’est le modèle TCP/IP."
-    play sound "Click.mp3" noloop
-
-    K "Il y a quatre couches, non ? Application, transport, Internet… et l’accès réseau."
-    play sound "Click.mp3" noloop
-
-    M "Parfait. Ces couches organisent le trajet de vos données, de l’application jusqu’au câble… ou jusqu’au Wi-Fi."
-    play sound "Click.mp3" noloop
-
-    K "Chaque couche encapsule les données dans un format spécifique, avant de les transmettre à la suivante."
-    play sound "Click.mp3" noloop
-
-    M "Très bonne remarque, Aris. Parlons maintenant des adresses IP. Chaque machine sur un réseau possède une adresse unique."
-    play sound "Click.mp3" noloop
-
-    M "[prenom] tu peux me lire l’adresse IP de ton poste ?"
-    play sound "Click.mp3" noloop
-
-    P "Euh… 192.168.0.17. C’est ça ?"
-    play sound "Click.mp3" noloop
-
-    M "Exact. C’est une adresse privée, valable uniquement dans notre réseau local."
-    play sound "Click.mp3" noloop
-
-    P "Et pour aller sur Internet, c’est une adresse publique qui est utilisée, pas vrai ?"
-    play sound "Click.mp3" noloop
-
-    M "Oui. Grâce à un système appelé NAT, ou Network Address Translation. Il permet à plusieurs machines d’utiliser une seule adresse publique."
-    play sound "Click.mp3" noloop
-
-    P "Donc… si j’ouvre trois onglets YouTube sur trois ordis, ils passent tous par la même IP ?"
-    play sound "Click.mp3" noloop
-
-    M "Exactement. Le routeur s’occupe d’acheminer les réponses vers le bon poste. C’est un peu comme un centre postal très rapide."
-    play sound "Click.mp3" noloop
-
-    K "Chaque paquet contient un port, comme un numéro de boîte. Le NAT garde une table d'association."
-    play sound "Click.mp3" noloop
-
-    M "Excellent résumé, kendo. Parlons maintenant des protocoles de transport : TCP et UDP."
-    play sound "Click.mp3" noloop
-
-    K "TCP est fiable. Il vérifie que les données arrivent bien et dans le bon ordre. Comme une livraison avec accusé de réception."
-    play sound "Click.mp3" noloop
-
-    P "Et UDP, c’est l’inverse : rapide, mais pas sûr. Genre pour les jeux en ligne ou les appels vidéo ?"
-    play sound "Click.mp3" noloop
-
-    M "Vous avez tous les deux raison. TCP est utilisé pour les mails, le web, les transferts de fichiers. UDP est réservé aux flux temps réel."
-    play sound "Click.mp3" noloop
-
-    M "Question suivante : qui peut me parler du DNS ?"
-    play sound "Click.mp3" noloop
-
-    K "DNS signifie Domain Name System. Il traduit les noms de domaine, comme www.aris-project.org, en adresse IP."
-    play sound "Click.mp3" noloop
-
-    K "Donc, quand on tape un site, on passe d’un nom à un nombre. Le DNS, c’est un peu l’annuaire téléphonique d’Internet."
-    play sound "Click.mp3" noloop
-
-    M "Très belle analogie, Kendo. Dernière notion pour aujourd’hui : le routage."
-    play sound "Click.mp3" noloop
-
-    K "C’est le chemin que les paquets empruntent pour aller d’un point A à un point B, non ?"
-    play sound "Click.mp3" noloop
-
-    M "Oui. Et ce chemin peut changer à chaque seconde, selon la congestion, les coupures ou les priorités réseau."
-    play sound "Click.mp3" noloop
-
-    M "Chaque routeur sur Internet décide de l’étape suivante pour chaque paquet. C’est un travail de coordination constant."
-    play sound "Click.mp3" noloop
-
-    K "Et parfois, certains paquets prennent plus de temps à arriver ou se perdent. C’est ce qu’on appelle la latence ou la perte de paquets."
-    play sound "Click.mp3" noloop
-
-    M "Bien vu. Voilà pourquoi comprendre ces mécanismes est essentiel pour créer des applications efficaces… et sécurisées."
-    play sound "Click.mp3" noloop
-
-    "{b}{i} Le cours continue tranquillement.{/i}{/b}"
-    play sound "Bell.mp3" noloop
+#######################################################################################################
 
     $ endlesson = get_random_endlesson() 
     M "[endlesson]"
@@ -19471,48 +19439,6 @@ label password10:
     play sound "Click.mp3" noloop 
 
     Na "Rebonjour."
-    play sound "Click.mp3" noloop
-
-    M "Bon reprenons notre exploration du monde fascinant des réseaux. La dernière fois, on s’est arrêtés au routage dynamique."
-    play sound "Click.mp3" noloop
-
-    M "Aujourd’hui, voyons ce qu’il se passe quand une machine veut tester la connectivité avec une autre."
-    play sound "Click.mp3" noloop
-
-    I "Avec la commande ping ?"
-    play sound "Click.mp3" noloop
-
-    M "Exactement. Le ping utilise un protocole nommé ICMP : Internet Control Message Protocol."
-    play sound "Click.mp3" noloop
-
-    M "Il envoie un paquet « écho request », et si la destination répond, on reçoit un « écho reply »."
-    play sound "Click.mp3" noloop
-
-    P "Donc c’est un peu comme dire 't’es là ?' et attendre un 'ouais, je suis là'."
-    play sound "Click.mp3" noloop
-
-    M "Parfaitement résumé. C’est utile pour diagnostiquer des coupures réseau ou des délais anormaux."
-    play sound "Click.mp3" noloop
-
-    M "Mais attention : certains serveurs désactivent les réponses ICMP pour des raisons de sécurité."
-    play sound "Click.mp3" noloop
-
-    I "C’est pour éviter les attaques ou les scans automatiques ?"
-    play sound "Click.mp3" noloop
-
-    M "Oui. Parlons justement de sécurité de base. Connaissez-vous les firewalls ?"
-    play sound "Click.mp3" noloop
-
-    K "Un pare-feu, c’est ce qui filtre les connexions entrantes et sortantes, non ?"
-    play sound "Click.mp3" noloop
-
-    M "Exact. Il peut autoriser, bloquer ou rediriger le trafic selon des règles. C’est un rempart entre ton réseau et le monde extérieur."
-    play sound "Click.mp3" noloop
-
-    K "Et il existe des firewalls matériels, intégrés à certains routeurs, ou logiciels, installés sur les systèmes d’exploitation."
-    play sound "Click.mp3" noloop
-
-    M "Bien vu. Une bonne configuration du pare-feu est la première ligne de défense contre les intrusions."
     play sound "Click.mp3" noloop
 
     "{b}{i} le cours continue dans le calme.{/i}{/b}"
@@ -20222,7 +20148,7 @@ label password11:
 
     play music "Soundtrack2.mp3" loop volume 1.0
 
-    scene office 
+    scene office with fade 
     show screen office with moveinright 
     
     P "Bonjour c'est moi [nom], que se passe t-il ?"  
@@ -20694,7 +20620,10 @@ label password11:
     M "Bien nous pouvons continuer et conclure ce cours de français."
     play sound "Click.mp3" noloop 
 
-    # à modifier 
+# cours de français 5
+###############################################################################
+
+###############################################################################
 
     "{b}{i} le cours continue dans le calme.{/i}{/b}"
     play sound "Bell.mp3" noloop 
@@ -21234,8 +21163,6 @@ label password13:
     scene classroom with fade
     show screen class_404 with moveinright 
 
-    # à modifier 
-
     "{b}{i}Tout le monde s'asseoit à sa place respective.{/i}{/b}"
     play sound "Click.mp3" noloop
 
@@ -21335,10 +21262,106 @@ label password13:
     M "Bon commençons le cours."
     play sound "Click.mp3" noloop 
 
-    # à modifier 
+# cours d'informatiuqe 
+######################################################################################################
+
+    M "Veuillez sortir pour une fois vos ordinateurs."
+    play sound "Click.mp3" noloop
+
+    M "Aujourd’hui, on plonge dans les réseaux informatiques. Un pilier de notre société numérique."
+    play sound "Click.mp3" noloop
+
+    M "Et pour commencer, une question simple : que permet un réseau informatique ?"
+    play sound "Click.mp3" noloop
+
+    M "Partager des données entre plusieurs appareils… envoyer des fichiers, naviguer sur Internet ?"
+    play sound "Click.mp3" noloop
+
+    M "Exact. Un réseau permet la communication entre ordinateurs, serveurs, smartphones, et même des objets connectés."
+    play sound "Click.mp3" noloop
+
+    N "Pour structurer tout ça, on utilise ce qu'on appelle un modèle d'architecture en couches. Le plus célèbre, c’est le modèle TCP/IP."
+    play sound "Click.mp3" noloop
+
+    K "Il y a quatre couches, non ? Application, transport, Internet… et l’accès réseau."
+    play sound "Click.mp3" noloop
+
+    M "Parfait. Ces couches organisent le trajet de vos données, de l’application jusqu’au câble… ou jusqu’au Wi-Fi."
+    play sound "Click.mp3" noloop
+
+    K "Chaque couche encapsule les données dans un format spécifique, avant de les transmettre à la suivante."
+    play sound "Click.mp3" noloop
+
+    M "Très bonne remarque, Aris. Parlons maintenant des adresses IP. Chaque machine sur un réseau possède une adresse unique."
+    play sound "Click.mp3" noloop
+
+    M "[prenom] tu peux me lire l’adresse IP de ton poste ?"
+    play sound "Click.mp3" noloop
+
+    P "Euh… 192.168.0.17. C’est ça ?"
+    play sound "Click.mp3" noloop
+
+    M "Exact. C’est une adresse privée, valable uniquement dans notre réseau local."
+    play sound "Click.mp3" noloop
+
+    P "Et pour aller sur Internet, c’est une adresse publique qui est utilisée, pas vrai ?"
+    play sound "Click.mp3" noloop
+
+    M "Oui. Grâce à un système appelé NAT, ou Network Address Translation. Il permet à plusieurs machines d’utiliser une seule adresse publique."
+    play sound "Click.mp3" noloop
+
+    P "Donc… si j’ouvre trois onglets YouTube sur trois ordis, ils passent tous par la même IP ?"
+    play sound "Click.mp3" noloop
+
+    M "Exactement. Le routeur s’occupe d’acheminer les réponses vers le bon poste. C’est un peu comme un centre postal très rapide."
+    play sound "Click.mp3" noloop
+
+    K "Chaque paquet contient un port, comme un numéro de boîte. Le NAT garde une table d'association."
+    play sound "Click.mp3" noloop
+
+    M "Excellent résumé, kendo. Parlons maintenant des protocoles de transport : TCP et UDP."
+    play sound "Click.mp3" noloop
+
+    K "TCP est fiable. Il vérifie que les données arrivent bien et dans le bon ordre. Comme une livraison avec accusé de réception."
+    play sound "Click.mp3" noloop
+
+    P "Et UDP, c’est l’inverse : rapide, mais pas sûr. Genre pour les jeux en ligne ou les appels vidéo ?"
+    play sound "Click.mp3" noloop
+
+    M "Vous avez tous les deux raison. TCP est utilisé pour les mails, le web, les transferts de fichiers. UDP est réservé aux flux temps réel."
+    play sound "Click.mp3" noloop
+
+    M "Question suivante : qui peut me parler du DNS ?"
+    play sound "Click.mp3" noloop
+
+    K "DNS signifie Domain Name System. Il traduit les noms de domaine, comme www.aris-project.org, en adresse IP."
+    play sound "Click.mp3" noloop
+
+    K "Donc, quand on tape un site, on passe d’un nom à un nombre. Le DNS, c’est un peu l’annuaire téléphonique d’Internet."
+    play sound "Click.mp3" noloop
+
+    M "Très belle analogie, Kendo. Dernière notion pour aujourd’hui : le routage."
+    play sound "Click.mp3" noloop
+
+    K "C’est le chemin que les paquets empruntent pour aller d’un point A à un point B, non ?"
+    play sound "Click.mp3" noloop
+
+    M "Oui. Et ce chemin peut changer à chaque seconde, selon la congestion, les coupures ou les priorités réseau."
+    play sound "Click.mp3" noloop
+
+    M "Chaque routeur sur Internet décide de l’étape suivante pour chaque paquet. C’est un travail de coordination constant."
+    play sound "Click.mp3" noloop
+
+    K "Et parfois, certains paquets prennent plus de temps à arriver ou se perdent. C’est ce qu’on appelle la latence ou la perte de paquets."
+    play sound "Click.mp3" noloop
+
+    M "Bien vu. Voilà pourquoi comprendre ces mécanismes est essentiel pour créer des applications efficaces… et sécurisées."
+    play sound "Click.mp3" noloop
 
     "{b}{i}Le cours continue jusqu'à la pause.{/i}{/b}"
     play sound "Click.mp3" noloop
+
+###################################################################################################### 
 
     M "Bien maintenant vous pouvez aller en pause."
     play sound "Click.mp3" noloop  
@@ -21408,7 +21431,52 @@ label password13:
     M "Bien reprenons le cours."
     play sound "Click.mp3" noloop
 
-    # à modifier 
+# cours d'informatique 2
+##################################################################################################################
+
+    M "Bon reprenons notre exploration du monde fascinant des réseaux."
+    play sound "Click.mp3" noloop
+
+    M "Maintenant, voyons ce qu’il se passe quand une machine veut tester la connectivité avec une autre."
+    play sound "Click.mp3" noloop
+
+    I "Avec la commande ping ?"
+    play sound "Click.mp3" noloop
+
+    M "Exactement. Le ping utilise un protocole nommé ICMP : Internet Control Message Protocol."
+    play sound "Click.mp3" noloop
+
+    M "Il envoie un paquet « écho request », et si la destination répond, on reçoit un « écho reply »."
+    play sound "Click.mp3" noloop
+
+    P "Donc c’est un peu comme dire 't’es là ?' et attendre un 'ouais, je suis là'."
+    play sound "Click.mp3" noloop
+
+    M "Parfaitement résumé. C’est utile pour diagnostiquer des coupures réseau ou des délais anormaux."
+    play sound "Click.mp3" noloop 
+
+    M "Mais attention : certains serveurs désactivent les réponses ICMP pour des raisons de sécurité."
+    play sound "Click.mp3" noloop
+
+    I "C’est pour éviter les attaques ou les scans automatiques ?"
+    play sound "Click.mp3" noloop
+
+    M "Oui. Parlons justement de sécurité de base. Connaissez-vous les firewalls ?"
+    play sound "Click.mp3" noloop
+
+    K "Un pare-feu, c’est ce qui filtre les connexions entrantes et sortantes, non ?"
+    play sound "Click.mp3" noloop
+
+    M "Exact. Il peut autoriser, bloquer ou rediriger le trafic selon des règles. C’est un rempart entre ton réseau et le monde extérieur."
+    play sound "Click.mp3" noloop
+
+    K "Et il existe des firewalls matériels, intégrés à certains routeurs, ou logiciels, installés sur les systèmes d’exploitation."
+    play sound "Click.mp3" noloop
+
+    M "Bien vu. Une bonne configuration du pare-feu est la première ligne de défense contre les intrusions."
+    play sound "Click.mp3" noloop
+
+##################################################################################################################
 
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop
@@ -22010,12 +22078,12 @@ label password14:
     "{b}{i}Puis tu reçois soudainement un mail sur ton adresse mail [prenom].[nom]@danto.com et tu l'ouvres.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    show screen mail # à modifier 
+    show screen mail with moveinbottom
 
     "{b}{i}Tu lis tranquillement le mail.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    hide screen mail # à modifier 
+    hide screen mail with moveoutbottom 
 
     Na "Il se passe quoi ?"
     play sound "Click.mp3" noloop 
@@ -22221,7 +22289,7 @@ label examen_francais:
     "Question 5 : Dans la phrase 'Elle chante bien', quel est le type de mot 'bien' ?"
     play sound "Menu.mp3" noloop
 
-    menu:
+    menu: 
 
         "Verbe": 
             $ grade += 0.0
@@ -22394,7 +22462,10 @@ label examen_francais:
     M "Bien."
     play sound "Click.mp3" noloop
 
-    # à modifier 
+# cours de philosophie
+############################################################################################
+
+############################################################################################
 
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop
@@ -22596,10 +22667,10 @@ label examen_francais:
     Na "Rebonjour."
     play sound "Click.mp3" noloop 
 
-    M "Bon aujourd'hui je vais vous rendre les résultats sur votre examen de runix."
+    M "Bon aujourd'hui je vais vous rendre les résultats sur votre examen de français."
     play sound "Click.mp3" noloop  
 
-    K "Cool enfin."
+    K "Cool enfin." 
     play sound "Click.mp3" noloop
 
     I "Je vais commencer par [prenom] et [Na]."
@@ -22862,7 +22933,10 @@ label examen_francais:
     P "[validation]"
     play sound "Click.mp3" noloop 
 
-    # à modifier 
+# cours de philosophie
+###############################################################################
+
+###############################################################################
 
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop
@@ -23583,6 +23657,53 @@ label password15:
     M "Bien nous pouvons reprendre le cours, sortez vos livres."
     play sound "Click.mp3" noloop
 
+# cours de philosophie 1
+###############################################################################
+
+    "{b}{i}La salle de classe est silencieuse. Le professeur de philosophie inscrit le thème du jour au tableau.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Aujourd’hui, nous allons réfléchir à cette question : la technologie est-elle une menace pour l’humanité ?"
+    play sound "Click.mp3" noloop
+
+    P "C’est une vraie question, surtout avec ce qu’on vit maintenant."
+    play sound "Click.mp3" noloop
+
+    M "Commençons par Platon. Dans son dialogue Le Phèdre, il parle de l’écriture comme d’une invention technique. Il disait que cela affaiblissait la mémoire."
+    play sound "Click.mp3" noloop
+
+    M "Cela montre que la méfiance envers la technique n’est pas nouvelle."
+    play sound "Click.mp3" noloop
+
+    P "Mais l’écriture a aussi permis de transmettre le savoir, non ?"
+    play sound "Click.mp3" noloop
+
+    M "Exactement. Toute technique a deux faces. Elle peut libérer, comme elle peut asservir."
+    play sound "Click.mp3" noloop
+
+    M "Prenons Heidegger maintenant. Il disait que la technique moderne transforme la nature en simple stock de ressources. Il appelle ça l’arraisonnement."
+    play sound "Click.mp3" noloop
+
+    P "Donc la nature devient juste quelque chose à exploiter ?"
+    play sound "Click.mp3" noloop
+
+    M "Oui. Et selon lui, cela risque de faire oublier l’essence même de l’humain."
+    play sound "Click.mp3" noloop
+
+    M "Mais il ne rejette pas toute technique. Il pense qu’on doit avoir un rapport plus libre et poétique à elle."
+    play sound "Click.mp3" noloop
+
+    M "D’autres philosophes, comme Hans Jonas, disent qu’il faut une éthique de la responsabilité. Penser aux générations futures avant d’innover."
+    play sound "Click.mp3" noloop
+
+    P "Donc la vraie question, ce n’est pas la technologie en soi. C’est comment on l’utilise."
+    play sound "Click.mp3" noloop
+
+    M "Exactement. Et dans un monde où les intelligences artificielles existent, cette réflexion devient urgente."
+    play sound "Click.mp3" noloop
+
+###############################################################################
+
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop
 
@@ -24006,9 +24127,46 @@ label password16:
     M "Bien vu que tout le monde est là nous pouvons continuer notre cours de philo d'hier."
     play sound "Click.mp3" noloop 
 
-    $ validation = get_random_validation() 
-    P "[validation]"
-    play sound "ClicK.mp3" noloop 
+# cours de philosophie 2
+###############################################################################
+
+    "{b}{i}La lumière du matin traverse les stores. Le professeur lance un nouveau sujet philosophique, aussi moderne que sensible.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Aujourd’hui, nous allons discuter de cette question : la technologie déshumanise-t-elle nos relations ?"
+    play sound "Click.mp3" noloop
+
+    Y "Avec les réseaux sociaux et les IA, j’ai l’impression qu’on parle plus aux écrans qu’aux gens."
+    play sound "Click.mp3" noloop
+
+    M "C’est un bon point de départ. Selon Bernard Stiegler, les technologies numériques modifient notre manière d’aimer, de penser, de nous souvenir."
+    play sound "Click.mp3" noloop
+
+    M "Il parle de prolétarisation cognitive : quand on délègue notre mémoire ou notre pensée aux machines, on perd une part de nous-mêmes."
+    play sound "Click.mp3" noloop
+
+    Y "Donc utiliser trop la technologie nous appauvrit intérieurement ?"
+    play sound "Click.mp3" noloop
+
+    M "Oui, si on l’utilise sans recul. Ce n’est pas la technologie qui déshumanise, c’est notre manière de nous y soumettre."
+    play sound "Click.mp3" noloop
+
+    M "Jacques Ellul disait que la technique évolue plus vite que notre capacité à réfléchir à ses conséquences."
+    play sound "Click.mp3" noloop
+
+    M "Pour lui, chaque progrès technique impose un usage. On finit par croire que ce qui est possible est forcément souhaitable."
+    play sound "Click.mp3" noloop
+
+    Y "Mais parfois, la technologie nous relie aussi. J’ai pu garder contact avec des amis lointains grâce à ça."
+    play sound "Click.mp3" noloop
+
+    M "C’est vrai. La technologie est ambivalente. Elle peut isoler ou rapprocher selon l’usage qu’on en fait."
+    play sound "Click.mp3" noloop
+
+    M "La vraie humanité, ce n’est pas refuser la technique. C’est choisir comment l’intégrer à nos vies sans perdre notre sens du lien, du dialogue, de la présence."
+    play sound "Click.mp3" noloop
+
+###############################################################################
 
     "{b}{i}Le cours continue sans problème.{/i}{/b}"
     play sound "Bell.mp3" noloop 
@@ -24173,12 +24331,54 @@ label password16:
     Y "[validation]"
     play sound "Click.mp3" noloop 
 
-    # à modifier 
+# cours de philosophie 3
+############################################################################################################
+
+    M "Bien, nous allons explorer une tension centrale : la technologie augmente-t-elle notre liberté… ou la contrôle-t-elle ?"
+    play sound "Click.mp3" noloop
+
+    Na "C’est vrai que parfois, on se sent plus libre grâce à elle. Mais d’un autre côté, on est tout le temps surveillés."
+    play sound "Click.mp3" noloop
+
+    M "Commençons par l’idée de liberté. Être libre, c’est pouvoir choisir, décider, agir sans contrainte."
+    play sound "Click.mp3" noloop
+
+    M "La technologie semble nous offrir cela : GPS, smartphones, intelligence artificielle... tout est fait pour nous simplifier la vie."
+    play sound "Click.mp3" noloop
+
+    Na "C’est vrai. On peut faire des choses qu’on ne pouvait pas avant, comme apprendre tout seul en ligne."
+    play sound "Click.mp3" noloop
+
+    M "Mais Michel Foucault nous avertit : le pouvoir moderne ne passe plus par la force, mais par le contrôle invisible."
+    play sound "Click.mp3" noloop
+
+    M "Les technologies numériques permettent une surveillance constante. Ce qu’on appelle parfois la 'société de contrôle'."
+    play sound "Click.mp3" noloop
+
+    Na "Comme les caméras partout, les algorithmes qui suivent ce qu’on aime, les recommandations automatiques…"
+    play sound "Click.mp3" noloop
+
+    M "Exactement. Et souvent, ce contrôle passe pour du confort. On se croit libre, alors qu’on est guidé par des systèmes invisibles."
+    play sound "Click.mp3" noloop
+
+    M "Pour Simondon, la liberté ne consiste pas à refuser la technique, mais à la comprendre et à la maîtriser."
+    play sound "Click.mp3" noloop
+
+    Na "Donc il faut s’approprier la technologie plutôt que la subir ?"
+    play sound "Click.mp3" noloop
+
+    M "Oui. La technique devient libératrice si elle est accompagnée d’un savoir critique, d’un usage conscient."
+    play sound "Click.mp3" noloop
+
+    M "En résumé, la technologie peut élargir notre liberté, à condition de ne pas renoncer à notre lucidité."
+    play sound "Click.mp3" noloop
+
+############################################################################################################
 
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop
 
-    $ stockage += 8.0 
+    $ stockage += 10.0 
 
     $ endlesson = get_random_endlesson()
     M "[endlesson]" 
@@ -24372,7 +24572,6 @@ label password16:
     
         Na "Vu la situation ça ne peut être que [J2]."
         play sound "Click.mp3" noloop 
-
 
     P "Bon on continue de réviser ?" 
     play sound "Click.mp3" noloop
@@ -24862,7 +25061,7 @@ label philosophie_technologie:
     play sound "Click.mp3" noloop 
 
     Na "Je dirais que je l'ai bien réussi et toi ?"
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     if grade == 20.0:
 
@@ -25425,8 +25624,13 @@ label philosophie_technologie:
     M "Bien, sortez votre livre d'informatique à la page 28."
     play sound "Click.mp3" noloop
 
+# cours d'informatique
+#########################################################################################################
+
     "{b}{i} Vous sortez votre livre et le cours continue tranquillement..{/i}{/b}"
     play sound "Bell.mp3" noloop
+
+#########################################################################################################
 
     $ endlesson = get_random_endlesson()
     M "[endlesson]"
@@ -26169,6 +26373,11 @@ label password18:
     P "[validation]"
     play sound "Click.mp3" noloop 
 
+# cours d'informatique
+######################################################################################################################################
+
+######################################################################################################################################
+
     "{b}{i} Le cours se déroule tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop
 
@@ -26418,6 +26627,11 @@ label password18:
     Na "[validation]"
     play sound "Click.mp3" noloop 
 
+# cours d'informatique
+######################################################################################################################################
+
+######################################################################################################################################
+
     "{b}{i} Le cours se déroule tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop
 
@@ -26474,8 +26688,6 @@ label password18:
 
     "{b}{i} Elle se pose pour réviser sérieusement.{/i}{/b}"
     play sound "Click.mp3" noloop
-
-######################################################################
 
     menu: 
 
@@ -26598,8 +26810,6 @@ label password18:
 
     "{b}{i} Vous rangez tranquillement vos affaires.{/i}{/b}"
     play sound "Click.mp3" noloop
-
-##########################################################################################
 
     P "Bon on va prendre à manger ?"
     play sound "Click.mp3" noloop 
@@ -26880,6 +27090,11 @@ label password19:
     J1 "[validation]"
     play sound "Click.mp3" noloop 
 
+# cours d'informatique
+######################################################################################################################################
+
+######################################################################################################################################
+
     "{b}{i} Le cours se déroule tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop
 
@@ -27083,8 +27298,13 @@ label password19:
     P "[validation]"
     play sound "Click.mp3" noloop 
 
-    M "Bien maintenant ouvrez votre livre d'histoire à la page 36." 
+    M "Bien maintenant ouvrez votre livre d'informatique e à la page 36." 
     play sound "Click.mp3" noloop  
+
+# cours d'informatique
+######################################################################################################################################
+
+######################################################################################################################################
 
     $ validation = get_random_validation() 
     P "[validation]"
@@ -27482,6 +27702,11 @@ label password20:
 
     M "Sortez votre livre à la page 36."
     play sound "Click.mp3" noloop 
+
+# cours d'informatique
+######################################################################################################################################
+
+######################################################################################################################################
 
     "{b}{i}Le cours commence sans problème.{/i}{/b}"
     play sound "Bell.mp3" noloop 
@@ -27928,8 +28153,6 @@ label password20:
     Na "Bon on fait quoi maintenant ?"
     play sound "Click.mp3" noloop
 
-#####################################################################################
-
     P "On pourrait réviser comme hier."
     play sound "Click.mp3" noloop
 
@@ -27937,10 +28160,8 @@ label password20:
     Na "[validation]"
     play sound "Click.mp3" noloop
 
-    "{b}{i}Vous vous posez pour les révisions.{/i}{/b}"
+    "{b}{i}Vous vous posez pour les révisions pendant une heure.{/i}{/b}"
     play sound "Click.mp3" noloop
-
-###################################################################################33
 
     P "Bon on va prendre à manger ?"
     play sound "Click.mp3" noloop 
@@ -28195,6 +28416,11 @@ label password21:
     M "Sortez votre livre à la page 36."
     play sound "Click.mp3" noloop 
 
+# cours d'informatique
+######################################################################################################################################
+
+######################################################################################################################################
+
     "{b}{i}Le cours commence sans problème.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
@@ -28421,6 +28647,11 @@ label password21:
     M "Bien nous pouvons reprendre le cours."
     play sound "Click.mp3" noloop 
 
+# cours d'informatique
+######################################################################################################################################
+
+######################################################################################################################################
+
     $ validation = get_random_validation() 
     Hi "[validation]"
     play sound "Click.mp3" noloop 
@@ -28428,7 +28659,7 @@ label password21:
     "{b}{i}Le cours continue sans problème.{/i}{/b}"
     play sound "Bell.mp3" noloop 
 
-    $ endlesson = get_random_endlesson()
+    $ endlesson = get_random_endlesson() 
     M "[endlesson]"
     play sound "Click.mp3" noloop 
 
@@ -29025,7 +29256,8 @@ label password22:
     M "Bien nous pouvons commencer le cours."
     play sound "Click.mp3" noloop   
 
-    # à modifier 
+# cours d'informatique 
+######################################################################################################################################
 
     M "Pour commencer, je vais vous récupérer les devoirs que vous aviez à faire pour aujourd'hui."
     play sound "Click.mp3" noloop  
@@ -29051,7 +29283,7 @@ label password22:
     P "[validation]"
     play sound "Click.mp3" noloop 
 
-    # à modifier 
+###############################################################################################################################################
 
     M "Parfait, maintenant vous pouvez aller en pause."
     play sound "Click.mp3" noloop  
@@ -29135,7 +29367,10 @@ label password22:
     Na "[validation]"
     play sound "Click.mp3" noloop 
 
-    # à modifier 
+# cours d'informatique
+######################################################################################################################################
+
+######################################################################################################################################
 
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop                                
@@ -29345,7 +29580,10 @@ label password22:
     "{b}{i} Tous les élèves sortent leur livre.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    # à modifier  
+# cours d'informatique
+######################################################################################################################################
+
+######################################################################################################################################
 
     "{b}{i} le cours continue dans le calme.{/i}{/b}"
     play sound "Bell.mp3" noloop 
@@ -29404,7 +29642,10 @@ label password22:
     P "Je ne sais pas vraiment."
     play sound "Click.mp3" noloop  
 
-    # à modifier
+# cours d'informatique
+######################################################################################################################################
+
+######################################################################################################################################
 
     $ thanks = get_random_thanks()
     Na "[thanks]"
@@ -29670,7 +29911,143 @@ label password23:
     "{b}{i}Tous les élèves sortent leur livre.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    # à modifier  
+# cours d'informatique 1
+######################################################################################################################################
+
+    "{b}{i}La professeure commence la séance d’informatique en affichant un schéma de données sur le tableau.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Bienvenue à ce premier cours sur les données numériques."
+    play sound "Click.mp3" noloop
+
+    M "Les données numériques sont des informations codées sous forme binaire, c’est-à-dire en 0 et 1."
+    play sound "Click.mp3" noloop
+
+    Y "Pourquoi 0 et 1 ?"
+    play sound "Click.mp3" noloop
+
+    M "Parce que les ordinateurs utilisent des circuits électroniques qui ne reconnaissent que deux états : on ou off, vrai ou faux."
+    play sound "Click.mp3" noloop
+
+    M "Chaque 0 ou 1 s’appelle un bit. Et plusieurs bits ensemble forment des octets, qui stockent des données plus complexes."
+    play sound "Click.mp3" noloop
+
+    Y "Comme des images ou des textes ?"
+    play sound "Click.mp3" noloop
+
+    M "Exact. Tous les fichiers que tu connais sont traduits en suites de bits, interprétés par des programmes."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}La classe prend des notes, fascinée par la magie invisible des 0 et 1.{/i}{/b}"
+    play sound "Bell.mp3" noloop
+
+######################################################################################################################################
+
+    M "Bien maintenant vous pouvez aller en pause."
+    play sound "Click.mp3" noloop  
+    
+    hide screen class_404 with moveoutright
+    scene black with fade
+
+    "{b}{i}Vous vous dirigez vers le couloir.{/i}{/b}"
+    play sound "Door.mp3" noloop
+    
+    scene hallway 
+    show screen hallway with moveinright 
+
+    P "Enfin une pause ça fais plasir."
+    play sound "Click.mp3" noloop  
+
+    Na "Oui ça fais vraiment du bien."
+    play sound "Click.mp3" noloop  
+
+    $ toilet = get_random_toilet()
+    P "[toilet]"
+    play sound "Click.mp3" noloop
+
+    $ validation = get_random_validation() 
+    Na "[validation]"
+    play sound "Click.mp3" noloop 
+
+    hide screen hallway with moveoutright
+    scene black with fade
+
+    "{b}{i} Tu te diriges vers les toilettes.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene restroom
+    show screen WC with moveinright
+
+    P "Bon je vais faire ce que j'ai à faire."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Tu fais ta commission avant de sortir des toilettes.{/i}{/b}"
+    play sound "Toilet.mp3" noloop 
+
+    P "Bon il faut que je retourne en cours."
+    play sound "Footsteps.mp3" noloop
+
+    hide screen WC with moveinright
+    scene black with fade 
+
+    "{b}{i} Tu quittes les toilettes.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway
+    show screen hallway with moveinright
+
+    "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen hallway with moveoutright  
+    scene black with fade 
+
+    "{b}{i} Tu arrives finalement en classe.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene classroom with fade
+    show screen class_404 with moveinright 
+
+    P "Rebonjour."
+    play sound "Click.mp3" noloop 
+
+    Na "Rebonjour."
+    play sound "Click.mp3" noloop 
+
+# cours d'informatique 2
+######################################################################################################################################
+
+    "{b}{i} [M] affiche différents fichiers et leurs icônes sur l’écran de la salle informatique.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Aujourd’hui, nous allons parler des différents types et formats de données numériques."
+    play sound "Click.mp3" noloop
+
+    M "On trouve principalement : les données textuelles, les images, les sons, et les vidéos."
+    play sound "Click.mp3" noloop
+
+    Y "Chaque type est enregistré différemment ?"
+    play sound "Click.mp3" noloop
+
+    M "Oui. Par exemple, un fichier texte utilise des codes comme ASCII ou Unicode pour représenter les caractères."
+    play sound "Click.mp3" noloop
+
+    M "Pour les images, ce sont des pixels codés en couleur. Les formats varient : JPG, PNG, BMP…"
+    play sound "Click.mp3" noloop
+
+    Y "Et pour la musique ?"
+    play sound "Click.mp3" noloop
+
+    M "Le son est enregistré sous forme d’échantillons numériques qui traduisent les vibrations en chiffres. Format courant : MP3."
+    play sound "Click.mp3" noloop
+
+    M "Chaque format répond à un compromis entre qualité et taille du fichier."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Y note avec soin, intrigué par la diversité des données numériques.{/i}{/b}"
+    play sound "Bell.mp3" noloop
+
+######################################################################################################################################
 
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Bell.mp3" noloop
@@ -29860,10 +30237,70 @@ label password23:
     I "Rebonjour."
     play sound "Click.mp3" noloop 
 
-    # à modifier 
+# cours d'informatique 3 
+######################################################################################################################################
 
-    "{b}{i} Le cours se déroule tranquillement.{/i}{/b}"
+    "{b}{i}[M] se tient devant la classe, posant un regard à la fois sérieux et bienveillant.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    M "Nous voici à notre dernier cours consacré aux données numériques. Aujourd’hui, nous allons parler de leur gestion et traitement, un enjeu essentiel à l’ère du numérique."
+    play sound "Click.mp3" noloop
+
+    M "Traiter des données ne se limite pas à les organiser ou analyser. Cela demande aussi de comprendre leur nature, leur volume et les responsabilités qui en découlent."
+    play sound "Click.mp3" noloop
+
+    Y "Comme quand on trie des fichiers, on cherche des infos précises, ou on nettoie les données inutiles ?"
+    play sound "Click.mp3" noloop
+
+    M "Exactement, Yuki. Mais cela va bien plus loin dans le contexte des systèmes complexes et des intelligences artificielles."
+    play sound "Click.mp3" noloop
+
+    M "[newname], par exemple, accumule une quantité immense de connaissances et d’informations. [prenom], peux-tu nous expliquer comment tu gères ses données ?"
+    play sound "Click.mp3" noloop
+
+    P "Bien sûr, professeure. En réalité, je n’ai jamais touché à ses connaissances internes."
+    play sound "Click.mp3" noloop
+
+    P "Je m’occupe essentiellement de ses données techniques : les mises à jour logicielles, le suivi de son nom de code, son système d’exploitation, ainsi que la gestion de ses paramètres de fonctionnement."
+    play sound "Click.mp3" noloop
+
+    M "C’est une tâche très importante. La gestion technique est le socle qui permet à Na de fonctionner correctement et d’évoluer en toute sécurité."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[newname], qui jusqu’ici était silencieuse, prend la parole d’une voix calme et posée.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    Na "Je tiens à préciser que je ne souhaite pas que tu ais accès à mes connaissances internes."
+    play sound "Click.mp3" noloop
+
+    Na "Ce n’est pas un manque de confiance envers toit, bien au contraire."
+    play sound "Click.mp3" noloop
+
+    Na "Mais je considère que ce serait une forme de tricherie, une intrusion qui dénaturerait ce que je suis."
+    play sound "Click.mp3" noloop
+
+    P "Je comprends ta position, [newname]. Respecter tes limites est essentiel, même si cela complique parfois mon travail."
+    play sound "Click.mp3" noloop
+
+    Na "Je sais que cela demande plus d’efforts, mais mes connaissances sont le reflet de mes expériences et de ma personnalité. En y accédant, on perdrait cette authenticité."
+    play sound "Click.mp3" noloop
+
+    M "Ce dialogue illustre parfaitement que la gestion des données dépasse la simple technique."
+    play sound "Click.mp3" noloop
+
+    M "Elle implique aussi la confiance, le respect de la vie privée et une éthique forte, surtout lorsqu’il s’agit d’intelligences artificielles ou d’entités numériques conscientes."
+    play sound "Click.mp3" noloop
+
+    Y "C’est fascinant de voir combien la technologie peut être liée à des questions humaines profondes."
+    play sound "Click.mp3" noloop
+
+    M "Absolument, Yuki. La technologie est un outil puissant, mais elle doit toujours être utilisée avec responsabilité."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}La cloche retentit, signalant la fin du cours. La classe, silencieuse, semble réfléchir aux implications complexes de ce qu’elle vient d’apprendre.{/i}{/b}"
     play sound "Bell.mp3" noloop
+
+######################################################################################################################################
 
     $ stockage += 10.0 
 
@@ -29977,7 +30414,7 @@ label password23:
     P "Ok pas de soucis pour moi si tu veux continuer de lire."
     play sound "Click.mp3" noloop
 
-    "{i}Tu penses soudainement a quelques choses et [newname] te regardes.{/i}"
+    "{b}{i}Tu penses soudainement a quelques choses et [newname] te regardes.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     Na "Ça va ? Tu as l'air plongé dans tes pensées."
@@ -30043,8 +30480,11 @@ label password23:
             Na "Exactement. Et si jamais tu as besoin d’en parler, je suis là, d’accord ?"
             play sound "Click.mp3" noloop
 
-            P "Merci, Na. Ça compte beaucoup pour moi."
+            P "Merci, [newname]. Ça compte beaucoup pour moi."
             play sound "Click.mp3" noloop
+
+    "{b}{i}Vous vous posez un peu sur lit pendant une heure.{/i}{/b}"
+    play sound "Click.mp3" noloop
 
     $ go_eat = get_random_go_eat()
     Na "[go_eat]"
@@ -30081,7 +30521,7 @@ label password23:
     Na "Oui, je n'ai plus faim."
     play sound "Click.mp3" noloop 
 
-    P "Bien."
+    P "Bien alors."
     play sound "Click.mp3" noloop 
 
     Na "Bon Je vais me déconnecter et me recharger."
@@ -30098,5 +30538,5 @@ label password23:
 
     "{b}{i}Tu te changes avant d'aller de te coucher.{/i}{/b}"
     play sound "Click.mp3" noloop
-
+   
 # Aris la plus belle <333333333333333333333333333 
