@@ -1802,9 +1802,19 @@ screen Shop():
 
             label "{b}{i}— Clés d'accès —\n{/i}{/b}" 
 
-            text _("{color=#ffffff}🔐 Clé officielle : ARIS-8J4K-F9Q7\n")
+            text _("{color=#ffffff} Clé officielle : ARIS-8J4K-F9Q7\n")
 
             text _("Cette clé d'accès est à inscrire lors que vous lancez une nouvelle partie.\n")
+
+            label "{b}{i}— DLC —\n{/i}{/b}"
+
+            if key == "ARIS-GRFN-M4A1": 
+
+                text _("DLC Arisization Project - Alternative : (installé)\n")
+
+            else:  
+
+                text _("DLC Arisization Project - Alternative : (non installé)\n")
 
 style about_label is gui_label 
 style about_label_text is gui_label_text
@@ -1831,6 +1841,8 @@ screen credit():
 
             text _("Consultant en scénarisation : [Dc] (Shadow_SLTM)\n")
 
+            text _("Dialogues des personnages : [Dc] (Shadow_SLTM)\n")
+
             text _("Gestion des musiques  : [Dc] (Shadow_SLTM)\n")
   
             text _("Interface joueur : [Dc] (Shadow_SLTM)\n") 
@@ -1849,19 +1861,19 @@ screen credit():
 
             text _("Illustration du drapeau du lycée Nexus : [Dc] (Shadow_SLTM)\n")
 
+            text _("Illustration de l'interface Windows : [Dc] (Shadow_SLTM)\n")
+
             text _("Illustration du menu : [Dc] (Shadow_SLTM)\n") 
 
             text _("Programmation : [Dc] (Shadow_SLTM)\n") 
 
-            text _("Correction du jeu : [Dc] (Shadow_SLTM) et Nathanaël (Loki)\n")
+            text _("Correction du jeu : [Dc] (Shadow_SLTM)\n")
 
             text _("Gestion des fichiers du jeu : [Dc] (Shadow_SLTM)\n") 
             
             label "{b}{i}— Contributions supplémentaires —\n{/i}{/b}" 
 
             text _("Phrase « Bon après ça ne m'étonne pas venant de toi » : Sararnbb\n")
-
-            text _("Illustration de l'interface Windows : [Dc] (Shadow_SLTM)\n")
 
             text _("Dessin de [Su] : Sararnbb\n") 
 
@@ -1884,7 +1896,7 @@ screen credit():
             text _("Décors utilisés sous licence libre.\n") 
 
             label "{b}{i}— Propriété —\n{/i}{/b}"   
-        
+
             text _("DLC Arisization Project - Alternative : [Dc] (Shadow_SLTM)\n")
 
             text _("Arisization Project (The Project of the Realization of Aris) appartient à [Dc] (Shadow_SLTM)\n")   

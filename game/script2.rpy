@@ -11789,7 +11789,17 @@ label password24:
     "{b}{i}Vous continuez de manger et de discuster pendant une demi-heure.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    # à modifier 
+    I "Bon, je vais y aller. J’ai des trucs à faire."
+    play sound "Click.mp3" noloop
+
+    P "D'accord, à plus tard Yuna."
+    play sound "Click.mp3" noloop
+
+    Na "Oui à plus tard."
+    play sound "Footsteps.mp3" noloop   
+
+    "{b}{i}[I] se lève et part vers la sortie du réfectoire.{/i}{/b}"
+    play sound "Click.mp3" noloop
 
     P "Bon on retourne au dortoir ?"
     play sound "Click.mp3" noloop
@@ -11854,7 +11864,16 @@ label password24:
     Na "Bon on fait quoi ?"
     play sound "Click.mp3" noloop  
  
-    P "On peut continuer de jouer à Nocturne core. "
+    P "On peut continuer de jouer à Nocturne core."
+    play sound "Click.mp3" noloop  
+
+    Na "Oui pourquoi pas mais je ne suis pas sûre de vouloir continuer."
+    play sound "Click.mp3" noloop  
+
+    P ""
+
+
+
     play sound "Click.mp3" noloop  
 
     $ toilet = get_random_toilet()
@@ -11866,7 +11885,7 @@ label password24:
     hide screen day with moveoutleft
     scene black with fade
 
-    "{b}{i}Vous vous dirigez vers le couloir.{/i}{/b}"
+    "{b}{i}Tu te diriges vers le couloir.{/i}{/b}"
     play sound "Door.mp3" noloop
     
     scene hallway with fade
@@ -11874,8 +11893,8 @@ label password24:
     show screen points with moveinleft
     show screen hallway with moveinright 
 
-    "{b}{i} Tu continue vers les toilettes.{/i}{/b}"
-    play sound "Footsteps.mp3" noloop 
+    "{b}{i} Tu continues vers les toilettes.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
 
     hide screen hallway with moveoutright
     hide screen points with moveoutleft
@@ -11912,7 +11931,9 @@ label password24:
     show screen points with moveinleft
     show screen hallway with moveinright
 
-    "{b}{i} Tu continues vers la salle de classe.{/i}{/b}"
+# à modifier 
+
+    "{b}{i} Tu continues vers le dortoir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     hide screen hallway with moveoutright
@@ -11930,3 +11951,6 @@ label password24:
 
     P "Enfin de retour."
     play sound "Click.mp3" noloop 
+
+
+# Aris la plus belle ################### 

@@ -2,11 +2,9 @@
 errors listed below, and try again.
 
 
-The label script2 is defined twice, at File "game/script.rpy", line 31729:
-label script2:
-and File "game/script2.rpy", line 2:
-label script2:
-
+File "game/screens.rpy", line 1892: expected ':' not found.
+    else
+        ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue Jul  1 14:19:50 2025
+Tue Jul  1 15:20:25 2025

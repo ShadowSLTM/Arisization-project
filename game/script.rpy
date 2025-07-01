@@ -2,6 +2,7 @@ label start:
 
     stop music fadeout 2.0   
 
+    default key = ""
     default grade = 0.0  
     default points = 0 
     default day = 0 
