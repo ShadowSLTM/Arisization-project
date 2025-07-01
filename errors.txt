@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/gui.rpy", line 220: invalid syntax
-    Borders(150, 15 150, 15)
-                     ^
+The label script2 is defined twice, at File "game/script.rpy", line 31729:
+label script2:
+and File "game/script2.rpy", line 2:
+label script2:
+
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed Jun 18 23:25:46 2025
+Tue Jul  1 14:19:50 2025

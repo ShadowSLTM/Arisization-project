@@ -17,7 +17,7 @@ define Su = Character('Suzune Horimiya', color="#ffffff")
 define Sk = Character('Shiro Katsuya', color="#ffffff") 
 define S = Character('Subaru Shinomiya', color="#ffffff") #le coupable
 
-# Les élèves de Terminale-E. 
+# Les élèves de Seconde-E. 
 
 define M = Character('Sakura Kusanagi', color="#ffdfef") 
 define I = Character('Yuna Nishimura', color="#ae33ff")

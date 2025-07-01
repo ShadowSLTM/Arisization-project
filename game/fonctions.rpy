@@ -206,6 +206,7 @@ init python:
         "De rien.",
         "Mais de rien.",
         "Pas de souci.",
+        "Pas de quoi.",
     ]
 
     def get_random_nothing():

@@ -1,28 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 9115, in script
-    scene hallway with fadfe
-  File "game/script.rpy", line 9115, in <module>
-    scene hallway with fadfe
-NameError: name 'fadfe' is not defined
+  File "game/script.rpy", line 3492, in script
+    show screen point with moveinleft
+  File "renpy/common/000statements.rpy", line 647, in execute_show_screen
+    renpy.show_screen(name, *args, **kwargs)
+Exception: Screen point is not known.
+
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 9115, in script
-    scene hallway with fadfe
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 1370, in execute
-    paired = renpy.python.py_eval(self.paired)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 9115, in <module>
-    scene hallway with fadfe
-NameError: name 'fadfe' is not defined
+  File "game/script.rpy", line 3492, in script
+    show screen point with moveinleft
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
+    self.call("execute")
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 647, in execute_show_screen
+    renpy.show_screen(name, *args, **kwargs)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\screen.py", line 1328, in show_screen
+    raise Exception("Screen %s is not known.\n" % (name[0],))
+Exception: Screen point is not known.
+
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 Arisization Project Version_développeur
-Wed Jun 18 23:55:56 2025
+Mon Jun 23 16:10:52 2025

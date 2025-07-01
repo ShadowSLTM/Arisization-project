@@ -128,7 +128,7 @@ default preferences.text_cps = 25
 ## attente. Des valeurs réputées correctes sont comprises dans une plage allant
 ## de 0 à 30.
 
-default preferences.afm_time = 25
+default preferences.afm_time = 2
 
 
 ## Répertoire de Snapshot ####################################################
