@@ -11593,12 +11593,12 @@ label password24:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-    hide screen class_404 with moveoutright 
+    hide screen room with moveoutright 
     hide screen points with moveoutleft
     hide screen day with moveoutleft
     scene black with fade 
 
-    "{b}{i} Vous sortez de la salle de classe.{/i}{/b}"
+    "{b}{i} Vous sortez du dortoir.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene hallway with fade
@@ -11870,15 +11870,57 @@ label password24:
     Na "Oui pourquoi pas mais je ne suis pas sûre de vouloir continuer."
     play sound "Click.mp3" noloop  
 
-    P ""
+    P "Mais si ça va bien se passer, tu as juste à t'entraîner un peu plus."
+    play sound "Click.mp3" noloop 
 
+    Na "Si tu le dis..."
+    play sound "Click.mp3" noloop
+  
+    "{b}{i}Vous vous posez pour continuer à jouer.{/i}{/b}"
+    play sound "Click.mp3" noloop
 
+    P "Bon, on va continuer la partie."
+    play sound "Click.mp3" noloop
 
-    play sound "Click.mp3" noloop  
+    Na "Oui, mais je ne promets pas de gagner."
+    play sound "Click.mp3" noloop
+
+    P "Pas de soucis, on va juste s'amuser."
+    play sound "Click.mp3" noloop
+
+    Na "Si tu le dis..."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Vous continuez de jouer pendant deux heures mais [newname] commence à s'éenerver.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    Na "J'en ai marre de ce jeu, je n'arrive pas à passer ce niveau !"
+    play sound "Click.mp3" noloop
+
+    P "Calme-toi, c'est juste un jeu. Tu vas y arriver."
+    play sound "Click.mp3" noloop
+
+    Na "Non, je n'y arriverai jamais. Je suis nulle à ce jeu."
+    play sound "Click.mp3" noloop
+
+    P "Tu n'es pas nulle, tu as juste besoin de t'entraîner un peu plus."
+    play sound "Click.mp3" noloop
+
+    Na "Bon je vais à la bibliothèque pour me changer les idées."
+    play sound "Click.mp3" noloop
+
+    P "D'accord, je vais te laisser tranquille alors."
+    play sound "Click.mp3" noloop
+
+    Na "Merci, je vais essayer de me calmer."
+    play sound "Footsteps.mp3" noloop
+
+    "{b}{i}[newname] se lève et part vers la bibliothèque.{/i}{/b}"
+    play sound "Click.mp3" noloop
 
     $ toilet = get_random_toilet()
     P "[toilet]"
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     hide screen class_404 with moveoutright
     hide screen points with moveoutleft
@@ -11892,6 +11934,36 @@ label password24:
     show screen day with moveinleft
     show screen points with moveinleft
     show screen hallway with moveinright 
+
+    "{b}{i}En sortant tu croises [J1].{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Oh salut [J1], comment ça va ?"
+    play sound "Click.mp3" noloop
+
+    J1 "Salut [P], ça va bien merci ! Et toi ?"
+    play sound "Click.mp3" noloop
+
+    P "Ça va, merci ! Je vais juste aux toilettes."
+    play sound "Click.mp3" noloop
+
+    J1 "Je vois mais juste avant, j'ai vu [newname], elle avait l'air un peu énervée."
+    play sound "Click.mp3" noloop
+
+    P "Oui, elle a eu un peu de mal avec un jeu vidéo aujourd'hui."
+    play sound "Click.mp3" noloop
+
+    J1 "Ah d'accord, j'espère qu'elle va se calmer."
+    play sound "Click.mp3" noloop
+
+    P "Oui, j'espère aussi."
+    play sound "Click.mp3" noloop
+
+    J1 "Bon, je te laisse aller aux toilettes alors."
+    play sound "Click.mp3" noloop
+
+    P "Ok alors."
+    play sound "Click.mp3" noloop
 
     "{b}{i} Tu continues vers les toilettes.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
@@ -11931,8 +12003,6 @@ label password24:
     show screen points with moveinleft
     show screen hallway with moveinright
 
-# à modifier 
-
     "{b}{i} Tu continues vers le dortoir.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
@@ -11952,5 +12022,53 @@ label password24:
     P "Enfin de retour."
     play sound "Click.mp3" noloop 
 
+    "{b}{i}Tu te poses un peu sur le lit pour faire une sieste.{/i}{/b}"
+    play sound "Click.mp3" noloop
 
+    hide screen room with moveoutright 
+    hide screen points with moveoutleft
+    hide screen day with moveoutleft
+    scene black with fade 
+
+    "{b}{i}Une heure plus tard, après ta sieste.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    scene room with fade 
+    show screen day with moveinleft
+    show screen points with moveinleft
+    show screen room with moveinright 
+
+    P "Hmmm, j'ai fait une bonne sieste...."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu te lèves tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Bon on dirait qu'elle n'est toujours pas revenue."
+    play sound "Door.mp3" noloop
+
+    "{b}{i}Puis [newname] entre dans le dortoir.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Oh tu es de retour. Comment ça s'est passé ?"
+    play sound "Click.mp3" noloop
+
+    Na "Ça va un peu mieux"
+    play sound "Click.mp3" noloop
+
+    P "Tu as réussi à te changer les idées ?"
+    play sound "Click.mp3" noloop
+
+    Na "Oui, j'ai lu un peu dans la bibliothèque et ça m'a fait du bien."
+    play sound "Click.mp3" noloop
+
+    P "C'est bien, parfois il faut juste prendre du recul."
+    play sound "Click.mp3" noloop
+
+    Na "Oui, tu as raison. Merci de m'avoir laissé tranquille."
+    play sound "Click.mp3" noloop
+
+    P "Pas de soucis, je suis là pour ça."
+    play sound "Click.mp3" noloop
+    
 # Aris la plus belle ################### 
