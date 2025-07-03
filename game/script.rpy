@@ -121,9 +121,8 @@ label start:
     default quest39 = 0 
     default quest40 = 0 
 
-label key:  
+label key:
 
-    play sound "Menu.mp3" noloop
     $ key = renpy.input("Veuillez écrire votre clé d'accès.").strip()
 
     $ valid_keys = {"ARIS-DEVS", "ARIS-8J4K-F9Q7", "ARIS-GRFN-M4A1"}
@@ -487,8 +486,20 @@ label hack:
 
     $ stockage += 2.0 
 
-    A "Bonjour [prenom] je suis ravie de te rencontrer mais j'ai duex questions."
+    A "Bonjour [prenom] je suis ravie de te rencontrer mais dis-moi."
     play sound "Click.mp3" noloop 
+
+    P "Oui je t'écoute."
+    play sound "Click.mp3" noloop   
+
+    A "qui est-ce cette personne avec toi."
+    play sound "Click.mp3" noloop   
+
+    P "C'est mon meilleure ami [S]."
+    play sound "Click.mp3" noloop   
+
+    A "J'ai deux questions à te demander."
+    play sound "Click.mp3" noloop   
 
     P "Oui dis-moi."
     play sound "Click.mp3" noloop 

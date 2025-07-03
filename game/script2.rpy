@@ -379,7 +379,7 @@ label password11:
     P "Attendez... vous connaissez [newname] ? Comment ?"
     play sound "Click.mp3" noloop 
 
-    Ln "Je suis au courant grâce à la DGCA. Le gouvernement surveille tout ce qui concerne les projets non-répertoriés. Et celui-ci... dépasse largement tout ce que nous avons vu jusque-là."
+    Ln "Je suis au courant grâce à la DGCS. Le gouvernement surveille tout ce qui concerne les projets non-répertoriés. Et celui-ci... dépasse largement tout ce que nous avons vu jusque-là."
     play sound "Click.mp3" noloop
 
     P "Que voulez-vous de moi et de [newname] ?"
@@ -481,10 +481,10 @@ label password11:
     P "Je vois alors je comprends mieux."
     play sound "Click.mp3" noloop 
 
-    Ln "Bien."
+    Ln "Bien alors.."
     play sound "Click.mp3" noloop 
 
-    "{b}{i}[Ln] et l'[Ot] quittent le breau des élèves.{/i}{/b}"
+    "{b}{i}[Ln] et l'[Ot] quittent le bureau des élèves.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     E "Si jamais sera tout, vous pouvez retourner en cours."
@@ -11103,6 +11103,15 @@ label password23:
     Na "Oh boucle-la Subaru, ça ne te regardes pas."
     play sound "Click.mp3" noloop 
 
+    S "Et alors ? Tu penses que ça te donne le droit de tout savoir ?"
+    play sound "Click.mp3" noloop
+
+    Na "Non, mais je pense que chacun a le droit de choisir ce qu’il partage ou non."
+    play sound "Click.mp3" noloop    
+
+    M "C’est un point de vue très intéressant, [newname]."
+    play sound "Click.mp3" noloop   
+
     P "Je comprends ta position, [newname]. Respecter tes limites est essentiel, même si cela complique parfois mon travail."
     play sound "Click.mp3" noloop
 
@@ -11864,7 +11873,7 @@ label password24:
     Na "Bon on fait quoi ?"
     play sound "Click.mp3" noloop  
  
-    P "On peut continuer de jouer à Nocturne core."
+    P "On peut continuer de jouer à Nocture core."
     play sound "Click.mp3" noloop  
 
     Na "Oui pourquoi pas mais je ne suis pas sûre de vouloir continuer."
@@ -12018,7 +12027,7 @@ label password24:
     show screen day with moveinleft
     show screen points with moveinleft
     show screen room with moveinright 
-
+ 
     P "Enfin de retour."
     play sound "Click.mp3" noloop 
 
@@ -12070,5 +12079,178 @@ label password24:
 
     P "Pas de soucis, je suis là pour ça."
     play sound "Click.mp3" noloop
+
+    Na "Bon on va prendre à manger ?"
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen room with moveoutright 
+    hide screen points with moveoutleft
+    hide screen day with moveoutleft
+    scene black with fade
+
+    "{b}{i} Vous partez chercher à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 300 
+
+    scene room with fade 
+    show screen day with moveinleft
+    show screen points with moveinleft
+    show screen room with moveinright
     
+    P "Enfin à manger... "
+    play sound "Click.mp3" noloop 
+
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]"
+    play sound "Click.mp3" noloop  
+
+    "{b}{i} Vous mangez tranquillement pendant une demi-heure.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Tu as finis de manger ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui, je n'ai plus faim."
+    play sound "Click.mp3" noloop 
+
+    P "Bien, juste j'avais une question."
+    play sound "Click.mp3" noloop 
+
+    Na "Oui dis-moi, je t'écoute."
+    play sound "Click.mp3" noloop 
+ 
+    p "C'est vrai ce que tu disais par rapport à tes données ?"
+    play sound "Click.mp3" noloop
+
+    Na "Oui, c'est vrai, je ne veut pas tu aie accès à ce que j'ai appris cr je vois ça comme de la triche."
+    play sound "Click.mp3" noloop
+
+    P "D'accord, je comprends. Je ne veux pas que tu te sentes mal à l'aise."
+    play sound "Click.mp3" noloop
+
+    Na "Bon Je vais me déconnecter et me recharger."
+    play sound "Click.mp3" noloop 
+
+    P "Pas de soucis."
+    play sound "Click.mp3" noloop
+
+    Na "Bon Je vais me déconnecter et me recharger."
+    play sound "Click.mp3" noloop 
+
+    P "D'accord, bonne nuit [newname]."
+    play sound "Click.mp3" noloop
+
+    Na "Bonne nuit [prenom]."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[newname] se déconnecte et recharge sa batterie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Enfin fini je vais pouvoir aller dormir pour demain."
+    play sound "Click.mp3" noloop  
+
+    "{b}{i}Tu te changes avant d'aller de te coucher.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    hide screen day with moveoutleft
+    hide screen room with moveoutright
+    hide screen points with moveoutleft
+    scene black with fade
+
+    "{b}{i} Le lendemain matin, le 22 décmebre 2097{/i}{/b}"
+    play sound "Alarm.mp3" noloop 
+
+    $ day += 1
+
+    scene room with fade 
+    show screen day with moveinleft
+    show screen room with moveinright
+    show screen points with moveinleft
+
+    "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    $ line = get_random_morning_line()
+    P "[line]"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu te changes et puis tu aperçois [newname] déconnectée contre le mur.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Elle est encore déconnectée."
+    play sound "Click.mp3" noloop 
+    
+    P "Je vais la démarrer."
+    play sound "Menu.mp3" noloop   
+
+    menu:   
+
+        "{b}{i} Démarrer [newname].{/i}{/b}" :
+            play sound "Menu.mp3" noloop 
+
+label password25:  
+
+    $ entered_password = renpy.input("Veuillez entrer votre mot de passe pour [newname].")
+    $ entered_password = entered_password.strip()
+
+    if entered_password == stored_password:
+
+        "Mot de passe correct. Accès autorisé." 
+        play sound "Menu.mp3" noloop
+
+    else:
+
+        "Mot de passe incorrect. Accès refusé." 
+        play sound "Menu.mp3" noloop
+        jump password25
+
+    $ start = get_random_start()
+    Na "[start]"
+    play sound "Click.mp3" noloop 
+
+    $  salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
+
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    Na "[je_vais_bien_txt] Et toi ?" 
+    play sound "Click.mp3" noloop 
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    P "[je_vais_bien_txt]"
+    play sound "Click.mp3" noloop
+
+    Na "Cool alors."
+    play sound "Click.mp3" noloop   
+
+    P "Bon on fait quoi aujourd'hui ?"
+    play sound "Click.mp3" noloop
+
+    Na "Je veux essayer le jeu Danganronpa Trigger Happy havoc que j'ai vu sur ton PC."
+    play sound "Click.mp3" noloop
+
+    P "Oui pourquoi pas, en plus il pousse ta réflexion sans être trop complexe comme Nocture core."
+    play sound "Click.mp3" noloop
+
+    Na "Mais c'est génial ! J'adore les jeux où il faut réfléchir et trouver des indices."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Puis [newname] regarde ton PC verrouillé.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Il y a quoi [newname] ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Je viens de le remarquer mais ta session d'ordinateur se nomme [nom_utilisateur_pc]."
+    play sound "Click.mp3" noloop 
+
 # Aris la plus belle ################### 

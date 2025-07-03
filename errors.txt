@@ -2,9 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 1892: expected ':' not found.
-    else
-        ^
+File "game/fonctions.rpy", line 406: 'return' outside function
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue Jul  1 15:20:25 2025
+Fri Jul  4 00:24:15 2025

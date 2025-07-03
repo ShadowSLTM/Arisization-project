@@ -8,15 +8,14 @@ default A = Character('??????????', color="#00eeff")
 default Na = Character('[newname] [nom]', color="#00eeff")
 
 # professeure de l'institut de la lune noir
-
-define Gt = Character('Naomi Sakayanagi', color="#c06c6c")
-
-# élèves de l'institut de la lune noir
-
 define Su = Character('Suzune Horimiya', color="#ffffff")
 define Sk = Character('Shiro Katsuya', color="#ffffff") 
-define S = Character('Subaru Shinomiya', color="#ffffff") #le coupable
 
+# antagoniste principale
+
+define S = Character('Subaru Shinomiya', color="#ffffff")
+define As = Character('Takumi Kisaragi', color="#ffffff") 
+ 
 # Les élèves de Seconde-E. 
 
 define M = Character('Sakura Kusanagi', color="#ffdfef") 

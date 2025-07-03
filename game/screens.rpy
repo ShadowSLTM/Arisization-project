@@ -1812,7 +1812,7 @@ screen Shop():
 
                 text _("DLC Arisization Project - Alternative : (installé)\n")
 
-            else:  
+            else:   
 
                 text _("DLC Arisization Project - Alternative : (non installé)\n")
 
