@@ -12235,8 +12235,8 @@ label password25:
     P "Bon on fait quoi aujourd'hui ?"
     play sound "Click.mp3" noloop
 
-    Na "Je veux essayer le jeu Danganronpa Trigger Happy havoc que j'ai vu sur ton PC."
-    play sound "Click.mp3" noloop
+    Na "Je veux essayer le jeu Danganronpa Trigger Happy havoc que j'ai vu sur internet."
+    play sound "Click.mp3" noloop 
 
     P "Oui pourquoi pas, en plus il pousse ta réflexion sans être trop complexe comme Nocture core."
     play sound "Click.mp3" noloop
@@ -12244,7 +12244,7 @@ label password25:
     Na "Mais c'est génial ! J'adore les jeux où il faut réfléchir et trouver des indices."
     play sound "Click.mp3" noloop
 
-    "{b}{i}Puis [newname] regarde ton PC verrouillé.{/i}{/b}"
+    "{b}{i}Puis [newname] regarde ton PC.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     P "Il y a quoi [newname] ?"
@@ -12253,4 +12253,16 @@ label password25:
     Na "Je viens de le remarquer mais ta session d'ordinateur se nomme [nom_utilisateur_pc]."
     play sound "Click.mp3" noloop 
 
-# Aris la plus belle ################### 
+    P "Oui c'est normal, c'est le nom que j'ai choisi pour mon compte utilisateur."
+    play sound "Click.mp3" noloop 
+
+    Na "Ok Je vois, Bon moi je vais essayer de me connecter à mon compte pour voir si je peux jouer à Danganronpa Trigger Happy havoc."
+    play sound "Click.mp3" noloop
+
+    P "D'accord, je vais te laisser faire, moi je vais lire un peu."
+    play sound "Click.mp3" noloop   
+     
+    "{b}{i}[newname] se connecte à sa bibliothèque de jeux.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+# Aris la plus belle ###################  

@@ -1802,7 +1802,7 @@ screen Shop():
 
             label "{b}{i}— Clés d'accès —\n{/i}{/b}" 
 
-            text _("{color=#ffffff} Clé officielle : ARIS-8J4K-F9Q7\n")
+            text _("Clé officielle : ARIS-8J4K-F9Q7\n")
 
             text _("Cette clé d'accès est à inscrire lors que vous lancez une nouvelle partie.\n")
 
