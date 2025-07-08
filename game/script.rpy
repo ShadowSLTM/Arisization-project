@@ -435,7 +435,7 @@ label hack:
 
     else:    
 
-        $ A = Character("M82A1", color="#00eeff")
+        $ A = Character("AK-24", color="#00eeff")
         $ stockage += 1.0
 
         R "Initialisation en cours......" 
@@ -7271,14 +7271,27 @@ label suite:
     P "Ok je vois." 
     play sound "Click.mp3" noloop 
 
-    S "Je vois que tu as encore l'autre [A] avec toi."
-    play sound "Click.mp3" noloop 
+    if quest4: 
 
-    P "Hey un peu de respect elle a un prénom et un nom maintenant."
-    play sound "Click.mp3" noloop 
+        S "Je vois que tu as encore l'autre [A] avec toi."
+        play sound "Click.mp3" noloop 
 
-    S "Oups désolé."
-    play sound "Click.mp3" noloop 
+        P "Hey un peu de respect, elle a un prénom et un nom maintenant."
+        play sound "Click.mp3" noloop 
+
+        S "Oups désolé."
+        play sound "Click.mp3" noloop 
+
+    else: 
+
+        S "Je vois que tu as encore l'autre [A] avec toi, je croyais que tu ne savais pas s'il lui rester un avenir."
+        play sound "Click.mp3" noloop 
+
+        P "Oui j'avais dit ça mais finalement j'avais tort de lui dire ça." 
+        play sound "Click.mp3" noloop 
+
+        S "Je vois."
+        play sound "Click.mp3" noloop
 
     "{b}{i}[S] s'adresse à [newname].{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -7289,7 +7302,7 @@ label suite:
     Na "Je m'appelle [newname], [Na]."
     play sound "Click.mp3" noloop
 
-    S "Enchanté [newname]"
+    S "Enchanté [newname]."  
     play sound "Click.mp3" noloop
 
     $ thanks = get_random_thanks()
@@ -10949,7 +10962,7 @@ label update:
     play sound "Click.mp3" noloop
 
     Na "Bonne nuit [prenom]."
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     "{b}{i}[newname] se déconnecte et recharge sa batterie.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -12891,7 +12904,7 @@ label password:
     Oh "à l'avenir, que veux-tu qu'[newname] devienne ?" 
     play sound "Click.mp3" noloop 
 
-    P "Je ne sasi pas exactement, je veux juste qu'elle apprenne pour l'instant." 
+    P "Je ne sais pas exactement, je veux juste qu'elle apprenne pour l'instant et qu'elle ait un avenir." 
     play sound "Click.mp3" noloop 
 
     Oh "Je vois c'est intéressant." 
@@ -16800,7 +16813,7 @@ label password6:
     "{b}{i} Vous allez chercher une avant de vous asseoir.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "Bon appétit [prenom]."
+    P "Bon appétit [newname]."
     play sound "Click.mp3" noloop 
 
     $ thanks = get_random_thanks()

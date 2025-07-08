@@ -2120,7 +2120,8 @@ screen about():
             text _("Cyberpunk\n")
             text _("Thriller\n")
             text _("School Life\n")
-            text _("Hacking\n")
+            text _("Science fiction\n")
+            text _("Hacking\n") 
             text _("dystopie technologique\n")
 
 style about_label is gui_label
