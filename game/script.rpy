@@ -125,7 +125,7 @@ label key:
 
     $ key = renpy.input("Veuillez écrire votre clé d'accès.").strip()
 
-    $ valid_keys = {"ARIS-DEVS", "ARIS-8J4K-F9Q7", "ARIS-GRFN-M4A1"}
+    $ valid_keys = {"ARIS-DEVS", "ARIS-8J4K-F9Q7", "ARIS-GRFN-M4A1", "ARIS-DEMO"}
     
     if key in valid_keys: 
 
@@ -352,9 +352,42 @@ label hack:
         $ quest2 += 1
         $ stockage = 0.0 
 
+        R "10\%"
+        play sound "Click.mp3" noloop
+
+        R "20\%"
+        play sound "Click.mp3" noloop
+
+        R "30\%"
+        play sound "Click.mp3" noloop
+
+        R "40\%"
+        play sound "Click.mp3" noloop
+
+        R "50\%"
+        play sound "Click.mp3" noloop
+
+        R "60\%"
+        play sound "Click.mp3" noloop
+
+        R "70\%"
+        play sound "Click.mp3" noloop
+
+        R "80\%" 
+        play sound "Click.mp3" noloop
+
+        R "90\%"
+        play sound "Click.mp3" noloop
+
+        R "100\%"
+        play sound "Click.mp3" noloop
+
+        R "Vérification...."
+        play sound "Menu.mp3" noloop 
+
         show screen update with moveinright
 
-        "système ouvert avec succès." 
+        R "système ouvert avec succès." 
         play sound "Click.mp3" noloop 
 
         hide screen update with moveoutright
@@ -1824,7 +1857,32 @@ label argument:
     M "[nothing]"
     play sound "Click.mp3" noloop
     
-    M "Bon maintenant que toutes les informations ont été données, vous pouvez disposer le cours est fini, n'hésitez pas à visiter le lycée vu que vous n'avez pas de cours cette après-midi."
+    "{b}{i}La professeure regarde l'heure.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    if key == "ARIS-DEMO":
+    
+        M "Bon, maintenant que toutes les informations ont été données, vous pouvez disposer. N'hésitez pas à visiter le lycée puisque vous n'avez pas cours cet après-midi."
+        play sound "Click.mp3" noloop 
+
+        "{b}{i}Puis, la professeure te regarde avec un air plus sérieux.{/i}{/b}"
+        play sound "Click.mp3" noloop
+
+        M "Juste, [prenom]... Je suis désolée, mais je ne peux pas te laisser aller plus loin."
+        play sound "Click.mp3" noloop 
+
+        M "Tu n’as que la démo du jeu. Le reste de l’histoire t’attend dans la version complète."
+        play sound "Click.mp3" noloop 
+
+        "{b}{i}Un étrange silence s'installe. L'écran commence à s'assombrir doucement...{/i}{/b}"
+        scene black with fade
+        stop music fadeout 2.0
+
+        return
+
+else:
+
+    M "Bon, maintenant que toutes les informations ont été données, vous pouvez disposer. N'hésitez pas à visiter le lycée puisque vous n'avez pas cours cet après-midi."
     play sound "Footsteps.mp3" noloop
 
 # fin du cours de présentation des élèves
@@ -10287,7 +10345,7 @@ label debate_success:
 
 label code: 
 
-    $ system = renpy.input("Choisis un nom pour ton système d'exploitation.")
+    $ system = renpy.input("Choisis un nom pour son système d'exploitation.")
     play sound "Menu.mp3" noloop 
 
     $ Line1 = renpy.input("create_system(name=Aris,mode=secure,boot=true,fightmode=false)")
@@ -10306,11 +10364,19 @@ label code:
     play sound "Menu.mp3" noloop  
 
     $ Line6 = renpy.input("initiate_indexation(source=database)")
-    play sound "Menu.mp3" noloop
+    play sound "Menu.mp3" noloop 
+
+    $ Line7 = renpy.input("initiate_password(password_setting_access=true)")
+    play sound "Menu.mp3" noloop 
+
+    $ Line8 = renpy.input("modify_address_access(access=false)")
+    play sound "Menu.mp3" noloop 
 
     menu: 
-
         "{b}{i} Compiler le code.{/i}{/b}" :
+            play sound "Menu.mp3" noloop 
+
+            "Vérification en cours...."
             play sound "Menu.mp3" noloop 
 
             if Line1 == "create_system(name=Aris,mode=secure,boot=true,fightmode=false)":
@@ -10323,10 +10389,67 @@ label code:
                             
                             if Line5 == "create_database(database_access=false)":
 
-                                if Line6 == "initiate_indexation(source=database)":
+                                if Line6 == "initiate_indexation(source=database)": 
 
-                                    "Le code a été correctement compilé."
-                                    play sound "Click.mp3" noloop 
+                                    if Line7 == "initiate_password(password_setting_access=true)": 
+
+                                        if Line8 == "modify_address_access(access=false)":
+
+                                            "10\%"
+                                            play sound "Click.mp3" noloop
+
+                                            "20\%"
+                                            play sound "Click.mp3" noloop
+
+                                            "30\%"
+                                            play sound "Click.mp3" noloop
+
+                                            "40\%"
+                                            play sound "Click.mp3" noloop
+
+                                            "50\%"
+                                            play sound "Click.mp3" noloop
+
+                                            "60\%"
+                                            play sound "Click.mp3" noloop
+
+                                            "70\%"
+                                            play sound "Click.mp3" noloop
+
+                                            "80\%" 
+                                            play sound "Click.mp3" noloop
+
+                                            "90\%"
+                                            play sound "Click.mp3" noloop
+
+                                            "100\%"
+                                            play sound "Click.mp3" noloop
+
+                                            $ success += 1 
+
+                                            "Vérification...."
+                                            play sound "Menu.mp3" noloop 
+
+                                            show screen update with moveinright
+
+                                            "Le code a été correctement compilé." 
+                                            play sound "Click.mp3" noloop 
+
+                                            hide screen update with moveoutright
+
+                                        else: 
+
+                                            "Erreur détectée à la huitième ligne, le code a été mal compilé."
+                                            play sound "Click.mp3" noloop    
+
+                                        jump code 
+
+                                    else:
+
+                                        "Erreur détectée à la septième ligne, le code a été mal compilé."
+                                        play sound "Click.mp3" noloop    
+
+                                        jump code 
 
                                 else: 
 
@@ -10352,9 +10475,9 @@ label code:
                     else: 
 
                         "Erreur détectée à la troisième ligne, le code a été mal compilé."
-                        play sound "Click.mp3" noloop 
+                        play sound "Click.mp3" noloop  
 
-                        jump code  
+                        jump code 
                         
                 else: 
 
@@ -10370,11 +10493,14 @@ label code:
 
                 jump code 
 
+    P "Bien il semblerait que le code fonctionne correctement."
+    play sound "Click.mp3" noloop
+
     "{b}{i}Tu continues de travailler sur [newname] pendant trois heures.{/i}{/b}" 
     play sound "Click.mp3" noloop
 
     P "Bon il m'aura fallu beaucoup du temps mais j'ai enfin fini, j'ai le fichier de système d'exploitation qui est [system].rnx"
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     menu:   
 
@@ -18865,7 +18991,13 @@ label password9:
         M "C'est en dessous de la moyenne je n'ai pas le choix que de t'expulser du lycée..."
         play sound "Click.mp3" noloop
 
-        P "Quoi et mon avenir !?"
+        S "[prenom] qui échoue l'examen de runix c'est surprenant."
+        play sound "Click.mp3" noloop
+
+        Y "Oui même moi ça me surprend."
+        play sound "Click.mp3" noloop
+
+        P "Quoi !? je vois alors."
         play sound "Click.mp3" noloop
     
         M "Désolé mais j'avais déjà prévenu concernant les mauvaises notes."
@@ -18896,10 +19028,16 @@ label password9:
                     
     else:
        
-        M "C'est pas mal."
+        M "C'est pas mal." 
         play sound "Click.mp3" noloop
 
         P "Merci."
+        play sound "Click.mp3" noloop
+
+        Na "Moi qui pensait que tu aurais la meilleure note."
+        play sound "Click.mp3" noloop
+
+        P "Oui moi aussi mais il semblerait que non."
         play sound "Click.mp3" noloop
 
     M "[Na] tu as eu 18/20 félicitation aussi."

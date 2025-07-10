@@ -5677,7 +5677,10 @@ label philosophie_technologie:
         M "C'est en dessous de la moyenne je n'ai pas le choix que de t'expulser du lycée..."
         play sound "Click.mp3" noloop
 
-        P "Quoi et mon avenir !?"
+        P "Quoi !?"
+        play sound "Click.mp3" noloop 
+
+        Na "Il semblerait que la philosophie soit pas ton fort."
         play sound "Click.mp3" noloop
     
         M "Désolée mais j'avais déjà prévenu concernant les mauvaises notes."
@@ -12588,8 +12591,6 @@ label password25:
     show screen day with moveinleft
     show screen room with moveinright
     show screen points with moveinleft 
-
-th moveinleft
 
     "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop 

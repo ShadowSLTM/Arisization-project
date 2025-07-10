@@ -1922,7 +1922,7 @@ screen success():
 
             label "{b}{i}— Progression —\n{/i}{/b}" 
 
-            text _("Succès : [success]/40\n") 
+            text _("Succès : [success]/41\n") 
 
             label "{b}{i}— liste des succès —\n{/i}{/b}" 
 
@@ -1930,7 +1930,7 @@ screen success():
             text _("Premier piratage : [quest2]/1\n")
             text _("Nouveau nom de code : [quest3]/1\n")     
             text _("L'espoir fait vivre : [quest4]/1\n") 
-            text _("Acceptation : [quest5]/1\n")
+            text _("Acceptation : [quest5]/1\n")  
             text _("Nouvelle identité : [quest6]/1\n")
             text _("Nouvelle adresse : [quest7]/1\n")
             text _("Ce n’est que le début : [quest8]/1\n")
