@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/fonctions.rpy", line 406: 'return' outside function
+File "game/script.rpy", line 1894: expected statement.
+    else:
+        ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri Jul  4 00:24:15 2025
+Sat Jul 12 00:44:35 2025

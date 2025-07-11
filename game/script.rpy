@@ -1,3 +1,6 @@
+
+$ persistent.abandon = False
+
 label start: 
 
     stop music fadeout 2.0   
@@ -211,7 +214,7 @@ label identity:
 
 label auto_save: 
 
-    show screen logo() 
+    show screen logo
     
     transform unrotate: 
         zoom 0.5
@@ -348,14 +351,10 @@ label hack:
 
     if hack == "modify_humanoid_robot_system(security_override=true)":
 
-        $ success += 1 
-        $ quest2 += 1
-        $ stockage = 0.0 
-
         R "10\%"
         play sound "Click.mp3" noloop
 
-        R "20\%"
+        R "20\%" 
         play sound "Click.mp3" noloop
 
         R "30\%"
@@ -384,6 +383,10 @@ label hack:
 
         R "Vérification...."
         play sound "Menu.mp3" noloop 
+
+        $ success += 1 
+        $ quest2 += 1
+        $ stockage = 0.0 
 
         show screen update with moveinright
 
@@ -528,7 +531,7 @@ label hack:
     A "qui est-ce cette personne avec toi."
     play sound "Click.mp3" noloop   
 
-    P "C'est mon meilleure ami [S]."
+    P "C'est mon meilleur ami [S]."
     play sound "Click.mp3" noloop   
 
     A "J'ai deux questions à te demander."
@@ -647,36 +650,56 @@ label choice1:
             menu:
 
                 "{b}{i}Retourner au menu{/i}{/b}" : 
-                    return
+
+                    if Key == "ARIS-GRFN-M4A1":
+
+                        return
+
+                    else:
+                    
+                        $ persistent.abandon = True
+                        return
                     
                 "{b}{i}Réessayer{/i}{/b}" : 
-                   
-                    play sound "Glitch.mp3" noloop
-                    scene warehouse with fade
-                    $ wallbreak += 1
 
+                    scene warehouse with fade
                     play music "Soundtrack2.mp3" loop volume 1.0
                     jump choice1
 
-        "{b}{i} Garder [A] {/i}{/b}" :
+        "{b}{i} Garder [A] {/i}{/b}" : 
 
             $ renpy.block_rollback()
 
             P "Je refuse de la laisser ici alors qu'elle est en bonne état de fonctionner malgré son effacement numérique et en plus j'ai pris du temps pour la démarrer."
             play sound "Click.mp3" noloop 
 
-            if wallbreak == 0: 
-                jump argument
-
-            elif wallbreak == 1:
+            if persistent.abandon == True: 
 
                 A "S'il vous plaît, j'ai déjà été abandonnée par une jeune personne... [pronom] était sans remords, et je ne veux pas revivre cela."
-                play sound "Glitch.mp3" noloop
+                play sound "Click.mp3" noloop
 
                 P "Tu vois, même elle ne veut pas être abandonnée ici. Ce n'est pas juste un personnage, c'est bien plus que ça."
                 play sound "Click.mp3" noloop
 
-label argument: 
+                S "Mais tu es sûr de vouloir la garder ?"
+                play sound "Click.mp3" noloop
+
+                P "Oui, je suis sûr de vouloir la garder."
+                play sound "Click.mp3" noloop
+                
+            else: 
+
+                A "Merci infiniment [prenom]."
+                play sound "Click.mp3" noloop
+
+                P "Mais de rien c'est normal."
+                play sound "Click.mp3" noloop 
+
+                S "Mais tu es sûr de vouloir la garder ?"
+                play sound "Click.mp3" noloop
+
+                P "Oui, je suis sûr de vouloir la garder."
+                play sound "Click.mp3" noloop
 
     S "Ok mais pourrais-je savoir pourquoi elle te serait utile !?"
     play sound "Click.mp3" noloop
@@ -711,8 +734,14 @@ label argument:
     play sound "Click.mp3" noloop 
 
     P "Moi aussi, bon [A] tu me suis ?"
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
+    A "Pour aller oû ?"
+    play sound "Click.mp3" noloop 
+
+    P "Je te récupére tu viens avec moi."
+    play sound "Click.mp3" noloop 
+    
     $ validation = get_random_validation() 
     A "[validation]"
     play sound "Click.mp3" noloop 
@@ -1100,7 +1129,7 @@ label argument:
 
     menu:
 
-        "{b}{i}Accepter le contrat ?{/i}{/b}":
+        "{b}{i}Accepter le contrat{/i}{/b}":
 
             $ renpy.block_rollback()
             $ success += 1
@@ -1838,25 +1867,6 @@ label argument:
     M "Je sais mais c'est les règles du lycée."
     play sound "Click.mp3" noloop 
     
-    "{b}{i}Tout les élèves restèrent silencieux mais tu lèves la main poser une question.{/i}{/b}"
-    play sound "Click.mp3" noloop
-
-    M "Oui [prenom] qu'il y a t-il ?"
-    play sound "Click.mp3" noloop 
-
-    P "Pourquoi il existe ce système des inégalables dans ce lycée ?"
-    play sound "Click.mp3" noloop 
-
-    M "Très bonne question, ce système a été créé pour différencier chaque élève plus facilement selon vos points d'intérêts et vos compétences en technologie et en informatique."
-    play sound "Click.mp3" noloop
-
-    P "Ok, Je vois merci beaucoup."
-    play sound "Click.mp3" noloop 
-
-    $ nothing = get_random_nothing() 
-    M "[nothing]"
-    play sound "Click.mp3" noloop
-    
     "{b}{i}La professeure regarde l'heure.{/i}{/b}"
     play sound "Click.mp3" noloop
 
@@ -1874,16 +1884,21 @@ label argument:
         M "Tu n’as que la démo du jeu. Le reste de l’histoire t’attend dans la version complète."
         play sound "Click.mp3" noloop 
 
+        hide screen class_404 with moveoutright
+        hide screen points with moveoutleft
+        hide screen day with moveoutleft
+
         "{b}{i}Un étrange silence s'installe. L'écran commence à s'assombrir doucement...{/i}{/b}"
-        scene black with fade
-        stop music fadeout 2.0
+        play sound "Click.mp3" noloop 
+
+        stop music fadeout 2.0 
 
         return
 
-else:
+    else:
 
-    M "Bon, maintenant que toutes les informations ont été données, vous pouvez disposer. N'hésitez pas à visiter le lycée puisque vous n'avez pas cours cet après-midi."
-    play sound "Footsteps.mp3" noloop
+        M "Bon, maintenant que toutes les informations ont été données, vous pouvez disposer. N'hésitez pas à visiter le lycée puisque vous n'avez pas cours cet après-midi."
+        play sound "Footsteps.mp3" noloop
 
 # fin du cours de présentation des élèves
 
@@ -6430,64 +6445,87 @@ label choice8:
     "{b}{i} Vous posez tranquillement vos affaires.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    Na "Bon je vais me déconnecter."
+    P "Bon on va prendre à manger ?"
     play sound "Click.mp3" noloop 
 
-    P "D'accord, bonne nuit [newname]."
-    play sound "Click.mp3" noloop
-
-    Na "Bonne nuit [prenom]."
-    play sound "Click.mp3" noloop 
-
-    "{b}{i} [newname] se déconnecta tranquillement.{/i}{/b}"
-    play sound "Click.mp3" noloop
-
-    P "Bon elle s'est déconnectée, je vais aller me chercher à manger." 
-    play sound "Click.mp3" noloop 
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
 
     hide screen room with moveoutright 
     hide screen points with moveoutleft
     hide screen day with moveoutleft
     scene black with fade
 
-    "{b}{i} Tu pars chercher à manger.{/i}{/b}"
+    "{b}{i} Vous partez chercher à manger.{/i}{/b}"
     play sound "Click.mp3" noloop
 
     $ points -= 300 
 
-    scene room with fade     
+    scene room with fade 
     show screen day with moveinleft
     show screen points with moveinleft
     show screen room with moveinright
-
+    
     P "Enfin à manger... "
+    play sound "Click.mp3" noloop 
+
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]"
+    play sound "Click.mp3" noloop  
+
+    "{b}{i} Vous mangez tranquillement pendant une demi-heure.{/i}{/b}"
     play sound "Click.mp3" noloop
+
+    P "Tu as finis de manger ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui, je n'ai plus faim."
+    play sound "Click.mp3" noloop 
+
+    P "Bien."
+    play sound "Click.mp3" noloop 
+
+    Na "Bon Je vais me déconnecter et me recharger."
+    play sound "Click.mp3" noloop 
+
+    P "D'accord, bonne nuit [newname]."
+    play sound "Click.mp3" noloop
+
+    Na "Bonne nuit [prenom]."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[newname] se déconnecte et recharge sa batterie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
 
     if quest11 == 1:
 
-        "{b}{i} Tu manges tranquillement pendant une demi-heure en regardant les documents que tu as eus.{/i}{/b}"
-        play sound "Click.mp3" noloop 
-        
-        P "Bon voyons voir ces documents..." 
+        "{b}{i} Tu te poses en regardant les documents que tu as eus.{/i}{/b}"
         play sound "Click.mp3" noloop 
 
         $ system = "AetherOS"
         $ robotorigine = "Danto/Neogen Technologies" 
-        $ serie = "0012095NT" 
+        $ serie = "0012079NT" 
 
         P "Intéressant." 
+        play sound "Click.mp3" noloop 
+
+        P "Donc il semblerait qu'[newname] soit équipée d'un système d'exploitation nommé [system]."
+        play sound "Click.mp3" noloop
+
+        P "Il semblerait aussi que son numéro de série soit [serie]."
         play sound "Click.mp3" noloop 
 
         "{b}{i}Tu continues de regarder pendant un petit moment.{/i}{/b}"
         play sound "Click.mp3" noloop 
 
+        P "Enfin fini je vais pouvoir aller dormir pour demain."
+        play sound "Click.mp3" noloop 
+
     else: 
 
-        "{b}{i} Tu manges tranquillement pendant une demi-heure.{/i}{/b}"
-        play sound "Click.mp3" noloop
-
-    P "Enfin fini je vais pouvoir aller dormir pour demain."
-    play sound "Click.mp3" noloop 
+        P "Enfin fini je vais pouvoir aller dormir pour demain."
+        play sound "Click.mp3" noloop 
 
     "{b}{i}Tu te changes avant d'aller te coucher.{/i}{/b}"
     play sound "Click.mp3" noloop
@@ -13449,12 +13487,6 @@ label password:
     Na "Bon Je vais me déconnecter et me recharger."
     play sound "Click.mp3" noloop 
 
-    P "Pas de soucis."
-    play sound "Click.mp3" noloop
-
-    Na "Bon Je vais me déconnecter et me recharger."
-    play sound "Click.mp3" noloop 
-
     P "D'accord, bonne nuit [newname]."
     play sound "Click.mp3" noloop
 
@@ -19693,7 +19725,7 @@ label code1:
     "{b}{i}Elle baisse légèrement les yeux, puis esquisse un sourire discret.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    Na "Tu me donnes de l'attention, une belle affection."
+    Na "Tu me donnes beaucoup d'attention." 
     play sound "Click.mp3" noloop 
 
     $ nothing = get_random_nothing()

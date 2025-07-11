@@ -12655,5 +12655,8 @@ label password26:
     play sound "Click.mp3" noloop  
 
     Na ""
+    play sound "Click.mp3" noloop 
 
+
+    
 # Aris la plus belle ###################  
