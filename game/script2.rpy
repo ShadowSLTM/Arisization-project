@@ -451,7 +451,7 @@ label password11:
             $ renpy.block_rollback()
 
             $ success += 1 
-            $ quest31 += 1 
+            $ quest32 += 1 
  
             show screen update with moveinright
 
@@ -1897,7 +1897,7 @@ label password13:
             $ renpy.block_rollback()
 
             $ success += 1 
-            $ quest32 += 1 
+            $ quest33 += 1 
 
             P "Oui pas de soucis si vraiment ça te dérange." 
             play sound "Click.mp3" noloop
@@ -3008,7 +3008,7 @@ label examen_francais:
     if grade == 20.0:
 
         $ success += 1 
-        $ quest33 += 1
+        $ quest34 += 1
 
         show screen update with moveinright
 
@@ -3383,7 +3383,7 @@ label examen_francais:
             Na "Vérification...."
             play sound "Menu.mp3" noloop 
             $ success += 1        
-            $ quest34 += 1
+            $ quest35 += 1
             $ stockage += 5.0 
             $ update += 1.0 
 
@@ -3914,7 +3914,7 @@ label password15:
                 play sound "Click.mp3" noloop 
 
             $ success += 1        
-            $ quest35 += 1
+            $ quest36 += 1
 
             show screen update with moveinright
 
@@ -4903,7 +4903,7 @@ label password16:
             $ renpy.block_rollback()
 
             $ success += 1 
-            $ quest36 += 1
+            $ quest37 += 1
             $ stockage += 2.0 
 
             show screen update with moveinright
@@ -5660,7 +5660,7 @@ label philosophie_technologie:
     if grade == 20.0:
 
         $ success += 1
-        $ quest37 += 1
+        $ quest38 += 1
 
         show screen update with moveinright
 
@@ -6370,7 +6370,7 @@ label philosophie_technologie:
         K "Le 9 octobre, il y a eu une connexion à [newname] et un début de transfert de donnés vers un autre ordinateur."  
         play sound "Click.mp3" noloop
 
-    if quest26 == 1:
+    if quest27 == 1:
 
         K "Le 15 novmebre, il y a eu une tentative de connexion sans succès."  
         play sound "Click.mp3" noloop
@@ -6380,7 +6380,7 @@ label philosophie_technologie:
         K "Le 19 novembre, il y a eu une connexion à [newname] et un début de transfert de données vers un autre ordinateur"  
         play sound "Click.mp3" noloop
 
-    if quest22 == 1:
+    if quest23 == 1:
 
         K "Le 19 novembre, il y a eu une tentative de compromission du mot de passe."  
         play sound "Click.mp3" noloop 
@@ -6390,7 +6390,7 @@ label philosophie_technologie:
         K "Le 19 novembre, son mot de passe a été compris par force-brute."  
         play sound "Click.mp3" noloop
 
-    if quest34 == 1:
+    if quest35 == 1:
 
         K "Le 3 décembre, il y a eu une tentative de connexion sans succès."  
         play sound "Click.mp3" noloop
@@ -7240,7 +7240,7 @@ label password18:
             $ renpy.block_rollback()
 
             $ success += 1
-            $ quest38 += 1 
+            $ quest39 += 1 
 
             "{b}{i}Tu t’approches d’elle, observant les feuilles éparpillées sur sa table. Elle semble un peu perdue dans ses notes, fronçant légèrement les sourcils.{/i}{/b}"
             play sound "Click.mp3" noloop
@@ -8424,7 +8424,7 @@ label password20:
     P "Encore des exercices de connaisance sur l'informatique..."
     play sound "Click.mp3" noloop
 
-    if quest38 == 1:
+    if quest39 == 1:
 
         "{b}{i}Tu commences à faire les exercices.{/i}{/b}"
         play sound "Click.mp3" noloop

@@ -1,6 +1,3 @@
-
-$ persistent.abandon = False
-
 label start: 
 
     stop music fadeout 2.0   
@@ -123,6 +120,7 @@ label start:
     default quest38 = 0
     default quest39 = 0 
     default quest40 = 0 
+    default quest41 = 0
 
 label key:
 
@@ -650,16 +648,8 @@ label choice1:
             menu:
 
                 "{b}{i}Retourner au menu{/i}{/b}" : 
+                    return
 
-                    if Key == "ARIS-GRFN-M4A1":
-
-                        return
-
-                    else:
-                    
-                        $ persistent.abandon = True
-                        return
-                    
                 "{b}{i}Réessayer{/i}{/b}" : 
 
                     scene warehouse with fade
@@ -673,33 +663,17 @@ label choice1:
             P "Je refuse de la laisser ici alors qu'elle est en bonne état de fonctionner malgré son effacement numérique et en plus j'ai pris du temps pour la démarrer."
             play sound "Click.mp3" noloop 
 
-            if persistent.abandon == True: 
+            A "Merci infiniment [prenom]."
+            play sound "Click.mp3" noloop
 
-                A "S'il vous plaît, j'ai déjà été abandonnée par une jeune personne... [pronom] était sans remords, et je ne veux pas revivre cela."
-                play sound "Click.mp3" noloop
+            P "Mais de rien c'est normal."
+            play sound "Click.mp3" noloop 
 
-                P "Tu vois, même elle ne veut pas être abandonnée ici. Ce n'est pas juste un personnage, c'est bien plus que ça."
-                play sound "Click.mp3" noloop
+            S "Mais tu es sûr de vouloir la garder ?"
+            play sound "Click.mp3" noloop
 
-                S "Mais tu es sûr de vouloir la garder ?"
-                play sound "Click.mp3" noloop
-
-                P "Oui, je suis sûr de vouloir la garder."
-                play sound "Click.mp3" noloop
-                
-            else: 
-
-                A "Merci infiniment [prenom]."
-                play sound "Click.mp3" noloop
-
-                P "Mais de rien c'est normal."
-                play sound "Click.mp3" noloop 
-
-                S "Mais tu es sûr de vouloir la garder ?"
-                play sound "Click.mp3" noloop
-
-                P "Oui, je suis sûr de vouloir la garder."
-                play sound "Click.mp3" noloop
+            P "Oui, je suis sûr de vouloir la garder."
+            play sound "Click.mp3" noloop
 
     S "Ok mais pourrais-je savoir pourquoi elle te serait utile !?"
     play sound "Click.mp3" noloop
@@ -761,15 +735,8 @@ label choice1:
         "{b}{i}Chapitre 1 : Arisization Project - High school Arc{/i}{/b}"
         play sound "Click.mp3" noloop 
 
-    if wallbreak == 1: 
-        
-        "{i}Tu penses vraiment pouvoir améliorer [A] alors que tu l'as déjà abandonnée ?{/i}"
-        play sound "Click.mp3" noloop 
-
-    else: 
-        
-        "{i}Tu penses vraiment pouvoir améliorer [A] ?{/i}"
-        play sound "Click.mp3" noloop 
+    "{i}Tu penses vraiment pouvoir améliorer [A] ?{/i}"
+    play sound "Click.mp3" noloop 
 
     scene black with fade 
      
@@ -6514,9 +6481,12 @@ label choice8:
         play sound "Click.mp3" noloop
 
         P "Il semblerait aussi que son numéro de série soit [serie]."
+        play sound "Click.mp3" noloop  
+
+        P "Je vois que c'est le vingt-quatrième robot de la première série de 2079."
         play sound "Click.mp3" noloop 
 
-        "{b}{i}Tu continues de regarder pendant un petit moment.{/i}{/b}"
+        "{b}{i}Tu continues de regarder pendant un petit moment.{/i}{/b}" 
         play sound "Click.mp3" noloop 
 
         P "Enfin fini je vais pouvoir aller dormir pour demain."
@@ -8916,7 +8886,7 @@ label debate_success:
     Su "Ah bon le quel ?"
     play sound "Click.mp3" noloop 
 
-    P "[newname]"
+    P "[newname]....."
     play sound "Click.mp3" noloop 
 
     Su "C'est trop mignon."
@@ -10464,6 +10434,7 @@ label code:
                                             play sound "Click.mp3" noloop
 
                                             $ success += 1 
+                                            $ quest18 += 1
 
                                             "Vérification...."
                                             play sound "Menu.mp3" noloop 
@@ -10914,7 +10885,7 @@ label update:
             $ renpy.block_rollback()
 
             $ success += 1
-            $ quest18 += 1
+            $ quest19 += 1
     
             "{b}{i} Tu approches calmement pour la réveiller.{/i}{/b}"
             play sound "Click.mp3" noloop
@@ -11548,7 +11519,7 @@ label update:
             $ renpy.block_rollback()
 
             $ success += 1 
-            $ quest19 += 1
+            $ quest20 += 1
 
             show screen update with moveinright
 
@@ -11823,7 +11794,7 @@ label update:
             
             $ suspect = "Aiko"
             $ success += 1 
-            $ quest20 += 1
+            $ quest21 += 1
 
             show screen update with moveinright
 
@@ -12056,7 +12027,7 @@ label update:
             $ renpy.block_rollback()
 
             $ success += 1 
-            $ quest21 += 1 
+            $ quest22 += 1 
 
             P "Je vais aller la voir pour voir si elle va bien."
             play sound "Footsteps.mp3" noloop 
@@ -12342,7 +12313,7 @@ label password:
 
         if len(entered_password) > 10:
             $ success += 1
-            $ quest22 += 1   
+            $ quest23 += 1   
             $ stockage += 5.0
 
             show screen update with moveinright
@@ -13918,7 +13889,7 @@ label password1:
             $ renpy.block_rollback()
 
             $ success += 1
-            $ quest23 += 1
+            $ quest24 += 1
 
             show screen update with moveinright
 
@@ -14898,7 +14869,7 @@ label examen_pythagore:
     if grade == 20.0:
 
         $ success += 1
-        $ quest24 += 1
+        $ quest25 += 1
 
         show screen update with moveinright
 
@@ -16411,7 +16382,7 @@ label password4:
     if answer == "initiate_humanoid_robot(setting=true)": 
 
         $ success += 1 
-        $ quest25 += 1
+        $ quest26 += 1
 
         show screen update with moveinright
 
@@ -17940,7 +17911,7 @@ label password8:
             Na "Vérification...."
             play sound "Menu.mp3" noloop 
             $ success += 1 
-            $ quest26 += 1
+            $ quest27 += 1
             $ stockage += 3.0 
             $ update += 1.0 
 
@@ -19006,7 +18977,7 @@ label password9:
     if grade == 20.0:
 
         $ success += 1 
-        $ quest27 += 1
+        $ quest28 += 1
 
         show screen update with moveinright
 
@@ -19502,7 +19473,7 @@ label password9:
             $ renpy.block_rollback()
 
             $ success += 1 
-            $ quest28 += 1
+            $ quest29 += 1
 
             show screen update with moveinright
 
@@ -19620,7 +19591,7 @@ label code1:
                 $ renpy.block_rollback()
 
                 $ success += 1 
-                $ quest29 += 1
+                $ quest30 += 1
 
                 show screen update with moveinright
 
@@ -19905,7 +19876,7 @@ label password10:
     P "[comment_ca_va]"
     play sound "Click.mp3" noloop 
 
-    if quest29 == 1:
+    if quest30 == 1:
 
         Na "Pas trop si tu veux le savoir."
         play sound "Click.mp3" noloop 
@@ -20181,7 +20152,7 @@ label password10:
     I "Oh salut [prenom] et [newname], oui moi ça va bien et vous ?"
     play sound "Click.mp3" noloop 
 
-    if quest29 == 1:
+    if quest30 == 1:
 
         Na "Pas trop si tu veux le savoir."
         play sound "Click.mp3" noloop 
@@ -20403,7 +20374,7 @@ label password10:
             Rk "Bien, ma troisiéme question : Quel est son nom technique ?"
             play sound "Click.mp3" noloop
 
-            P "C'est [A] ?"
+            P "C'est [A]."
             play sound "Click.mp3" noloop
 
             Rk "Je vois merci sinon qu'elles sont ses caratéristiques techniques."
@@ -20462,7 +20433,7 @@ label password10:
             $ renpy.block_rollback()
 
             $ success += 1  
-            $ quest30 += 1
+            $ quest31 += 1
 
             show screen update with moveinright
 
