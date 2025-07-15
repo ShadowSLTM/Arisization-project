@@ -1,3 +1,5 @@
+$ persistent.abandon = False
+
 label start: 
 
     stop music fadeout 2.0   
@@ -469,6 +471,8 @@ label hack:
 
     else:    
 
+        # à modifier 
+
         $ A = Character("AK-24", color="#00eeff")
         $ stockage += 1.0
 
@@ -648,6 +652,9 @@ label choice1:
             menu:
 
                 "{b}{i}Retourner au menu{/i}{/b}" : 
+
+                    # à modifier 
+
                     return
 
                 "{b}{i}Réessayer{/i}{/b}" : 
@@ -663,6 +670,8 @@ label choice1:
             P "Je refuse de la laisser ici alors qu'elle est en bonne état de fonctionner malgré son effacement numérique et en plus j'ai pris du temps pour la démarrer."
             play sound "Click.mp3" noloop 
 
+            # à modifier 
+            
             A "Merci infiniment [prenom]."
             play sound "Click.mp3" noloop
 
@@ -6474,6 +6483,8 @@ label choice8:
         $ robotorigine = "Danto/Neogen Technologies" 
         $ serie = "0012079NT" 
 
+        # à modifier 
+
         P "Intéressant." 
         play sound "Click.mp3" noloop 
 
@@ -10359,7 +10370,7 @@ label code:
     $ Line1 = renpy.input("create_system(name=Aris,mode=secure,boot=true,fightmode=false)")
     play sound "Menu.mp3" noloop 
 
-    $ Line2 = renpy.input("create_files_system(name=system24)")
+    $ Line2 = renpy.input("create_files_system(name=system32)")
     play sound "Menu.mp3" noloop
 
     $ Line3 = renpy.input("create_system(settings_access=default)")
@@ -10389,7 +10400,7 @@ label code:
 
             if Line1 == "create_system(name=Aris,mode=secure,boot=true,fightmode=false)":
             
-                if Line2 == "create_files_system(name=system24)":
+                if Line2 == "create_files_system(name=system32)":
             
                     if Line3 == "create_system(settings_access=default)":
 

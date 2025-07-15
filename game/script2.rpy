@@ -12654,9 +12654,43 @@ label password26:
     P "Bon on fait quoi aujourd'hui ?"
     play sound "Click.mp3" noloop  
 
-    Na ""
+    Na "Je ne sais pas."
     play sound "Click.mp3" noloop 
 
+    P "Attends, tu as dit que tu était fatiguée ?"
+    play sound "Click.mp3" noloop 
 
-    
+    Na "Oui comme si ma batterie était presque vide..."
+    play sound "Click.mp3" noloop 
+
+    P "c'est bizarre, d'habitude ta batterie est toujours pleine après une nuit de charge."
+    play sound "Click.mp3" noloop
+
+    Na "Oui c'est bizarre."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu réfléchis pourquoi et comment c'est arrivée.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    Na "Tu penses à la même chose que moi ?"
+    play sound "Click.mp3" noloop 
+
+    menu:    
+
+        "{b}{i} Le chargeur{/i}{/b}" :  
+            play sound "Menu.mp3" noloop 
+
+            P "Je pense que tu fais référence au chargeur qui a laché."
+            play sound "Menu.mp3" noloop 
+
+            Na "Non je faisais référence à la batterie."
+            play sound "Menu.mp3" noloop 
+            
+        "{b}{i} La batterie.{/i}{/b}" :  
+            play sound "Menu.mp3" noloop 
+
+            P "Je pense que c'est la batterie qui ne tiens plus la charge."
+            play sound "Menu.mp3" noloop 
+
+
 # Aris la plus belle ###################  

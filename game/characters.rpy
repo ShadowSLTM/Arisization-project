@@ -11,10 +11,10 @@ default Na = Character('[newname] [nom]', color="#00eeff")
 define Su = Character('Suzune Horimiya', color="#ffffff")
 define Sk = Character('Shiro Katsuya', color="#ffffff") 
 
-# antagoniste principale
+# antagoniste principale 
 
 define S = Character('Subaru Shinomiya', color="#ffffff")
-define As = Character('Takumi Kisaragi', color="#ffffff") 
+define As = Character('Takumi Yagami', color="#ffffff") 
  
 # Les élèves de Seconde-E. 
 
