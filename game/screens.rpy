@@ -1814,7 +1814,7 @@ screen Shop():
 
             else:   
 
-                text _("DLC Arisization Project - Alternative : (non installé)\n")
+                text _("DLC Arisization Project - Alternative : (non installé)\n") 
 
 style about_label is gui_label 
 style about_label_text is gui_label_text
@@ -1871,15 +1871,17 @@ screen credit():
 
             text _("Gestion des fichiers du jeu : [Dc] (Shadow_SLTM)\n") 
             
-            label "{b}{i}— Contributions supplémentaires —\n{/i}{/b}" 
+            label "{b}{i}— Contributions secondaires —\n{/i}{/b}" 
 
-            text _("Phrase « Bon après ça ne m'étonne pas venant de toi » : Sararnbb\n")
+            text _("Phrase « Bon après ça ne m'étonne pas venant de toi » : Sararnbb\n") 
 
             text _("Dessin de [Su] : Sararnbb\n") 
 
             text _("Idée du personnage de [Sk] : Kama\n") 
              
             text _("Idée du personnage de Seigo : Kama\n") 
+
+            text _("Idée de la variante AK-25 : Kama\n")  
 
             text _("Correction partielle de l’orthographe du chapitre 0 : Kama\n") 
 
@@ -1901,7 +1903,7 @@ screen credit():
 
             text _("Arisization Project (The Project of the Realization of Aris) appartient à [Dc] (Shadow_SLTM)\n")   
   
-            text _("éditeur : SLTM\n") 
+            text _("Éditeur : SLTM\n") 
 
 style about_label is gui_label  
 style about_label_text is gui_label_text

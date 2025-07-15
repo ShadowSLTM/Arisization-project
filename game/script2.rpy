@@ -12681,16 +12681,55 @@ label password26:
             play sound "Menu.mp3" noloop 
 
             P "Je pense que tu fais référence au chargeur qui a laché."
-            play sound "Menu.mp3" noloop 
+            play sound "Click.mp3" noloop 
 
             Na "Non je faisais référence à la batterie."
-            play sound "Menu.mp3" noloop 
+            play sound "Click.mp3" noloop 
+
+            P "Je vois ce que tu veux dire, c'est probablement la batterie qui ne tiens plus la charge."
+            play sound "Click.mp3" noloop 
+
+            # à modifier 
             
         "{b}{i} La batterie.{/i}{/b}" :  
             play sound "Menu.mp3" noloop 
 
             P "Je pense que c'est la batterie qui ne tiens plus la charge."
-            play sound "Menu.mp3" noloop 
+            play sound "Click.mp3" noloop 
 
+            Na "C'est ce que je me dit aussi mais je comprend pas pour elle ne tiens plus la charge."
+            play sound "Click.mp3" noloop 
+
+            P "Oui elle n'a sûrement plus de cycle de charge..."
+            play sound "Click.mp3" noloop 
+
+            Na "Mais ma batterie affiche encore 35%."
+            play sound "Click.mp3" noloop 
+
+            P "Mais je pense qu'elle est en usure prématurée."
+            play sound "Click.mp3" noloop 
+
+            Na "Déja mais ça fait que cinq que mois que j'ai cette batterie donc je ne comprend pas."
+            play sound "Click.mp3" noloop 
+
+            P "Bon après la batterie je l'ai trouvée dans le même entrepôt ou je t'ai récupéré."
+            play sound "Click.mp3" noloop 
+
+            Na "Ah je comprends mieux, elle devais probablement déjà être utilisée."
+            play sound "Click.mp3" noloop 
+
+            P "Je n'avais pas trouvée mieux comme batterie sur le moment avant de te redémarrer."
+            play sound "Click.mp3" noloop 
+
+            Na "Je vois, ce n'est pas grâve mais il faudrai trouvée une solution avant que je m'éteigne complétement."
+            play sound "Click.mp3" noloop 
+
+            P "Oui je sais qu'on doit trouver une solution à ce problème."
+            play sound "Click.mp3" noloop 
+
+
+
+
+            
 
 # Aris la plus belle ###################  
