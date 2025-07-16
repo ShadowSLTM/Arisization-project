@@ -12672,7 +12672,7 @@ label password26:
     "{b}{i}Tu réfléchis pourquoi et comment c'est arrivée.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    Na "Tu penses à la même chose que moi ?"
+    Na "Tu penses à la mème chose que moi."
     play sound "Click.mp3" noloop 
 
     menu:    
@@ -12680,56 +12680,38 @@ label password26:
         "{b}{i} Le chargeur{/i}{/b}" :  
             play sound "Menu.mp3" noloop 
 
-            P "Je pense que tu fais référence au chargeur qui a laché."
+            P "c'est peut être le cable d'alimention qui a laché."
             play sound "Click.mp3" noloop 
 
-            Na "Non je faisais référence à la batterie."
+            Na "Non je fais référence à la batterie qui ne tiens plus la charge."
             play sound "Click.mp3" noloop 
 
-            P "Je vois ce que tu veux dire, c'est probablement la batterie qui ne tiens plus la charge."
-            play sound "Click.mp3" noloop 
-
-            # à modifier 
+            P ""
+            play sound "Click.mp3" noloop
             
         "{b}{i} La batterie.{/i}{/b}" :  
             play sound "Menu.mp3" noloop 
 
-            P "Je pense que c'est la batterie qui ne tiens plus la charge."
-            play sound "Click.mp3" noloop 
+            P "C'est peut-être la batterie qui a lâché et qui ne supporte plus les cycles de charge."
+            play sound "Click.mp3" noloop
 
-            Na "C'est ce que je me dit aussi mais je comprend pas pour elle ne tiens plus la charge."
-            play sound "Click.mp3" noloop 
+            Na "Possible… mais c’est étrange qu’elle ait chuté aussi brutalement du jour au lendemain."
+            play sound "Click.mp3" noloop
 
-            P "Oui elle n'a sûrement plus de cycle de charge..."
-            play sound "Click.mp3" noloop 
+            P "Bon après ta batterie, je l'ai trouvé dans l'entrepôt oû je t'ai récupéré et il je me souviens avoir dit qu'elle allait tenir un moment ^mais pas indéfiniment, elle a durée cinq mois."
+            play sound "Click.mp3" noloop
 
-            Na "Mais ma batterie affiche encore 35%."
-            play sound "Click.mp3" noloop 
+            Na "Bon si c'est la batterie que tu as trouvée dans l'entrepôt, elle a dû être usée et ne tiens plus."
+            play sound "Click.mp3" noloop
 
-            P "Mais je pense qu'elle est en usure prématurée."
-            play sound "Click.mp3" noloop 
+            P "C'est ce que je me dit aussi."
+            play sound "Click.mp3" noloop
 
-            Na "Déja mais ça fait que cinq que mois que j'ai cette batterie donc je ne comprend pas."
-            play sound "Click.mp3" noloop 
+            Na "Oui mais maintenant il faut trouver une solutions."
+            play sound "Click.mp3" noloop
 
-            P "Bon après la batterie je l'ai trouvée dans le même entrepôt ou je t'ai récupéré."
-            play sound "Click.mp3" noloop 
-
-            Na "Ah je comprends mieux, elle devais probablement déjà être utilisée."
-            play sound "Click.mp3" noloop 
-
-            P "Je n'avais pas trouvée mieux comme batterie sur le moment avant de te redémarrer."
-            play sound "Click.mp3" noloop 
-
-            Na "Je vois, ce n'est pas grâve mais il faudrai trouvée une solution avant que je m'éteigne complétement."
-            play sound "Click.mp3" noloop 
-
-            P "Oui je sais qu'on doit trouver une solution à ce problème."
-            play sound "Click.mp3" noloop 
-
-
-
-
-            
+label end_script2:
+    call script3
+    return 
 
 # Aris la plus belle ###################  

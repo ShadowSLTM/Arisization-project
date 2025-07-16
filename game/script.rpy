@@ -320,7 +320,7 @@ label début:
     P "Attends, il manque quelque chose... Elle n'a pas sa batterie."
     play sound "Click.mp3" noloop 
 
-    "{b}{i}tu fouilles dans l'entrepôt et trouve par chance une nouvelle batterie que tu installes avec précaution.{/i}{/b}"
+    "{b}{i}tu fouilles dans l'entrepôt et trouve par chance une batterie que tu installes avec précaution.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     P "Voilà, elle devrait pouvoir tenir un moment avec ça, c’est plus sûr."
@@ -348,6 +348,8 @@ label hack:
 
     $ hack = renpy.input("écris ceci : modify_humanoid_robot_system(security_override=true)")
     $ hack = hack.strip()   
+
+    # modifier 
 
     if hack == "modify_humanoid_robot_system(security_override=true)":
 
@@ -430,10 +432,10 @@ label hack:
         play sound "Click.mp3" noloop 
 
         P "Hein ? Qu'est-ce que ça signifie ?"
-        play sound "Menu.mp3" noloop  
+        play sound "Click.mp3" noloop 
 
         R "Nom de code absent. Lancement du protocole de génération assistée, veuillez choisir un nouveau nom de code..."
-        play sound "Click.mp3" noloop  
+        play sound "Menu.mp3" noloop
         
         menu: 
 
@@ -471,7 +473,7 @@ label hack:
 
     else:    
 
-        # à modifier 
+        # à modifier en ajoutant la persistence d'abandon 
 
         $ A = Character("AK-24", color="#00eeff")
         $ stockage += 1.0
@@ -514,52 +516,73 @@ label hack:
     $ charactertext11 = "Elle est un robot humanoïde abandonné de 18 ans qui se souvient que de son nom de code et mon âge et a oublié le reste."  
 
     P "Je vois..."
-    play sound "Click.mp3" noloop 
+    play sound "Click.mp3" noloop
 
     A "Tu t'appelles comment ?"
-    play sound "Click.mp3" noloop 
+    play sound "Click.mp3" noloop
 
     P "Ah oui j'avais oublié, je me nomme [P]."
-    play sound "Click.mp3" noloop  
+    play sound "Click.mp3" noloop
 
-    $ stockage += 2.0 
+    $ stockage += 2.0
 
-    A "Bonjour [prenom] je suis ravie de te rencontrer mais dis-moi."
-    play sound "Click.mp3" noloop 
+    A "Bonjour [prenom], je suis ravie de te rencontrer. Mais dis-moi..."
+    play sound "Click.mp3" noloop
 
-    P "Oui je t'écoute."
-    play sound "Click.mp3" noloop   
+    P "Oui, je t'écoute."
+    play sound "Click.mp3" noloop
 
-    A "qui est-ce cette personne avec toi."
-    play sound "Click.mp3" noloop   
+    A "Qui est cette personne avec toi ?"
+    play sound "Click.mp3" noloop
 
     P "C'est mon meilleur ami [S]."
-    play sound "Click.mp3" noloop   
+    play sound "Click.mp3" noloop
 
-    A "J'ai deux questions à te demander."
-    play sound "Click.mp3" noloop   
+    A "J'ai plusieurs questions à te poser."
+    play sound "Click.mp3" noloop
 
-    P "Oui dis-moi."
-    play sound "Click.mp3" noloop 
+    P "Je t'écoute."
+    play sound "Click.mp3" noloop
 
-    A "Peux-tu me dire ou suis-je ?"
-    play sound "Click.mp3" noloop 
+    A "Peux-tu me dire où suis-je ?"
+    play sound "Click.mp3" noloop
 
     P "On est dans un entrepôt désaffecté."
+    play sound "Click.mp3" noloop
+
+    A "Je vois… c’est donc ça cet endroit maudit, froid et calme."
+    play sound "Click.mp3" noloop
+
+    P "Et quelles sont tes autres questions ?"
+    play sound "Click.mp3" noloop
+
+    A "Pourquoi m’as-tu redémarrée ? Je ne comprends pas… Pourquoi maintenant ?"
+    play sound "Click.mp3" noloop
+
+    P "Je voulais voir si tu fonctionnais encore."
+    play sound "Click.mp3" noloop
+
+    A "Je comprends mieux." 
+    play sound "Click.mp3" noloop
+
+    P "Tu n’es pas qu’un simple programme. Je crois qu’il y a encore quelque chose en toi qui mérite de vivre."
     play sound "Click.mp3" noloop 
 
-    A "Je vois, c'est donc ça cet endroit maudit."
-    play sound "Click.mp3" noloop 
+    A "Une partie de moi, malgré tout ce temps, attendait ce moment..."
+    play sound "Click.mp3" noloop
 
-    P "Oui et quelle est ta deuxième question ?"
-    play sound "Click.mp3" noloop 
+    P "Exactement. Je veux te donner une chance, une vraie, de montrer ce dont tu es capable."
+    play sound "Click.mp3" noloop
 
-    A "Me reste-il un avenir !? Voudra-t-on encore de moi ?"
-    play sound "Menu.mp3" noloop 
+    A "C’est difficile à croire, mais... merci."
+    play sound "Click.mp3" noloop
 
-    menu:    
+    A "Et… Me reste-t-il un avenir ? Voudra-t-on encore de moi ?"
+    play sound "Menu.mp3" noloop
 
-        "{b}{i} Oui.{/i}{/b}" :
+    menu:
+
+        "{b}{i} Je crois que oui.{/i}{/b}":
 
             $ renpy.block_rollback()
             $ success += 1
@@ -567,41 +590,38 @@ label hack:
 
             show screen update with moveinright
 
-            P "Oui bien sûr qu'il te reste un avenir et que je veux de toi."
-            play sound "Click.mp3" noloop   
+            P "Oui, je crois vraiment que tu as un avenir, et que tu as ta place."
+            play sound "Click.mp3" noloop
 
             hide screen update with moveoutright
 
-            A "C'est vrai !?"
-            play sound "Click.mp3" noloop   
+            A "C'est rassurant..."
+            play sound "Click.mp3" noloop
 
-            P "Oui je te promet de te donner la merveilleuse vie que tu mérites."
-            play sound "Click.mp3" noloop   
+            P "Je ferai tout pour que tu sois acceptée et heureuse."
+            play sound "Click.mp3" noloop
 
-            $ stockage += 2.0 
+            $ stockage += 2.0
 
-            A "Merci infiniment [prenom]."    
-            play sound "Click.mp3" noloop 
+            A "Merci, [prenom]."
+            play sound "Click.mp3" noloop
 
-            P "Mais de rien c'est normal."
-            play sound "Click.mp3" noloop 
+            S "Je reste sceptique, mais j’espère que tu as raison."
+            play sound "Click.mp3" noloop
 
-            S "Arrètes de dire n'importe quoi elle ne pourra pas avoir un avenir."    
-            play sound "Click.mp3" noloop 
+            P "Je ne lâcherai pas."
+            play sound "Click.mp3" noloop
 
-            P "Mais si elle peut !"
-            play sound "Click.mp3" noloop 
-
-        "{b}{i} Je ne sais pas.{/i}{/b}" : 
-            play sound "Menu.mp3" noloop 
+        "{b}{i} Je ne suis pas sûr...{/i}{/b}": 
+            play sound "Menu.mp3" noloop
 
             $ renpy.block_rollback()
 
-            P "Ah vrai dire je ne sais pas trop."
+            P "Honnêtement, je ne sais pas encore."
             play sound "Click.mp3" noloop
 
-            A "Je vois."
-            play sound "Click.mp3" noloop            
+            A "Je comprends..."
+            play sound "Click.mp3" noloop
 
     S "Bon, on quitte cet endroit ?"
     play sound "Click.mp3" noloop 
@@ -670,7 +690,7 @@ label choice1:
             P "Je refuse de la laisser ici alors qu'elle est en bonne état de fonctionner malgré son effacement numérique et en plus j'ai pris du temps pour la démarrer."
             play sound "Click.mp3" noloop 
 
-            # à modifier 
+            # à modifier en ajoutant la persistence d'abandon
             
             A "Merci infiniment [prenom]."
             play sound "Click.mp3" noloop
@@ -1858,7 +1878,7 @@ label choice1:
         play sound "Click.mp3" noloop 
 
         M "Tu n’as que la démo du jeu. Le reste de l’histoire t’attend dans la version complète."
-        play sound "Click.mp3" noloop 
+        play sound "Click.mp3" noloop  
 
         hide screen class_404 with moveoutright
         hide screen points with moveoutleft
@@ -1871,7 +1891,7 @@ label choice1:
 
         return
 
-    else:
+    else: 
 
         M "Bon, maintenant que toutes les informations ont été données, vous pouvez disposer. N'hésitez pas à visiter le lycée puisque vous n'avez pas cours cet après-midi."
         play sound "Footsteps.mp3" noloop
@@ -3690,7 +3710,7 @@ label choice6:
             $ grade += 5.0
         "{b}{i} états-unis.{/i}{/b}" : 
             $ grade += 0.0
-        "{b}{i}Russie.{/i}{/b}" : 
+        "{b}{i} Russie.{/i}{/b}" : 
             $ grade += 0.0
 
     M "Dernière question : les Robots humanoides ont-ils des émotions ?"
@@ -4847,13 +4867,92 @@ label choice6:
     Mo "Bon à un de ces jours et occupe-toi bien de [newname]."
     play sound "Click.mp3" noloop
 
-    P "Oui promis."
+    P "Oui je te le promet."
+    play sound "Click.mp3" noloop 
+
+    Mo "Bien si tu me le promets."
     play sound "Click.mp3" noloop 
 
     "{b}{i}Puis l'appel se coupe.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bon je vais redemarrer [newname] pour aller manger."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu t'approches pour démarrer [newname].{/i}{/b}" 
+    play sound "Menu.mp3" noloop 
+
+    menu:    
+
+        "{b}{i} Démarrer [newname].{/i}{/b}" : 
+            play sound "Menu.mp3" noloop 
+
+    $ start = get_random_start()
+    Na "[start]"
+    play sound "Click.mp3" noloop 
+
+    Na  "Démarrage terminé, Bonsoir [P]."
+    play sound "Click.mp3" noloop 
+
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop 
+
+    Na "Je vais un peu mieux et toi ?"
     play sound "Click.mp3" noloop
 
-# à modifier que le joueur et Aris ailler manger 
+    P "Je vais bien, Bon on va prendre à manger ?"
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen room with moveoutright 
+    hide screen points with moveoutleft
+    hide screen day with moveoutleft
+    scene black with fade
+
+    "{b}{i} Vous partez chercher à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    $ points -= 300 
+
+    scene room with fade 
+    show screen day with moveinleft
+    show screen points with moveinleft
+    show screen room with moveinright
+    
+    P "Enfin à manger... "
+    play sound "Click.mp3" noloop 
+
+    $ bien = get_random_fais_du_bien()
+    Na "[bien]"
+    play sound "Click.mp3" noloop  
+
+    "{b}{i} Vous mangez tranquillement pendant une demi-heure.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Tu as finis de manger ?"
+    play sound "Click.mp3" noloop 
+
+    Na "Oui, je n'ai plus faim."
+    play sound "Click.mp3" noloop 
+
+    P "Bien."
+    play sound "Click.mp3" noloop 
+
+    Na "Bon Je vais me déconnecter et me recharger."
+    play sound "Click.mp3" noloop 
+
+    P "D'accord, bonne nuit [newname]."
+    play sound "Click.mp3" noloop
+
+    Na "Bonne nuit [prenom]."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[newname] se déconnecte et recharge sa batterie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
 
     P "Bon enfin fini je vais pouvoir aller dormir."
     play sound "Click.mp3" noloop 
@@ -5985,7 +6084,7 @@ label choice8:
         P "C'est un honneur." 
         play sound "Click.mp3" noloop 
 
-    elif key == "ARIS-DEVS" or "ARIS-8J4K-F9Q7":
+    else:
 
         C "C'est simple je suis son créateur et son concepteur original."
         play sound "Click.mp3" noloop 
@@ -6483,7 +6582,7 @@ label choice8:
         $ robotorigine = "Danto/Neogen Technologies" 
         $ serie = "0012079NT" 
 
-        # à modifier 
+        # à modifier en ajoutant la persistence d'abandon
 
         P "Intéressant." 
         play sound "Click.mp3" noloop 
@@ -6503,13 +6602,13 @@ label choice8:
         P "Enfin fini je vais pouvoir aller dormir pour demain."
         play sound "Click.mp3" noloop 
 
+        "{b}{i}Tu te changes avant d'aller te coucher.{/i}{/b}"
+        play sound "Click.mp3" noloop
+
     else: 
 
-        P "Enfin fini je vais pouvoir aller dormir pour demain."
-        play sound "Click.mp3" noloop 
-
-    "{b}{i}Tu te changes avant d'aller te coucher.{/i}{/b}"
-    play sound "Click.mp3" noloop
+        "{b}{i}Tu te changes avant d'aller te coucher.{/i}{/b}"
+        play sound "Click.mp3" noloop
 
     hide screen day with moveoutleft
     hide screen room with moveoutright
