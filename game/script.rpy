@@ -123,6 +123,7 @@ label start:
     default quest39 = 0 
     default quest40 = 0 
     default quest41 = 0
+    default quest42 = 0
 
 label key:
 
@@ -320,7 +321,7 @@ label début:
     P "Attends, il manque quelque chose... Elle n'a pas sa batterie."
     play sound "Click.mp3" noloop 
 
-    "{b}{i}tu fouilles dans l'entrepôt et trouve par chance une batterie que tu installes avec précaution.{/i}{/b}"
+    "{b}{i}tu fouilles dans l'entrepôt et tu trouves par chance une batterie que tu installes avec précaution.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     P "Voilà, elle devrait pouvoir tenir un moment avec ça, c’est plus sûr."
@@ -346,62 +347,78 @@ label début:
 
 label hack: 
 
-    $ hack = renpy.input("écris ceci : modify_humanoid_robot_system(security_override=true)")
+    $ hack = renpy.input("écris ceci : start_humanoid_robot(security=default)")
     $ hack = hack.strip()   
 
-    # modifier 
+    $ hack2 = renpy.input("écris ceci : modify_humanoid_robot_system(security_override=true)")
+    $ hack2 = hack2.strip()   
 
-    if hack == "modify_humanoid_robot_system(security_override=true)":
+    if hack == "start_humanoid_robot(security=default)":
 
-        R "10\%"
-        play sound "Click.mp3" noloop
+        if hack2 == "modify_humanoid_robot_system(security_override=true)" :
 
-        R "20\%" 
-        play sound "Click.mp3" noloop
+            R "10\%"
+            play sound "Click.mp3" noloop
 
-        R "30\%"
-        play sound "Click.mp3" noloop
+            R "20\%" 
+            play sound "Click.mp3" noloop
 
-        R "40\%"
-        play sound "Click.mp3" noloop
+            R "30\%"
+            play sound "Click.mp3" noloop
 
-        R "50\%"
-        play sound "Click.mp3" noloop
+            R "40\%"
+            play sound "Click.mp3" noloop
 
-        R "60\%"
-        play sound "Click.mp3" noloop
+            R "50\%"
+            play sound "Click.mp3" noloop
 
-        R "70\%"
-        play sound "Click.mp3" noloop
+            R "60\%"
+            play sound "Click.mp3" noloop
 
-        R "80\%" 
-        play sound "Click.mp3" noloop
+            R "70\%"
+            play sound "Click.mp3" noloop
 
-        R "90\%"
-        play sound "Click.mp3" noloop
+            R "80\%" 
+            play sound "Click.mp3" noloop
 
-        R "100\%"
-        play sound "Click.mp3" noloop
+            R "90\%"
+            play sound "Click.mp3" noloop
 
-        R "Vérification...."
-        play sound "Menu.mp3" noloop 
+            R "100\%"
+            play sound "Click.mp3" noloop
 
-        $ success += 1 
-        $ quest2 += 1
-        $ stockage = 0.0 
+            R "Vérification...."
+            play sound "Menu.mp3" noloop 
 
-        show screen update with moveinright
+            $ success += 1 
+            $ quest2 += 1
+            $ stockage = 0.0 
 
-        R "système ouvert avec succès." 
-        play sound "Click.mp3" noloop 
+            show screen update with moveinright
 
-        hide screen update with moveoutright
+            R "système ouvert avec succès." 
+            play sound "Click.mp3" noloop 
 
-        $ stockage += 2.0
+            hide screen update with moveoutright
+
+            $ stockage += 2.0
+
+        else: 
+
+            R "Erreur système, le démarrge a échoué." 
+            play sound "Click.mp3" noloop     
+
+            P "Mince..." 
+            play sound "Click.mp3" noloop 
+
+            P "Je vais réessayer." 
+            play sound "Menu.mp3" noloop 
+
+            jump hack 
 
     else: 
 
-        R "Erreur système redémarrage en cours." 
+        R "Erreur système, le démarrge a échoué." 
         play sound "Click.mp3" noloop     
 
         P "Mince..." 

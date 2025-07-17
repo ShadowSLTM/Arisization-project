@@ -1,27 +1,102 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 131, in script
-    A "[name]"
-NameError: name 'name' is not defined
+  File "game/screens.rpy", line 1915, in execute
+    screen success():
+  File "game/screens.rpy", line 1915, in execute
+    screen success():
+  File "game/screens.rpy", line 1919, in execute
+    use game_menu(_("Succès"), scroll="viewport"):
+  File "game/screens.rpy", line 426, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
+  File "game/screens.rpy", line 426, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
+  File "game/screens.rpy", line 435, in execute
+    frame:
+  File "game/screens.rpy", line 438, in execute
+    hbox:
+  File "game/screens.rpy", line 444, in execute
+    frame:
+  File "game/screens.rpy", line 447, in execute
+    if scroll == "viewport":
+  File "game/screens.rpy", line 449, in execute
+    viewport:
+  File "game/screens.rpy", line 458, in execute
+    vbox:
+  File "game/screens.rpy", line 461, in execute
+    transclude
+  File "game/screens.rpy", line 1919, in execute
+    use game_menu(_("Succès"), scroll="viewport"):
+  File "game/screens.rpy", line 1923, in execute
+    vbox:
+NameError: name 'quest42' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 131, in script
-    A "[name]"
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 623, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\character.py", line 1456, in __call__
-    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\character.py", line 1369, in prefix_suffix
-    return (sub(prefix) + sub(body) + sub(suffix))
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\character.py", line 1349, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  [Previous line repeated 2 more times]
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 1915, in execute
+    screen success():
+  File "game/screens.rpy", line 1915, in execute
+    screen success():
+  File "game/screens.rpy", line 1919, in execute
+    use game_menu(_("Succès"), scroll="viewport"):
+  File "game/screens.rpy", line 426, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
+  File "game/screens.rpy", line 426, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
+  File "game/screens.rpy", line 435, in execute
+    frame:
+  File "game/screens.rpy", line 438, in execute
+    hbox:
+  File "game/screens.rpy", line 444, in execute
+    frame:
+  File "game/screens.rpy", line 447, in execute
+    if scroll == "viewport":
+  File "game/screens.rpy", line 449, in execute
+    viewport:
+  File "game/screens.rpy", line 458, in execute
+    vbox:
+  File "game/screens.rpy", line 461, in execute
+    transclude
+  File "game/screens.rpy", line 1919, in execute
+    use game_menu(_("Succès"), scroll="viewport"):
+  File "game/screens.rpy", line 1923, in execute
+    vbox:
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\text\text.py", line 2177, in _scope
+    return self.set_text(self.text_parameter, scope, self.substitute, update)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\text\text.py", line 2216, in set_text
+    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\substitutions.py", line 373, in substitute
     s = interpolate(s, variables) # type: ignore
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\substitutions.py", line 86, in interpolate
@@ -33,9 +108,9 @@ Full traceback:
   File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
     return eval(bytecode, globals, locals)
   File "<none>", line 1, in <module>
-NameError: name 'name' is not defined
+NameError: name 'quest42' is not defined
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 Arisization Project Version_développeur
-Fri Jul  4 01:12:32 2025
+Thu Jul 17 16:47:23 2025

@@ -1924,7 +1924,7 @@ screen success():
 
             label "{b}{i}— Progression —\n{/i}{/b}" 
 
-            text _("Succès : [success]/41\n") 
+            text _("Succès : [success]/42\n") 
 
             label "{b}{i}— liste des succès —\n{/i}{/b}" 
 
@@ -1967,8 +1967,9 @@ screen success():
             text _("Faire de la philosophie : [quest37]/1\n") 
             text _("Bon philosophe : [quest38]/1\n") 
             text _("L'entraide scolaire : [quest39]/1\n") 
-            text _("Quatrième mise à jour : [quest40]/1\n")
-            text _("Maître du chaos ordonné : [quest41]/1\n") 
+            text _("Nouvelle batterie : [quest40]/1\n")             
+            text _("Quatrième mise à jour : [quest41]/1\n")
+            text _("Maître du chaos ordonné : [quest42]/1\n") 
 
 style about_label is gui_label   
 style about_label_text is gui_label_text
@@ -1983,7 +1984,7 @@ screen robot():
 
     use game_menu(_("Ton robot"), scroll="viewport"):
 
-        style_prefix "about"
+        style_prefix "about" 
 
         vbox:
 
