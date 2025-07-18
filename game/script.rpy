@@ -486,14 +486,26 @@ label hack:
         $ quest3 += 1   
         $ success += 1 
 
-        hide screen update with moveoutright
+        hide screen update with moveoutright 
 
     else:    
 
-        # à modifier en ajoutant la persistence d'abandon 
+        if Key == "ARIS-DEMO": 
 
-        $ A = Character("AK-24", color="#00eeff")
-        $ stockage += 1.0
+            $ A = Character("AK-PR", color="#00eeff")
+            $ stockage += 1.0
+
+        else: 
+
+            if persistant.abandon == True: 
+
+                $ A = Character("AK-25", color="#00eeff")
+                $ stockage += 1.0 
+
+            else: 
+
+                $ A = Character("AK-24", color="#00eeff")
+                $ stockage += 1.0 
 
         R "Initialisation en cours......" 
         play sound "Click.mp3" noloop
@@ -501,7 +513,7 @@ label hack:
         P "Attend on dirait qu'elle est en train de démarrer."
         play sound "Menu.mp3" noloop 
 
-        S "Ah bon vraiment ?" 
+        S "Ah bon vraiment ?"
         play sound "Click.mp3" noloop
 
         P "Oui regarde." 
@@ -638,7 +650,7 @@ label hack:
             play sound "Click.mp3" noloop
 
             A "Je comprends..."
-            play sound "Click.mp3" noloop
+            play sound "Click.mp3" noloop 
 
     S "Bon, on quitte cet endroit ?"
     play sound "Click.mp3" noloop 
@@ -650,6 +662,8 @@ label choice1:
 
     S "Par contre tu laisses ce robot ici."
     play sound "Menu.mp3" noloop 
+
+    # à modifier pour rajouter le if pour la démo et qu'il aie seulement le choix garder Ak-24
 
     menu:    
 
@@ -690,9 +704,14 @@ label choice1:
 
                 "{b}{i}Retourner au menu{/i}{/b}" : 
 
-                    # à modifier 
+                    if Key == "ARIS-8J4K-F9Q7":
 
-                    return
+                        $ persistant.abandon = True
+                        return
+
+                    else: 
+
+                        return
 
                 "{b}{i}Réessayer{/i}{/b}" : 
 
@@ -707,8 +726,6 @@ label choice1:
             P "Je refuse de la laisser ici alors qu'elle est en bonne état de fonctionner malgré son effacement numérique et en plus j'ai pris du temps pour la démarrer."
             play sound "Click.mp3" noloop 
 
-            # à modifier en ajoutant la persistence d'abandon
-            
             A "Merci infiniment [prenom]."
             play sound "Click.mp3" noloop
 
@@ -1609,9 +1626,16 @@ label choice1:
     T "Ok, juste c'est ton vrai prénom ?" 
     play sound "Click.mp3" noloop
 
-    A "Non, c'est un prénom technique qu'[pronom] m'a donné."
-    play sound "Click.mp3" noloop 
+    if key == "ARIS-GRFN-M4A1": 
+
+        A "Non, c'est un nom technique qu'[pronom] m'a donné après une erreur systéme."
+        play sound "Click.mp3" noloop 
+
+    else: 
  
+        A "Non, c'est mon nom technique par défaut."
+        play sound "Click.mp3" noloop 
+
     T "Intéressant j'espère qu'[pronom] te trouvera un vrai joli prénom." 
     play sound "Click.mp3" noloop
 
@@ -6599,8 +6623,6 @@ label choice8:
         $ robotorigine = "Danto/Neogen Technologies" 
         $ serie = "0012079NT" 
 
-        # à modifier en ajoutant la persistence d'abandon
-
         P "Intéressant." 
         play sound "Click.mp3" noloop 
 
@@ -6610,8 +6632,15 @@ label choice8:
         P "Il semblerait aussi que son numéro de série soit [serie]."
         play sound "Click.mp3" noloop  
 
-        P "Je vois que c'est le vingt-quatrième robot de la première série de 2079."
-        play sound "Click.mp3" noloop 
+        if persistant.abandon == True: 
+
+            P "Je vois que c'est le vingt-cinquième robot de la première série de 2079."
+            play sound "Click.mp3" noloop 
+
+        else: 
+
+            P "Je vois que c'est le vingt-quatrième robot de la première série de 2079."
+            play sound "Click.mp3" noloop 
 
         "{b}{i}Tu continues de regarder pendant un petit moment.{/i}{/b}" 
         play sound "Click.mp3" noloop 
@@ -13094,10 +13123,10 @@ label password:
         O "Mais si ce n'est pas lui, ça serait qui du coup car on a fouillé tous les lycéens."
         play sound "Click.mp3" noloop 
 
-    E "C'est ce qu'on essaye de savoir mais tout ce qu'on sais c'est qu'il est parmi les élèves." 
+    E "C'est ce qu'on essaye de savoir mais tout ce qu'on sais c'est qu'{b}il{/b} est parmi les élèves." 
     play sound "Click.mp3" noloop 
 
-    M "Attendez, vous avez dit que vous avez fouillé tous tout les lycéens et que vous n'avez rien trouvé ?" 
+    M "Attendez, vous avez dit que vous avez fouillé tous les lycéens et que vous n'avez rien trouvé ?" 
     play sound "Click.mp3" noloop 
 
     O "Oui exactement." 
@@ -20005,21 +20034,6 @@ label password10:
 
     if quest30 == 1:
 
-        Na "Pas trop si tu veux le savoir."
-        play sound "Click.mp3" noloop 
-
-        if pronom == "il": 
-    
-            P "Ah je vois, je suis désolée de t'avoir dit la vérité."
-            play sound "Click.mp3" noloop
-
-        elif pronom == "elle":
-
-            P "Ah je vois, je suis désolée de t'avoir dit la vérité."
-            play sound "Click.mp3" noloop
-
-    else:
-
         $ je_vais_bien_txt = get_random_je_vais_bien() 
         Na "[je_vais_bien_txt] Et toi sinon ça va ?" 
         play sound "Click.mp3" noloop
@@ -20027,6 +20041,21 @@ label password10:
         $ je_vais_bien_txt = get_random_je_vais_bien() 
         P "[je_vais_bien_txt]"
         play sound "Click.mp3" noloop 
+
+    else:
+
+        Na "Pas trop si tu veux le savoir."
+        play sound "Click.mp3" noloop 
+
+        if pronom == "il": 
+    
+            P "Ah je vois, je suis désolé de t'avoir dit la vérité."
+            play sound "Click.mp3" noloop
+
+        elif pronom == "elle":
+
+            P "Ah je vois, je suis désolée de t'avoir dit la vérité."
+            play sound "Click.mp3" noloop
 
     Na "Bon aujourd'hui on est sensé recevoir notre budget du mois." 
     play sound "Click.mp3" noloop
@@ -20281,23 +20310,6 @@ label password10:
 
     if quest30 == 1:
 
-        Na "Pas trop si tu veux le savoir."
-        play sound "Click.mp3" noloop 
-
-        I "Il se passe quoi [newname] ?"
-        play sound "Click.mp3" noloop 
-
-        Na "Rien ça va à part que ma vie est basée sur un mensonge."
-        play sound "Click.mp3" noloop 
-
-        I "Ok si tu le dis."
-        play sound "Click.mp3" noloop 
-
-        "{b}{i} Vous conntinuez de discuter pendant que vous mangez jusqu'à la sonnerie sauf [newname] qui reste son téléphone.{/i}{/b}"
-        play sound "Bell.mp3" noloop
-
-    else: 
-
         $ je_vais_bien_txt = get_random_je_vais_bien() 
         Na "[je_vais_bien_txt] Et toi ?" 
         play sound "Click.mp3" noloop
@@ -20321,7 +20333,64 @@ label password10:
 
         "{b}{i} Vous conntinuez de discuter pendant que vous mangez jusqu'a la sonnerie.{/i}{/b}"
         play sound "Bell.mp3" noloop 
+        
+    else: 
 
+        Na "Pas trop si tu veux le savoir."
+        play sound "Click.mp3" noloop 
+
+        I "Il se passe quoi [newname] ?"
+        play sound "Click.mp3" noloop 
+
+        Na "Rien ça va à part que ma vie est basée sur un mensonge."
+        play sound "Click.mp3" noloop 
+
+        I "Ok si tu le dis."
+        play sound "Click.mp3" noloop 
+
+        "{b}{i} Vous conntinuez de discuter pendant que vous mangez jusqu'à la sonnerie sauf [newname] qui reste son téléphone.{/i}{/b}"
+        play sound "CLick.mp3" noloop
+
+        I "[prenom], tu sais ce qu'elle a ?"
+        play sound "Click.mp3" noloop 
+        
+        P "Alors...."
+        play sound "Click.mp3" noloop 
+        
+        I "Car je te le jure si tu lui dit quelque choses de mal, tu auras à faire à moi."
+        play sound "Click.mp3" noloop 
+
+        P "Doucement je lui ai juste révélé des informations que je n'aurais dû."
+        play sound "Click.mp3" noloop 
+
+        I "Quoi comme type d'information ?"
+        play sound "Click.mp3" noloop 
+
+        P "Des information sur son passé  que son ancien propriétaire m'a demandé de garder confidentielles."
+        play sound "Click.mp3" noloop 
+
+        I "Mais ça ne va pas bien, tu as vu dans quel êtat emotionnel elle est maintenant."
+        play sound "Click.mp3" noloop 
+
+        if pronom == "il":
+
+            P "Désolé mais pour moi elle devais savoir la vérité"
+            play sound "Click.mp3" noloop 
+
+        elif pronom == "elle":
+
+            P "Désolée mais pour moi elle devais savoir la vérité"
+            play sound "Click.mp3" noloop 
+
+        I "Je sais que tu voulais bien faire mais là c'était une mauvaise idée et je te juge pour ce choix."
+        play sound "Click.mp3" noloop 
+
+        P "Je comprend."
+        play sound "Click.mp3" noloop 
+
+        "{b}{i} Vous conntinuez de discuter jusqu'à la sonnerie.{/i}{/b}"
+        play sound "Bell.mp3" noloop
+        
     P "Bon on retourne en cours." 
     play sound "Click.mp3" noloop 
 

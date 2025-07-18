@@ -12773,7 +12773,12 @@ label password26:
         "{b}{i}Regarder l'ancienne batterie.{/i}{/b}" :  
             play sound "Menu.mp3" noloop 
 
+    P "Je vais regarder l'ancienne batterie."
+    play sound "Click.mp3" noloop
 
+
+
+    
 
 label end_script2:
     call script3
