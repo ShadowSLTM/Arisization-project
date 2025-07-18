@@ -702,7 +702,7 @@ label choice1:
 
         "{b}{i} Garder [A] {/i}{/b}" : 
 
-            $ renpy.block_rollback()
+            $ renpy.block_rollback() 
 
             P "Je refuse de la laisser ici alors qu'elle est en bonne état de fonctionner malgré son effacement numérique et en plus j'ai pris du temps pour la démarrer."
             play sound "Click.mp3" noloop 
@@ -718,7 +718,7 @@ label choice1:
             S "Mais tu es sûr de vouloir la garder ?"
             play sound "Click.mp3" noloop
 
-            P "Oui, je suis sûr de vouloir la garder."
+            P "Oui, je suis sûr de vouloir la garder." 
             play sound "Click.mp3" noloop
 
     S "Ok mais pourrais-je savoir pourquoi elle te serait utile !?"
@@ -8819,10 +8819,10 @@ label debate:
                                             P "Oui absolument !"
                                             play sound "Click.mp3" noloop 
 
-                                            show screen update with moveinright
-
                                             $ success += 1
                                             $ quest14 += 1
+
+                                            show screen update with moveinright
 
                                             S "D’accord, j’avoue... je ne m’attendais pas à autant de réponses solides."
                                             play sound "Click.mp3" noloop 
@@ -9033,7 +9033,7 @@ label debate_success:
     play sound "Click.mp3" noloop 
 
     P "Ah lui, il va bien mais il est juste fatiguant."
-    play sound "Click.mp3" noloop 
+    play sound "Click.mp3" noloop  
 
     Su "Ok je vois comme d'habitude."
     play sound "Click.mp3" noloop 

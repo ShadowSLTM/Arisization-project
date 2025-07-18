@@ -12251,10 +12251,10 @@ label password25:
     P "Bon on fait quoi aujourd'hui ?"
     play sound "Click.mp3" noloop  
 
-    Na "Je veux essayer le jeu Danganronpa Trigger Happy havoc que j'ai vu sur internet, regardes la page du jeu."
+    Na "Je veux essayer le jeu Watch Dogs que j'ai vu sur internet, regardes la page du jeu."
     play sound "Click.mp3" noloop 
 
-    $ renpy.open_url("https://steamcommunity.com/app/413410/")
+    $ renpy.open_url("https://store.steampowered.com/app/243470/Watch_Dogs/")
 
     P "Oui pourquoi pas, en plus il pousse ta réflexion sans être trop complexe comme Nocture core."
     play sound "Click.mp3" noloop
@@ -12274,7 +12274,7 @@ label password25:
     P "Oui c'est normal, c'est le nom que j'ai choisi pour mon compte utilisateur."
     play sound "Click.mp3" noloop 
 
-    Na "Ok Je vois, Bon moi je vais essayer de me connecter à mon compte pour voir si je peux jouer à Danganronpa Trigger Happy havoc."
+    Na "Ok Je vois, Bon moi je vais essayer de me connecter à mon compte pour voir si je peux jouer à Watch Dogs."
     play sound "Click.mp3" noloop
 
     P "D'accord, je vais te laisser faire, moi je vais lire un peu."
@@ -12307,7 +12307,7 @@ label password25:
     P "Tu en es à ou dans le jeu ?"
     play sound "Click.mp3" noloop 
 
-    Na "Je viens de finir le premier le prologue et le premier chapitre."
+    Na "Je viens de finir le premier le prologue."
     play sound "Click.mp3" noloop 
 
     P "Félicitation pour être arrivée jusqzu'à ici."
@@ -12467,7 +12467,7 @@ label password25:
     P "Bon tu veux faire quoi cet après-midi ?"
     play sound "Click.mp3" noloop  
 
-    Na "Moi je veux continuez de jouer à Danganronpa Trigger Happy havoc."
+    Na "Moi je veux continuez de jouer à Watch Dogs."
     play sound "Click.mp3" noloop  
 
     P "Ok alors, moi je vais lire un peu."
@@ -12686,8 +12686,17 @@ label password26:
             Na "Non je fais référence à la batterie qui ne tiens plus la charge."
             play sound "Click.mp3" noloop 
 
-            P ""
+            P "Bon après ta batterie, je l'ai trouvé dans l'entrepôt oû je t'ai récupéré et il je me souviens avoir dit qu'elle allait tenir un moment ^mais pas indéfiniment, elle a durée cinq mois."
             play sound "Click.mp3" noloop
+
+            Na "Bon si c'est la batterie que tu as trouvée dans l'entrepôt, elle a dû être usée et ne tiens plus."
+            play sound "Click.mp3" noloop
+
+            P "C'est ce que je me dit aussi."
+            play sound "Click.mp3" noloop
+
+            Na "Oui mais maintenant il faut trouver une solutions."
+            play sound "Click.mp3" noloop 
             
         "{b}{i} La batterie.{/i}{/b}" :  
             play sound "Menu.mp3" noloop 
@@ -12709,6 +12718,62 @@ label password26:
 
             Na "Oui mais maintenant il faut trouver une solutions."
             play sound "Click.mp3" noloop
+
+    P "Oui je confirme qu'il faut trouver une solution car sinon tu ne pourras plus démarrer."
+    play sound "Click.mp3" noloop
+
+    Na "Mais pour commencer tu as une idée sur la batterie qu'il me faudrait ?"
+    play sound "Click.mp3" noloop
+
+    if quest11 == 1: 
+
+        P "Je ne sais pas du tout car dans tes documents il n'est fait aucune mention d'une batterie spécifique." 
+        play sound "Click.mp3" noloop
+
+    else: 
+    
+        P "Je ne sais pas du tout pour tout te dire." 
+        play sound "Click.mp3" noloop
+
+    Na "Je vois alors donc on va devoir se débrouiller pour une bonne batterie."
+    play sound "Click.mp3" noloop
+
+    P "Ce ne doit pas être si dur d'en trouver une..."
+    play sound "Click.mp3" noloop
+
+    Na "Tu rigoles j'espére, je te rappelle que je suis la dernière [model] encore en vie."
+    play sound "Click.mp3" noloop
+
+    P "Oui et alors c'est juste une batterie ?"
+    play sound "Click.mp3" noloop
+
+    Na "Oui mais de mon point de vue se sera difficile de trouver une batterie spécifiquement pour moi."
+    play sound "Click.mp3" noloop 
+
+    P "Je t'ai déjà trouvée un batterie le jour oû je t'ai récupérée donc...."
+    play sound "Click.mp3" noloop
+
+    Na "ça devait sûrement être une batterie de Neogen Technologies."
+    play sound "Click.mp3" noloop
+
+    P "Oui c'est sûrement ça."
+    play sound "Click.mp3" noloop
+
+    Na "Bon il faut qu'on fasse vite car......."
+    play sound "Click.mp3" noloop
+    
+    P "Oui tu as raison."
+    play sound "Click.mp3" noloop
+
+    Na "Tu proposes quoi pour commencer ?"
+    play sound "Click.mp3" noloop
+
+    menu:    
+
+        "{b}{i}Regarder l'ancienne batterie.{/i}{/b}" :  
+            play sound "Menu.mp3" noloop 
+
+
 
 label end_script2:
     call script3
