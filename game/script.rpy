@@ -309,8 +309,15 @@ label début:
     "{b}{i}Tu t'approches et tu découvres un [model].{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "On dirait un [model], comme ceux qui ont été utilisés pendant la guerre de l'année dernière."
-    play sound "Click.mp3" noloop 
+    if key == "ARIS-DEMO":
+
+        P "On dirait un Prototype de [model]."
+        play sound "Click.mp3" noloop 
+
+    else:
+
+        P "On dirait un [model], comme ceux qui ont été utilisés pendant la guerre de l'année dernière."
+        play sound "Click.mp3" noloop 
 
     if pronom == "il":
 
