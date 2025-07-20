@@ -129,8 +129,20 @@ label key:
 
     $ key = renpy.input("Veuillez écrire votre clé d'accès.").strip()
 
-    $ valid_keys = {"ARIS-DEVS", "ARIS-8J4K-F9Q7", "ARIS-GRFN-M4A1", "ARIS-DEMO"}
+    if config.version == "Version_développeur":
+
+        $ valid_keys = {"ARIS-DEVS", "ARIS-8J4K-F9Q7", "ARIS-GRFN-M4A1", "ARIS-DEMO"}
+
+    else:
     
+        if config.version == "Version_démo":
+
+            $ valid_keys =  {"ARIS-DEMO"}
+
+        else: 
+
+            $ valid_keys = {"ARIS-8J4K-F9Q7", "ARIS-GRFN-M4A1"}
+
     if key in valid_keys: 
 
         "Jeu déverrouillé." 
@@ -153,7 +165,8 @@ label key:
         $ P = Character('[prenom] [nom]', color="#707070") 
         $ quest1 += 1
         $ success += 1 
-
+        $ origine = "collège d'hoshikawa" 
+        
         show screen update with moveinright
 
         "DLC secret déverouillé."  
@@ -357,7 +370,7 @@ label hack:
 
         if hack2 == "modify_humanoid_robot_system(security_override=true)" :
 
-            R "10\%"
+            R "10\%" 
             play sound "Click.mp3" noloop
 
             R "20\%" 

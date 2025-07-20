@@ -1802,7 +1802,19 @@ screen Shop():
 
             label "{b}{i}— Clés d'accès —\n{/i}{/b}" 
 
-            text _("Clé officielle : ARIS-8J4K-F9Q7\n")
+            if config.version == "Version_développeur":
+
+                text _("Clé officielle : ARIS-8J4K-F9Q7\n")
+
+            else:
+
+                if config.version == "Version_démo":
+
+                    text _("Clé d'accès de la démo : ARIS-DEMO\n")
+
+                else: 
+
+                    text _("Clé officielle :ARIS-8J4K-F9Q7\n")
 
             text _("Cette clé d'accès est à inscrire lors que vous lancez une nouvelle partie.\n")
 
