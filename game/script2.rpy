@@ -12776,9 +12776,14 @@ label password26:
     P "Je vais regarder l'ancienne batterie."
     play sound "Click.mp3" noloop
 
+    Na "Ok je te laisse faire alors."
+    play sound "Click.mp3" noloop
 
+    P "Bien entendu."
+    play sound "Click.mp3" noloop
 
-    
+    "{b}{i}{/i}{/b}"
+    play sound "Click.mp3" noloop 
 
 label end_script2:
     call script3
