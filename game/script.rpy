@@ -128,25 +128,14 @@ label start:
 label key:
 
     $ key = renpy.input("Veuillez écrire votre clé d'accès.").strip()
+    play sound "Menu.mp3" noloop 
 
-    if config.version == "Version_développeur":
-
-        $ valid_keys = {"ARIS-DEVS", "ARIS-8J4K-F9Q7", "ARIS-GRFN-M4A1", "ARIS-DEMO"}
-
-    else:
-    
-        if config.version == "Version_démo":
-
-            $ valid_keys =  {"ARIS-DEMO"}
-
-        else: 
-
-            $ valid_keys = {"ARIS-8J4K-F9Q7", "ARIS-GRFN-M4A1"}
+    $ valid_keys = {"ARIS-DEVS", "ARIS-8J4K-F9Q7", "ARIS-GRFN-M4A1",}
 
     if key in valid_keys: 
 
         "Jeu déverrouillé." 
-        play sound "Click.mp3" noloop
+        play sound "Menu.mp3" noloop 
 
     else: 
 
@@ -170,7 +159,7 @@ label key:
         show screen update with moveinright
 
         "DLC secret déverouillé."  
-        play sound "Click.mp3" noloop
+        play sound "Menu.mp3" noloop 
 
         hide screen update with moveoutright
 
@@ -178,13 +167,16 @@ label identity:
 
     $ prenom = renpy.input("Quel est votre prénom de lycéen ?")
     $ prenom = prenom.strip() 
+    play sound "Menu.mp3" noloop 
 
     $ nom = renpy.input("Quel est votre nom de lycéen ?")
     $ nom = nom.strip()
+    play sound "Menu.mp3" noloop 
 
     $ pronom = renpy.input("Quel est votre genre ? (il ou elle)")
     $ pronom = pronom.strip()
-
+    play sound "Menu.mp3" noloop 
+    
     if pronom not in {"il", "elle"}:
         "Erreur système. Veuillez réessayer."
         $ renpy.restart_interaction()
@@ -309,15 +301,8 @@ label début:
     "{b}{i}Tu t'approches et tu découvres un [model].{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    if key == "ARIS-DEMO":
-
-        P "On dirait un Prototype de [model]."
-        play sound "Click.mp3" noloop 
-
-    else:
-
-        P "On dirait un [model], comme ceux qui ont été utilisés pendant la guerre de l'année dernière."
-        play sound "Click.mp3" noloop 
+    P "On dirait un [model], comme ceux qui ont été utilisés pendant la guerre de l'année dernière."
+    play sound "Click.mp3" noloop 
 
     if pronom == "il":
 
@@ -510,22 +495,15 @@ label hack:
 
     else:    
 
-        if key == "ARIS-DEMO": 
+        if persistant.abandon == True: 
 
-            $ A = Character("AK-PR", color="#00eeff")
-            $ stockage += 1.0
+            $ A = Character("AK-25", color="#00eeff")
+            $ stockage += 1.0 
 
         else: 
 
-            if persistant.abandon == True: 
-
-                $ A = Character("AK-25", color="#00eeff")
-                $ stockage += 1.0 
-
-            else: 
-
-                $ A = Character("AK-24", color="#00eeff")
-                $ stockage += 1.0 
+            $ A = Character("AK-24", color="#00eeff")
+            $ stockage += 1.0 
 
         R "Initialisation en cours......" 
         play sound "Click.mp3" noloop
@@ -684,109 +662,84 @@ label choice1:
     S "Par contre tu laisses ce robot ici."
     play sound "Menu.mp3" noloop 
 
-    if key == "ARIS-DEMO":
+    menu:    
 
-        menu:    
+        "{b}{i} Abandonner [A] {/i}{/b}" :
+            play sound "Menu.mp3" noloop
 
-            "{b}{i} Garder [A] {/i}{/b}" : 
-                play sound "Menu.mp3" noloop
+            $ renpy.block_rollback()
 
-                $ renpy.block_rollback() 
-
-                P "Je refuse de la laisser ici alors qu'elle est en bonne état de fonctionner malgré son effacement numérique et en plus j'ai pris du temps pour la démarrer."
-                play sound "Click.mp3" noloop 
-
-                A "Merci infiniment [prenom]."
-                play sound "Click.mp3" noloop
-
-                P "Mais de rien c'est normal."
-                play sound "Click.mp3" noloop 
-
-                S "Mais tu es sûr de vouloir la garder ?"
-                play sound "Click.mp3" noloop
-
-                P "Oui, je suis sûr de vouloir la garder." 
-                play sound "Click.mp3" noloop
-
-    else: 
-
-        menu:    
-
-            "{b}{i} Abandonner [A] {/i}{/b}" :
-                play sound "Menu.mp3" noloop
-
-                $ renpy.block_rollback()
-
-                $ validation = get_random_validation() 
-                P "[validation]"
-                play sound "Click.mp3" noloop 
+            $ validation = get_random_validation() 
+            P "[validation]"
+            play sound "Click.mp3" noloop 
          
-                A "Mais pourquoi..."
-                play sound "Click.mp3" noloop   
+            A "Mais pourquoi..."
+            play sound "Click.mp3" noloop   
 
-                P "Désolé mais il a raison."
-                play sound "Click.mp3" noloop   
+            P "Désolé mais il a raison."
+            play sound "Click.mp3" noloop   
 
-                S "Bien maintenant on se barre ?"
-                play sound "Click.mp3" noloop     
+            S "Bien maintenant on se barre ?"
+            play sound "Click.mp3" noloop    
 
-                $ validation = get_random_validation() 
-                P "[validation]"
-                play sound "Click.mp3" noloop   
+            $ validation = get_random_validation() 
 
-                A "Non......"
-                play sound "Click.mp3" noloop   
+            P "[validation]"
+            play sound "Click.mp3" noloop   
 
-                scene black with fade 
+            A "Non......"
+            play sound "Click.mp3" noloop   
 
-                "{b}{i}Tu quittes l'entrepôt avec [S].{/i}{/b}"
-                play music "gameover.mp3" noloop
+            scene black with fade 
 
-                "{b}{i} Fin numéro 1 : [A] finit complètement Abandonnée et détruite.{/i}{/b}"
-                play sound "Menu.mp3" noloop
+            "{b}{i}Tu quittes l'entrepôt avec [S].{/i}{/b}"
+            play music "gameover.mp3" noloop
 
-                menu:
+            "{b}{i} Fin numéro 1 : [A] finit complètement Abandonnée et détruite.{/i}{/b}"
+            play sound "Menu.mp3" noloop
 
-                    "{b}{i}Retourner au menu{/i}{/b}" : 
-                        play sound "Menu.mp3" noloop
+            menu:
 
-                        if key == "ARIS-8J4K-F9Q7":
+                "{b}{i}Retourner au menu{/i}{/b}" : 
+                    play sound "Menu.mp3" noloop
 
-                            $ persistant.abandon = True
-                            return 
+                    if key == "ARIS-8J4K-F9Q7":
 
-                        else: 
+                        $ persistant.abandon = True
+                        return 
 
-                            return
+                    else: 
 
-                    "{b}{i}Réessayer{/i}{/b}" : 
-                        play sound "Menu.mp3" noloop
+                        return
 
-                        scene warehouse with fade
-                        play music "Soundtrack2.mp3" loop volume 1.0
-                        jump choice1
+                "{b}{i}Réessayer{/i}{/b}" : 
+                    play sound "Menu.mp3" noloop
 
-            "{b}{i} Garder [A] {/i}{/b}" : 
-                play sound "Menu.mp3" noloop
+                    scene warehouse with fade
+                    play music "Soundtrack2.mp3" loop volume 1.0
+                    jump choice1
 
-                $ renpy.block_rollback() 
+        "{b}{i} Garder [A] {/i}{/b}" : 
+            play sound "Menu.mp3" noloop
 
-                P "Je refuse de la laisser ici alors qu'elle est en bonne état de fonctionner malgré son effacement numérique et en plus j'ai pris du temps pour la démarrer."
-                play sound "Click.mp3" noloop 
+            $ renpy.block_rollback() 
 
-                # à modifier pour la persistence d'abandon
+            P "Je refuse de la laisser ici alors qu'elle est en bonne état de fonctionner malgré son effacement numérique et en plus j'ai pris du temps pour la démarrer."
+            play sound "Click.mp3" noloop 
 
-                A "Merci infiniment [prenom]."
-                play sound "Click.mp3" noloop
+            # à modifier pour la persistence d'abandon
 
-                P "Mais de rien c'est normal."
-                play sound "Click.mp3" noloop 
+            A "Merci infiniment [prenom]."
+            play sound "Click.mp3" noloop
 
-                S "Mais tu es sûr de vouloir la garder ?"
-                play sound "Click.mp3" noloop
+            P "Mais de rien c'est normal."
+            play sound "Click.mp3" noloop 
 
-                P "Oui, je suis sûr de vouloir la garder." 
-                play sound "Click.mp3" noloop
+            S "Mais tu es sûr de vouloir la garder ?"
+            play sound "Click.mp3" noloop
+
+            P "Oui, je suis sûr de vouloir la garder." 
+            play sound "Click.mp3" noloop
 
     S "Ok mais pourrais-je savoir pourquoi elle te serait utile !?"
     play sound "Click.mp3" noloop
@@ -1956,36 +1909,9 @@ label choice1:
     
     "{b}{i}La professeure regarde l'heure.{/i}{/b}"
     play sound "Click.mp3" noloop
-
-    if key == "ARIS-DEMO":
     
-        M "Bon, maintenant que toutes les informations ont été données, vous pouvez disposer. N'hésitez pas à visiter le lycée puisque vous n'avez pas cours cet après-midi."
-        play sound "Click.mp3" noloop 
-
-        "{b}{i}Puis, la professeure te regarde avec un air plus sérieux.{/i}{/b}"
-        play sound "Click.mp3" noloop
-
-        M "Juste, [prenom]... Je suis désolée, mais je ne peux pas te laisser aller plus loin."
-        play sound "Click.mp3" noloop 
-
-        M "Tu n’as que la démo du jeu. Le reste de l’histoire t’attend dans la version complète."
-        play sound "Click.mp3" noloop  
-
-        hide screen class_404 with moveoutright
-        hide screen points with moveoutleft
-        hide screen day with moveoutleft
-
-        "{b}{i}Un étrange silence s'installe. L'écran commence à s'assombrir doucement...{/i}{/b}"
-        play sound "Click.mp3" noloop 
-
-        stop music fadeout 2.0 
-
-        return
-
-    else: 
-
-        M "Bon, maintenant que toutes les informations ont été données, vous pouvez disposer. N'hésitez pas à visiter le lycée puisque vous n'avez pas cours cet après-midi."
-        play sound "Footsteps.mp3" noloop
+    M "Bon, maintenant que toutes les informations ont été données, vous pouvez disposer. N'hésitez pas à visiter le lycée puisque vous n'avez pas cours cet après-midi."
+    play sound "Footsteps.mp3" noloop
 
 # fin du cours de présentation des élèves
 
@@ -20960,5 +20886,5 @@ label update1:
     play sound "Click.mp3" noloop
 
 label end_script:
-    call script2
+    call script2 from _call_script2
     return 

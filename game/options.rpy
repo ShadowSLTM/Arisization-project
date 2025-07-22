@@ -49,7 +49,6 @@ define config.has_sound = True
 define config.has_music = True
 define config.has_voice = False
 
-
 ## Pour autoriser le joueur à réaliser un test de volume, décommenter la ligne
 ## ci-dessous et utilisez-la pour configurer un son d’exemple.
 
@@ -77,26 +76,21 @@ define config.main_menu_music = "Lastencounter.mp3"
 define config.enter_transition = fade
 define config.exit_transition = fade
 
-
 ## Entre les écrans du menu du jeu.
 
 define config.intra_transition = fade
-
 
 ## La transition qui sera utilisée après le chargement d’une partie.
 
 define config.after_load_transition = fade 
 
-
 ## La transition qui sera utilisé après la fin du jeu.
 
 define config.end_game_transition = fade
 
-
 ## Il n’y a pas de variable pour configurer la transition en début de partie. À
 ## la place, utilisez un état de transition juste après l’affichage de la toute
 ## première scène.
-
 
 ## Gestion des fenêtres ########################################################
 ##

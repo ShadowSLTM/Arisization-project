@@ -1510,7 +1510,6 @@ screen quick_menu():
             textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Menu") action ShowMenu()
 
-
 style window:
     variant "small"
     background "gui/phone/textbox.png"
@@ -1968,7 +1967,7 @@ screen success():
             text _("Entre connaissances : [quest20]/1\n")
             text _("le bon présumé : [quest21]/1\n")
             text _("Affection pour les autres partie 2 : [quest22]/1\n")
-            text _("Plus c’est gros plus ça passe : [quest23]/1\n")
+            text _("Mot de passe solide : [quest23]/1\n")
             text _("La vérité avant tout : [quest24]/1\n")
             text _("Génie des maths : [quest25]/1\n") 
             text _("Petit exercice de Runix : [quest26]/1\n") 

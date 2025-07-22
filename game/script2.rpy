@@ -469,6 +469,12 @@ label password11:
 
             # à modifier 
 
+    Ln "Si jamais je te laisse mon numéro profesionnel si il y a du nouveau avec [newname]."
+    play sound "Click.mp3" noloop
+
+    P "Il n'y a pas de soucis, je vous informerais si il y a du nouveau avec elle."
+    play sound "Click.mp3" noloop
+
     Ln "Bon je vais devoir vous laisser j'ai des choses à faire."
     play sound "Click.mp3" noloop
 
@@ -12782,11 +12788,41 @@ label password26:
     P "Bien entendu."
     play sound "Click.mp3" noloop
 
-    "{b}{i}{/i}{/b}"
+    "{b}{i}Tu t'approches pour inspecter l'ancienne batterie.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
+    P "Bon voyons voir ça."
+    play sound "Click.mp3" noloop
+
+    Na "Alors trouver quelques choses sur l'ancienne batterie ?"
+    play sound "Click.mp3" noloop 
+
+    P "Attend deux minutes, je regarde ça."
+    play sound "Click.mp3" noloop
+
+    Na "Ok."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu inspectes l'ancienne batterie.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Il semblerait que que la batterie fasse 700 Wh."
+    play sound "Click.mp3" noloop 
+
+    Na "Je vois c'est intérresant."
+    play sound "Click.mp3" noloop
+
+    P "Donc ça donne une idée pour choisir la nouvelle batterie."
+    play sound "Click.mp3" noloop
+
+    Na "Donc on doit chercher une batterie avec une capacité similaire."
+    play sound "Click.mp3" noloop
+
+    P "Oui, c'est ça."
+    play sound "Click.mp3" noloop
+
 label end_script2:
-    call script3
+    call script3 
     return 
 
 # Aris la plus belle ###################  
