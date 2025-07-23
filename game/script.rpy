@@ -715,6 +715,9 @@ label choice1:
                 "{b}{i}Réessayer{/i}{/b}" : 
                     play sound "Menu.mp3" noloop
 
+                    P "Non [A] refuserait que j'abandonne si facilement."
+                    play sound "Click.mp3" noloop
+
                     scene warehouse with fade
                     play music "Soundtrack2.mp3" loop volume 1.0
                     jump choice1
@@ -2351,7 +2354,11 @@ label choice2:
                         "{b}{i}Abandonner{/i}{/b}" :
                             return 
 
-                        "{b}{i}Réessayer{/i}{/b}" : 
+                        "{b}{i}Réessayer{/i}{/b}" :
+
+                            P "Non [A] refuserait que j'abandonne si facilement."
+                            play sound "Click.mp3" noloop
+
                             scene room with fade 
                             show screen day with moveinleft
                             show screen room with moveinright
@@ -2622,6 +2629,10 @@ label choice3:
                     return
                     
                 "{b}{i}Réessayer.{/i}{/b}" :
+
+                    P "Non [A] refuserait que j'abandonne si facilement."
+                    play sound "Click.mp3" noloop
+
                     scene room with fade 
                     show screen room with moveinright
                     show screen point with moveinleft
@@ -3241,7 +3252,7 @@ label choice6:
             hide screen day with moveoutleft
             scene black with fade 
 
-            "{b}{i} Fin numéro 4 : [A] complètement a été piratée avec l'adresse IP 201.125.114.115.{/i}{/b}"
+            "{b}{i} Fin numéro 4 : [newname] complètement a été piratée avec l'adresse IP 201.125.114.115.{/i}{/b}"
             play sound "Menu.mp3" noloop
 
             menu:    
@@ -3250,6 +3261,10 @@ label choice6:
                     return
                     
                 "{b}{i}Réessayer{/i}{/b}" : 
+
+                    P "Non [newname] refuserait que j'abandonne si facilement."
+                    play sound "Click.mp3" noloop
+
                     scene clubroom with fade
                     show screen clubroom with moveinright
                     show screen points with moveinleft
@@ -5693,6 +5708,10 @@ label choice8:
                 return 
                 
             "{b}{i}Réessayer.{/i}{/b}" :
+
+                P "Non [newname] refuserait que j'abandonne si facilement."
+                play sound "Click.mp3" noloop
+
                 scene black with fade
                 show screen class_404 with moveinright
                 show screen point with moveinleft
@@ -6617,6 +6636,9 @@ label choice8:
 
             P "Je vois que c'est le vingt-quatrième robot de la première série de 2079."
             play sound "Click.mp3" noloop 
+
+        P "Elle a aussi le RCMS Robot Control Management System."
+        play sound "Click.mp3" noloop 
 
         "{b}{i}Tu continues de regarder pendant un petit moment.{/i}{/b}" 
         play sound "Click.mp3" noloop 
@@ -8859,6 +8881,10 @@ label debate_failed:
             return
 
         "{b}{i}Réessayer{/i}{/b}":
+
+            P "Non [newname] refuserait que j'abandonne si facilement."
+            play sound "Click.mp3" noloop
+
             scene classroom with fade
             show screen class_404 with moveinright
             show screen points with moveinleft
@@ -10932,6 +10958,10 @@ label update:
                     return
                     
                 "{b}{i}Réessayer.{/i}{/b}":
+
+                    P "Non [newname] refuserait que j'abandonne si facilement."
+                    play sound "Click.mp3" noloop
+
                     scene clubroom with fade
                     show screen clubroom with moveinright
                     show screen point with moveinleft
@@ -15038,6 +15068,10 @@ label examen_pythagore:
                 return
                 
             "{b}{i}Réessayer.{/i}{/b}" :
+
+                P "Non [newname] refuserait que j'abandonne si facilement."
+                play sound "Click.mp3" noloop
+
                 scene classroom
                 show screen class_404 with moveinright
                 show screen point with moveinleft
@@ -19152,6 +19186,10 @@ label password9:
                 return
                 
             "{b}{i}Réessayer.{/i}{/b}" :
+
+                P "Non [newname] refuserait que j'abandonne si facilement."
+                play sound "Click.mp3" noloop
+
                 scene classroom
                 show screen class_404 with moveinright
                 show screen point with moveinleft
@@ -20804,6 +20842,10 @@ label update1:
                     return
                     
                 "{b}{i}Réessayer.{/i}{/b}":
+
+                    P "Non [newname] refuserait que j'abandonne si facilement."
+                    play sound "Click.mp3" noloop
+
                     scene room with fade
                     show screen room with moveinright
                     show screen point with moveinleft

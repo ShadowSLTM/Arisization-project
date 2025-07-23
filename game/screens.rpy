@@ -1747,6 +1747,7 @@ screen library():
         text "Bibliothèque":
             size 50
             xalign 0.5 
+
 screen day():
     frame: 
         xalign 0
@@ -1787,6 +1788,16 @@ screen update():
         xalign 0.999
         add "success.jpg"
  
+screen web():
+    frame: 
+        xalign 0
+        ypos 60
+        has vbox  
+
+        text "test naviguateur":
+            size 60
+            xalign 0.5 
+
 screen Shop():
 
     tag menu

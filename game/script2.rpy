@@ -3051,6 +3051,10 @@ label examen_francais:
                 return
                 
             "{b}{i}Réessayer.{/i}{/b}" :
+
+                P "Non [newname] refuserait que j'abandonne si facilement."
+                play sound "Click.mp3" noloop
+
                 scene classroom with fade
                 show screen class_404 with moveinright
                 show screen point with moveinleft
@@ -4231,6 +4235,10 @@ label update2:
                     return 
                     
                 "{b}{i}Réessayer.{/i}{/b}":
+
+                    P "Non [newname] refuserait que j'abandonne si facilement."
+                    play sound "Click.mp3" noloop
+
                     scene room with fade
                     show screen room with moveinright
                     show screen point with moveinleft
@@ -5705,7 +5713,11 @@ label philosophie_technologie:
             "{b}{i}Abandonner{/i}{/b}" :
                 return
                  
-            "{b}{i}Réessayer.{/i}{/b}" :
+            "{b}{i}Réessayer.{/i}{/b}" : 
+
+                P "Non [newname] refuserait que j'abandonne si facilement."
+                play sound "Click.mp3" noloop
+
                 scene classroom with fade
                 show screen class_404 with moveinright
                 show screen point with moveinleft
@@ -12820,6 +12832,61 @@ label password26:
 
     P "Oui, c'est ça."
     play sound "Click.mp3" noloop
+
+    Na "Bien, alors on a une idée de ce qu'il nous faut."
+    play sound "Click.mp3" noloop
+
+    P "Oui, mais maintenant il faut trouver où en acheter une."
+    play sound "Click.mp3" noloop
+
+    Na "Oui, c'est le plus compliqué."
+    play sound "Click.mp3" noloop
+
+    P "peut être le departement de piéces détachées du lycée."
+    play sound "Click.mp3" noloop
+
+    Na "Oui, c'est une bonne idée, ils ont sûrement des batteries de rechange."
+    play sound "Click.mp3" noloop
+
+    P "Bon je m'occupe alors."  
+    play sound "Click.mp3" noloop
+
+    Na "Moi je vais me poser pour éviter de me déconnecter complétement."
+    play sound "Click.mp3" noloop
+
+    P "D'accord, je vais aller voir ça."
+    play sound "Phone.mp3" noloop
+
+    "{b}{i}Tu te poses tranquillement pour appeler le departement de piéces détachées.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Allo, le département de pièces détachées ?"
+    play sound "Click.mp3" noloop
+
+    R "Oui, bonjour, comment puis-je vous aider ?"
+    play sound "Click.mp3" noloop
+
+    P "C'est bien [Ah] à l'appareil ?"
+    play sound "Click.mp3" noloop
+
+    Rn "Non c'est [Rn], je remplace [Ah] depuis qu'il est parti en vacances."
+    play sound "Click.mp3" noloop
+
+    P "Ah d'accord, je voulais savoir si vous aviez des batteries de rechange pour les [model] ?"
+    play sound "Click.mp3" noloop
+
+    Rn "Attends laisse-moi voir ton dossier."
+    play sound "Click.mp3" noloop
+
+    P "D'accord, pas de soucis."
+    play sound "Click.mp3" noloop
+
+
+
+
+
+
+
 
 label end_script2:
     call script3 
