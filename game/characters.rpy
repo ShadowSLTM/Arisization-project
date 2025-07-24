@@ -14,8 +14,7 @@ define Sk = Character('Shiro Katsuya', color="#ffffff")
 # antagoniste principale 
 
 define S = Character('Subaru Shinomiya', color="#ffffff")
-define As = Character('Takumi Yagami', color="#ffffff") 
- 
+
 # Les élèves de Seconde-E. 
 
 define M = Character('Sakura Kusanagi', color="#ffdfef") 

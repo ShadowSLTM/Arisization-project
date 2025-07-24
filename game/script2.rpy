@@ -394,13 +394,13 @@ label password11:
     Ln "Je le sais déjà. C’est justement pour ça que je suis ici. Dis-moi, es-tu réellement capable de la contrôler ?"
     play sound "Click.mp3" noloop 
 
-    P "Oui, normalement. J’ai un vrai contrôle sur elle... mais elle agit aussi de son propre chef sans prendre des décisions dangereuses car elle a le contrôle de niveau 1."
+    P "Oui, normalement. J’ai un vrai contrôle sur elle... mais elle agit aussi de son propre chef sans prendre des décisions dangereuses car elle a le contrôle de niveau 1 du RCMS."
     play sound "Click.mp3" noloop 
 
-    Ln "Je vois mais j'ai une question à te poser. Quel est le niveau 0 pour [newname] ?"
+    Ln "Je vois mais j'ai une question à te poser. Quel est le niveau 0 du RCMS pour [newname] ?"
     play sound "Click.mp3" noloop
 
-    P "Le niveau 0 est le niveau ou j'ai 100\% le contrôle sur elle mais je l'ai utilisé à des fins de test durant l'été."
+    P "Le niveau 0 du RCMS est le niveau ou j'ai 100\% le contrôle sur elle mais je l'ai utilisé à des fins de test durant l'été."
     play sound "Click.mp3" noloop
 
     Ln "Je vois… Donc, je n’ai pas à m’inquiéter pour la sécurité publique."
@@ -12881,15 +12881,40 @@ label password26:
     P "D'accord, pas de soucis."
     play sound "Click.mp3" noloop
 
+    "{b}{i}[Rn] se met à regsrder ton dossier pendant un instant.{/i}{/b}"
+    play sound "Click.mp3" noloop 
 
+    Rn "J'ai regardé ton dossier et il semblerait que nous ayons une batterie de rechange pour [newname]."
+    play sound "Click.mp3" noloop 
 
+    P "Super, il me la faudrait toute de suite car [newname] risque de s'éteindre dans peut de temps à cause de son ancienne batterie."
+    play sound "Click.mp3" noloop
 
+    Rn "Je vois, ça te fera 3000 points."
+    play sound "Click.mp3" noloop
 
+    P "Je vous envoie ça tout de suite"
+    play sound "Click.mp3" noloop
 
+    "{b}{i}Tu effectues le paiement.{/i}{/b}"
+    play sound "Click.mp3" noloop 
 
+    $ points -= 3000 
+
+    Rn "Merci beaucoup pour votre commande."
+    play sound "Click.mp3" noloop
+
+    P "Sa nouvelle batterie sera prête dans combien de temps ?"
+    play sound "Click.mp3" noloop
+
+    Rn "Normalement, ça devrait prendre environ une heure."
+    play sound "Click.mp3" noloop
+
+    P ""
+    play sound "Click.mp3" noloop
 
 label end_script2:
     call script3 
     return 
 
-# Aris la plus belle ###################  
+# Aris la plus belle ###################

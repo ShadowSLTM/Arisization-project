@@ -1638,9 +1638,16 @@ label choice1:
         play sound "Click.mp3" noloop 
 
     else: 
- 
-        A "Non, c'est mon nom technique par défaut."
-        play sound "Click.mp3" noloop 
+
+        if persistent.abandon = True:
+
+            A "Non, c'est mon nom technique."
+            play sound "Click.mp3" noloop  
+
+        else: 
+        
+            A "Non, c'est mon nom technique par défaut sur mon systéme."
+            play sound "Click.mp3" noloop  
 
     T "Intéressant j'espère qu'[pronom] te trouvera un vrai joli prénom." 
     play sound "Click.mp3" noloop
@@ -1669,7 +1676,7 @@ label choice1:
 
     $ nothing = get_random_nothing()
     I "[nothing] C'est normal de complimenter mais j'ai une autre question."
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     A "Oui, dis-moi, je t'écoute.~"
     play sound "Click.mp3" noloop 
@@ -1689,12 +1696,15 @@ label choice1:
     T "Mais pourquoi tu t'es inscrite ici en tant que lycéenne ?"
     play sound "Click.mp3" noloop
 
-    A "Je ne connais pas grand-chose de ce monde et je voulais apprendre davantage. [prenom] m’a déjà appris les bases cet été."
+    A "Je ne connais pas grand-chose de ce monde et je voulais apprendre d'avantage. [prenom] m’a déjà appris les bases cet été."
+    play sound "Click.mp3" noloop 
+
+    P "Oui je lui ai donné des données d'entraînement pour qu'elle aie les bases."
     play sound "Click.mp3" noloop 
 
     $ charactertext11 = "Elle est un robot humanoïde abandonné de 18 ans, qui ne se souvient que de son nom de code et de mon âge, et a oublié le reste. Elle veut en apprendre plus sur ce monde, et a donc choisi d’aller au lycée comme le protagoniste."
 
-    T "Bon, merci [A] pour ta présentation." 
+    T "Je vois, merci [A] pour ta présentation." 
     play sound "Click.mp3" noloop 
 
     $ nothing = get_random_nothing()
