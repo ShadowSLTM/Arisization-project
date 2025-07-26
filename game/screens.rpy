@@ -1923,8 +1923,8 @@ screen credit():
 
             text _("DLC Arisization Project - Alternative : [Dc] (Shadow_SLTM)\n")
 
-            text _("Arisization Project (The Project of the Realization of Aris) appartient à [Dc] (Shadow_SLTM)\n")   
-  
+            text _("Arisization Project (The Realization Project of Aris) appartient à [Dc] (Shadow_SLTM)\n")   
+
             text _("Éditeur : SLTM\n") 
 
 style about_label is gui_label  

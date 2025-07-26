@@ -12863,7 +12863,7 @@ label password26:
     P "Allô, département de pièces détachées ?"
     play sound "Click.mp3" noloop
 
-    R "Oui, bonjour, comment puis-je vous aider ?"
+    R "Oui, bonjour, comment puis-je t'aider ?"
     play sound "Click.mp3" noloop
 
     P "C’est bien [Ah] à l’appareil ?"
@@ -12892,26 +12892,104 @@ label password26:
 
     menu: 
 
-        "{b}{i}4000 Wh.{/i}{/b}" : 
+        "{b}{i}4000 W.{/i}{/b}" : 
             play sound "Menu.mp3" noloop
 
             $ renpy.block_rollback() 
 
-            jump fin_batterie_trop_faible
+            P "Celle de 4000W."
+            play sound "Click.mp3" noloop
 
-        "{b}{i}7000 Wh.{/i}{/b}" :  
+            Rn "Bien ça vous fera 2000 points."
+            play sound "Click.mp3" noloop
+
+            P "Je vous envoie ça tout de suite"
+            play sound "Click.mp3" noloop
+
+            "{b}{i}Tu effectues le paiement.{/i}{/b}"
+            play sound "Click.mp3" noloop 
+
+            $ points -= 2000 
+
+            Rn "Merci beaucoup pour votre commande."
+            play sound "Click.mp3" noloop
+
+            P "Quand est-ce que je receverrai ma nouvelle batterie ?"
+            play sound "Click.mp3" noloop
+
+            Rn "Dans deux heures car je vais m'en occuper toute de suite."
+            play sound "Click.mp3" noloop         
+
+            P "Je vois, merci beaucoup."
+            play sound "Click.mp3" noloop
+
+            Rn "Mais de rien."
+            play sound "Click.mp3" noloop
+
+            P "J'aurais une autre question."
+            play sound "Click.mp3" noloop
+
+            Rn "Oui, bien sûr, je t'écoute."
+            play sound "Click.mp3" noloop
+
+            P "Je pourrais avoir ma nouvelle batterie dans ma salle de club directement ?"
+            play sound "Click.mp3" noloop
+
+            Rn "Oui, pas de soucis, je vous l'apporterai dans votre salle de club."
+            play sound "Click.mp3" noloop
+
+            P "Merci beaucoup, c'est très gentil."
+            play sound "Click.mp3" noloop
+
+            Rn "Pas de soucis, c'est mon travail."
+            play sound "Click.mp3" noloop
+
+            P "D'accord, merci encore."
+            play sound "Click.mp3" noloop
+
+            "{b}{i}tu finis par raccrocher.{/i}{/b}"
+            play sound "Click.mp3" noloop
+
+            P "Bon, j'ai commandé la batterie de 4000 Wh, elle arrivera dans deux heures dans notre salle de club."
+            play sound "Click.mp3" noloop
+
+            Na "Super, merci beaucoup [prenom]."
+            play sound "Click.mp3" noloop
+
+            P "Pas de soucis, c'est normal."
+            play sound "Click.mp3" noloop
+
+            Na "Bon je vais rester déconnectée pendant deux heures pour économiser de l'énergie."
+            play sound "Click.mp3" noloop
+
+            P "D'accord, je vais te laisser faire."
+            play sound "Click.mp3" noloop
+
+            Na "Ok alors, à tout à l'heure."
+            play sound "Click.mp3" noloop
+
+            P "À tout à l'heure [newname]."
+            play sound "Click.mp3" noloop 
+
+            Na "Déconnexion....."
+            play sound "Click.mp3" noloop
+
+            "{b}{i}[newname] se déconnecte.{/i}{/b}"
+            play sound "Click.mp3" noloop
+           
+            P ""
+            play sound "Click.mp3" noloop
+            
+        "{b}{i}7000 W.{/i}{/b}" :  
             play sound "Menu.mp3" noloop
 
             $ renpy.block_rollback() 
 
-            jump fin_batterie_parfaite
-
-        "{b}{i}10000 Wh.{/i}{/b}" :  
+        "{b}{i}10000 W.{/i}{/b}" :  
             play sound "Menu.mp3" noloop
 
             $ renpy.block_rollback() 
             
-            jump fin_batterie_trop_puissante
 
 label end_script2:
     call script3 
