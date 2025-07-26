@@ -2877,7 +2877,7 @@ label choice5:
         $ stockage += 2.0 
         $ baseip = "001.018.009.019" 
 
-        $ renpy.block_rollback()
+        $ renpy.block_rollback() 
 
         "{b}{i}Initialisation de l'adresse IP en cours...{/i}{/b}"
         play sound "Menu.mp3" noloop 

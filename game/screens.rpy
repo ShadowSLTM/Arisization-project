@@ -1830,19 +1830,13 @@ screen Shop():
 
             label "{b}{i}— DLC —\n{/i}{/b}"
 
-            if config.version == "Version_démo":
-            
-                text _("????????????????????????????????????????????????\n")
+            if key == "ARIS-GRFN-M4A1": 
 
-            else: 
-            
-                if key == "ARIS-GRFN-M4A1": 
+                text _("DLC Arisization Project - Alternative : (installé)\n")
 
-                    text _("DLC Arisization Project - Alternative : (installé)\n")
+            else:   
 
-                else:   
-
-                    text _("DLC Arisization Project - Alternative : (non installé)\n") 
+                text _("DLC Arisization Project - Alternative : (non installé)\n") 
 
 style about_label is gui_label 
 style about_label_text is gui_label_text

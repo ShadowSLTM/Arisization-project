@@ -12818,100 +12818,91 @@ label password26:
     "{b}{i}Tu inspectes l'ancienne batterie.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "Il semblerait que que la batterie fasse 700 Wh."
+    P "Il semblerait que la batterie fasse 4000 Wh."
     play sound "Click.mp3" noloop 
 
-    Na "Je vois c'est intérresant."
+    Na "Je vois... mais elle a été stockée longtemps sans entretien, non ?"
     play sound "Click.mp3" noloop
 
-    P "Donc ça donne une idée pour choisir la nouvelle batterie."
+    P "Oui, et ça veut dire qu'elle a sûrement perdu de sa capacité réelle."
     play sound "Click.mp3" noloop
 
-    Na "Donc on doit chercher une batterie avec une capacité similaire."
+    Na "Donc même si c'est marqué 4000 Wh, on ne peut pas être sûrs qu'elle tienne toute la journée."
     play sound "Click.mp3" noloop
 
-    P "Oui, c'est ça."
+    P "Exact. Il faut que je choisisse une batterie neuve avec une capacité adaptée pour toi."
     play sound "Click.mp3" noloop
 
-    Na "Bien, alors on a une idée de ce qu'il nous faut."
+    Na "Tu crois qu'on pourra vraiment trouver une batterie pour moi ? Je suis la seule et unique [model] encore en vie…"
     play sound "Click.mp3" noloop
 
-    P "Oui, mais maintenant il faut trouver où en acheter une."
+    P "On va bien trouver, faut juste chercher au bon endroit."
     play sound "Click.mp3" noloop
 
-    Na "Oui, c'est le plus compliqué."
+    Na "J’espère… parce que je ne veux pas rester inactive trop longtemps."
     play sound "Click.mp3" noloop
 
-    P "peut être le departement de piéces détachées du lycée."
+    P "Maintenant il faut trouver où en acheter une."
     play sound "Click.mp3" noloop
 
-    Na "Oui, c'est une bonne idée, ils ont sûrement des batteries de rechange."
+    Na "Peut-être au département de pièces détachées du lycée."
     play sound "Click.mp3" noloop
 
-    P "Bon je m'occupe alors."  
+    P "Bonne idée, ils ont sûrement des batteries de rechange."
     play sound "Click.mp3" noloop
 
-    Na "Moi je vais me poser pour éviter de me déconnecter complétement."
-    play sound "Click.mp3" noloop
+    Na "Bon, je vais me poser un peu pour éviter la surcharge."
+    play sound "Click.mp3" noloop 
 
-    P "D'accord, je vais aller voir ça."
+    P "D'accord, je m'occupe d'appeler."
     play sound "Phone.mp3" noloop
 
-    "{b}{i}Tu te poses tranquillement pour appeler le departement de piéces détachées.{/i}{/b}"
+    "{b}{i}Tu te poses tranquillement pour appeler le département de pièces détachées.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "Allo, le département de pièces détachées ?"
+    P "Allô, département de pièces détachées ?"
     play sound "Click.mp3" noloop
 
     R "Oui, bonjour, comment puis-je vous aider ?"
     play sound "Click.mp3" noloop
 
-    P "C'est bien [Ah] à l'appareil ?"
+    P "C’est bien [Ah] à l’appareil ?"
     play sound "Click.mp3" noloop
 
-    Rn "Non c'est [Rn], je remplace [Ah] depuis qu'il est parti en vacances."
+    Rn "Non, c’est [Rn], je remplace [Ah] pendant ses vacances."
     play sound "Click.mp3" noloop
 
-    P "Ah d'accord, je voulais savoir si vous aviez des batteries de rechange pour les [model] ?"
+    P "D’accord, je cherche une batterie pour [newname], vous avez quoi ?"
     play sound "Click.mp3" noloop
 
-    Rn "Attends laisse-moi voir ton dossier."
+    Rn "Laisse-moi regarder ton dossier."
     play sound "Click.mp3" noloop
 
-    P "D'accord, pas de soucis."
+    P "Pas de souci."
     play sound "Click.mp3" noloop
 
-    "{b}{i}[Rn] se met à regsrder ton dossier pendant un instant.{/i}{/b}"
+    "{b}{i}[Rn] consulte ton dossier pendant un instant.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    Rn "J'ai regardé ton dossier et il semblerait que nous ayons une batterie de rechange pour [newname]."
+    Rn "Ok, nous avons des batteries neuves pour [newname]. Les capacités sont : 4000 Wh, 7000 Wh et 10000 Wh. Laquelle voulez-vous ?"
     play sound "Click.mp3" noloop 
 
-    P "Super, il me la faudrait toute de suite car [newname] risque de s'éteindre dans peut de temps à cause de son ancienne batterie."
-    play sound "Click.mp3" noloop
+    P "Je vais prendre celle de..."
+    play sound "Menu.mp3" noloop  
 
-    Rn "Je vois, ça te fera 3000 points."
-    play sound "Click.mp3" noloop
+    menu: 
 
-    P "Je vous envoie ça tout de suite"
-    play sound "Click.mp3" noloop
+        "{b}{i}4000 Wh.{/i}{/b}" : 
+            play sound "Menu.mp3" noloop
+            jump fin_batterie_trop_faible
 
-    "{b}{i}Tu effectues le paiement.{/i}{/b}"
-    play sound "Click.mp3" noloop 
+        "{b}{i}7000 Wh.{/i}{/b}" :  
+            play sound "Menu.mp3" noloop
+            jump fin_batterie_parfaite
 
-    $ points -= 3000 
-
-    Rn "Merci beaucoup pour votre commande."
-    play sound "Click.mp3" noloop
-
-    P "Sa nouvelle batterie sera prête dans combien de temps ?"
-    play sound "Click.mp3" noloop
-
-    Rn "Normalement, ça devrait prendre environ une heure."
-    play sound "Click.mp3" noloop
-
-    P ""
-    play sound "Click.mp3" noloop
+        "{b}{i}10000 Wh.{/i}{/b}" :  
+            play sound "Menu.mp3" noloop
+            jump fin_batterie_trop_puissante
 
 label end_script2:
     call script3 
