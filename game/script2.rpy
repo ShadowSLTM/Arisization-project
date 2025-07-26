@@ -12894,14 +12894,23 @@ label password26:
 
         "{b}{i}4000 Wh.{/i}{/b}" : 
             play sound "Menu.mp3" noloop
+
+            $ renpy.block_rollback() 
+
             jump fin_batterie_trop_faible
 
         "{b}{i}7000 Wh.{/i}{/b}" :  
             play sound "Menu.mp3" noloop
+
+            $ renpy.block_rollback() 
+
             jump fin_batterie_parfaite
 
         "{b}{i}10000 Wh.{/i}{/b}" :  
             play sound "Menu.mp3" noloop
+
+            $ renpy.block_rollback() 
+            
             jump fin_batterie_trop_puissante
 
 label end_script2:
