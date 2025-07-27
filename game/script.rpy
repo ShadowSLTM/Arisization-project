@@ -29,6 +29,7 @@ label start:
     default stockage = "??????????"
     default robotname = ""  
     default baseip = ""
+    default newbattery = ""
 
 #############################################
 
@@ -11008,7 +11009,7 @@ label update:
     hide screen day with moveoutleft
     scene black with fade 
 
-    "{b}{i} Vous sortez de la salle de club.{/i}{/b}"
+    "{b}{i} Vous quittez la salle de club.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene hall with fade   

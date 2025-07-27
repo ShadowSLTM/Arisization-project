@@ -14,7 +14,7 @@ init python:
     ]
     
     def get_random_morning_line():
-        return random.choice(morning_lines)
+        return random.choice(morning_lines) 
 
 # entrepôt_rdm est une liste de phrases qui seront affichées aléatoirement au moment de la fouille de l'entrepôt.
 init python:

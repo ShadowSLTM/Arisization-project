@@ -12889,6 +12889,8 @@ label password26:
 
 label choice9:
 
+    $ newbattery = "0"
+
     P "Je vais prendre celle de..."
     play sound "Menu.mp3" noloop  
 
@@ -12898,11 +12900,12 @@ label choice9:
             play sound "Menu.mp3" noloop
 
             $ renpy.block_rollback() 
+            $ newbattery = "4000"
 
             P "Celle de 4000W."
             play sound "Click.mp3" noloop
 
-            Rn "Bien ça vous fera 2000 points."
+            Rn "Bien ça te fera 2000 points."
             play sound "Click.mp3" noloop
 
             P "Je vous envoie ça tout de suite"
@@ -12913,125 +12916,36 @@ label choice9:
 
             $ points -= 2000 
 
-            Rn "Merci beaucoup pour votre commande."
-            play sound "Click.mp3" noloop
-
-            P "Quand est-ce que je receverrai ma nouvelle batterie ?"
-            play sound "Click.mp3" noloop
-
-            Rn "Dans deux heures car je vais m'en occuper toute de suite."
-            play sound "Click.mp3" noloop         
-
-            P "Je vois, merci beaucoup."
-            play sound "Click.mp3" noloop
-
-            Rn "Mais de rien."
-            play sound "Click.mp3" noloop
-
-            P "J'aurais une autre question."
-            play sound "Click.mp3" noloop
-
-            Rn "Oui, bien sûr, je t'écoute."
-            play sound "Click.mp3" noloop
-
-            P "Je pourrais avoir ma nouvelle batterie dans ma salle de club directement ?"
-            play sound "Click.mp3" noloop
-
-            Rn "Oui, pas de soucis, je vous l'apporterai dans votre salle de club."
-            play sound "Click.mp3" noloop
-
-            P "Merci beaucoup, c'est très gentil."
-            play sound "Click.mp3" noloop
-
-            Rn "Pas de soucis, c'est mon travail."
-            play sound "Click.mp3" noloop
-
-            P "D'accord, merci encore."
-            play sound "Click.mp3" noloop
-
-            "{b}{i}tu finis par raccrocher.{/i}{/b}"
-            play sound "Click.mp3" noloop
-
-            P "Bon, j'ai commandé la batterie de 4000 Wh, elle arrivera dans deux heures dans notre salle de club."
-            play sound "Click.mp3" noloop
-
-            Na "Super, merci beaucoup [prenom]."
-            play sound "Click.mp3" noloop
-
-            P "Pas de soucis, c'est normal."
-            play sound "Click.mp3" noloop
-
-            Na "Bon je vais rester déconnectée pendant deux heures pour économiser de l'énergie."
-            play sound "Click.mp3" noloop
-
-            P "D'accord, je vais te laisser faire."
-            play sound "Click.mp3" noloop
-
-            Na "Ok alors, à tout à l'heure."
-            play sound "Click.mp3" noloop
-
-            P "À tout à l'heure [newname]."
-            play sound "Click.mp3" noloop 
-
-            Na "Déconnexion....."
-            play sound "Click.mp3" noloop
-
-            "{b}{i}[newname] se déconnecte.{/i}{/b}"
-            play sound "Click.mp3" noloop
-           
-            P "Bon je vais me posez pour lire."
-            play sound "Click.mp3" noloop
-
-            "{b}{i}[newname] se déconnecte.{/i}{/b}"
-            play sound "Click.mp3" noloop    
-
-            # à modifier
-
-            hide screen clubroom with moveoutright
-            hide screen points with moveoutleft 
-            hide screen day with moveoutleft
-            scene black with fade 
-
-            "{b}{i} Fin numéro 15 : Batterie trop faible pour [newname].{/i}{/b}"
-            play sound "Menu.mp3" noloop
-
-            menu:    
-
-                "{b}{i}Abandonner{/i}{/b}" :
-                    return
-                    
-                "{b}{i}Réessayer{/i}{/b}" : 
-
-                    P "Non [newname] refuserait que j'abandonne si facilement."
-                    play sound "Click.mp3" noloop
-
-                    $ points += 2000 
-
-                    scene clubroom with fade
-                    show screen clubroom with moveinright
-                    show screen points with moveinleft
-                    show screen day with moveinleft
-                    play music "Soundtrack.mp3" loop volume 1.0
-                    jump choice9
-
         "{b}{i}7000 W.{/i}{/b}" :  
             play sound "Menu.mp3" noloop
 
             $ renpy.block_rollback() 
+            $ newbattery = "7000"
 
-            # à modifier 
+            P "Celle de 7000W."
+            play sound "Click.mp3" noloop
 
+            Rn "Bien ça te fera 3000 points."
+            play sound "Click.mp3" noloop
 
+            P "Je vous envoie ça tout de suite"
+            play sound "Click.mp3" noloop
+
+            "{b}{i}Tu effectues le paiement.{/i}{/b}"
+            play sound "Click.mp3" noloop 
+
+            $ points -= 3000 
 
         "{b}{i}10000 W.{/i}{/b}" :  
             play sound "Menu.mp3" noloop
 
             $ renpy.block_rollback() 
+            $ newbattery = "10000"
 
             P "Celle de 10000W."
             play sound "Click.mp3" noloop
 
-            Rn "Bien ça vous fera 4000 points."
+            Rn "Bien ça te fera 4000 points."
             play sound "Click.mp3" noloop
 
             P "Je vous envoie ça tout de suite"
@@ -13042,106 +12956,203 @@ label choice9:
 
             $ points -= 4000 
 
-            Rn "Merci beaucoup pour votre commande."
-            play sound "Click.mp3" noloop
+    Rn "Merci beaucoup pour votre commande."
+    play sound "Click.mp3" noloop
 
-            P "Quand est-ce que je receverrai ma nouvelle batterie ?"
-            play sound "Click.mp3" noloop
+    P "Quand est-ce que je receverrai ma nouvelle batterie ?"
+    play sound "Click.mp3" noloop
 
-            Rn "Dans deux heures car je vais m'en occuper toute de suite."
-            play sound "Click.mp3" noloop         
+    Rn "Dans deux heures car je vais m'en occuper toute de suite."
+    play sound "Click.mp3" noloop     
 
-            P "Je vois, merci beaucoup."
-            play sound "Click.mp3" noloop
+    P "Je vois, merci beaucoup."
+    play sound "Click.mp3" noloop
 
-            Rn "Mais de rien."
-            play sound "Click.mp3" noloop
+    Rn "Mais de rien."
+    play sound "Click.mp3" noloop
 
-            P "J'aurais une autre question."
-            play sound "Click.mp3" noloop
+    P "J'aurais une autre question."
+    play sound "Click.mp3" noloop
 
-            Rn "Oui, bien sûr, je t'écoute."
-            play sound "Click.mp3" noloop
+    Rn "Oui, bien sûr, je t'écoute."
+    play sound "Click.mp3" noloop
 
-            P "Je pourrais avoir ma nouvelle batterie dans ma salle de club directement ?"
-            play sound "Click.mp3" noloop
+    P "Je pourrais avoir ma nouvelle batterie dans ma salle de club directement ?"
+    play sound "Click.mp3" noloop
 
-            Rn "Oui, pas de soucis, je vous l'apporterai dans votre salle de club."
-            play sound "Click.mp3" noloop
+    Rn "Oui, pas de soucis, je vous l'apporterai dans votre salle de club."
+    play sound "Click.mp3" noloop
 
-            P "Merci beaucoup, c'est très gentil."
-            play sound "Click.mp3" noloop
+    P "Merci beaucoup, c'est très gentil."
+    play sound "Click.mp3" noloop
 
-            Rn "Pas de soucis, c'est mon travail."
-            play sound "Click.mp3" noloop
+    Rn "Pas de soucis, c'est mon travail."
+    play sound "Click.mp3" noloop
 
-            P "D'accord, merci encore."
-            play sound "Click.mp3" noloop
+    P "D'accord, merci encore."
+    play sound "Click.mp3" noloop
 
-            "{b}{i}tu finis par raccrocher.{/i}{/b}"
-            play sound "Click.mp3" noloop
+    "{b}{i}tu finis par raccrocher et tu te tournes vers [newname].{/i}{/b}"
+    play sound "Click.mp3" noloop 
 
-            P "Bon, j'ai commandé la batterie de 10000 Wh, elle arrivera dans deux heures dans notre salle de club."
-            play sound "Click.mp3" noloop
+    P "Bon, j'ai commandé la batterie de [newbattery] W, elle arrivera dans deux heures dans notre salle de club."
+    play sound "Click.mp3" noloop
 
-            Na "Super, merci beaucoup [prenom]."
-            play sound "Click.mp3" noloop
+    if newbattery == "7000":
 
-            P "Pas de soucis, c'est normal."
-            play sound "Click.mp3" noloop
+        Na "Super, merci beaucoup [prenom], je suis sûre qu'elle sera parfaite la nouvelle batterie."
+        play sound "Click.mp3" noloop 
 
-            Na "Bon je vais rester déconnectée pendant deux heures pour économiser de l'énergie."
-            play sound "Click.mp3" noloop
+    else: 
 
-            P "D'accord, je vais te laisser faire."
-            play sound "Click.mp3" noloop
+        Na "Super, merci beaucoup [prenom]."
+        play sound "Click.mp3" noloop 
 
-            Na "Ok alors, à tout à l'heure."
-            play sound "Click.mp3" noloop
+    P "Pas de soucis, c'est normal."
+    play sound "Click.mp3" noloop
 
-            P "À tout à l'heure [newname]."
-            play sound "Click.mp3" noloop 
+    Na "Bon je vais rester déconnectée pendant deux heures pour économiser de l'énergie."
+    play sound "Click.mp3" noloop
 
-            Na "Déconnexion....."
-            play sound "Click.mp3" noloop
+    P "D'accord, je vais te laisser faire."
+    play sound "Click.mp3" noloop
 
-            "{b}{i}[newname] se déconnecte.{/i}{/b}"
-            play sound "Click.mp3" noloop
-           
-            P "Bon je vais me posez pour lire."
-            play sound "Click.mp3" noloop
+    Na "Ok alors, à tout à l'heure."
+    play sound "Click.mp3" noloop
 
-            "{b}{i}[newname] se déconnecte.{/i}{/b}"
-            play sound "Click.mp3" noloop    
+    P "À tout à l'heure [newname]."
+    play sound "Click.mp3" noloop 
 
-            # à modifier 
+    Na "Déconnexion....."
+    play sound "Click.mp3" noloop
 
-            hide screen clubroom with moveoutright
-            hide screen points with moveoutleft 
-            hide screen day with moveoutleft
-            scene black with fade 
+    "{b}{i}[newname] se déconnecte.{/i}{/b}"
+    play sound "Click.mp3" noloop
 
-            "{b}{i} Fin numéro 16 : Batterie trop puissante pour [newname] qui lui a causé une surchauffe.{/i}{/b}"
-            play sound "Menu.mp3" noloop
+    P "Bon je vais me posez pour lire."
+    play sound "Click.mp3" noloop   
 
-            menu:     
+    hide screen room with moveoutright 
+    hide screen points with moveoutleft
+    hide screen day with moveoutleft
+    scene black with fade 
 
-                "{b}{i}Abandonner{/i}{/b}" :
-                    return
-                    
-                "{b}{i}Réessayer{/i}{/b}" : 
+    "{b}{i}Tu te poses tranquillement pour lire pendant deux heures.{/i}{/b}"
+    play sound "Click.mp3" noloop
 
-                    P "Non [newname] refuserait que j'abandonne si facilement."
-                    play sound "Click.mp3" noloop
+    scene room with fade 
+    show screen day with moveinleft
+    show screen points with moveinleft
+    show screen room with moveinright
+ 
+    P "Bon, j'ai fini de lire, je vais démarrer [newname] pour aller en club."
+    play sound "Click.mp3" noloop
 
-                    $ points += 4000 
+    "{b}{i}Tu te lèves puis tu aperçois [newname] déconnectée contre le mur.{/i}{/b}"
+    play sound "Click.mp3" noloop
 
-                    scene clubroom with fade
-                    show screen clubroom with moveinright
-                    show screen points with moveinleft
-                    show screen day with moveinleft
-                    play music "Soundtrack.mp3" loop volume 1.0
-                    jump choice9
+    P "Elle est encore déconnectée."
+    play sound "Click.mp3" noloop 
+
+    P "Je vais la démarrer."
+    play sound "Menu.mp3" noloop 
+
+    menu:   
+
+        "{b}{i} Démarrer [newname].{/i}{/b}" : 
+            play sound "Menu.mp3" noloop 
+
+label password27:  
+
+    $ entered_password = renpy.input("Veuillez entrer votre mot de passe pour [newname].")
+    $ entered_password = entered_password.strip()
+
+    if entered_password == stored_password: 
+
+        "Mot de passe correct. Accès autorisé." 
+        play sound "Menu.mp3" noloop
+
+    else: 
+
+        "Mot de passe incorrect. Accès refusé." 
+        play sound "Menu.mp3" noloop
+        jump password27 
+
+    $ start = get_random_start()
+    Na "[start]"
+    play sound "Click.mp3" noloop
+
+    $ salutation_rdm = get_random_salutation()
+    Na "[salutation_rdm]"
+    play sound "Click.mp3" noloop
+
+    $ comment_ca_va = get_random_comment_ca_va()
+    P "[comment_ca_va]"
+    play sound "Click.mp3" noloop
+
+    Na "Je suis encore fatiguée à cause de la batterie."
+    play sound "Click.mp3" noloop
+
+    P "Oui, je comprends, mais tu vas pouvoir te recharger dans la salle de club."
+    play sound "Click.mp3" noloop
+
+    Na "Oui, j'espère que ça ira mieux après."
+    play sound "Click.mp3" noloop
+
+    P "Bon, on va à la salle de club ?"
+    play sound "Click.mp3" noloop
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen room with moveoutright  
+    hide screen points with moveoutleft
+    hide screen day with moveoutleft
+    scene black with fade 
+
+    "{b}{i}Tu quittes ta chambre avec [newname].{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hallway with fade 
+    show screen day with moveinleft
+    show screen points with moveinleft
+    show screen hallway with moveinright
+
+    "{b}{i}Tu continues dans le couloir avec [newname].{/i}{/b}"
+    play sound "Footsteps.mp3" noloop  
+ 
+    hide screen hallway with moveoutright
+    hide screen points with moveoutleft
+    hide screen day with moveoutleft
+    scene staircase with fade 
+
+    "{b}{i}Tu continues vers le hall avec [newname].{/i}{/b}"
+    play sound "Footsteps.mp3" noloop   
+
+    scene hall with fade
+    show screen day with moveinleft
+    show screen points with moveinleft
+    show screen hall with moveinright
+
+    "{b}{i}Tu entres dans ta salle de club.{/i}{/b}"
+    play sound "Door.mp3" noloop 
+ 
+    scene clubroom with fade 
+    show screen day with moveinleft
+    show screen points with moveinleft
+    show screen clubroom with moveinright 
+
+    P "Bon, on est dans la salle de club, tu peux te recharger ici."
+    play sound "Click.mp3" noloop
+
+    Na "Merci beaucoup [prenom], je vais me recharger tranquillement."
+    play sound "Click.mp3" noloop
+
+    P "Oui mais d'abord il faut qu'on change la batterie."
+    play sound "Click.mp3" noloop
+
+    
 
 label end_script2:
     call script3 
