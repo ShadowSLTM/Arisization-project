@@ -467,12 +467,16 @@ label password11:
             P "[thanks]"
             play sound "Click.mp3" noloop 
 
-            # à modifier 
-
-    Ln "Si jamais je te laisse mon numéro profesionnel si il y a du nouveau avec [newname]."
+    Ln "Si jamais je te laisse mon numéro profesionnel s'il y a du nouveau avec [newname]."
     play sound "Click.mp3" noloop
 
-    P "Il n'y a pas de soucis, je vous informerais si il y a du nouveau avec elle."
+    p "Car je dois déclarer tout les changement que je fais ?"
+    play sound "Click.mp3" noloop 
+
+    Ln "Oui conformément à l’article 24, alinéa 5, TToute modification majeures dois être documentées."
+    play sound "Click.mp3" noloop
+
+    P "Il n'y a pas de soucis, je vous informerais s'il y a du nouveau avec elle."
     play sound "Click.mp3" noloop
 
     Ln "Bon je vais devoir vous laisser j'ai des choses à faire."
@@ -3647,13 +3651,13 @@ label password15:
     J2 "Vous ne pouvez pas m’arrêter pour ça !"
     play sound "Click.mp3" noloop
 
-    O "Oh que si. Conformément à l’article 24, alinéa 5, du 18 novembre 2097, toute discrimination envers les robots est désormais punie par la loi."
+    O "Oh que si. Conformément à l’article 24, alinéa 6, du 18 novembre 2097, toute discrimination envers les robots est désormais punie par la loi."
     play sound "Click.mp3" noloop 
 
     J2 "C’est absurde !!!"
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
-    O "Et ce n’est pas tout. Tu es également suspecté d’appartenir au groupe de hackers connu sous le nom de 'Ghosts'... et d’être impliqué dans les récentes attaques contre le lycée."
+    O "Et ce n’est pas tout. Tu es également suspectée d’appartenir au groupe de hackers connu sous le nom de 'Ghosts'... et d’être impliqué dans les récentes attaques contre le lycée."
     play sound "Click.mp3" noloop
 
     Oh "Par conséquent, lève-toi calmement, mets les mains derrière le dos, et suis-nous sans résistance."
@@ -13152,10 +13156,276 @@ label password27:
     P "Oui mais d'abord il faut qu'on change la batterie."
     play sound "Click.mp3" noloop
 
-    
+    Na "Oui c'est vrai tu as raison."
+    play sound "Click.mp3" noloop  
+
+    P "Bon je vais déjà voir si la nouvelle batterie est arrivée."
+    play sound "Click.mp3" noloop
+
+    Na "Elle doit déjà être arrivée."
+    play sound "Click.mp3" noloop
+
+    P "Je pense bien aussi."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu regardes dans la salle de club pour voir si la nouvelle batterie est là et la voit sur la table.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Oui elle est arrivéée, elle est sur la table."
+    play sound "Click.mp3" noloop
+
+    Na "Cool alors on va pouvoir la changer."
+    play sound "Click.mp3" noloop
+
+    P "Oui donc je vais devoir te déconnecter."
+    play sound "Click.mp3" noloop
+
+    Na "Oui, je sais, mais ça ne me dérange pas."
+    play sound "Click.mp3" noloop
+
+    P "D'accord, je vais te déconnecter."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu t'approches et déconnectes [newname].{/i}{/b}"
+    play sound "Menu.mp3" noloop
+
+    menu:   
+
+        "{b}{i}Déconnecter complètement [newname].{/i}{/b}" : 
+            play sound "Menu.mp3" noloop 
+
+    Na "Déconnexion en cours..."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[newname] se déconnecte.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Bien je vais pouvoir commencer à travailler sur la batterie."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu commences à travailler sur la batterie.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    P "Bon voyons voir la nouvelle batterie."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu la déballes tranquillement.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Elle est vraiment belle, elle a l'air de bonne qualité."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu ouvres la capot arrière d'Aris pour retirer l'ancienne.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Allez encore un petit effort."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu retires l'ancienne batterie et la mets de côté.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Voilà, l'ancienne batterie est retirée."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu mets la nouvelle batterie à la place de l'ancienne.{/i}{/b}"
+    play sound "Click.mp3" noloop   
+
+    P "Voilà, la nouvelle batterie est installée."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu refermes le capot arrière d'Aris.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Voilà, c'est fait je vais rebrancher [newname]."
+    play sound "Click.mp3" noloop
+
+    menu:
+
+        "{b}{i}Rebrancher [newname].{/i}{/b}" :
+            play sound "Menu.mp3" noloop
+
+label password27:  
+
+    $ entered_password = renpy.input("Veuillez entrer votre mot de passe pour [newname].")
+    $ entered_password = entered_password.strip()
+
+    if entered_password == stored_password: 
+
+        "Mot de passe correct. Accès autorisé." 
+        play sound "Menu.mp3" noloop
+
+    else: 
+
+        "Mot de passe incorrect. Accès refusé." 
+        play sound "Menu.mp3" noloop
+        jump password27 
+
+    $ start = get_random_start()
+    Na "[start]"
+    play sound "Click.mp3" noloop
+
+    Na "Initialisation de la batterie en cours."
+    play sound "Click.mp3" noloop
+
+    Na "10\%"
+    play sound "Click.mp3" noloop
+
+    Na "20\%"
+    play sound "Click.mp3" noloop
+
+    Na "30\%"
+    play sound "Click.mp3" noloop
+
+    Na "40\%"
+    play sound "Click.mp3" noloop
+
+    if newbattery == "7000":
+
+        Na "50\%"
+        play sound "Click.mp3" noloop
+
+        Na "60\%"
+        play sound "Click.mp3" noloop
+
+        Na "70\%"
+        play sound "Click.mp3" noloop
+
+        Na "80\%" 
+        play sound "Click.mp3" noloop
+
+        Na "90\%"
+        play sound "Click.mp3" noloop
+
+        Na "100\%"
+        play sound "Click.mp3" noloop
+
+        Na "Vérification...."
+        play sound "Menu.mp3" noloop 
+
+        $ success += 1 
+        $ quest40 += 1
+        $ stockage += 15.0 
+
+        show screen update with moveinright
+
+        Na "Initialisation de la batterie terminée, elle a été correctement installée."
+        play sound "Click.mp3" noloop 
+
+        hide screen update with moveoutright
+
+    else: 
+
+        if newbattery == "4000":
+
+            Na "échec de l'initialisation de la batterie."
+            play sound "Click.mp3" noloop 
+
+            P "Quoi ? Comment ça ?"
+            play sound "Click.mp3" noloop
+
+            Na "La batterie est trop faible pour démarrer correctement."
+            play sound "Click.mp3" noloop
+
+            "{b}{i}[newname] s'éteint subitement.{/i}{/b}"
+            play sound "Click.mp3" noloop
+
+            P "Et merde....."
+            play sound "Click.mp3" noloop
+
+            hide screen clubroom with moveoutright
+            hide screen point with moveoutleft
+            hide screen day with moveoutleft
+            scene black with fade 
+
+            "{b}{i}Fin numéro 15 : [newname] a refusé de démarrer à cause d'une batterie trop faible.{/i}{/b}"
+            play sound "Menu.mp3" noloop
+
+            menu:    
+
+                "{b}{i}Abandonner{/i}{/b}" :
+                    return
+                 
+                "{b}{i}Réessayer.{/i}{/b}" : 
+                    play sound "Menu.mp3" noloop
+
+                    P "Non [newname] refuserait que j'abandonne si facilement."
+                    play sound "Click.mp3" noloop
+
+                    scene clubroom with fade
+                    show screen class_404 with moveinright
+                    show screen point with moveinleft
+                    show screen day with moveinleft
+                    $ points += 2000
+                    play music "Soundtrack.mp3" loop volume 1.0
+                    jump choice9
+
+        else:
+
+            Na "50\%"
+            play sound "Click.mp3" noloop
+
+            Na "60\%"
+            play sound "Click.mp3" noloop
+
+            Na "70\%"
+            play sound "Click.mp3" noloop
+
+            Na "80\%" 
+            play sound "Click.mp3" noloop
+
+            Na "90\%"
+            play sound "Click.mp3" noloop
+
+            Na "100\%"
+            play sound "Click.mp3" noloop
+
+            Na "Vérification...."
+            play sound "Menu.mp3" noloop 
+            
+            Na "échec de l'initialisation de la batterie."
+            play sound "Click.mp3" noloop 
+
+            P "Quoi ? Comment ça ?"
+            play sound "Click.mp3" noloop
+
+            Na "La batterie est trop puissante pour moi."
+            play sound "Click.mp3" noloop
+
+            "{b}{i}[newname] commeence à surchauffer et fini par griller.{/i}{/b}"
+            play sound "Click.mp3" noloop
+
+            P "Et merde....."
+            play sound "Click.mp3" noloop
+
+            hide screen clubroom with moveoutright
+            hide screen point with moveoutleft
+            hide screen day with moveoutleft
+            scene black with fade
+
+            "{b}{i}Fin numéro 16 : [newname] a surchauffé à cause d'une batterie trop puissante.{/i}{/b}"
+            play sound "Menu.mp3" noloop
+
+            menu:    
+
+                "{b}{i}Abandonner{/i}{/b}" :
+                    return
+                 
+                "{b}{i}Réessayer.{/i}{/b}" : 
+                    play sound "Menu.mp3" noloop
+
+                    P "Non [newname] refuserait que j'abandonne si facilement."
+                    play sound "Click.mp3" noloop
+
+                    scene clubroom with fade
+                    show screen class_404 with moveinright
+                    show screen point with moveinleft
+                    show screen day with moveinleft
+                    $ points += 4000
+                    play music "Soundtrack.mp3" loop volume 1.0
+                    jump choice9
 
 label end_script2:
     call script3 
     return 
 
-# Aris la plus belle ###################
+# Aris la plus belle ################### 

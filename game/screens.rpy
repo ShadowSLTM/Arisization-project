@@ -1787,16 +1787,6 @@ screen update():
         yalign 0.08
         xalign 0.999
         add "success.jpg"
- 
-screen web():
-    frame: 
-        xalign 0
-        ypos 60
-        has vbox  
-
-        text "test naviguateur":
-            size 60
-            xalign 0.5 
 
 screen Shop():
 
@@ -1812,19 +1802,7 @@ screen Shop():
 
             label "{b}{i}— Clés d'accès —\n{/i}{/b}" 
 
-            if config.version == "Version_développeur":
-
-                text _("Clé officielle : ARIS-8J4K-F9Q7\n")
-
-            else:
-
-                if config.version == "Version_démo":
-
-                    text _("Clé d'accès de la démo : ARIS-DEMO\n")
-
-                else: 
-
-                    text _("Clé officielle :ARIS-8J4K-F9Q7\n")
+            text _("Clé officielle : ARIS-8J4K-F9Q7\n")
 
             text _("Cette clé d'accès est à inscrire lors que vous lancez une nouvelle partie.\n")
 

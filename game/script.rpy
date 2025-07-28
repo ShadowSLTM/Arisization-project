@@ -6792,7 +6792,7 @@ label choice8:
             play sound "Menu.mp3" noloop 
 
             $ success += 1 
-            $ quest12 += 1
+            $ quest40 += 1
             $ stockage += 5.0 
             $ update += 1.0 
 
@@ -10620,7 +10620,7 @@ label code:
                                             "Erreur détectée à la huitième ligne, le code a été mal compilé."
                                             play sound "Click.mp3" noloop    
 
-                                        jump code 
+                                            jump code 
 
                                     else:
 
