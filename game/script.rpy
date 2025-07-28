@@ -496,7 +496,7 @@ label hack:
 
     else:    
 
-        if persistant.abandon == True: 
+        if persistent.abandon == True: 
 
             $ A = Character("AK-25", color="#00eeff")
             $ stockage += 1.0 
@@ -706,7 +706,7 @@ label choice1:
 
                     if key == "ARIS-8J4K-F9Q7":
 
-                        $ persistant.abandon = True
+                        $ persistent.abandon = True
                         return 
 
                     else: 
@@ -6638,7 +6638,7 @@ label choice8:
         P "Il semblerait aussi que son numéro de série soit [serie]."
         play sound "Click.mp3" noloop  
 
-        if persistant.abandon == True: 
+        if persistent.abandon == True: 
 
             P "Je vois que c'est le vingt-cinquième robot de la première série de 2079."
             play sound "Click.mp3" noloop 

@@ -13244,7 +13244,7 @@ label password27:
         "{b}{i}Rebrancher [newname].{/i}{/b}" :
             play sound "Menu.mp3" noloop
 
-label password27:  
+label password28:  
 
     $ entered_password = renpy.input("Veuillez entrer votre mot de passe pour [newname].")
     $ entered_password = entered_password.strip()
@@ -13258,7 +13258,7 @@ label password27:
 
         "Mot de passe incorrect. Accès refusé." 
         play sound "Menu.mp3" noloop
-        jump password27 
+        jump password28
 
     $ start = get_random_start()
     Na "[start]"
