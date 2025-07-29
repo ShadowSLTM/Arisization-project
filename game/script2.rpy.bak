@@ -13424,57 +13424,8 @@ label password28:
                     play music "Soundtrack.mp3" loop volume 1.0
                     jump choice9
 
-    P "Oui ça fonctionne correctement."
-    play sound "Click.mp3" noloop
-
-    Na "Merci beaucoup de m'avoir installé la batterie."
-    play sound "Click.mp3" noloop
-
-    $ nothing = get_random_nothing()
-    P "[nothing]"
-    play sound "Click.mp3" noloop
-
-    Na "Maintenant que ce probléme est réglé, on fait quoi ?"
-    play sound "Click.mp3" noloop
-
-    P "Je ne sais pas trop..."
-    play sound "Click.mp3" noloop
-
-    Na "Tu pourrait regarder la consommation de la batterie."
-    play sound "Click.mp3" noloop
-
-    P "Oui pourquoi pas."
-    play sound "Click.mp3" noloop
-
-    "{b}{i}Tu ouvres les paramétres pour voir la consommation électrique.{/i}{/b}"
-    play sound "Click.mp3" noloop
-
-    P "Bon voyons voir cette consommation électrique de ta baterrie"
-    play sound "Click.mp3" noloop
-
-    "{b}{i}Tu regardes les paramétres.{/i}{/b}"
-    play sound "Click.mp3" noloop
-
-    P "Il semblerait que tu consommes 340 à 350WH."
-    play sound "Click.mp3" noloop
-
-    Na "Et ça veut dire quoi exactement ?"
-    play sound "Click.mp3" noloop
-
-    P "ça veut dire qu'avec la batterie actuelle tu as une autonomie de 20 heures approximativemement."
-    play sound "Click.mp3" noloop
-
-    Na "20 heurea d'autonomie !? Mais c'est géniale ça."
-    play sound "Click.mp3" noloop
-
-    P ""
-
-
-
-
-
 label end_script2:
-    call script3
+    call script3 
     return 
 
 # Aris la plus belle ################### 
