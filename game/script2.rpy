@@ -276,7 +276,7 @@ label password11:
     "{b}{i}Tu entres dans le bureau des élèves.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    play music "Soundtrack2.mp3" loop volume 1.0
+    
 
     scene office with fade 
     show screen day with moveinleft
@@ -2524,7 +2524,7 @@ label password14:
 
 label examen_francais:
 
-    play music "Soundtrack2.mp3" loop volume 1.0
+    
 
     $ grade = 0.0 
 
@@ -2654,7 +2654,7 @@ label examen_francais:
 
     $ renpy.block_rollback() 
 
-    stop music fadeout 1.0
+    stop music fadeout 1.0 
 
     Na "Cette examen n'était si dur que ça."
     play sound "Click.mp3" noloop
@@ -3065,7 +3065,7 @@ label examen_francais:
                 show screen day with moveinleft
                 $ points += 300
                 $ stockage -= 5.0 
-                play music "Soundtrack2.mp3" loop volume 1.0
+                
                 jump examen_francais 
                     
     else:
@@ -4247,7 +4247,7 @@ label update2:
                     show screen room with moveinright
                     show screen point with moveinleft
                     show screen day with moveinleft
-                    play music "Soundtrack2.mp3" loop volume 1.0
+                    
                     jump update2
 
     else: 
@@ -5318,7 +5318,7 @@ label password17:
 
 label philosophie_technologie:
 
-    play music "Soundtrack2.mp3" loop volume 1.0
+    
 
     $ grade = 0.0 
 
@@ -5727,7 +5727,7 @@ label philosophie_technologie:
                 show screen point with moveinleft
                 show screen day with moveinleft
                 $ points += 300
-                play music "Soundtrack.mp3" loop volume 1.0
+                
                 jump phillosophie_technologie
     
     else:
@@ -11437,8 +11437,6 @@ label password23:
     show screen room with moveinright
     show screen points with moveinleft
 
-    play music "Soundtrack3.mp3" loop volume 1.0
-
     "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
@@ -13356,7 +13354,6 @@ label password28:
                     show screen point with moveinleft
                     show screen day with moveinleft
                     $ points += 2000
-                    play music "Soundtrack.mp3" loop volume 1.0
                     jump choice9
 
         else:
@@ -13421,7 +13418,7 @@ label password28:
                     show screen point with moveinleft
                     show screen day with moveinleft
                     $ points += 4000
-                    play music "Soundtrack.mp3" loop volume 1.0
+                    
                     jump choice9
 
     P "Oui ça fonctionne correctement."
@@ -13527,10 +13524,12 @@ label password28:
     P "Voilà, j'ai trouvé un tourne-vis."
     play sound "Click.mp3" noloop
 
-    J2 "Merci !"
+    $ thanks = get_random_thanks()
+    J2 "[thanks]" 
     play sound "Click.mp3" noloop
 
-    P "Mais de rien."
+    $ nothing = get_random_nothing()
+    P "[nothing]"
     play sound "Click.mp3" noloop
 
     "{b}{i}[J2] finit par quitter la salle.{/i}{/b}"
@@ -13575,8 +13574,10 @@ label password28:
     Na "J'espère que tu as raison."
     play sound "Click.mp3" noloop
 
+
+
 label end_script2:
-    call script3
+    call script3 from _call_script3
     return 
 
 # Aris la plus belle ################### 

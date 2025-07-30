@@ -276,7 +276,7 @@ label password11:
     "{b}{i}Tu entres dans le bureau des élèves.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    play music "Soundtrack2.mp3" loop volume 1.0
+    
 
     scene office with fade 
     show screen day with moveinleft
@@ -473,7 +473,7 @@ label password11:
     p "Car je dois déclarer tout les changement que je fais ?"
     play sound "Click.mp3" noloop 
 
-    Ln "Oui conformément à l’article 24, alinéa 5, TToute modification majeures dois être documentées."
+    Ln "Oui conformément à l’article 24, alinéa 5, Toute modification majeures dois être documentées."
     play sound "Click.mp3" noloop
 
     P "Il n'y a pas de soucis, je vous informerais s'il y a du nouveau avec elle."
@@ -2524,7 +2524,7 @@ label password14:
 
 label examen_francais:
 
-    play music "Soundtrack2.mp3" loop volume 1.0
+    
 
     $ grade = 0.0 
 
@@ -2654,7 +2654,7 @@ label examen_francais:
 
     $ renpy.block_rollback() 
 
-    stop music fadeout 1.0
+    stop music fadeout 1.0 
 
     Na "Cette examen n'était si dur que ça."
     play sound "Click.mp3" noloop
@@ -3065,7 +3065,7 @@ label examen_francais:
                 show screen day with moveinleft
                 $ points += 300
                 $ stockage -= 5.0 
-                play music "Soundtrack2.mp3" loop volume 1.0
+                
                 jump examen_francais 
                     
     else:
@@ -3651,10 +3651,10 @@ label password15:
     J2 "Vous ne pouvez pas m’arrêter pour ça !"
     play sound "Click.mp3" noloop
 
-    O "Oh que si. Conformément à l’article 24, alinéa 6, du 18 novembre 2097, toute discrimination envers les robots est désormais punie par la loi."
+    O "Oh que si. Conformément à l’article 24, alinéa 6, du 18 novembre 2097, toute discrimination envers les robots humanoides est désormais punie par la loi."
     play sound "Click.mp3" noloop 
 
-    J2 "C’est absurde !!!"
+    J2 "C’est absurde !!!" 
     play sound "Click.mp3" noloop 
 
     O "Et ce n’est pas tout. Tu es également suspectée d’appartenir au groupe de hackers connu sous le nom de 'Ghosts'... et d’être impliqué dans les récentes attaques contre le lycée."
@@ -4247,7 +4247,7 @@ label update2:
                     show screen room with moveinright
                     show screen point with moveinleft
                     show screen day with moveinleft
-                    play music "Soundtrack2.mp3" loop volume 1.0
+                    
                     jump update2
 
     else: 
@@ -5318,7 +5318,7 @@ label password17:
 
 label philosophie_technologie:
 
-    play music "Soundtrack2.mp3" loop volume 1.0
+    
 
     $ grade = 0.0 
 
@@ -5727,7 +5727,7 @@ label philosophie_technologie:
                 show screen point with moveinleft
                 show screen day with moveinleft
                 $ points += 300
-                play music "Soundtrack.mp3" loop volume 1.0
+                
                 jump phillosophie_technologie
     
     else:
@@ -11437,8 +11437,6 @@ label password23:
     show screen room with moveinright
     show screen points with moveinleft
 
-    play music "Soundtrack3.mp3" loop volume 1.0
-
     "{b}{i}Tu te réveilles tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
@@ -13154,7 +13152,7 @@ label password27:
     play sound "Click.mp3" noloop
 
     P "Oui mais d'abord il faut qu'on change la batterie."
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     Na "Oui c'est vrai tu as raison."
     play sound "Click.mp3" noloop  
@@ -13356,7 +13354,6 @@ label password28:
                     show screen point with moveinleft
                     show screen day with moveinleft
                     $ points += 2000
-                    play music "Soundtrack.mp3" loop volume 1.0
                     jump choice9
 
         else:
@@ -13421,11 +13418,166 @@ label password28:
                     show screen point with moveinleft
                     show screen day with moveinleft
                     $ points += 4000
-                    play music "Soundtrack.mp3" loop volume 1.0
+                    
                     jump choice9
 
+    P "Oui ça fonctionne correctement."
+    play sound "Click.mp3" noloop
+
+    Na "Merci beaucoup de m'avoir installé la batterie."
+    play sound "Click.mp3" noloop
+
+    $ nothing = get_random_nothing()
+    P "[nothing]"
+    play sound "Click.mp3" noloop
+
+    Na "Maintenant que ce probléme est réglé, on fait quoi ?"
+    play sound "Click.mp3" noloop
+
+    P "Je ne sais pas trop..."
+    play sound "Click.mp3" noloop
+
+    Na "Tu pourrait regarder la consommation de la batterie."
+    play sound "Click.mp3" noloop
+
+    P "Oui pourquoi pas."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu ouvres les paramétres pour voir la consommation électrique.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Bon voyons voir cette consommation électrique de ta baterrie."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu regardes les paramétres.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Il semblerait que tu consommes 340 à 350WH."
+    play sound "Click.mp3" noloop
+
+    Na "Et ça veut dire quoi exactement ?"
+    play sound "Click.mp3" noloop
+
+    P "ça veut dire qu'avec la batterie actuelle tu as une autonomie de 20 heures approximativemement."
+    play sound "Click.mp3" noloop
+
+    Na "20 heures d'autonomie !? Mais c'est génial ça."
+    play sound "Click.mp3" noloop
+
+    P "Oui c'est génial, car avec l'ancienne batterie, l'autonomie était de 11 heures seulement."
+    play sound "Click.mp3" noloop 
+
+    Na "C'est super, je vais pouvoir faire plein de choses maintenant."
+    play sound "Click.mp3" noloop
+
+    P "Oui mais il faut faire attention à ne pas trop consommer d'énergie."
+    play sound "Click.mp3" noloop 
+
+    Na "Oui, je vais faire attention à ne pas trop consommer d'énergie."
+    play sound "Knock.mp3" noloop 
+
+    "{b}{i} Puis quelqu'un frappe à votre porte.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    Na "C'est qui frappe à notre porte ?" 
+    play sound "Click.mp3" noloop
+
+    P "Je ne sais pas mais je vais aller voir."
+    play sound "Click.mp3" noloop
+
+    Na "Ok alors vas-y."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu t'approches pour aller ouvrir la porte.{/i}{/b}"
+    play sound "Door.mp3" noloop 
+
+    P "Qui est là ?"
+    play sound "Click.mp3" noloop
+
+    J2 "C'est moi [J2]."
+    play sound "Click.mp3" noloop
+
+    P "Oh c'est toi, qu'est-ce que tu me veux encore ?"
+    play sound "Click.mp3" noloop
+
+    J2 "Je voulais savoir si je pouvais un tourne-vis."
+    play sound "Click.mp3" noloop
+
+    P "Un tourne-vis ? Mais pourquoi tu veux un tourne-vis ?"
+    play sound "Click.mp3" noloop
+
+    J2 "Je voulais juste démonter un truc sur mon ordi."
+    play sound "Click.mp3" noloop
+
+    P "D'accord, mais fais attention à ne pas abîmer quoi que ce soit."
+    play sound "Click.mp3" noloop
+
+    J2 "T'inquiète pas, je suis prudent."
+    play sound "Click.mp3" noloop
+
+    P "Bon, je vais te chercher un tourne-vis."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu vas chercher un tourne-vis dans la salle de club.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Voilà, j'ai trouvé un tourne-vis."
+    play sound "Click.mp3" noloop
+
+    $ thanks = get_random_thanks()
+    J2 "[thanks]" 
+    play sound "Click.mp3" noloop
+
+    $ nothing = get_random_nothing()
+    P "[nothing]"
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[J2] finit par quitter la salle.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Enfin débarrassé de [J2]."
+    play sound "Click.mp3" noloop
+
+    Na "Oui mais j'ai un mauvais pressentiment."
+    play sound "Click.mp3" noloop
+
+    P "Pourquoi tu as un mauvais pressentiment ?"
+    play sound "Click.mp3" noloop
+
+    Na "C'est bizarre qu'elle vienne me demander un tourne-vis alors qu'elle n'en a jamais eu besoin avant."
+    play sound "Click.mp3" noloop
+
+    P "Oui c'est vrai, mais peut-être qu'elle a juste besoin de démonter quelque chose."
+    play sound "Click.mp3" noloop
+
+    Na "Surtout que son comportement avec moi était horrible."
+    play sound "Click.mp3" noloop
+
+    P "Oui, c'est vrai, mais peut-être qu'elle a changé."
+    play sound "Click.mp3" noloop
+
+    Na "Peut-être, mais je ne la fais pas confiance."
+    play sound "Click.mp3" noloop
+
+    P "Oui, je comprends, mais on ne peut pas toujours se fier à son instinct."
+    play sound "Click.mp3" noloop
+
+    Na "Je te rappelle qu'elle m'a frappé et insulté sans hésitation !!!"
+    play sound "Click.mp3" noloop
+
+    P "Oui, je me souviens."
+    play sound "Click.mp3" noloop
+
+    P "Mais je ne pense pas qu'elle recommencera."
+    play sound "Click.mp3" noloop
+
+    Na "J'espère que tu as raison."
+    play sound "Click.mp3" noloop
+
+
+
 label end_script2:
-    call script3 
+    call script3
     return 
 
 # Aris la plus belle ################### 
