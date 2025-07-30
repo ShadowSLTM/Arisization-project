@@ -473,7 +473,7 @@ label password11:
     p "Car je dois déclarer tout les changement que je fais ?"
     play sound "Click.mp3" noloop 
 
-    Ln "Oui conformément à l’article 24, alinéa 5, TToute modification majeures dois être documentées."
+    Ln "Oui conformément à l’article 24, alinéa 5, Toute modification majeures dois être documentées."
     play sound "Click.mp3" noloop
 
     P "Il n'y a pas de soucis, je vous informerais s'il y a du nouveau avec elle."
@@ -3651,10 +3651,10 @@ label password15:
     J2 "Vous ne pouvez pas m’arrêter pour ça !"
     play sound "Click.mp3" noloop
 
-    O "Oh que si. Conformément à l’article 24, alinéa 6, du 18 novembre 2097, toute discrimination envers les robots est désormais punie par la loi."
+    O "Oh que si. Conformément à l’article 24, alinéa 6, du 18 novembre 2097, toute discrimination envers les robots humanoides est désormais punie par la loi."
     play sound "Click.mp3" noloop 
 
-    J2 "C’est absurde !!!"
+    J2 "C’est absurde !!!" 
     play sound "Click.mp3" noloop 
 
     O "Et ce n’est pas tout. Tu es également suspectée d’appartenir au groupe de hackers connu sous le nom de 'Ghosts'... et d’être impliqué dans les récentes attaques contre le lycée."
@@ -13154,7 +13154,7 @@ label password27:
     play sound "Click.mp3" noloop
 
     P "Oui mais d'abord il faut qu'on change la batterie."
-    play sound "Click.mp3" noloop
+    play sound "Click.mp3" noloop 
 
     Na "Oui c'est vrai tu as raison."
     play sound "Click.mp3" noloop  
@@ -13566,10 +13566,14 @@ label password28:
     Na "Je te rappelle qu'elle m'a frappé et insulté sans hésitation !!!"
     play sound "Click.mp3" noloop
 
- 
+    P "Oui, je me souviens."
+    play sound "Click.mp3" noloop
 
+    P "Mais je ne pense pas qu'elle recommencera."
+    play sound "Click.mp3" noloop
 
-
+    Na "J'espère que tu as raison."
+    play sound "Click.mp3" noloop
 
 label end_script2:
     call script3
