@@ -13449,7 +13449,7 @@ label password28:
     "{b}{i}Tu ouvres les paramétres pour voir la consommation électrique.{/i}{/b}"
     play sound "Click.mp3" noloop
 
-    P "Bon voyons voir cette consommation électrique de ta baterrie"
+    P "Bon voyons voir cette consommation électrique de ta baterrie."
     play sound "Click.mp3" noloop
 
     "{b}{i}Tu regardes les paramétres.{/i}{/b}"
@@ -13464,11 +13464,109 @@ label password28:
     P "ça veut dire qu'avec la batterie actuelle tu as une autonomie de 20 heures approximativemement."
     play sound "Click.mp3" noloop
 
-    Na "20 heurea d'autonomie !? Mais c'est géniale ça."
+    Na "20 heures d'autonomie !? Mais c'est génial ça."
     play sound "Click.mp3" noloop
 
-    P ""
+    P "Oui c'est génial, car avec l'ancienne batterie, l'autonomie était de 11 heures seulement."
+    play sound "Click.mp3" noloop 
 
+    Na "C'est super, je vais pouvoir faire plein de choses maintenant."
+    play sound "Click.mp3" noloop
+
+    P "Oui mais il faut faire attention à ne pas trop consommer d'énergie."
+    play sound "Click.mp3" noloop 
+
+    Na "Oui, je vais faire attention à ne pas trop consommer d'énergie."
+    play sound "Knock.mp3" noloop 
+
+    "{b}{i} Puis quelqu'un frappe à votre porte.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    Na "C'est qui frappe à notre porte ?" 
+    play sound "Click.mp3" noloop
+
+    P "Je ne sais pas mais je vais aller voir."
+    play sound "Click.mp3" noloop
+
+    Na "Ok alors vas-y."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu t'approches pour aller ouvrir la porte.{/i}{/b}"
+    play sound "Door.mp3" noloop 
+
+    P "Qui est là ?"
+    play sound "Click.mp3" noloop
+
+    J2 "C'est moi [J2]."
+    play sound "Click.mp3" noloop
+
+    P "Oh c'est toi, qu'est-ce que tu me veux encore ?"
+    play sound "Click.mp3" noloop
+
+    J2 "Je voulais savoir si je pouvais un tourne-vis."
+    play sound "Click.mp3" noloop
+
+    P "Un tourne-vis ? Mais pourquoi tu veux un tourne-vis ?"
+    play sound "Click.mp3" noloop
+
+    J2 "Je voulais juste démonter un truc sur mon ordi."
+    play sound "Click.mp3" noloop
+
+    P "D'accord, mais fais attention à ne pas abîmer quoi que ce soit."
+    play sound "Click.mp3" noloop
+
+    J2 "T'inquiète pas, je suis prudent."
+    play sound "Click.mp3" noloop
+
+    P "Bon, je vais te chercher un tourne-vis."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu vas chercher un tourne-vis dans la salle de club.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Voilà, j'ai trouvé un tourne-vis."
+    play sound "Click.mp3" noloop
+
+    J2 "Merci !"
+    play sound "Click.mp3" noloop
+
+    P "Mais de rien."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[J2] finit par quitter la salle.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Enfin débarrassé de [J2]."
+    play sound "Click.mp3" noloop
+
+    Na "Oui mais j'ai un mauvais pressentiment."
+    play sound "Click.mp3" noloop
+
+    P "Pourquoi tu as un mauvais pressentiment ?"
+    play sound "Click.mp3" noloop
+
+    Na "C'est bizarre qu'elle vienne me demander un tourne-vis alors qu'elle n'en a jamais eu besoin avant."
+    play sound "Click.mp3" noloop
+
+    P "Oui c'est vrai, mais peut-être qu'elle a juste besoin de démonter quelque chose."
+    play sound "Click.mp3" noloop
+
+    Na "Surtout que son comportement avec moi était horrible."
+    play sound "Click.mp3" noloop
+
+    P "Oui, c'est vrai, mais peut-être qu'elle a changé."
+    play sound "Click.mp3" noloop
+
+    Na "Peut-être, mais je ne la fais pas confiance."
+    play sound "Click.mp3" noloop
+
+    P "Oui, je comprends, mais on ne peut pas toujours se fier à son instinct."
+    play sound "Click.mp3" noloop
+
+    Na "Je te rappelle qu'elle m'a frappé et insulté sans hésitation !!!"
+    play sound "Click.mp3" noloop
+
+ 
 
 
 
