@@ -139,7 +139,7 @@ default preferences.afm_time = 2
 ## Cela ne devrait généralement pas changer. Si vous le faîtes, choisissez
 ## toujours une chaîne de caractères littéraux, pas une expression.
 
-define config.save_directory = "ArisizationProject-juillet2097"
+define config.save_directory = "ArisizationProject-root"
 
 ## Icône #######################################################################
 ##
