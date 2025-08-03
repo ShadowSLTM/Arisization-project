@@ -2524,8 +2524,6 @@ label password14:
 
 label examen_francais:
 
-    
-
     $ grade = 0.0 
 
     P "Bon voyons voir....." 
@@ -13574,10 +13572,93 @@ label password28:
     Na "J'espère que tu as raison."
     play sound "Click.mp3" noloop
 
+    P "Oui ne t'inquiètes pas."
+    play sound "Click.mp3" noloop
+
+    Na "Si tu le dis, bon om fait quoi maintenant ?"
+    play sound "Click.mp3" noloop
+
+    P "Je ne sais pas car j'ai fait ce que je voulais pour la matinée."
+    play sound "Click.mp3" noloop
+
+    Na "Tu pourrais surveiller les fichiers systéme de [system]."
+    play sound "Click.mp3" noloop
+
+    P "Oui pourquoi pas"
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu te pose tramquillement pour voir ça.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Bon voyons voir ça."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu ouvres l'explorateur de fichiers.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Bon il est ou ce ficher system32 ?"
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu continues de chercher le fichier systéme.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Ah c'est bon je l'ai trouvé."
+    play sound "Click.mp3" noloop 
+
+    "{b}{i}Tu réalises que quelques choses ne va pas.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Pardon comment ça se fait !?"
+    play sound "Click.mp3" noloop 
+
+    Na "Il y a quoi [prenom], pourquoi tu cries ?"
+    play sound "Click.mp3" noloop 
+
+    P "J'ai trouvé le fichier systéme que je cherchais."
+    play sound "Click.mp3" noloop 
+
+    Na "Ok et alors."
+    play sound "Click.mp3" noloop 
+
+    P "J'ai découvert qu'il pouvait être supprimé."
+    play sound "Click.mp3" noloop 
+
+    Na "Bah comme n'importe quel fichier..."
+    play sound "Click.mp3" noloop 
+
+    P "Oui mais là je parle du system32 de ton systéme d'exploitation."
+    play sound "Click.mp3" noloop 
+
+    Na "Quoi mais ce fichier system32 est ultra important !!!"
+    play sound "Click.mp3" noloop 
+
+    P "Oui je le sais bien."
+    play sound "Click.mp3" noloop 
+
+    Na "Pour moi, ce fichier ne devrait pas être pouvoir supprimé."
+    play sound "Click.mp3" noloop 
+
+    P "Ou tu as raison."
+    play sound "Click.mp3" noloop 
+
+    Na "Mais de toute façon je sais que tu ne le feras pas, n'est-ce pas ?"
+    play sound "Click.mp3" noloop 
+
+    P "......."
+    play sound "Click.mp3" noloop 
+
+    menu:    
+
+        "{b}{i} Supprimer le system32.{/i}{/b}" : 
+            play sound "Menu.mp3" noloop 
+
+        "{b}{i} surveiller les fichiers.{/i}{/b}" : 
+            play sound "Menu.mp3" noloop 
+
 
 
 label end_script2:
-    call script3 from _call_script3
+    call script3 
     return 
 
 # Aris la plus belle ################### 
