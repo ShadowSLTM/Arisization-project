@@ -539,11 +539,17 @@ label hack:
             A "Merci, [prenom]."
             play sound "Click.mp3" noloop
 
-            S "Je reste sceptique, mais j’espère que tu as raison."
+            S "Franchement, c’est impossible. Tu te fais des illusions."
             play sound "Click.mp3" noloop
 
-            P "Je ne lâcherai pas."
-            play sound "Click.mp3" noloop
+            P "Je refuse d’abandonner, quoi qu’il arrive."
+            play sound "Click.mp3" noloop 
+
+            S "Ne serait-ce pas qu'un rêve, juste une illusion ?"
+            play sound "Click.mp3" noloop 
+
+            P "Non je le pense vraiment."       
+            play sound "Click.mp3" noloop 
 
         "{b}{i} Je ne suis pas sûr...{/i}{/b}": 
             play sound "Menu.mp3" noloop
@@ -7329,6 +7335,7 @@ label suite:
     S "Je m'appelle [S], l'inégalable étudiant et ancien élève du [origine], j'ai dix-neuf ans ravi de vous rencontrer"
     play sound "Click.mp3" noloop 
 
+    $ charactertext1 = "Il est le nouveau lycéen de la Seconde-E il est l'inégalable étudiant."
     $ ultimate1 = "l'inégalable étudiant" 
 
     P "[S] !? Je croyais que tu étais dans un autre lycée depuis la dernière fois qu'on s'est vu !"
@@ -19672,7 +19679,7 @@ label code1:
                 Na "…Je… Je comprends maintenant..."
                 play sound "Click.mp3" noloop 
                 
-                Na "Toute cette douleur qui m'emplit n'est plus bone qu'à m'épuiser."
+                Na "Toute cette douleur qui m'emplit n'est plus bonne qu'à m'épuiser."
                 play sound "Crying.mp3" noloop 
 
                 "{b}{i}[newname] baisse la tête, submergée par les larmes.{/i}{/b}"
@@ -19722,7 +19729,7 @@ label code1:
     play sound "Click.mp3" noloop           
 
     P "Mais tu l'as déjà trouvé ta vie qui ressemble à un conte de fées, c'est depuis que tu es sous ma responsabilté."
-    play sound "Click.mp3" noloop  
+    play sound "Click.mp3" noloop            
 
     "{b}{i}Elle baisse légèrement les yeux, puis esquisse un sourire discret.{/i}{/b}"
     play sound "Click.mp3" noloop 
@@ -19745,30 +19752,34 @@ label code1:
     Na "[suivi]"
     play sound "Footsteps.mp3" noloop
 
-###################################################################
-
     hide screen clubroom with moveoutright
+    hide screen points with moveoutleft
+    hide screen day with moveoutleft
     scene black with fade 
 
     "{b}{i}Tu quittes la salle de club.{/i}{/b}"
     play sound "Door.mp3" noloop
 
     scene hall with fade
+    show screen day with moveinleft
+    show screen points with moveinleft
     show screen hall with moveiright
 
     "{b}{i}Tu prends les escaliers.{/i}{/b}" 
     play sound "Footsteps.mp3" noloop
 
     hide screen hall with moveoutright 
+    hide screen points with moveoutleft
+    hide screen day with moveoutleft
     scene staircase with fade 
 
     "{b}{i} Puis tu continues vers le couloir avec [Na].{/i}{/b}"
     play sound "Footsteps.mp3" noloop
 
     scene hallway with fade 
+    show screen day with moveinleft
+    show screen points with moveinleft
     show screen hallway with moveinright 
-
-##############################################################################33
 
     P  "Cette journée était vraiment fatiguante."
     play sound "Click.mp3" noloop

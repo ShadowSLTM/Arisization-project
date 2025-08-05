@@ -2046,7 +2046,6 @@ screen characters():
 
             label "{b}{i}— Personnages Secondaires —\n{/i}{/b}" 
 
-            text _("[character11] — [ultimate11]\n") 
             text _("[character12] — [ultimate12]\n")
             text _("[character13] — [ultimate13]\n") 
             text _("[character14] — [ultimate14]\n") 

@@ -276,8 +276,6 @@ label password11:
     "{b}{i}Tu entres dans le bureau des élèves.{/i}{/b}"
     play sound "Door.mp3" noloop
 
-    
-
     scene office with fade 
     show screen day with moveinleft
     show screen points with moveinleft
@@ -416,10 +414,10 @@ label password11:
     Ln "Car [Sn] est vraiment occupé en ce moment."
     play sound "Click.mp3" noloop 
 
-    $ character18 = Sn
+    $ character18 = Sn 
     $ ultimate18 = "le président du gouvernement Nagumo"
 
-    P "Je comprend mieux maintenant."
+    P "Je comprend mieux maintenant." 
     play sound "Click.mp3" noloop 
 
     Ln "Sinon tu en penses quoi de la société actuelle ?"
@@ -13838,7 +13836,7 @@ label choice10:
     P "Ouais donc on ne va pas les déranger plus."
     play sound "Click.mp3" noloop
 
-    
+
 
      
 
