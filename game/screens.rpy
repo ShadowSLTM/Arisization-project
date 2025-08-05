@@ -1849,7 +1849,7 @@ screen credit():
 
             text _("Système des succès : [Dc] (Shadow_SLTM)\n") 
 
-            text _("Création du personnage AK-24 et ses variantes : [Dc] (Shadow_SLTM)\n") 
+            text _("Création du personnage AK-24 : [Dc] (Shadow_SLTM)\n") 
 
             text _("Création des autres personnages : [Dc] (Shadow_SLTM)\n")  
 
