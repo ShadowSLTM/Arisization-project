@@ -7,13 +7,14 @@ default A = Character('??????????', color="#00eeff")
 
 default Na = Character('[newname] [nom]', color="#00eeff")
 
-# professeure de l'institut de la lune noir
+
+
 define Su = Character('Suzune Horimiya', color="#ffffff")
 define Sk = Character('Shiro Katsuya', color="#ffffff") 
 
 # antagoniste principale 
 
-define S = Character('Subaru Shinomiya', color="#ffffff")
+define S = Character('Subaru Shinomiya', color="#ffffff") # Takumi kisaragi dans la D04   
 
 # Les élèves de Seconde-E. 
 
@@ -23,7 +24,7 @@ define H = Character('Hajime Ayanokoji', color="#ffffff")
 define K = Character('Kendo Sato', color="#ffffff")
 define N = Character('Naoto Saotome', color="#ffee00") 
 define Hi = Character('Haruki Ichinose', color="#ffffff")
-define Y = Character('Yuki Hiiragi', color="#0059ff")  
+define Y = Character('Yuki Hiiragi', color="#0059ff") # Misaki Mikazuki dans la D04
 
 # Les antagonistes secondaires.  
 

@@ -13712,7 +13712,7 @@ label choice10:
                 "{b}{i}Tu n'as pas écrit la bonne commande.{/i}{/b}"
                 play sound "Click.mp3" noloop 
 
-                jump choice10
+                jump choice10 
         
         "{b}{i} surveiller les fichiers.{/i}{/b}" : 
             play sound "Menu.mp3" noloop 
@@ -13739,10 +13739,109 @@ label choice10:
         P "Oui, je comprends, mais je ne suis pas folle au point de supprimer le fichier system32."
         play sound "Click.mp3" noloop
 
-    Na ""
+    Na "Je le sais bien car tu prends vraiment bien soin de moi."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu te mets à regarder les fichiers systémes pour voir s'il y a du nouveau.{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    P "Bon voyons voir ça."
+    play sound "Click.mp3" noloop
+
+    "{b}{i}Tu remarques qu'il y a rien de nouveaux.{/i}{/b}"
+    play sound "Click.mp3" noloop  
+
+    P "Il n'y a rien de nouveau dans les fichiers systéme."
+    play sound "Click.mp3" noloop
+
+    Na "D'accord, c'est bon alors."
+    play sound "Click.mp3" noloop
+
+    P "Bon on fait quoi maintenant ?"
+    play sound "Click.mp3" noloop
+
+    Na "Je ne sais pas, tu as une idée ?"
+    play sound "Click.mp3" noloop
+
+    P "je ne sais pas trop on pourrait aller mager car il est déjà 11h45."
+    play sound "Click.mp3" noloop
+
+    $ suivi = get_random_suivi()
+    Na "[suivi]" 
+    play sound "Footsteps.mp3" noloop
+
+    hide screen clubroom with moveoutright
+    hide screen points with moveoutleft
+    hide screen day with moveoutleft
+    scene black with fade 
+
+    "{b}{i} Vous sortez de la salle de club.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene hall with fade
+    show screen day with moveinleft
+    show screen points with moveinleft
+    show screen hall with moveinright 
+
+    "{b}{i} Puis vous continuez encore vers le réféctoire.{/i}{/b}"
+    play sound "Footsteps.mp3" noloop
+
+    hide screen hall with moveoutright
+    hide screen points with moveoutleft
+    hide screen day with moveoutleft
+    scene black with fade
+
+    "{b}{i} Tu entres dans le réféctoire.{/i}{/b}"
+    play sound "Door.mp3" noloop
+
+    scene lunchroom with fade
+    show screen day with moveinleft
+    show screen points with moveinleft
+    show screen lunchroom with moveinright
+
+    $ find_food = get_random_find_food()
+    Na "[find_food]"
+    play sound "Click.mp3" noloop 
+
+    $ suivi = get_random_suivi()
+    P "[suivi]"
+    play sound "Footsteps.mp3" noloop
+
+    "{b}{i} Vous allez vers le comptoir pour prendre à manger.{/i}{/b}"
+    play sound "Click.mp3" noloop
+    
+    $ points -= 300 
+
+    $ service = get_random_service()
+    P "[service]"
+    play sound "Click.mp3" noloop 
+
+    $ sit = get_random_sit()
+    Na "[sit]"
+    play sound "Click.mp3" noloop
+
+    P "Bonne appétit."
+    play sound "Click.mp3" noloop
+
+    Na "Bonne appétit à toi aussi."
+    play sound "Click.mp3" noloop
+
+    "{b}{i} Vous mangez tranquillement puis tu aperçois [Y] et [N] disctuter eensemble.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Tiens, regarde [Y] et [N] sont ensemble."
+    play sound "Click.mp3" noloop
+
+    Na "Oui, ils ont l'air d'être occuppés."
+    play sound "Click.mp3" noloop
+
+    P "Ouais donc on ne va pas les déranger plus."
+    play sound "Click.mp3" noloop
 
     
-        
+
+     
+
 
 
 

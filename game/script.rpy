@@ -126,26 +126,6 @@ label start:
     default quest41 = 0
     default quest42 = 0
 
-label key:
-
-    $ key = renpy.input("Veuillez écrire votre clé d'accès.").strip()
-    play sound "Menu.mp3" noloop 
-
-    $ valid_keys = {"ARIS-DEVS", "ARIS-8J4K-F9Q7",}
-
-    if key in valid_keys: 
-
-        "Jeu déverrouillé." 
-        play sound "Menu.mp3" noloop 
-
-    else: 
-
-        "Erreur système. Veuillez réessayer."
-        $ renpy.restart_interaction()
-        jump key 
-
-    $ success = 0 
-
 label identity: 
 
     $ prenom = renpy.input("Quel est votre prénom de lycéen ?")
@@ -628,14 +608,8 @@ label choice1:
                 "{b}{i}Retourner au menu{/i}{/b}" : 
                     play sound "Menu.mp3" noloop
 
-                    if key == "ARIS-8J4K-F9Q7":
-
-                        $ persistent.abandon = True
-                        return 
-
-                    else: 
-
-                        return 
+                    $ persistent.abandon = True
+                    return
 
                 "{b}{i}Réessayer{/i}{/b}" : 
                     play sound "Menu.mp3" noloop
@@ -686,15 +660,8 @@ label choice1:
         P "Mais elle est abandonnée, et en plus je suis bonne en informatique."
         play sound "Click.mp3" noloop 
 
-    if key == "ARIS-8J4K-F9Q7" or "ARIS-DEMO":
-
-        "{b}{i}Tu mets le chargeur d'[A] dans ton sac pendant que tu parles avec [S].{/i}{/b}"
-        play sound "Click.mp3" noloop  
-
-    else: 
-
-        "{b}{i}Tu mets le chargeur de [A] dans ton sac pendant que tu parles avec [S].{/i}{/b}"
-        play sound "Click.mp3" noloop 
+    "{b}{i}Tu mets le chargeur d'[A] dans ton sac pendant que tu parles avec [S].{/i}{/b}"
+    play sound "Click.mp3" noloop  
 
     S "Bon je me tire d'ici."
     play sound "Click.mp3" noloop 
@@ -1446,7 +1413,7 @@ label choice1:
     play sound "Click.mp3" noloop 
 
     $ character9 = Y
-    $ charactertext9 = "Yuki est une lycéenne de dix-neuf ans, elle est douée en informatique comme les autres lycéens mais personne ne sait ce qu'elle fait."
+    $ charactertext9 = "Elle est une lycéenne de dix-neuf ans, elle est douée en informatique comme les autres lycéens mais personne ne sait ce qu'elle fait."
 
     T "Enchantée de te rencontrer aussi bienvenue dans notre classe."
     play sound "Click.mp3" noloop
@@ -5980,7 +5947,7 @@ label choice8:
     "{b}{i}Tu réalises qui est la personne en face de toi.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
-    P "Que voulez-vous à moi et [newname] ?"
+    P "Que voulez-vous à moi et [newname] ?" 
     play sound "Click.mp3" noloop 
 
     C "Juste discuter de deux-trois sujets avec toi."
@@ -5993,9 +5960,9 @@ label choice8:
     play sound "Click.mp3" noloop  
 
     P "[A] !? Comment êtes-vous au courant de ce nom !?"
-    play sound "Click.mp3" noloop 
+    play sound "Click.mp3" noloop  
 
-    C "C'est simple je suis son créateur et son concepteur original."
+    C "C'est simple, je suis son créateur et son concepteur original."
     play sound "Click.mp3" noloop 
 
     P "C'est donc vous à l'origine de [A]."
@@ -6013,7 +5980,31 @@ label choice8:
     P "C'est un honneur." 
     play sound "Click.mp3" noloop 
 
-    if pronom == "il":
+    P "Mais... comment avez-vous su qu'elle était ici ?"
+    play sound "Click.mp3" noloop 
+
+    C "Tu crois vraiment que je l’aurais laissée sans moyen de la localiser ?"
+    play sound "Click.mp3" noloop 
+
+    C "Un système de géolocalisation est intégré à [A] depuis sa création. Silencieux, discret... mais toujours actif."
+    play sound "Click.mp3" noloop 
+
+    C "Même lorsqu’elle est mise hors tension, le signal continue d’émettre. C’est comme ça que je vous ai retrouvés."
+    play sound "Click.mp3" noloop 
+
+    C "Un soir, j’ai reçu une notification étrange sur mon téléphone. Un vieux signal que je n’avais pas vu depuis des années."
+    play sound "Click.mp3" noloop 
+
+    C "J’avais complètement oublié que j’avais encore cette alerte active. Et pourtant... [A] s’est remise à émettre."
+    play sound "Click.mp3" noloop 
+
+    C "Quand j’ai vu qu’elle avait bougé, j’ai su que quelqu’un l’avait rallumée... et qu’elle n’était plus seule."
+    play sound "Click.mp3" noloop 
+
+    P "Oui, ça explique bien la situation. Je comprends mieux maintenant."
+    play sound "Click.mp3" noloop
+
+    if pronom == "il": 
 
         C "Donc, comment es-tu tombé sur [A] malgré le démantèlement des robots ?"
         play sound "Click.mp3" noloop 

@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 237: expected statement.
-    else:  
-        ^
-
-File "game/script.rpy", line 20801: expected 'label_name_declare' not found.
-    call script2 from 
-                     ^
+File "game/script.rpy", line 613: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    return
+    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue Aug  5 04:03:44 2025
+Wed Aug  6 00:07:56 2025

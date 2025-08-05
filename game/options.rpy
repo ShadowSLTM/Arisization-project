@@ -25,7 +25,7 @@ define gui.show_name = True
 
 ## La version du jeu. 
 
-define config.version = "Version_développeur" 
+define config.version = "Version_0.0.5" 
 
 ## Texte placé sur l'écran "À propos" du jeu. Placez le texte entre triples
 ## guillemets, et laissez une ligne entre les paragraphes.

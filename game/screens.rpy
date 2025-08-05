@@ -324,8 +324,6 @@ screen navigation():
  
             textbutton _("Aide") action ShowMenu("help")
 
-            textbutton _("Boutique") action ShowMenu("Shop")
-
             textbutton _("Succès") action ShowMenu("success")  
 
             textbutton _("Ton robot") action ShowMenu("robot") 
@@ -340,7 +338,7 @@ screen navigation():
 
         if persistent.abandon == True: 
 
-            textbutton _("Réinitialiser la réalité") action [Function(persistent._clear)]
+            textbutton _("Réinitialiser la réalité") action Function(persistent._clear)
 
         else: 
 
@@ -1793,31 +1791,6 @@ screen update():
         yalign 0.08
         xalign 0.999
         add "success.jpg"
-
-screen Shop():
-
-    tag menu
-
-    ## Cette déclaration concerne l’écran game_menu. L’élément vbox est ensuite
-    ## inclus dans la fenêtre de l'écran game_menu.
-    use game_menu(_("Boutique"), scroll="viewport"):
-
-        style_prefix "about"
-
-        vbox:
-
-            label "{b}{i}— Clés d'accès —\n{/i}{/b}" 
-
-            text _("Clé officielle : ARIS-8J4K-F9Q7\n")
-
-            text _("Cette clé d'accès est à inscrire lors que vous lancez une nouvelle partie.\n")
-
-style about_label is gui_label 
-style about_label_text is gui_label_text
-style about_text is gui_text
-
-style about_label_text: 
-    size gui.label_text_size 
 
 screen credit():
 
