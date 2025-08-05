@@ -321,8 +321,6 @@ screen navigation():
         textbutton _("À propos") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-
-            ## L'aide n’est ni nécessaire ni pertinente sur les appareils
  
             textbutton _("Aide") action ShowMenu("help")
 
@@ -340,7 +338,15 @@ screen navigation():
 
             textbutton _("Quitter ton robot") action Quit(confirm=not main_menu) 
 
-style navigation_button is gui_button
+        if persistent.abandon == True: 
+
+            textbutton _("Réinitialiser la réalité") action [Function(persistent._clear)]
+
+        else: 
+
+            textbutton _("Pas disponible") action NullAction()
+
+style navigation_button is gui_button 
 style navigation_button_text is gui_button_text
 
 style navigation_button:
@@ -1806,16 +1812,6 @@ screen Shop():
 
             text _("Cette clé d'accès est à inscrire lors que vous lancez une nouvelle partie.\n")
 
-            label "{b}{i}— DLC —\n{/i}{/b}"
-
-            if key == "ARIS-GRFN-M4A1": 
-
-                text _("DLC Arisization Project - Alternative : (installé)\n")
-
-            else:   
-
-                text _("DLC Arisization Project - Alternative : (non installé)\n") 
-
 style about_label is gui_label 
 style about_label_text is gui_label_text
 style about_text is gui_text
@@ -1899,8 +1895,6 @@ screen credit():
 
             label "{b}{i}— Propriété —\n{/i}{/b}"   
 
-            text _("DLC Arisization Project - Alternative : [Dc] (Shadow_SLTM)\n")
-
             text _("Arisization Project (The Realization Project of Aris) appartient à [Dc] (Shadow_SLTM)\n")   
 
             text _("Éditeur : SLTM\n") 
@@ -1924,13 +1918,11 @@ screen success():
 
             label "{b}{i}— Progression —\n{/i}{/b}" 
 
-            text _("Succès : [success]/42\n") 
+            text _("Succès : [success]/40\n") 
 
             label "{b}{i}— liste des succès —\n{/i}{/b}" 
 
-            text _("Une autre clé ? : [quest1]/1\n") 
             text _("Premier piratage : [quest2]/1\n")
-            text _("Nouveau nom de code : [quest3]/1\n")     
             text _("L'espoir fait vivre : [quest4]/1\n") 
             text _("Acceptation : [quest5]/1\n")  
             text _("Nouvelle identité : [quest6]/1\n")
@@ -2134,3 +2126,5 @@ style about_text is gui_text
 
 style about_label_text:
     size gui.label_text_size
+
+

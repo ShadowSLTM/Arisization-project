@@ -131,7 +131,7 @@ label key:
     $ key = renpy.input("Veuillez écrire votre clé d'accès.").strip()
     play sound "Menu.mp3" noloop 
 
-    $ valid_keys = {"ARIS-DEVS", "ARIS-8J4K-F9Q7", "ARIS-GRFN-M4A1",}
+    $ valid_keys = {"ARIS-DEVS", "ARIS-8J4K-F9Q7",}
 
     if key in valid_keys: 
 
@@ -145,24 +145,6 @@ label key:
         jump key 
 
     $ success = 0 
-
-    if key == "ARIS-8J4K-F9Q7" or key == "ARIS-DEVS" or key == "ARIS-DEMO" :
-
-        $ origine = "collège d'hoshikawa" 
-
-    elif key == "ARIS-GRFN-M4A1":
-
-        $ P = Character('[prenom] [nom]', color="#707070") 
-        $ quest1 += 1
-        $ success += 1 
-        $ origine = "collège d'hoshikawa" 
-        
-        show screen update with moveinright
-
-        "DLC secret déverouillé."  
-        play sound "Menu.mp3" noloop 
-
-        hide screen update with moveoutright
 
 label identity: 
 
@@ -202,7 +184,7 @@ label identity:
     if nom in noms_interdits:
         "Ce nom n'est pas autorisé."
         jump identity 
-    
+
     if not prenom and not nom:
 
         if pronom == "il":
@@ -219,6 +201,8 @@ label identity:
         
         "Bienvenue [prenom] [nom]."
 
+    $ origine = "collège d'hoshikawa" 
+    
 label auto_save: 
 
     show screen logo
@@ -241,26 +225,27 @@ label auto_save:
 
 label début: 
 
-    scene main with fade
-     
-    if key == "ARIS-GRFN-M4A1": 
+    scene main with fade    
 
-        "{b}{i}Chapitre 0 : Arisization Project Alternative - Lost Origins Arc{/i}{/b}"
+    "{b}{i}Chapitre 0 : Arisization Project - Lost Origins Arc{/i}{/b}"
+    play sound "Click.mp3" noloop 
+
+    scene black with fade 
+
+    if persistent.abandon == True: 
+
+        "{b}{i}Réalité D02.{/i}{/b}"
         play sound "Click.mp3" noloop 
 
-    else:   
+    else: 
 
-        "{b}{i}Chapitre 0 : Arisization Project - Lost Origins Arc{/i}{/b}"
+        "{b}{i}Réalité racine.{/i}{/b}" 
         play sound "Click.mp3" noloop 
-
-    scene black with fade
-    
+        
     "{b}{i}Quelque part dans un entrepôt abandonné en 2097.{/i}{/b}"
     play sound "Click.mp3" noloop 
 
     scene warehouse with fade
-
-    
 
     P "Bon, on fait quoi ?"
     play sound "Click.mp3" noloop  
@@ -435,88 +420,27 @@ label hack:
 
         jump hack 
 
-    if key == "ARIS-GRFN-M4A1":
+    if persistent.abandon == True: 
 
-        R "Initialisation des protocoles principaux..."
-        play sound "Click.mp3" noloop 
+        $ A = Character("AK-25", color="#00eeff")
+        $ stockage += 1.0 
 
-        P "Attends... On dirait qu'elle commence à s'activer."
-        play sound "Menu.mp3" noloop 
+    else: 
 
-        S "Ah bon vraiment ?" 
-        play sound "Click.mp3" noloop
+        $ A = Character("AK-24", color="#00eeff")
+        $ stockage += 1.0 
 
-        P "Oui regarde." 
-        play sound "Click.mp3" noloop 
+    R "Initialisation en cours......" 
+    play sound "Click.mp3" noloop
 
-        $ stockage -= 1.0
+    P "Attend on dirait qu'elle est en train de démarrer."
+    play sound "Menu.mp3" noloop 
 
-        R "Anomalie détectée. Nom de code introuvable dans la base de données."
-        play sound "Click.mp3" noloop 
+    S "Ah bon vraiment ?"
+    play sound "Click.mp3" noloop
 
-        P "Hein ? Qu'est-ce que ça signifie ?"
-        play sound "Click.mp3" noloop 
-
-        R "Nom de code absent. Lancement du protocole de génération assistée, veuillez choisir un nouveau nom de code..."
-        play sound "Menu.mp3" noloop
-        
-        menu: 
-
-            "{b}{i}Choisir M4A1{/i}{/b}" :
-                $ A = Character("M4A1", color="#00ff00")
-                $ stockage += 1.0 
-
-            "{b}{i}Choisir M16A1{/i}{/b}" :
-                $ A = Character("M16A1", color="#ffa600") 
-                $ stockage += 1.2
-
-            "{b}{i}Choisir ST AR-15{/i}{/b}" : 
-                $ A = Character("ST AR-15", color="#ff8fc3") 
-                $ stockage += 1.5 
-
-            "{b}{i}Choisir M4 SOPMOD II{/i}{/b}" :
-                $ A = Character("M4 SOPMOD II", color="#ff4a4a")
-                $ stockage += 2.0 
-
-            "{b}{i}Choisir M82A1{/i}{/b}" :
-                $ A = Character("M82A1", color="#0000ff") 
-                $ stockage += 1.4 
-
-            "{b}{i}Choisir M1919A4{/i}{/b}" : 
-                $ A = Character("M1919A4", color="#005c17") 
-                $ stockage += 1.8 
-
-        show screen update with moveinright
-
-        $ renpy.block_rollback()
-        $ quest3 += 1   
-        $ success += 1 
-
-        hide screen update with moveoutright 
-
-    else:    
-
-        if persistent.abandon == True: 
-
-            $ A = Character("AK-25", color="#00eeff")
-            $ stockage += 1.0 
-
-        else: 
-
-            $ A = Character("AK-24", color="#00eeff")
-            $ stockage += 1.0 
-
-        R "Initialisation en cours......" 
-        play sound "Click.mp3" noloop
-
-        P "Attend on dirait qu'elle est en train de démarrer."
-        play sound "Menu.mp3" noloop 
-
-        S "Ah bon vraiment ?"
-        play sound "Click.mp3" noloop
-
-        P "Oui regarde." 
-        play sound "Click.mp3" noloop
+    P "Oui regarde." 
+    play sound "Click.mp3" noloop
 
     $ propriety = P 
 
@@ -711,7 +635,7 @@ label choice1:
 
                     else: 
 
-                        return
+                        return 
 
                 "{b}{i}Réessayer{/i}{/b}" : 
                     play sound "Menu.mp3" noloop
@@ -731,10 +655,8 @@ label choice1:
             P "Je refuse de la laisser ici alors qu'elle est en bonne état de fonctionner malgré son effacement numérique et en plus j'ai pris du temps pour la démarrer."
             play sound "Click.mp3" noloop 
 
-            # à modifier pour la persistence d'abandon
-
             A "Merci infiniment [prenom]."
-            play sound "Click.mp3" noloop
+            play sound "Click.mp3" noloop 
 
             P "Mais de rien c'est normal."
             play sound "Click.mp3" noloop 
@@ -794,16 +716,9 @@ label choice1:
     play sound "Click.mp3" noloop 
 
     scene main with fade 
-    
-    if key == "ARIS-GRFN-M4A1":
 
-        "{b}{i}Chapitre 1 : Arisization Project Alternative - High school Arc{/i}{/b}"
-        play sound "Click.mp3" noloop 
-
-    else:   
-
-        "{b}{i}Chapitre 1 : Arisization Project - High school Arc{/i}{/b}"
-        play sound "Click.mp3" noloop 
+    "{b}{i}Chapitre 1 : Arisization Project - High school Arc{/i}{/b}"
+    play sound "Click.mp3" noloop 
 
     "{i}Tu penses vraiment pouvoir améliorer [A] ?{/i}"
     play sound "Click.mp3" noloop 
@@ -815,8 +730,6 @@ label choice1:
     District de Kiryō, 2-14-7, Avenue Miraidōri, dans un monde entièrement dominé par 
     les nouvelles technologies et dirigé par un gouvernement technocratique autoritaire.{/i}{/b}" 
     play sound "Click.mp3" noloop 
-
-    
 
     $ day += 1 
     $ stockage += 60.0 
@@ -1630,25 +1543,15 @@ label choice1:
     A "Je suis la création de [prenom], comme [pronom] l'a déjà dit."
     play sound "Click.mp3" noloop
 
-    T "Ok, juste c'est ton vrai prénom ?" 
-    play sound "Click.mp3" noloop
+    if persistent.abandon = True:
 
-    if key == "ARIS-GRFN-M4A1": 
-
-        A "Non, c'est un nom technique qu'[pronom] m'a donné après une erreur systéme."
-        play sound "Click.mp3" noloop 
+        A "Non, c'est mon nom technique."
+        play sound "Click.mp3" noloop  
 
     else: 
-
-        if persistent.abandon = True:
-
-            A "Non, c'est mon nom technique."
-            play sound "Click.mp3" noloop  
-
-        else: 
         
-            A "Non, c'est mon nom technique par défaut sur mon systéme."
-            play sound "Click.mp3" noloop  
+        A "Non, c'est mon nom technique par défaut sur mon systéme."
+        play sound "Click.mp3" noloop  
 
     T "Intéressant j'espère qu'[pronom] te trouvera un vrai joli prénom." 
     play sound "Click.mp3" noloop
@@ -4352,16 +4255,9 @@ label choice6:
 
     P "Oui je le confirme mais jamais je le ferai."
     play sound "Click.mp3" noloop 
-    
-    if key == "ARIS-GRFN-M4A1":
 
-        J1 "je savais qu'[newname] était dangereuse surtout qu'elle a le nom techinique d'une arme."
-        play sound "Click.mp3" noloop 
-
-    else:
-
-        J1 "je savais qu'[newname] était dangereuse."
-        play sound "Click.mp3" noloop 
+    J1 "je savais qu'[newname] était dangereuse."
+    play sound "Click.mp3" noloop 
 
     Na "Quoi comment oses-tu dire ça !? je n'ai rien fait..."
     play sound "Crying.mp3" noloop
@@ -6099,57 +5995,23 @@ label choice8:
     P "[A] !? Comment êtes-vous au courant de ce nom !?"
     play sound "Click.mp3" noloop 
 
-    if key == "ARIS-GRFN-M4A1": 
+    C "C'est simple je suis son créateur et son concepteur original."
+    play sound "Click.mp3" noloop 
 
-        C "C'est simple je suis son créateur et son concepteur original."
-        play sound "Click.mp3" noloop 
+    P "C'est donc vous à l'origine de [A]."
+    play sound "Click.mp3" noloop 
 
-        P "C'est donc vous à l'origine de [A]."
-        play sound "Click.mp3" noloop 
+    C "Oui c'est exact."
+    play sound "Click.mp3" noloop 
 
-        C "Oui et attends comment ça [A] ? De base son nom de code est AK-24."
-        play sound "Click.mp3" noloop 
+    P "J'ai toujours voulu connaître la personne qui a conçu [A]."
+    play sound "Click.mp3" noloop 
 
-        P "Elle a eu une erreur système quand je l'ai redémarré."
-        play sound "Click.mp3" noloop
+    C "Me voilà ici présent."
+    play sound "Click.mp3" noloop 
 
-        C "Je vois, ça dois sûrement du être à son inactivité." 
-        play sound "Click.mp3" noloop
-
-        P "Oui et du coup elle m'a demandé de choisir son nouveau nom de code."
-        play sound "Click.mp3" noloop
-
-        C "Je vois elle devais vraiment te faire confiance pour te laisser choisir son nom de code."
-        play sound "Click.mp3" noloop
-
-        P "Aussi j'ai toujours voulu connaître la personne qui a conçu [A]."
-        play sound "Click.mp3" noloop 
-
-        C "Me voilà ici présent."
-        play sound "Click.mp3" noloop 
-
-        P "C'est un honneur." 
-        play sound "Click.mp3" noloop 
-
-    else:
-
-        C "C'est simple je suis son créateur et son concepteur original."
-        play sound "Click.mp3" noloop 
-
-        P "C'est donc vous à l'origine de [A]."
-        play sound "Click.mp3" noloop 
-
-        C "Oui c'est exact."
-        play sound "Click.mp3" noloop 
-
-        P "J'ai toujours voulu connaître la personne qui a conçu [A]."
-        play sound "Click.mp3" noloop 
-
-        C "Me voilà ici présent."
-        play sound "Click.mp3" noloop 
-
-        P "C'est un honneur." 
-        play sound "Click.mp3" noloop 
+    P "C'est un honneur." 
+    play sound "Click.mp3" noloop 
 
     if pronom == "il":
 
@@ -18290,8 +18152,6 @@ label password8:
 
 label examen_runix: 
 
-    
-
     $ grade = 0.0 
 
     P "Bon voyons voir....." 
@@ -20934,5 +20794,5 @@ label update1:
     play sound "Click.mp3" noloop
 
 label end_script:
-    call script2 from _call_script2
+    call script2
     return 

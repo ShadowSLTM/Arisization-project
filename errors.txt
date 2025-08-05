@@ -2,11 +2,13 @@
 errors listed below, and try again.
 
 
-The label password27 is defined twice, at File "game/script2.rpy", line 13069:
-label password27:  
-and File "game/script2.rpy", line 13247:
-label password27:  
+File "game/script.rpy", line 237: expected statement.
+    else:  
+        ^
 
+File "game/script.rpy", line 20801: expected 'label_name_declare' not found.
+    call script2 from 
+                     ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue Jul 29 00:56:11 2025
+Tue Aug  5 04:03:44 2025

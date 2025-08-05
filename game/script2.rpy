@@ -3940,18 +3940,8 @@ label password15:
             J1 "[nothing]" 
             play sound "Click.mp3" noloop
 
-            if key == "ARIS-GRFN-M4A1":
-
-                P "Mais vraiment [newname] est vrai la meilleure création de notre société, je dirai même commme une arme vu son nom de code."
-                play sound "Click.mp3" noloop
-
-                Na "Vraiment !?"
-                play sound "Click.mp3" noloop 
-
-            else: 
-
-                P "Mais vraiment [newname] est vrai la meilleure création de notre société."
-                play sound "Click.mp3" noloop
+            P "Mais vraiment [newname] est vrai la meilleure création de notre société."
+            play sound "Click.mp3" noloop
 
             J1 "Ce n'est pas un peu trop exagéré ?"
             play sound "Click.mp3" noloop
@@ -13644,6 +13634,8 @@ label password28:
     Na "Mais de toute façon je sais que tu ne le feras pas, n'est-ce pas ?"
     play sound "Click.mp3" noloop 
 
+label choice10:
+
     P "......."
     play sound "Click.mp3" noloop 
 
@@ -13652,8 +13644,105 @@ label password28:
         "{b}{i} Supprimer le system32.{/i}{/b}" : 
             play sound "Menu.mp3" noloop 
 
+            "{b}{i}Tu te pose tranquillement à ton bureau en silence.{/i}{/b}"
+            play sound "Click.mp3" noloop       
+
+            Na "Tu ne vas pas le faire, n'est-ce pas ?"
+            play sound "Click.mp3" noloop
+
+            "{b}{i}Tu ouvres l'explorateur de fichiers calmement.{/i}{/b}"
+            play sound "Click.mp3" noloop      
+
+            Na "Réponds-moi [prenom], tu ne vas pas le faire ?"
+            play sound "Click.mp3" noloop
+
+            $ delete = renpy.input("Écris ceci : delete_files_system(name=system32)")
+            $ delete = delete.strip() 
+            play sound "Menu.mp3" noloop 
+
+            if delete == "delete_files_system(name=system32)":  
+
+                "{b}{i}Tu écris la commande pour supprimer le fichier system32.{/i}{/b}"
+                play sound "Click.mp3" noloop
+
+                P "Voilà, c'est fait, le fichier system32 est supprimé."
+                play sound "Click.mp3" noloop
+
+                Na "Quoi ? Tu l'as vraiment fait ?"
+                play sound "Click.mp3" noloop
+
+                P "Oui, je l'ai fait."
+                play sound "Click.mp3" noloop
+
+                Na "Mais pourquoi tu as fait ça ?"
+                play sound "Click.mp3" noloop
+
+                P "Parce que je voulais voir ce qui se passerait."
+                play sound "Click.mp3" noloop   
+
+                Na "Erreur systéme détectée."
+                play music "gameover.mp3" noloop
+
+                hide screen clubroom with moveoutright
+                hide screen point with moveoutleftts
+                hide screen day with moveoutleft
+                scene black with fade
+
+                "{b}{i}Fin numéro 17 : [newname] complétement unconsciente par la perte de son systme32.{/i}{/b}"
+                play sound "Menu.mp3" noloop
+
+                menu: 
+
+                    "{b}{i}Abandonner{/i}{/b}" :
+                        return
+                
+                    "{b}{i}Réessayer.{/i}{/b}" :
+
+                        P "Non [newname] refuserait que j'abandonne si facilement."
+                        play sound "Click.mp3" noloop
+
+                        scene clubroom
+                        show screen clubroom with moveinright
+                        show screen point with moveinleft
+                        show screen day with moveinleft 
+                        jump choice10
+
+            else: 
+
+                "{b}{i}Tu n'as pas écrit la bonne commande.{/i}{/b}"
+                play sound "Click.mp3" noloop 
+
+                jump choice10
+        
         "{b}{i} surveiller les fichiers.{/i}{/b}" : 
             play sound "Menu.mp3" noloop 
+
+            P "évidemment que je ne vais pas le supprimer."
+            play sound "Click.mp3" noloop 
+
+    Na "Ah d'accord, je me disais aussi que tu ne ferais pas ça."
+    play sound "Click.mp3" noloop
+
+    P "Oui, je ne suis pas fou."
+    play sound "Click.mp3" noloop
+
+    Na "Oui, je sais, mais je voulais juste être sûre."
+    play sound "Click.mp3" noloop
+
+    if pronom == "il":
+
+        P "Oui, je comprends, mais je ne suis pas fou au point de supprimer le fichier system32."
+        play sound "Click.mp3" noloop
+
+    elif pronom == "elle":
+
+        P "Oui, je comprends, mais je ne suis pas folle au point de supprimer le fichier system32."
+        play sound "Click.mp3" noloop
+
+    Na ""
+
+    
+        
 
 
 

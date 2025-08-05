@@ -1,28 +1,85 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 499, in script
-    if persistant.abandon == True:
-  File "game/script.rpy", line 499, in <module>
-    if persistant.abandon == True:
-NameError: name 'persistant' is not defined
+  File "game/screens.rpy", line 366, in execute
+    screen main_menu():
+  File "game/screens.rpy", line 366, in execute
+    screen main_menu():
+  File "game/screens.rpy", line 379, in execute
+    use navigation
+  File "game/screens.rpy", line 289, in execute
+    screen navigation():
+  File "game/screens.rpy", line 289, in execute
+    screen navigation():
+  File "game/screens.rpy", line 291, in execute
+    vbox:
+  File "game/screens.rpy", line 341, in execute
+    if persistent.abandon == True:
+  File "game/screens.rpy", line 343, in execute
+    textbutton _("Réinitialiser la réalité") action [Function(persistent._clear), Quit(relaunch=True)]
+  File "game/screens.rpy", line 343, in keywords
+    textbutton _("Réinitialiser la réalité") action [Function(persistent._clear), Quit(relaunch=True)]
+  File "game/screens.rpy", line 343, in <module>
+    textbutton _("Réinitialiser la réalité") action [Function(persistent._clear), Quit(relaunch=True)]
+TypeError: __init__() got an unexpected keyword argument 'relaunch'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 499, in script
-    if persistant.abandon == True:
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 1856, in execute
-    if renpy.python.py_eval(condition):
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 499, in <module>
-    if persistant.abandon == True:
-NameError: name 'persistant' is not defined
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  [Previous line repeated 2 more times]
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\core.py", line 2748, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\Aris\Documents\renpy-8.3.7-sdk\renpy\display\screen.py", line 700, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 366, in execute
+    screen main_menu():
+  File "game/screens.rpy", line 366, in execute
+    screen main_menu():
+  File "game/screens.rpy", line 379, in execute
+    use navigation
+  File "game/screens.rpy", line 289, in execute
+    screen navigation():
+  File "game/screens.rpy", line 289, in execute
+    screen navigation():
+  File "game/screens.rpy", line 291, in execute
+    vbox:
+  File "game/screens.rpy", line 341, in execute
+    if persistent.abandon == True:
+  File "game/screens.rpy", line 343, in execute
+    textbutton _("Réinitialiser la réalité") action [Function(persistent._clear), Quit(relaunch=True)]
+  File "game/screens.rpy", line 343, in keywords
+    textbutton _("Réinitialiser la réalité") action [Function(persistent._clear), Quit(relaunch=True)]
+  File "game/screens.rpy", line 343, in <module>
+    textbutton _("Réinitialiser la réalité") action [Function(persistent._clear), Quit(relaunch=True)]
+TypeError: __init__() got an unexpected keyword argument 'relaunch'
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 Arisization Project Version_développeur
-Tue Jul 29 01:00:01 2025
+Tue Aug  5 00:13:11 2025
