@@ -13836,9 +13836,79 @@ label choice10:
     P "Ouais donc on ne va pas les déranger plus."
     play sound "Click.mp3" noloop
 
+    Na "Oui tu as raison de dire ça"
+    play sound "Click.mp3" noloop
 
+    "{b}{i} Puis [I] vous rejoint.{/i}{/b}"
+    play sound "Click.mp3" noloop
 
-     
+    I "Salut [prenom] et [newname], vous allez bien ?"
+    play sound "Click.mp3" noloop  
+
+    P "Oui ça va ?"
+    play sound "Click.mp3" noloop
+
+    Na "Je viens bien et toi ?"
+    play sound "Click.mp3" noloop
+
+    $ je_vais_bien_txt = get_random_je_vais_bien() 
+    I "[je_vais_bien_txt]"
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[I] s'asseoit avec vous.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    I "Vous avez fait quoi de beau aujourd'hui ?"
+    play sound "Click.mp3" noloop
+
+    P "J'ai commandé une nouvelle batterie pour [newname] car l'ancienne était trop faible."
+    play sound "Click.mp3" noloop
+
+    Na "Oui, et la nouvelle batterie est de 7000 W."
+    play sound "Click.mp3" noloop
+
+    I "Ah d'accord, c'est cool ça."
+    play sound "Click.mp3" noloop
+
+    $ thanks = get_random_thanks()
+    Na "[thanks]"
+    play sound "Click.mp3" noloop
+
+    $ nothing = get_random_nothing()
+    I "[nothing]"
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[I] se met à réfléchir à quelque chose.{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P "Tu penses à quoi [I] ?"
+    play sound "Click.mp3" noloop
+
+    I "Vou vous souvenez quand je vous disait que je voulais faire une soirée pyjama ?"
+    play sound "Click.mp3" noloop
+
+    P "Oui, je m'en souviens."
+    play sound "Click.mp3" noloop
+
+    Na "Oui, je m'en souviens aussi."
+    play sound "Click.mp3" noloop
+
+    I "Et bien j'ai une idée pour la soirée pyjama."
+    play sound "Click.mp3" noloop
+
+    P "Ah bon, quelle idée ?"
+    play sound "Click.mp3" noloop
+
+    Na "Oui dit nous [I]."
+    play sound "Click.mp3" noloop
+
+    I "Et si on faisait une soirée pyjama dans la salle de club ?"
+    play sound "Click.mp3" noloop 
+
+    P "C'est une bonne idée, mais on ne peut pas dormir dans la salle de club."
+    play sound "Click.mp3" noloop
+
+    
 
 
 

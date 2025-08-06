@@ -5791,8 +5791,6 @@ label choice8:
     M "Bien nous pouvons continuer notre cours de ce matin sur la grammaire, veuillez sortir vos livres."
     play sound "Click.mp3" noloop 
 
-    # à modifier 
-
     "{b}{i} Le cours continue tranquillement.{/i}{/b}"
     play sound "Click.mp3" noloop
     
@@ -5809,36 +5807,33 @@ label choice8:
     Na "[suivi]"
     play sound "Click.mp3" noloop 
 
-    M "Attends deux secondes [prenom]."
+    M "Attendez deux secondes [prenom] et [newname]."
     play sound "Click.mp3" noloop
 
     P "Oui qu'y a-t-il ?"
+    play sound "Click.mp3" noloop 
+
+    M "[E] t'attend [newname] dans son bureau."
     play sound "Click.mp3" noloop
 
-    M "[E] t'attend dans son bureau."
+    P "Comment ça !?" 
     play sound "Click.mp3" noloop
 
-    P "Comment ça !?"
+    Y "[newname] convoquée chez le bureau des élèves c'est bizarre..."
     play sound "Click.mp3" noloop
 
-    if pronom == "il":
+    Na "Bon ok j'y vais alors." 
+    play sound "Click.mp3" noloop 
 
-        P "L'inégalable créateur convoqué chez le bureau des élèves c'est bizarre..."
-        play sound "Click.mp3" noloop
+    M "Bien alors vous pouvez y aller."
+    play sound "Click.mp3" noloop 
 
-    elif pronom == "elle": 
+    P "Bon on y va [newname] ?"
+    play sound "Click.mp3" noloop    
 
-        P "L'inégalable créatrice convoquée chez le bureau des élèves c'est bizarre..."
-        play sound "Click.mp3" noloop 
-
-    P "Bon ok j'y vais."
-    play sound "Click.mp3" noloop
-
-    Na "Bon tu penses que c'est qui la personne qui veut te voir ?"
-    play sound "Click.mp3" noloop
-
-    P "Je n'en ai aucune idée."
-    play sound "Click.mp3" noloop
+    $ suivi = get_random_suivi()
+    Na "[suivi]"
+    play sound "footsteps.mp3" noloop
 
     hide screen class_404 with moveoutright 
     hide screen points with moveoutleft
@@ -5848,6 +5843,15 @@ label choice8:
     "{b}{i}Tu te diriges dans le couloir avec [Na].{/i}{/b}"
     play sound "Door.mp3" noloop
      
+    Na "Bon tu penses que c'est qui la personne qui veut me voir ?"
+    play sound "Click.mp3" noloop
+
+    P "Je n'en ai aucune idée."
+    play sound "Click.mp3" noloop
+
+    Na "Je vois alors."
+    play sound "Footsteps.mp3" noloop 
+
     scene hallway with fade 
     show screen day with moveinleft
     show screen points with moveinleft
@@ -5872,7 +5876,7 @@ label choice8:
     "{b}{i}Tu continues vers le bureau des élèves.{/i}{/b}"
     play sound "Footsteps.mp3" noloop
     
-    stop music fadeout 2.0
+    stop music fadeout 2.0 
 
     hide screen hall with moveoutright
     hide screen points with moveoutleft
@@ -5881,8 +5885,6 @@ label choice8:
 
     "{b}{i}Tu entres dans le bureau des élèves.{/i}{/b}"
     play sound "Door.mp3" noloop
-
-    
 
     scene office with fade 
     show screen day with moveinleft
@@ -5928,17 +5930,10 @@ label choice8:
     E "Il n'y a pas de soucis."
     play sound "Click.mp3" noloop 
 
-    if pronom == "il":
+    R "Donc [nom] c'est bien toi l'[domaine] ?"
+    play sound "Click.mp3" noloop 
 
-        R "Donc [nom] c'est bien toi l'inégalable créateur ?"
-        play sound "Click.mp3" noloop 
-
-    elif pronom == "elle": 
-
-        R "Donc [nom] c'est bien toi l'inégalable créatrice ?"
-        play sound "Click.mp3" noloop 
-
-    P "Oui c'est exact mais vous, qui êtes-vous ?"
+    P "Oui c'est exacte mais vous, qui êtes-vous ?"
     play sound "Click.mp3" noloop 
 
     C "Ah oui désolé je me nomme [C]."
@@ -5987,9 +5982,6 @@ label choice8:
     play sound "Click.mp3" noloop 
 
     P "Mais... comment avez-vous su qu'elle était ici ?"
-    play sound "Click.mp3" noloop 
-
-    C "Tu crois vraiment que je l’aurais laissée sans moyen de la localiser ?"
     play sound "Click.mp3" noloop 
 
     C "Un système de géolocalisation est intégré à [A] depuis sa création. Silencieux, discret... mais toujours actif."
@@ -6132,17 +6124,10 @@ label choice8:
     P "Oui dites-moi."
     play sound "Click.mp3" noloop 
 
-    if A == "AK-24":
+    C "Il se pourrait que j'aie encore les documents techniques originaux d'[A] que je pourrais te donner."
+    play sound "Click.mp3" noloop 
 
-        C "Il se pourrait que j'aie encore les documents techniques originaux d'[A] que je pourrais te donner."
-        play sound "Click.mp3" noloop 
-
-    else: 
-
-        C "Il se pourrait que j'aie encore les documents techniques originaux de [A] que je pourrais te donner."
-        play sound "Click.mp3" noloop 
-
-    P "Vraiment !?"
+    P "Vraiment !?" 
     play sound "Click.mp3" noloop 
  
     C "Oui ils seront tous pour toi."
@@ -7708,10 +7693,10 @@ label suite:
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Footsteps.mp3" noloop 
+    play sound "Click.mp3" noloop 
 
     P "Bien alors allons-y."
-    play sound "Click.mp3" noloop
+    play sound "Footsteps.mp3" noloop
 
     hide screen room with moveoutright
     hide screen points with moveoutleft
@@ -9093,10 +9078,10 @@ label debate_success:
 
     $ suivi = get_random_suivi()
     Na "[suivi]"
-    play sound "Footsteps.mp3" noloop 
+    play sound "Click.mp3" noloop  
 
-    P "Bien."
-    play sound "Click.mp3" noloop 
+    P "Bien."    
+    play sound "Footsteps.mp3" noloop 
 
     hide screen room with moveoutright 
     hide screen points with moveoutleft
