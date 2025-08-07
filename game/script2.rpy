@@ -13908,11 +13908,18 @@ label choice10:
     P "C'est une bonne idée, mais on ne peut pas dormir dans la salle de club."
     play sound "Click.mp3" noloop
 
-    
+    I "Si on demande à [E] peut-être que ce sera faisable."
+    play sound "Click.mp3" noloop
 
+    Na "Oui, c'est vrai, mais je ne sais pas si [E] acceptera."
+    play sound "Click.mp3" noloop
 
+    P "On peut toujours essayer de lui demander."
+    play sound "Click.mp3" noloop
 
-
+    I "Oui, on peut toujours essayer de lui demander."
+    play sound "Click.mp3" noloop
+ 
 label end_script2:
     call script3 
     return 
