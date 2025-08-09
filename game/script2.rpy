@@ -13917,9 +13917,43 @@ label choice10:
     P "On peut toujours essayer de lui demander."
     play sound "Click.mp3" noloop
 
-    I "Oui, on peut toujours essayer de lui demander."
+    I ""
     play sound "Click.mp3" noloop
- 
+
+    Na ""
+    play sound "Click.mp3" noloop
+
+    "{b}{i}[Y]{/i}{/b}"
+    play sound "Click.mp3" noloop
+
+    P ""
+    play sound "Click.mp3" noloop
+
+    Y ""
+    play sound "Click.mp3" noloop
+
+    if persistent.abandon == True: 
+
+        P ""
+        play sound "Glitch.mp3" noloop
+
+        Y ""
+        play sound "Click.mp3" noloop
+        
+    else: 
+
+        P ""
+        play sound "Click.mp3" noloop
+
+        Y ""
+        play sound "Click.mp3" noloop
+
+    P ""
+    play sound "Click.mp3" noloop
+
+    Y ""
+    play sound "Click.mp3" noloop
+
 label end_script2:
     call script3 
     return 

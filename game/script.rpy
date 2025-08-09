@@ -414,7 +414,7 @@ label hack:
     play sound "Click.mp3" noloop
 
     P "Attend on dirait qu'elle est en train de démarrer."
-    play sound "Menu.mp3" noloop 
+    play sound "Click.mp3" noloop 
 
     S "Ah bon vraiment ?"
     play sound "Click.mp3" noloop
@@ -1516,7 +1516,10 @@ label choice1:
     A "Je suis la création de [prenom], comme [pronom] l'a déjà dit."
     play sound "Click.mp3" noloop
 
-    if persistent.abandon = True:
+    I "Juste c'est ton vrai prénom par hasard ?"
+    play sound "Click.mp3" noloop 
+
+    if persistent.abandon == True:
 
         A "Non, c'est mon nom technique."
         play sound "Click.mp3" noloop  
@@ -6479,15 +6482,18 @@ label choice8:
         P "Donc il semblerait qu'[newname] soit équipée d'un système d'exploitation nommé [system]."
         play sound "Click.mp3" noloop
 
-        P "Il semblerait aussi que son numéro de série soit [serie]."
-        play sound "Click.mp3" noloop  
-
         if persistent.abandon == True: 
+
+            P "Il semblerait aussi que son numéro de série soit [serie]."
+            play sound "Glitch.mp3" noloop 
 
             P "Je vois que c'est le vingt-cinquième robot de la première série de 2079."
             play sound "Click.mp3" noloop 
 
         else: 
+
+            P "Il semblerait aussi que son numéro de série soit [serie]."
+            play sound "Click.mp3" noloop  
 
             P "Je vois que c'est le vingt-quatrième robot de la première série de 2079."
             play sound "Click.mp3" noloop 
